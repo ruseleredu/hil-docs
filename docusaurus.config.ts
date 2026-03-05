@@ -8,8 +8,8 @@ import rehypeKatex from 'rehype-katex';
 // This runs in Node.js - Don't use client-side code here (browser APIs, JSX...)
 
 const config: Config = {
-  title: 'My Site',
-  tagline: 'Dinosaurs are cool',
+  title: 'Typhonn HIL Docs',
+  tagline: 'Hardware-in-the-Loop simulation with HIL402 Device.',
   favicon: 'img/favicon.ico',
 
   // Future flags, see https://docusaurus.io/docs/api/docusaurus-config#future
@@ -102,7 +102,7 @@ const config: Config = {
     navbar: {
       title: 'HIL Docs',
       logo: {
-        alt: 'My Site Logo',
+        alt: 'Hardware-in-the-Loop simulation solutions.',
         src: 'img/logo_hil.svg',
       },
       items: [

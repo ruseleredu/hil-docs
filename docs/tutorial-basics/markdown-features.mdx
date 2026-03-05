@@ -4,6 +4,8 @@ sidebar_position: 4
 
 # Markdown Features
 
+import BrowserWindow from "@site/src/components/BrowserWindow";
+
 Docusaurus supports **[Markdown](https://daringfireball.net/projects/markdown/syntax)** and a few **additional features**.
 
 ## Front Matter
@@ -151,3 +153,17 @@ export const Highlight = ({ children, color }) => (
 This is <Highlight color="#25c2a0">Docusaurus green</Highlight> !
 
 This is <Highlight color="#1877F2">Facebook blue</Highlight> !
+
+## BrowserWindow
+
+```mdx-code-block
+<BrowserWindow>
+
+<h3>My Doc Section</h3>
+
+Hello world message with some **bold** text, some _italic_ text and a [link](/)
+
+![img alt](/img/logo_hil.png)
+
+</BrowserWindow>
+```
