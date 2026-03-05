@@ -2,6 +2,9 @@ import { themes as prismThemes } from 'prism-react-renderer';
 import type { Config } from '@docusaurus/types';
 import type * as Preset from '@docusaurus/preset-classic';
 
+import remarkMath from 'remark-math';
+import rehypeKatex from 'rehype-katex';
+
 // This runs in Node.js - Don't use client-side code here (browser APIs, JSX...)
 
 const config: Config = {
@@ -42,6 +45,17 @@ const config: Config = {
   },
   themes: ['@docusaurus/theme-mermaid'],
 
+  // Include the KaTeX CSS in your config under stylesheets:
+  stylesheets: [
+    {
+      href: "https://cdn.jsdelivr.net/npm/katex@0.16.28/dist/katex.min.css",
+      type: "text/css",
+      integrity:
+        "sha384-Wsr4Nh3yrvMf2KCebJchRJoVo1gTU6kcP05uRSh5NV3sj9+a8IomuJoQzf3sMq4T",
+      crossorigin: "anonymous",
+    },
+  ],
+
   presets: [
     [
       'classic',
@@ -51,6 +65,10 @@ const config: Config = {
           // Please change this to your repo.
           // Remove this to remove the "edit this page" links.
           editUrl: "https://github.com/ruseleredu/hil-docs/edit/main/",
+          remarkPlugins: [remarkMath],
+          rehypePlugins: [rehypeKatex],
+          showLastUpdateAuthor: true,
+          showLastUpdateTime: true,
         },
         blog: {
           showReadingTime: true,
@@ -61,6 +79,8 @@ const config: Config = {
           // Please change this to your repo.
           // Remove this to remove the "edit this page" links.
           editUrl: "https://github.com/ruseleredu/hil-docs/edit/main/",
+          remarkPlugins: [remarkMath],
+          rehypePlugins: [rehypeKatex],
           // Useful options to enforce blogging best practices
           onInlineTags: 'warn',
           onInlineAuthors: 'warn',
@@ -94,7 +114,7 @@ const config: Config = {
         },
         { to: '/blog', label: 'Blog', position: 'left' },
         {
-          href: 'https://github.com/facebook/docusaurus',
+          href: 'https://github.com/ruseleredu/hil-docs',
           label: 'GitHub',
           position: 'right',
         },
