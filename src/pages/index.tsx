@@ -1,4 +1,4 @@
-import type {ReactNode} from 'react';
+import type { ReactNode } from 'react';
 import clsx from 'clsx';
 import Link from '@docusaurus/Link';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
@@ -9,7 +9,7 @@ import Heading from '@theme/Heading';
 import styles from './index.module.css';
 
 function HomepageHeader() {
-  const {siteConfig} = useDocusaurusContext();
+  const { siteConfig } = useDocusaurusContext();
   return (
     <header className={clsx('hero hero--primary', styles.heroBanner)}>
       <div className="container">
@@ -21,7 +21,19 @@ function HomepageHeader() {
           <Link
             className="button button--secondary button--lg"
             to="/docs/intro">
-            Docusaurus Tutorial - 5min ⏱️
+            Docusaurus⏱️
+          </Link>
+          <Link
+            className="button button--secondary button--lg"
+            href="https://www.typhoon-hil.com/support/documentation/"
+          >
+            Documentation 🌎
+          </Link>
+          <Link
+            className="button button--secondary button--lg"
+            href="https://www.typhoon-hil.com/documentation/typhoon-hil-hardware-manual/hil402_user_guide/topics/hil402_abstract.html"
+          >
+            HIL402 🌎
           </Link>
         </div>
       </div>
@@ -30,11 +42,11 @@ function HomepageHeader() {
 }
 
 export default function Home(): ReactNode {
-  const {siteConfig} = useDocusaurusContext();
+  const { siteConfig } = useDocusaurusContext();
   return (
     <Layout
-      title={`Hello from ${siteConfig.title}`}
-      description="Description will go into a meta tag in <head />">
+      title={`${siteConfig.title}`}
+      description="Hardware-in-the-Loop simulation with HIL402 Device.">
       <HomepageHeader />
       <main>
         <HomepageFeatures />
