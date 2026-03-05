@@ -2,6 +2,7 @@ import { themes as prismThemes } from 'prism-react-renderer';
 import type { Config } from '@docusaurus/types';
 import type * as Preset from '@docusaurus/preset-classic';
 import footer from "./footer"; // No need for .ts extension here
+import navbarItems from "./navbar"; // Import your new navbar file
 
 import remarkMath from 'remark-math';
 import rehypeKatex from 'rehype-katex';
@@ -106,20 +107,7 @@ const config: Config = {
         alt: 'Hardware-in-the-Loop simulation solutions.',
         src: 'img/logo_hil.svg',
       },
-      items: [
-        {
-          type: 'docSidebar',
-          sidebarId: 'tutorialSidebar',
-          position: 'left',
-          label: 'Tutorial',
-        },
-        { to: '/blog', label: 'Blog', position: 'left' },
-        {
-          href: 'https://github.com/ruseleredu/hil-docs',
-          label: 'GitHub',
-          position: 'right',
-        },
-      ],
+      items: navbarItems, // Drop the imported array here
     },
     footer: footer, // Use the imported object
     prism: {
