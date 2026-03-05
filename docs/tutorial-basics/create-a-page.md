@@ -41,3 +41,13 @@ This is a Markdown page
 ```
 
 A new page is now available at [http://localhost:3000/my-markdown-page](http://localhost:3000/my-markdown-page).
+
+## Example Mermaid diagram
+
+```mermaid
+graph TD;
+    A-->B;
+    A-->C;
+    B-->D;
+    C-->D;
+```
