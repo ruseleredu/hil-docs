@@ -1,47 +1,28 @@
 ---
-sidebar_position: 1
+id: Intro
+sidebar_position: 2
+title: Intro
+description: Industry’s first notebook size Hardware-in-the-Loop system.
 ---
 
-# Tutorial Intro
+## The game changing deal for academia research and power electronics teaching lab
 
-Let's discover **Docusaurus in less than 5 minutes**.
+The Department of Automation and Electrical Engineering – [DAELT](https://utfpr.curitiba.br/daelt/) is happy to announce that the [Power Electronics Group](http://dgp.cnpq.br/dgp/espelhogrupo/0948202571281753), in a contest led by professor Adriano Ruseler, won a [HIL402](https://www.typhoon-hil.com/doc/products/Typhoon-HIL402-brochure.pdf) academic package as a main reward at [Typhoon HIL](https://www.typhoon-hil.com/)’s academic program competition “10 for 10”.
 
-## Getting Started
+![HIL402](/img/HIL402_Side_Transparent.webp)
 
-Get started by **creating a new site**.
+Typhoon HIL is the market and technology leader in the rapidly-growing field of ultra-high-fidelity controller-Hardware-in-the-Loop (C-HIL) simulation for power electronics, microgrids, distribution networks and next generation power electronics teaching lab.
 
-Or **try Docusaurus immediately** with **[docusaurus.new](https://docusaurus.new)**.
+Next generation power electronics teaching lab
 
-### What you'll need
+Accelerate and enrich your students’ power electronics learning experience with a completely safe, fully interactive, flexible, and ultra-high fidelity [Typhoon HIL’s Academic Bundle](https://info.typhoon-hil.com/hardware-in-the-loop-hil402-academic-bundle).
 
-- [Node.js](https://nodejs.org/en/download/) version 20.0 or above:
-  - When installing Node.js, you are recommended to check all checkboxes related to dependencies.
+## Download Typhoon HIL Software
 
-## Generate a new site
+- [Download Center](https://www.typhoon-hil.com/products/software/download-center/)
+- [Documentation](https://www.typhoon-hil.com/support/documentation/)
+- [Previous Software Versions](https://subscription.typhoon-hil.com/download/previous-versions/)
 
-Generate a new Docusaurus site using the **classic template**.
+## Learn online
 
-The classic template will automatically be added to your project after you run the command:
-
-```bash
-npm init docusaurus@latest my-website classic
-```
-
-You can type this command into Command Prompt, Powershell, Terminal, or any other integrated terminal of your code editor.
-
-The command also installs all necessary dependencies you need to run Docusaurus.
-
-## Start your site
-
-Run the development server:
-
-```bash
-cd my-website
-npm run start
-```
-
-The `cd` command changes the directory you're working with. In order to work with your newly created Docusaurus site, you'll need to navigate the terminal there.
-
-The `npm run start` command builds your website locally and serves it through a development server, ready for you to view at http://localhost:3000/.
-
-Open `docs/intro.md` (this page) and edit some lines: the site **reloads automatically** and displays your changes.
+- https://hil.academy/
