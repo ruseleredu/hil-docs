@@ -1,4 +1,4 @@
-// sidebarsutfpr.js
+// hilsidebars.js
 
 /** @type {import('@docusaurus/plugin-content-docs').SidebarsConfig} */
 const hilsidebars = {

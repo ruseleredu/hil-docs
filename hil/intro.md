@@ -1,10 +1,28 @@
 ---
 id: intro
-sidebar_position: 1
-title: HIL intro
-description: HIL intro
+sidebar_position: 2
+title: Introduction
+description: Industry’s first notebook size Hardware-in-the-Loop system.
 ---
 
-## HIL intro
+## The game changing deal for academia research and power electronics teaching lab
 
-- [Typhon HIL Interface Cards](https://www.typhoon-hil.com/products/hil-interfaces/)
+The Department of Automation and Electrical Engineering – [DAELT](https://utfpr.curitiba.br/daelt/) is happy to announce that the [Power Electronics Group](http://dgp.cnpq.br/dgp/espelhogrupo/0948202571281753), in a contest led by professor Adriano Ruseler, won a [HIL402](https://www.typhoon-hil.com/doc/products/Typhoon-HIL402-brochure.pdf) academic package as a main reward at [Typhoon HIL](https://www.typhoon-hil.com/)’s academic program competition “10 for 10”.
+
+![HIL402](/img/HIL402_Side_Transparent.webp)
+
+Typhoon HIL is the market and technology leader in the rapidly-growing field of ultra-high-fidelity controller-Hardware-in-the-Loop (C-HIL) simulation for power electronics, microgrids, distribution networks and next generation power electronics teaching lab.
+
+Next generation power electronics teaching lab
+
+Accelerate and enrich your students’ power electronics learning experience with a completely safe, fully interactive, flexible, and ultra-high fidelity [Typhoon HIL’s Academic Bundle](https://info.typhoon-hil.com/hardware-in-the-loop-hil402-academic-bundle).
+
+## Download Typhoon HIL Software
+
+- [Download Center](https://www.typhoon-hil.com/products/software/download-center/)
+- [Documentation](https://www.typhoon-hil.com/support/documentation/)
+- [Previous Software Versions](https://subscription.typhoon-hil.com/download/previous-versions/)
+
+## Learn online
+
+- https://hil.academy/
