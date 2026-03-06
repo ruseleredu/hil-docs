@@ -1,0 +1,11 @@
+{
+  "position": 5,
+  "label": "CCStudio",
+  "className": "category-highlight",
+  "link": {
+    "type": "generated-index",
+    "title": "CCStudio",
+    "description": "CCStudio™ integrated development environment (IDE) related documentation and resources.",
+    "slug": "/ccstudio"
+  }
+}

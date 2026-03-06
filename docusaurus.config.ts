@@ -112,6 +112,22 @@ const config: Config = {
         // ... other options specific to your API docs
       },
     ],
+    [
+      "@docusaurus/plugin-content-docs",
+      /** @type {import('@docusaurus/plugin-content-docs').Options} */
+      {
+        id: "ti", // Unique ID for this docs instance
+        path: "ti", // Path to your API docs folder
+        routeBasePath: "ti", // Base URL for these docs (e.g., yoursite.com/api/...)
+        sidebarPath: require.resolve("./tisidebars.ts"), // Separate sidebar for TI docs
+        // 👇 Add this line for the last update time
+        showLastUpdateAuthor: true,
+        showLastUpdateTime: true,
+        remarkPlugins: [remarkMath],
+        rehypePlugins: [rehypeKatex],
+        // ... other options specific to your API docs
+      },
+    ],
   ],
 
   themeConfig: {

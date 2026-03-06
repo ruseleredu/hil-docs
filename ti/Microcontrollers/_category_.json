@@ -1,0 +1,11 @@
+{
+  "position": 4,
+  "label": "Microcontrollers",
+  "className": "category-highlight",
+  "link": {
+    "type": "generated-index",
+    "title": "Microcontrollers",
+    "description": "Microcontrollers related documentation and resources.",
+    "slug": "/microcontrollers"
+  }
+}

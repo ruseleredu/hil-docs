@@ -1,0 +1,11 @@
+{
+  "position": 2,
+  "label": "TI LaunchPad",
+  "className": "category-highlight",
+  "link": {
+    "type": "generated-index",
+    "title": "TI LaunchPad",
+    "description": "TI LaunchPad related documentation and resources.",
+    "slug": "/launchpad"
+  }
+}
