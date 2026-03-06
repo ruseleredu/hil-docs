@@ -1,0 +1,11 @@
+{
+  "position": 4,
+  "label": "Typhoon HIL Control Center",
+  "className": "category-highlight",
+  "link": {
+    "type": "generated-index",
+    "title": "Typhoon HIL Control Center",
+    "description": "Typhoon HIL Control Center related documentation and resources.",
+    "slug": "/thcc"
+  }
+}

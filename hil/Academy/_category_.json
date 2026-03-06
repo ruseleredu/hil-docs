@@ -1,0 +1,11 @@
+{
+  "position": 2,
+  "label": "Academy",
+  "className": "category-highlight",
+  "link": {
+    "type": "generated-index",
+    "title": "Academy",
+    "description": "Academy related documentation and resources.",
+    "slug": "/academy"
+  }
+}

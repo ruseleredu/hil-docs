@@ -15,6 +15,18 @@ const navbarItems: NavbarItem[] = [
         type: "dropdown",
         items: [
             {
+                to: "/hil/academy",
+                label: "Academy",
+            },
+            {
+                to: "/hil/hil402",
+                label: "HIL402",
+            },
+            {
+                to: "/hil/thcc",
+                label: "Control Center",
+            },
+            {
                 to: "/hil/interfaces",
                 label: "Interfaces",
             },
@@ -49,7 +61,7 @@ const navbarItems: NavbarItem[] = [
             },
         ],
     },
-    { to: '/blog', label: 'Blog', position: 'left' },
+    //{ to: '/blog', label: 'Blog', position: 'left' },
     {
         href: 'https://github.com/ruseleredu/hil-docs',
         label: 'GitHub',
