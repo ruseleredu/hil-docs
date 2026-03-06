@@ -1,0 +1,11 @@
+{
+  "position": 2,
+  "label": "HIL Interfaces",
+  "className": "category-highlight",
+  "link": {
+    "type": "generated-index",
+    "title": "HIL Interfaces",
+    "description": "HIL Interfaces related documentation and resources.",
+    "slug": "/hil/interfaces"
+  }
+}

@@ -7,6 +7,12 @@ const navbarItems: NavbarItem[] = [
         position: 'left',
         label: 'Tutorial',
     },
+    {
+        to: '/hil/intro', // Link to a page in your API docs
+        label: 'HIL',
+        position: 'left',
+        activeBaseRegex: `/hil/`, // Highlight when any API doc is active
+    },
     { to: '/blog', label: 'Blog', position: 'left' },
     {
         href: 'https://github.com/ruseleredu/hil-docs',

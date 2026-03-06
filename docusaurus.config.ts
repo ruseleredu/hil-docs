@@ -95,6 +95,25 @@ const config: Config = {
     ],
   ],
 
+  plugins: [
+    [
+      "@docusaurus/plugin-content-docs",
+      /** @type {import('@docusaurus/plugin-content-docs').Options} */
+      {
+        id: "hil", // Unique ID for this docs instance
+        path: "hil", // Path to your API docs folder
+        routeBasePath: "hil", // Base URL for these docs (e.g., yoursite.com/api/...)
+        sidebarPath: require.resolve("./hilsidebars.ts"), // Separate sidebar for API docs
+        // 👇 Add this line for the last update time
+        showLastUpdateAuthor: true,
+        showLastUpdateTime: true,
+        remarkPlugins: [remarkMath],
+        rehypePlugins: [rehypeKatex],
+        // ... other options specific to your API docs
+      },
+    ],
+  ],
+
   themeConfig: {
     // Replace with your project's social card
     image: 'img/card_hil_text.png',
@@ -113,6 +132,17 @@ const config: Config = {
     prism: {
       theme: prismThemes.github,
       darkTheme: prismThemes.dracula,
+      additionalLanguages: [
+        "autohotkey",
+        "arduino",
+        "apacheconf",
+        "nginx",
+        "bash",
+        "matlab",
+        "powershell",
+        "ini",
+        "latex",
+      ],
     },
   } satisfies Preset.ThemeConfig,
 };

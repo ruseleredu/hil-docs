@@ -22,6 +22,21 @@ const footer: ThemeConfig["footer"] = {
             title: "Docs",
             items: [{ label: "Tutorial", to: "/docs/intro" }],
         },
+        {
+            title: "HIL Interfaces",
+            items: [
+                { label: "Connect", to: "/hil/Interfaces/hil-connect" },
+                { label: "Breakout Board", to: "/hil/Interfaces/hil-breakout-board" },
+                { label: "Combined Charging System", to: "/hil/Interfaces/hil-ccs-interface-card" },
+                { label: "TI LaunchPad Interface", to: "/hil/Interfaces/hil-ti-launchpad-interface" },
+                { label: "TI DSP 180", to: "/hil/Interfaces/hil-ti-dsp-180-interface" },
+                { label: "TI μGrid LaunchPad", to: "/hil/Interfaces/hil-ti-ugrid-launchpad-interface" },
+                { label: "Infineon", to: "/hil/Interfaces/hil-infineon-interface-cards" },
+                { label: "dSpace", to: "/hil/Interfaces/hil-dspace-interface-cards" },
+                { label: "Calibration", to: "/hil/Interfaces/hil-calibration-cards" },
+                { label: "Nucleo - 64", to: "/hil/Interfaces/hil-nucleo-64-interface-card" }
+            ],
+        },
         // ... rest of your links
     ],
     copyright: COPYRIGHT_STRING,
