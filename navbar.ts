@@ -61,6 +61,19 @@ const navbarItems: NavbarItem[] = [
             },
         ],
     },
+    {
+        to: '/win/intro', // Link to a page in your API docs
+        label: 'Win',
+        position: 'left',
+        activeBaseRegex: `/win/`, // Highlight when any API doc is active
+        type: "dropdown",
+        items: [
+            {
+                to: "/win/winget",
+                label: "WinGet",
+            },
+        ],
+    },
     //{ to: '/blog', label: 'Blog', position: 'left' },
     {
         href: 'https://github.com/ruseleredu/hil-docs',

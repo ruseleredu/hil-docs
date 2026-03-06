@@ -128,6 +128,22 @@ const config: Config = {
         // ... other options specific to your API docs
       },
     ],
+    [
+      "@docusaurus/plugin-content-docs",
+      /** @type {import('@docusaurus/plugin-content-docs').Options} */
+      {
+        id: "win", // Unique ID for this docs instance
+        path: "win", // Path to your API docs folder
+        routeBasePath: "win", // Base URL for these docs (e.g., yoursite.com/api/...)
+        sidebarPath: require.resolve("./winsidebars.ts"), // Separate sidebar for Windows docs
+        // 👇 Add this line for the last update time
+        showLastUpdateAuthor: true,
+        showLastUpdateTime: true,
+        remarkPlugins: [remarkMath],
+        rehypePlugins: [rehypeKatex],
+        // ... other options specific to your API docs
+      },
+    ],
   ],
 
   themeConfig: {
