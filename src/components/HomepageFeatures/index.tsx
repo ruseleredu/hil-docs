@@ -1,52 +1,52 @@
-import type {ReactNode} from 'react';
+import type { ReactNode, ComponentType, ComponentProps } from 'react';
 import clsx from 'clsx';
 import Heading from '@theme/Heading';
 import styles from './styles.module.css';
 
 type FeatureItem = {
   title: string;
-  Svg: React.ComponentType<React.ComponentProps<'svg'>>;
+  // UPDATE: Allow string for imported image paths (.png, .webp)
+  Svg: ComponentType<ComponentProps<'svg'>> | string;
   description: ReactNode;
+  className?: string;
 };
 
 const FeatureList: FeatureItem[] = [
   {
-    title: 'Easy to Use',
-    Svg: require('@site/static/img/undraw_docusaurus_mountain.svg').default,
-    description: (
-      <>
-        Docusaurus was designed from the ground up to be easily installed and
-        used to get your website up and running quickly.
-      </>
-    ),
+    title: 'TMDSCNCD28379D',
+    Svg: require('@site/static/img/tmdscncd28379d-angled.png').default,
+    className: styles.hilImage,
+    description: <>F28379D development kit for C2000™ Delfino MCU controlCARD™.</>,
   },
   {
-    title: 'Focus on What Matters',
-    Svg: require('@site/static/img/undraw_docusaurus_tree.svg').default,
-    description: (
-      <>
-        Docusaurus lets you focus on your docs, and we&apos;ll do the chores. Go
-        ahead and move your docs into the <code>docs</code> directory.
-      </>
-    ),
+    title: 'HIL DSP 180 Interface',
+    Svg: require('@site/static/img/hil_dsp_180_interface_01.png').default,
+    className: styles.hilImage,
+    description: <>An interface board which allows for connecting Texas Instruments Control Card boards to Typhoon HIL simulators.</>,
   },
   {
-    title: 'Powered by React',
-    Svg: require('@site/static/img/undraw_docusaurus_react.svg').default,
-    description: (
-      <>
-        Extend or customize your website layout by reusing React. Docusaurus can
-        be extended while reusing the same header and footer.
-      </>
-    ),
+    title: 'HIL402 Device',
+    Svg: require('@site/static/img/HIL402_Side_Transparent.webp').default,
+    className: styles.hilImage,
+    description: <>Typhoon HIL simulator devices are dedicated hardware devices that enable you to perform real-time testing.</>,
   },
 ];
 
-function Feature({title, Svg, description}: FeatureItem) {
+// UPDATE: Explicitly type the function props using FeatureItem
+function Feature({ Svg, title, description, className }: FeatureItem) {
   return (
     <div className={clsx('col col--4')}>
       <div className="text--center">
-        <Svg className={styles.featureSvg} role="img" />
+        {typeof Svg === 'string' ? (
+          <img
+            src={Svg}
+            // Uses your custom hilImage style, falls back to default if not provided
+            className={className ?? styles.featureSvg}
+            alt={title}
+          />
+        ) : (
+          <Svg className={styles.featureSvg} role="img" />
+        )}
       </div>
       <div className="text--center padding-horiz--md">
         <Heading as="h3">{title}</Heading>

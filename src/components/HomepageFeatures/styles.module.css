@@ -5,7 +5,16 @@
   width: 100%;
 }
 
+/* Style for the feature image */
 .featureSvg {
   height: 200px;
   width: 200px;
+}
+
+/* Specific style for your HIL402 image */
+.hilImage {
+  height: 200px;
+  width: auto; /* Allows it to expand horizontally */
+  max-width: 100%; /* Prevents it from bleeding into other columns */
+  object-fit: contain; /* Ensures the whole image is visible */
 }
