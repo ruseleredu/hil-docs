@@ -33,3 +33,8 @@ html[data-navbar="false"] .navbar {
 html[data-red-border] div#__docusaurus {
   border: red solid thick;
 }
+
+/* Removes the external link icon specifically in the footer */
+.footer__link-item svg {
+  display: none;
+}
