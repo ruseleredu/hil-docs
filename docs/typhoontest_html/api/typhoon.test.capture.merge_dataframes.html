@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+
+<html lang="en" data-content_root="../">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>merge_dataframes &#8212;  1.35.3 documentation</title>
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinxdoc.css?v=34905f61" />
+    <link rel="stylesheet" type="text/css" href="../_static/graphviz.css?v=4ae1632d" />
+    <script src="../_static/documentation_options.js?v=62a126fb"></script>
+    <script src="../_static/doctools.js?v=9bcbadda"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="read" href="typhoon.test.capture.read.html" />
+    <link rel="prev" title="get_capture_results" href="typhoon.test.capture.get_capture_results.html" /> 
+  </head><body>
+    <div class="related" role="navigation" aria-label="Related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="typhoon.test.capture.read.html" title="read"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="typhoon.test.capture.get_capture_results.html" title="get_capture_results"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html"> 1.35.3 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">merge_dataframes</a></li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <section id="merge-dataframes">
+<h1>merge_dataframes<a class="headerlink" href="#merge-dataframes" title="Link to this heading">¶</a></h1>
+<dl class="py function">
+<dt class="sig sig-object py" id="typhoon.test.capture.merge_dataframes">
+<span class="sig-prename descclassname"><span class="pre">typhoon.test.capture.</span></span><span class="sig-name descname"><span class="pre">merge_dataframes</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">left</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">right</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">interpolation_method</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'time'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">rename_repeated</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#typhoon.test.capture.merge_dataframes" title="Link to this definition">¶</a></dt>
+<dd><p>Merge two DataFrame objects with a database-style join. This function is wrapper around pandas.DataFrame.merge
+and pandas.DataFrame.resample functions:
+<a class="reference external" href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.merge.html">https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.merge.html</a> and
+<a class="reference external" href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.resample.html">https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.resample.html</a>.
+Join is done on indexes of DataFrames, which should both be pandas.Timedelta.
+The ‘right’ DataFrame is merged to the left by using outer join style to preserve all the data for interpolation,
+which comes consequently. After that, dataframe is resampled with time between first two samples of the left dataframe
+used as sample time. If left dataframe has syncronous data (and it is good practice to put synchronous dataframe as
+left), the resulting dataframe would have the same indices as the left.
+First valid value is used to replace all NaN values before it.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>left</strong> (<em>pandas.DataFrame</em>) – DataFrame object used on the left side of the join operation</p></li>
+<li><p><strong>right</strong> (<em>pandas.DataFrame</em>) – DataFrame object used on the right side of the join operation</p></li>
+<li><p><strong>interpolation_method</strong> (<em>{'time'</em><em>, </em><em>'pad'}</em><em>, </em><em>default 'time'</em>) – <p>Method to replace NaN values after the first valid value. Available methods:</p>
+<ul>
+<li><div class="line-block">
+<div class="line">’time’: same argument from pandas.DataFrame.interpolate: <a class="reference external" href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.interpolate.html">link</a></div>
+<div class="line">It can be viewed as piece-wise linear interpolation based on pandas.Timedelta index of the DataFrame: Gap is filled by doing linear interpolation between the previous and the next valid value.</div>
+</div>
+</li>
+<li><div class="line-block">
+<div class="line">’pad’: This method is using existing values to fill in NaNs.</div>
+<div class="line">The last valid observation is used to fill the gap.</div>
+</div>
+</li>
+</ul>
+</p></li>
+<li><p><strong>rename_repeated</strong> (<em>bool</em><em>, </em><em>default False</em>) – <ul>
+<li><p>False: If ‘left’ and ‘right’ DataFrames have any columns with the same name, a NameError Exception is raised.</p></li>
+<li><div class="line-block">
+<div class="line">True: If ‘left’ and ‘right’ DataFrames have any columns with the same name, they are renamed.</div>
+<div class="line">It is attached ‘_x’ and ‘_y’ to the end of their names, respectively.</div>
+</div>
+</li>
+</ul>
+</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Merged DataFrame object with signals from both input DataFrames</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>pandas.DataFrame</p>
+</dd>
+</dl>
+<p class="rubric">Examples</p>
+</dd></dl>
+
+</section>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="Main">
+        <div class="sphinxsidebarwrapper">
+            <p class="logo"><a href="../index.html">
+              <img class="logo" src="../_static/logo.png" alt="Logo of "/>
+            </a></p>
+  <div>
+    <h4>Previous topic</h4>
+    <p class="topless"><a href="typhoon.test.capture.get_capture_results.html"
+                          title="previous chapter">get_capture_results</a></p>
+  </div>
+  <div>
+    <h4>Next topic</h4>
+    <p class="topless"><a href="typhoon.test.capture.read.html"
+                          title="next chapter">read</a></p>
+  </div>
+<search id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</search>
+<script>document.getElementById('searchbox').style.display = "block"</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="Related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="typhoon.test.capture.read.html" title="read"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="typhoon.test.capture.get_capture_results.html" title="get_capture_results"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html"> 1.35.3 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">merge_dataframes</a></li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+    &#169; Copyright .
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 8.2.1.
+    </div>
+  </body>
+</html>

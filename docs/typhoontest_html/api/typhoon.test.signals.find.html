@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+
+<html lang="en" data-content_root="../">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>find &#8212;  1.35.3 documentation</title>
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinxdoc.css?v=34905f61" />
+    <link rel="stylesheet" type="text/css" href="../_static/graphviz.css?v=4ae1632d" />
+    <script src="../_static/documentation_options.js?v=62a126fb"></script>
+    <script src="../_static/doctools.js?v=9bcbadda"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="find_all" href="typhoon.test.signals.find_all.html" />
+    <link rel="prev" title="assert_is_step" href="typhoon.test.signals.assert_is_step.html" /> 
+  </head><body>
+    <div class="related" role="navigation" aria-label="Related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="typhoon.test.signals.find_all.html" title="find_all"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="typhoon.test.signals.assert_is_step.html" title="assert_is_step"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html"> 1.35.3 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">find</a></li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <section id="find">
+<h1>find<a class="headerlink" href="#find" title="Link to this heading">¶</a></h1>
+<dl class="py function">
+<dt class="sig sig-object py" id="typhoon.test.signals.find">
+<span class="sig-prename descclassname"><span class="pre">typhoon.test.signals.</span></span><span class="sig-name descname"><span class="pre">find</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">signal</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">region</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">value</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">from_region</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">during</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#typhoon.test.signals.find" title="Link to this definition">¶</a></dt>
+<dd><p>Like the function typhoon.test.signals.find_all, it finds the desired characteristic on the signal. The difference
+is that find function looks only for the first occurrence of described behaviour, while find_all function returns the
+list of all moments where that condition is met.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>signal</strong> (<em>pandas.Series</em>) – Signal to be tested for.</p></li>
+<li><p><strong>region</strong> (<em>string</em>) – Can be “at”, “outside”, “above” or “below”. The option “outside” means “above” or “below”.</p></li>
+<li><p><strong>value</strong> (<em>float</em><em> or </em><em>tuple</em>) – Defines the region as a single number or range.</p></li>
+<li><p><strong>from_region</strong> (<em>string</em>) – Defines which region the signal should be prior to the desired region. Use this to detect transitions.</p></li>
+<li><p><strong>during</strong> (<em>tuple</em>) – Time period (as a range) to be considered for analysis.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><strong>result</strong> – Time of detected behavior</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference internal" href="typhoon.types.timedelta.Timedelta.html#typhoon.types.timedelta.Timedelta" title="typhoon.types.timedelta.Timedelta">Timedelta</a></p>
+</dd>
+<dt class="field-even">Raises<span class="colon">:</span></dt>
+<dd class="field-even"><p><strong>Exception</strong> – If the desired characteristic could not be detected.</p>
+</dd>
+</dl>
+<p class="rubric">Examples</p>
+<p>First moment when Power is inside the range. Detects even if signal already starts in the range.</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">t</span> <span class="o">=</span> <span class="n">find</span><span class="p">(</span><span class="n">capture</span><span class="p">[</span><span class="s2">&quot;P&quot;</span><span class="p">],</span> <span class="n">region</span><span class="o">=</span><span class="s2">&quot;at&quot;</span><span class="p">,</span> <span class="n">value</span><span class="o">=</span><span class="p">(</span><span class="mi">900</span><span class="p">,</span><span class="mi">1000</span><span class="p">))</span>
+</pre></div>
+</div>
+<p>Almost same as before but require the signal to be outside the range prior entering it. Detects the transition to the range from above or below</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">t</span> <span class="o">=</span> <span class="n">find</span><span class="p">(</span><span class="n">capture</span><span class="p">[</span><span class="s2">&quot;P&quot;</span><span class="p">],</span> <span class="n">region</span><span class="o">=</span><span class="s2">&quot;at&quot;</span><span class="p">,</span> <span class="n">value</span><span class="o">=</span><span class="p">(</span><span class="mi">900</span><span class="p">,</span><span class="mi">1000</span><span class="p">),</span> <span class="n">from_region</span><span class="o">=</span><span class="s2">&quot;outside&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Detecting a rising edge, when power goes above 1000</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">t</span> <span class="o">=</span> <span class="n">find</span><span class="p">(</span><span class="n">capture</span><span class="p">[</span><span class="s2">&quot;P&quot;</span><span class="p">],</span> <span class="n">region</span><span class="o">=</span><span class="s2">&quot;above&quot;</span><span class="p">,</span> <span class="n">value</span><span class="o">=</span><span class="mi">1000</span><span class="p">,</span> <span class="n">from_region</span><span class="o">=</span><span class="s2">&quot;below&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<p><a class="reference internal" href="typhoon.test.signals.find_all.html#typhoon.test.signals.find_all" title="typhoon.test.signals.find_all"><code class="xref py py-obj docutils literal notranslate"><span class="pre">typhoon.test.signals.find_all</span></code></a>, <a class="reference internal" href="typhoon.test.signals.find_edges.html#typhoon.test.signals.find_edges" title="typhoon.test.signals.find_edges"><code class="xref py py-obj docutils literal notranslate"><span class="pre">typhoon.test.signals.find_edges</span></code></a>, <a class="reference internal" href="typhoon.test.capture.wait_until.html#typhoon.test.capture.wait_until" title="typhoon.test.capture.wait_until"><code class="xref py py-obj docutils literal notranslate"><span class="pre">typhoon.test.capture.wait_until</span></code></a></p>
+</div>
+</dd></dl>
+
+</section>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="Main">
+        <div class="sphinxsidebarwrapper">
+            <p class="logo"><a href="../index.html">
+              <img class="logo" src="../_static/logo.png" alt="Logo of "/>
+            </a></p>
+  <div>
+    <h4>Previous topic</h4>
+    <p class="topless"><a href="typhoon.test.signals.assert_is_step.html"
+                          title="previous chapter">assert_is_step</a></p>
+  </div>
+  <div>
+    <h4>Next topic</h4>
+    <p class="topless"><a href="typhoon.test.signals.find_all.html"
+                          title="next chapter">find_all</a></p>
+  </div>
+<search id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</search>
+<script>document.getElementById('searchbox').style.display = "block"</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="Related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="typhoon.test.signals.find_all.html" title="find_all"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="typhoon.test.signals.assert_is_step.html" title="assert_is_step"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html"> 1.35.3 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">find</a></li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+    &#169; Copyright .
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 8.2.1.
+    </div>
+  </body>
+</html>

@@ -1,0 +1,6 @@
+get_phasor_3ph
+==============
+
+.. currentmodule:: typhoon.test.sources
+
+.. autofunction:: get_phasor_3ph

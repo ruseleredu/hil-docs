@@ -1,0 +1,6 @@
+attach_table
+============
+
+.. currentmodule:: typhoon.test.reporting.tables
+
+.. autofunction:: attach_table

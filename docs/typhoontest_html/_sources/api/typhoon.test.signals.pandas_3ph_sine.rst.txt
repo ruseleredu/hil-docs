@@ -1,0 +1,6 @@
+pandas_3ph_sine
+===============
+
+.. currentmodule:: typhoon.test.signals
+
+.. autofunction:: pandas_3ph_sine

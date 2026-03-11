@@ -1,0 +1,6 @@
+wait
+====
+
+.. currentmodule:: typhoon.test.capture
+
+.. autofunction:: wait

@@ -1,0 +1,6 @@
+read_mdf
+========
+
+.. currentmodule:: typhoon.test.capture
+
+.. autofunction:: read_mdf

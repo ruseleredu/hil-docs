@@ -1,0 +1,6 @@
+alphabetagamma_to_abc
+=====================
+
+.. currentmodule:: typhoon.test.transformations
+
+.. autofunction:: alphabetagamma_to_abc

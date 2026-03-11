@@ -1,0 +1,6 @@
+before
+======
+
+.. currentmodule:: typhoon.test.ranges
+
+.. autofunction:: before

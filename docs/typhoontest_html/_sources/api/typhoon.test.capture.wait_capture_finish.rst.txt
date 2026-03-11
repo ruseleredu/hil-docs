@@ -1,0 +1,6 @@
+wait_capture_finish
+===================
+
+.. currentmodule:: typhoon.test.capture
+
+.. autofunction:: wait_capture_finish

@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+
+<html lang="en" data-content_root="../">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>three_phase_power &#8212;  1.35.3 documentation</title>
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinxdoc.css?v=34905f61" />
+    <link rel="stylesheet" type="text/css" href="../_static/graphviz.css?v=4ae1632d" />
+    <script src="../_static/documentation_options.js?v=62a126fb"></script>
+    <script src="../_static/doctools.js?v=9bcbadda"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="abc_to_alphabetagamma" href="typhoon.test.transformations.abc_to_alphabetagamma.html" />
+    <link rel="prev" title="window_rms" href="typhoon.test.rms.window_rms.html" /> 
+  </head><body>
+    <div class="related" role="navigation" aria-label="Related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="typhoon.test.transformations.abc_to_alphabetagamma.html" title="abc_to_alphabetagamma"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="typhoon.test.rms.window_rms.html" title="window_rms"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html"> 1.35.3 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">three_phase_power</a></li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <section id="three-phase-power">
+<h1>three_phase_power<a class="headerlink" href="#three-phase-power" title="Link to this heading">¶</a></h1>
+<dl class="py function">
+<dt class="sig sig-object py" id="typhoon.test.power.three_phase_power">
+<span class="sig-prename descclassname"><span class="pre">typhoon.test.power.</span></span><span class="sig-name descname"><span class="pre">three_phase_power</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">voltages</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">currents</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">window_length</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.02</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#typhoon.test.power.three_phase_power" title="Link to this definition">¶</a></dt>
+<dd><p>Calculates three phase power for three-phase systems with both three and four wires. Calculation is based on
+instantaneous power theory. Compared to conventional power theory, which is using voltage and current rms values to
+compute power values, which makes it valid only for steady state analysis, instantaneous power theory utilizes
+instantaneous voltage and current values to compute instantaneous real, reactive and zero power. Consequently,
+this theory is useful for both transient and steady-state analysis, which is more suitable for power electronics
+applications.</p>
+<p>Inputs are phase voltages and phase currents of the observed three-phase system, while the output is
+pandas.DataFrame with 8 signals:</p>
+<ul class="simple">
+<li><p>Pinst - instantaneous real power;</p></li>
+<li><p>Qinst - instantaneous reactive power;</p></li>
+<li><p>P0inst - instantaneous zero power;</p></li>
+<li><dl class="simple">
+<dt>Pavg - average value of the instantaneous real power, calculated with moving average function: see</dt><dd><p>‘typhoon.test.signals.filtering.moving_average;</p>
+</dd>
+</dl>
+</li>
+<li><p>Qavg - average value of the instantaneous reactive power, calculated with the same moving average principle;</p></li>
+<li><p>P0avg - average value of the instantaneous zero power, calculated with the same moving average principle;</p></li>
+<li><p>S - apparent power, calculated as the sqrt(Pavg^2 + Qavg^2);</p></li>
+<li><p>pf - power factor, calculated as the ratio between average real power and apparent power</p></li>
+</ul>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>voltages</strong> (<em>pandas.DataFrame</em>) – DataFrame containing three columns, one for every phase voltage</p></li>
+<li><p><strong>currents</strong> (<em>pd.DataFrame</em>) – DataFrame containing three columns, one for every phase current</p></li>
+<li><p><strong>window_length</strong> (<em>float - default 1/50</em>) – Value that defines size of the window that is used for calculating average power values from instantaneous ones.
+To get the valid result for average powers, window_length should last for whole number of voltage periods.
+Defaults to 1/50, which is one period for the 50Hz signal.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><strong>result</strong> – DataFrame containing all eight output signals that are already mentioned. Appropriate signals can be selected
+by using same labels which are mentioned in signal explanation above: Pinst, Qinst, P0inst, Pavg, Qavg, P0avg,
+S and pf respectively.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>pandas.DataFrame</p>
+</dd>
+</dl>
+<p class="rubric">Examples</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span><span class="w"> </span><span class="nn">typhoon.test.signals</span><span class="w"> </span><span class="kn">import</span> <span class="n">pandas_3ph_sine</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span><span class="w"> </span><span class="nn">typhoon.test.power</span><span class="w"> </span><span class="kn">import</span> <span class="n">three_phase_power</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="c1"># create voltages and currents DataFrame, which represents three phase system whose power is being measured</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">voltages</span> <span class="o">=</span> <span class="n">pandas_3ph_sine</span><span class="p">(</span><span class="n">amplitude</span><span class="o">=</span><span class="mi">100</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">2</span><span class="p">),</span> <span class="n">frequency</span><span class="o">=</span><span class="mi">50</span><span class="p">,</span> <span class="n">Ts</span><span class="o">=</span><span class="mf">1e-6</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">currents</span> <span class="o">=</span> <span class="n">pandas_3ph_sine</span><span class="p">(</span><span class="n">amplitude</span><span class="o">=</span><span class="mi">100</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">2</span><span class="p">),</span> <span class="n">frequency</span><span class="o">=</span><span class="mi">50</span><span class="p">,</span> <span class="n">Ts</span><span class="o">=</span><span class="mf">1e-6</span><span class="p">,</span> <span class="n">phase</span><span class="o">=</span><span class="mi">45</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="c1"># calculate three phase power</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">powers</span> <span class="o">=</span> <span class="n">three_phase_power</span><span class="p">(</span><span class="n">voltages</span><span class="p">,</span> <span class="n">currents</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="c1"># select all power signals</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">p_inst</span> <span class="o">=</span> <span class="n">powers</span><span class="p">[</span><span class="s2">&quot;Pinst&quot;</span><span class="p">]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">q_inst</span> <span class="o">=</span> <span class="n">powers</span><span class="p">[</span><span class="s2">&quot;Qinst&quot;</span><span class="p">]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">p0_inst</span> <span class="o">=</span> <span class="n">powers</span><span class="p">[</span><span class="s2">&quot;P0inst&quot;</span><span class="p">]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">p_avg</span> <span class="o">=</span> <span class="n">powers</span><span class="p">[</span><span class="s2">&quot;Pavg&quot;</span><span class="p">]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">q_avg</span> <span class="o">=</span> <span class="n">powers</span><span class="p">[</span><span class="s2">&quot;Qavg&quot;</span><span class="p">]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">p0_avg</span> <span class="o">=</span> <span class="n">powers</span><span class="p">[</span><span class="s2">&quot;Pinst&quot;</span><span class="p">]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">s</span> <span class="o">=</span> <span class="n">powers</span><span class="p">[</span><span class="s2">&quot;S&quot;</span><span class="p">]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">pf</span> <span class="o">=</span> <span class="n">powers</span><span class="p">[</span><span class="s2">&quot;pf&quot;</span><span class="p">]</span>
+</pre></div>
+</div>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<p><a class="reference internal" href="typhoon.test.signals.filtering.moving_average.html#typhoon.test.signals.filtering.moving_average" title="typhoon.test.signals.filtering.moving_average"><code class="xref py py-obj docutils literal notranslate"><span class="pre">typhoon.test.signals.filtering.moving_average</span></code></a></p>
+</div>
+</dd></dl>
+
+</section>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="Main">
+        <div class="sphinxsidebarwrapper">
+            <p class="logo"><a href="../index.html">
+              <img class="logo" src="../_static/logo.png" alt="Logo of "/>
+            </a></p>
+  <div>
+    <h4>Previous topic</h4>
+    <p class="topless"><a href="typhoon.test.rms.window_rms.html"
+                          title="previous chapter">window_rms</a></p>
+  </div>
+  <div>
+    <h4>Next topic</h4>
+    <p class="topless"><a href="typhoon.test.transformations.abc_to_alphabetagamma.html"
+                          title="next chapter">abc_to_alphabetagamma</a></p>
+  </div>
+<search id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</search>
+<script>document.getElementById('searchbox').style.display = "block"</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="Related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="typhoon.test.transformations.abc_to_alphabetagamma.html" title="abc_to_alphabetagamma"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="typhoon.test.rms.window_rms.html" title="window_rms"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html"> 1.35.3 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">three_phase_power</a></li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+    &#169; Copyright .
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 8.2.1.
+    </div>
+  </body>
+</html>

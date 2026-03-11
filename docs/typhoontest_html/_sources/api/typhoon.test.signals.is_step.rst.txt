@@ -1,0 +1,6 @@
+is_step
+=======
+
+.. currentmodule:: typhoon.test.signals
+
+.. autofunction:: is_step

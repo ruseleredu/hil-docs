@@ -1,0 +1,6 @@
+frequency_content
+=================
+
+.. currentmodule:: typhoon.test.harmonic
+
+.. autofunction:: frequency_content

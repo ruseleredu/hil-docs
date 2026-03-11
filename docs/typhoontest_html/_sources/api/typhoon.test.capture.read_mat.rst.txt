@@ -1,0 +1,6 @@
+read_mat
+========
+
+.. currentmodule:: typhoon.test.capture
+
+.. autofunction:: read_mat

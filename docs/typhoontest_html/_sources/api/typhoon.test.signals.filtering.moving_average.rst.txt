@@ -1,0 +1,6 @@
+moving_average
+==============
+
+.. currentmodule:: typhoon.test.signals.filtering
+
+.. autofunction:: moving_average

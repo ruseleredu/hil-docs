@@ -1,0 +1,6 @@
+inv_symmetrical_components
+==========================
+
+.. currentmodule:: typhoon.test.transformations
+
+.. autofunction:: inv_symmetrical_components

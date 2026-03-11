@@ -1,0 +1,212 @@
+=================================
+TyphoonTest Library documentation
+=================================
+
+**What is the difference between TyphoonTest API and other Typhoon APIs?**
+
+TyphoonTest API is meant to be easier to use and abstract away from HIL-specific details,
+meaning clearer tests that convey more effectively the intent and that could be used, in
+the future, for other targets than HIL simulation.
+
+TyphoonTest API can be used together with other Typhoon APIs in the same test code without problems.
+We recommend to use TyphoonTest API functions when possible, and then use other Typhoon APIs if needed.
+For other APIs, please refer to the **Typhoon APIs' documentation** locally or
+`online <https://www.typhoon-hil.com/documentation/typhoon-hil-api-documentation/typhoon_api.html>`_.
+
+**How can I sequence and run my tests with TyphoonTest Framework?**
+
+TyphoonTest Framework uses the popular *pytest* python tool for running tests. It is fully supported in our
+TyphoonTest IDE and can also be used directly from the command line. For more information, check our `TyphoonTest IDE
+documentation <https://www.typhoon-hil.com/documentation/typhoon-hil-software-manual/concepts/typhoontest_ide.html>`_ and also check `pytest documentation <https://docs.pytest.org/en/latest/>`_.
+Typhoontest defines some new command line arguments which can be specified during pytest invocation. They are explained here :ref:`typhoontest-command-line-arguments`.
+
+.. contents::
+.. toctree::
+   :maxdepth: 2
+
+.. automodapi:: typhoon.test.capture
+    :no-inheritance-diagram:
+    :skip: AbsoluteTimeError
+    :skip: GlobalTimeSyncError
+    :skip: SimulationStopException
+
+.. automodapi:: typhoon.test.sources
+    :no-inheritance-diagram:
+.. automodapi:: typhoon.test.signals
+    :no-inheritance-diagram:
+.. automodapi:: typhoon.test.signals.filtering
+    :no-inheritance-diagram:
+.. automodapi:: typhoon.test.signals.control
+    :no-inheritance-diagram:
+.. automodapi:: typhoon.test.ranges
+    :no-inheritance-diagram:
+
+.. automodapi:: typhoon.test.harmonic
+    :no-inheritance-diagram:
+
+.. _iec 61000:
+.. automodapi:: typhoon.test.IEC61000
+    :no-inheritance-diagram:
+.. automodapi:: typhoon.test.rms
+    :no-inheritance-diagram:
+.. automodapi:: typhoon.test.power
+    :no-inheritance-diagram:
+.. automodapi:: typhoon.test.transformations
+    :no-inheritance-diagram:
+
+.. automodapi:: typhoon.types.phasors
+    :no-inheritance-diagram:
+    :skip: AliasPhasor
+    :skip: AliasTuple
+
+.. automodapi:: typhoon.test.reporting.tables
+    :no-inheritance-diagram:
+.. automodapi:: typhoon.test.reporting.messages
+    :no-inheritance-diagram:
+.. automodapi:: typhoon.test.reporting.figures
+    :no-inheritance-diagram:
+.. automodapi:: typhoon.types.timedelta
+    :no-inheritance-diagram:
+    :skip: accept_castable
+    :skip: is_float
+    :skip: is_integer
+    :skip: is_timedelta64_dtype
+    :skip: new_td_repr
+    :skip: patch_pandas
+
+.. _typhoontest-command-line-arguments:
+
+==================================================
+Pytest command-line arguments added by TyphoonTest
+==================================================
+
+TyphoonTest plugin for pytest provides several command-line arguments for test run:
+
+.. Comments for a future update:
+.. to see available markers type: pytest --markers
+.. to see available fixtures type: pytest --fixtures
+
+**Pytest and allure report operations**
+
+#. ``--alluredir=DIR`` - Generate an Allure report in the specified directory *DIR* (may not exist).
+#. ``--clean-alluredir`` - Clean *alluredir* folder, if it exists.
+#. ``--open-allure`` - Automatically opens allure-report after test run, if specified;
+#. ``--remove-capture-plots`` - Remove allure plot attachments from typhoon.test.capture.get_capture_results function. This is good way to reduce the Allure report size
+#. ``--analysis-plot-type`` - Select which plot to add to the allure report for typhoontest analysis functions for whole test run. Supported functions:
+
+  #. ``typhoon.test.signals.is_step``,
+  #. ``typhoon.test.signals.is_constant``,
+  #. ``typhoon.test.signals.is_ramp``,
+  #. ``typhoon.test.signals.is_first_order``,
+  #. ``typhoon.test.signals.follows_reference``
+
+  - There are 4 possible options:
+
+    #. ``none`` - no plot will be attached
+    #. ``static`` - matplotlib plot saved as .png image will be attached. This option saves on file size, but there is no option for any kind of interaction with the image
+    #. ``interactive`` - plot saved as html file with options to interact with signals on the plot. Much more suitable for debugging failing tests
+    #. ``all`` - all of the supported plots are attached
+
+  - The specified option applies for the whole test run, but can be overridden individually for each function call using the ``report_plot`` dictionary and its key ``type``.
+
+#. ``--analysis-plot-on-fail-only`` - Specifies if report plot of type specified with previous argument is plotted always or on fail only. If specified, plot is attached only when test fails. The specified option applies for whole test run, but it can be overridden individually for every function call: ``report_plot`` dictionary and its key ``when`` is used for that.
+
+#. ``-k EXPRESSION`` - Only run tests which match the given substring *EXPRESSION*. Example: -k 'test_method or test_other' matches all test functions and classes whose name contains 'test_method' or 'test_other', while -k 'not test_method' matches only those that don't contain 'test_method' in their names. The matching is not case-sensitive.
+#. ``--markers`` - Show markers (builtin, plugin, and per-project).
+
+#. ``-m MARKEXPR`` - Only run tests matching given mark expression *MARKEXPR*. For example: -m 'mark1 and not mark2'.
+
+#. ``--collect-only``, ``--co`` - Only collect tests, don't execute them.
+
+#. ``--keep-history`` - Keeps result history from previous test sessions and adds a results history graph to the Allure report
+
+#. ``--env-params`` - Represents path of JSON file where additional environment parameters are located. File is loaded before the execution of the first test.
+
+#. ``--disable-auto-steps`` - Disable the automatic Allure Steps used by all Typhoon APIs, except plots (See ``--remove-capture-plots`` and ``--analysis-plot-type``).
+
+#. ``enable_assertion_pass_hook=true`` - Enables the ``pytest_assertion_pass`` hook. Make sure to delete any previously generated pyc cache files. **Only for initialization file, pytest.ini**.
+
+**Command Line Real-Time logging**
+
+#. ``log_cli=true`` - Enable log display during test run (also known as "live logging"). **Only for initialization file, pytest.ini**.
+
+#. ``--log-cli-level`` - CLI logging level. During the test procedure logs from different severity levels can be written. Usually set like ``--log-cli-level=INFO``. Other severity levels:
+
+  - DEBUG (**lower**)
+  - INFO
+  - WARNING
+  - ERROR
+  - CRITICAL (**higher**)
+
+    .. Comments for a future update:
+    .. import logging
+    .. import logging.config
+
+    .. logging.config.fileConfig('logging.conf')
+
+    .. # create logger
+    .. logger = logging.getLogger('simpleExample')
+
+    .. # 'application' code
+    .. logger.debug('debug message')
+    .. logger.info('info message')
+    .. logger.warning('warn message')
+    .. logger.error('error message')
+    .. logger.critical('critical message')
+
+**PDF reporting**
+
+#. ``--generate-pdf`` - If specified, pdf containing results of test session extracted from Allure report is generated at the end of test session.
+
+#. ``--pdf-path`` - Presents custom path of generated pdf report. If not specified, the pdf report is generated inside working directory with name ``{timestamp}_report.pdf``.
+
+#. ``--pdf-title`` - Defines custom title on the cover page in the pdf report. If not specified, default title name is ``Typhoon HIL Test session report``.
+
+#. ``--pdf-title-color`` - Defines custom title color on the cover page in the pdf report. If not specified, default title color is dark gray (hex value: ``#333333``).
+
+#. ``--pdf-logo`` - Presents path of image that will be presented as custom logo on the cover page in the pdf report. If not specified, default logo on the cover page is Typhoon HIL logo.
+
+#. ``--pdf-slogan`` - Presents custom slogan that will be presented next to the logo on the cover page in pdf report. If not specified, default slogan ``Test. Design. Deploy.`` is shown on the cover page.
+
+#. ``--pdf-skip-trace`` - If specified, error traces of tests that failed or broke are omitted from the pdf report.
+
+#. ``--pdf-skip-steps`` - If specified, steps for each test case are omitted from the pdf report.
+
+#. ``--pdf-skip-plots`` - If specified, images containing plots are omitted from the pdf report.
+
+**Notice**: Attaching HTML tables to PDF report requires Chrome/Chromium browser to be installed on device that is running test session. Otherwise, HTML tables are ignored.
+
+
+**HIL devices selection**
+
+#. ``--vdev`` - Allows running tests on VHIL. Both ``--vdev`` and ``--vcfg`` need to be specified. e.g. ``--vdev=HIL402 --vcfg=1``.
+
+#. ``--vcfg`` - Defines VHIL configuration. Both ``--vdev`` and ``--vcfg`` need to be specified. e.g. ``--vdev=HIL402 --vcfg=1``.
+
+#. ``--ethdev`` - Allows defining the serial number of HILs that are used for testing on a given network. e.g. ``--ethdev="00604-00-00170, 00604-00-00171"``.
+
+#. ``--discovery-ip`` -  Allows defining the IP addresses of HILs on a network. e.g. ``--discovery-ip="192.168.0.xxx, 192.168.0.xxx"``.
+
+#. ``--fw`` - Allows defining the HIL firmware configuration number (CFG_NUMBER). e.g. ``--fw=CFG_NUMBER``.
+
+**CSV Report Real-Time**
+
+#. ``--simple-report`` - Generates a simplified report as a csv file. Supported values are: ``all``, ``setup``, ``call``, ``teardown``, ``None``. e.g. ``--simple-report=all``.
+
+**Miscellaneous options**
+
+#. ``--gc-collect`` - Garbage collector is automatically called after each executed test.
+
+=============
+Release Notes
+=============
+
+Check the Release Notes of TyphoonTest API here: :ref:`Release Notes<Release Notes>`
+
+==================
+Indices and tables
+==================
+
+* :ref:`genindex`
+* :ref:`modindex`
+* :ref:`search`

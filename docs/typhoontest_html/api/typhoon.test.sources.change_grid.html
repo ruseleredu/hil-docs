@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+
+<html lang="en" data-content_root="../">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>change_grid &#8212;  1.35.3 documentation</title>
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinxdoc.css?v=34905f61" />
+    <link rel="stylesheet" type="text/css" href="../_static/graphviz.css?v=4ae1632d" />
+    <script src="../_static/documentation_options.js?v=62a126fb"></script>
+    <script src="../_static/doctools.js?v=9bcbadda"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="get_phasor_3ph" href="typhoon.test.sources.get_phasor_3ph.html" />
+    <link rel="prev" title="wait_until" href="typhoon.test.capture.wait_until.html" /> 
+  </head><body>
+    <div class="related" role="navigation" aria-label="Related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="typhoon.test.sources.get_phasor_3ph.html" title="get_phasor_3ph"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="typhoon.test.capture.wait_until.html" title="wait_until"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html"> 1.35.3 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">change_grid</a></li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <section id="change-grid">
+<h1>change_grid<a class="headerlink" href="#change-grid" title="Link to this heading">¶</a></h1>
+<dl class="py function">
+<dt class="sig sig-object py" id="typhoon.test.sources.change_grid">
+<span class="sig-prename descclassname"><span class="pre">typhoon.test.sources.</span></span><span class="sig-name descname"><span class="pre">change_grid</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">gridname</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">rms</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">frequency</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">phase</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#typhoon.test.sources.change_grid" title="Link to this definition">¶</a></dt>
+<dd><p>Change grid characteristics.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>gridname</strong> – Name of the grid. Should be a grid simulator in the HIL.</p></li>
+<li><p><strong>rms</strong> (<em>number</em><em> or </em><em>3-element sequence</em>) – RMS values. If a single number, applies the same for each phase.</p></li>
+<li><p><strong>frequency</strong> (<em>number</em>) – Frequency in Hertz. Applies the same for each phase.</p></li>
+<li><p><strong>phase</strong> (<em>number</em><em> or </em><em>3-element sequence</em><em> (</em><em>list</em><em> or </em><em>tuple</em><em>)</em>) – Phase in degrees. If a single number, applies the same for each phase.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><ul class="simple">
+<li><p><strong>namedtuple</strong> (<em>tuple</em>) – With the following attributes:</p></li>
+<li><p><strong>t</strong> (<em>Timedelta</em>) – Time of the grid fault.</p></li>
+<li><p><strong>phasors_before</strong> (<em>typhoon.types.phasors.Phasors3ph</em>) – Grid phasors before the fault</p></li>
+<li><p><strong>phasors_after</strong> (<em>typhoon.types.phasors.Phasors3ph</em>) – Grid phasors after the fault</p></li>
+</ul>
+</p>
+</dd>
+</dl>
+<p class="rubric">Examples</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span><span class="w"> </span><span class="nn">typhoon.test.sources</span><span class="w"> </span><span class="kn">import</span> <span class="n">change_grid</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">voltage</span> <span class="o">=</span> <span class="mi">220</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">fault_level</span> <span class="o">=</span> <span class="mf">1.05</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">fault</span> <span class="o">=</span> <span class="n">change_grid</span><span class="p">(</span><span class="s2">&quot;Grid Simulator1&quot;</span><span class="p">,</span> <span class="n">rms</span><span class="o">=</span><span class="n">fault_level</span><span class="o">*</span><span class="n">voltage</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">fault</span><span class="o">.</span><span class="n">t</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">fault</span><span class="o">.</span><span class="n">phasors_before</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">fault</span><span class="o">.</span><span class="n">phasors_after</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+</section>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="Main">
+        <div class="sphinxsidebarwrapper">
+            <p class="logo"><a href="../index.html">
+              <img class="logo" src="../_static/logo.png" alt="Logo of "/>
+            </a></p>
+  <div>
+    <h4>Previous topic</h4>
+    <p class="topless"><a href="typhoon.test.capture.wait_until.html"
+                          title="previous chapter">wait_until</a></p>
+  </div>
+  <div>
+    <h4>Next topic</h4>
+    <p class="topless"><a href="typhoon.test.sources.get_phasor_3ph.html"
+                          title="next chapter">get_phasor_3ph</a></p>
+  </div>
+<search id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</search>
+<script>document.getElementById('searchbox').style.display = "block"</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="Related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="typhoon.test.sources.get_phasor_3ph.html" title="get_phasor_3ph"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="typhoon.test.capture.wait_until.html" title="wait_until"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html"> 1.35.3 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">change_grid</a></li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+    &#169; Copyright .
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 8.2.1.
+    </div>
+  </body>
+</html>

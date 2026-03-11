@@ -1,0 +1,6 @@
+read_tdms
+=========
+
+.. currentmodule:: typhoon.test.capture
+
+.. autofunction:: read_tdms

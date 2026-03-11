@@ -1,0 +1,6 @@
+signal_frequency_SOGI_pll
+=========================
+
+.. currentmodule:: typhoon.test.signals.control
+
+.. autofunction:: signal_frequency_SOGI_pll

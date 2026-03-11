@@ -1,0 +1,31 @@
+FFTResult
+=========
+
+.. currentmodule:: typhoon.test.harmonic
+
+.. autoclass:: FFTResult
+   :show-inheritance:
+
+   .. rubric:: Attributes Summary
+
+   .. autosummary::
+
+      ~FFTResult.fft
+      ~FFTResult.freqs
+      ~FFTResult.signal
+
+   .. rubric:: Methods Summary
+
+   .. autosummary::
+
+      ~FFTResult.__call__
+
+   .. rubric:: Attributes Documentation
+
+   .. autoattribute:: fft
+   .. autoattribute:: freqs
+   .. autoattribute:: signal
+
+   .. rubric:: Methods Documentation
+
+   .. automethod:: __call__

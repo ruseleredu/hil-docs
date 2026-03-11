@@ -1,0 +1,6 @@
+find
+====
+
+.. currentmodule:: typhoon.test.signals
+
+.. autofunction:: find

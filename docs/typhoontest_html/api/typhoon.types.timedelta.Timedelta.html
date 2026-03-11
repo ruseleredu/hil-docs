@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+
+<html lang="en" data-content_root="../">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Timedelta &#8212;  1.35.3 documentation</title>
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinxdoc.css?v=34905f61" />
+    <link rel="stylesheet" type="text/css" href="../_static/graphviz.css?v=4ae1632d" />
+    <script src="../_static/documentation_options.js?v=62a126fb"></script>
+    <script src="../_static/doctools.js?v=9bcbadda"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="prev" title="XY_graph" href="typhoon.test.reporting.figures.XY_graph.html" /> 
+  </head><body>
+    <div class="related" role="navigation" aria-label="Related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="typhoon.test.reporting.figures.XY_graph.html" title="XY_graph"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html"> 1.35.3 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">Timedelta</a></li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <section id="timedelta">
+<h1>Timedelta<a class="headerlink" href="#timedelta" title="Link to this heading">¶</a></h1>
+<dl class="py class">
+<dt class="sig sig-object py" id="typhoon.types.timedelta.Timedelta">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">typhoon.types.timedelta.</span></span><span class="sig-name descname"><span class="pre">Timedelta</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#typhoon.types.timedelta.Timedelta" title="Link to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">Timedelta</span></code></p>
+<p>Represents a duration, the difference between two dates or times.</p>
+<p>Timedelta is the pandas equivalent of Python’s <code class="docutils literal notranslate"><span class="pre">datetime.timedelta</span></code>
+and is interchangeable with it in most cases.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>value</strong> (<a class="reference internal" href="#typhoon.types.timedelta.Timedelta" title="typhoon.types.timedelta.Timedelta"><em>Timedelta</em></a><em>, </em><em>timedelta</em><em>, </em><em>np.timedelta64</em><em>, </em><em>str</em><em>, or </em><em>int</em>)</p></li>
+<li><p><strong>unit</strong> (<em>str</em><em>, </em><em>default 's'</em>) – <p>Denote the unit of the input, if input is an integer.</p>
+<dl class="simple">
+<dt>Possible values:</dt><dd><ul>
+<li><p>’W’, ‘D’, “H”, ‘T’, ‘S’, ‘L’, ‘U’, or ‘N’</p></li>
+<li><p>’days’, ‘day’, or ‘d’</p></li>
+<li><p>’hours’, ‘hour’, ‘hr’, or ‘h’</p></li>
+<li><p>’minutes’, ‘minute’, ‘min’, or ‘m’</p></li>
+<li><p>’seconds’, ‘second’, ‘sec’, or “s”</p></li>
+<li><p>’milliseconds’, ‘millisecond’, ‘millis’, ‘milli’, or “ms”</p></li>
+<li><p>’microseconds’, ‘microsecond’, ‘micros’, ‘micro’, or “us”</p></li>
+<li><p>’nanoseconds’, ‘nanosecond’, ‘nanos’, ‘nano’, or ‘ns’.</p></li>
+</ul>
+</dd>
+</dl>
+</p></li>
+</ul>
+</dd>
+</dl>
+<p class="rubric">Notes</p>
+<p>The constructor may take in either both values of value and unit or
+kwargs as above. Either one of them must be used during initialization</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">value</span></code> attribute is always in nanoseconds.</p>
+<p>If the precision is higher than nanoseconds, the precision of the duration is
+truncated to nanoseconds.</p>
+<p class="rubric">Examples</p>
+<p>Here we initialize a Timedelta object with both a value and a unit</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span><span class="w"> </span><span class="nn">typhoon.types.timedelta</span><span class="w"> </span><span class="kn">import</span> <span class="n">Timedelta</span> <span class="k">as</span> <span class="n">td</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">td1</span> <span class="o">=</span> <span class="n">td</span><span class="p">(</span><span class="s1">&#39;10s&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>or</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">td1</span> <span class="o">=</span> <span class="n">td</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="s2">&quot;s&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>We can get extra information about the Timedelta using:</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">td1</span> <span class="o">=</span> <span class="n">td</span><span class="p">(</span><span class="s2">&quot;300us 500ns&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">td1</span><span class="o">.</span><span class="n">nanoseconds</span>
+<span class="go">500</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">td1</span><span class="o">.</span><span class="n">microseconds</span>
+<span class="go">300</span>
+</pre></div>
+</div>
+<p>Our <strong>Typhoontest Timedelta</strong> patches a slicing issue with the original pandas structure:</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span><span class="w"> </span><span class="nn">pandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pd</span>  <span class="c1"># Pandas without Typhoon patch</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<span class="gp">&gt;&gt;&gt;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">t</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mf">0.0001</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">*</span><span class="mi">60</span><span class="o">*</span><span class="n">t</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">serie</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">(</span><span class="n">y</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="n">pd</span><span class="o">.</span><span class="n">TimedeltaIndex</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="s2">&quot;s&quot;</span><span class="p">))</span>
+<span class="gp">&gt;&gt;&gt;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">t1</span> <span class="o">=</span> <span class="n">serie</span><span class="p">[</span><span class="s2">&quot;0.6s&quot;</span><span class="p">:</span><span class="s2">&quot;0.7s&quot;</span><span class="p">]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">t1</span><span class="o">.</span><span class="n">index</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">==</span> <span class="n">pd</span><span class="o">.</span><span class="n">Timedelta</span><span class="p">(</span><span class="s2">&quot;0.6s&quot;</span><span class="p">)</span>
+<span class="go">True</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">t1</span><span class="o">.</span><span class="n">index</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">==</span> <span class="n">pd</span><span class="o">.</span><span class="n">Timedelta</span><span class="p">(</span><span class="s2">&quot;0.7s&quot;</span><span class="p">)</span>
+<span class="go">False</span>
+</pre></div>
+</div>
+<p>Running the same code with <code class="docutils literal notranslate"><span class="pre">typhoon.types.timedelta.Timedelta</span></code>:</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span><span class="w"> </span><span class="nn">typhoon.test.signals</span><span class="w"> </span><span class="kn">import</span> <span class="n">pandas_sine</span>
+<span class="gp">&gt;&gt;&gt;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">sine</span> <span class="o">=</span> <span class="n">pandas_sine</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">sliced</span> <span class="o">=</span> <span class="n">sine</span><span class="p">[</span><span class="s2">&quot;0.6s&quot;</span><span class="p">:</span><span class="s2">&quot;0.7s&quot;</span><span class="p">]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">sliced</span><span class="o">.</span><span class="n">index</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">==</span> <span class="n">td</span><span class="p">(</span><span class="s2">&quot;0.6s&quot;</span><span class="p">)</span>
+<span class="go">True</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">sliced</span><span class="o">.</span><span class="n">index</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">==</span> <span class="n">td</span><span class="p">(</span><span class="s2">&quot;0.7s&quot;</span><span class="p">)</span>
+<span class="go">True</span>
+</pre></div>
+</div>
+<p>Here we test the <code class="docutils literal notranslate"><span class="pre">total_seconds</span></code> method that also had to be modified and patch because of error in nanosecond
+scale</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span><span class="w"> </span><span class="nn">pandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pd</span>  <span class="c1"># Pandas without Typhoon patch</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">t</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">TimedeltaIndex</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="mf">5e-7</span><span class="p">],</span> <span class="s2">&quot;s&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">dt</span> <span class="o">=</span> <span class="n">t</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">-</span> <span class="n">t</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">dt</span><span class="o">.</span><span class="n">total_seconds</span><span class="p">()</span> <span class="o">==</span> <span class="mf">5e-07</span>
+<span class="go">False</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">dt</span><span class="o">.</span><span class="n">total_seconds</span><span class="p">()</span>
+<span class="go">0.0</span>
+</pre></div>
+</div>
+<p>With the Typhoontest patch version:</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">sine</span> <span class="o">=</span> <span class="n">pandas_sine</span><span class="p">(</span><span class="n">Ts</span><span class="o">=</span><span class="mf">5e-7</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">dt</span> <span class="o">=</span> <span class="n">sine</span><span class="o">.</span><span class="n">index</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">-</span> <span class="n">sine</span><span class="o">.</span><span class="n">index</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">dt</span><span class="o">.</span><span class="n">total_seconds</span><span class="p">()</span> <span class="o">==</span> <span class="mf">5e-07</span>
+<span class="go">True</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">dt</span><span class="o">.</span><span class="n">total_seconds</span><span class="p">()</span>
+<span class="go">5e-07</span>
+</pre></div>
+</div>
+<p class="rubric">Notes</p>
+<p><strong>Attributes:</strong> Attributes of Timedelta class</p>
+<p><strong>asm8 -</strong> Return a numpy timedelta64 array scalar view.</p>
+<p><strong>components -</strong> Returns the timedelta component values in a tuple-like.</p>
+<p><strong>days -</strong> Number of days.</p>
+<p><strong>delta -</strong> Return the timedelta in nanoseconds (ns), for internal compatibility.</p>
+<p><strong>microseconds -</strong> Number of microseconds (&gt;= 0 and less than 1 second).</p>
+<p><strong>nanoseconds -</strong> Return the number of nanoseconds (n), where 0 &lt;= n &lt; 1 microsecond.</p>
+<p><strong>resolution_string -</strong> Return a string representing the lowest timedelta resolution.</p>
+<p><strong>seconds -</strong> Number of seconds (&gt;= 0 and less than 1 day).</p>
+<p><strong>freq -</strong></p>
+<p><strong>is_populated -</strong></p>
+<p><strong>value -</strong></p>
+<p class="rubric">Notes</p>
+<p><strong>Methods:</strong> Methods of Timedelta class</p>
+<dl class="simple">
+<dt><strong>ceil(freq)</strong></dt><dd><p>Return a new Timedelta ceiled to this resolution.</p>
+</dd>
+<dt><strong>floor(freq)</strong></dt><dd><p>Return a new Timedelta floored to this resolution.</p>
+</dd>
+<dt><strong>isoformat()</strong></dt><dd><p>Format Timedelta as ISO 8601 Duration like <code class="docutils literal notranslate"><span class="pre">P[n]Y[n]M[n]DT[n]H[n]M[n]S</span></code>, where the <code class="docutils literal notranslate"><span class="pre">[n]</span></code> s are replaced by the values.</p>
+</dd>
+<dt><strong>round(freq)</strong></dt><dd><p>Round the Timedelta to the specified resolution.</p>
+</dd>
+<dt><strong>to_numpy()</strong></dt><dd><p>Convert the Timedelta to a NumPy timedelta64.</p>
+</dd>
+<dt><strong>to_pytimedelta()</strong></dt><dd><p>Convert a pandas Timedelta object into a Python <code class="docutils literal notranslate"><span class="pre">datetime.timedelta</span></code> object.</p>
+</dd>
+<dt><strong>to_timedelta64()</strong></dt><dd><p>Return a numpy.timedelta64 object with ‘ns’ precision.</p>
+</dd>
+<dt><strong>total_seconds()</strong></dt><dd><p>Total seconds in the duration.</p>
+</dd>
+<dt><strong>view(datatype)</strong></dt><dd><p>Array view compatibility.</p>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="Main">
+        <div class="sphinxsidebarwrapper">
+            <p class="logo"><a href="../index.html">
+              <img class="logo" src="../_static/logo.png" alt="Logo of "/>
+            </a></p>
+  <div>
+    <h4>Previous topic</h4>
+    <p class="topless"><a href="typhoon.test.reporting.figures.XY_graph.html"
+                          title="previous chapter">XY_graph</a></p>
+  </div>
+<search id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</search>
+<script>document.getElementById('searchbox').style.display = "block"</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="Related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="typhoon.test.reporting.figures.XY_graph.html" title="XY_graph"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html"> 1.35.3 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">Timedelta</a></li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+    &#169; Copyright .
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 8.2.1.
+    </div>
+  </body>
+</html>

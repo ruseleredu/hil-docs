@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+
+<html lang="en" data-content_root="../">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>alphabetagamma_to_dq0 &#8212;  1.35.3 documentation</title>
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinxdoc.css?v=34905f61" />
+    <link rel="stylesheet" type="text/css" href="../_static/graphviz.css?v=4ae1632d" />
+    <script src="../_static/documentation_options.js?v=62a126fb"></script>
+    <script src="../_static/doctools.js?v=9bcbadda"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="complete_symmetrical_components" href="typhoon.test.transformations.complete_symmetrical_components.html" />
+    <link rel="prev" title="alphabetagamma_to_abc" href="typhoon.test.transformations.alphabetagamma_to_abc.html" /> 
+  </head><body>
+    <div class="related" role="navigation" aria-label="Related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="typhoon.test.transformations.complete_symmetrical_components.html" title="complete_symmetrical_components"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="typhoon.test.transformations.alphabetagamma_to_abc.html" title="alphabetagamma_to_abc"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html"> 1.35.3 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">alphabetagamma_to_dq0</a></li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <section id="alphabetagamma-to-dq0">
+<h1>alphabetagamma_to_dq0<a class="headerlink" href="#alphabetagamma-to-dq0" title="Link to this heading">¶</a></h1>
+<dl class="py function">
+<dt class="sig sig-object py" id="typhoon.test.transformations.alphabetagamma_to_dq0">
+<span class="sig-prename descclassname"><span class="pre">typhoon.test.transformations.</span></span><span class="sig-name descname"><span class="pre">alphabetagamma_to_dq0</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">signals</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">theta</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">alignment</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'d'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#typhoon.test.transformations.alphabetagamma_to_dq0" title="Link to this definition">¶</a></dt>
+<dd><p>Implements the alpha-beta-gamma to dq0 transformation, also known as Clarke to Park angle transform.</p>
+<p>The Clarke to Park Angle Transform block converts the alpha, beta, and zero components in a stationary reference
+frame to direct, quadrature, and zero components in a rotating reference frame. For balanced three-phase systems,
+zero component is equal to zero. There are two possible forms, as alpha-axis of stationary reference frame can be
+aligned with q- or d-axis of the rotating reference frame. These methods are implemented by following equations:</p>
+<ul>
+<li><div class="line-block">
+<div class="line">alpha-axis and d-axis are aligned:</div>
+<div class="line"><code class="docutils literal notranslate"><span class="pre">d</span> <span class="pre">=</span> <span class="pre">cos(theta)</span> <span class="pre">*</span> <span class="pre">alpha</span> <span class="pre">+</span> <span class="pre">sin(theta)</span> <span class="pre">*</span> <span class="pre">b</span></code></div>
+<div class="line"><code class="docutils literal notranslate"><span class="pre">q</span> <span class="pre">=</span> <span class="pre">-sin(theta)</span> <span class="pre">*</span> <span class="pre">alpha</span> <span class="pre">+</span> <span class="pre">cos(theta)</span> <span class="pre">*</span> <span class="pre">b</span></code></div>
+<div class="line"><code class="docutils literal notranslate"><span class="pre">zero</span> <span class="pre">=</span> <span class="pre">gamma</span></code></div>
+</div>
+</li>
+<li><div class="line-block">
+<div class="line">alpha-axis and q-axis are aligned:</div>
+<div class="line-block">
+<div class="line"><code class="docutils literal notranslate"><span class="pre">d</span> <span class="pre">=</span> <span class="pre">sin(theta)</span> <span class="pre">*</span> <span class="pre">a</span> <span class="pre">-</span> <span class="pre">cos(theta)</span> <span class="pre">*</span> <span class="pre">b</span></code></div>
+<div class="line"><code class="docutils literal notranslate"><span class="pre">q</span> <span class="pre">=</span> <span class="pre">cos(theta)</span> <span class="pre">*</span> <span class="pre">a</span> <span class="pre">+</span> <span class="pre">sin(theta)</span> <span class="pre">*</span> <span class="pre">b</span></code></div>
+<div class="line"><code class="docutils literal notranslate"><span class="pre">zero</span> <span class="pre">=</span> <span class="pre">gamma</span></code></div>
+</div>
+</div>
+<blockquote>
+<div><p>Variable theta represents the angle between two reference frames; it is measured between alpha-axis of
+alpha-beta reference frame, and the axis from d-q reference frame which is initially aligned with alpha.</p>
+</div></blockquote>
+</li>
+</ul>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>signals</strong> (<em>pandas.DataFrame</em>) – DataFrame with three columns, one for alpha, beta and gamma signal.</p></li>
+<li><p><strong>theta</strong> (<em>pandas.Series</em>) – The angle in time between the two reference frames; it is measured between alpha-axis of alpha-beta reference
+frame, and the axis from d-q reference frame which is initially aligned with alpha.</p></li>
+<li><p><strong>alignment</strong> (<em>string</em>) – It has two valid values: ‘d’ or ‘q’. That is the way to chose which axis in rotating reference frame is
+initially aligned with alpha-axis from stationary reference frame.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>DataFrame with three columns, one for every output signal. The labels to select columns are d, q and zero,
+respectively.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>pandas.DataFrame</p>
+</dd>
+</dl>
+<p class="rubric">Examples</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span><span class="w"> </span><span class="nn">typhoon.test.signals</span><span class="w"> </span><span class="kn">import</span> <span class="n">pandas_sine</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span><span class="w"> </span><span class="nn">typhoon.test.transformations</span><span class="w"> </span><span class="kn">import</span> <span class="n">alphabetagamma_to_dq0</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span><span class="w"> </span><span class="nn">scipy.signal</span><span class="w"> </span><span class="kn">import</span> <span class="n">sawtooth</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span><span class="w"> </span><span class="nn">pandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pd</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">alpha</span> <span class="o">=</span> <span class="n">pandas_sine</span><span class="p">(</span><span class="n">frequency</span><span class="o">=</span><span class="mi">50</span><span class="p">)</span> <span class="c1"># sine with amplitude 1 and phase 0</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">beta</span> <span class="o">=</span> <span class="n">pandas_sine</span><span class="p">(</span><span class="n">frequency</span><span class="o">=</span><span class="mi">50</span><span class="p">,</span> <span class="n">phase</span><span class="o">=-</span><span class="mi">90</span><span class="p">)</span> <span class="c1"># sine with amplitude 1 and phase -90</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">gamma</span> <span class="o">=</span> <span class="n">pandas_sine</span><span class="p">(</span><span class="n">frequency</span><span class="o">=</span><span class="mi">50</span><span class="p">,</span> <span class="n">amplitude</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span> <span class="c1"># constant with zeros</span>
+</pre></div>
+</div>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="c1"># create pandas.Series which represents dq reference frame angle</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">t</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mf">1e-4</span><span class="p">)</span> <span class="c1"># time axis for the angle</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">index</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">TimedeltaIndex</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">unit</span><span class="o">=</span><span class="s1">&#39;s&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">angle</span> <span class="o">=</span> <span class="n">sawtooth</span><span class="p">(</span><span class="mi">2</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span> <span class="o">*</span> <span class="mi">50</span> <span class="o">*</span> <span class="n">t</span><span class="p">)</span> <span class="c1"># create sawtooth signal from -1 to 1</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">angle</span> <span class="o">=</span> <span class="p">(</span><span class="n">angle</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span> <span class="c1"># make sawtooth go from 0 to 2pi</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">theta</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">angle</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="n">index</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">alpha_beta_frame</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;alpha&quot;</span><span class="p">:</span><span class="n">alpha</span><span class="p">,</span> <span class="s2">&quot;beta&quot;</span><span class="p">:</span><span class="n">beta</span><span class="p">,</span> <span class="s2">&quot;gamma&quot;</span><span class="p">:</span><span class="n">gamma</span><span class="p">},</span> <span class="n">index</span><span class="o">=</span><span class="n">alpha</span><span class="o">.</span><span class="n">index</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">dq0_frame</span> <span class="o">=</span> <span class="n">alphabetagamma_to_dq0</span><span class="p">(</span><span class="n">alpha_beta_frame</span><span class="p">,</span> <span class="n">theta</span><span class="p">,</span> <span class="n">alignment</span><span class="o">=</span><span class="s1">&#39;q&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">d</span> <span class="o">=</span> <span class="n">dq0_frame</span><span class="p">[</span><span class="s2">&quot;d&quot;</span><span class="p">]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">q</span> <span class="o">=</span> <span class="n">dq0_frame</span><span class="p">[</span><span class="s2">&quot;q&quot;</span><span class="p">]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">zero</span> <span class="o">=</span> <span class="n">dq0_frame</span><span class="p">[</span><span class="s2">&quot;zero&quot;</span><span class="p">]</span>
+</pre></div>
+</div>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<p><a class="reference internal" href="typhoon.test.transformations.alphabetagamma_to_abc.html#typhoon.test.transformations.alphabetagamma_to_abc" title="typhoon.test.transformations.alphabetagamma_to_abc"><code class="xref py py-obj docutils literal notranslate"><span class="pre">typhoon.test.transformations.alphabetagamma_to_abc</span></code></a>, <a class="reference internal" href="typhoon.test.transformations.dq0_to_alphabetagamma.html#typhoon.test.transformations.dq0_to_alphabetagamma" title="typhoon.test.transformations.dq0_to_alphabetagamma"><code class="xref py py-obj docutils literal notranslate"><span class="pre">typhoon.test.transformations.dq0_to_alphabetagamma</span></code></a></p>
+</div>
+</dd></dl>
+
+</section>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="Main">
+        <div class="sphinxsidebarwrapper">
+            <p class="logo"><a href="../index.html">
+              <img class="logo" src="../_static/logo.png" alt="Logo of "/>
+            </a></p>
+  <div>
+    <h4>Previous topic</h4>
+    <p class="topless"><a href="typhoon.test.transformations.alphabetagamma_to_abc.html"
+                          title="previous chapter">alphabetagamma_to_abc</a></p>
+  </div>
+  <div>
+    <h4>Next topic</h4>
+    <p class="topless"><a href="typhoon.test.transformations.complete_symmetrical_components.html"
+                          title="next chapter">complete_symmetrical_components</a></p>
+  </div>
+<search id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</search>
+<script>document.getElementById('searchbox').style.display = "block"</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="Related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="typhoon.test.transformations.complete_symmetrical_components.html" title="complete_symmetrical_components"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="typhoon.test.transformations.alphabetagamma_to_abc.html" title="alphabetagamma_to_abc"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html"> 1.35.3 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">alphabetagamma_to_dq0</a></li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+    &#169; Copyright .
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 8.2.1.
+    </div>
+  </body>
+</html>

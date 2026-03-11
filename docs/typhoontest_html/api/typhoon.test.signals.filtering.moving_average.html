@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+
+<html lang="en" data-content_root="../">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>moving_average &#8212;  1.35.3 documentation</title>
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinxdoc.css?v=34905f61" />
+    <link rel="stylesheet" type="text/css" href="../_static/graphviz.css?v=4ae1632d" />
+    <script src="../_static/documentation_options.js?v=62a126fb"></script>
+    <script src="../_static/doctools.js?v=9bcbadda"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="integrator" href="typhoon.test.signals.control.integrator.html" />
+    <link rel="prev" title="low_pass_filter" href="typhoon.test.signals.filtering.low_pass_filter.html" /> 
+  </head><body>
+    <div class="related" role="navigation" aria-label="Related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="typhoon.test.signals.control.integrator.html" title="integrator"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="typhoon.test.signals.filtering.low_pass_filter.html" title="low_pass_filter"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html"> 1.35.3 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">moving_average</a></li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <section id="moving-average">
+<h1>moving_average<a class="headerlink" href="#moving-average" title="Link to this heading">¶</a></h1>
+<dl class="py function">
+<dt class="sig sig-object py" id="typhoon.test.signals.filtering.moving_average">
+<span class="sig-prename descclassname"><span class="pre">typhoon.test.signals.filtering.</span></span><span class="sig-name descname"><span class="pre">moving_average</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">signal</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">window_length</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">assume_previous_data</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#typhoon.test.signals.filtering.moving_average" title="Link to this definition">¶</a></dt>
+<dd><p>Calculates average value of the provided signal by using moving window technique, similar to
+‘typhoon.test.rms.window_rms’ function. User is specifying the size of the moving window in seconds with
+‘window_length’ argument. To get valid rms value, window size should represent whole number of signal periods.
+If “assume_previous_data” is set to True, the function will assume signal values before the provided ones; In this
+way, rms result will not have transient period during the first “window_length” seconds; rms result will have
+expected values from beginning. Otherwise, initial transient will be present during that period.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>signal</strong> (<em>pandas.Series</em>) – pandas.Series which represents the signal which average value should be calculated.</p></li>
+<li><p><strong>window_length</strong> (<em>float</em>) – Length of the moving window for average calculation, in seconds.</p></li>
+<li><p><strong>assume_previous_data</strong> (<em>bool - default True</em>) – If set, the resulting average signal will have valid values from beginning of function analysis. This is
+achieved by assuming that the signal in previous “window_length” seconds behaved exactly the same as in the
+first provided “window_length” seconds.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><strong>result</strong> – The resulting signal which represents the instantaneous average of the provided one. The time indices of the
+input and output signals are identical.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>pandas.Series</p>
+</dd>
+</dl>
+<p class="rubric">Examples</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span><span class="w"> </span><span class="nn">typhoon.test.signals.filtering</span><span class="w"> </span><span class="kn">import</span> <span class="n">moving_average</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span><span class="w"> </span><span class="nn">typhoon.test.signals.</span><span class="w"> </span><span class="kn">import</span> <span class="n">pandas_sine</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="c1"># calculate average signal for the pure sine - the result will give zero signal</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">sine</span> <span class="o">=</span> <span class="n">pandas_sine</span><span class="p">(</span><span class="n">amplitude</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span> <span class="n">frequency</span><span class="o">=</span><span class="mi">50</span><span class="p">,</span> <span class="n">Ts</span><span class="o">=</span><span class="mf">1e-6</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">average1</span> <span class="o">=</span> <span class="n">moving_average</span><span class="p">(</span><span class="n">sine</span><span class="p">,</span> <span class="n">window_length</span><span class="o">=</span><span class="mi">1</span><span class="o">/</span><span class="mi">50</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="c1"># create sine signal with some offset - moving_average detects that offset as average value</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">sine_offset</span> <span class="o">=</span> <span class="n">sine</span> <span class="o">+</span> <span class="mi">100</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">average2</span> <span class="o">=</span> <span class="n">moving_average</span><span class="p">(</span><span class="n">sine_offset</span><span class="p">,</span> <span class="n">window_length</span><span class="o">=</span><span class="mi">1</span><span class="o">/</span><span class="mi">50</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<p><a class="reference internal" href="typhoon.test.rms.window_rms.html#typhoon.test.rms.window_rms" title="typhoon.test.rms.window_rms"><code class="xref py py-obj docutils literal notranslate"><span class="pre">typhoon.test.rms.window_rms</span></code></a></p>
+</div>
+</dd></dl>
+
+</section>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="Main">
+        <div class="sphinxsidebarwrapper">
+            <p class="logo"><a href="../index.html">
+              <img class="logo" src="../_static/logo.png" alt="Logo of "/>
+            </a></p>
+  <div>
+    <h4>Previous topic</h4>
+    <p class="topless"><a href="typhoon.test.signals.filtering.low_pass_filter.html"
+                          title="previous chapter">low_pass_filter</a></p>
+  </div>
+  <div>
+    <h4>Next topic</h4>
+    <p class="topless"><a href="typhoon.test.signals.control.integrator.html"
+                          title="next chapter">integrator</a></p>
+  </div>
+<search id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</search>
+<script>document.getElementById('searchbox').style.display = "block"</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="Related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="typhoon.test.signals.control.integrator.html" title="integrator"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="typhoon.test.signals.filtering.low_pass_filter.html" title="low_pass_filter"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html"> 1.35.3 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">moving_average</a></li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+    &#169; Copyright .
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 8.2.1.
+    </div>
+  </body>
+</html>

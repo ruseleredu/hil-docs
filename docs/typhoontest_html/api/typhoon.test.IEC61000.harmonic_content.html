@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+
+<html lang="en" data-content_root="../">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>harmonic_content &#8212;  1.35.3 documentation</title>
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinxdoc.css?v=34905f61" />
+    <link rel="stylesheet" type="text/css" href="../_static/graphviz.css?v=4ae1632d" />
+    <script src="../_static/documentation_options.js?v=62a126fb"></script>
+    <script src="../_static/doctools.js?v=9bcbadda"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="power_quantities" href="typhoon.test.IEC61000.power_quantities.html" />
+    <link rel="prev" title="frequency" href="typhoon.test.IEC61000.frequency.html" /> 
+  </head><body>
+    <div class="related" role="navigation" aria-label="Related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="typhoon.test.IEC61000.power_quantities.html" title="power_quantities"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="typhoon.test.IEC61000.frequency.html" title="frequency"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html"> 1.35.3 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">harmonic_content</a></li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <section id="harmonic-content">
+<h1>harmonic_content<a class="headerlink" href="#harmonic-content" title="Link to this heading">¶</a></h1>
+<dl class="py function">
+<dt class="sig sig-object py" id="typhoon.test.IEC61000.harmonic_content">
+<span class="sig-prename descclassname"><span class="pre">typhoon.test.IEC61000.</span></span><span class="sig-name descname"><span class="pre">harmonic_content</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">samples</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">DataFrame</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">nominal_grid_freq</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">max_harmonic_order</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">interharm</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">reference_split</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#typhoon.test.IEC61000.harmonic_content" title="Link to this definition">¶</a></dt>
+<dd><p>This method measures harmonics, interharmonics, and total harmonic distortion according to IEC
+61000-4-7. The measurements are valid up to the 180th (50 Hz) or 150th (60 Hz) harmonic order.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>samples</strong> (<em>pandas.DataFrame</em>) – Samples captured from simulation. The grid voltage is used for synchronization and detecting zero-crossings.
+According to the IEC 61000-4-30 standard the calculation window length is determined by the grid frequency.
+The voltage is also used to calculate harmonics, interharmonics, and total harmonic distortion.</p></li>
+<li><p><strong>nominal_grid_freq</strong> (<em>float</em>) – According to the IEC 61000-4-7 standard, this method is applied only in grids with a nominal frequency of
+50.0 Hz or 60.0 Hz.</p></li>
+<li><p><strong>max_harmonic_order</strong> (<em>int</em>) – The order of the highest harmonic that is taken into account.</p></li>
+<li><p><strong>interharm</strong> (<em>bool</em>) – If True, returns the rms values of the harmonics and interharmonics.
+If False, returns the rms values of the harmonics only.</p></li>
+<li><p><strong>reference_split</strong> (<em>list</em><em>, </em><em>optional</em>) – List of indices to split the sample in windows. If None, the samples will be split according to the zero-crossings
+of the voltage signal.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><ul class="simple">
+<li><p><strong>THD</strong> (<em>numpy.array</em>) – Ratio of the r.m.s. value of the sum of all the harmonic components up to a specific</p></li>
+<li><p><em>order to the r.m.s. voltage of the fundamental component, measured per window.</em></p></li>
+<li><p><strong>rms_values</strong> (<em>numpy.array</em>) – RMS of a spectral components (harmonics and interharmonics).</p></li>
+<li><p><strong>freq</strong> (<em>numpy.array</em>) – Frequency measured at each measurement window.</p></li>
+</ul>
+</p>
+</dd>
+<dt class="field-odd">Raises<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>ValueError</strong> – When the <code class="docutils literal notranslate"><span class="pre">nominal_grid_freq</span></code> is different from 50 Hz or 60 Hz:</p>
+</dd>
+</dl>
+<p class="rubric">Examples</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span><span class="w"> </span><span class="nn">typhoon.test.signals</span><span class="w"> </span><span class="kn">import</span> <span class="n">pandas_sine</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span><span class="w"> </span><span class="nn">typhoon.test.IEC61000</span><span class="w"> </span><span class="kn">import</span> <span class="n">harmonic_content</span>
+<span class="gp">&gt;&gt;&gt;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">frequency</span> <span class="o">=</span> <span class="mi">60</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">max_harmonic_order</span> <span class="o">=</span> <span class="mi">33</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">enable_interharmonics</span> <span class="o">=</span> <span class="kc">False</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">samples</span> <span class="o">=</span> <span class="n">pandas_sine</span><span class="p">(</span><span class="n">frequency</span><span class="o">=</span><span class="n">frequency</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">THD</span><span class="p">,</span> <span class="n">rms_components</span><span class="p">,</span> <span class="n">measure_frequency</span> <span class="o">=</span> <span class="n">harmonic_content</span><span class="p">(</span><span class="n">samples</span><span class="p">,</span> <span class="n">frequency</span><span class="p">,</span> <span class="n">max_harmonic_order</span><span class="p">,</span> <span class="n">enable_interharmonics</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+</section>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="Main">
+        <div class="sphinxsidebarwrapper">
+            <p class="logo"><a href="../index.html">
+              <img class="logo" src="../_static/logo.png" alt="Logo of "/>
+            </a></p>
+  <div>
+    <h4>Previous topic</h4>
+    <p class="topless"><a href="typhoon.test.IEC61000.frequency.html"
+                          title="previous chapter">frequency</a></p>
+  </div>
+  <div>
+    <h4>Next topic</h4>
+    <p class="topless"><a href="typhoon.test.IEC61000.power_quantities.html"
+                          title="next chapter">power_quantities</a></p>
+  </div>
+<search id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</search>
+<script>document.getElementById('searchbox').style.display = "block"</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="Related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="typhoon.test.IEC61000.power_quantities.html" title="power_quantities"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="typhoon.test.IEC61000.frequency.html" title="frequency"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html"> 1.35.3 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">harmonic_content</a></li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+    &#169; Copyright .
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 8.2.1.
+    </div>
+  </body>
+</html>

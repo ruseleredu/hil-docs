@@ -1,0 +1,6 @@
+assert_analysis
+===============
+
+.. currentmodule:: typhoon.test.signals
+
+.. autofunction:: assert_analysis

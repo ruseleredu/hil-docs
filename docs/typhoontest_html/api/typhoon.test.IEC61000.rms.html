@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+
+<html lang="en" data-content_root="../">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>rms &#8212;  1.35.3 documentation</title>
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinxdoc.css?v=34905f61" />
+    <link rel="stylesheet" type="text/css" href="../_static/graphviz.css?v=4ae1632d" />
+    <script src="../_static/documentation_options.js?v=62a126fb"></script>
+    <script src="../_static/doctools.js?v=9bcbadda"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="sym_comp_voltage_unbalance" href="typhoon.test.IEC61000.sym_comp_voltage_unbalance.html" />
+    <link rel="prev" title="power_quantities_three_phase" href="typhoon.test.IEC61000.power_quantities_three_phase.html" /> 
+  </head><body>
+    <div class="related" role="navigation" aria-label="Related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="typhoon.test.IEC61000.sym_comp_voltage_unbalance.html" title="sym_comp_voltage_unbalance"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="typhoon.test.IEC61000.power_quantities_three_phase.html" title="power_quantities_three_phase"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html"> 1.35.3 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">rms</a></li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <section id="rms">
+<h1>rms<a class="headerlink" href="#rms" title="Link to this heading">¶</a></h1>
+<dl class="py function">
+<dt class="sig sig-object py" id="typhoon.test.IEC61000.rms">
+<span class="sig-prename descclassname"><span class="pre">typhoon.test.IEC61000.</span></span><span class="sig-name descname"><span class="pre">rms</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">samples</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">nominal_grid_freq</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">reference_split</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#typhoon.test.IEC61000.rms" title="Link to this definition">¶</a></dt>
+<dd><p>Measures the root-mean-square (RMS) value for input samples according to the IEC 61000-4-30 standard.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>samples</strong> (<em>pandas.DataFrame</em><em> or </em><em>pandas.Series</em>) – Samples from the signals in which RMS values should be measured, organized in columns.</p></li>
+<li><p><strong>nominal_grid_freq</strong> (<em>float</em>) – This method is applied only to grids with a nominal frequency of 50.0 Hz or 60.0 Hz in accordance with the
+IEC 61000-4-30 standard.</p></li>
+<li><p><strong>reference_split</strong> (<em>list</em>) – Optional and None by default. List of the indices to split the sample in windows. If <code class="docutils literal notranslate"><span class="pre">None</span></code>, the samples
+will be split according to the zero-crossings of the voltage signal.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><strong>rms_values</strong> – The RMS values for each signal.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>pandas.DataFrame</p>
+</dd>
+<dt class="field-even">Raises<span class="colon">:</span></dt>
+<dd class="field-even"><p><strong>ValueError</strong> – When the <code class="docutils literal notranslate"><span class="pre">nominal_grid_freq</span></code> is different from 50 Hz or 60 Hz:</p>
+</dd>
+</dl>
+<p class="rubric">Examples</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span><span class="w"> </span><span class="nn">typhoon.test.signals</span><span class="w"> </span><span class="kn">import</span> <span class="n">pandas_sine</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span><span class="w"> </span><span class="nn">typhoon.test.IEC61000</span><span class="w"> </span><span class="kn">import</span> <span class="n">rms</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">grid_freq</span> <span class="o">=</span> <span class="mi">60</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">signal</span> <span class="o">=</span> <span class="n">pandas_sine</span><span class="p">(</span><span class="n">frequency</span><span class="o">=</span><span class="n">grid_freq</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">rms_signal</span> <span class="o">=</span> <span class="n">rms</span><span class="p">(</span><span class="n">signal</span><span class="p">,</span> <span class="n">grid_freq</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<p><a class="reference internal" href="typhoon.test.IEC61000.flickermeter.html#typhoon.test.IEC61000.flickermeter" title="typhoon.test.IEC61000.flickermeter"><code class="xref py py-obj docutils literal notranslate"><span class="pre">typhoon.test.IEC61000.flickermeter</span></code></a>, <a class="reference internal" href="typhoon.test.IEC61000.harmonic_content.html#typhoon.test.IEC61000.harmonic_content" title="typhoon.test.IEC61000.harmonic_content"><code class="xref py py-obj docutils literal notranslate"><span class="pre">typhoon.test.IEC61000.harmonic_content</span></code></a>, <a class="reference internal" href="typhoon.test.IEC61000.frequency.html#typhoon.test.IEC61000.frequency" title="typhoon.test.IEC61000.frequency"><code class="xref py py-obj docutils literal notranslate"><span class="pre">typhoon.test.IEC61000.frequency</span></code></a></p>
+</div>
+</dd></dl>
+
+</section>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="Main">
+        <div class="sphinxsidebarwrapper">
+            <p class="logo"><a href="../index.html">
+              <img class="logo" src="../_static/logo.png" alt="Logo of "/>
+            </a></p>
+  <div>
+    <h4>Previous topic</h4>
+    <p class="topless"><a href="typhoon.test.IEC61000.power_quantities_three_phase.html"
+                          title="previous chapter">power_quantities_three_phase</a></p>
+  </div>
+  <div>
+    <h4>Next topic</h4>
+    <p class="topless"><a href="typhoon.test.IEC61000.sym_comp_voltage_unbalance.html"
+                          title="next chapter">sym_comp_voltage_unbalance</a></p>
+  </div>
+<search id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</search>
+<script>document.getElementById('searchbox').style.display = "block"</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="Related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="typhoon.test.IEC61000.sym_comp_voltage_unbalance.html" title="sym_comp_voltage_unbalance"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="typhoon.test.IEC61000.power_quantities_three_phase.html" title="power_quantities_three_phase"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html"> 1.35.3 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">rms</a></li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+    &#169; Copyright .
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 8.2.1.
+    </div>
+  </body>
+</html>

@@ -1,0 +1,6 @@
+text_style
+==========
+
+.. currentmodule:: typhoon.test.reporting.tables
+
+.. autofunction:: text_style

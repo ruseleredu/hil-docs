@@ -1,0 +1,6 @@
+merge_dataframes
+================
+
+.. currentmodule:: typhoon.test.capture
+
+.. autofunction:: merge_dataframes

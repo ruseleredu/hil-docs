@@ -1,0 +1,6 @@
+band_stop_filter
+================
+
+.. currentmodule:: typhoon.test.signals.filtering
+
+.. autofunction:: band_stop_filter

@@ -1,0 +1,6 @@
+window_rms
+==========
+
+.. currentmodule:: typhoon.test.rms
+
+.. autofunction:: window_rms

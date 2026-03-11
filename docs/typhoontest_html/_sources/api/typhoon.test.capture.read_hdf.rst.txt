@@ -1,0 +1,6 @@
+read_hdf
+========
+
+.. currentmodule:: typhoon.test.capture
+
+.. autofunction:: read_hdf

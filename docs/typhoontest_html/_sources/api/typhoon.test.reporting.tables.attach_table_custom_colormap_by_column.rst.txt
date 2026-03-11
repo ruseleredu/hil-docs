@@ -1,0 +1,6 @@
+attach_table_custom_colormap_by_column
+======================================
+
+.. currentmodule:: typhoon.test.reporting.tables
+
+.. autofunction:: attach_table_custom_colormap_by_column

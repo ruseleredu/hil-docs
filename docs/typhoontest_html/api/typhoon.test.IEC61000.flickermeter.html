@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+
+<html lang="en" data-content_root="../">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>flickermeter &#8212;  1.35.3 documentation</title>
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinxdoc.css?v=34905f61" />
+    <link rel="stylesheet" type="text/css" href="../_static/graphviz.css?v=4ae1632d" />
+    <script src="../_static/documentation_options.js?v=62a126fb"></script>
+    <script src="../_static/doctools.js?v=9bcbadda"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="frequency" href="typhoon.test.IEC61000.frequency.html" />
+    <link rel="prev" title="FFTResult" href="typhoon.test.harmonic.FFTResult.html" /> 
+  </head><body>
+    <div class="related" role="navigation" aria-label="Related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="typhoon.test.IEC61000.frequency.html" title="frequency"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="typhoon.test.harmonic.FFTResult.html" title="FFTResult"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html"> 1.35.3 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">flickermeter</a></li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <section id="flickermeter">
+<h1>flickermeter<a class="headerlink" href="#flickermeter" title="Link to this heading">¶</a></h1>
+<dl class="py function">
+<dt class="sig sig-object py" id="typhoon.test.IEC61000.flickermeter">
+<span class="sig-prename descclassname"><span class="pre">typhoon.test.IEC61000.</span></span><span class="sig-name descname"><span class="pre">flickermeter</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">samples</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">reference_voltage</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">reference_frequency</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">nominal_voltage</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">nominal_frequency</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">returns</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'all_parameters'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#typhoon.test.IEC61000.flickermeter" title="Link to this definition">¶</a></dt>
+<dd><p>This is a digital flickermeter based on 61000-4-30 standard. Is used for evaluating flicker severity and
+calculating the d parameters in relation to steady state conditions. This method is applied only to grids with a
+nominal frequency of 50.0 Hz or 60.0 Hz.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>samples</strong> (<em>pandas.DataFrame</em><em> or </em><em>pandas.Series</em>) – Voltage samples captured from simulation.</p></li>
+<li><p><strong>reference_voltage</strong> (<em>float</em>) – Voltage value used to determine the parameters of the weighting filter block that simulates the frequency
+response of the human ocular system to sinusoidal voltage fluctuations of a coiled filament gas-filled lamp.
+This value can be 230.0 V or 120.0 V.</p></li>
+<li><p><strong>reference_frequency</strong> (<em>float</em>) – Frequency value used to determine the parameters of the weighting filter block that simulates the frequency
+response of the human ocular system to sinusoidal voltage fluctuations of a coiled filament gas-filled lamp.
+This value can be 60.0 Hz or 50.0 Hz.</p></li>
+<li><p><strong>nominal_voltage</strong> (<em>float</em>) – Nominal voltage of the grid to be measured. This value can be 100.0 V, 120.0 V, 220.0 V or 230.0 V.</p></li>
+<li><p><strong>nominal_frequency</strong> (<em>float</em>) – Nominal frequency of the grid to be measured. This value can be 60.0 Hz or 50.0 Hz.</p></li>
+<li><p><strong>returns</strong> (<em>str</em>) – <p>Describes which parameters the function should return, considering the metrics calculated on the
+flickermeter project (IEC 61000-4-15). This parameter accepts the following arguments:</p>
+<blockquote>
+<div><ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">&quot;d_parameters&quot;</span></code> - Return the values <code class="docutils literal notranslate"><span class="pre">(dc,</span> <span class="pre">d_max,</span> <span class="pre">t_max)</span></code>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">&quot;Pinst&quot;</span></code> - Return the <code class="docutils literal notranslate"><span class="pre">Pinst</span></code> values.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">&quot;Pst&quot;</span></code> - Return the <code class="docutils literal notranslate"><span class="pre">Pst</span></code> values.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">&quot;Plt&quot;</span></code> - Return the <code class="docutils literal notranslate"><span class="pre">Plt</span></code> values.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">&quot;all_parameters&quot;</span></code> - Return the <code class="docutils literal notranslate"><span class="pre">(Pst,</span> <span class="pre">Plt,</span> <span class="pre">dc,</span> <span class="pre">d_max,</span> <span class="pre">t_max)</span></code> values.</p></li>
+</ul>
+</div></blockquote>
+</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><ul class="simple">
+<li><p><strong>Pst</strong> (<em>numpy.array</em>) – Known as the <code class="docutils literal notranslate"><span class="pre">Short-Term</span> <span class="pre">Flicker</span> <span class="pre">Severity</span></code>, which measures the severity based on an observation period (10 min).
+This is derived from the time-at-level statistics obtained from the level classifier in block 5 of the
+flickermeter.</p></li>
+<li><p><strong>Plt</strong> (<em>numpy.array</em>) – The long-term flicker severity (Plt), shall be derived from the Short-Term Severity values (Pst).
+The Plt value is calculated over a 2-hour period measurement. This time frame is recommended for power quality
+measurements according to IEC 61000-4-30, and for measurements in accordance with IECs 61000-3-3 and 61000-3-11.</p></li>
+<li><p><strong>dc</strong> (<em>float</em>) – The highest absolute value of all steady state voltage change observations during an
+observation period.</p></li>
+<li><p><strong>d_max</strong> (<em>float</em>) – The highest absolute voltage change observed during an observation period.</p></li>
+<li><p><strong>t_max</strong> (<em>float</em>) – Maximum time duration during the observation period in which the voltage deviation exceeds the dc limit.</p></li>
+<li><p><strong>Pinst</strong> (<em>numpy.array</em>) – The output of block 4 represents the instantaneous flicker sensation (Pinst).</p></li>
+</ul>
+</p>
+</dd>
+<dt class="field-odd">Raises<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>ValueError</strong> – When the parameters passed for the function are different from what is specified in the documentation.:</p></li>
+<li><p><strong>ValueError</strong> – When the capture time calculated from the timedelta index is smaller than 7800 seconds (2h10min) using: <code class="docutils literal notranslate"><span class="pre">returns=&quot;all_parameters&quot;</span></code> or <code class="docutils literal notranslate"><span class="pre">returns=&quot;Plt&quot;</span></code>.</p></li>
+<li><p><strong>ValueError</strong> – When the capture time calculated from the timedelta index is smaller than 1200 seconds (20min) using: <code class="docutils literal notranslate"><span class="pre">returns=&quot;Pst&quot;</span></code>.</p></li>
+<li><p><strong>ValueError</strong> – When the capture time calculated from the timedelta index is smaller than 10 seconds using: <code class="docutils literal notranslate"><span class="pre">returns=&quot;d_parameters&quot;</span></code>.</p></li>
+</ul>
+</dd>
+</dl>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The initial 2 seconds of the analyzed signal are not considered when using <code class="docutils literal notranslate"><span class="pre">returns=&quot;d_parameters&quot;</span></code>.</p>
+</div>
+<p class="rubric">Examples</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span><span class="w"> </span><span class="nn">scipy.signal</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">sig</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span><span class="w"> </span><span class="nn">typhoon.test.IEC61000</span><span class="w"> </span><span class="kn">import</span> <span class="n">flickermeter</span>
+<span class="gp">&gt;&gt;&gt;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="c1"># Parameters of the signal</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">duration</span> <span class="o">=</span> <span class="mi">10</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">sample_rate</span> <span class="o">=</span> <span class="mi">1000</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">rms_voltage</span> <span class="o">=</span> <span class="mi">230</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">frequency</span> <span class="o">=</span> <span class="mi">60</span>
+<span class="gp">&gt;&gt;&gt;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="c1"># Signal and modulation signal</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">time</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">duration</span><span class="p">,</span> <span class="n">sample_rate</span> <span class="o">*</span> <span class="n">duration</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">fundamental_voltage</span> <span class="o">=</span> <span class="n">rms_voltage</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="mi">2</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span> <span class="o">*</span> <span class="n">frequency</span> <span class="o">*</span> <span class="n">time</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">frequency_modulation</span><span class="p">,</span> <span class="n">amplitude_modulation</span> <span class="o">=</span> <span class="mf">0.500</span><span class="p">,</span> <span class="mf">0.597</span>
+<span class="gp">&gt;&gt;&gt;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">modulation</span> <span class="o">=</span> <span class="p">(</span><span class="n">amplitude_modulation</span> <span class="o">/</span> <span class="mi">2</span> <span class="o">/</span> <span class="mi">100</span><span class="p">)</span> <span class="o">*</span> <span class="n">sig</span><span class="o">.</span><span class="n">square</span><span class="p">(</span><span class="mi">2</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span> <span class="o">*</span> <span class="n">frequency_modulation</span> <span class="o">*</span> <span class="n">time</span><span class="p">)</span> <span class="o">+</span> <span class="mi">1</span>
+<span class="gp">&gt;&gt;&gt;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="c1"># pandas.Series of the ``voltages_sample = fundamental_voltage * modulation`` signals</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">time_index</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">to_timedelta</span><span class="p">(</span><span class="n">time</span><span class="p">,</span> <span class="s2">&quot;s&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">voltage_samples</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">(</span><span class="n">fundamental_voltage</span> <span class="o">*</span> <span class="n">modulation</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="n">time_index</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">dc</span><span class="p">,</span> <span class="n">d_max</span><span class="p">,</span> <span class="n">Tmax</span> <span class="o">=</span> <span class="n">flickermeter</span><span class="p">(</span><span class="n">voltage_samples</span><span class="p">,</span> <span class="n">rms_voltage</span><span class="p">,</span> <span class="n">frequency</span><span class="p">,</span> <span class="n">rms_voltage</span><span class="p">,</span> <span class="n">frequency</span><span class="p">,</span> <span class="s1">&#39;d_parameters&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<p><a class="reference internal" href="typhoon.test.IEC61000.rms.html#typhoon.test.IEC61000.rms" title="typhoon.test.IEC61000.rms"><code class="xref py py-obj docutils literal notranslate"><span class="pre">typhoon.test.IEC61000.rms</span></code></a></p>
+</div>
+</dd></dl>
+
+</section>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="Main">
+        <div class="sphinxsidebarwrapper">
+            <p class="logo"><a href="../index.html">
+              <img class="logo" src="../_static/logo.png" alt="Logo of "/>
+            </a></p>
+  <div>
+    <h4>Previous topic</h4>
+    <p class="topless"><a href="typhoon.test.harmonic.FFTResult.html"
+                          title="previous chapter">FFTResult</a></p>
+  </div>
+  <div>
+    <h4>Next topic</h4>
+    <p class="topless"><a href="typhoon.test.IEC61000.frequency.html"
+                          title="next chapter">frequency</a></p>
+  </div>
+<search id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</search>
+<script>document.getElementById('searchbox').style.display = "block"</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="Related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="typhoon.test.IEC61000.frequency.html" title="frequency"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="typhoon.test.harmonic.FFTResult.html" title="FFTResult"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html"> 1.35.3 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">flickermeter</a></li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+    &#169; Copyright .
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 8.2.1.
+    </div>
+  </body>
+</html>

@@ -1,0 +1,6 @@
+high_pass_filter
+================
+
+.. currentmodule:: typhoon.test.signals.filtering
+
+.. autofunction:: high_pass_filter

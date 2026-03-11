@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+
+<html lang="en" data-content_root="../">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>find_all &#8212;  1.35.3 documentation</title>
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinxdoc.css?v=34905f61" />
+    <link rel="stylesheet" type="text/css" href="../_static/graphviz.css?v=4ae1632d" />
+    <script src="../_static/documentation_options.js?v=62a126fb"></script>
+    <script src="../_static/doctools.js?v=9bcbadda"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="find_edges" href="typhoon.test.signals.find_edges.html" />
+    <link rel="prev" title="find" href="typhoon.test.signals.find.html" /> 
+  </head><body>
+    <div class="related" role="navigation" aria-label="Related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="typhoon.test.signals.find_edges.html" title="find_edges"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="typhoon.test.signals.find.html" title="find"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html"> 1.35.3 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">find_all</a></li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <section id="find-all">
+<h1>find_all<a class="headerlink" href="#find-all" title="Link to this heading">¶</a></h1>
+<dl class="py function">
+<dt class="sig sig-object py" id="typhoon.test.signals.find_all">
+<span class="sig-prename descclassname"><span class="pre">typhoon.test.signals.</span></span><span class="sig-name descname"><span class="pre">find_all</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">signal</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">region</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">value</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">from_region</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">during</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#typhoon.test.signals.find_all" title="Link to this definition">¶</a></dt>
+<dd><p>Finds a desired characteristic on a signal.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>signal</strong> (<em>pandas.Series</em>) – Signal to be tested for.</p></li>
+<li><p><strong>region</strong> (<em>string</em>) – Can be “at”, “outside”, “above” or “below”. The option “outside” means “above” or “below”.</p></li>
+<li><p><strong>value</strong> (<em>float</em><em> or </em><em>tuple</em>) – Defines the region as a single number or range.</p></li>
+<li><p><strong>from_region</strong> (<em>string</em>) – Defines which region the signal should be prior to the desired region. Use this to detect transitions.</p></li>
+<li><p><strong>during</strong> (<em>tuple</em>) – Time period (as a range) to be considered for analysis.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><strong>result</strong> – All moments in which the signal meets described behaviour</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>list of <a class="reference internal" href="typhoon.types.timedelta.Timedelta.html#typhoon.types.timedelta.Timedelta" title="typhoon.types.timedelta.Timedelta">Timedelta</a></p>
+</dd>
+</dl>
+<p class="rubric">Examples</p>
+<p>Find all  rising edges of the sine signal with zero as threshold value</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span><span class="w"> </span><span class="nn">typhoon.test.signals</span><span class="w"> </span><span class="kn">import</span> <span class="n">pandas_sine</span><span class="p">,</span> <span class="n">find_all</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">sine_sig</span> <span class="o">=</span> <span class="n">pandas_sine</span><span class="p">(</span><span class="n">frequency</span><span class="o">=</span><span class="mi">50</span><span class="p">,</span> <span class="n">duration</span><span class="o">=</span><span class="mf">0.05</span><span class="p">,</span> <span class="n">Ts</span><span class="o">=</span><span class="mf">1e-6</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">rising_edges</span> <span class="o">=</span> <span class="n">find_all</span><span class="p">(</span><span class="n">sine_sig</span><span class="p">,</span> <span class="n">region</span><span class="o">=</span><span class="s2">&quot;above&quot;</span><span class="p">,</span> <span class="n">value</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">from_region</span><span class="o">=</span><span class="s2">&quot;below&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Find all  falling edges of the sine signal with zero as threshold value</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span><span class="w"> </span><span class="nn">typhoon.test.signals</span><span class="w"> </span><span class="kn">import</span> <span class="n">pandas_sine</span><span class="p">,</span> <span class="n">find_all</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">sine_sig</span> <span class="o">=</span> <span class="n">pandas_sine</span><span class="p">(</span><span class="n">frequency</span><span class="o">=</span><span class="mi">50</span><span class="p">,</span> <span class="n">duration</span><span class="o">=</span><span class="mf">0.05</span><span class="p">,</span> <span class="n">Ts</span><span class="o">=</span><span class="mf">1e-6</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">falling_edges</span> <span class="o">=</span> <span class="n">find_all</span><span class="p">(</span><span class="n">sine_sig</span><span class="p">,</span> <span class="n">region</span><span class="o">=</span><span class="s2">&quot;below&quot;</span><span class="p">,</span> <span class="n">value</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">from_region</span><span class="o">=</span><span class="s2">&quot;above&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Find all the moments when signal enters the specified region (with assumption that signal is already captured)</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">entering_moments</span> <span class="o">=</span> <span class="n">find_all</span><span class="p">(</span><span class="n">captured_sig</span><span class="p">,</span> <span class="n">region</span><span class="o">=</span><span class="s2">&quot;at&quot;</span><span class="p">,</span> <span class="n">value</span><span class="o">=</span><span class="p">(</span><span class="mi">900</span><span class="p">,</span> <span class="mi">1000</span><span class="p">),</span> <span class="n">from_region</span><span class="o">=</span><span class="s2">&quot;outside&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<p><a class="reference internal" href="typhoon.test.signals.find.html#typhoon.test.signals.find" title="typhoon.test.signals.find"><code class="xref py py-obj docutils literal notranslate"><span class="pre">typhoon.test.signals.find</span></code></a>, <a class="reference internal" href="typhoon.test.signals.find_edges.html#typhoon.test.signals.find_edges" title="typhoon.test.signals.find_edges"><code class="xref py py-obj docutils literal notranslate"><span class="pre">typhoon.test.signals.find_edges</span></code></a>, <a class="reference internal" href="typhoon.test.capture.wait_until.html#typhoon.test.capture.wait_until" title="typhoon.test.capture.wait_until"><code class="xref py py-obj docutils literal notranslate"><span class="pre">typhoon.test.capture.wait_until</span></code></a></p>
+</div>
+</dd></dl>
+
+</section>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="Main">
+        <div class="sphinxsidebarwrapper">
+            <p class="logo"><a href="../index.html">
+              <img class="logo" src="../_static/logo.png" alt="Logo of "/>
+            </a></p>
+  <div>
+    <h4>Previous topic</h4>
+    <p class="topless"><a href="typhoon.test.signals.find.html"
+                          title="previous chapter">find</a></p>
+  </div>
+  <div>
+    <h4>Next topic</h4>
+    <p class="topless"><a href="typhoon.test.signals.find_edges.html"
+                          title="next chapter">find_edges</a></p>
+  </div>
+<search id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</search>
+<script>document.getElementById('searchbox').style.display = "block"</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="Related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="typhoon.test.signals.find_edges.html" title="find_edges"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="typhoon.test.signals.find.html" title="find"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html"> 1.35.3 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">find_all</a></li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+    &#169; Copyright .
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 8.2.1.
+    </div>
+  </body>
+</html>

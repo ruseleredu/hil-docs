@@ -1,0 +1,19 @@
+Phasor
+======
+
+.. currentmodule:: typhoon.types.phasors
+
+.. autoclass:: Phasor
+   :show-inheritance:
+
+   .. rubric:: Attributes Summary
+
+   .. autosummary::
+
+      ~Phasor.angle
+      ~Phasor.mag
+
+   .. rubric:: Attributes Documentation
+
+   .. autoattribute:: angle
+   .. autoattribute:: mag

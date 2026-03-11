@@ -1,0 +1,6 @@
+follows_reference
+=================
+
+.. currentmodule:: typhoon.test.signals
+
+.. autofunction:: follows_reference

@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+
+<html lang="en" data-content_root="../">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>attach_figure &#8212;  1.35.3 documentation</title>
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinxdoc.css?v=34905f61" />
+    <link rel="stylesheet" type="text/css" href="../_static/graphviz.css?v=4ae1632d" />
+    <script src="../_static/documentation_options.js?v=62a126fb"></script>
+    <script src="../_static/doctools.js?v=9bcbadda"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="XY_graph" href="typhoon.test.reporting.figures.XY_graph.html" />
+    <link rel="prev" title="report_step" href="typhoon.test.reporting.messages.report_step.html" /> 
+  </head><body>
+    <div class="related" role="navigation" aria-label="Related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="typhoon.test.reporting.figures.XY_graph.html" title="XY_graph"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="typhoon.test.reporting.messages.report_step.html" title="report_step"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html"> 1.35.3 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">attach_figure</a></li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <section id="attach-figure">
+<h1>attach_figure<a class="headerlink" href="#attach-figure" title="Link to this heading">¶</a></h1>
+<dl class="py function">
+<dt class="sig sig-object py" id="typhoon.test.reporting.figures.attach_figure">
+<span class="sig-prename descclassname"><span class="pre">typhoon.test.reporting.figures.</span></span><span class="sig-name descname"><span class="pre">attach_figure</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dataframe_list</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">attachment_name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">attach_as_step</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#typhoon.test.reporting.figures.attach_figure" title="Link to this definition">¶</a></dt>
+<dd><p>Adds matplotlib figure of provided signals in the allure report as .png image
+attachment. Signals of interest are provided as list of pandas.Dataframe objects; every DataFrame is plotted on
+designated subplot. Attachment is added as new report step with provided ‘attachment_name’ argument as step message.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>dataframe_list</strong> (<em>list</em>) – List of pandas.DataFrame or pandas.Series objects which contain signals of interest. Every DataFrame object
+groups signals which should be present on the same subplot.</p></li>
+<li><p><strong>attachment_name</strong> (<em>string</em>) – Name with which this attachment will be added to allure report.</p></li>
+<li><p><strong>attach_as_step</strong> (<em>bool - default False</em>) – If set to False, figure is added at the end of the report, no matter when in test it is actually attached. This
+is default allure behaviour, all the attachments are added at the end of the report. To overwrite this
+behaviour and place attachment in the report chronologically in the moment when it is added, it must be
+added in the separate report step. This is achieved by setting this argument to True.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>None</p>
+</dd>
+</dl>
+<p class="rubric">Examples</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span><span class="w"> </span><span class="nn">typhoon.test.reporting.figures</span><span class="w"> </span><span class="kn">import</span> <span class="n">attach_figure</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span><span class="w"> </span><span class="nn">typhoon.test.signals</span><span class="w"> </span><span class="kn">import</span> <span class="n">pandas_3ph_sine</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="c1"># create voltage and current three-phase signals</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">voltages</span> <span class="o">=</span> <span class="n">pandas_3ph_sine</span><span class="p">(</span><span class="n">amplitude</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span> <span class="n">frequency</span><span class="o">=</span><span class="mi">50</span><span class="p">,</span> <span class="n">Ts</span><span class="o">=</span><span class="mf">1e-6</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">currents</span> <span class="o">=</span> <span class="n">pandas_3ph_sine</span><span class="p">(</span><span class="n">amplitude</span><span class="o">=</span><span class="mi">30</span><span class="p">,</span> <span class="n">frequency</span><span class="o">=</span><span class="mi">50</span><span class="p">,</span> <span class="n">phase</span><span class="o">=</span><span class="mi">30</span><span class="p">,</span> <span class="n">Ts</span><span class="o">=</span><span class="mf">1e-6</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="c1"># attach figure of voltages and currents to allure report</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">attach_figure</span><span class="p">([</span><span class="n">voltages</span><span class="p">,</span> <span class="n">currents</span><span class="p">],</span> <span class="n">attachment_name</span><span class="o">=</span><span class="s2">&quot;Grid signals&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+</section>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="Main">
+        <div class="sphinxsidebarwrapper">
+            <p class="logo"><a href="../index.html">
+              <img class="logo" src="../_static/logo.png" alt="Logo of "/>
+            </a></p>
+  <div>
+    <h4>Previous topic</h4>
+    <p class="topless"><a href="typhoon.test.reporting.messages.report_step.html"
+                          title="previous chapter">report_step</a></p>
+  </div>
+  <div>
+    <h4>Next topic</h4>
+    <p class="topless"><a href="typhoon.test.reporting.figures.XY_graph.html"
+                          title="next chapter">XY_graph</a></p>
+  </div>
+<search id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</search>
+<script>document.getElementById('searchbox').style.display = "block"</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="Related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="typhoon.test.reporting.figures.XY_graph.html" title="XY_graph"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="typhoon.test.reporting.messages.report_step.html" title="report_step"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html"> 1.35.3 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">attach_figure</a></li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+    &#169; Copyright .
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 8.2.1.
+    </div>
+  </body>
+</html>

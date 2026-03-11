@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+
+<html lang="en" data-content_root="../">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>is_first_order &#8212;  1.35.3 documentation</title>
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinxdoc.css?v=34905f61" />
+    <link rel="stylesheet" type="text/css" href="../_static/graphviz.css?v=4ae1632d" />
+    <script src="../_static/documentation_options.js?v=62a126fb"></script>
+    <script src="../_static/doctools.js?v=9bcbadda"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="is_ramp" href="typhoon.test.signals.is_ramp.html" />
+    <link rel="prev" title="is_constant" href="typhoon.test.signals.is_constant.html" /> 
+  </head><body>
+    <div class="related" role="navigation" aria-label="Related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="typhoon.test.signals.is_ramp.html" title="is_ramp"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="typhoon.test.signals.is_constant.html" title="is_constant"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html"> 1.35.3 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">is_first_order</a></li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <section id="is-first-order">
+<h1>is_first_order<a class="headerlink" href="#is-first-order" title="Link to this heading">¶</a></h1>
+<dl class="py function">
+<dt class="sig sig-object py" id="typhoon.test.signals.is_first_order">
+<span class="sig-prename descclassname"><span class="pre">typhoon.test.signals.</span></span><span class="sig-name descname"><span class="pre">is_first_order</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">signal</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">time_constant</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">init_value</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">final_value</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tol</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">during</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">strictness</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">time_tol</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">report_plot</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#typhoon.test.signals.is_first_order" title="Link to this definition">¶</a></dt>
+<dd><p>Checks if signal represents first order response.</p>
+<dl class="simple">
+<dt>Verifies that signal follows exponential equation defined with formula:</dt><dd><p>x(t) = x(inf) + (x(0) - x(inf)) * exp(-t / tau),</p>
+</dd>
+</dl>
+<p>where t represents the time axis of the signal.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>signal</strong> (<em>pandas.Series</em>) – Signal to be tested for.</p></li>
+<li><p><strong>time_constant</strong> (<em>float</em>) – Time constant of the signal; represents tau in formula (1).</p></li>
+<li><p><strong>init_value</strong> (<em>float</em>) – Initial value of the signal; represents x(0) in formula (1)</p></li>
+<li><p><strong>final_value</strong> (<em>float</em>) – Stationary state value of the signal; represents x(inf) in formula (1).</p></li>
+<li><p><strong>tol</strong> (<em>float</em>) – Tolerance around which the signal can stay with respect to reference ramp when determining if result is True or
+False.</p></li>
+<li><p><strong>during</strong> (<em>2-element tuple</em><em> of </em><em>numbers</em><em> or </em><a class="reference internal" href="typhoon.types.timedelta.Timedelta.html#typhoon.types.timedelta.Timedelta" title="typhoon.types.timedelta.Timedelta"><em>Timedelta</em></a>) – Time period (as a range) to be considered for analysis.</p></li>
+<li><p><strong>strictness</strong> (<em>float</em>) – Number between 0.0 and 1.0 that determines percentage of time signal should be inside the defined range for
+test to pass.</p></li>
+<li><p><strong>time_tol</strong> (<em>float</em><em> or </em><em>timedelta</em>) – Time tolerance - argument which allows that signal is leading or lagging up to specified time in seconds,
+compared to created reference.</p></li>
+<li><p><strong>report_plot</strong> (<em>dict</em>) – <p>Dictionary which overrides default allure report plot attachment behaviour. It also overrides behaviour specified for whole test run
+with command line arguments <code class="docutils literal notranslate"><span class="pre">--analysis-plot-type</span></code> and <code class="docutils literal notranslate"><span class="pre">--analysis-plot-on-fail-only</span></code>. Dictionary has two keys to be specified:</p>
+<blockquote>
+<div><ol class="arabic">
+<li><p><code class="docutils literal notranslate"><span class="pre">type</span></code>: specifies which kind of allure plot should be used. Valid values:</p>
+<blockquote>
+<div><ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">static</span></code> - only matplotlib plot attached as .png picture is attached</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">interactive</span></code> - only interactive html plot created with bokeh library is attached. Advantage of this plot it has options to zoom in/zoom out. Disadvantage is that it consumes significantly more memory.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">none</span></code> - none of the plots will be attached</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">all</span></code> - all plots will be added. Currently supported ones are matplotlib plot(static) and bokeh plot(interactive)</p></li>
+</ul>
+</div></blockquote>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">when</span></code>: specifies when to add plots that are specified with previous key to report. Available options:</p>
+<blockquote>
+<div><ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">always</span></code> - always adds specified plots</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">on-fail</span></code> - adds plots only if comparison of reference and measured signal fails. This is good way to decrease size of allure plots.</p></li>
+</ul>
+</div></blockquote>
+</li>
+</ol>
+</div></blockquote>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>If <code class="docutils literal notranslate"><span class="pre">report_plot</span></code> argument is not provided, and command line arguments <code class="docutils literal notranslate"><span class="pre">--analysis-plot-type</span></code> and <code class="docutils literal notranslate"><span class="pre">analysis-plot-on-fail-only</span></code>
+are not specified, default behaviour is static plot, attached always. If command line arguments are specified, they define new default
+behaviour for whole test run.</p>
+</div>
+</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><strong>result</strong> – Result of the analysis.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>AnalysisResult</p>
+</dd>
+</dl>
+<p class="rubric">Examples</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span><span class="w"> </span><span class="nn">typhoon.test.signals</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">signals</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">tau</span> <span class="o">=</span> <span class="mf">0.1</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">init</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">fin</span> <span class="o">=</span> <span class="mi">10</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">exp_sig</span> <span class="o">=</span> <span class="n">signals</span><span class="o">.</span><span class="n">pandas_first_order</span><span class="p">(</span><span class="n">tau</span><span class="p">,</span> <span class="n">init</span><span class="p">,</span> <span class="n">fin</span><span class="p">)</span> <span class="c1"># first order response signal</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">assert</span> <span class="n">signals</span><span class="o">.</span><span class="n">is_first_order</span><span class="p">(</span><span class="n">exp_sig</span><span class="p">,</span> <span class="n">tau</span><span class="p">,</span> <span class="n">init</span><span class="p">,</span> <span class="n">fin</span><span class="p">,</span> <span class="n">tol</span><span class="o">=</span><span class="mf">0.01</span><span class="o">*</span><span class="n">fin</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+</section>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="Main">
+        <div class="sphinxsidebarwrapper">
+            <p class="logo"><a href="../index.html">
+              <img class="logo" src="../_static/logo.png" alt="Logo of "/>
+            </a></p>
+  <div>
+    <h4>Previous topic</h4>
+    <p class="topless"><a href="typhoon.test.signals.is_constant.html"
+                          title="previous chapter">is_constant</a></p>
+  </div>
+  <div>
+    <h4>Next topic</h4>
+    <p class="topless"><a href="typhoon.test.signals.is_ramp.html"
+                          title="next chapter">is_ramp</a></p>
+  </div>
+<search id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</search>
+<script>document.getElementById('searchbox').style.display = "block"</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="Related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="typhoon.test.signals.is_ramp.html" title="is_ramp"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="typhoon.test.signals.is_constant.html" title="is_constant"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html"> 1.35.3 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">is_first_order</a></li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+    &#169; Copyright .
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 8.2.1.
+    </div>
+  </body>
+</html>

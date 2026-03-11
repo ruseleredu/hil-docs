@@ -1,0 +1,6 @@
+find_edges
+==========
+
+.. currentmodule:: typhoon.test.signals
+
+.. autofunction:: find_edges
