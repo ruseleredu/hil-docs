@@ -26,3 +26,11 @@ Accelerate and enrich your students’ power electronics learning experience wit
 ## Learn online
 
 - https://hil.academy/
+
+
+:::info
+
+HIL402 devices have a single Ethernet connection. For these devices, real-time communication protocols (Ethernet Variable Exchange and IEC 61850 Sampled Values protocol) cannot be used when connecting to the HIL device over Ethernet.
+
+:::
+
