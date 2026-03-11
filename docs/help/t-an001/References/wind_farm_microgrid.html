@@ -1,0 +1,372 @@
+<!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en" data-whc_version="24.1">
+    <head><link rel="shortcut icon" href="../../favicon.ico"/><link rel="icon" href="../../favicon.ico"/><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><meta name="DC.rights.owner" content="(C) Copyright 2026"/><meta name="copyright" content="(C) Copyright 2026"/><meta name="generator" content="DITA-OT"/><meta name="DC.type" content="reference"/><meta name="description" content="Microgrid operation of a mini wind farm, battery unit, large consumer area, and power system connection in both island and reconnection modes"/><meta name="DC.relation" content="../../t-an001/concepts/microgrids.html"/><meta name="DC.format" content="HTML5"/><meta name="DC.identifier" content="doc"/>        
+      <title>Microgrid powered by a wind farm</title><!--  Generated with Oxygen version 24.1, build number 2022030800.  --><meta name="wh-path2root" content="../../"/><meta name="wh-toc-id" content="doc-d16877e516"/><meta name="wh-source-relpath" content="t-an001/References/wind_farm_microgrid.dita"/><meta name="wh-out-relpath" content="t-an001/References/wind_farm_microgrid.html"/>
+    <!-- Latest compiled and minified Bootstrap CSS -->
+    <link rel="stylesheet" type="text/css" href="../../oxygen-webhelp/lib/bootstrap/css/bootstrap.min.css"/>
+    
+    <link rel="stylesheet" href="../../oxygen-webhelp/lib/jquery-ui/jquery-ui.min.css"/>
+    
+    <!-- Template default styles  -->
+    <link rel="stylesheet" type="text/css" href="../../oxygen-webhelp/app/topic-page.css?buildId=2022030800"/>
+    
+    
+    <script src="../../oxygen-webhelp/lib/jquery/jquery-3.5.1.min.js"></script>
+    
+    <script data-main="../../oxygen-webhelp/app/topic-page.js" src="../../oxygen-webhelp/lib/requirejs/require.js"></script>
+<link rel="stylesheet" type="text/css" href="../../oxygen-webhelp/template/oxygen.css?buildId=2022030800"/><link rel="stylesheet" type="text/css" href="../../oxygen-webhelp/template/notes.css?buildId=2022030800"/><script type="text/javascript" src="../../Scripts/mml-svg.js"> 
+</script><link rel="stylesheet" type="text/css" href="../../assets/typhoon.css"/></head>
+
+    <body id="doc" class="wh_topic_page frmBody">
+        <a href="#wh_topic_body" class="sr-only sr-only-focusable">
+            Jump to main content
+        </a>
+        
+        
+        
+        
+        <header class="navbar navbar-default wh_header">
+    <div class="container-fluid">
+        <div class="wh_header_flex_container navbar-nav navbar-expand-md navbar-dark">
+            <div class="wh_logo_and_publication_title_container">
+                <div class="wh_logo_and_publication_title">
+                    
+                    <a href="https://www.typhoon-hil.com" class=" wh_logo d-none d-sm-block "><img src="../../logo.svg" alt="  Typhoon HIL Documentation  Version: 2026.1  "/></a>
+                    <div class=" wh_publication_title "><a href="../../index.html"><span class="booktitle">  <span class="ph mainbooktitle">Typhoon HIL Documentation</span>  <span class="ph booktitlealt">Version: 2026.1</span>  </span></a></div>
+                    
+                </div>
+                
+                <button type="button" data-target="#wh_top_menu_and_indexterms_link" id="wh_menu_mobile_button" data-toggle="collapse" class="navbar-toggler collapsed wh_toggle_button" aria-expanded="false" aria-label="Toggle menu" aria-controls="wh_top_menu_and_indexterms_link">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+            </div>
+
+            <div class="wh_top_menu_and_indexterms_link collapse navbar-collapse" id="wh_top_menu_and_indexterms_link">
+                
+                <nav class=" wh_top_menu " aria-label="Menu Container"><ul role="menubar" aria-label="Menu"><li role="menuitem" aria-haspopup="true" aria-expanded="false" class="has-children"><span id="tocId-d16877e21-mi" data-tocid="tocId-d16877e21" data-state="not-ready" class=" topicref application-notes"><span class="title"><a href="../../t-an001/concepts/application_notes_introduction.html">Typhoon HIL Application Notes</a></span></span></li><li role="menuitem" aria-haspopup="true" aria-expanded="false" class="has-children"><span id="tocId-d16877e737-mi" data-tocid="tocId-d16877e737" data-state="not-ready" class=" topicref software-manual"><span class="title"><a href="../../t-ug002/topics/software_manual_introduction.html">Typhoon HIL Software Manual</a></span></span></li><li role="menuitem" aria-haspopup="true" aria-expanded="false" class="has-children"><span id="tocId-d16877e7901-mi" data-tocid="tocId-d16877e7901" data-state="not-ready" class=" topicref hardware-manual"><span class="title"><a href="../../t-ug001/abstract/hardware_manual_introduction.html">Typhoon HIL Hardware Manual</a></span></span></li></ul></nav>
+                
+                
+            </div>
+        </div>
+    </div>
+</header>
+        
+        
+         
+        
+        <div class=" wh_search_input navbar-form wh_topic_page_search search " role="form">
+            
+            
+            
+            <form id="searchForm" method="get" role="search" action="../../search.html"><div><input type="search" placeholder="Search " class="wh_search_textfield" id="textToSearch" name="searchQuery" aria-label="Search query" required="required"/><button type="submit" class="wh_search_button" aria-label="Search"><span class="search_input_text">Search</span></button></div></form>
+            
+            
+            
+        </div>
+        
+        <div class="container-fluid" id="wh_topic_container">
+            <div class="row">
+
+                <nav class="wh_tools d-print-none navbar-expand-md" aria-label="Tools">
+                    
+                    <div data-tooltip-position="bottom" class=" wh_breadcrumb "><ol class="d-print-none"><li><span class="home"><a href="../../index.html"><span>Home</span></a></span></li><li><div class="topicref application-notes"><div class="title"><a href="../../t-an001/concepts/application_notes_introduction.html">Typhoon HIL Application Notes</a></div></div></li><li><div class="topicref" data-id="doc"><div class="title"><a href="../../t-an001/concepts/microgrids.html">Microgrids</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">Rapid microgrid pre-commissioning and system integration. Microgrid controller RCP and   testing.</span></p></div></div></div></li><li class="active"><div class="topicref" data-id="doc"><div class="title"><a href="../../t-an001/References/wind_farm_microgrid.html">Microgrid powered by a wind farm</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">Microgrid operation of a mini wind farm, battery unit, large consumer area, and power system connection in both island and reconnection modes</span></p></div></div></div></li></ol></div>
+                    
+                    
+                    
+                    <div class="wh_right_tools">
+                        <button class="wh_hide_highlight" aria-label="Toggle search highlights" title="Toggle search highlights"></button>
+                        <button class="webhelp_expand_collapse_sections" data-next-state="collapsed" aria-label="Collapse sections" title="Collapse sections"></button>
+                        
+                        
+                        
+                        
+                        <div class=" wh_print_link print d-none d-md-inline-block "><button onClick="window.print()" title="Print this page" aria-label="Print this page"></button></div>
+                        
+                        <button type="button" id="wh_toc_button" class="custom-toggler navbar-toggler collapsed wh_toggle_button navbar-light" aria-expanded="false" aria-label="Toggle publishing table of content" aria-controls="wh_publication_toc">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+                    </div>
+                    
+                </nav>
+            </div>
+            
+            
+            
+            
+            <div class="wh_content_area">
+                <div class="row">
+                    
+                        <nav id="wh_publication_toc" class="col-lg-3 col-md-3 col-sm-12 d-md-block d-none d-print-none" aria-label="Table of Contents Container">
+                            <div id="wh_publication_toc_content">
+		                        
+                            	<div class=" wh_publication_toc " data-tooltip-position="right"><span class="expand-button-action-labels"><span id="button-expand-action" role="button" aria-label="Expand"></span><span id="button-collapse-action" role="button" aria-label="Collapse"></span><span id="button-pending-action" role="button" aria-label="Pending"></span></span><ul role="tree" aria-label="Table of Contents"><li role="treeitem" aria-expanded="true"><div data-tocid="tocId-d16877e21" class="topicref application-notes" data-state="expanded"><span role="button" tabindex="0" aria-labelledby="button-collapse-action tocId-d16877e21-link" class="wh-expand-btn"></span><div class="title"><a href="../../t-an001/concepts/application_notes_introduction.html" id="tocId-d16877e21-link">Typhoon HIL Application Notes</a></div></div><ul role="group" class="navbar-nav nav-list"><li role="treeitem"><div data-tocid="doc-d16877e25" class="topicref" data-id="doc" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../../t-an001/concepts/application_notes_introduction.html" id="doc-d16877e25-link">Application Notes Introduction</a><div class="wh-tooltip"><p class="shortdesc">Brief overview of the different categories of Application Notes</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="doc-d16877e36" class="topicref" data-id="doc" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action doc-d16877e36-link" class="wh-expand-btn"></span><div class="title"><a href="../../t-an001/concepts/grid_connected_converters.html" id="doc-d16877e36-link">Grid-connected converters</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">Grid-connected converter applications featuring various grid support    functionalities.</span></p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="doc-d16877e96" class="topicref" data-id="doc" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action doc-d16877e96-link" class="wh-expand-btn"></span><div class="title"><a href="../../t-an001/concepts/automotive.html" id="doc-d16877e96-link">Automotive</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">Electric cars and other automotive applications.</span></p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="doc-d16877e132" class="topicref" data-id="doc" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action doc-d16877e132-link" class="wh-expand-btn"></span><div class="title"><a href="../../t-an001/concepts/aerospace.html" id="doc-d16877e132-link">Aerospace</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">System-level and component-level aircraft applications.</span></p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="doc-d16877e168" class="topicref" data-id="doc" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action doc-d16877e168-link" class="wh-expand-btn"></span><div class="title"><a href="../../t-an001/concepts/battery_management_systems.html" id="doc-d16877e168-link">Battery management systems</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">Battery management system (BMS) examples</span></p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="doc-d16877e216" class="topicref" data-id="doc" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action doc-d16877e216-link" class="wh-expand-btn"></span><div class="title"><a href="../../t-an001/concepts/how-to_guides.html" id="doc-d16877e216-link">How-to Guides</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">Guides, tips, and tricks on various aspects of Typhoon HIL toolchain usage.</span></p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="doc-d16877e312" class="topicref" data-id="doc" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action doc-d16877e312-link" class="wh-expand-btn"></span><div class="title"><a href="../../t-an001/concepts/communication_protocols.html" id="doc-d16877e312-link">Communication Protocols</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">Interoperability. Cybersecurity. Modbus, Sunspec, IEC61850, IEEE    C37.118, DNP3, CAN, OPC UA, and more.</span></p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="doc-d16877e384" class="topicref" data-id="doc" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action doc-d16877e384-link" class="wh-expand-btn"></span><div class="title"><a href="../../t-an001/concepts/power_systems.html" id="doc-d16877e384-link">Power Systems</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">Power system simulation. Relay protection testing. Power flow tool integration and   co-simulation.</span></p></div></div></div></li><li role="treeitem" aria-expanded="true"><div data-tocid="doc-d16877e468" class="topicref" data-id="doc" data-state="expanded"><span role="button" tabindex="0" aria-labelledby="button-collapse-action doc-d16877e468-link" class="wh-expand-btn"></span><div class="title"><a href="../../t-an001/concepts/microgrids.html" id="doc-d16877e468-link">Microgrids</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">Rapid microgrid pre-commissioning and system integration. Microgrid controller RCP and   testing.</span></p></div></div></div><ul role="group" class="navbar-nav nav-list"><li role="treeitem"><div data-tocid="doc-d16877e480" class="topicref" data-id="doc" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../../t-an001/References/terrestrial_microgrid_(switching).html" id="doc-d16877e480-link">Plug-and-play microgrid library and testing of microgrid controller</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">Demonstration of the performance of both switching and average microgrid controller     components in the Microgrid Library</span></p></div></div></div></li><li role="treeitem"><div data-tocid="doc-d16877e492" class="topicref" data-id="doc" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../../t-an001/References/generic_pv_plant.html" id="doc-d16877e492-link">Generic PV plant</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">Description and demonstration of the capabilities of the Generic PV Plant   component</span></p></div></div></div></li><li role="treeitem"><div data-tocid="doc-d16877e504" class="topicref" data-id="doc" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../../t-an001/References/generic_battery.html" id="doc-d16877e504-link">Generic battery</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">Description and demonstration of the capabilities of the Generic Battery component</span></p></div></div></div></li><li role="treeitem" class="active"><div data-tocid="doc-d16877e516" class="topicref" data-id="doc" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../../t-an001/References/wind_farm_microgrid.html" id="doc-d16877e516-link">Microgrid powered by a wind farm</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">Microgrid operation of a mini wind farm, battery unit, large consumer area, and power system connection in both island and reconnection modes</span></p></div></div></div></li><li role="treeitem"><div data-tocid="doc-d16877e528" class="topicref" data-id="doc" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../../t-an001/References/series_compensator_example.html" id="doc-d16877e528-link">Series Compensator example</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">Demonstration of a Series Compensator response to a fault,       including MOV and bypass switch functionality.</span></p></div></div></div></li><li role="treeitem"><div data-tocid="doc-d16877e540" class="topicref" data-id="doc" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../../t-an001/References/switching_and_average_models_grid-connected_bat_inv.html" id="doc-d16877e540-link">Switching and average models of grid-connected battery inverter </a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">Performance comparison of the switching and average models of grid-connected battery     inverters available in Schematic Editor</span></p></div></div></div></li></ul></li><li role="treeitem" aria-expanded="false"><div data-tocid="doc-d16877e552" class="topicref" data-id="doc" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action doc-d16877e552-link" class="wh-expand-btn"></span><div class="title"><a href="../../t-an001/concepts/electrical_drives.html" id="doc-d16877e552-link">Electrical Drives</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">Converters coupled with high-fidelity electrical machine models for high performance   motor drive applications.</span></p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="doc-d16877e601" class="topicref" data-id="doc" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action doc-d16877e601-link" class="wh-expand-btn"></span><div class="title"><a href="../../t-an001/concepts/power_supplies.html" id="doc-d16877e601-link">Power Supplies</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">Linear and switching power supplies for industrial and laboratory   applications.</span></p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="doc-d16877e625" class="topicref" data-id="doc" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action doc-d16877e625-link" class="wh-expand-btn"></span><div class="title"><a href="../../t-an001/concepts/marine_power_systems.html" id="doc-d16877e625-link">Marine Power Systems</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">Hybrid propulsion, shipboard power management, offshore renewables, offshore oil and   gas platform power supplies. </span></p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="doc-d16877e649" class="topicref" data-id="doc" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action doc-d16877e649-link" class="wh-expand-btn"></span><div class="title"><a href="../../t-an001/concepts/power_quality.html" id="doc-d16877e649-link">Power Quality</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">Real-time power quality/harmonic analysis. Incorporate active filters and FACTS devices (STATCOM, DVR,   SVC).</span></p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="doc-d16877e685" class="topicref" data-id="doc" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action doc-d16877e685-link" class="wh-expand-btn"></span><div class="title"><a href="../../t-an001/concepts/railway.html" id="doc-d16877e685-link">Railway</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">System-level and component-level application examples for railway    (traction) equipment.</span></p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="doc-d16877e709" class="topicref" data-id="doc" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action doc-d16877e709-link" class="wh-expand-btn"></span><div class="title"><a href="../../t-an001/concepts/medical_devices.html" id="doc-d16877e709-link">Medical Devices</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">X-ray, MRI, ICD, pacemakers, defibrillators, emergency ventilators, ECG, EMG,   bioelectronics.</span></p></div></div></div></li></ul></li></ul></div>
+		                        
+                            </div>
+                        </nav>
+                    
+                    
+                    <div class="col-lg-7 col-md-9 col-sm-12" id="wh_topic_body">
+                        <button id="wh_close_publication_toc_button" class="close-toc-button d-none" aria-label="Toggle publishing table of content" aria-controls="wh_publication_toc" aria-expanded="true">
+                            <span class="close-toc-icon-container">
+                                <span class="close-toc-icon"></span>     
+                            </span>
+                        </button>
+                        <button id="wh_close_topic_toc_button" class="close-toc-button d-none" aria-label="Toggle topic table of content" aria-controls="wh_topic_toc" aria-expanded="true">
+                            <span class="close-toc-icon-container">
+                                <span class="close-toc-icon"></span>     
+                            </span>
+                        </button>
+                        
+                        <div class=" wh_topic_content body "><main role="main"><article role="article" aria-labelledby="ariaid-title1">
+ <h1 class="- topic/title title topictitle1" id="ariaid-title1">Microgrid powered by a wind farm</h1>
+  
+ <div class="- topic/body reference/refbody body refbody"><p class="- topic/shortdesc shortdesc"><span class="- topic/ph ph" id="doc__description">Microgrid operation of a mini wind farm, battery unit, large consumer area, and power system connection in both island and reconnection modes</span></p>
+  <section class="- topic/section section" id="doc__section_fd2_4qg_blb" data-ofbid="doc__section_fd2_4qg_blb"><h2 class="- topic/title title sectiontitle"><span class="- topic/ph ph" id="doc__an_title_intro">Introduction</span></h2>
+    
+    <p class="- topic/p p">A microgrid is an electrical distribution system with a set of interconnected consumption sources 
+      (energy consumers,batteries, etc) and distributed generation sources (renewable energy sources, batteries, etc)
+      that operate as a single controlled source within clearly defined electrical boundaries. Additionally, depending 
+      on topological or economic conditions, microgrids have the ability to disconnect at one point from the power system
+      and operate independently to provide power to its own consumers (called “island mode”). In the following example, 
+      the microgrid network consists of a miniature wind farm, a battery unit, a large consumer area, and a connection 
+      to the power system. The purpose of the example is to show how the microgrid network works in island mode in the 
+      case of a failure in the power system, and its re-connection to the system after the failure of the system has been 
+      resolved. In these two cases, the consumer area will not be affected by the transitional states.</p>
+    </section>
+  <section class="- topic/section section" id="doc__section_drr_2lm_blb" data-ofbid="doc__section_drr_2lm_blb"><h2 class="- topic/title title sectiontitle"><span class="- topic/ph ph" id="doc__an_title_model">Model description</span></h2>
+    
+    <p class="- topic/p p">The microgrid model (<a class="- topic/xref xref" href="#doc__fig_zcy_mdj_cmb">Figure 1</a>) features a wind farm consisting of three wind turbines, with each
+        turbine block consisting of a generator, transformer, inverter, control unit, and a
+        switch.</p>
+        <figure class="- topic/fig fig fignone" id="doc__fig_zcy_mdj_cmb" data-ofbid="doc__fig_zcy_mdj_cmb"><figcaption class="- topic/title title figcap"><span class="figtitleprefix fig--title-label">Figure<span class="fig--title-label-number"> 1</span><span class="fig--title-label-punctuation">. </span></span><span class="fig--title">Schematic model represented in the Schematic Editor</span></figcaption>
+          
+          <img class="- topic/image image" id="doc__image_ady_mdj_cmb" src="../Images/wind_farm_microgrid_01.jpg"/>
+        </figure>
+      
+    <p class="- topic/p p">The wind generators have a maximum outgoing power of 2 MW, a nominal voltage of 690 V, a
+        swept area of 7854 m2, and a 0,69/10 kV/kV transformer. The wind turbines are connected in
+        series via underground cable lines (XHE 49-A 150 mm2) to the energy transformer (10/110 kV /
+        kV), which is the point of connection to the electric power system. The cable lines (XHE
+        49-A 150 mm2) were selected in accordance with the technical recommendations for electricity
+        distribution considering the rated current of each wind turbine and their corresponding
+        serial connections. The distance between wind turbines is 500 m. The connection of wind
+        turbine WT1 with WT2 is constructed with one cable core per phase for the current of 116 A,
+        which is the maximum value of the WT1.</p>
+        <figure class="- topic/fig fig fignone" id="doc__fig_hx3_xl4_gmb" data-ofbid="doc__fig_hx3_xl4_gmb"><figcaption class="- topic/title title figcap"><span class="figtitleprefix fig--title-label">Figure<span class="fig--title-label-number"> 2</span><span class="fig--title-label-punctuation">. </span></span><span class="fig--title">Three wind turbines connected with underground cables</span></figcaption>
+          
+          <img class="- topic/image image" id="doc__image_ix3_xl4_gmb" src="../Images/wind_farm_microgrid_02.png"/>
+        </figure>
+      
+    <p class="- topic/p p">Nominal current load for the cable line is 315 A. Connection between WT2 and WT3 is also done with the same cable 
+      where the current load is 232 A. The entire wind farm is connected to the power system via two underground cable lines 
+      (2 x XHE 49-A 150 mm2) due to the current load of 347 A, which is higher than the prescribed 315 A for one cable per phase.</p>
+      <p class="- topic/p p">As the production of active power depends on the wind speed, the difference in generation is taken over by a battery unit 
+      with a capacity of 1.6 MVA and a block of inverter and a transformer (<a class="- topic/xref xref" href="#doc__fig_h1c_bm4_gmb">Figure 3</a>). The battery unit consists of a 1.6 MVA battery, an 
+      inverter with a nominal DC voltage of 1000 VDC and an output voltage of 0.48 kV (50 Hz), and a 2 MVA transformer (0.48/10 kV/kV) 
+      with the Yy0 vector group.</p>
+        <figure class="- topic/fig fig fignone" id="doc__fig_h1c_bm4_gmb" data-ofbid="doc__fig_h1c_bm4_gmb"><figcaption class="- topic/title title figcap"><span class="figtitleprefix fig--title-label">Figure<span class="fig--title-label-number"> 3</span><span class="fig--title-label-punctuation">. </span></span><span class="fig--title">The battery inverter with transformer</span></figcaption>
+          
+          <img class="- topic/image image" id="doc__image_i1c_bm4_gmb" src="../Images/wind_farm_microgrid_03.png"/>
+        </figure>
+      
+    <p class="- topic/p p">The consumption block within the microgrid is modelled for a predominantly active power
+        consumption, which corresponds to a group of non-industrial consumers (such as residential
+        buildings, street lighting, universities, hospitals, etc.) with a total power of 1.3
+        MVA.</p>
+    <p class="- topic/p p">The 10/110 kV/kV transformation is modelled by a transformer that has a nominal power of 31.5 MVA, a transformation ratio 
+      of 10/110 kV/kV, vector group Yy0, a switch for connection to the power system, and the Elec-power system Component that 
+      acts as a network with infinite power.</p>
+    <p class="- topic/p p">In order to monitor the values of voltage, current, active, and reactive power, measurements are made at the output of all system elements.</p>
+    </section>
+   <section class="- topic/section section" id="doc__section_o3w_sll_dlb" data-ofbid="doc__section_o3w_sll_dlb"><h2 class="- topic/title title sectiontitle"><span class="- topic/ph ph" id="doc__an_title_simulation">Simulation</span> </h2>
+     <p class="- topic/p p">This application comes with a pre-built SCADA panel (<a class="- topic/xref xref" href="#doc__fig_c4r_rm4_gmb">Figure 4</a>). The panel offers most essential 
+       user interface elements (widgets) to monitor and interact with the simulation in runtime. 
+       You can customize it freely to fit your needs. </p>
+     <figure class="- topic/fig fig fignone" id="doc__fig_c4r_rm4_gmb" data-ofbid="doc__fig_c4r_rm4_gmb"><figcaption class="- topic/title title figcap"><span class="figtitleprefix fig--title-label">Figure<span class="fig--title-label-number"> 4</span><span class="fig--title-label-punctuation">. </span></span><span class="fig--title">Display of the SCADA system for the nominal operation of the microgrid wind turbine
+         system</span></figcaption>
+       
+       <img class="- topic/image image" id="doc__image_d4r_rm4_gmb" src="../Images/wind_farm_microgrid_04.jpg"/>
+     </figure>
+     <p class="- topic/p p">The operating principle of the system is described in the next three cases:</p><div class="- topic/p p">
+        <ul class="- topic/ul ul" id="doc__ul_i5y_lm4_gmb" data-ofbid="doc__ul_i5y_lm4_gmb">
+          <li class="- topic/li li">The system operates in a normal mode where the wind farm generates energy;</li>
+            <li class="- topic/li li">the battery is already 
+            fully charged (100%);</li>
+          <li class="- topic/li li">the produced energy is transferred to the power system while the consumer is 
+            powered from the power system itself.</li>
+        </ul>
+   </div><p class="- topic/p p">Wind speeds for all cases are loaded directly from the file so that energy production is variable and is 
+     directly dependent on wind speed. Loading is done through the <em class="+ topic/ph hi-d/i ph i">Wind speed.txt</em> file that is filled with wind speed data. 
+     The location of the data file is located in directory of the model.</p>
+     <p class="- topic/p p">By starting the simulation and adjusting the battery to 100%, we can see that the switch
+        with the battery unit is open because in the normal operating mode of the system, there is
+        no need for battery activation. All produced power of the wind farm is transferred into the
+        power system, and experimental calculations show the profit from the sale of generated
+        energy.</p>
+          <figure class="- topic/fig fig fignone" id="doc__fig_hst_tm4_gmb" data-ofbid="doc__fig_hst_tm4_gmb"><figcaption class="- topic/title title figcap"><span class="figtitleprefix fig--title-label">Figure<span class="fig--title-label-number"> 5</span><span class="fig--title-label-punctuation">. </span></span><span class="fig--title">Display of the wind turbine SCADA system</span></figcaption>
+            
+            <img class="- topic/image image" id="doc__image_ist_tm4_gmb" src="../Images/wind_farm_microgrid_05.jpg"/>
+          </figure>
+          <figure class="- topic/fig fig fignone" id="doc__fig_ezp_1n4_gmb" data-ofbid="doc__fig_ezp_1n4_gmb"><figcaption class="- topic/title title figcap"><span class="figtitleprefix fig--title-label">Figure<span class="fig--title-label-number"> 6</span><span class="fig--title-label-punctuation">. </span></span><span class="fig--title">Production diagrams of active and reactive power with voltage conditions on the
+              wind generators</span></figcaption>
+            
+            <img class="- topic/image image" id="doc__image_fzp_1n4_gmb" src="../Images/wind_farm_microgrid_06.jpg"/>
+          </figure>
+          <p class="- topic/p p">To represent the third case, let's assume a fault has occurred and system voltage drops below 95% Vn. The microgrid is automatically switched to 
+            island mode by an undervoltage relay that detects the error.</p>
+        <p class="- topic/p p">After switching to island mode, generators continue to operate separated from the
+        microgrid to avoid battery overload. The consumer is now powered directly from the battery
+        unit that forms the grid, and this mode lasts until the battery charge reaches 5% of its
+        maximum capacity. <a class="- topic/xref xref" href="#doc__fig_jtq_3n4_gmb">Figure 7</a> and <a class="- topic/xref xref" href="#doc__fig_lrv_vn4_gmb">Figure 9</a> show the microgrid behavior in this operating mode.</p>
+          <figure class="- topic/fig fig fignone" id="doc__fig_jtq_3n4_gmb" data-ofbid="doc__fig_jtq_3n4_gmb"><figcaption class="- topic/title title figcap"><span class="figtitleprefix fig--title-label">Figure<span class="fig--title-label-number"> 7</span><span class="fig--title-label-punctuation">. </span></span><span class="fig--title">Operating mode when the battery unit forms the microgrid</span></figcaption>
+            
+            <img class="- topic/image image" id="doc__image_ktq_3n4_gmb" src="../Images/wind_farm_microgrid_09.jpg"/>
+          </figure>
+          <figure class="- topic/fig fig fignone" id="doc__fig_pnd_mn4_gmb" data-ofbid="doc__fig_pnd_mn4_gmb"><figcaption class="- topic/title title figcap"><span class="figtitleprefix fig--title-label">Figure<span class="fig--title-label-number"> 8</span><span class="fig--title-label-punctuation">. </span></span><span class="fig--title">Display of the battery unit SCADA system while forming the microgrid</span></figcaption>
+            
+            <img class="- topic/image image" id="doc__image_qnd_mn4_gmb" src="../Images/wind_farm_microgrid_08.jpg"/>
+          </figure>
+     <p class="- topic/p p">After the battery reaches 5% of capacity, wind turbine switches turn ON and all generated energy is delivered 
+       to consumer. Any surplus energy is used to recharge battery. This process lasts until the battery recharges to 
+       100% of its maximum capacity or until it can recharge from the power system. <a class="- topic/xref xref" href="#doc__fig_lrv_vn4_gmb">Figure 9</a> 
+       and <a class="- topic/xref xref" href="#doc__fig_gfk_yn4_gmb">Figure 10</a> show the microgrid behavior under these conditions.</p>
+          <figure class="- topic/fig fig fignone" id="doc__fig_lrv_vn4_gmb" data-ofbid="doc__fig_lrv_vn4_gmb"><figcaption class="- topic/title title figcap"><span class="figtitleprefix fig--title-label">Figure<span class="fig--title-label-number"> 9</span><span class="fig--title-label-punctuation">. </span></span><span class="fig--title">Operating mode when the battery unit capacity drops to 5% and wind farm is
+              connected to the microgrid</span></figcaption>
+            
+            <img class="- topic/image image" id="doc__image_mrv_vn4_gmb" src="../Images/wind_farm_microgrid_09.jpg"/>
+          </figure>
+          <figure class="- topic/fig fig fignone" id="doc__fig_gfk_yn4_gmb" data-ofbid="doc__fig_gfk_yn4_gmb"><figcaption class="- topic/title title figcap"><span class="figtitleprefix fig--title-label">Figure<span class="fig--title-label-number"> 10</span><span class="fig--title-label-punctuation">. </span></span><span class="fig--title">Display of the battery unit SCADA system after wind farm is connected to the
+              microgrid</span></figcaption>
+            
+            <img class="- topic/image image" id="doc__image_hfk_yn4_gmb" src="../Images/wind_farm_microgrid_10.jpg"/>
+          </figure>
+       <p class="- topic/p p">After the fault is resolved, the microgrid is automatically connected to the power system.</p>
+      <p class="- topic/p p">In case the battery is not fully charged to 100%, it is charged by production from the wind farm.
+        If the production from the wind farm is not sufficient, the remaining energy is taken from
+        the power system. During this time, the consumption area is supplied directly from the power
+        system. After the battery unit is fully charged, it automatically disconnects from the
+        system and until the next request for "island mode" is sent from the microgrid. The wind
+        turbines continue to produce energy and deliver it to the power system. <a class="- topic/xref xref" href="#doc__fig_w3l_144_gmb">Figure 11</a> 
+      shows the wind production diagrams under these conditions.</p>
+     <figure class="- topic/fig fig fignone" id="doc__fig_w3l_144_gmb" data-ofbid="doc__fig_w3l_144_gmb"><figcaption class="- topic/title title figcap"><span class="figtitleprefix fig--title-label">Figure<span class="fig--title-label-number"> 11</span><span class="fig--title-label-punctuation">. </span></span><span class="fig--title">Production diagrams of active and reactive power with voltage conditions in the
+         consumption area</span></figcaption>
+       
+       <img class="- topic/image image" id="doc__image_x3l_144_gmb" src="../Images/wind_farm_microgrid_11.jpg"/>
+     </figure>
+      <p class="- topic/p p">After this case, the working cycle of the microgrid is closed. In all of the above cases,
+        the consumer did not endure a blackout period, and experienced no drop in power quality.</p>
+   </section>
+   <section class="- topic/section section" id="doc__section_pils_s3" data-ofbid="doc__section_pils_s3"><h2 class="- topic/title title sectiontitle"><span class="- topic/ph ph" id="doc__an_title_test-automation">Test automation</span></h2>
+     
+     <p class="- topic/p p">We don’t have a test automation for this example yet. <a class="- topic/xref xref" href="https://subscription.typhoon-hil.com/" target="_blank" rel="external noopener">Let us know</a> if you wish to contribute and we will gladly have you signed on the application note!</p>
+   </section>
+   
+   <section class="- topic/section section" id="doc__example_requirements" data-ofbid="doc__example_requirements"><h2 class="- topic/title title sectiontitle">Example requirements</h2>
+     
+     <p class="- topic/p p"><a class="- topic/xref xref" href="#doc__min_req">Table 1</a> provides detailed information about the file locations and hardware requirements 
+       for running the model in real-time, followed by the HIL device resource utilization when running the model using 
+       this minimal hardware configuration. This information is provided to help you with running and 
+       customizing the model as you see fit.</p>
+     <table class="- topic/table table frame-all" id="doc__min_req" data-ofbid="doc__min_req" data-cols="2"><caption class="- topic/title title tablecap" data-caption-side="top" data-is-repeated="true"><span class="table--title-label">Table<span class="table--title-label-number"> 1</span><span class="table--title-label-punctuation">. </span></span><span class="table--title"><span class="- topic/ph ph" id="doc__an_min-req">Minimum requirements</span></span></caption><colgroup><col style="width:50%"/><col style="width:50%"/></colgroup><thead class="- topic/thead thead">
+           <tr class="- topic/row">
+             <th class="- topic/entry entry align-center colsep-0 rowsep-1" id="doc__min_req__entry__1" colspan="2">Files</th>
+           </tr>
+         </thead><tbody class="- topic/tbody tbody">
+           <tr class="- topic/row">
+             <td class="- topic/entry entry align-center colsep-1 rowsep-1" headers="doc__min_req__entry__1"><span class="- topic/ph ph" id="doc__an_min-req_TH-files">Typhoon HIL files</span></td>
+             <td class="- topic/entry entry align-center colsep-0 rowsep-1" headers="doc__min_req__entry__1"><p class="- topic/p p"><em class="+ topic/ph hi-d/i ph i">examples\models\microgrid\wind farm microgrid</em></p>
+               <p class="- topic/p p">wind farm microgrid.tse</p>
+               <p class="- topic/p p">wind farm microgrid.cus</p></td>
+           </tr>
+           <tr class="- topic/row">
+             <td class="- topic/entry entry align-center colsep-0 rowsep-1" headers="doc__min_req__entry__1" colspan="2"><strong class="+ topic/ph hi-d/b ph b">Minimum hardware requirements</strong></td>
+           </tr>
+           <tr class="- topic/row">
+             <td class="- topic/entry entry align-center colsep-1 rowsep-1" headers="doc__min_req__entry__1"><span class="- topic/ph ph" id="doc__an_min-req_num-devices">No. of HIL devices</span></td>
+             <td class="- topic/entry entry align-center colsep-0 rowsep-1" headers="doc__min_req__entry__1"><span class="- topic/ph ph" id="doc__num_devices">1</span></td>
+           </tr>
+           <tr class="- topic/row">
+             <td class="- topic/entry entry align-center colsep-1 rowsep-1" headers="doc__min_req__entry__1"><span class="- topic/ph ph" id="doc__an_min-req_model-num">HIL device model</span></td>
+             <td class="- topic/entry entry align-center colsep-0 rowsep-1" headers="doc__min_req__entry__1"><span class="- topic/ph ph" id="doc__type_devices">HIL101</span></td>
+           </tr>
+           <tr class="- topic/row">
+             <td class="- topic/entry entry align-center colsep-1 rowsep-1" headers="doc__min_req__entry__1"><u class="+ topic/ph hi-d/u ph u"><a class="- topic/xref xref" href="../../t-ug002/concepts/device_manager.html" title="Device Manager is used to create, manipulate, and activate HIL device setups.">Device configuration</a></u></td>
+             <td class="- topic/entry entry align-center colsep-0 rowsep-1" headers="doc__min_req__entry__1"><span class="- topic/ph ph" id="doc__num_config">1</span></td>
+           </tr>
+           <tr class="- topic/row">
+             <td class="- topic/entry entry align-center colsep-0 rowsep-1" headers="doc__min_req__entry__1" colspan="2"><strong class="+ topic/ph hi-d/b ph b">HIL device resource utilization</strong></td>
+           </tr>
+           <tr class="- topic/row">
+             <td class="- topic/entry entry align-center colsep-1 rowsep-1" headers="doc__min_req__entry__1"><span class="- topic/ph ph" id="doc__an_res-util_num-cores">No. of processing cores</span></td>
+             <td class="- topic/entry entry align-center colsep-0 rowsep-1" headers="doc__min_req__entry__1"><span class="- topic/ph ph" id="doc__num_cores">2</span></td>
+           </tr>
+           <tr class="- topic/row">
+             <td class="- topic/entry entry align-center colsep-1 rowsep-1" headers="doc__min_req__entry__1"><span class="- topic/ph ph" id="doc__an_res-util_max-memory">Max. matrix memory utilization</span></td>
+             <td class="- topic/entry entry align-center colsep-0 rowsep-1" headers="doc__min_req__entry__1"><p class="- topic/p p">87.82% (core1)</p><p class="- topic/p p">16.46% (core0)</p></td>
+           </tr>
+           <tr class="- topic/row">
+             <td class="- topic/entry entry align-center colsep-1 rowsep-1" headers="doc__min_req__entry__1"><span class="- topic/ph ph" id="doc__an_res-util_max-time">Max. time slot utilization</span></td>
+             <td class="- topic/entry entry align-center colsep-0 rowsep-1" headers="doc__min_req__entry__1"><p class="- topic/p p">64.55% (core1)</p><p class="- topic/p p">23.18% (core0)</p></td>
+           </tr>
+           <tr class="- topic/row">
+             <td class="- topic/entry entry align-center colsep-1 rowsep-1" headers="doc__min_req__entry__1"><span class="- topic/ph ph" id="doc__an_res-util_sim-step">Simulation step, electrical</span></td>
+             <td class="- topic/entry entry align-center colsep-0 rowsep-1" headers="doc__min_req__entry__1">5 µs</td>
+           </tr>
+           <tr class="- topic/row">
+             <td class="- topic/entry entry align-center colsep-1 rowsep-0" headers="doc__min_req__entry__1"><span class="- topic/ph ph" id="doc__an_res-util_exec-rate">Execution rate, signal processing</span></td>
+             <td class="- topic/entry entry align-center colsep-0 rowsep-0" headers="doc__min_req__entry__1">400 µs</td>
+           </tr>
+         </tbody></table>
+   </section>
+   <section class="- topic/section section" id="doc__section_pils_s5" data-ofbid="doc__section_pils_s5"><h2 class="- topic/title title sectiontitle"><span class="- topic/ph ph" id="doc__an_title_author">Authors</span></h2>
+     
+     <p class="- topic/p p">[1] Simisa Simic</p>
+     <p class="- topic/p p">[2] Kristian Monar</p>
+   </section>
+    
+ </div>
+</article></main></div>
+                        
+                        
+                        
+                        
+                        
+                        
+                    </div>
+                    
+                        <nav role="navigation" id="wh_topic_toc" aria-label="On this page" class="col-lg-2 d-none d-lg-block navbar d-print-none"> 
+                            <div id="wh_topic_toc_content">
+		                        
+	                            <div class=" wh_topic_toc "><div class="wh_topic_label">On this page</div><ul><li class="section-item"><div class="section-title"><a href="#doc__section_fd2_4qg_blb" data-tocid="doc__section_fd2_4qg_blb"><span class="- topic/ph ph" id="doc__an_title_intro">Introduction</span></a></div></li><li class="section-item"><div class="section-title"><a href="#doc__section_drr_2lm_blb" data-tocid="doc__section_drr_2lm_blb"><span class="- topic/ph ph" id="doc__an_title_model">Model description</span></a></div></li><li class="section-item"><div class="section-title"><a href="#doc__section_o3w_sll_dlb" data-tocid="doc__section_o3w_sll_dlb"><span class="- topic/ph ph" id="doc__an_title_simulation">Simulation</span> </a></div></li><li class="section-item"><div class="section-title"><a href="#doc__section_pils_s3" data-tocid="doc__section_pils_s3"><span class="- topic/ph ph" id="doc__an_title_test-automation">Test automation</span></a></div></li><li class="section-item"><div class="section-title"><a href="#doc__example_requirements" data-tocid="doc__example_requirements">Example requirements</a></div></li><li class="section-item"><div class="section-title"><a href="#doc__section_pils_s5" data-tocid="doc__section_pils_s5"><span class="- topic/ph ph" id="doc__an_title_author">Authors</span></a></div></li></ul></div>
+	                        	
+                        	</div>
+                        </nav>
+                    
+                </div>
+            </div>
+            
+            
+            
+        </div> 
+        <footer class="navbar navbar-default wh_footer">
+  <div class=" footer-container mx-auto ">
+    <div style="text-align:center">Typhoon HIL Inc.<span id="year"> <a href="https://www.typhoon-hil.com">www.typhoon-hil.com</a></span></div>
+  </div>
+</footer>
+        
+        <div id="go2top" class="d-print-none">
+            <span class="oxy-icon oxy-icon-up"></span>
+        </div>
+        
+        <div id="modal_img_large" class="modal">
+            <span class="close oxy-icon oxy-icon-remove"></span>
+            <div id="modal_img_container"></div>
+            <div id="caption"></div>
+        </div>
+        
+        
+<script type="text/javascript" src="../../assets/script.js"> 
+</script>
+
+        
+    </body>
+</html>

@@ -1,0 +1,464 @@
+<!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en" data-whc_version="24.1">
+    <head><link rel="shortcut icon" href="../../favicon.ico"/><link rel="icon" href="../../favicon.ico"/><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><meta name="DC.rights.owner" content="(C) Copyright 2026"/><meta name="copyright" content="(C) Copyright 2026"/><meta name="generator" content="DITA-OT"/><meta name="DC.type" content="reference"/><meta name="description" content="Percentage differential protection function (ANSI 87) with an unrestrained element."/><meta name="DC.relation" content="../../t-an001/concepts/power_systems.html"/><meta name="DC.format" content="HTML5"/><meta name="DC.identifier" content="doc"/>        
+      <title>Differential Protection example</title><!--  Generated with Oxygen version 24.1, build number 2022030800.  --><meta name="wh-path2root" content="../../"/><meta name="wh-toc-id" content="doc-d16877e456"/><meta name="wh-source-relpath" content="t-an001/References/differential_protection_example.dita"/><meta name="wh-out-relpath" content="t-an001/References/differential_protection_example.html"/>
+    <!-- Latest compiled and minified Bootstrap CSS -->
+    <link rel="stylesheet" type="text/css" href="../../oxygen-webhelp/lib/bootstrap/css/bootstrap.min.css"/>
+    
+    <link rel="stylesheet" href="../../oxygen-webhelp/lib/jquery-ui/jquery-ui.min.css"/>
+    
+    <!-- Template default styles  -->
+    <link rel="stylesheet" type="text/css" href="../../oxygen-webhelp/app/topic-page.css?buildId=2022030800"/>
+    
+    
+    <script src="../../oxygen-webhelp/lib/jquery/jquery-3.5.1.min.js"></script>
+    
+    <script data-main="../../oxygen-webhelp/app/topic-page.js" src="../../oxygen-webhelp/lib/requirejs/require.js"></script>
+<link rel="stylesheet" type="text/css" href="../../oxygen-webhelp/template/oxygen.css?buildId=2022030800"/><link rel="stylesheet" type="text/css" href="../../oxygen-webhelp/template/notes.css?buildId=2022030800"/><script type="text/javascript" src="../../Scripts/mml-svg.js"> 
+</script><link rel="stylesheet" type="text/css" href="../../assets/typhoon.css"/></head>
+
+    <body id="doc" class="wh_topic_page frmBody">
+        <a href="#wh_topic_body" class="sr-only sr-only-focusable">
+            Jump to main content
+        </a>
+        
+        
+        
+        
+        <header class="navbar navbar-default wh_header">
+    <div class="container-fluid">
+        <div class="wh_header_flex_container navbar-nav navbar-expand-md navbar-dark">
+            <div class="wh_logo_and_publication_title_container">
+                <div class="wh_logo_and_publication_title">
+                    
+                    <a href="https://www.typhoon-hil.com" class=" wh_logo d-none d-sm-block "><img src="../../logo.svg" alt="  Typhoon HIL Documentation  Version: 2026.1  "/></a>
+                    <div class=" wh_publication_title "><a href="../../index.html"><span class="booktitle">  <span class="ph mainbooktitle">Typhoon HIL Documentation</span>  <span class="ph booktitlealt">Version: 2026.1</span>  </span></a></div>
+                    
+                </div>
+                
+                <button type="button" data-target="#wh_top_menu_and_indexterms_link" id="wh_menu_mobile_button" data-toggle="collapse" class="navbar-toggler collapsed wh_toggle_button" aria-expanded="false" aria-label="Toggle menu" aria-controls="wh_top_menu_and_indexterms_link">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+            </div>
+
+            <div class="wh_top_menu_and_indexterms_link collapse navbar-collapse" id="wh_top_menu_and_indexterms_link">
+                
+                <nav class=" wh_top_menu " aria-label="Menu Container"><ul role="menubar" aria-label="Menu"><li role="menuitem" aria-haspopup="true" aria-expanded="false" class="has-children"><span id="tocId-d16877e21-mi" data-tocid="tocId-d16877e21" data-state="not-ready" class=" topicref application-notes"><span class="title"><a href="../../t-an001/concepts/application_notes_introduction.html">Typhoon HIL Application Notes</a></span></span></li><li role="menuitem" aria-haspopup="true" aria-expanded="false" class="has-children"><span id="tocId-d16877e737-mi" data-tocid="tocId-d16877e737" data-state="not-ready" class=" topicref software-manual"><span class="title"><a href="../../t-ug002/topics/software_manual_introduction.html">Typhoon HIL Software Manual</a></span></span></li><li role="menuitem" aria-haspopup="true" aria-expanded="false" class="has-children"><span id="tocId-d16877e7901-mi" data-tocid="tocId-d16877e7901" data-state="not-ready" class=" topicref hardware-manual"><span class="title"><a href="../../t-ug001/abstract/hardware_manual_introduction.html">Typhoon HIL Hardware Manual</a></span></span></li></ul></nav>
+                
+                
+            </div>
+        </div>
+    </div>
+</header>
+        
+        
+         
+        
+        <div class=" wh_search_input navbar-form wh_topic_page_search search " role="form">
+            
+            
+            
+            <form id="searchForm" method="get" role="search" action="../../search.html"><div><input type="search" placeholder="Search " class="wh_search_textfield" id="textToSearch" name="searchQuery" aria-label="Search query" required="required"/><button type="submit" class="wh_search_button" aria-label="Search"><span class="search_input_text">Search</span></button></div></form>
+            
+            
+            
+        </div>
+        
+        <div class="container-fluid" id="wh_topic_container">
+            <div class="row">
+
+                <nav class="wh_tools d-print-none navbar-expand-md" aria-label="Tools">
+                    
+                    <div data-tooltip-position="bottom" class=" wh_breadcrumb "><ol class="d-print-none"><li><span class="home"><a href="../../index.html"><span>Home</span></a></span></li><li><div class="topicref application-notes"><div class="title"><a href="../../t-an001/concepts/application_notes_introduction.html">Typhoon HIL Application Notes</a></div></div></li><li><div class="topicref" data-id="doc"><div class="title"><a href="../../t-an001/concepts/power_systems.html">Power Systems</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">Power system simulation. Relay protection testing. Power flow tool integration and   co-simulation.</span></p></div></div></div></li><li class="active"><div class="topicref" data-id="doc"><div class="title"><a href="../../t-an001/References/differential_protection_example.html">Differential Protection example</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">Percentage differential protection function (ANSI 87) with an unrestrained element.</span></p></div></div></div></li></ol></div>
+                    
+                    
+                    
+                    <div class="wh_right_tools">
+                        <button class="wh_hide_highlight" aria-label="Toggle search highlights" title="Toggle search highlights"></button>
+                        <button class="webhelp_expand_collapse_sections" data-next-state="collapsed" aria-label="Collapse sections" title="Collapse sections"></button>
+                        
+                        
+                        
+                        
+                        <div class=" wh_print_link print d-none d-md-inline-block "><button onClick="window.print()" title="Print this page" aria-label="Print this page"></button></div>
+                        
+                        <button type="button" id="wh_toc_button" class="custom-toggler navbar-toggler collapsed wh_toggle_button navbar-light" aria-expanded="false" aria-label="Toggle publishing table of content" aria-controls="wh_publication_toc">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+                    </div>
+                    
+                </nav>
+            </div>
+            
+            
+            
+            
+            <div class="wh_content_area">
+                <div class="row">
+                    
+                        <nav id="wh_publication_toc" class="col-lg-3 col-md-3 col-sm-12 d-md-block d-none d-print-none" aria-label="Table of Contents Container">
+                            <div id="wh_publication_toc_content">
+		                        
+                            	<div class=" wh_publication_toc " data-tooltip-position="right"><span class="expand-button-action-labels"><span id="button-expand-action" role="button" aria-label="Expand"></span><span id="button-collapse-action" role="button" aria-label="Collapse"></span><span id="button-pending-action" role="button" aria-label="Pending"></span></span><ul role="tree" aria-label="Table of Contents"><li role="treeitem" aria-expanded="true"><div data-tocid="tocId-d16877e21" class="topicref application-notes" data-state="expanded"><span role="button" tabindex="0" aria-labelledby="button-collapse-action tocId-d16877e21-link" class="wh-expand-btn"></span><div class="title"><a href="../../t-an001/concepts/application_notes_introduction.html" id="tocId-d16877e21-link">Typhoon HIL Application Notes</a></div></div><ul role="group" class="navbar-nav nav-list"><li role="treeitem"><div data-tocid="doc-d16877e25" class="topicref" data-id="doc" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../../t-an001/concepts/application_notes_introduction.html" id="doc-d16877e25-link">Application Notes Introduction</a><div class="wh-tooltip"><p class="shortdesc">Brief overview of the different categories of Application Notes</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="doc-d16877e36" class="topicref" data-id="doc" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action doc-d16877e36-link" class="wh-expand-btn"></span><div class="title"><a href="../../t-an001/concepts/grid_connected_converters.html" id="doc-d16877e36-link">Grid-connected converters</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">Grid-connected converter applications featuring various grid support    functionalities.</span></p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="doc-d16877e96" class="topicref" data-id="doc" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action doc-d16877e96-link" class="wh-expand-btn"></span><div class="title"><a href="../../t-an001/concepts/automotive.html" id="doc-d16877e96-link">Automotive</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">Electric cars and other automotive applications.</span></p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="doc-d16877e132" class="topicref" data-id="doc" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action doc-d16877e132-link" class="wh-expand-btn"></span><div class="title"><a href="../../t-an001/concepts/aerospace.html" id="doc-d16877e132-link">Aerospace</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">System-level and component-level aircraft applications.</span></p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="doc-d16877e168" class="topicref" data-id="doc" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action doc-d16877e168-link" class="wh-expand-btn"></span><div class="title"><a href="../../t-an001/concepts/battery_management_systems.html" id="doc-d16877e168-link">Battery management systems</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">Battery management system (BMS) examples</span></p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="doc-d16877e216" class="topicref" data-id="doc" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action doc-d16877e216-link" class="wh-expand-btn"></span><div class="title"><a href="../../t-an001/concepts/how-to_guides.html" id="doc-d16877e216-link">How-to Guides</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">Guides, tips, and tricks on various aspects of Typhoon HIL toolchain usage.</span></p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="doc-d16877e312" class="topicref" data-id="doc" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action doc-d16877e312-link" class="wh-expand-btn"></span><div class="title"><a href="../../t-an001/concepts/communication_protocols.html" id="doc-d16877e312-link">Communication Protocols</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">Interoperability. Cybersecurity. Modbus, Sunspec, IEC61850, IEEE    C37.118, DNP3, CAN, OPC UA, and more.</span></p></div></div></div></li><li role="treeitem" aria-expanded="true"><div data-tocid="doc-d16877e384" class="topicref" data-id="doc" data-state="expanded"><span role="button" tabindex="0" aria-labelledby="button-collapse-action doc-d16877e384-link" class="wh-expand-btn"></span><div class="title"><a href="../../t-an001/concepts/power_systems.html" id="doc-d16877e384-link">Power Systems</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">Power system simulation. Relay protection testing. Power flow tool integration and   co-simulation.</span></p></div></div></div><ul role="group" class="navbar-nav nav-list"><li role="treeitem"><div data-tocid="doc-d16877e396" class="topicref" data-id="doc" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../../t-an001/References/opendss_power_flow_co_simulation.html" id="doc-d16877e396-link">OpenDSS &amp; Typhoon HIL co-simulation</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">Demonstration of a simple power-flow analysis of a PV Plant using       OpenDSS and Typhoon HIL real-time co-simulation.</span></p></div></div></div></li><li role="treeitem"><div data-tocid="doc-d16877e408" class="topicref" data-id="doc" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../../t-an001/References/distance_protection_relay.html" id="doc-d16877e408-link">Distance protection relay with false tripping prevention</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">Simulation of a distance protection relay connecting two grids with fault injection.</span></p></div></div></div></li><li role="treeitem"><div data-tocid="doc-d16877e420" class="topicref" data-id="doc" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../../t-an001/References/ieee_34_node_islanding.html" id="doc-d16877e420-link">IEEE 34 node islanding with implemented Artificial Neural Network (ANN)</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">Demonstration of the use of Artificial Neural Networks (ANNs) in a microgrid.</span></p></div></div></div></li><li role="treeitem"><div data-tocid="doc-d16877e432" class="topicref" data-id="doc" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../../t-an001/References/automatic_recloser.html" id="doc-d16877e432-link">Automatic recloser</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">Demonstration of an automatic recloser example model with built in       phase and earth protections.</span></p></div></div></div></li><li role="treeitem"><div data-tocid="doc-d16877e444" class="topicref" data-id="doc" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../../t-an001/References/digital_substation.html" id="doc-d16877e444-link">Digital substation with IEC 61850 process bus</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">Simulation of multi-HIL capabilities using the IEC 61850 communication protocol</span></p></div></div></div></li><li role="treeitem" class="active"><div data-tocid="doc-d16877e456" class="topicref" data-id="doc" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../../t-an001/References/differential_protection_example.html" id="doc-d16877e456-link">Differential Protection example</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">Percentage differential protection function (ANSI 87) with an unrestrained element.</span></p></div></div></div></li></ul></li><li role="treeitem" aria-expanded="false"><div data-tocid="doc-d16877e468" class="topicref" data-id="doc" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action doc-d16877e468-link" class="wh-expand-btn"></span><div class="title"><a href="../../t-an001/concepts/microgrids.html" id="doc-d16877e468-link">Microgrids</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">Rapid microgrid pre-commissioning and system integration. Microgrid controller RCP and   testing.</span></p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="doc-d16877e552" class="topicref" data-id="doc" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action doc-d16877e552-link" class="wh-expand-btn"></span><div class="title"><a href="../../t-an001/concepts/electrical_drives.html" id="doc-d16877e552-link">Electrical Drives</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">Converters coupled with high-fidelity electrical machine models for high performance   motor drive applications.</span></p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="doc-d16877e601" class="topicref" data-id="doc" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action doc-d16877e601-link" class="wh-expand-btn"></span><div class="title"><a href="../../t-an001/concepts/power_supplies.html" id="doc-d16877e601-link">Power Supplies</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">Linear and switching power supplies for industrial and laboratory   applications.</span></p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="doc-d16877e625" class="topicref" data-id="doc" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action doc-d16877e625-link" class="wh-expand-btn"></span><div class="title"><a href="../../t-an001/concepts/marine_power_systems.html" id="doc-d16877e625-link">Marine Power Systems</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">Hybrid propulsion, shipboard power management, offshore renewables, offshore oil and   gas platform power supplies. </span></p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="doc-d16877e649" class="topicref" data-id="doc" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action doc-d16877e649-link" class="wh-expand-btn"></span><div class="title"><a href="../../t-an001/concepts/power_quality.html" id="doc-d16877e649-link">Power Quality</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">Real-time power quality/harmonic analysis. Incorporate active filters and FACTS devices (STATCOM, DVR,   SVC).</span></p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="doc-d16877e685" class="topicref" data-id="doc" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action doc-d16877e685-link" class="wh-expand-btn"></span><div class="title"><a href="../../t-an001/concepts/railway.html" id="doc-d16877e685-link">Railway</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">System-level and component-level application examples for railway    (traction) equipment.</span></p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="doc-d16877e709" class="topicref" data-id="doc" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action doc-d16877e709-link" class="wh-expand-btn"></span><div class="title"><a href="../../t-an001/concepts/medical_devices.html" id="doc-d16877e709-link">Medical Devices</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">X-ray, MRI, ICD, pacemakers, defibrillators, emergency ventilators, ECG, EMG,   bioelectronics.</span></p></div></div></div></li></ul></li></ul></div>
+		                        
+                            </div>
+                        </nav>
+                    
+                    
+                    <div class="col-lg-7 col-md-9 col-sm-12" id="wh_topic_body">
+                        <button id="wh_close_publication_toc_button" class="close-toc-button d-none" aria-label="Toggle publishing table of content" aria-controls="wh_publication_toc" aria-expanded="true">
+                            <span class="close-toc-icon-container">
+                                <span class="close-toc-icon"></span>     
+                            </span>
+                        </button>
+                        <button id="wh_close_topic_toc_button" class="close-toc-button d-none" aria-label="Toggle topic table of content" aria-controls="wh_topic_toc" aria-expanded="true">
+                            <span class="close-toc-icon-container">
+                                <span class="close-toc-icon"></span>     
+                            </span>
+                        </button>
+                        
+                        <div class=" wh_topic_content body "><main role="main"><article role="article" aria-labelledby="ariaid-title1">
+  <h1 class="- topic/title title topictitle1" id="ariaid-title1">Differential Protection example</h1>
+  
+  <div class="- topic/body reference/refbody body refbody"><p class="- topic/shortdesc shortdesc"><span class="- topic/ph ph" id="doc__description">Percentage differential protection function (ANSI 87) with an unrestrained element.</span></p>
+    <section class="- topic/section section" id="doc__section_k2p_hzb_az" data-ofbid="doc__section_k2p_hzb_az"><h2 class="- topic/title title sectiontitle">Introduction</h2>
+      
+      <p class="- topic/p p">Percentage differential relays are commonly employed for the protection of transformers, 
+        synchronous machines, busbars and short transmission lines [<a class="- topic/xref xref" href="#doc__section_qys_h4c_xtb">1</a>]. The primary characteristic of
+        this function is its inherent selectivity, determined by the upstream and the downstream
+        current transformers (CTs) of the protected equipment. <a class="- topic/xref xref" href="#doc__fig_lrw_dva_alb">Figure 1</a> (a) shows the single-line
+        diagram of the differential relay. This protection function utilizes two coils: the
+        operation coil (OP) and the restraining coil (R). The operation occurs when the ratio
+        between the currents of the operation coil and the restraining coil exceeds or equals the
+        parametrized slope. In <a class="- topic/xref xref" href="#doc__fig_lrw_dva_alb">Figure 1</a> (a),
+        a fault within the relay protection zone is illustrated, where the current flow leads to a
+        contribution for the operation current increment. In <a class="- topic/xref xref" href="#doc__fig_lrw_dva_alb">Figure 1</a> (b) a fault outside the relay
+        protection zone is shown and, in this case, the currents cause the opposite effect.</p>
+      <figure class="- topic/fig fig fignone" id="doc__fig_lrw_dva_alb" data-ofbid="doc__fig_lrw_dva_alb"><figcaption class="- topic/title title figcapcenter"><span class="figtitleprefix fig--title-label">Figure<span class="fig--title-label-number"> 1</span><span class="fig--title-label-punctuation">. </span></span><span class="fig--title">Connection scheme for the Percentage Differential Function</span></figcaption>
+        
+        <div class="imagecenter break"><img class="- topic/image image imagecenter break" id="doc__image_e1s_b4a_45b" src="../Images/differential_protection_an_01.png"/></div>
+      </figure>
+      
+    </section>
+    <section class="- topic/section section" id="doc__section_qys_h4s_xtb" data-ofbid="doc__section_qys_h4s_xtb"><h2 class="- topic/title title sectiontitle">Model description</h2>
+      
+      <p class="- topic/p p">The example model is a radial electric power system and is shown in <a class="- topic/xref xref" href="#doc__fig_lrw_dvs_alb">Figure 2</a>. It is composed of a
+          <a class="- topic/xref xref" href="../../t-ug002/References/independent_sources.html" title="Description of the Independent Sources components in Schematic Editor">grid model</a> (V = 69 kV and 60 Hz), connected to a
+          <a class="- topic/xref xref" href="../../t-ug002/References/three_phase_two_winding_transformer.html" title="Description of the Three Phase Two Winding Transformer component in Schematic Editor">power transformer</a> (TR-01)
+          through a 20 km length
+          <a class="- topic/xref xref" href="../../t-ug002/References/rl_section.html" title="Description of the RL Section component in Schematic Editor">transmission line</a>. TR-01 is a three-phase
+        transformer, connected in delta in the high-voltage (HV) side and wye grounded in the
+        low-voltage (LV) side. The LV voltage is parametrized for 13.8 kV. A
+        <a class="- topic/xref xref" href="../../t-ug002/References/constant_impedance_load.html" title="Description of the Constant Impedance Load component, for representing a three-phase balanced or unbalanced constant impedance load.">constant impedance load</a> with 25 MVA and unitary
+        power factor is connected to the low-voltage side.</p>
+           
+      <figure class="- topic/fig fig fignone" id="doc__fig_lrw_dvs_alb" data-ofbid="doc__fig_lrw_dvs_alb"><figcaption class="- topic/title title figcapcenter"><span class="figtitleprefix fig--title-label">Figure<span class="fig--title-label-number"> 2</span><span class="fig--title-label-punctuation">. </span></span><span class="fig--title">Example model (complete system)</span></figcaption>
+        
+        <div class="imagecenter break"><img class="- topic/image image imagecenter break" id="doc__image_e1b_b4a_45b" src="../Images/differential_protection_an_02.png"/></div>
+      </figure>
+      <p class="- topic/p p">Three fault location possibilities are present in this model: one within the relay
+        protection zone (Fault 02) and two outside the zone (Fault 01 and Fault 03). The trip status
+        of the ANSI 87 component operates the two circuit breakers of the TR-01. The protection
+        logic is shown in <a class="- topic/xref xref" href="#doc__fig_lrw_dva_ala">Figure 3</a>. </p>
+      <figure class="- topic/fig fig fignone" id="doc__fig_lrw_dva_ala" data-ofbid="doc__fig_lrw_dva_ala"><figcaption class="- topic/title title figcapcenter"><span class="figtitleprefix fig--title-label">Figure<span class="fig--title-label-number"> 3</span><span class="fig--title-label-punctuation">. </span></span><span class="fig--title">Functional process diagram</span></figcaption>
+        
+        <div class="imagecenter break"><img class="- topic/image image imagecenter break" id="doc__image_e1s_b3a_45b" src="../Images/differential_protection_an_03.png"/></div>
+      </figure>
+      <p class="- topic/p p">This protection scheme utilizes phasors of the CTs' currents and the operation currents
+        that are calculated considering the difference between the measured currents in each side
+        of the protected equipment, as shown in (1). The restraining current can be determined
+        through various methods. One of them involves averaging on both sides of the protected
+        equipment, as demonstrated in (2) and used in this protection scheme. The slope calculation is presented in (3). </p>
+     
+      
+      <figure class="+ topic/fig equation-d/equation-figure fig equation-figure fignone"><div class="+ topic/div equation-d/equation-block  eqn-block "><span class="+ topic/foreign mathml-d/mathml foreign mathml">
+        <math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+          <msub>
+            <mrow>
+              <mi>i</mi>
+            </mrow>
+            <mrow>
+              <mi>O</mi>
+              <mi>p</mi>
+             </mrow>
+          </msub>
+          <mo>=</mo>
+          <mi> </mi>
+          <msub>
+            <mrow>
+              <mi>i</mi>
+            </mrow>
+            <mrow>
+              <mi>1</mi>
+              <mi> (RMS)</mi>
+            </mrow>
+          </msub>
+          <mo>-</mo>
+          <mi> </mi>
+          <msub>
+            <mrow>
+              <mi>i</mi>
+            </mrow>
+            <mrow>
+              <mi>2</mi>
+              <mi> (RMS)</mi>
+            </mrow>
+          </msub>
+        </math>
+      </span><span class="+ topic/ph equation-d/equation-number ph equation-number">(1)</span></div></figure>
+      
+      
+      <figure class="+ topic/fig equation-d/equation-figure fig equation-figure fignone"><div class="+ topic/div equation-d/equation-block  eqn-block "><span class="+ topic/foreign mathml-d/mathml foreign mathml">
+        <math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+          <msub>
+            <mrow>
+              <mi>i</mi>
+            </mrow>
+            <mrow>
+              <mi>Res</mi>
+            </mrow>
+          </msub>
+          <mo>=</mo>
+          <mi> </mi>
+          <mfrac>
+            <mrow>
+              <msub>
+                <mrow>
+                  <mi>i</mi>
+                </mrow>
+                <mrow>
+                  <mi>1</mi>
+                  <mi>(RMS)</mi>
+                </mrow>
+              </msub>
+              <mo>+</mo>
+              <mi> </mi>
+              <msub>
+                <mrow>
+                  <mi>i</mi>
+                </mrow>
+                <mrow>
+                  <mi>2</mi>
+                  <mi>(RMS)</mi>
+                </mrow>
+              </msub>
+            </mrow>
+            <mrow>
+                <mrow>
+                  <mi>2</mi>
+                </mrow>         
+            </mrow>
+          </mfrac>
+        </math>
+      </span><span class="+ topic/ph equation-d/equation-number ph equation-number">(2)</span></div></figure>
+      
+      
+      <figure class="+ topic/fig equation-d/equation-figure fig equation-figure fignone"><div class="+ topic/div equation-d/equation-block  eqn-block "><span class="+ topic/foreign mathml-d/mathml foreign mathml">
+        <math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+            <mrow>
+              <mi>Slope</mi>
+            </mrow>    
+          <mo>=</mo>
+          <mi> </mi>
+          <mfrac>
+            <mrow>
+              <msub>
+                <mrow>
+                  <mi>i</mi>
+                </mrow>
+                <mrow>
+                  <mi>O</mi>
+                  <mi>p</mi>
+                </mrow>
+              </msub>
+            </mrow>
+            <mrow>
+              <msub>
+                <mrow>
+                  <mi>i</mi>
+                </mrow>
+                <mrow>
+                  <mi>Res</mi>
+                </mrow>
+              </msub>
+            </mrow>
+          </mfrac>
+        </math>
+      </span><span class="+ topic/ph equation-d/equation-number ph equation-number">(3)</span></div></figure>
+      
+      <p class="- topic/p p">Differential relays can incorporate various elements for their operation. For example, 
+        the SEL-487E Relay [<a class="- topic/xref xref" href="#doc__section_qys_h4c_xtb">2</a>] employs two 
+        differential elements: the first is the percentage differential element, referred to as the 
+        "phase-restrained element" (87R); The second is the pure differential element, known as the 
+        "unrestrained element" (87U). In the 87U element, only the operation current is utilized, 
+        without the restrictive component.</p>
+      <p class="- topic/p p">Graphically, the operation of the ANSI 87 function can be illustrated as a combination of
+        four areas, as shown in <a class="- topic/xref xref" href="#doc__fig_lrw_dva_ale">Figure 4</a>
+        (adapted from [<a class="- topic/xref xref" href="#doc__section_qys_h4c_xtb">3</a>]). If any of
+        the operation areas is reached, the output function may initiate a trip on the
+        equipment.</p>
+      <figure class="- topic/fig fig fignone" id="doc__fig_lrw_dva_ale" data-ofbid="doc__fig_lrw_dva_ale"><figcaption class="- topic/title title figcapcenter"><span class="figtitleprefix fig--title-label">Figure<span class="fig--title-label-number"> 4</span><span class="fig--title-label-punctuation">. </span></span><span class="fig--title">Graphic representation of the Differential Protection Function with two
+          elements</span></figcaption>
+        
+        <div class="imagecenter break"><img class="- topic/image image imagecenter break" id="doc__image_e1s_b2a_45b" src="../Images/differential_protection_an_04.png"/></div>
+      </figure>
+    </section>
+    <section class="- topic/section section" id="doc__section_k2p_hzb_bz" data-ofbid="doc__section_k2p_hzb_bz"><h2 class="- topic/title title sectiontitle">Simulation</h2>
+      
+      <p class="- topic/p p">This example contains a SCADA panel (<a class="- topic/xref xref" href="#doc__fig_lrw_dva_alt">Figure 5</a>) with the widgets to monitor and interact with the simulation. Within this
+        panel, there are two subpanels: the subpanel called “Measurements” (<a class="- topic/xref xref" href="#doc__fig_lrw_dva_alu">Figure 6</a>) which provides the
+        measurements of the currents on both sides of the transformer and the subpanel called
+        “Graphs” (<a class="- topic/xref xref" href="#doc__fig_lrw_dva_ali">Figure 7</a>) which displays
+        the operation and restraint currents, as well as the information about the ANSI 87
+        protection function status and the IRes x IOp graph. The capture/scope widget is set to be
+        triggered in the trip signal and shows information some variables of the model at the moment
+        of the trip action.</p>
+      <figure class="- topic/fig fig fignone" id="doc__fig_lrw_dva_alt" data-ofbid="doc__fig_lrw_dva_alt"><figcaption class="- topic/title title figcapcenter"><span class="figtitleprefix fig--title-label">Figure<span class="fig--title-label-number"> 5</span><span class="fig--title-label-punctuation">. </span></span><span class="fig--title">Root of the SCADA panel</span></figcaption>
+        
+        <div class="imagecenter break"><img class="- topic/image image imagecenter break" id="doc__image_e1s_b2a_4tb" src="../Images/differential_protection_an_05.png"/></div>
+      </figure>
+      <figure class="- topic/fig fig fignone" id="doc__fig_lrw_dva_alu" data-ofbid="doc__fig_lrw_dva_alu"><figcaption class="- topic/title title figcapcenter"><span class="figtitleprefix fig--title-label">Figure<span class="fig--title-label-number"> 6</span><span class="fig--title-label-punctuation">. </span></span><span class="fig--title">Subpanel "Measurements"</span></figcaption>
+        
+        <div class="imagecenter break"><img class="- topic/image image imagecenter break" id="doc__image_e1s_b2a_4ub" src="../Images/differential_protection_an_06.png"/></div>
+      </figure>
+      <figure class="- topic/fig fig fignone" id="doc__fig_lrw_dva_ali" data-ofbid="doc__fig_lrw_dva_ali"><figcaption class="- topic/title title figcapcenter"><span class="figtitleprefix fig--title-label">Figure<span class="fig--title-label-number"> 7</span><span class="fig--title-label-punctuation">. </span></span><span class="fig--title">Subpanel "Graphs"</span></figcaption>
+        
+        <div class="imagecenter break"><img class="- topic/image image imagecenter break" id="doc__image_e1s_b2a_4ib" src="../Images/differential_protection_an_07.png"/></div>
+      </figure>
+    </section>
+    
+    <section class="- topic/section section" id="doc__section_czt_r4m_blbb1" data-ofbid="doc__section_czt_r4m_blbb1"><h2 class="- topic/title title sectiontitle">Test Automation</h2>
+      
+      <p class="- topic/p p">This test script performs two test routines on the developed example. The first one checks
+        if the IED is operating correctly for faults within the relay's protection zone, while the
+        second verifies if there is any improper operation of the relay for faults outside the
+        protection zone. At the end of the tests execution, a .pdf report is generated containing
+        its results and information about the simulations.</p>
+      <figure class="- topic/fig fig fignone" id="doc__fig_lrw_dva_alr1" data-ofbid="doc__fig_lrw_dva_alr1"><figcaption class="- topic/title title figcapcenter"><span class="figtitleprefix fig--title-label">Figure<span class="fig--title-label-number"> 8</span><span class="fig--title-label-punctuation">. </span></span><span class="fig--title">Test report results overview</span></figcaption>
+        
+        <div class="imagecenter break"><img class="- topic/image image imagecenter break" id="doc__image_e1s_b2a_4mc" src="../Images/differential_protection_an_08.png"/></div>
+      </figure>
+      <figure class="- topic/fig fig fignone" id="doc__fig_lrw_dva_alz" data-ofbid="doc__fig_lrw_dva_alz"><figcaption class="- topic/title title figcapcenter"><span class="figtitleprefix fig--title-label">Figure<span class="fig--title-label-number"> 9</span><span class="fig--title-label-punctuation">. </span></span><span class="fig--title">Report results table for faults within the protection zone</span></figcaption>
+        
+        <div class="imagecenter break"><img class="- topic/image image imagecenter break" id="doc__image_e1s_b2a_4nx" src="../Images/differential_protection_an_09.png"/></div>
+      </figure>
+    </section>
+    <section class="- topic/section section" id="doc__example_requirements" data-ofbid="doc__example_requirements"><h2 class="- topic/title title sectiontitle">Example requirements</h2>
+      
+      <p class="- topic/p p"><a class="- topic/xref xref" href="#doc__min_req">Table 1</a> provides detailed information about
+        the file locations and hardware requirements for running the model in real-time, followed by
+        the HIL device resource utilization when running the model using this minimal hardware
+        configuration. This information is provided to help you with running and customizing the
+        model as you see fit.</p>
+      <table class="- topic/table table frame-all" id="doc__min_req" data-ofbid="doc__min_req" data-cols="2"><caption class="- topic/title title tablecap" data-caption-side="top" data-is-repeated="true"><span class="table--title-label">Table<span class="table--title-label-number"> 1</span><span class="table--title-label-punctuation">. </span></span><span class="table--title"><span class="- topic/ph ph" id="doc__an_min-req">Minimum requirements</span></span></caption><colgroup><col style="width:50%"/><col style="width:50%"/></colgroup><thead class="- topic/thead thead">
+            <tr class="- topic/row">
+              <th class="- topic/entry entry align-center colsep-0 rowsep-1" id="doc__min_req__entry__1" colspan="2">Files</th>
+            </tr>
+          </thead><tbody class="- topic/tbody tbody">
+            <tr class="- topic/row">
+              <td class="- topic/entry entry align-center colsep-1 rowsep-1" headers="doc__min_req__entry__1"><span class="- topic/ph ph" id="doc__an_min-req_TH-files">Typhoon HIL files</span></td>
+              <td class="- topic/entry entry align-center colsep-0 rowsep-1" headers="doc__min_req__entry__1"><p class="- topic/p p"><em class="+ topic/ph hi-d/i ph i">examples\models\power systems\differential protection</em></p>
+                <p class="- topic/p p">differential protection example.tse</p>
+                <p class="- topic/p p">differential protection example.cus</p></td>
+            </tr>
+            <tr class="- topic/row">
+              <td class="- topic/entry entry align-center colsep-0 rowsep-1" headers="doc__min_req__entry__1" colspan="2"><strong class="+ topic/ph hi-d/b ph b">Minimum hardware requirements</strong></td>
+            </tr>
+            <tr class="- topic/row">
+              <td class="- topic/entry entry align-center colsep-1 rowsep-1" headers="doc__min_req__entry__1"><span class="- topic/ph ph" id="doc__an_min-req_num-devices">No. of HIL devices</span></td>
+              <td class="- topic/entry entry align-center colsep-0 rowsep-1" headers="doc__min_req__entry__1"><span class="- topic/ph ph" id="doc__num_devices">1</span></td>
+            </tr>
+            <tr class="- topic/row">
+              <td class="- topic/entry entry align-center colsep-1 rowsep-1" headers="doc__min_req__entry__1"><span class="- topic/ph ph" id="doc__an_min-req_model-num">HIL device model</span></td>
+              <td class="- topic/entry entry align-center colsep-0 rowsep-1" headers="doc__min_req__entry__1"><span class="- topic/ph ph" id="doc__type_devices">HIL101</span></td>
+            </tr>
+            <tr class="- topic/row">
+              <td class="- topic/entry entry align-center colsep-1 rowsep-1" headers="doc__min_req__entry__1"><u class="+ topic/ph hi-d/u ph u"><a class="- topic/xref xref" href="../../t-ug002/concepts/device_manager.html" title="Device Manager is used to create, manipulate, and activate HIL device setups.">Device configuration</a></u></td>
+              <td class="- topic/entry entry align-center colsep-0 rowsep-1" headers="doc__min_req__entry__1"><span class="- topic/ph ph" id="doc__num_config">2</span></td>
+            </tr>
+            <tr class="- topic/row">
+              <td class="- topic/entry entry align-center colsep-0 rowsep-1" headers="doc__min_req__entry__1" colspan="2"><strong class="+ topic/ph hi-d/b ph b">HIL device resource utilization</strong></td>
+            </tr>
+            <tr class="- topic/row">
+              <td class="- topic/entry entry align-center colsep-1 rowsep-1" headers="doc__min_req__entry__1"><span class="- topic/ph ph" id="doc__an_res-util_num-cores">No. of processing cores</span></td>
+              <td class="- topic/entry entry align-center colsep-0 rowsep-1" headers="doc__min_req__entry__1"><span class="- topic/ph ph" id="doc__num_cores">3</span></td>
+            </tr>
+            <tr class="- topic/row">
+              <td class="- topic/entry entry align-center colsep-1 rowsep-1" headers="doc__min_req__entry__1"><span class="- topic/ph ph" id="doc__an_res-util_max-memory">Max. matrix memory utilization</span></td>
+              <td class="- topic/entry entry align-center colsep-0 rowsep-1" headers="doc__min_req__entry__1"><p class="- topic/p p">51.81% (core2)</p><p class="- topic/p p">17.68% (core1)</p><p class="- topic/p p">2.42% (core0)</p></td>
+            </tr>
+            <tr class="- topic/row">
+              <td class="- topic/entry entry align-center colsep-1 rowsep-1" headers="doc__min_req__entry__1"><span class="- topic/ph ph" id="doc__an_res-util_max-time">Max. time slot utilization</span></td>
+              <td class="- topic/entry entry align-center colsep-0 rowsep-1" headers="doc__min_req__entry__1"><p class="- topic/p p">41.82% (core2)</p><p class="- topic/p p">55.0% (core1)</p><p class="- topic/p p">14.55% (core0)</p></td>
+            </tr>
+            <tr class="- topic/row">
+              <td class="- topic/entry entry align-center colsep-1 rowsep-1" headers="doc__min_req__entry__1"><span class="- topic/ph ph" id="doc__an_res-util_sim-step">Simulation step, electrical</span></td>
+              <td class="- topic/entry entry align-center colsep-0 rowsep-1" headers="doc__min_req__entry__1">1 µs</td>
+            </tr>
+            <tr class="- topic/row">
+              <td class="- topic/entry entry align-center colsep-1 rowsep-0" headers="doc__min_req__entry__1"><span class="- topic/ph ph" id="doc__an_res-util_exec-rate">Execution rate, signal processing</span></td>
+              <td class="- topic/entry entry align-center colsep-0 rowsep-0" headers="doc__min_req__entry__1">100 µs</td>
+            </tr>
+          </tbody></table>
+    </section>
+    <section class="- topic/section section" id="doc__section_qys_h4c_xtb" data-ofbid="doc__section_qys_h4c_xtb"><h2 class="- topic/title title sectiontitle">References</h2>
+      
+      <p class="- topic/p p">[1] KINDERMANN, G.; Proteção de Sistemas Elétricos de Potência. 2nd Ed. Florianopolis: UFSC-EEL-LabPlan, 2005. Vol 2. 207 p.</p>
+      <p class="- topic/p p">[2] Schweitzer Engineering Laboratories, “SEL-487E-5: Transformer Protection Relay with Sampled Values of TiDL Technology”, Instruction Manual, May 2022</p>
+      <p class="- topic/p p">[3] ABB, “Relion Protection and Control: 615 series”, Technical Manual, 2023</p>
+    </section>
+    <section class="- topic/section section" id="doc__section_wys_h4c_xtb" data-ofbid="doc__section_wys_h4c_xtb"><h2 class="- topic/title title sectiontitle">Authors</h2>
+      
+      <ol class="- topic/ol ol">
+        <li class="- topic/li li">Jhonatan Antônio Cassol</li>
+        <li class="- topic/li li">Adriano Peres de Morais</li>
+        <li class="- topic/li li">Fernando Guilherme Kaehler Guarda</li>
+      </ol>
+    </section>
+    
+  </div>
+</article></main></div>
+                        
+                        
+                        
+                        
+                        
+                        
+                    </div>
+                    
+                        <nav role="navigation" id="wh_topic_toc" aria-label="On this page" class="col-lg-2 d-none d-lg-block navbar d-print-none"> 
+                            <div id="wh_topic_toc_content">
+		                        
+	                            <div class=" wh_topic_toc "><div class="wh_topic_label">On this page</div><ul><li class="section-item"><div class="section-title"><a href="#doc__section_k2p_hzb_az" data-tocid="doc__section_k2p_hzb_az">Introduction</a></div></li><li class="section-item"><div class="section-title"><a href="#doc__section_qys_h4s_xtb" data-tocid="doc__section_qys_h4s_xtb">Model description</a></div></li><li class="section-item"><div class="section-title"><a href="#doc__section_k2p_hzb_bz" data-tocid="doc__section_k2p_hzb_bz">Simulation</a></div></li><li class="section-item"><div class="section-title"><a href="#doc__section_czt_r4m_blbb1" data-tocid="doc__section_czt_r4m_blbb1">Test Automation</a></div></li><li class="section-item"><div class="section-title"><a href="#doc__example_requirements" data-tocid="doc__example_requirements">Example requirements</a></div></li><li class="section-item"><div class="section-title"><a href="#doc__section_qys_h4c_xtb" data-tocid="doc__section_qys_h4c_xtb">References</a></div></li><li class="section-item"><div class="section-title"><a href="#doc__section_wys_h4c_xtb" data-tocid="doc__section_wys_h4c_xtb">Authors</a></div></li></ul></div>
+	                        	
+                        	</div>
+                        </nav>
+                    
+                </div>
+            </div>
+            
+            
+            
+        </div> 
+        <footer class="navbar navbar-default wh_footer">
+  <div class=" footer-container mx-auto ">
+    <div style="text-align:center">Typhoon HIL Inc.<span id="year"> <a href="https://www.typhoon-hil.com">www.typhoon-hil.com</a></span></div>
+  </div>
+</footer>
+        
+        <div id="go2top" class="d-print-none">
+            <span class="oxy-icon oxy-icon-up"></span>
+        </div>
+        
+        <div id="modal_img_large" class="modal">
+            <span class="close oxy-icon oxy-icon-remove"></span>
+            <div id="modal_img_container"></div>
+            <div id="caption"></div>
+        </div>
+        
+        
+<script type="text/javascript" src="../../assets/script.js"> 
+</script>
+
+        
+    </body>
+</html>

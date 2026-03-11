@@ -1,0 +1,335 @@
+<!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en" data-whc_version="24.1">
+    <head><link rel="shortcut icon" href="../../favicon.ico"/><link rel="icon" href="../../favicon.ico"/><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><meta name="DC.rights.owner" content="(C) Copyright 2026"/><meta name="copyright" content="(C) Copyright 2026"/><meta name="generator" content="DITA-OT"/><meta name="DC.type" content="reference"/><meta name="description" content="Demonstration of the capabilities of Aurora Small Form-factor Pluggable (SFP) simulation link to establish communication between a HIL device and a controller."/><meta name="DC.relation" content="../../t-an001/concepts/communication_protocols.html"/><meta name="DC.format" content="HTML5"/><meta name="DC.identifier" content="doc"/>        
+      <title>SFP with Modular Multi-level Converter (MMC)</title><!--  Generated with Oxygen version 24.1, build number 2022030800.  --><meta name="wh-path2root" content="../../"/><meta name="wh-toc-id" content="doc-d16877e360"/><meta name="wh-source-relpath" content="t-an001/References/sfp_with_mmc.dita"/><meta name="wh-out-relpath" content="t-an001/References/sfp_with_mmc.html"/>
+    <!-- Latest compiled and minified Bootstrap CSS -->
+    <link rel="stylesheet" type="text/css" href="../../oxygen-webhelp/lib/bootstrap/css/bootstrap.min.css"/>
+    
+    <link rel="stylesheet" href="../../oxygen-webhelp/lib/jquery-ui/jquery-ui.min.css"/>
+    
+    <!-- Template default styles  -->
+    <link rel="stylesheet" type="text/css" href="../../oxygen-webhelp/app/topic-page.css?buildId=2022030800"/>
+    
+    
+    <script src="../../oxygen-webhelp/lib/jquery/jquery-3.5.1.min.js"></script>
+    
+    <script data-main="../../oxygen-webhelp/app/topic-page.js" src="../../oxygen-webhelp/lib/requirejs/require.js"></script>
+<link rel="stylesheet" type="text/css" href="../../oxygen-webhelp/template/oxygen.css?buildId=2022030800"/><link rel="stylesheet" type="text/css" href="../../oxygen-webhelp/template/notes.css?buildId=2022030800"/><script type="text/javascript" src="../../Scripts/mml-svg.js"> 
+</script><link rel="stylesheet" type="text/css" href="../../assets/typhoon.css"/></head>
+
+    <body id="doc" class="wh_topic_page frmBody">
+        <a href="#wh_topic_body" class="sr-only sr-only-focusable">
+            Jump to main content
+        </a>
+        
+        
+        
+        
+        <header class="navbar navbar-default wh_header">
+    <div class="container-fluid">
+        <div class="wh_header_flex_container navbar-nav navbar-expand-md navbar-dark">
+            <div class="wh_logo_and_publication_title_container">
+                <div class="wh_logo_and_publication_title">
+                    
+                    <a href="https://www.typhoon-hil.com" class=" wh_logo d-none d-sm-block "><img src="../../logo.svg" alt="  Typhoon HIL Documentation  Version: 2026.1  "/></a>
+                    <div class=" wh_publication_title "><a href="../../index.html"><span class="booktitle">  <span class="ph mainbooktitle">Typhoon HIL Documentation</span>  <span class="ph booktitlealt">Version: 2026.1</span>  </span></a></div>
+                    
+                </div>
+                
+                <button type="button" data-target="#wh_top_menu_and_indexterms_link" id="wh_menu_mobile_button" data-toggle="collapse" class="navbar-toggler collapsed wh_toggle_button" aria-expanded="false" aria-label="Toggle menu" aria-controls="wh_top_menu_and_indexterms_link">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+            </div>
+
+            <div class="wh_top_menu_and_indexterms_link collapse navbar-collapse" id="wh_top_menu_and_indexterms_link">
+                
+                <nav class=" wh_top_menu " aria-label="Menu Container"><ul role="menubar" aria-label="Menu"><li role="menuitem" aria-haspopup="true" aria-expanded="false" class="has-children"><span id="tocId-d16877e21-mi" data-tocid="tocId-d16877e21" data-state="not-ready" class=" topicref application-notes"><span class="title"><a href="../../t-an001/concepts/application_notes_introduction.html">Typhoon HIL Application Notes</a></span></span></li><li role="menuitem" aria-haspopup="true" aria-expanded="false" class="has-children"><span id="tocId-d16877e737-mi" data-tocid="tocId-d16877e737" data-state="not-ready" class=" topicref software-manual"><span class="title"><a href="../../t-ug002/topics/software_manual_introduction.html">Typhoon HIL Software Manual</a></span></span></li><li role="menuitem" aria-haspopup="true" aria-expanded="false" class="has-children"><span id="tocId-d16877e7901-mi" data-tocid="tocId-d16877e7901" data-state="not-ready" class=" topicref hardware-manual"><span class="title"><a href="../../t-ug001/abstract/hardware_manual_introduction.html">Typhoon HIL Hardware Manual</a></span></span></li></ul></nav>
+                
+                
+            </div>
+        </div>
+    </div>
+</header>
+        
+        
+         
+        
+        <div class=" wh_search_input navbar-form wh_topic_page_search search " role="form">
+            
+            
+            
+            <form id="searchForm" method="get" role="search" action="../../search.html"><div><input type="search" placeholder="Search " class="wh_search_textfield" id="textToSearch" name="searchQuery" aria-label="Search query" required="required"/><button type="submit" class="wh_search_button" aria-label="Search"><span class="search_input_text">Search</span></button></div></form>
+            
+            
+            
+        </div>
+        
+        <div class="container-fluid" id="wh_topic_container">
+            <div class="row">
+
+                <nav class="wh_tools d-print-none navbar-expand-md" aria-label="Tools">
+                    
+                    <div data-tooltip-position="bottom" class=" wh_breadcrumb "><ol class="d-print-none"><li><span class="home"><a href="../../index.html"><span>Home</span></a></span></li><li><div class="topicref application-notes"><div class="title"><a href="../../t-an001/concepts/application_notes_introduction.html">Typhoon HIL Application Notes</a></div></div></li><li><div class="topicref" data-id="doc"><div class="title"><a href="../../t-an001/concepts/communication_protocols.html">Communication Protocols</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">Interoperability. Cybersecurity. Modbus, Sunspec, IEC61850, IEEE    C37.118, DNP3, CAN, OPC UA, and more.</span></p></div></div></div></li><li class="active"><div class="topicref" data-id="doc"><div class="title"><a href="../../t-an001/References/sfp_with_mmc.html">SFP with Modular Multi-level Converter (MMC)</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">Demonstration of the capabilities of Aurora Small Form-factor Pluggable (SFP) simulation link to establish communication between a HIL device and a controller.</span></p></div></div></div></li></ol></div>
+                    
+                    
+                    
+                    <div class="wh_right_tools">
+                        <button class="wh_hide_highlight" aria-label="Toggle search highlights" title="Toggle search highlights"></button>
+                        <button class="webhelp_expand_collapse_sections" data-next-state="collapsed" aria-label="Collapse sections" title="Collapse sections"></button>
+                        
+                        
+                        
+                        
+                        <div class=" wh_print_link print d-none d-md-inline-block "><button onClick="window.print()" title="Print this page" aria-label="Print this page"></button></div>
+                        
+                        <button type="button" id="wh_toc_button" class="custom-toggler navbar-toggler collapsed wh_toggle_button navbar-light" aria-expanded="false" aria-label="Toggle publishing table of content" aria-controls="wh_publication_toc">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+                    </div>
+                    
+                </nav>
+            </div>
+            
+            
+            
+            
+            <div class="wh_content_area">
+                <div class="row">
+                    
+                        <nav id="wh_publication_toc" class="col-lg-3 col-md-3 col-sm-12 d-md-block d-none d-print-none" aria-label="Table of Contents Container">
+                            <div id="wh_publication_toc_content">
+		                        
+                            	<div class=" wh_publication_toc " data-tooltip-position="right"><span class="expand-button-action-labels"><span id="button-expand-action" role="button" aria-label="Expand"></span><span id="button-collapse-action" role="button" aria-label="Collapse"></span><span id="button-pending-action" role="button" aria-label="Pending"></span></span><ul role="tree" aria-label="Table of Contents"><li role="treeitem" aria-expanded="true"><div data-tocid="tocId-d16877e21" class="topicref application-notes" data-state="expanded"><span role="button" tabindex="0" aria-labelledby="button-collapse-action tocId-d16877e21-link" class="wh-expand-btn"></span><div class="title"><a href="../../t-an001/concepts/application_notes_introduction.html" id="tocId-d16877e21-link">Typhoon HIL Application Notes</a></div></div><ul role="group" class="navbar-nav nav-list"><li role="treeitem"><div data-tocid="doc-d16877e25" class="topicref" data-id="doc" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../../t-an001/concepts/application_notes_introduction.html" id="doc-d16877e25-link">Application Notes Introduction</a><div class="wh-tooltip"><p class="shortdesc">Brief overview of the different categories of Application Notes</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="doc-d16877e36" class="topicref" data-id="doc" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action doc-d16877e36-link" class="wh-expand-btn"></span><div class="title"><a href="../../t-an001/concepts/grid_connected_converters.html" id="doc-d16877e36-link">Grid-connected converters</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">Grid-connected converter applications featuring various grid support    functionalities.</span></p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="doc-d16877e96" class="topicref" data-id="doc" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action doc-d16877e96-link" class="wh-expand-btn"></span><div class="title"><a href="../../t-an001/concepts/automotive.html" id="doc-d16877e96-link">Automotive</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">Electric cars and other automotive applications.</span></p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="doc-d16877e132" class="topicref" data-id="doc" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action doc-d16877e132-link" class="wh-expand-btn"></span><div class="title"><a href="../../t-an001/concepts/aerospace.html" id="doc-d16877e132-link">Aerospace</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">System-level and component-level aircraft applications.</span></p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="doc-d16877e168" class="topicref" data-id="doc" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action doc-d16877e168-link" class="wh-expand-btn"></span><div class="title"><a href="../../t-an001/concepts/battery_management_systems.html" id="doc-d16877e168-link">Battery management systems</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">Battery management system (BMS) examples</span></p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="doc-d16877e216" class="topicref" data-id="doc" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action doc-d16877e216-link" class="wh-expand-btn"></span><div class="title"><a href="../../t-an001/concepts/how-to_guides.html" id="doc-d16877e216-link">How-to Guides</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">Guides, tips, and tricks on various aspects of Typhoon HIL toolchain usage.</span></p></div></div></div></li><li role="treeitem" aria-expanded="true"><div data-tocid="doc-d16877e312" class="topicref" data-id="doc" data-state="expanded"><span role="button" tabindex="0" aria-labelledby="button-collapse-action doc-d16877e312-link" class="wh-expand-btn"></span><div class="title"><a href="../../t-an001/concepts/communication_protocols.html" id="doc-d16877e312-link">Communication Protocols</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">Interoperability. Cybersecurity. Modbus, Sunspec, IEC61850, IEEE    C37.118, DNP3, CAN, OPC UA, and more.</span></p></div></div></div><ul role="group" class="navbar-nav nav-list"><li role="treeitem"><div data-tocid="doc-d16877e324" class="topicref" data-id="doc" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../../t-an001/References/pv_inverter_with_iec61850_mms.html" id="doc-d16877e324-link">PV inverter with IEC 61850 MMS</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">Demonstration of remote control of a PV inverter by IEC 61850 MMS</span></p></div></div></div></li><li role="treeitem"><div data-tocid="doc-d16877e336" class="topicref" data-id="doc" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../../t-an001/References/multi_protocol_gateway_for_derms.html" id="doc-d16877e336-link">Multi-protocol gateway for DERMS </a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">Demonstration of a communications test environment for a DERMS gateway, by making use     of: generic DER components, communication protocols, and their client/server     implementations.</span></p></div></div></div></li><li role="treeitem"><div data-tocid="doc-d16877e348" class="topicref" data-id="doc" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../../t-an001/References/modbus_device_with_hil_scada_based_client.html" id="doc-d16877e348-link">Modbus Device with HIL SCADA-based client</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">Demonstration of remote control of a battery inverter by Modbus client</span></p></div></div></div></li><li role="treeitem" class="active"><div data-tocid="doc-d16877e360" class="topicref" data-id="doc" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../../t-an001/References/sfp_with_mmc.html" id="doc-d16877e360-link">SFP with Modular Multi-level Converter (MMC)</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">Demonstration of the capabilities of Aurora Small Form-factor Pluggable (SFP) simulation link to establish communication between a HIL device and a controller.</span></p></div></div></div></li><li role="treeitem"><div data-tocid="doc-d16877e372" class="topicref" data-id="doc" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../../t-an001/References/OPC_UA_SCADA_client.html" id="doc-d16877e372-link">OPC with HIL SCADA-based client</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">Demonstration of how two OPC UA servers can be configured and simulated in     one HIL device within HIL SCADA</span></p></div></div></div></li></ul></li><li role="treeitem" aria-expanded="false"><div data-tocid="doc-d16877e384" class="topicref" data-id="doc" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action doc-d16877e384-link" class="wh-expand-btn"></span><div class="title"><a href="../../t-an001/concepts/power_systems.html" id="doc-d16877e384-link">Power Systems</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">Power system simulation. Relay protection testing. Power flow tool integration and   co-simulation.</span></p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="doc-d16877e468" class="topicref" data-id="doc" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action doc-d16877e468-link" class="wh-expand-btn"></span><div class="title"><a href="../../t-an001/concepts/microgrids.html" id="doc-d16877e468-link">Microgrids</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">Rapid microgrid pre-commissioning and system integration. Microgrid controller RCP and   testing.</span></p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="doc-d16877e552" class="topicref" data-id="doc" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action doc-d16877e552-link" class="wh-expand-btn"></span><div class="title"><a href="../../t-an001/concepts/electrical_drives.html" id="doc-d16877e552-link">Electrical Drives</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">Converters coupled with high-fidelity electrical machine models for high performance   motor drive applications.</span></p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="doc-d16877e601" class="topicref" data-id="doc" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action doc-d16877e601-link" class="wh-expand-btn"></span><div class="title"><a href="../../t-an001/concepts/power_supplies.html" id="doc-d16877e601-link">Power Supplies</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">Linear and switching power supplies for industrial and laboratory   applications.</span></p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="doc-d16877e625" class="topicref" data-id="doc" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action doc-d16877e625-link" class="wh-expand-btn"></span><div class="title"><a href="../../t-an001/concepts/marine_power_systems.html" id="doc-d16877e625-link">Marine Power Systems</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">Hybrid propulsion, shipboard power management, offshore renewables, offshore oil and   gas platform power supplies. </span></p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="doc-d16877e649" class="topicref" data-id="doc" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action doc-d16877e649-link" class="wh-expand-btn"></span><div class="title"><a href="../../t-an001/concepts/power_quality.html" id="doc-d16877e649-link">Power Quality</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">Real-time power quality/harmonic analysis. Incorporate active filters and FACTS devices (STATCOM, DVR,   SVC).</span></p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="doc-d16877e685" class="topicref" data-id="doc" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action doc-d16877e685-link" class="wh-expand-btn"></span><div class="title"><a href="../../t-an001/concepts/railway.html" id="doc-d16877e685-link">Railway</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">System-level and component-level application examples for railway    (traction) equipment.</span></p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="doc-d16877e709" class="topicref" data-id="doc" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action doc-d16877e709-link" class="wh-expand-btn"></span><div class="title"><a href="../../t-an001/concepts/medical_devices.html" id="doc-d16877e709-link">Medical Devices</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">X-ray, MRI, ICD, pacemakers, defibrillators, emergency ventilators, ECG, EMG,   bioelectronics.</span></p></div></div></div></li></ul></li></ul></div>
+		                        
+                            </div>
+                        </nav>
+                    
+                    
+                    <div class="col-lg-7 col-md-9 col-sm-12" id="wh_topic_body">
+                        <button id="wh_close_publication_toc_button" class="close-toc-button d-none" aria-label="Toggle publishing table of content" aria-controls="wh_publication_toc" aria-expanded="true">
+                            <span class="close-toc-icon-container">
+                                <span class="close-toc-icon"></span>     
+                            </span>
+                        </button>
+                        <button id="wh_close_topic_toc_button" class="close-toc-button d-none" aria-label="Toggle topic table of content" aria-controls="wh_topic_toc" aria-expanded="true">
+                            <span class="close-toc-icon-container">
+                                <span class="close-toc-icon"></span>     
+                            </span>
+                        </button>
+                        
+                        <div class=" wh_topic_content body "><main role="main"><article role="article" aria-labelledby="ariaid-title1">
+ <h1 class="- topic/title title topictitle1" id="ariaid-title1">SFP with Modular Multi-level Converter (MMC)</h1>
+ 
+ <div class="- topic/body reference/refbody body refbody"><p class="- topic/shortdesc shortdesc"><span class="- topic/ph ph" id="doc__description">Demonstration of the capabilities of Aurora Small Form-factor Pluggable (SFP) simulation link to establish communication between a HIL device and a controller.</span></p>
+  <section class="- topic/section section" id="doc__section_hqr_1zb_rz" data-ofbid="doc__section_hqr_1zb_rz"><h2 class="- topic/title title sectiontitle"><span class="- topic/ph ph" id="doc__an_title_intro">Introduction</span></h2>
+   
+   <p class="- topic/p p"><a class="- topic/xref xref" href="../../t-ug002/References/sfp_link.html" title="Description of the SFP Simulation Link protocol and its implementation in the Typhoon HIL Toolchain.">SFP Simulation Link</a> is a
+    bidirectional, open protocol interface that allows high bandwidth, low latency data exchange
+    with the outside world. This link allows you to directly interact with another FPGA
+    microprocessor over SFP Simulation Link. It also gives you more flexibility with your analog and
+    digital IO slots, by allowing your controller to send IO signals to the HIL over SFP
+    instead.</p>
+   <p class="- topic/p p">This application note demonstrates the capabilities of establishing Aurora Small Form-factor
+    Pluggable (SFP) simulation link communication between a HIL device and a controller. It is
+    supported by generation 4 HIL devices (<span class="- topic/ph ph">HIL101, HIL404, HIL506 and
+              HIL606</span>). The upper SFP connector is used for
+    communication when SFP link components are present in the model, leaving the bottom SFP
+    connector available for device paralleling, as shown on the left in <a class="- topic/xref xref" href="#doc__fig_q4s_4gl_crb">Figure 1</a>. The right portion of the figure
+    shows how you could connect an SFP link to a real controller, which is not covered in this
+    example.</p>
+    <figure class="- topic/fig fig fignone" id="doc__fig_q4s_4gl_crb" data-ofbid="doc__fig_q4s_4gl_crb"><figcaption class="- topic/title title figcap"><span class="figtitleprefix fig--title-label">Figure<span class="fig--title-label-number"> 1</span><span class="fig--title-label-punctuation">. </span></span><span class="fig--title">SFP configuration for this MMC application</span></figcaption>
+     
+     <img class="- topic/image image" id="doc__image_r4s_4gl_crb" src="../Images/sfp_with_mmc_05.png"/>
+    </figure>
+   <p class="- topic/p p">In this example, we are using a multi-HIL setup consisting of two HIL devices that support SFP.
+    The HILs are connected using two SFP Fiber Cables. The HIL device with ID0 acts as the power
+    stage, while the HIL device with ID1 behaves as the controller side. Additional information
+    about paralleling HIL devices is available in the 
+    <a class="- topic/xref xref" href="https://www.typhoon-hil.com/documentation/typhoon-hil-hardware-manual/hil_paralleling_guide/topics/abstract.html" target="_blank" rel="external noopener">HIL Paralleling Guide</a> or in our video
+    knowledgebase <a class="- topic/xref xref" href="https://ticket.typhoon-hil.com/kb/faq.php?id=193" target="_blank" rel="external noopener">(Video: 3.3.3 Introduction to device partitioning)</a>.</p>
+   <p class="- topic/p p">You can find more information about the MMC structure and topology here: <a class="- topic/xref xref" href="modular_multi_level_converter_mmc_with_induction_machine.html#doc__section_hqr_1zb_rz">Introduction</a></p>
+  </section>
+  <section class="- topic/section section" id="doc__section_bnk_str_1kb" data-ofbid="doc__section_bnk_str_1kb"><h2 class="- topic/title title sectiontitle">Model description</h2>
+   
+   <p class="- topic/p p">The model consists of a DC link, a <a class="- topic/xref xref" href="../../t-ug002/References/mmc_leg_switching_function.html" title="Description of the MMC Leg - Switching Function component in Schematic Editor">MMC Leg - Switching
+     Function</a> with <a class="- topic/xref xref" href="../../t-ug002/References/control_for_mmc-nlc.html" title="Description of the Control for MMC Leg- NLC component in Schematic Editor which can be used for controlling the MMC Leg Switching Function.">Nearest
+     Level Control (NLC)</a>, and a constant load, and two pairs of <a class="- topic/xref xref" href="../../t-ug002/References/sfp_link.html#doc__section_chm_x25_22b">SFP send</a> and
+     <a class="- topic/xref xref" href="../../t-ug002/References/sfp_link.html#doc__section_rtv_gb5_22b">SFP
+     receive</a> blocks. Also, this model consists of two <a class="- topic/xref xref" href="../../t-ug002/References/sfp_link.html#doc__section_v51_dzt_22b">SFP setup</a>
+    blocks, one for each HIL device. The SFP send component in HIL device ID0 sends signals with the
+    voltages of the sub-modules and currents in the upper and lower legs to the controller. The
+    controller in HIL device ID1 receives the signals and provides them as inputs to the control
+    algorithm. The control algorithm then sends the gate signals to the sub-modules in the single
+    phase MMC leg.</p>
+    <figure class="- topic/fig fig fignone" id="doc__fig_dhx_52j_crb" data-ofbid="doc__fig_dhx_52j_crb"><figcaption class="- topic/title title figcap"><span class="figtitleprefix fig--title-label">Figure<span class="fig--title-label-number"> 2</span><span class="fig--title-label-punctuation">. </span></span><span class="fig--title">Model of SFP with MMC</span></figcaption>
+     
+     <img class="- topic/image image" id="doc__image_ehx_52j_crb" src="../Images/sfp_with_mmc_01.png"/>
+    </figure>
+   
+  </section>
+  <section class="- topic/section section" id="doc__section_urt_fvw_2jb" data-ofbid="doc__section_urt_fvw_2jb"><h2 class="- topic/title title sectiontitle">Simulation</h2>
+   
+   <p class="- topic/p p">This application comes with a pre-built <a class="- topic/xref xref" href="#doc__fig_clh_z2j_crb">SCADA panel</a>. The panel offers most essential user interface elements
+    (widgets) to monitor and interact with the simulation in runtime. You can customize it freely to
+    fit your needs.</p>
+   <p class="- topic/p p">The SCADA panel made for this MMC converter model allows you to have a broad insight into the
+    operation of this converter through its various widgets and scopes. In the two groups on the
+    left side of the SCADA, you can observe the up-capacitor voltage and down capacitor voltage of a
+    few sub-modules. In the Trace graphs at the bottom left, you can see the up-capacitor voltage
+    and down capacitor voltage of a few sub-modules.</p>
+    <figure class="- topic/fig fig fignone" id="doc__fig_clh_z2j_crb" data-ofbid="doc__fig_clh_z2j_crb"><figcaption class="- topic/title title figcap"><span class="figtitleprefix fig--title-label">Figure<span class="fig--title-label-number"> 3</span><span class="fig--title-label-punctuation">. </span></span><span class="fig--title">SCADA panel during simulation</span></figcaption>
+     
+     <img class="- topic/image image" id="doc__image_dlh_z2j_crb" src="../Images/sfp_with_mmc_02.png"/>
+    </figure>
+   <p class="- topic/p p">In Capture, you can see the current, voltages, voltages on sub-module capacitors, and up and
+    down arm currents. In the third viewport, capacitor voltages are shown, which demonstrates how
+    the controller balances voltages on the capacitors. In the last viewport the upper arm current
+    and lower arm current are shown.</p>
+    <figure class="- topic/fig fig fignone" id="doc__fig_ick_dfj_crb" data-ofbid="doc__fig_ick_dfj_crb"><figcaption class="- topic/title title figcap"><span class="figtitleprefix fig--title-label">Figure<span class="fig--title-label-number"> 4</span><span class="fig--title-label-punctuation">. </span></span><span class="fig--title">MMC with 60 levels</span></figcaption>
+     
+     <img class="- topic/image image" id="doc__image_jck_dfj_crb" src="../Images/sfp_with_mmc_03.png"/>
+    </figure>
+  </section>
+  <section class="- topic/section section" id="doc__section_bdn_cfl_1nb" data-ofbid="doc__section_bdn_cfl_1nb"><h2 class="- topic/title title sectiontitle">Test Automation</h2>
+   
+   <p class="- topic/p p">The provided test automation script validates if the voltage on each of the 8 capacitors in
+    the submodule are within an expected tolerance. The test captures the first five seconds of the
+    simulation. When the voltages of the sub-module capacitors are in a steady state, the test
+    measures and compares these values with the expected value <span class="+ topic/foreign mathml-d/mathml foreign mathml">
+     <math xmlns="http://www.w3.org/1998/Math/MathML">
+      <mfrac>
+       <mrow>
+        <msub>
+         <mrow>
+          <mi>V</mi>
+         </mrow>
+         <mrow>
+          <mi>d</mi>
+          <mi>c</mi>
+         </mrow>
+        </msub>
+       </mrow>
+       <mrow>
+        <mi>N</mi>
+        <mo>-</mo>
+        <mn>1</mn>
+       </mrow>
+      </mfrac>
+     </math>
+    </span>, which is 10.66 kV in this case. The tolerance is 0.5%, which is approximately 50 V.</p>
+    <figure class="- topic/fig fig fignone" id="doc__fig_d2m_jfj_crb" data-ofbid="doc__fig_d2m_jfj_crb"><figcaption class="- topic/title title figcap"><span class="figtitleprefix fig--title-label">Figure<span class="fig--title-label-number"> 5</span><span class="fig--title-label-punctuation">. </span></span><span class="fig--title">Test results</span></figcaption>
+     
+     <img class="- topic/image image" id="doc__image_n2m_jfj_crb" src="../Images/sfp_with_mmc_04.png"/>
+    </figure>
+   
+  </section>
+  <section class="- topic/section section" id="doc__example_requirements" data-ofbid="doc__example_requirements"><h2 class="- topic/title title sectiontitle">Example requirements</h2>
+   
+   <p class="- topic/p p"><a class="- topic/xref xref" href="#doc__min_req">Table 1</a> provides detailed information about the file locations and hardware requirements 
+    for running the model in real-time, followed by the HIL device resource utilization when running the model using 
+    this minimal hardware configuration. This information is provided to help you with running and 
+    customizing the model as you see fit.</p>
+   <table class="- topic/table table frame-all" id="doc__min_req" data-ofbid="doc__min_req" data-cols="2"><caption class="- topic/title title tablecap" data-caption-side="top" data-is-repeated="true"><span class="table--title-label">Table<span class="table--title-label-number"> 1</span><span class="table--title-label-punctuation">. </span></span><span class="table--title"><span class="- topic/ph ph" id="doc__an_min-req">Minimum requirements</span></span></caption><colgroup><col style="width:50%"/><col style="width:50%"/></colgroup><thead class="- topic/thead thead">
+      <tr class="- topic/row">
+       <th class="- topic/entry entry align-center colsep-0 rowsep-1" id="doc__min_req__entry__1" colspan="2">Files</th>
+      </tr>
+     </thead><tbody class="- topic/tbody tbody">
+      <tr class="- topic/row">
+       <td class="- topic/entry entry align-center colsep-1 rowsep-1" headers="doc__min_req__entry__1"><span class="- topic/ph ph" id="doc__an_min-req_TH-files">Typhoon HIL files</span></td>
+       <td class="- topic/entry entry align-center colsep-0 rowsep-1" headers="doc__min_req__entry__1">
+        <p class="- topic/p p"><em class="+ topic/ph hi-d/i ph i">examples\models\communication protocols\sfp with mmc\</em></p>
+        <p class="- topic/p p">sfp with mmc.tse</p>
+        <p class="- topic/p p">sfp with mmc.cus</p>
+        <p class="- topic/p p"><em class="+ topic/ph hi-d/i ph i">examples\tests\107_sfp_with_mmc\</em></p>
+        <p class="- topic/p p">test_sfp_with_mmc.py</p></td>
+      </tr>
+      <tr class="- topic/row">
+       <td class="- topic/entry entry align-center colsep-0 rowsep-1" headers="doc__min_req__entry__1" colspan="2"><strong class="+ topic/ph hi-d/b ph b">Minimum hardware requirements</strong></td>
+      </tr>
+      <tr class="- topic/row">
+       <td class="- topic/entry entry align-center colsep-1 rowsep-1" headers="doc__min_req__entry__1"><span class="- topic/ph ph" id="doc__an_min-req_num-devices">No. of HIL devices</span></td>
+       <td class="- topic/entry entry align-center colsep-0 rowsep-1" headers="doc__min_req__entry__1"><span class="- topic/ph ph" id="doc__num_devices">2</span></td>
+      </tr>
+      <tr class="- topic/row">
+       <td class="- topic/entry entry align-center colsep-1 rowsep-1" headers="doc__min_req__entry__1"><span class="- topic/ph ph" id="doc__an_min-req_model-num">HIL device model</span></td>
+       <td class="- topic/entry entry align-center colsep-0 rowsep-1" headers="doc__min_req__entry__1"><span class="- topic/ph ph" id="doc__type_devices">HIL101</span></td>
+      </tr>
+      <tr class="- topic/row">
+       <td class="- topic/entry entry align-center colsep-1 rowsep-1" headers="doc__min_req__entry__1"><u class="+ topic/ph hi-d/u ph u"><a class="- topic/xref xref" href="../../t-ug002/concepts/device_manager.html" title="Device Manager is used to create, manipulate, and activate HIL device setups.">Device configuration</a></u></td>
+       <td class="- topic/entry entry align-center colsep-0 rowsep-1" headers="doc__min_req__entry__1"><span class="- topic/ph ph" id="doc__num_config">1</span></td>
+      </tr>
+      <tr class="- topic/row">
+       <td class="- topic/entry entry align-center colsep-0 rowsep-1" headers="doc__min_req__entry__1" colspan="2"><strong class="+ topic/ph hi-d/b ph b">HIL device resource utilization</strong></td>
+      </tr>
+      <tr class="- topic/row">
+       <td class="- topic/entry entry align-center colsep-1 rowsep-1" headers="doc__min_req__entry__1"><span class="- topic/ph ph" id="doc__an_res-util_num-cores">No. of processing cores</span></td>
+       <td class="- topic/entry entry align-center colsep-0 rowsep-1" headers="doc__min_req__entry__1"><span class="- topic/ph ph" id="doc__num_cores">1 per device</span></td>
+      </tr>
+      <tr class="- topic/row">
+       <td class="- topic/entry entry align-center colsep-1 rowsep-1" headers="doc__min_req__entry__1"><span class="- topic/ph ph" id="doc__an_res-util_max-memory">Max. matrix memory utilization</span></td>
+       <td class="- topic/entry entry align-center colsep-0 rowsep-1" headers="doc__min_req__entry__1"><p class="- topic/p p"><strong class="+ topic/ph hi-d/b ph b">HIL1</strong></p><p class="- topic/p p">0.02% (core0)</p><p class="- topic/p p"><strong class="+ topic/ph hi-d/b ph b">HIL0</strong></p><p class="- topic/p p">0.24% (core0)</p></td>
+      </tr>
+      <tr class="- topic/row">
+       <td class="- topic/entry entry align-center colsep-1 rowsep-1" headers="doc__min_req__entry__1"><span class="- topic/ph ph" id="doc__an_res-util_max-time">Max. time slot utilization</span></td>
+       <td class="- topic/entry entry align-center colsep-0 rowsep-1" headers="doc__min_req__entry__1"><p class="- topic/p p"><strong class="+ topic/ph hi-d/b ph b">HIL1</strong></p><p class="- topic/p p">43.64% (core0)</p><p class="- topic/p p"><strong class="+ topic/ph hi-d/b ph b">HIL0</strong></p><p class="- topic/p p">60.0% (core0)</p></td>
+      </tr>
+      <tr class="- topic/row">
+       <td class="- topic/entry entry align-center colsep-1 rowsep-1" headers="doc__min_req__entry__1"><span class="- topic/ph ph" id="doc__an_res-util_sim-step">Simulation step, electrical</span></td>
+       <td class="- topic/entry entry align-center colsep-0 rowsep-1" headers="doc__min_req__entry__1">250 ns</td>
+      </tr>
+      <tr class="- topic/row">
+       <td class="- topic/entry entry align-center colsep-1 rowsep-0" headers="doc__min_req__entry__1"><span class="- topic/ph ph" id="doc__an_res-util_exec-rate">Execution rate, signal processing</span></td>
+       <td class="- topic/entry entry align-center colsep-0 rowsep-0" headers="doc__min_req__entry__1">Multirate (50 µs, 250 µs)</td>
+      </tr>
+     </tbody></table>
+  </section>
+  <section class="- topic/section section" id="doc__section_udx_dgl_1nb" data-ofbid="doc__section_udx_dgl_1nb"><h2 class="- topic/title title sectiontitle">Authors</h2>
+   
+   <p class="- topic/p p">[1] Simisa Simic</p>
+  </section>
+ </div>
+</article></main></div>
+                        
+                        
+                        
+                        
+                        
+                        
+                    </div>
+                    
+                        <nav role="navigation" id="wh_topic_toc" aria-label="On this page" class="col-lg-2 d-none d-lg-block navbar d-print-none"> 
+                            <div id="wh_topic_toc_content">
+		                        
+	                            <div class=" wh_topic_toc "><div class="wh_topic_label">On this page</div><ul><li class="section-item"><div class="section-title"><a href="#doc__section_hqr_1zb_rz" data-tocid="doc__section_hqr_1zb_rz"><span class="- topic/ph ph" id="doc__an_title_intro">Introduction</span></a></div></li><li class="section-item"><div class="section-title"><a href="#doc__section_bnk_str_1kb" data-tocid="doc__section_bnk_str_1kb">Model description</a></div></li><li class="section-item"><div class="section-title"><a href="#doc__section_urt_fvw_2jb" data-tocid="doc__section_urt_fvw_2jb">Simulation</a></div></li><li class="section-item"><div class="section-title"><a href="#doc__section_bdn_cfl_1nb" data-tocid="doc__section_bdn_cfl_1nb">Test Automation</a></div></li><li class="section-item"><div class="section-title"><a href="#doc__example_requirements" data-tocid="doc__example_requirements">Example requirements</a></div></li><li class="section-item"><div class="section-title"><a href="#doc__section_udx_dgl_1nb" data-tocid="doc__section_udx_dgl_1nb">Authors</a></div></li></ul></div>
+	                        	
+                        	</div>
+                        </nav>
+                    
+                </div>
+            </div>
+            
+            
+            
+        </div> 
+        <footer class="navbar navbar-default wh_footer">
+  <div class=" footer-container mx-auto ">
+    <div style="text-align:center">Typhoon HIL Inc.<span id="year"> <a href="https://www.typhoon-hil.com">www.typhoon-hil.com</a></span></div>
+  </div>
+</footer>
+        
+        <div id="go2top" class="d-print-none">
+            <span class="oxy-icon oxy-icon-up"></span>
+        </div>
+        
+        <div id="modal_img_large" class="modal">
+            <span class="close oxy-icon oxy-icon-remove"></span>
+            <div id="modal_img_container"></div>
+            <div id="caption"></div>
+        </div>
+        
+        
+<script type="text/javascript" src="../../assets/script.js"> 
+</script>
+
+        
+    </body>
+</html>

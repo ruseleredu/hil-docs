@@ -1,0 +1,1238 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map>
+   <appContext helpID="doc"
+               path="t-an001/concepts/application_notes_introduction.html"/>
+   <appContext helpID="doc" path="t-an001/concepts/grid_connected_converters.html"/>
+   <appContext helpID="doc"
+               path="t-an001/References/virtual_sync_machine_inverter.html"/>
+   <appContext helpID="doc" path="t-an001/References/back_to_back_dfig_wind.html"/>
+   <appContext helpID="doc"
+               path="t-an001/References/multifunctional_grid_connected_converter.html"/>
+   <appContext helpID="doc" path="t-an001/References/mmc_in_hvdc.html"/>
+   <appContext helpID="doc" path="t-an001/concepts/automotive.html"/>
+   <appContext helpID="doc" path="t-an001/References/electric_vehicle.html"/>
+   <appContext helpID="doc"
+               path="t-an001/References/electric_vehicle_ac_charging.html"/>
+   <appContext helpID="doc" path="t-an001/concepts/aerospace.html"/>
+   <appContext helpID="doc" path="t-an001/References/npc_t_type_vienna_rectifier.html"/>
+   <appContext helpID="doc" path="t-an001/References/quadcopter_drone.html"/>
+   <appContext helpID="doc" path="t-an001/concepts/battery_management_systems.html"/>
+   <appContext helpID="doc" path="t-an001/References/battery_management_system.html"/>
+   <appContext helpID="doc" path="t-an001/References/orion_bms_hil.html"/>
+   <appContext helpID="doc"
+               path="t-an001/References/foxbms_inspired_architecture.html"/>
+   <appContext helpID="doc" path="t-an001/concepts/how-to_guides.html"/>
+   <appContext helpID="doc"
+               path="t-an001/References/how_to_electrical_thermal_coupling.html"/>
+   <appContext helpID="doc"
+               path="t-an001/References/how_to_import_dll_files_in_typhoon_hil_model.html"/>
+   <appContext helpID="doc"
+               path="t-an001/References/software_in_the_loop_approach_in_rapid_prototyping.html"/>
+   <appContext helpID="doc" path="t-an001/References/frequency_response_example.html"/>
+   <appContext helpID="doc"
+               path="t-an001/References/using_scipy_functions_converter_design_issues.html"/>
+   <appContext helpID="doc" path="t-an001/References/how_to_microgrid_der.html"/>
+   <appContext helpID="doc" path="t-an001/References/how_to_signal_scaling.html"/>
+   <appContext helpID="doc" path="t-an001/concepts/communication_protocols.html"/>
+   <appContext helpID="doc"
+               path="t-an001/References/pv_inverter_with_iec61850_mms.html"/>
+   <appContext helpID="doc"
+               path="t-an001/References/multi_protocol_gateway_for_derms.html"/>
+   <appContext helpID="doc"
+               path="t-an001/References/modbus_device_with_hil_scada_based_client.html"/>
+   <appContext helpID="doc" path="t-an001/References/sfp_with_mmc.html"/>
+   <appContext helpID="doc" path="t-an001/References/OPC_UA_SCADA_client.html"/>
+   <appContext helpID="doc" path="t-an001/concepts/power_systems.html"/>
+   <appContext helpID="doc"
+               path="t-an001/References/opendss_power_flow_co_simulation.html"/>
+   <appContext helpID="doc" path="t-an001/References/distance_protection_relay.html"/>
+   <appContext helpID="doc" path="t-an001/References/ieee_34_node_islanding.html"/>
+   <appContext helpID="doc" path="t-an001/References/automatic_recloser.html"/>
+   <appContext helpID="doc" path="t-an001/References/digital_substation.html"/>
+   <appContext helpID="doc"
+               path="t-an001/References/differential_protection_example.html"/>
+   <appContext helpID="doc" path="t-an001/concepts/microgrids.html"/>
+   <appContext helpID="doc"
+               path="t-an001/References/terrestrial_microgrid_(switching).html"/>
+   <appContext helpID="doc" path="t-an001/References/generic_pv_plant.html"/>
+   <appContext helpID="doc" path="t-an001/References/generic_battery.html"/>
+   <appContext helpID="doc" path="t-an001/References/wind_farm_microgrid.html"/>
+   <appContext helpID="doc" path="t-an001/References/series_compensator_example.html"/>
+   <appContext helpID="doc"
+               path="t-an001/References/switching_and_average_models_grid-connected_bat_inv.html"/>
+   <appContext helpID="doc" path="t-an001/concepts/electrical_drives.html"/>
+   <appContext helpID="doc" path="t-an001/References/c_hil_pmsm_texas_instrument.html"/>
+   <appContext helpID="doc"
+               path="t-an001/References/modular_multi_level_converter_mmc_with_induction_machine.html"/>
+   <appContext helpID="doc" path="t-an001/References/ti_pmsm_torque_control.html"/>
+   <appContext helpID="doc" path="t-an001/concepts/power_supplies.html"/>
+   <appContext helpID="doc" path="t-an001/References/welding_inverter.html"/>
+   <appContext helpID="doc" path="t-an001/concepts/marine_power_systems.html"/>
+   <appContext helpID="doc" path="t-an001/References/shipboard_pms.html"/>
+   <appContext helpID="doc" path="t-an001/concepts/power_quality.html"/>
+   <appContext helpID="doc" path="t-an001/References/active_filter.html"/>
+   <appContext helpID="doc" path="t-an001/References/dynamic_voltage_restorer.html"/>
+   <appContext helpID="doc" path="t-an001/concepts/railway.html"/>
+   <appContext helpID="doc" path="t-an001/References/hybrid_train.html"/>
+   <appContext helpID="doc" path="t-an001/concepts/medical_devices.html"/>
+   <appContext helpID="doc" path="t-an001/References/heart_model.html"/>
+   <appContext helpID="doc" path="t-ug002/concepts/taskbook-abstract.html"/>
+   <appContext helpID="doc" path="t-ug002/topics/software_manual_introduction.html"/>
+   <appContext helpID="doc" path="t-ug002/concepts/system_requirements.html"/>
+   <appContext helpID="doc" path="t-ug002/topics/quick_start_guide_abstract.html"/>
+   <appContext helpID="doc" path="t-ug002/concepts/realtime_quick_start_guide.html"/>
+   <appContext helpID="doc" path="t-ug002/concepts/typhoonsim_quick_start_guide.html"/>
+   <appContext helpID="doc" path="t-ug002/concepts/licensing_typhoonsim.html"/>
+   <appContext helpID="doc" path="t-ug002/concepts/toolboxes.html"/>
+   <appContext helpID="doc" path="t-ug002/concepts/basic_toolbox.html"/>
+   <appContext helpID="doc" path="t-ug002/concepts/modbus_toolbox.html"/>
+   <appContext helpID="doc" path="t-ug002/concepts/can_bus_toolbox.html"/>
+   <appContext helpID="doc" path="t-ug002/concepts/profinet_toolbox.html"/>
+   <appContext helpID="doc" path="t-ug002/concepts/dnp3_toolbox.html"/>
+   <appContext helpID="doc" path="t-ug002/concepts/iec61850_toolbox.html"/>
+   <appContext helpID="doc" path="t-ug002/concepts/iec61869_toolbox.html"/>
+   <appContext helpID="doc" path="t-ug002/concepts/c37_toolbox.html"/>
+   <appContext helpID="doc" path="t-ug002/concepts/sent_toolbox.html"/>
+   <appContext helpID="doc" path="t-ug002/concepts/iec60870_toolbox.html"/>
+   <appContext helpID="doc" path="t-ug002/concepts/iec61375_toolbox.html"/>
+   <appContext helpID="doc" path="t-ug002/concepts/iso15118_toolbox.html"/>
+   <appContext helpID="doc" path="t-ug002/concepts/lin_toolbox.html"/>
+   <appContext helpID="doc" path="t-ug002/concepts/abb_ddcs_toolbox.html"/>
+   <appContext helpID="doc" path="t-ug002/concepts/abb_powerlink_toolbox.html"/>
+   <appContext helpID="doc" path="t-ug002/concepts/power_loss_toolbox.html"/>
+   <appContext helpID="doc" path="t-ug002/concepts/nonlinear_machines_toolbox.html"/>
+   <appContext helpID="doc" path="t-ug002/concepts/power_systems_toolbox.html"/>
+   <appContext helpID="doc" path="t-ug002/concepts/microgrid_toolbox.html"/>
+   <appContext helpID="doc" path="t-ug002/concepts/connecting_to_your_hil_device.html"/>
+   <appContext helpID="doc" path="t-ug002/concepts/device_manager.html"/>
+   <appContext helpID="doc" path="t-ug002/concepts/device_table.html"/>
+   <appContext helpID="doc" path="t-ug002/concepts/HIL101_device_configurations.html"/>
+   <appContext helpID="doc" path="t-ug002/concepts/HIL402_device_configurations.html"/>
+   <appContext helpID="doc" path="t-ug002/concepts/HIL404_device_configurations.html"/>
+   <appContext helpID="doc" path="t-ug002/concepts/HIL506_device_configurations.html"/>
+   <appContext helpID="doc" path="t-ug002/concepts/HIL602p_device_configurations.html"/>
+   <appContext helpID="doc" path="t-ug002/concepts/HIL604_device_configurations.html"/>
+   <appContext helpID="doc" path="t-ug002/concepts/HIL606_device_configurations.html"/>
+   <appContext helpID="doc" path="t-ug002/concepts/typhoon_hil_control_center.html"/>
+   <appContext helpID="doc" path="t-ug002/concepts/typhoonsim.html"/>
+   <appContext helpID="doc" path="t-ug002/concepts/example_explorer.html"/>
+   <appContext helpID="doc" path="t-ug002/topics/signal_access_management.html"/>
+   <appContext helpID="doc" path="t-ug002/concepts/schematic_editor.html"/>
+   <appContext helpID="doc"
+               path="t-ug002/concepts/schematic_editor_menus_and_toolbar.html"/>
+   <appContext helpID="doc" path="t-ug002/References/schematic_editor_shortcuts.html"/>
+   <appContext helpID="doc" path="t-ug002/concepts/library_browser.html"/>
+   <appContext helpID="doc" path="t-ug002/concepts/model_browser.html"/>
+   <appContext helpID="doc" path="t-ug002/concepts/quick_insert_dialog.html"/>
+   <appContext helpID="doc" path="t-ug002/concepts/subsystem_elements.html"/>
+   <appContext helpID="doc" path="t-ug002/concepts/mask.html"/>
+   <appContext helpID="handlers" path="t-ug002/concepts/handlers.html"/>
+   <appContext helpID="doc" path="t-ug002/concepts/model_handlers.html"/>
+   <appContext helpID="doc" path="t-ug002/concepts/component_and_mask_handlers.html"/>
+   <appContext helpID="doc" path="t-ug002/concepts/property_handlers.html"/>
+   <appContext helpID="doc" path="t-ug002/concepts/schematic_areas.html"/>
+   <appContext helpID="doc" path="t-ug002/concepts/schematic_comments.html"/>
+   <appContext helpID="doc" path="t-ug002/concepts/disable_schematic_parts.html"/>
+   <appContext helpID="doc" path="t-ug002/concepts/component_bypass.html"/>
+   <appContext helpID="doc" path="t-ug002/concepts/schematic_icon_API.html"/>
+   <appContext helpID="doc" path="t-ug002/References/image_function.html"/>
+   <appContext helpID="doc" path="t-ug002/References/text_function.html"/>
+   <appContext helpID="doc" path="t-ug002/References/color_function.html"/>
+   <appContext helpID="doc" path="t-ug002/References/rotate_parameter_meaning.html"/>
+   <appContext helpID="doc" path="t-ug002/concepts/execution_rate_visualization.html"/>
+   <appContext helpID="doc" path="t-ug002/concepts/compilation_status_dock.html"/>
+   <appContext helpID="doc" path="t-ug002/concepts/undo-redo_history_window.html"/>
+   <appContext helpID="doc"
+               path="t-ug002/concepts/creating_wires_and_wire_nodes_junctions.html"/>
+   <appContext helpID="doc" path="t-ug002/concepts/replace_wires_with_tags.html"/>
+   <appContext helpID="doc" path="t-ug002/concepts/auto_connection_command.html"/>
+   <appContext helpID="doc" path="t-ug002/concepts/alignment_commands.html"/>
+   <appContext helpID="doc"
+               path="t-ug002/concepts/electrical_component_vectorization.html"/>
+   <appContext helpID="doc"
+               path="t-ug002/concepts/single_line_diagram_representation.html"/>
+   <appContext helpID="doc" path="t-ug002/concepts/c_code_export.html"/>
+   <appContext helpID="doc"
+               path="t-ug002/References/platform_specific_code_generation.html"/>
+   <appContext helpID="doc" path="t-ug002/concepts/user_defined_libraries.html"/>
+   <appContext helpID="doc" path="t-ug002/concepts/what_is_a_user_library.html"/>
+   <appContext helpID="doc" path="t-ug002/concepts/how_to_create_a_library.html"/>
+   <appContext helpID="doc" path="t-ug002/concepts/editing_a_library.html"/>
+   <appContext helpID="doc" path="t-ug002/concepts/exporting_library.html"/>
+   <appContext helpID="doc" path="t-ug002/concepts/library_specifics.html"/>
+   <appContext helpID="doc"
+               path="t-ug002/concepts/loading_a_library_in_library_browser.html"/>
+   <appContext helpID="doc" path="t-ug002/concepts/library_structure.html"/>
+   <appContext helpID="doc" path="t-ug002/concepts/multifile_libraries.html"/>
+   <appContext helpID="doc" path="t-ug002/concepts/schematic_settings.html"/>
+   <appContext helpID="doc" path="t-ug002/concepts/tunable_components.html"/>
+   <appContext helpID="doc" path="t-ug002/concepts/dynamic_model_stimulation.html"/>
+   <appContext helpID="doc"
+               path="t-ug002/concepts/vhil_analog_digital_io_loopback.html"/>
+   <appContext helpID="doc" path="t-ug002/concepts/alignment_assistant.html"/>
+   <appContext helpID="doc"
+               path="t-ug002/concepts/generate_script_from_selection.html"/>
+   <appContext helpID="doc" path="t-ug002/concepts/typhoonsim_solvers_guide.html"/>
+   <appContext helpID="doc"
+               path="t-ug002/topics/general_simulation_context_definitions.html"/>
+   <appContext helpID="doc"
+               path="t-ug002/concepts/schematic_editor_component_libraries.html"/>
+   <appContext helpID="doc" path="t-ug002/concepts/modeling_principles.html"/>
+   <appContext helpID="doc" path="t-ug002/concepts/system_architecture_basics.html"/>
+   <appContext helpID="doc"
+               path="t-ug002/concepts/electrical_domain_modeling_principles_and_constraints.html"/>
+   <appContext helpID="doc" path="t-ug002/concepts/fpga_solver_basics.html"/>
+   <appContext helpID="doc" path="t-ug002/concepts/ultracore.html"/>
+   <appContext helpID="doc" path="t-ug002/concepts/loopback_latency.html"/>
+   <appContext helpID="doc" path="t-ug002/concepts/switch_models.html"/>
+   <appContext helpID="doc" path="t-ug002/References/irregular_model_example.html"/>
+   <appContext helpID="doc" path="t-ug002/References/topological_conflicts.html"/>
+   <appContext helpID="doc" path="t-ug002/concepts/circuit_partitioning.html"/>
+   <appContext helpID="doc" path="t-ug002/concepts/is_partitioning_needed.html"/>
+   <appContext helpID="doc" path="t-ug002/concepts/coupling_placement_IT.html"/>
+   <appContext helpID="doc" path="t-ug002/concepts/coupling_best_spots.html"/>
+   <appContext helpID="doc"
+               path="t-ug002/concepts/coupling_snubber_parametrization.html"/>
+   <appContext helpID="doc" path="t-ug002/concepts/coupling_placement_TLM.html"/>
+   <appContext helpID="doc" path="t-ug002/concepts/coupling_best_spots_TLM.html"/>
+   <appContext helpID="doc"
+               path="t-ug002/topics/dividing_circuits_in_multi-hil_systems.html"/>
+   <appContext helpID="doc"
+               path="t-ug002/concepts/maximum_number_of_coupling_variables.html"/>
+   <appContext helpID="doc" path="t-ug002/concepts/gds_oversampling.html"/>
+   <appContext helpID="doc" path="t-ug002/concepts/global_gds_oversampling.html"/>
+   <appContext helpID="doc" path="t-ug002/concepts/switch_level_gds_oversampling.html"/>
+   <appContext helpID="doc"
+               path="t-ug002/concepts/signal_processing_modeling_principles.html"/>
+   <appContext helpID="doc" path="t-ug002/concepts/system_architecture.html"/>
+   <appContext helpID="doc" path="t-ug002/References/execution_rates.html"/>
+   <appContext helpID="doc" path="t-ug002/References/signal_types.html"/>
+   <appContext helpID="doc" path="t-ug002/References/component_sorting.html"/>
+   <appContext helpID="doc" path="t-ug002/References/algebraic_loops.html"/>
+   <appContext helpID="doc" path="t-ug002/concepts/model_partitioning.html"/>
+   <appContext helpID="doc" path="t-ug002/topics/component_library.html"/>
+   <appContext helpID="doc" path="t-ug002/topics/circuit_breakers.html"/>
+   <appContext helpID="doc"
+               path="t-ug002/References/master_pact_circuit_breakers_-_schneider_electric.html"/>
+   <appContext helpID="doc"
+               path="t-ug002/References/motor_operated_circuit_breakers_-_abb.html"/>
+   <appContext helpID="doc" path="t-ug002/References/communication.html"/>
+   <appContext helpID="doc"
+               path="t-ug002/References/communication_protocols_implementation_info.html"/>
+   <appContext helpID="doc" path="t-ug002/References/c37_118_protocol.html"/>
+   <appContext helpID="doc" path="t-ug002/References/can_bus_protocol.html"/>
+   <appContext helpID="doc" path="t-ug002/References/can_fd_protocol.html"/>
+   <appContext helpID="doc" path="t-ug002/References/canopen_protocol.html"/>
+   <appContext helpID="doc" path="t-ug002/References/chademo.html"/>
+   <appContext helpID="doc" path="t-ug002/References/j1939_protocol.html"/>
+   <appContext helpID="doc" path="t-ug002/References/dnp3_outstation.html"/>
+   <appContext helpID="doc" path="t-ug002/References/iso15118_protocol.html"/>
+   <appContext helpID="doc" path="t-ug002/References/iso_15118_20_protocol.html"/>
+   <appContext helpID="doc" path="t-ug002/References/din70121_protocol.html"/>
+   <appContext helpID="doc" path="t-ug002/References/ethercat_protocol.html"/>
+   <appContext helpID="doc" path="t-ug002/References/ethernet-ip.html"/>
+   <appContext helpID="doc" path="t-ug002/References/ethernet_variable_exchange.html"/>
+   <appContext helpID="doc" path="t-ug002/References/ethernet_communication_udp.html"/>
+   <appContext helpID="doc" path="t-ug002/References/ethernet_communication_tcp.html"/>
+   <appContext helpID="doc" path="t-ug002/References/iec_60870_server.html"/>
+   <appContext helpID="doc" path="t-ug002/References/iec_61375_trdp_protocol.html"/>
+   <appContext helpID="doc" path="t-ug002/References/iec_61850_goose_protocol.html"/>
+   <appContext helpID="doc" path="t-ug002/References/iec_61850_mms_protocol.html"/>
+   <appContext helpID="doc"
+               path="t-ug002/References/iec_61850_sampled_values_protocol.html"/>
+   <appContext helpID="doc"
+               path="t-ug002/References/iec_61869_sampled_values_protocol.html"/>
+   <appContext helpID="doc" path="t-ug002/References/lin_bus_protocol.html"/>
+   <appContext helpID="doc" path="t-ug002/References/modbus_device.html"/>
+   <appContext helpID="doc" path="t-ug002/References/modbus_client.html"/>
+   <appContext helpID="doc" path="t-ug002/References/sent_protocol.html"/>
+   <appContext helpID="doc" path="t-ug002/References/opc_ua_server.html"/>
+   <appContext helpID="doc" path="t-ug002/References/profinet_io_device.html"/>
+   <appContext helpID="doc" path="t-ug002/References/spi_protocol.html"/>
+   <appContext helpID="doc" path="t-ug002/References/sunspec_modbus_device.html"/>
+   <appContext helpID="doc" path="t-ug002/References/sfp_link.html"/>
+   <appContext helpID="doc" path="t-ug002/References/serial.html"/>
+   <appContext helpID="doc" path="t-ug002/concepts/proprietary_protocols.html"/>
+   <appContext helpID="doc" path="t-ug002/References/egston_sfp_link.html"/>
+   <appContext helpID="doc" path="t-ug002/References/ddcs.html"/>
+   <appContext helpID="doc" path="t-ug002/References/powerlink.html"/>
+   <appContext helpID="doc" path="t-ug002/topics/contactors.html"/>
+   <appContext helpID="doc" path="t-ug002/topics/converters.html"/>
+   <appContext helpID="doc" path="t-ug002/topics/enhanced_resolution_converters.html"/>
+   <appContext helpID="doc" path="t-ug002/References/dab_converter.html"/>
+   <appContext helpID="doc" path="t-ug002/References/resonant_converter.html"/>
+   <appContext helpID="doc"
+               path="t-ug002/References/active_clamp_forward_flyback.html"/>
+   <appContext helpID="doc" path="t-ug002/References/diode.html"/>
+   <appContext helpID="doc" path="t-ug002/References/thyristor.html"/>
+   <appContext helpID="doc" path="t-ug002/References/igbt.html"/>
+   <appContext helpID="doc" path="t-ug002/References/mosfet.html"/>
+   <appContext helpID="doc" path="t-ug002/References/buck_converter.html"/>
+   <appContext helpID="doc" path="t-ug002/References/three_level_buck.html"/>
+   <appContext helpID="doc" path="t-ug002/References/boost_converter.html"/>
+   <appContext helpID="doc" path="t-ug002/References/boost_converter_symmetrical.html"/>
+   <appContext helpID="doc"
+               path="t-ug002/References/tapped_inductor_buck_boost_converter.html"/>
+   <appContext helpID="doc"
+               path="t-ug002/References/tapped_inductor_boost_converter.html"/>
+   <appContext helpID="doc" path="t-ug002/References/flybackconverter.html"/>
+   <appContext helpID="doc" path="t-ug002/References/antiparallel_thyristor_leg.html"/>
+   <appContext helpID="doc" path="t-ug002/References/ac_switch.html"/>
+   <appContext helpID="doc"
+               path="t-ug002/References/three-phase_antiparallel_thyristors.html"/>
+   <appContext helpID="doc"
+               path="t-ug002/References/single-phase_diode_rectifier.html"/>
+   <appContext helpID="doc"
+               path="t-ug002/References/two_diode_full_wave_rectifier.html"/>
+   <appContext helpID="doc" path="t-ug002/References/active_full_wave_rectifier.html"/>
+   <appContext helpID="doc"
+               path="t-ug002/References/single-phase_thyristor_rectifier.html"/>
+   <appContext helpID="doc" path="t-ug002/References/diode_leg.html"/>
+   <appContext helpID="doc" path="t-ug002/References/thyristor_leg.html"/>
+   <appContext helpID="doc" path="t-ug002/References/igbt_leg.html"/>
+   <appContext helpID="doc"
+               path="t-ug002/References/single-phase_two-level_inverter.html"/>
+   <appContext helpID="doc"
+               path="t-ug002/References/single-phase_two_level_h5_inverter.html"/>
+   <appContext helpID="doc"
+               path="t-ug002/References/single_phase_two_level_h65_inverter.html"/>
+   <appContext helpID="doc" path="t-ug002/References/h6_inverter.html"/>
+   <appContext helpID="doc" path="t-ug002/References/three-phase_diode_rectifier.html"/>
+   <appContext helpID="doc"
+               path="t-ug002/References/three-phase_thyristor_rectifier.html"/>
+   <appContext helpID="doc"
+               path="t-ug002/References/three-phase_to_single_phase_cycloconverter.html"/>
+   <appContext helpID="doc" path="t-ug002/References/vienna_rectifier.html"/>
+   <appContext helpID="doc"
+               path="t-ug002/References/three-phase_two-level_inverter_rectifier.html"/>
+   <appContext helpID="doc"
+               path="t-ug002/References/three-phase_three-level_npc_inverter_rectifier.html"/>
+   <appContext helpID="doc"
+               path="t-ug002/References/three-phase_three-level_t-type_inverter_rectifier.html"/>
+   <appContext helpID="doc"
+               path="t-ug002/References/three-phase_three-level_flying_capacitor_inverter.html"/>
+   <appContext helpID="doc"
+               path="t-ug002/References/three-phase_three-level_anpc_inverter_rectifier.html"/>
+   <appContext helpID="doc"
+               path="t-ug002/References/three_phase_two_level_current_source_inverter.html"/>
+   <appContext helpID="doc" path="t-ug002/References/grid_commutated_2L_cell.html"/>
+   <appContext helpID="doc"
+               path="t-ug002/References/three-phase_asymmetric_inverter.html"/>
+   <appContext helpID="doc" path="t-ug002/References/npc_leg.html"/>
+   <appContext helpID="doc" path="t-ug002/References/anpc_leg.html"/>
+   <appContext helpID="doc" path="t-ug002/References/t-type_leg.html"/>
+   <appContext helpID="doc"
+               path="t-ug002/References/three-level_flying-capacitor_leg.html"/>
+   <appContext helpID="doc"
+               path="t-ug002/References/four-level_flying-capacitor_leg.html"/>
+   <appContext helpID="doc"
+               path="t-ug002/References/five-level_flying-capacitor_leg.html"/>
+   <appContext helpID="doc"
+               path="t-ug002/References/seven-level_flying-capacitor_leg.html"/>
+   <appContext helpID="doc"
+               path="t-ug002/References/nine-level_flying-capacitor_leg.html"/>
+   <appContext helpID="doc"
+               path="t-ug002/References/seven-level_anpc_flycap_inverter.html"/>
+   <appContext helpID="doc"
+               path="t-ug002/References/nine-level_anpc_flycap_inverter.html"/>
+   <appContext helpID="doc" path="t-ug002/References/mmc_leg_switching_function.html"/>
+   <appContext helpID="doc" path="t-ug002/References/heric.html"/>
+   <appContext helpID="doc" path="t-ug002/References/sepic_converter.html"/>
+   <appContext helpID="doc" path="t-ug002/References/cuk_converter.html"/>
+   <appContext helpID="doc"
+               path="t-ug002/References/three_phase_two_level_current_source_cycloconverter.html"/>
+   <appContext helpID="doc" path="t-ug002/References/quadratic_boost_r2p2.html"/>
+   <appContext helpID="doc" path="t-ug002/References/quadratic_boost_regular.html"/>
+   <appContext helpID="doc" path="t-ug002/References/xy_converter.html"/>
+   <appContext helpID="doc" path="t-ug002/References/zeta_converter.html"/>
+   <appContext helpID="doc" path="t-ug002/References/forward_converter.html"/>
+   <appContext helpID="doc" path="t-ug002/References/buck_boost_converter.html"/>
+   <appContext helpID="doc" path="t-ug002/References/push_pull_converter.html"/>
+   <appContext helpID="doc"
+               path="t-ug002/References/three_phase_quasi_z_source_inverter.html"/>
+   <appContext helpID="doc" path="t-ug002/References/open_circuit_h_bridge.html"/>
+   <appContext helpID="doc" path="t-ug002/References/split-source_inverter.html"/>
+   <appContext helpID="doc"
+               path="t-ug002/References/switched_capacitor_based_13l_inverter.html"/>
+   <appContext helpID="doc"
+               path="t-ug002/References/flying_capacitor_boost_converter.html"/>
+   <appContext helpID="doc" path="t-ug002/References/5l_ne_type_converter.html"/>
+   <appContext helpID="doc" path="t-ug002/References/super_lift_luo_converter.html"/>
+   <appContext helpID="doc" path="t-ug002/References/bidirectional_cuk_converter.html"/>
+   <appContext helpID="doc" path="t-ug002/References/half_bridge_flyback.html"/>
+   <appContext helpID="doc" path="t-ug002/References/active_clamp_flyback.html"/>
+   <appContext helpID="doc" path="t-ug002/References/active_clamp_forward.html"/>
+   <appContext helpID="doc"
+               path="t-ug002/References/phase_shifted_full_bridge_converter.html"/>
+   <appContext helpID="doc" path="t-ug002/topics/converters-extras.html"/>
+   <appContext helpID="doc" path="t-ug002/References/par_dtv_detector.html"/>
+   <appContext helpID="doc" path="t-ug002/References/vout_comparator.html"/>
+   <appContext helpID="doc" path="t-ug002/References/control_for_mmc-nlc.html"/>
+   <appContext helpID="doc" path="t-ug002/topics/hil_interfaces.html"/>
+   <appContext helpID="doc" path="t-ug002/References/hil_connect_interface.html"/>
+   <appContext helpID="doc"
+               path="t-ug002/References/digital_input_card_parametrization.html"/>
+   <appContext helpID="doc"
+               path="t-ug002/References/analog_input_card_parametrization.html"/>
+   <appContext helpID="doc"
+               path="t-ug002/References/digital_output_card_parametrization.html"/>
+   <appContext helpID="doc"
+               path="t-ug002/References/analog_output_card_parametrization.html"/>
+   <appContext helpID="doc"
+               path="t-ug002/References/current_output_card_parametrization.html"/>
+   <appContext helpID="doc"
+               path="t-ug002/References/high_voltage_output_card_parametrization.html"/>
+   <appContext helpID="doc"
+               path="t-ug002/References/bms_digital_card_parametrization.html"/>
+   <appContext helpID="doc"
+               path="t-ug002/References/bms_analog_output_card_parametrization.html"/>
+   <appContext helpID="doc"
+               path="t-ug002/References/cell_emulator_card_parametrization.html"/>
+   <appContext helpID="doc"
+               path="t-ug002/References/can_resistor_emulator_card_parametrization.html"/>
+   <appContext helpID="doc"
+               path="t-ug002/References/can_relay_output_card_parametrization.html"/>
+   <appContext helpID="doc"
+               path="t-ug002/References/fiber_optic_input_card_parametrization.html"/>
+   <appContext helpID="doc"
+               path="t-ug002/References/fiber_optic_output_card_parametrization.html"/>
+   <appContext helpID="doc"
+               path="t-ug002/References/remote_io_interface_ethernet.html"/>
+   <appContext helpID="doc" path="t-ug002/topics/machines.html"/>
+   <appContext helpID="doc" path="t-ug002/concepts/machines_extras.html"/>
+   <appContext helpID="doc" path="t-ug002/References/hall_effect_sensor.html"/>
+   <appContext helpID="doc" path="t-ug002/concepts/induction_machines.html"/>
+   <appContext helpID="doc"
+               path="t-ug002/References/nine_phase_squirrel_cage_induction_machine.html"/>
+   <appContext helpID="doc"
+               path="t-ug002/References/single_phase_induction_machine.html"/>
+   <appContext helpID="doc"
+               path="t-ug002/References/six_phase_doubly_fed_induction_machine_double_stator.html"/>
+   <appContext helpID="doc"
+               path="t-ug002/References/three_phase_double_cage_induction_machine.html"/>
+   <appContext helpID="doc"
+               path="t-ug002/References/three_phase_doubly_fed_induction_machine.html"/>
+   <appContext helpID="doc"
+               path="t-ug002/References/three_phase_doubly_fed_induction_machine_vbr.html"/>
+   <appContext helpID="doc"
+               path="t-ug002/References/three_phase_squirrel_cage_induction_machine.html"/>
+   <appContext helpID="doc"
+               path="t-ug002/References/three_phase_squirrel_cage_induction_machine_open_winding.html"/>
+   <appContext helpID="doc"
+               path="t-ug002/References/three_phase_squirrel_cage_induction_machine_sp.html"/>
+   <appContext helpID="doc"
+               path="t-ug002/References/three_phase_squirrel_cage_induction_machine_vbr.html"/>
+   <appContext helpID="doc" path="t-ug002/concepts/synchronous_machines.html"/>
+   <appContext helpID="doc"
+               path="t-ug002/References/nine_phase_permanent_magnet_synchronous_machine_triple_stator.html"/>
+   <appContext helpID="doc"
+               path="t-ug002/References/six_phase_permanent_magnet_synchronous_machine_double_stator.html"/>
+   <appContext helpID="doc"
+               path="t-ug002/References/six_phase_wound_rotor_synchronous_machine_double_stator.html"/>
+   <appContext helpID="doc"
+               path="t-ug002/References/three_phase_cylindrical_rotor_permanent_magnet_synchronous_machine.html"/>
+   <appContext helpID="doc"
+               path="t-ug002/References/three_phase_permanent_magnet_assisted_synchronous_reluctance_machine.html"/>
+   <appContext helpID="doc"
+               path="t-ug002/References/three_phase_permanent_magnet_synchronous_machine.html"/>
+   <appContext helpID="three_phase_rotating_machine_ansys_ece"
+               path="t-ug002/References/three_phase_synchronous_machine_ansys_ece.html"/>
+   <appContext helpID="doc"
+               path="t-ug002/References/three_phase_permanent_magnet_synchronous_machine_jmag.html"/>
+   <appContext helpID="doc"
+               path="t-ug002/References/three_phase_permanent_magnet_synchronous_machine_open_winding.html"/>
+   <appContext helpID="doc"
+               path="t-ug002/References/three_phase_permanent_magnet_synchronous_machine_vbr.html"/>
+   <appContext helpID="doc"
+               path="t-ug002/References/three_phase_permanent_magnet_synchronous_machine_with_neutral_connection.html"/>
+   <appContext helpID="doc"
+               path="t-ug002/References/three_phase_wound_rotor_synchronous_machine.html"/>
+   <appContext helpID="doc"
+               path="t-ug002/References/three_phase_wound_rotor_synchronous_machine_generic.html"/>
+   <appContext helpID="doc"
+               path="t-ug002/References/three_phase_wound_rotor_synchronous_machine_open_winding.html"/>
+   <appContext helpID="doc"
+               path="t-ug002/References/three_phase_wound_rotor_synchronous_machine_with_neutral_connection.html"/>
+   <appContext helpID="doc"
+               path="t-ug002/References/three_phase_wound_rotor_synchronous_machine_with_neutral_connection_vbr.html"/>
+   <appContext helpID="doc" path="t-ug002/References/brushless_dc_machine.html"/>
+   <appContext helpID="doc"
+               path="t-ug002/References/separate_or_parallel_excitation_dc_machine.html"/>
+   <appContext helpID="doc" path="t-ug002/References/permanent_magnet_dc_machine.html"/>
+   <appContext helpID="doc" path="t-ug002/References/three_phase_stepper_motor.html"/>
+   <appContext helpID="doc"
+               path="t-ug002/References/three_phase_switched_reluctance_machine.html"/>
+   <appContext helpID="doc" path="t-ug002/topics/measurements.html"/>
+   <appContext helpID="doc"
+               path="t-ug002/References/voltage_and_current_measurements.html"/>
+   <appContext helpID="doc" path="t-ug002/References/rms_measurements.html"/>
+   <appContext helpID="doc" path="t-ug002/topics/microgrid.html"/>
+   <appContext helpID="doc" path="t-ug002/concepts/distributed_energy_resources.html"/>
+   <appContext helpID="doc" path="t-ug002/References/back_to_back_converter.html"/>
+   <appContext helpID="doc" path="t-ug002/References/bvsc_generic.html"/>
+   <appContext helpID="doc" path="t-ug002/References/dcdc_generic.html"/>
+   <appContext helpID="doc" path="t-ug002/References/diesel_genset_generic.html"/>
+   <appContext helpID="doc" path="t-ug002/References/diesel_genset.html"/>
+   <appContext helpID="doc" path="t-ug002/References/battery_ess_generic.html"/>
+   <appContext helpID="doc" path="t-ug002/References/battery_inverter.html"/>
+   <appContext helpID="doc" path="t-ug002/References/simple_battery_inverter.html"/>
+   <appContext helpID="doc" path="t-ug002/References/der_control_join.html"/>
+   <appContext helpID="doc" path="t-ug002/References/der_out_split.html"/>
+   <appContext helpID="doc" path="t-ug002/References/pv_plant_generic.html"/>
+   <appContext helpID="doc" path="t-ug002/References/npc_pv_inverter.html"/>
+   <appContext helpID="doc" path="t-ug002/References/pv_inverter.html"/>
+   <appContext helpID="doc" path="t-ug002/References/pv_plant.html"/>
+   <appContext helpID="doc" path="t-ug002/References/wind_power_plant_generic.html"/>
+   <appContext helpID="doc" path="t-ug002/References/wind_power_plant.html"/>
+   <appContext helpID="doc" path="t-ug002/References/frequency_droop_generic.html"/>
+   <appContext helpID="doc" path="t-ug002/References/voltage_droop_generic.html"/>
+   <appContext helpID="doc" path="t-ug002/References/lvrt_generic.html"/>
+   <appContext helpID="doc" path="t-ug002/concepts/FACTS.html"/>
+   <appContext helpID="doc" path="t-ug002/References/series_compensator.html"/>
+   <appContext helpID="doc" path="t-ug002/concepts/grid.html"/>
+   <appContext helpID="doc" path="t-ug002/References/grid_generic.html"/>
+   <appContext helpID="doc" path="t-ug002/concepts/loads.html"/>
+   <appContext helpID="doc" path="t-ug002/References/constant_impedance_load.html"/>
+   <appContext helpID="doc" path="t-ug002/References/single-phase_variable_load.html"/>
+   <appContext helpID="doc" path="t-ug002/References/three-phase_variable_load.html"/>
+   <appContext helpID="doc" path="t-ug002/References/variable_load_generic.html"/>
+   <appContext helpID="doc" path="t-ug002/References/variable_vbr_load.html"/>
+   <appContext helpID="doc" path="t-ug002/concepts/meter.html"/>
+   <appContext helpID="doc" path="t-ug002/References/meter_split.html"/>
+   <appContext helpID="doc" path="t-ug002/References/single_phase_meter.html"/>
+   <appContext helpID="doc" path="t-ug002/References/three_phase_meter.html"/>
+   <appContext helpID="doc" path="t-ug002/concepts/protection.html"/>
+   <appContext helpID="doc" path="t-ug002/References/sel_751.html"/>
+   <appContext helpID="doc" path="t-ug002/References/ansi_protective_functions.html"/>
+   <appContext helpID="doc" path="t-ug002/References/feeder_protection_relay.html"/>
+   <appContext helpID="doc" path="t-ug002/topics/circuit_partitioning_components.html"/>
+   <appContext helpID="doc" path="t-ug002/References/core_marker.html"/>
+   <appContext helpID="doc" path="t-ug002/References/core_couplings_IT.html"/>
+   <appContext helpID="doc" path="t-ug002/References/core_couplings_TLM.html"/>
+   <appContext helpID="doc" path="t-ug002/References/cpu_marker.html"/>
+   <appContext helpID="doc" path="t-ug002/References/cpu_transition.html"/>
+   <appContext helpID="doc" path="t-ug002/References/device_marker.html"/>
+   <appContext helpID="doc" path="t-ug002/References/device_couplings.html"/>
+   <appContext helpID="doc" path="t-ug002/References/device_couplings_TLM.html"/>
+   <appContext helpID="doc" path="t-ug002/References/device_transition.html"/>
+   <appContext helpID="doc" path="t-ug002/References/passive_components.html"/>
+   <appContext helpID="doc" path="t-ug002/References/linear_passive_components.html"/>
+   <appContext helpID="doc"
+               path="t-ug002/References/nonlinear_passive_components.html"/>
+   <appContext helpID="doc" path="t-ug002/References/variable_passive_components.html"/>
+   <appContext helpID="doc" path="t-ug002/References/two_coupled_inductors.html"/>
+   <appContext helpID="doc" path="t-ug002/References/three_coupled_inductors.html"/>
+   <appContext helpID="doc" path="t-ug002/References/four_coupled_inductors.html"/>
+   <appContext helpID="doc" path="t-ug002/References/series_RLC_branch.html"/>
+   <appContext helpID="doc" path="t-ug002/References/parallel_RLC_branch.html"/>
+   <appContext helpID="doc" path="t-ug002/topics/phil_interfaces.html"/>
+   <appContext helpID="doc"
+               path="t-ug002/References/phil_single_phase_current_source.html"/>
+   <appContext helpID="doc"
+               path="t-ug002/References/phil_single_phase_voltage_source.html"/>
+   <appContext helpID="doc"
+               path="t-ug002/References/phil_three_phase_current_source.html"/>
+   <appContext helpID="doc"
+               path="t-ug002/References/phil_three_phase_voltage_source.html"/>
+   <appContext helpID="doc" path="t-ug002/References/port_components.html"/>
+   <appContext helpID="doc" path="t-ug002/topics/signal_processing_components.html"/>
+   <appContext helpID="doc" path="t-ug002/References/discrete.html"/>
+   <appContext helpID="doc" path="t-ug002/References/accumulator_integrator.html"/>
+   <appContext helpID="doc" path="t-ug002/References/advanced_lpf.html"/>
+   <appContext helpID="doc" path="t-ug002/References/delay.html"/>
+   <appContext helpID="doc" path="t-ug002/References/differentiator.html"/>
+   <appContext helpID="doc" path="t-ug002/References/discrete_state_space.html"/>
+   <appContext helpID="doc" path="t-ug002/References/discrete_transfer_function.html"/>
+   <appContext helpID="doc" path="t-ug002/References/fir_filter.html"/>
+   <appContext helpID="doc" path="t-ug002/References/hysteresis_function.html"/>
+   <appContext helpID="doc" path="t-ug002/References/integrator_rollover.html"/>
+   <appContext helpID="doc" path="t-ug002/References/lpf.html"/>
+   <appContext helpID="doc" path="t-ug002/References/rate_limiter.html"/>
+   <appContext helpID="doc" path="t-ug002/References/transport_delay.html"/>
+   <appContext helpID="doc" path="t-ug002/References/unit_delay.html"/>
+   <appContext helpID="doc" path="t-ug002/References/extras.html"/>
+   <appContext helpID="doc" path="t-ug002/References/abc_to_alpha_beta.html"/>
+   <appContext helpID="doc" path="t-ug002/References/abc_to_dq.html"/>
+   <appContext helpID="doc" path="t-ug002/References/alpha_beta_to_abc.html"/>
+   <appContext helpID="doc" path="t-ug002/References/alpha_beta_to_dq.html"/>
+   <appContext helpID="doc" path="t-ug002/References/counter.html"/>
+   <appContext helpID="doc" path="t-ug002/References/d_flip_flop.html"/>
+   <appContext helpID="doc" path="t-ug002/References/dq_to_abc.html"/>
+   <appContext helpID="doc" path="t-ug002/References/dq_to_alpha_beta.html"/>
+   <appContext helpID="doc" path="t-ug002/References/fll_sync.html"/>
+   <appContext helpID="doc" path="t-ug002/References/fmu_import.html"/>
+   <appContext helpID="doc" path="t-ug002/References/gray_coder.html"/>
+   <appContext helpID="doc" path="t-ug002/References/jk_flip_flop.html"/>
+   <appContext helpID="doc" path="t-ug002/References/kalman_filter_sync.html"/>
+   <appContext helpID="doc" path="t-ug002/References/mean.html"/>
+   <appContext helpID="doc" path="t-ug002/References/pid_controller.html"/>
+   <appContext helpID="doc" path="t-ug002/References/pwm_analyzer.html"/>
+   <appContext helpID="doc" path="t-ug002/References/pwm_modulator.html"/>
+   <appContext helpID="doc" path="t-ug002/References/rms.html"/>
+   <appContext helpID="doc" path="t-ug002/References/sample_and_hold.html"/>
+   <appContext helpID="doc" path="t-ug002/References/single_phase_pll.html"/>
+   <appContext helpID="doc" path="t-ug002/References/sr_flip_flop.html"/>
+   <appContext helpID="doc" path="t-ug002/References/svpwm_generator.html"/>
+   <appContext helpID="doc" path="t-ug002/References/thermal_network.html"/>
+   <appContext helpID="doc" path="t-ug002/References/three_phase_pll.html"/>
+   <appContext helpID="doc" path="t-ug002/References/functions_and_tables.html"/>
+   <appContext helpID="doc" path="t-ug002/References/one_d_look_up_table.html"/>
+   <appContext helpID="doc" path="t-ug002/References/two_d_look_up_table.html"/>
+   <appContext helpID="doc" path="t-ug002/References/three_d_look_up_table.html"/>
+   <appContext helpID="doc" path="t-ug002/References/c_function.html"/>
+   <appContext helpID="doc" path="t-ug002/References/tml_function.html"/>
+   <appContext helpID="doc" path="t-ug002/References/logical.html"/>
+   <appContext helpID="doc" path="t-ug002/References/comparator.html"/>
+   <appContext helpID="doc" path="t-ug002/References/edge_detection.html"/>
+   <appContext helpID="doc" path="t-ug002/References/logical_operator.html"/>
+   <appContext helpID="doc" path="t-ug002/References/relational_operator.html"/>
+   <appContext helpID="doc" path="t-ug002/References/math_operations.html"/>
+   <appContext helpID="doc" path="t-ug002/References/abs.html"/>
+   <appContext helpID="doc" path="t-ug002/References/gain.html"/>
+   <appContext helpID="doc" path="t-ug002/References/limit.html"/>
+   <appContext helpID="doc" path="t-ug002/References/mathematical_function.html"/>
+   <appContext helpID="doc" path="t-ug002/References/min_max.html"/>
+   <appContext helpID="doc" path="t-ug002/References/offset.html"/>
+   <appContext helpID="doc" path="t-ug002/References/product.html"/>
+   <appContext helpID="doc" path="t-ug002/References/round.html"/>
+   <appContext helpID="doc" path="t-ug002/References/sign.html"/>
+   <appContext helpID="doc" path="t-ug002/References/sum.html"/>
+   <appContext helpID="doc" path="t-ug002/References/trigonometric_function.html"/>
+   <appContext helpID="doc" path="t-ug002/References/power_measurements.html"/>
+   <appContext helpID="doc" path="t-ug002/References/harmonic_analyzer.html"/>
+   <appContext helpID="doc" path="t-ug002/References/phase_difference.html"/>
+   <appContext helpID="doc" path="t-ug002/References/pos_neg_zero_power.html"/>
+   <appContext helpID="doc" path="t-ug002/References/power_meter.html"/>
+   <appContext helpID="doc" path="t-ug002/References/single_phase_phasor.html"/>
+   <appContext helpID="doc" path="t-ug002/References/single_phase_power_meter.html"/>
+   <appContext helpID="doc" path="t-ug002/References/symmetrical_components.html"/>
+   <appContext helpID="doc" path="t-ug002/References/thd.html"/>
+   <appContext helpID="doc" path="t-ug002/References/three_phase_phasor.html"/>
+   <appContext helpID="doc" path="t-ug002/References/power_systems.html"/>
+   <appContext helpID="doc" path="t-ug002/References/degov_woodward.html"/>
+   <appContext helpID="doc" path="t-ug002/References/ieee_ac1a_exciter.html"/>
+   <appContext helpID="doc" path="t-ug002/References/ieee_ac8b_exciter.html"/>
+   <appContext helpID="doc" path="t-ug002/References/ieee_dc1a_exciter.html"/>
+   <appContext helpID="doc" path="t-ug002/References/ieee_dc4b_exciter.html"/>
+   <appContext helpID="doc" path="t-ug002/References/ieee_st1a_exciter.html"/>
+   <appContext helpID="doc" path="t-ug002/References/ieee_type1_exciter.html"/>
+   <appContext helpID="doc" path="t-ug002/References/ieee_governor_valve.html"/>
+   <appContext helpID="doc" path="t-ug002/References/ieee_steam_turbine.html"/>
+   <appContext helpID="doc" path="t-ug002/References/wind_turbine.html"/>
+   <appContext helpID="doc" path="t-ug002/References/sinks.html"/>
+   <appContext helpID="doc" path="t-ug002/References/digital_probe.html"/>
+   <appContext helpID="doc" path="t-ug002/References/probe.html"/>
+   <appContext helpID="doc" path="t-ug002/References/scada_output.html"/>
+   <appContext helpID="doc" path="t-ug002/References/termination.html"/>
+   <appContext helpID="doc" path="t-ug002/References/sources.html"/>
+   <appContext helpID="doc" path="t-ug002/References/analog_input.html"/>
+   <appContext helpID="doc" path="t-ug002/References/clock.html"/>
+   <appContext helpID="doc" path="t-ug002/References/constant.html"/>
+   <appContext helpID="doc" path="t-ug002/References/digital_input.html"/>
+   <appContext helpID="doc" path="t-ug002/References/dynamic_table.html"/>
+   <appContext helpID="doc" path="t-ug002/References/ramp.html"/>
+   <appContext helpID="doc" path="t-ug002/References/random_source.html"/>
+   <appContext helpID="doc" path="t-ug002/References/repeating_discrete_sequence.html"/>
+   <appContext helpID="doc" path="t-ug002/References/scada_input.html"/>
+   <appContext helpID="doc" path="t-ug002/References/signal_picker_source.html"/>
+   <appContext helpID="doc" path="t-ug002/References/sinusoidal_source.html"/>
+   <appContext helpID="doc" path="t-ug002/References/square_wave_source.html"/>
+   <appContext helpID="doc" path="t-ug002/References/step.html"/>
+   <appContext helpID="doc" path="t-ug002/References/triangular_wave_source.html"/>
+   <appContext helpID="doc" path="t-ug002/References/system.html"/>
+   <appContext helpID="doc" path="t-ug002/References/boolean_join.html"/>
+   <appContext helpID="doc" path="t-ug002/References/boolean_split.html"/>
+   <appContext helpID="doc" path="t-ug002/References/bus_join.html"/>
+   <appContext helpID="doc" path="t-ug002/References/bus_modify.html"/>
+   <appContext helpID="doc" path="t-ug002/References/bus_selector.html"/>
+   <appContext helpID="doc" path="t-ug002/References/bus_split.html"/>
+   <appContext helpID="doc" path="t-ug002/References/cpu_time_slot_utilization.html"/>
+   <appContext helpID="doc" path="t-ug002/References/data_type_conversion.html"/>
+   <appContext helpID="doc" path="t-ug002/References/hil_flag_status.html"/>
+   <appContext helpID="doc" path="t-ug002/References/multiport_signal_switch.html"/>
+   <appContext helpID="doc" path="t-ug002/References/rate_transition.html"/>
+   <appContext helpID="doc" path="t-ug002/References/signal_switch.html"/>
+   <appContext helpID="doc" path="t-ug002/References/time_synchronization.html"/>
+   <appContext helpID="doc" path="t-ug002/References/timestamp_to_datetime.html"/>
+   <appContext helpID="doc" path="t-ug002/topics/sources.html"/>
+   <appContext helpID="doc" path="t-ug002/References/battery.html"/>
+   <appContext helpID="doc" path="t-ug002/References/battery_cell.html"/>
+   <appContext helpID="doc" path="t-ug002/References/battery_pack.html"/>
+   <appContext helpID="doc" path="t-ug002/References/independent_sources.html"/>
+   <appContext helpID="doc" path="t-ug002/References/controlled_sources.html"/>
+   <appContext helpID="doc"
+               path="t-ug002/References/externally_controlled_sources.html"/>
+   <appContext helpID="doc" path="t-ug002/References/signal_controlled_sources.html"/>
+   <appContext helpID="doc"
+               path="t-ug002/References/signal_controlled_sinusoidal_sources.html"/>
+   <appContext helpID="doc" path="t-ug002/References/dc_constant_power_load.html"/>
+   <appContext helpID="doc" path="t-ug002/References/fuel_cell.html"/>
+   <appContext helpID="doc" path="t-ug002/References/ground_component.html"/>
+   <appContext helpID="doc" path="t-ug002/References/photovoltaic_panel.html"/>
+   <appContext helpID="doc"
+               path="t-ug002/References/constant_power_loads_sources.html"/>
+   <appContext helpID="doc" path="t-ug002/topics/system_library.html"/>
+   <appContext helpID="doc" path="t-ug002/References/electric_tag.html"/>
+   <appContext helpID="doc" path="t-ug002/References/electrical_bus.html"/>
+   <appContext helpID="doc" path="t-ug002/References/electrical_bus_merger.html"/>
+   <appContext helpID="doc" path="t-ug002/References/electrical_bus_selector.html"/>
+   <appContext helpID="doc" path="t-ug002/References/initial_settings.html"/>
+   <appContext helpID="doc" path="t-ug002/References/signal_from.html"/>
+   <appContext helpID="doc" path="t-ug002/References/signal_goto.html"/>
+   <appContext helpID="doc" path="t-ug002/References/subsystem.html"/>
+   <appContext helpID="doc" path="t-ug002/topics/test_suite.html"/>
+   <appContext helpID="doc" path="t-ug002/References/anti-islanding_container.html"/>
+   <appContext helpID="doc" path="t-ug002/References/dc_measurement.html"/>
+   <appContext helpID="doc" path="t-ug002/References/dynamic_grid_fault.html"/>
+   <appContext helpID="doc" path="t-ug002/References/frt_container.html"/>
+   <appContext helpID="doc" path="t-ug002/References/grid_fault.html"/>
+   <appContext helpID="doc" path="t-ug002/References/grid_simulator.html"/>
+   <appContext helpID="doc" path="t-ug002/topics/transformers.html"/>
+   <appContext helpID="doc"
+               path="t-ug002/References/single_phase_four_winding_transformer.html"/>
+   <appContext helpID="doc"
+               path="t-ug002/References/single_phase_multi_winding_transformer.html"/>
+   <appContext helpID="doc"
+               path="t-ug002/References/single_phase_three_winding_transformer.html"/>
+   <appContext helpID="doc" path="t-ug002/References/ideal_transformer.html"/>
+   <appContext helpID="doc"
+               path="t-ug002/References/single_phase_two_winding_ideal_transformer_with_variable_transfer_ratio.html"/>
+   <appContext helpID="doc"
+               path="t-ug002/References/single_phase_two_winding_transformer.html"/>
+   <appContext helpID="doc"
+               path="t-ug002/References/single_phase_two_winding_variable_ratio_transformer.html"/>
+   <appContext helpID="doc"
+               path="t-ug002/References/three_phase_four_winding_transformer.html"/>
+   <appContext helpID="doc"
+               path="t-ug002/References/three_phase_three_winding_transformer.html"/>
+   <appContext helpID="doc" path="t-ug002/References/phase_shifting_transformer.html"/>
+   <appContext helpID="doc"
+               path="t-ug002/References/three_phase_two_winding_transformer.html"/>
+   <appContext helpID="doc"
+               path="t-ug002/References/three_phase_two_winding_variable_transformer.html"/>
+   <appContext helpID="doc"
+               path="t-ug002/References/calculation_of_equivalent_circuit_parameters_values.html"/>
+   <appContext helpID="doc" path="t-ug002/topics/transmission_lines.html"/>
+   <appContext helpID="doc"
+               path="t-ug002/References/single_phase_bergeron_transmission_line.html"/>
+   <appContext helpID="doc"
+               path="t-ug002/References/three_phase_bergeron_transmission_line.html"/>
+   <appContext helpID="doc" path="t-ug002/References/rl_section.html"/>
+   <appContext helpID="doc" path="t-ug002/References/transmission_line.html"/>
+   <appContext helpID="doc" path="t-ug002/References/underground_cable.html"/>
+   <appContext helpID="doc" path="t-ug002/topics/typhoonsim_components.html"/>
+   <appContext helpID="doc" path="t-ug002/References/typhoonsim_scope.html"/>
+   <appContext helpID="doc" path="t-ug002/concepts/signal_data_export.html"/>
+   <appContext helpID="doc"
+               path="t-ug002/concepts/plot_and_signal_properties_window.html"/>
+   <appContext helpID="doc" path="t-ug002/concepts/fft_analysis.html"/>
+   <appContext helpID="doc" path="t-ug002/References/blockset_ports.html"/>
+   <appContext helpID="doc"
+               path="t-ug002/topics/component_additional_information.html"/>
+   <appContext helpID="doc" path="t-ug002/References/signal_streaming.html"/>
+   <appContext helpID="doc"
+               path="t-ug002/References/reference_frame_transformation.html"/>
+   <appContext helpID="doc" path="t-ug002/References/dtv_detection.html"/>
+   <appContext helpID="doc" path="t-ug002/References/absolute_encoder.html"/>
+   <appContext helpID="doc" path="t-ug002/References/power_losses_import.html"/>
+   <appContext helpID="doc" path="t-ug002/concepts/thermal_modeling_pe.html"/>
+   <appContext helpID="doc"
+               path="t-ug002/concepts/lookup_table_visualization_tool.html"/>
+   <appContext helpID="doc" path="t-ug002/concepts/third-party_integrations.html"/>
+   <appContext helpID="doc" path="t-ug002/concepts/asam_xil_compatibility.html"/>
+   <appContext helpID="doc" path="t-ug002/concepts/asam_xil_api_python_guide.html"/>
+   <appContext helpID="doc" path="t-ug002/concepts/psim_import.html"/>
+   <appContext helpID="doc"
+               path="t-ug002/concepts/psim_typhoon_compatibility_list.html"/>
+   <appContext helpID="doc" path="t-ug002/concepts/hil_scada.html"/>
+   <appContext helpID="doc" path="t-ug002/concepts/command_toolbar.html"/>
+   <appContext helpID="doc" path="t-ug002/concepts/library_dock.html"/>
+   <appContext helpID="doc" path="t-ug002/concepts/panel_explorer_dock.html"/>
+   <appContext helpID="doc" path="t-ug002/concepts/model_explorer.html"/>
+   <appContext helpID="doc" path="t-ug002/concepts/namespace_explorer.html"/>
+   <appContext helpID="doc" path="t-ug002/concepts/model_settings_dock.html"/>
+   <appContext helpID="doc" path="t-ug002/concepts/model_controls.html"/>
+   <appContext helpID="doc" path="t-ug002/References/source_settings.html"/>
+   <appContext helpID="doc" path="t-ug002/References/pv_panel_settings.html"/>
+   <appContext helpID="doc" path="t-ug002/References/machine_settings.html"/>
+   <appContext helpID="doc" path="t-ug002/References/contactors_settings.html"/>
+   <appContext helpID="doc" path="t-ug002/References/switching_block_settings.html"/>
+   <appContext helpID="doc" path="t-ug002/References/batteries_settings.html"/>
+   <appContext helpID="doc" path="t-ug002/References/scada_inputs_settings.html"/>
+   <appContext helpID="doc" path="t-ug002/concepts/output_controls.html"/>
+   <appContext helpID="doc" path="t-ug002/References/analog_outputs_settings.html"/>
+   <appContext helpID="doc" path="t-ug002/References/digital_output_settings.html"/>
+   <appContext helpID="doc" path="t-ug002/concepts/panel_tabs.html"/>
+   <appContext helpID="doc" path="t-ug002/concepts/panel_widgets.html"/>
+   <appContext helpID="doc" path="t-ug002/References/action_widgets.html"/>
+   <appContext helpID="doc" path="t-ug002/References/monitoring_widgets.html"/>
+   <appContext helpID="doc" path="t-ug002/References/connection_widgets.html"/>
+   <appContext helpID="doc" path="t-ug002/References/visual_widgets.html"/>
+   <appContext helpID="doc" path="t-ug002/References/data_logging_widgets.html"/>
+   <appContext helpID="doc" path="t-ug002/References/analysis_widgets.html"/>
+   <appContext helpID="doc" path="t-ug002/concepts/widget_errors.html"/>
+   <appContext helpID="doc" path="t-ug002/concepts/panel_initialization.html"/>
+   <appContext helpID="doc" path="t-ug002/References/local_namespace.html"/>
+   <appContext helpID="doc" path="t-ug002/concepts/capture-scope_widget.html"/>
+   <appContext helpID="doc"
+               path="t-ug002/concepts/capture_and_scope_mutual_functions.html"/>
+   <appContext helpID="doc" path="t-ug002/concepts/capture_and_scope_presets.html"/>
+   <appContext helpID="doc" path="t-ug002/concepts/capture.html"/>
+   <appContext helpID="doc" path="t-ug002/concepts/virtual_signals.html"/>
+   <appContext helpID="doc" path="t-ug002/concepts/signal_data_export.html"/>
+   <appContext helpID="doc"
+               path="t-ug002/concepts/plot_and_signal_properties_window.html"/>
+   <appContext helpID="doc" path="t-ug002/concepts/fft_analysis.html"/>
+   <appContext helpID="doc" path="t-ug002/concepts/scope.html"/>
+   <appContext helpID="doc" path="t-ug002/concepts/message_log_dock.html"/>
+   <appContext helpID="doc" path="t-ug002/concepts/history_dock.html"/>
+   <appContext helpID="doc" path="t-ug002/concepts/status_bar.html"/>
+   <appContext helpID="doc" path="t-ug002/concepts/time_slot_monitor.html"/>
+   <appContext helpID="doc" path="t-ug002/concepts/scada_widget_library.html"/>
+   <appContext helpID="doc" path="t-ug002/concepts/create_or_edit_widget_library.html"/>
+   <appContext helpID="doc" path="t-ug002/concepts/how_to_use_library_widgets.html"/>
+   <appContext helpID="doc"
+               path="t-ug002/concepts/link_library_widget_to_model_component.html"/>
+   <appContext helpID="doc"
+               path="t-ug002/concepts/hil_self_booting_configuration.html"/>
+   <appContext helpID="doc" path="t-ug002/concepts/hil_scada_cmd_options.html"/>
+   <appContext helpID="doc" path="t-ug002/concepts/standalone_scada.html"/>
+   <appContext helpID="doc" path="t-ug002/concepts/hil_scada_external_mode.html"/>
+   <appContext helpID="doc" path="t-ug002/concepts/wave_generator_tool.html"/>
+   <appContext helpID="doc" path="t-ug002/concepts/pv_file_generator.html"/>
+   <appContext helpID="doc" path="t-ug002/concepts/generate_PV_mode.html"/>
+   <appContext helpID="doc" path="t-ug002/concepts/import_I-V_mode.html"/>
+   <appContext helpID="doc" path="t-ug002/concepts/source_file_generator.html"/>
+   <appContext helpID="doc" path="t-ug002/concepts/command_toolbar_sfg.html"/>
+   <appContext helpID="doc" path="t-ug002/concepts/plot_area.html"/>
+   <appContext helpID="doc" path="t-ug002/concepts/plot_modes_toolbar.html"/>
+   <appContext helpID="doc" path="t-ug002/concepts/test_and_calibration_tool.html"/>
+   <appContext helpID="doc" path="t-ug002/concepts/typhoontest_ide.html"/>
+   <appContext helpID="doc"
+               path="t-ug002/concepts/typhoontest_ide_command_toolbar.html"/>
+   <appContext helpID="doc" path="t-ug002/concepts/typhoontest_ide_editor_dock.html"/>
+   <appContext helpID="doc" path="t-ug002/concepts/typhoontest_ide_test_run.html"/>
+   <appContext helpID="doc" path="t-ug002/concepts/typhoontest_ide_test_log_dock.html"/>
+   <appContext helpID="doc" path="t-ug002/concepts/typhoontest_ide_api_wizard.html"/>
+   <appContext helpID="doc"
+               path="t-ug002/concepts/typhoontest_ide_special_value_picker.html"/>
+   <appContext helpID="doc" path="t-ug002/concepts/typhoontest_ide_project_panel.html"/>
+   <appContext helpID="doc" path="t-ug002/concepts/typhoontest_ide_structure.html"/>
+   <appContext helpID="doc"
+               path="t-ug002/concepts/typhoontest_ide_automatic_pdf_report.html"/>
+   <appContext helpID="doc" path="t-ug002/concepts/signal_analyzer.html"/>
+   <appContext helpID="doc" path="t-ug002/concepts/importing_data_from_hil_scada.html"/>
+   <appContext helpID="doc" path="t-ug002/concepts/lookup_table_extraction_tool.html"/>
+   <appContext helpID="doc"
+               path="t-ug002/concepts/lookup_table_menus_and_toolbar.html"/>
+   <appContext helpID="doc" path="t-ug002/concepts/lookup_table_chart_area.html"/>
+   <appContext helpID="doc" path="t-ug002/concepts/lookup_table_axis_setup_form.html"/>
+   <appContext helpID="doc" path="t-ug002/concepts/lookup_table_line_selector.html"/>
+   <appContext helpID="doc" path="t-ug002/concepts/lookup_table_preview.html"/>
+   <appContext helpID="doc" path="t-ug002/concepts/package_manager.html"/>
+   <appContext helpID="doc"
+               path="t-ug002/concepts/package_manager_installed_marketplace_tabs.html"/>
+   <appContext helpID="doc" path="t-ug002/concepts/package_manager_package_list.html"/>
+   <appContext helpID="doc" path="t-ug002/concepts/package_manager_search_input.html"/>
+   <appContext helpID="doc"
+               path="t-ug002/concepts/package_manager_actions_dropdown.html"/>
+   <appContext helpID="doc" path="t-ug002/concepts/package_manager_package_info.html"/>
+   <appContext helpID="doc"
+               path="t-ug002/concepts/package_manager_package_actions.html"/>
+   <appContext helpID="doc"
+               path="t-ug002/concepts/package_manager_version_dropdown.html"/>
+   <appContext helpID="doc"
+               path="t-ug002/concepts/package_manager_package_details_dialog.html"/>
+   <appContext helpID="doc"
+               path="t-ug002/concepts/package_manager_python_environments.html"/>
+   <appContext helpID="doc"
+               path="t-ug002/concepts/package_manager_creating_package.html"/>
+   <appContext helpID="doc" path="t-ug002/concepts/usage_logging.html"/>
+   <appContext helpID="doc" path="t-ug002/concepts/python_interpreters.html"/>
+   <appContext helpID="doc" path="t-ug001/abstract/hardware_manual_introduction.html"/>
+   <appContext helpID="doc" path="t-ug001/abstract/HIL_simulators.html"/>
+   <appContext helpID="doc"
+               path="t-ug001/hil101_user_guide/topics/hil101_abstract.html"/>
+   <appContext helpID="doc" path="t-ug001/resources/references/safety_guidelines.html"/>
+   <appContext helpID="doc"
+               path="t-ug001/hil101_user_guide/References/hil101_general_specifications.html"/>
+   <appContext helpID="doc"
+               path="t-ug001/hil101_user_guide/References/hil101_pinout.html"/>
+   <appContext helpID="doc"
+               path="t-ug001/hil101_user_guide/References/hil101_IO_voltage_levels.html"/>
+   <appContext helpID="doc"
+               path="t-ug001/hil101_user_guide/References/hil101_IO_timing.html"/>
+   <appContext helpID="doc"
+               path="t-ug001/hil101_user_guide/References/hil101_user_power_supply.html"/>
+   <appContext helpID="doc"
+               path="t-ug001/hil101_user_guide/References/hil101_mechanical.html"/>
+   <appContext helpID="doc"
+               path="t-ug001/hil402_user_guide/topics/hil402_abstract.html"/>
+   <appContext helpID="doc" path="t-ug001/resources/references/safety_guidelines.html"/>
+   <appContext helpID="doc"
+               path="t-ug001/hil402_user_guide/References/hil402_general_specifications.html"/>
+   <appContext helpID="doc"
+               path="t-ug001/hil402_user_guide/References/hil402_pinout.html"/>
+   <appContext helpID="doc"
+               path="t-ug001/hil402_user_guide/References/hil402_IO_voltage_levels.html"/>
+   <appContext helpID="doc"
+               path="t-ug001/hil402_user_guide/References/hil402_IO_timing.html"/>
+   <appContext helpID="doc"
+               path="t-ug001/hil402_user_guide/References/hil402_user_power_supply.html"/>
+   <appContext helpID="doc"
+               path="t-ug001/hil402_user_guide/References/hil402_mechanical.html"/>
+   <appContext helpID="doc"
+               path="t-ug001/hil402_user_guide/References/hil402_known_issues.html"/>
+   <appContext helpID="doc"
+               path="t-ug001/hil404_user_guide/topics/hil404_abstract.html"/>
+   <appContext helpID="doc" path="t-ug001/resources/references/safety_guidelines.html"/>
+   <appContext helpID="doc"
+               path="t-ug001/hil404_user_guide/References/hil404_general_specifications.html"/>
+   <appContext helpID="doc"
+               path="t-ug001/hil404_user_guide/References/hil404_pinout.html"/>
+   <appContext helpID="doc"
+               path="t-ug001/hil404_user_guide/References/hil404_IO_voltage_levels.html"/>
+   <appContext helpID="doc"
+               path="t-ug001/hil404_user_guide/References/hil404_IO_timing.html"/>
+   <appContext helpID="doc"
+               path="t-ug001/hil404_user_guide/References/hil404_user_power_supply.html"/>
+   <appContext helpID="doc"
+               path="t-ug001/hil404_user_guide/References/hil404_mechanical.html"/>
+   <appContext helpID="doc"
+               path="t-ug001/hil506_user_guide/topics/hil506_abstract.html"/>
+   <appContext helpID="doc" path="t-ug001/resources/references/safety_guidelines.html"/>
+   <appContext helpID="doc"
+               path="t-ug001/hil506_user_guide/References/hil506_general_specifications.html"/>
+   <appContext helpID="doc"
+               path="t-ug001/hil506_user_guide/References/hil506_pinout.html"/>
+   <appContext helpID="doc"
+               path="t-ug001/hil506_user_guide/References/hil506_IO_voltage_levels.html"/>
+   <appContext helpID="doc"
+               path="t-ug001/hil506_user_guide/References/hil506_IO_timing.html"/>
+   <appContext helpID="doc"
+               path="t-ug001/hil506_user_guide/References/hil506_user_power_supply.html"/>
+   <appContext helpID="doc"
+               path="t-ug001/hil506_user_guide/References/hil506_mechanical.html"/>
+   <appContext helpID="doc"
+               path="t-ug001/hil506_user_guide/References/hil506_feet_removal.html"/>
+   <appContext helpID="doc"
+               path="t-ug001/hil602p_user_guide/topics/hil602p_abstract.html"/>
+   <appContext helpID="doc" path="t-ug001/resources/references/safety_guidelines.html"/>
+   <appContext helpID="doc"
+               path="t-ug001/hil602p_user_guide/References/hil602p_general_specifications.html"/>
+   <appContext helpID="doc"
+               path="t-ug001/hil602p_user_guide/References/hil602p_pinout.html"/>
+   <appContext helpID="doc"
+               path="t-ug001/hil602p_user_guide/References/hil602p_IO_voltage_levels.html"/>
+   <appContext helpID="doc"
+               path="t-ug001/hil602p_user_guide/References/hil602p_IO_timing.html"/>
+   <appContext helpID="doc"
+               path="t-ug001/hil602p_user_guide/References/hil602p_user_power_supply.html"/>
+   <appContext helpID="doc"
+               path="t-ug001/hil602p_user_guide/References/hil602p_mechanical.html"/>
+   <appContext helpID="doc"
+               path="t-ug001/hil602p_user_guide/References/hil602p_feet_removal.html"/>
+   <appContext helpID="doc"
+               path="t-ug001/hil604_user_guide/topics/hil604_abstract.html"/>
+   <appContext helpID="doc" path="t-ug001/resources/references/safety_guidelines.html"/>
+   <appContext helpID="doc"
+               path="t-ug001/hil604_user_guide/References/hil604_general_specifications.html"/>
+   <appContext helpID="doc"
+               path="t-ug001/hil604_user_guide/References/hil604_pinout.html"/>
+   <appContext helpID="doc"
+               path="t-ug001/hil604_user_guide/References/hil604_IO_voltage_levels.html"/>
+   <appContext helpID="doc"
+               path="t-ug001/hil604_user_guide/References/hil604_IO_timing.html"/>
+   <appContext helpID="doc"
+               path="t-ug001/hil604_user_guide/References/hil604_user_power_supply.html"/>
+   <appContext helpID="doc"
+               path="t-ug001/hil604_user_guide/References/hil604_mechanical.html"/>
+   <appContext helpID="doc"
+               path="t-ug001/hil604_user_guide/References/hil604_feet_removal.html"/>
+   <appContext helpID="doc"
+               path="t-ug001/hil604_user_guide/References/hil604_known_issues.html"/>
+   <appContext helpID="doc"
+               path="t-ug001/hil606_user_guide/topics/hil606_abstract.html"/>
+   <appContext helpID="doc" path="t-ug001/resources/references/safety_guidelines.html"/>
+   <appContext helpID="doc"
+               path="t-ug001/hil606_user_guide/References/hil606_general_specifications.html"/>
+   <appContext helpID="doc"
+               path="t-ug001/hil606_user_guide/References/hil606_pinout.html"/>
+   <appContext helpID="doc"
+               path="t-ug001/hil606_user_guide/References/hil606_IO_voltage_levels.html"/>
+   <appContext helpID="doc"
+               path="t-ug001/hil606_user_guide/References/hil606_IO_timing.html"/>
+   <appContext helpID="doc"
+               path="t-ug001/hil606_user_guide/References/hil606_user_power_supply.html"/>
+   <appContext helpID="doc"
+               path="t-ug001/hil606_user_guide/References/hil606_mechanical.html"/>
+   <appContext helpID="doc"
+               path="t-ug001/hil606_user_guide/References/hil606_feet_removal.html"/>
+   <appContext helpID="doc" path="t-ug001/hil_paralleling_guide/topics/abstract.html"/>
+   <appContext helpID="doc"
+               path="t-ug001/hil_paralleling_guide/concepts/introduction.html"/>
+   <appContext helpID="doc"
+               path="t-ug001/hil_paralleling_guide/References/link_specification.html"/>
+   <appContext helpID="doc"
+               path="t-ug001/hil_paralleling_guide/References/multi-hil_architecture.html"/>
+   <appContext helpID="doc"
+               path="t-ug001/hil_paralleling_guide/References/hardware_setup.html"/>
+   <appContext helpID="doc" path="t-ug001/hil_interfacing_guide/topics/abstract.html"/>
+   <appContext helpID="doc"
+               path="t-ug001/hil_interfacing_guide/concepts/overview.html"/>
+   <appContext helpID="doc" path="t-ug001/hil_interfacing_guide/References/wire.html"/>
+   <appContext helpID="doc" path="t-ug001/hil_interfacing_guide/References/board.html"/>
+   <appContext helpID="doc" path="t-ug001/hil_connect/topics/abstract.html"/>
+   <appContext helpID="doc" path="t-ug001/hil_connect/concepts/overview.html"/>
+   <appContext helpID="doc"
+               path="t-ug001/hil_connect/References/detailed_description.html"/>
+   <appContext helpID="doc" path="t-ug001/hil_connect/References/chassis.html"/>
+   <appContext helpID="doc" path="t-ug001/hil_connect/References/card_overview.html"/>
+   <appContext helpID="doc"
+               path="t-ug001/hil_connect/References/analog_input_card.html"/>
+   <appContext helpID="doc"
+               path="t-ug001/hil_connect/References/analog_output_card.html"/>
+   <appContext helpID="doc"
+               path="t-ug001/hil_connect/References/24v_analog_output_card.html"/>
+   <appContext helpID="doc"
+               path="t-ug001/hil_connect/References/automotive_communication_extender.html"/>
+   <appContext helpID="doc"
+               path="t-ug001/hil_connect/References/BMS_analog_output.html"/>
+   <appContext helpID="doc"
+               path="t-ug001/hil_connect/References/BMS_digital_card.html"/>
+   <appContext helpID="doc"
+               path="t-ug001/hil_connect/References/CAN_relay_output.html"/>
+   <appContext helpID="doc"
+               path="t-ug001/hil_connect/References/current_output_card.html"/>
+   <appContext helpID="doc"
+               path="t-ug001/hil_connect/References/digital_input_card.html"/>
+   <appContext helpID="doc"
+               path="t-ug001/hil_connect/References/digital_output_card.html"/>
+   <appContext helpID="doc"
+               path="t-ug001/hil_connect/References/fiber_input_card.html"/>
+   <appContext helpID="doc"
+               path="t-ug001/hil_connect/References/fiber_output_card.html"/>
+   <appContext helpID="doc"
+               path="t-ug001/hil_connect/References/high_voltage_card.html"/>
+   <appContext helpID="doc"
+               path="t-ug001/hil_connect/References/dual_resolver_card.html"/>
+   <appContext helpID="doc"
+               path="t-ug001/hil_connect/References/resistor_emulator_cards.html"/>
+   <appContext helpID="doc"
+               path="t-ug001/hil_connect/References/6ch_resistor_emulator_card.html"/>
+   <appContext helpID="doc"
+               path="t-ug001/hil_connect/References/CAN_resistor_emulator.html"/>
+   <appContext helpID="doc"
+               path="t-ug001/hil_connect/References/isolation_resistance_card.html"/>
+   <appContext helpID="doc"
+               path="t-ug001/hil_connect/References/smart_cell_emulator_card.html"/>
+   <appContext helpID="doc"
+               path="t-ug001/hil_connect/References/shunt_emulator_card.html"/>
+   <appContext helpID="doc"
+               path="t-ug001/hil_connect/References/card_configurations.html"/>
+   <appContext helpID="doc" path="t-ug001/hil_connect/References/mechanical.html"/>
+   <appContext helpID="doc"
+               path="t-ug001/hil_connect/References/scope_of_delivery.html"/>
+   <appContext helpID="doc" path="t-ug001/abstract/HIL_interfaces.html"/>
+   <appContext helpID="doc"
+               path="t-ug001/hil_dS_Interface_Type-A/topics/abstract.html"/>
+   <appContext helpID="doc"
+               path="t-ug001/hil_dS_Interface_Type-A/concepts/overview.html"/>
+   <appContext helpID="doc"
+               path="t-ug001/hil_dS_Interface_Type-A/References/layout.html"/>
+   <appContext helpID="doc"
+               path="t-ug001/hil_dS_Interface_Type-A/References/pinouts.html"/>
+   <appContext helpID="doc"
+               path="t-ug001/hil_dS_Interface_Type-A/References/mechanical.html"/>
+   <appContext helpID="doc"
+               path="t-ug001/hil_dS_Interface_Type-A/References/scope_of_delivery.html"/>
+   <appContext helpID="doc"
+               path="t-ug001/hil_dS_Interface_Type-B/topics/abstract.html"/>
+   <appContext helpID="doc"
+               path="t-ug001/hil_dS_Interface_Type-B/concepts/overview.html"/>
+   <appContext helpID="doc"
+               path="t-ug001/hil_dS_Interface_Type-B/References/layout.html"/>
+   <appContext helpID="doc"
+               path="t-ug001/hil_dS_Interface_Type-B/References/digital_IO_type.html"/>
+   <appContext helpID="doc"
+               path="t-ug001/hil_dS_Interface_Type-B/References/pinouts.html"/>
+   <appContext helpID="doc"
+               path="t-ug001/hil_dS_Interface_Type-B/References/mechanical.html"/>
+   <appContext helpID="doc"
+               path="t-ug001/hil_dS_Interface_Type-B/References/scope_of_delivery.html"/>
+   <appContext helpID="doc"
+               path="t-ug001/hil_dS_Interface_Type-C/topics/abstract.html"/>
+   <appContext helpID="doc"
+               path="t-ug001/hil_dS_Interface_Type-C/concepts/overview.html"/>
+   <appContext helpID="doc"
+               path="t-ug001/hil_dS_Interface_Type-C/References/layout.html"/>
+   <appContext helpID="doc"
+               path="t-ug001/hil_dS_Interface_Type-C/References/digital_IO_type.html"/>
+   <appContext helpID="doc"
+               path="t-ug001/hil_dS_Interface_Type-C/References/pinouts.html"/>
+   <appContext helpID="doc"
+               path="t-ug001/hil_dS_Interface_Type-C/References/mechanical.html"/>
+   <appContext helpID="doc"
+               path="t-ug001/hil_dS_Interface_Type-C/References/scope_of_delivery.html"/>
+   <appContext helpID="doc" path="t-ug001/hil_breakout_board/topics/abstract.html"/>
+   <appContext helpID="doc" path="t-ug001/hil_breakout_board/concepts/overview.html"/>
+   <appContext helpID="doc"
+               path="t-ug001/hil_breakout_board/References/detailed_description.html"/>
+   <appContext helpID="doc" path="t-ug001/hil_breakout_board/References/layout.html"/>
+   <appContext helpID="doc" path="t-ug001/hil_breakout_board/References/pinouts.html"/>
+   <appContext helpID="doc"
+               path="t-ug001/hil_breakout_board/References/mechanical.html"/>
+   <appContext helpID="doc"
+               path="t-ug001/hil_breakout_board/References/scope_of_delivery.html"/>
+   <appContext helpID="doc" path="t-ug001/hil_remote_io/topics/abstract.html"/>
+   <appContext helpID="doc" path="t-ug001/resources/references/safety_guidelines.html"/>
+   <appContext helpID="doc" path="t-ug001/hil_remote_io/concepts/overview.html"/>
+   <appContext helpID="doc" path="t-ug001/hil_remote_io/References/specification.html"/>
+   <appContext helpID="doc" path="t-ug001/hil_remote_io/References/pinout.html"/>
+   <appContext helpID="doc"
+               path="t-ug001/hil_remote_io/References/setup_guidelines.html"/>
+   <appContext helpID="doc"
+               path="t-ug001/hil_remote_io/References/firmware_update.html"/>
+   <appContext helpID="doc" path="t-ug001/hil_remote_io/References/mechanical.html"/>
+   <appContext helpID="doc"
+               path="t-ug001/hil_remote_io/References/scope_of_delivery.html"/>
+   <appContext helpID="doc"
+               path="t-ug001/hil_power_link_interface/topics/abstract.html"/>
+   <appContext helpID="doc"
+               path="t-ug001/hil_power_link_interface/concepts/overview.html"/>
+   <appContext helpID="doc"
+               path="t-ug001/hil_power_link_interface/References/detailed_description.html"/>
+   <appContext helpID="doc"
+               path="t-ug001/hil_power_link_interface/References/mechanical.html"/>
+   <appContext helpID="doc"
+               path="t-ug001/hil_power_link_interface/References/scope_of_delivery.html"/>
+   <appContext helpID="doc" path="t-ug001/hil_dsp_180_interface/topics/abstract.html"/>
+   <appContext helpID="doc"
+               path="t-ug001/hil_dsp_180_interface/concepts/overview.html"/>
+   <appContext helpID="doc"
+               path="t-ug001/hil_dsp_180_interface/References/detailed_description.html"/>
+   <appContext helpID="doc"
+               path="t-ug001/hil_dsp_180_interface/References/mechanical.html"/>
+   <appContext helpID="doc"
+               path="t-ug001/hil_dsp_180_interface/References/scope_of_delivery.html"/>
+   <appContext helpID="doc"
+               path="t-ug001/hil_ti_launchpad_interface/topics/abstract.html"/>
+   <appContext helpID="doc"
+               path="t-ug001/hil_ti_launchpad_interface/concepts/overview.html"/>
+   <appContext helpID="doc"
+               path="t-ug001/hil_ti_launchpad_interface/References/detailed_description.html"/>
+   <appContext helpID="doc"
+               path="t-ug001/hil_ti_launchpad_interface/References/supported_cards.html"/>
+   <appContext helpID="doc"
+               path="t-ug001/hil_ti_launchpad_interface/References/mechanical.html"/>
+   <appContext helpID="doc"
+               path="t-ug001/hil_ti_launchpad_interface/References/scope_of_delivery.html"/>
+   <appContext helpID="doc"
+               path="t-ug001/hil_ti_ugrid_launchpad_interface/topics/abstract.html"/>
+   <appContext helpID="doc"
+               path="t-ug001/hil_ti_ugrid_launchpad_interface/concepts/overview.html"/>
+   <appContext helpID="doc"
+               path="t-ug001/hil_ti_ugrid_launchpad_interface/References/detailed_description.html"/>
+   <appContext helpID="doc"
+               path="t-ug001/hil_ti_ugrid_launchpad_interface/References/mechanical.html"/>
+   <appContext helpID="doc"
+               path="t-ug001/hil_ti_ugrid_launchpad_interface/References/scope_of_delivery.html"/>
+   <appContext helpID="doc"
+               path="t-ug001/hil_infineon_triboard_interface/topics/abstract.html"/>
+   <appContext helpID="doc"
+               path="t-ug001/hil_infineon_triboard_interface/concepts/overview.html"/>
+   <appContext helpID="doc"
+               path="t-ug001/hil_infineon_triboard_interface/References/detailed_description.html"/>
+   <appContext helpID="doc"
+               path="t-ug001/hil_infineon_triboard_interface/References/mechanical.html"/>
+   <appContext helpID="doc"
+               path="t-ug001/hil_infineon_triboard_interface/References/scope_of_delivery.html"/>
+   <appContext helpID="doc"
+               path="t-ug001/hil_nucleo-64_interface/topics/abstract.html"/>
+   <appContext helpID="doc"
+               path="t-ug001/hil_nucleo-64_interface/concepts/overview.html"/>
+   <appContext helpID="doc"
+               path="t-ug001/hil_nucleo-64_interface/References/detailed_description.html"/>
+   <appContext helpID="doc"
+               path="t-ug001/hil_nucleo-64_interface/References/compatibility.html"/>
+   <appContext helpID="doc"
+               path="t-ug001/hil_nucleo-64_interface/References/scope_of_delivery.html"/>
+   <appContext helpID="doc"
+               path="t-ug001/hil_pof_interface_board/topics/abstract.html"/>
+   <appContext helpID="doc"
+               path="t-ug001/hil_pof_interface_board/concepts/overview.html"/>
+   <appContext helpID="doc"
+               path="t-ug001/hil_pof_interface_board/References/detailed_description.html"/>
+   <appContext helpID="doc"
+               path="t-ug001/hil_pof_interface_board/References/mechanical.html"/>
+   <appContext helpID="doc"
+               path="t-ug001/hil_pof_interface_board/References/scope_of_delivery.html"/>
+   <appContext helpID="doc" path="t-ug001/hil_ccs_interface/topics/abstract.html"/>
+   <appContext helpID="doc" path="t-ug001/hil_ccs_interface/concepts/overview.html"/>
+   <appContext helpID="doc"
+               path="t-ug001/hil_ccs_interface/References/detailed_description.html"/>
+   <appContext helpID="doc"
+               path="t-ug001/hil_ccs_interface/References/mechanical.html"/>
+   <appContext helpID="doc"
+               path="t-ug001/hil_ccs_interface/References/scope_of_delivery.html"/>
+   <appContext helpID="doc"
+               path="t-ug001/hil_ev_charging_interface/topics/abstract.html"/>
+   <appContext helpID="doc"
+               path="t-ug001/hil_ev_charging_interface/concepts/overview.html"/>
+   <appContext helpID="doc"
+               path="t-ug001/hil_ev_charging_interface/References/safety_considerations.html"/>
+   <appContext helpID="doc"
+               path="t-ug001/hil_ev_charging_interface/References/electrical.html"/>
+   <appContext helpID="doc"
+               path="t-ug001/hil_ev_charging_interface/References/detailed_description.html"/>
+   <appContext helpID="doc"
+               path="t-ug001/hil_ev_charging_interface/References/mechanical.html"/>
+   <appContext helpID="doc"
+               path="t-ug001/hil_ev_charging_interface/References/scope_of_delivery.html"/>
+   <appContext helpID="doc" path="t-ug001/hil_regatron_interface/topics/abstract.html"/>
+   <appContext helpID="doc"
+               path="t-ug001/hil_regatron_interface/concepts/overview.html"/>
+   <appContext helpID="doc"
+               path="t-ug001/hil_regatron_interface/References/detailed_description.html"/>
+   <appContext helpID="doc"
+               path="t-ug001/hil_regatron_interface/References/scope_of_delivery.html"/>
+   <appContext helpID="doc" path="t-ug001/abstract/HIL_accessories.html"/>
+   <appContext helpID="doc" path="t-ug001/hil_breakout_board/topics/abstract.html"/>
+   <appContext helpID="doc" path="t-ug001/hil_breakout_board/concepts/overview.html"/>
+   <appContext helpID="doc"
+               path="t-ug001/hil_breakout_board/References/detailed_description.html"/>
+   <appContext helpID="doc" path="t-ug001/hil_breakout_board/References/layout.html"/>
+   <appContext helpID="doc" path="t-ug001/hil_breakout_board/References/pinouts.html"/>
+   <appContext helpID="doc"
+               path="t-ug001/hil_breakout_board/References/mechanical.html"/>
+   <appContext helpID="doc"
+               path="t-ug001/hil_breakout_board/References/scope_of_delivery.html"/>
+   <appContext helpID="doc"
+               path="t-ug001/hil4-6_calibration_card/topics/abstract.html"/>
+   <appContext helpID="doc"
+               path="t-ug001/hil4-6_calibration_card/concepts/overview.html"/>
+   <appContext helpID="doc"
+               path="t-ug001/hil4-6_calibration_card/References/detailed_description.html"/>
+   <appContext helpID="doc"
+               path="t-ug001/hil4-6_calibration_card/References/mechanical.html"/>
+   <appContext helpID="doc"
+               path="t-ug001/hil4-6_calibration_card/References/scope_of_delivery.html"/>
+   <appContext helpID="doc" path="t-ug001/1kv_power_supply/topics/abstract.html"/>
+   <appContext helpID="doc"
+               path="t-ug001/1kv_power_supply/References/safety_considerations.html"/>
+   <appContext helpID="doc" path="t-ug001/1kv_power_supply/concepts/overview.html"/>
+   <appContext helpID="doc"
+               path="t-ug001/1kv_power_supply/References/detailed_description.html"/>
+   <appContext helpID="doc"
+               path="t-ug001/1kv_power_supply/References/scope_of_delivery.html"/>
+   <appContext helpID="doc" path="t-ug001/1-5kv_power_supply/topics/abstract.html"/>
+   <appContext helpID="doc"
+               path="t-ug001/1-5kv_power_supply/References/safety_considerations.html"/>
+   <appContext helpID="doc" path="t-ug001/1-5kv_power_supply/concepts/overview.html"/>
+   <appContext helpID="doc"
+               path="t-ug001/1-5kv_power_supply/References/detailed_description.html"/>
+   <appContext helpID="doc"
+               path="t-ug001/1-5kv_power_supply/References/specifications.html"/>
+   <appContext helpID="doc"
+               path="t-ug001/1-5kv_power_supply/References/scope_of_delivery.html"/>
+</map>

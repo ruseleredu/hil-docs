@@ -1,0 +1,516 @@
+<!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en" data-whc_version="24.1">
+    <head><link rel="shortcut icon" href="../../../favicon.ico"/><link rel="icon" href="../../../favicon.ico"/><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><meta name="DC.rights.owner" content="(C) Copyright 2026"/><meta name="copyright" content="(C) Copyright 2026"/><meta name="generator" content="DITA-OT"/><meta name="DC.type" content="reference"/><meta name="description" content="Detailed description of the HIL CCS interface"/><meta name="DC.relation" content="../../../t-ug001/hil_ccs_interface/topics/abstract.html"/><meta name="DC.format" content="HTML5"/><meta name="DC.identifier" content="doc"/>        
+      <title>Detailed description</title><!--  Generated with Oxygen version 24.1, build number 2022030800.  --><meta name="wh-path2root" content="../../../"/><meta name="wh-toc-id" content="doc-d16877e10388"/><meta name="wh-source-relpath" content="t-ug001/hil_ccs_interface/References/detailed_description.dita"/><meta name="wh-out-relpath" content="t-ug001/hil_ccs_interface/References/detailed_description.html"/>
+    <!-- Latest compiled and minified Bootstrap CSS -->
+    <link rel="stylesheet" type="text/css" href="../../../oxygen-webhelp/lib/bootstrap/css/bootstrap.min.css"/>
+    
+    <link rel="stylesheet" href="../../../oxygen-webhelp/lib/jquery-ui/jquery-ui.min.css"/>
+    
+    <!-- Template default styles  -->
+    <link rel="stylesheet" type="text/css" href="../../../oxygen-webhelp/app/topic-page.css?buildId=2022030800"/>
+    
+    
+    <script src="../../../oxygen-webhelp/lib/jquery/jquery-3.5.1.min.js"></script>
+    
+    <script data-main="../../../oxygen-webhelp/app/topic-page.js" src="../../../oxygen-webhelp/lib/requirejs/require.js"></script>
+<link rel="stylesheet" type="text/css" href="../../../oxygen-webhelp/template/oxygen.css?buildId=2022030800"/><link rel="stylesheet" type="text/css" href="../../../oxygen-webhelp/template/notes.css?buildId=2022030800"/><script type="text/javascript" src="../../Scripts/mml-svg.js"> 
+</script><link rel="stylesheet" type="text/css" href="../../../assets/typhoon.css"/></head>
+
+    <body id="doc" class="wh_topic_page frmBody">
+        <a href="#wh_topic_body" class="sr-only sr-only-focusable">
+            Jump to main content
+        </a>
+        
+        
+        
+        
+        <header class="navbar navbar-default wh_header">
+    <div class="container-fluid">
+        <div class="wh_header_flex_container navbar-nav navbar-expand-md navbar-dark">
+            <div class="wh_logo_and_publication_title_container">
+                <div class="wh_logo_and_publication_title">
+                    
+                    <a href="https://www.typhoon-hil.com" class=" wh_logo d-none d-sm-block "><img src="../../../logo.svg" alt="  Typhoon HIL Documentation  Version: 2026.1  "/></a>
+                    <div class=" wh_publication_title "><a href="../../../index.html"><span class="booktitle">  <span class="ph mainbooktitle">Typhoon HIL Documentation</span>  <span class="ph booktitlealt">Version: 2026.1</span>  </span></a></div>
+                    
+                </div>
+                
+                <button type="button" data-target="#wh_top_menu_and_indexterms_link" id="wh_menu_mobile_button" data-toggle="collapse" class="navbar-toggler collapsed wh_toggle_button" aria-expanded="false" aria-label="Toggle menu" aria-controls="wh_top_menu_and_indexterms_link">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+            </div>
+
+            <div class="wh_top_menu_and_indexterms_link collapse navbar-collapse" id="wh_top_menu_and_indexterms_link">
+                
+                <nav class=" wh_top_menu " aria-label="Menu Container"><ul role="menubar" aria-label="Menu"><li role="menuitem" aria-haspopup="true" aria-expanded="false" class="has-children"><span id="tocId-d16877e21-mi" data-tocid="tocId-d16877e21" data-state="not-ready" class=" topicref application-notes"><span class="title"><a href="../../../t-an001/concepts/application_notes_introduction.html">Typhoon HIL Application Notes</a></span></span></li><li role="menuitem" aria-haspopup="true" aria-expanded="false" class="has-children"><span id="tocId-d16877e737-mi" data-tocid="tocId-d16877e737" data-state="not-ready" class=" topicref software-manual"><span class="title"><a href="../../../t-ug002/topics/software_manual_introduction.html">Typhoon HIL Software Manual</a></span></span></li><li role="menuitem" aria-haspopup="true" aria-expanded="false" class="has-children"><span id="tocId-d16877e7901-mi" data-tocid="tocId-d16877e7901" data-state="not-ready" class=" topicref hardware-manual"><span class="title"><a href="../../../t-ug001/abstract/hardware_manual_introduction.html">Typhoon HIL Hardware Manual</a></span></span></li></ul></nav>
+                
+                
+            </div>
+        </div>
+    </div>
+</header>
+        
+        
+         
+        
+        <div class=" wh_search_input navbar-form wh_topic_page_search search " role="form">
+            
+            
+            
+            <form id="searchForm" method="get" role="search" action="../../../search.html"><div><input type="search" placeholder="Search " class="wh_search_textfield" id="textToSearch" name="searchQuery" aria-label="Search query" required="required"/><button type="submit" class="wh_search_button" aria-label="Search"><span class="search_input_text">Search</span></button></div></form>
+            
+            
+            
+        </div>
+        
+        <div class="container-fluid" id="wh_topic_container">
+            <div class="row">
+
+                <nav class="wh_tools d-print-none navbar-expand-md" aria-label="Tools">
+                    
+                    <div data-tooltip-position="bottom" class=" wh_breadcrumb "><ol class="d-print-none"><li><span class="home"><a href="../../../index.html"><span>Home</span></a></span></li><li><div class="topicref hardware-manual"><div class="title"><a href="../../../t-ug001/abstract/hardware_manual_introduction.html">Typhoon HIL Hardware Manual</a></div></div></li><li><div class="topicref" data-id="doc"><div class="title"><a href="../../../t-ug001/abstract/HIL_interfaces.html">HIL Interfaces</a><div class="wh-tooltip"><p class="shortdesc">Collection of some of the guides on the deployment, use, and management of HIL Interfaces available from Typhoon HIL.</p></div></div></div></li><li><div class="topicref" data-id="doc"><div class="title"><a href="../../../t-ug001/hil_ccs_interface/topics/abstract.html">HIL CCS Interface</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">Information about the HIL CCS Interface, a dedicated module for testing smart     charge communication of electric vehicles and electric vehicle supply equipment.</span></p></div></div></div></li><li class="active"><div class="topicref page-break-after" data-id="doc"><div class="title"><a href="../../../t-ug001/hil_ccs_interface/References/detailed_description.html">Detailed description</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">Detailed description of the HIL CCS interface</span></p></div></div></div></li></ol></div>
+                    
+                    
+                    
+                    <div class="wh_right_tools">
+                        <button class="wh_hide_highlight" aria-label="Toggle search highlights" title="Toggle search highlights"></button>
+                        <button class="webhelp_expand_collapse_sections" data-next-state="collapsed" aria-label="Collapse sections" title="Collapse sections"></button>
+                        
+                        
+                        
+                        
+                        <div class=" wh_print_link print d-none d-md-inline-block "><button onClick="window.print()" title="Print this page" aria-label="Print this page"></button></div>
+                        
+                        <button type="button" id="wh_toc_button" class="custom-toggler navbar-toggler collapsed wh_toggle_button navbar-light" aria-expanded="false" aria-label="Toggle publishing table of content" aria-controls="wh_publication_toc">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+                    </div>
+                    
+                </nav>
+            </div>
+            
+            
+            
+            
+            <div class="wh_content_area">
+                <div class="row">
+                    
+                        <nav id="wh_publication_toc" class="col-lg-3 col-md-3 col-sm-12 d-md-block d-none d-print-none" aria-label="Table of Contents Container">
+                            <div id="wh_publication_toc_content">
+		                        
+                            	<div class=" wh_publication_toc " data-tooltip-position="right"><span class="expand-button-action-labels"><span id="button-expand-action" role="button" aria-label="Expand"></span><span id="button-collapse-action" role="button" aria-label="Collapse"></span><span id="button-pending-action" role="button" aria-label="Pending"></span></span><ul role="tree" aria-label="Table of Contents"><li role="treeitem" aria-expanded="true"><div data-tocid="tocId-d16877e7901" class="topicref hardware-manual" data-state="expanded"><span role="button" tabindex="0" aria-labelledby="button-collapse-action tocId-d16877e7901-link" class="wh-expand-btn"></span><div class="title"><a href="../../../t-ug001/abstract/hardware_manual_introduction.html" id="tocId-d16877e7901-link">Typhoon HIL Hardware Manual</a></div></div><ul role="group" class="navbar-nav nav-list"><li role="treeitem"><div data-tocid="doc-d16877e7905" class="topicref" data-id="doc" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../../../t-ug001/abstract/hardware_manual_introduction.html" id="doc-d16877e7905-link">Hardware Manual Introduction</a><div class="wh-tooltip"><p class="shortdesc">Collection of some of the guides on the deployment, use, and management of Typhoon HIL hardware devices.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="doc-d16877e7916" class="topicref" data-id="doc" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action doc-d16877e7916-link" class="wh-expand-btn"></span><div class="title"><a href="../../../t-ug001/abstract/HIL_simulators.html" id="doc-d16877e7916-link">Typhoon HIL simulator devices</a><div class="wh-tooltip"><p class="shortdesc">Overview of the currently supported Typhoon HIL simulator devices.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="doc-d16877e8927" class="topicref" data-id="doc" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action doc-d16877e8927-link" class="wh-expand-btn"></span><div class="title"><a href="../../../t-ug001/hil_connect/topics/abstract.html" id="doc-d16877e8927-link">HIL Connect</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">Information about the HIL Connect, a 19" 6U interface device,             designed to adapt HIL IO signal levels to those most commonly used in the         industry.</span></p></div></div></div></li><li role="treeitem" aria-expanded="true"><div data-tocid="doc-d16877e9278" class="topicref" data-id="doc" data-state="expanded"><span role="button" tabindex="0" aria-labelledby="button-collapse-action doc-d16877e9278-link" class="wh-expand-btn"></span><div class="title"><a href="../../../t-ug001/abstract/HIL_interfaces.html" id="doc-d16877e9278-link">HIL Interfaces</a><div class="wh-tooltip"><p class="shortdesc">Collection of some of the guides on the deployment, use, and management of HIL Interfaces available from Typhoon HIL.</p></div></div></div><ul role="group" class="navbar-nav nav-list"><li role="treeitem" aria-expanded="false"><div data-tocid="doc-d16877e9292" class="topicref" data-id="doc" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action doc-d16877e9292-link" class="wh-expand-btn"></span><div class="title"><a href="../../../t-ug001/hil_dS_Interface_Type-A/topics/abstract.html" id="doc-d16877e9292-link">HIL dS Interface Type-A</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">Information about the HIL dS Interface Type-A, an interface             board which allows for connecting dSPACE hardware to Typhoon HIL         simulators.</span></p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="doc-d16877e9381" class="topicref" data-id="doc" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action doc-d16877e9381-link" class="wh-expand-btn"></span><div class="title"><a href="../../../t-ug001/hil_dS_Interface_Type-B/topics/abstract.html" id="doc-d16877e9381-link">HIL dS Interface Type-B</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">Information about the HIL dS Interface Type-B, an interface             board which allows for connecting dSPACE hardware to Typhoon HIL         simulators.</span></p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="doc-d16877e9482" class="topicref" data-id="doc" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action doc-d16877e9482-link" class="wh-expand-btn"></span><div class="title"><a href="../../../t-ug001/hil_dS_Interface_Type-C/topics/abstract.html" id="doc-d16877e9482-link">HIL dS Interface Type-C</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">Information about the HIL dS Interface Type-C, an interface             board which allows for connecting dSPACE hardware to Typhoon HIL         simulators.</span></p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="doc-d16877e9584" class="topicref" data-id="doc" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action doc-d16877e9584-link" class="wh-expand-btn"></span><div class="title"><a href="../../../t-ug001/hil_breakout_board/topics/abstract.html" id="doc-d16877e9584-link">HIL Breakout Board</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">Information about the HIL Breakout Board, a passive breakout board which provides easy access to individual HIL signals.</span></p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="doc-d16877e9685" class="topicref" data-id="doc" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action doc-d16877e9685-link" class="wh-expand-btn"></span><div class="title"><a href="../../../t-ug001/hil_remote_io/topics/abstract.html" id="doc-d16877e9685-link">HIL Remote IO Interface</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">Information about the HIL Remote IO Interface, a device for IO             expansion in HIL test setups.</span></p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="doc-d16877e9811" class="topicref" data-id="doc" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action doc-d16877e9811-link" class="wh-expand-btn"></span><div class="title"><a href="../../../t-ug001/hil_power_link_interface/topics/abstract.html" id="doc-d16877e9811-link">HIL Power Link Interface</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">Information about the HIL Power Link Interface designed for             converting electrical signals to optical signals, and vice versa.</span></p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="doc-d16877e9888" class="topicref" data-id="doc" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action doc-d16877e9888-link" class="wh-expand-btn"></span><div class="title"><a href="../../../t-ug001/hil_dsp_180_interface/topics/abstract.html" id="doc-d16877e9888-link">HIL DSP 180 Interface</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">Information about the HIL DSP 180 Interface, an interface board             which allows for connecting Texas Instruments Control Card boards to Typhoon HIL             simulators.</span></p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="doc-d16877e9965" class="topicref" data-id="doc" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action doc-d16877e9965-link" class="wh-expand-btn"></span><div class="title"><a href="../../../t-ug001/hil_ti_launchpad_interface/topics/abstract.html" id="doc-d16877e9965-link">HIL TI Launchpad Interface</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">Information about the HIL TI Launchpad Interface, an interface             board which allows for connecting TI's LaunchPad™ boards to Typhoon HIL         simulators.</span></p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="doc-d16877e10055" class="topicref" data-id="doc" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action doc-d16877e10055-link" class="wh-expand-btn"></span><div class="title"><a href="../../../t-ug001/hil_ti_ugrid_launchpad_interface/topics/abstract.html" id="doc-d16877e10055-link">HIL TI uGrid Launchpad Interface</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">Information about the HIL TI uGrid Launchpad Interface, an             interface board which allows for connecting up to three TI LaunchPad™ boards to Typhoon             HIL simulators.</span></p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="doc-d16877e10132" class="topicref" data-id="doc" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action doc-d16877e10132-link" class="wh-expand-btn"></span><div class="title"><a href="../../../t-ug001/hil_infineon_triboard_interface/topics/abstract.html" id="doc-d16877e10132-link">HIL Infineon TriBoard Interface </a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">Information about the HIL Infineon TriBoard Interface, an             interface board which allows for connecting Infineon TriBoard evaluation boards to             Typhoon HIL simulators.</span></p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="doc-d16877e10209" class="topicref" data-id="doc" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action doc-d16877e10209-link" class="wh-expand-btn"></span><div class="title"><a href="../../../t-ug001/hil_nucleo-64_interface/topics/abstract.html" id="doc-d16877e10209-link">HIL Nucleo-64 Interface</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">Information about the HIL Nucleo-64 Interface, an interface board             which allows for seamlessly connecting STM Nucleo-64™ development kits to Typhoon HIL             simulators.</span></p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="doc-d16877e10287" class="topicref" data-id="doc" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action doc-d16877e10287-link" class="wh-expand-btn"></span><div class="title"><a href="../../../t-ug001/hil_pof_interface_board/topics/abstract.html" id="doc-d16877e10287-link">HIL POF Interface Board</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">Information about the HIL POF Interface Board, an interface         board which allows for converting HIL voltage digital signals to Optical signals, and vice versa.</span></p></div></div></div></li><li role="treeitem" aria-expanded="true"><div data-tocid="doc-d16877e10364" class="topicref" data-id="doc" data-state="expanded"><span role="button" tabindex="0" aria-labelledby="button-collapse-action doc-d16877e10364-link" class="wh-expand-btn"></span><div class="title"><a href="../../../t-ug001/hil_ccs_interface/topics/abstract.html" id="doc-d16877e10364-link">HIL CCS Interface</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">Information about the HIL CCS Interface, a dedicated module for testing smart     charge communication of electric vehicles and electric vehicle supply equipment.</span></p></div></div></div><ul role="group" class="navbar-nav nav-list"><li role="treeitem"><div data-tocid="doc-d16877e10376" class="topicref page-break-after" data-id="doc" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../../../t-ug001/hil_ccs_interface/concepts/overview.html" id="doc-d16877e10376-link">Overview</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">Overview of the purpose and connectivity of the HIL CCS             Interface</span></p></div></div></div></li><li role="treeitem" class="active"><div data-tocid="doc-d16877e10388" class="topicref page-break-after" data-id="doc" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../../../t-ug001/hil_ccs_interface/References/detailed_description.html" id="doc-d16877e10388-link">Detailed description</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">Detailed description of the HIL CCS interface</span></p></div></div></div></li><li role="treeitem"><div data-tocid="doc-d16877e10400" class="topicref page-break-after" data-id="doc" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../../../t-ug001/hil_ccs_interface/References/mechanical.html" id="doc-d16877e10400-link">Mechanical</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">Dimensions and mechanical guidelines for the CCS Interface             board</span></p></div></div></div></li><li role="treeitem"><div data-tocid="doc-d16877e10412" class="topicref page-break-after" data-id="doc" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../../../t-ug001/hil_ccs_interface/References/scope_of_delivery.html" id="doc-d16877e10412-link">Scope of delivery</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">Scope of delivery of the HIL CCS Interface.</span></p></div></div></div></li></ul></li><li role="treeitem" aria-expanded="false"><div data-tocid="doc-d16877e10441" class="topicref" data-id="doc" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action doc-d16877e10441-link" class="wh-expand-btn"></span><div class="title"><a href="../../../t-ug001/hil_ev_charging_interface/topics/abstract.html" id="doc-d16877e10441-link">HIL Electric Vehicle Charging Interface</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">Information about the HIL Electric Vehicle Charging Interface             solution, a dedicated module for testing and validating Electric Vehicle Supply             Equipment (EVSE). This interface requires a connected power amplifier to         function.</span></p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="doc-d16877e10543" class="topicref" data-id="doc" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action doc-d16877e10543-link" class="wh-expand-btn"></span><div class="title"><a href="../../../t-ug001/hil_regatron_interface/topics/abstract.html" id="doc-d16877e10543-link">HIL Regatron Interface Device</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">Information about the HIL Regatron Interface Device, an interface             which allows for seamless communication between Regatron Power Source devices and             Typhoon HIL simulators.</span></p></div></div></div></li></ul></li><li role="treeitem" aria-expanded="false"><div data-tocid="doc-d16877e10605" class="topicref" data-id="doc" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action doc-d16877e10605-link" class="wh-expand-btn"></span><div class="title"><a href="../../../t-ug001/abstract/HIL_accessories.html" id="doc-d16877e10605-link">HIL Accessories</a><div class="wh-tooltip"><p class="shortdesc">Collection of some of the guides on the deployment, use, and management of Typhoon HIL accessories.</p></div></div></div></li></ul></li></ul></div>
+		                        
+                            </div>
+                        </nav>
+                    
+                    
+                    <div class="col-lg-7 col-md-9 col-sm-12" id="wh_topic_body">
+                        <button id="wh_close_publication_toc_button" class="close-toc-button d-none" aria-label="Toggle publishing table of content" aria-controls="wh_publication_toc" aria-expanded="true">
+                            <span class="close-toc-icon-container">
+                                <span class="close-toc-icon"></span>     
+                            </span>
+                        </button>
+                        <button id="wh_close_topic_toc_button" class="close-toc-button d-none" aria-label="Toggle topic table of content" aria-controls="wh_topic_toc" aria-expanded="true">
+                            <span class="close-toc-icon-container">
+                                <span class="close-toc-icon"></span>     
+                            </span>
+                        </button>
+                        
+                        <div class=" wh_topic_content body "><main role="main"><article role="article" aria-labelledby="ariaid-title1">
+    <h1 class="- topic/title title topictitle1" id="ariaid-title1">Detailed description</h1>
+    
+    <div class="- topic/body reference/refbody body refbody"><p class="- topic/shortdesc shortdesc"><span class="- topic/ph ph" id="doc__description">Detailed description of the HIL CCS interface</span></p>
+       <section class="- topic/section section" id="doc__block_diagram" data-ofbid="doc__block_diagram"><h2 class="- topic/title title sectiontitle">HIL CCS Interface Layout</h2>
+           
+            <p class="- topic/p p">The board features the following key sections, as shown in <a class="- topic/xref xref" href="#doc__layout_diagram">Figure 1</a>.</p>
+            <ol class="- topic/ol ol" id="doc__ol_pfg_rtp_5pb" data-ofbid="doc__ol_pfg_rtp_5pb">
+                <li class="- topic/li li">HIL Analog connector</li>
+                <li class="- topic/li li">HIL Digital connector</li>
+                <li class="- topic/li li">Analog stage</li>
+                <li class="- topic/li li">GreenPHY module</li>
+                <li class="- topic/li li">Resistor and capacitors emulation</li>
+                <li class="- topic/li li">UART for firmware update</li>
+                <li class="- topic/li li">10/100 Mbps Fast Ethernet</li>
+                <li class="- topic/li li">CCS CP-PP-PE signals</li>
+                <li class="- topic/li li">DC pins temperature measurement</li>
+                <li class="- topic/li li">AC pin temperature measurement</li>
+                <li class="- topic/li li">Motor lock feedback</li>
+                <li class="- topic/li li">Motor lock control driver</li>
+
+            </ol>
+            <figure class="- topic/fig fig fignone" id="doc__layout_diagram" data-ofbid="doc__layout_diagram"><figcaption class="- topic/title title figcap"><span class="figtitleprefix fig--title-label">Figure<span class="fig--title-label-number"> 1</span><span class="fig--title-label-punctuation">. </span></span><span class="fig--title">HIL CCS interface layout</span></figcaption>
+                
+                <img class="- topic/image image" id="doc__image_qfg_rtp_5pb" src="../Images/hil_ccs_interface_02.png" width="700"/>
+            </figure>
+        </section>
+        <section class="- topic/section section" id="doc__analog_io" data-ofbid="doc__analog_io"><h2 class="- topic/title title sectiontitle">Physical Installation</h2>
+            
+            <p class="- topic/p p">The GreenPHY module comes already mounted in the CCS interface board. This is shipped
+                with the pre-requested configuration (for EV or EVSE). Further changes to the
+                configuration can be done via Ethernet using the <a class="- topic/xref xref" href="https://github.com/qca/open-plc-utils" target="_blank" rel="external noopener">plctool library</a> 
+                from the Qualcomm Atheros Open Powerline Toolkit.</p>
+        </section>
+
+        <section class="- topic/section section" id="doc__communication-connection" data-ofbid="doc__communication-connection"><h2 class="- topic/title title sectiontitle">Communication Connection</h2>
+            
+            <p class="- topic/p p">In order to test the ISO 15118 vehicle to grid communication, the following terminals
+                of a charging plug (e.g. <a class="- topic/xref xref" href="#doc__fig_charging_plug">Figure 2</a>) must be connected to
+                the corresponding CP PP PE - PLC connector on the CCS Interface:</p>
+            <ul class="- topic/ul ul">
+                <li class="- topic/li li">Control Pilot (CP)</li>
+                <li class="- topic/li li">Proximity Pilot (PP)</li>
+                <li class="- topic/li li">Protective Earth (PE)</li>
+            </ul>
+            <figure class="- topic/fig fig fignone" id="doc__fig_charging_plug" data-ofbid="doc__fig_charging_plug"><figcaption class="- topic/title title figcap"><span class="figtitleprefix fig--title-label">Figure<span class="fig--title-label-number"> 2</span><span class="fig--title-label-punctuation">. </span></span><span class="fig--title">Example of charging plug connectors for a CCS Combo Type 2</span></figcaption>
+                
+                <img class="- topic/image image" src="../Images/hil_ccs_interface_05.png" height="240" width="300"/>
+            </figure>
+            <p class="- topic/p p">Connection to the following charging plugs is supported:</p>
+            <ul class="- topic/ul ul">
+                <li class="- topic/li li">CCS Combo Type 1</li>
+                <li class="- topic/li li">CCS Combo Type 2</li>
+                <li class="- topic/li li">J1772</li>
+                <li class="- topic/li li">Mennekes Type 2</li>
+                <li class="- topic/li li">Supercharger</li>
+            </ul>
+            <div class="- topic/note note note note_note"><span class="note__title">Note:</span> Please refer to your charger's documentation for the connectors for your specific
+                charging plug type.</div>
+        </section>
+
+    <section class="- topic/section section" id="doc__ethernet-connection" data-ofbid="doc__ethernet-connection"><h2 class="- topic/title title sectiontitle">Ethernet Connection</h2>
+        
+            <p class="- topic/p p">For the connection of the converted PLC signal to Typhoon HIL simulator devices, 
+                an RJ45 connector is placed directly on the interface board nearby the GreenPHY module.</p>
+    </section>
+
+    <section class="- topic/section section" id="doc__signal-path-switching" data-ofbid="doc__signal-path-switching"><h2 class="- topic/title title sectiontitle">Signal Path Switching</h2>
+        
+            <p class="- topic/p p"><a class="- topic/xref xref" href="#doc__fig_signal_path_switching">Figure 3</a> shows the various signal paths and switching options. The Typhoon HIL CCS 
+                interface has circuits to simulate either the electric vehicle supply equipment (EVSE) or 
+                the electric vehicle (EV). To vary between these two possibilities, the signal path must be 
+                set by switching the relevant relays. The numbering at the relay’s schematic indicated which 
+                Digital Output from the HIL device is associated with the respective relays. The position shown 
+                is the default configuration, without any stimulation from the HIL device.</p>
+        <figure class="- topic/fig fig fignone" id="doc__fig_signal_path_switching" data-ofbid="doc__fig_signal_path_switching"><figcaption class="- topic/title title figcap"><span class="figtitleprefix fig--title-label">Figure<span class="fig--title-label-number"> 3</span><span class="fig--title-label-punctuation">. </span></span><span class="fig--title">Signal Path mapping</span></figcaption>
+           
+            <img class="- topic/image image" src="../Images/hil_ccs_interface_04.png" height="272" width="705"/>
+        </figure>
+    </section>
+
+    <section class="- topic/section section" id="doc__stimulation-of-parameters" data-ofbid="doc__stimulation-of-parameters"><h2 class="- topic/title title sectiontitle">Stimulation of Parameters</h2>
+        
+            <p class="- topic/p p">The stimulation parameters for the PWM communication (frequency, duty cycle, positive
+                control pilot voltage, negative control pilot voltage) are controlled via analog
+                outputs and can be controlled from the model in Typhoon HIL Control Center. The
+                measurement of values for all PWM parameters and the proximity contact are available
+                as analog inputs.<span class="- topic/ph ph"> Alternatively, PWM signals can be
+                    generated directly from Typhoon HIL Control Center with the <a class="- topic/xref xref" href="../../../t-ug002/References/pwm_modulator.html" title="Description of the PWM modulator component in Schematic Editor.">PWM modulator</a> component.</span>
+                These values are measured by the analog circuits in the CCS board and converted into
+                DC voltage values, as listed in <a class="- topic/xref xref" href="#doc__io_mapping">Table 1</a>. The relays are
+                controllable via digital outputs.</p>
+        <table class="- topic/table table frame-all" id="doc__io_mapping" data-ofbid="doc__io_mapping" data-cols="5"><caption class="- topic/title title tablecap" data-caption-side="top" data-is-repeated="true"><span class="table--title-label">Table<span class="table--title-label-number"> 1</span><span class="table--title-label-punctuation">. </span></span><span class="table--title">HIL IOs Mapping to CP and PP Circuits</span></caption><colgroup><col style="width:34.78260869565217%"/><col style="width:17.391304347826086%"/><col style="width:8.695652173913043%"/><col style="width:17.391304347826086%"/><col style="width:21.73913043478261%"/></colgroup><thead class="- topic/thead thead">
+                    <tr class="- topic/row">
+                        <th class="- topic/entry entry colsep-1 rowsep-1" id="doc__io_mapping__entry__1">Setting</th>
+                        <th class="- topic/entry entry colsep-1 rowsep-1" id="doc__io_mapping__entry__2">Analog/Digital IO</th>
+                        <th class="- topic/entry entry colsep-1 rowsep-1" id="doc__io_mapping__entry__3">R/W</th>
+                        <th class="- topic/entry entry colsep-1 rowsep-1" id="doc__io_mapping__entry__4">Actual Value (HIL IO)</th>
+                        <th class="- topic/entry entry colsep-0 rowsep-1" id="doc__io_mapping__entry__5">Converted Value</th>
+                    </tr>
+                </thead><tbody class="- topic/tbody tbody">
+                    <tr class="- topic/row">
+                        <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__io_mapping__entry__1">Relay function</td>
+                        <td class="- topic/entry entry align-center colsep-1 rowsep-1" headers="doc__io_mapping__entry__2">DO1 … DO27</td>
+                        <td class="- topic/entry entry align-center colsep-1 rowsep-1" headers="doc__io_mapping__entry__3">W</td>
+                        <td class="- topic/entry entry align-center colsep-1 rowsep-1" headers="doc__io_mapping__entry__4">0 = open, 1 = closed</td>
+                        <td class="- topic/entry entry align-center colsep-0 rowsep-1" headers="doc__io_mapping__entry__5">--</td>
+                    </tr>
+                    <tr class="- topic/row">
+                        <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__io_mapping__entry__1">PP voltage measurement</td>
+                        <td class="- topic/entry entry align-center colsep-1 rowsep-1" headers="doc__io_mapping__entry__2">Analog Input 6 (AI6)</td>
+                        <td class="- topic/entry entry align-center colsep-1 rowsep-1" headers="doc__io_mapping__entry__3">R</td>
+                        <td class="- topic/entry entry align-center colsep-1 rowsep-1" headers="doc__io_mapping__entry__4">0 ... 5V</td>
+                        <td class="- topic/entry entry align-center colsep-0 rowsep-1" headers="doc__io_mapping__entry__5">--</td>
+                    </tr>
+                    <tr class="- topic/row">
+                        <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__io_mapping__entry__1">CP PWM frequency measurement</td>
+                        <td class="- topic/entry entry align-center colsep-1 rowsep-1" headers="doc__io_mapping__entry__2">Analog Input 4 (AI4)</td>
+                        <td class="- topic/entry entry align-center colsep-1 rowsep-1" headers="doc__io_mapping__entry__3">R</td>
+                        <td class="- topic/entry entry align-center colsep-1 rowsep-1" headers="doc__io_mapping__entry__4">0.25V ... 2.5V ... 3V</td>
+                        <td class="- topic/entry entry align-center colsep-0 rowsep-1" headers="doc__io_mapping__entry__5">100 Hz … 1000 Hz ... 1200 Hz</td>
+                    </tr>
+                    <tr class="- topic/row">
+                        <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__io_mapping__entry__1">CP PWM duty cycle measurement</td>
+                        <td class="- topic/entry entry align-center colsep-1 rowsep-1" headers="doc__io_mapping__entry__2">Analog Input 5 (AI5)</td>
+                        <td class="- topic/entry entry align-center colsep-1 rowsep-1" headers="doc__io_mapping__entry__3">R</td>
+                        <td class="- topic/entry entry align-center colsep-1 rowsep-1" headers="doc__io_mapping__entry__4">0V ... 10V</td>
+                        <td class="- topic/entry entry align-center colsep-0 rowsep-1" headers="doc__io_mapping__entry__5">
+                            <span class="+ topic/foreign mathml-d/mathml foreign mathml"><math xmlns="http://www.w3.org/1998/Math/MathML">
+                                <mi>D</mi>
+                                <mi>u</mi>
+                                <mi>t</mi>
+                                <mi>y</mi>
+                                <mi> </mi>
+                                <mi>C</mi>
+                                <mi>y</mi>
+                                <mi>c</mi>
+                                <mi>l</mi>
+                                <mi>e</mi>
+                                <mi> </mi>
+                                <mi>%</mi>
+                                <mo>=</mo>
+                                <mi>A</mi>
+                                <mi>I</mi>
+                                <mi>5</mi>
+                                <mo>·</mo>
+                                <mi>2</mi>
+                                <mi>0</mi>
+                            </math></span></td>
+                    </tr>
+                    <tr class="- topic/row">
+                        <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__io_mapping__entry__1">CP PWM high voltage measurement</td>
+                        <td class="- topic/entry entry align-center colsep-1 rowsep-1" headers="doc__io_mapping__entry__2">Analog Input 1 (AI1)</td>
+                        <td class="- topic/entry entry align-center colsep-1 rowsep-1" headers="doc__io_mapping__entry__3">R</td>
+                        <td class="- topic/entry entry align-center colsep-1 rowsep-1" headers="doc__io_mapping__entry__4">0V ... 10V</td>
+                        <td class="- topic/entry entry align-center colsep-0 rowsep-1" headers="doc__io_mapping__entry__5">
+                            <span class="+ topic/foreign mathml-d/mathml foreign mathml"><math xmlns="http://www.w3.org/1998/Math/MathML">
+                            <msub>
+                                <mrow>
+                                    <mi>V</mi>
+                                </mrow>
+                                <mrow>
+                                    <msub>
+                                        <mrow>
+                                            <mi>C</mi>
+                                            <mi>P</mi>
+                                        </mrow>
+                                        <mrow>
+                                            <mi>h</mi>
+                                            <mi>i</mi>
+                                            <mi>g</mi>
+                                            <mi>h</mi>
+                                        </mrow>
+                                    </msub>
+                                </mrow>
+                            </msub>
+                                <mo>=</mo>
+                                <mi>A</mi>
+                                <mi>I</mi>
+                                <mi>1</mi>
+                                <mo>·</mo>
+                                <mi>2</mi>
+                           </math></span></td>
+                    </tr>
+                    <tr class="- topic/row">
+                        <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__io_mapping__entry__1">CP PWM low voltage measurement</td>
+                        <td class="- topic/entry entry align-center colsep-1 rowsep-1" headers="doc__io_mapping__entry__2">Analog Input 2 (AI2)</td>
+                        <td class="- topic/entry entry align-center colsep-1 rowsep-1" headers="doc__io_mapping__entry__3">R</td>
+                        <td class="- topic/entry entry align-center colsep-1 rowsep-1" headers="doc__io_mapping__entry__4">0V ... 10V</td>
+                        <td class="- topic/entry entry align-center colsep-0 rowsep-1" headers="doc__io_mapping__entry__5">
+                            <span class="+ topic/foreign mathml-d/mathml foreign mathml"><math xmlns="http://www.w3.org/1998/Math/MathML">
+                                <msub>
+                                    <mrow>
+                                        <mi>V</mi>
+                                    </mrow>
+                                    <mrow>
+                                        <msub>
+                                            <mrow>
+                                                <mi>C</mi>
+                                                <mi>P</mi>
+                                            </mrow>
+                                            <mrow>
+                                                <mi>l</mi>
+                                                <mi>o</mi>
+                                                <mi>w</mi>
+                                            </mrow>
+                                        </msub>
+                                    </mrow>
+                                </msub>
+                                <mo>=</mo>
+                                <mi>A</mi>
+                                <mi>I</mi>
+                                <mi>2</mi>
+                                <mo>·</mo>
+                                <mi>2</mi>
+                            </math></span></td>
+                    </tr>
+                    <tr class="- topic/row">
+                        <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__io_mapping__entry__1">CP PWM frequency stimulation</td>
+                        <td class="- topic/entry entry align-center colsep-1 rowsep-1" headers="doc__io_mapping__entry__2">Analog Output 4 (AO4)</td>
+                        <td class="- topic/entry entry align-center colsep-1 rowsep-1" headers="doc__io_mapping__entry__3">W</td>
+                        <td class="- topic/entry entry align-center colsep-1 rowsep-1" headers="doc__io_mapping__entry__4">-10V ... 0V ... 10V</td>
+                        <td class="- topic/entry entry align-center colsep-0 rowsep-1" headers="doc__io_mapping__entry__5">850 Hz … 1000 Hz … 1160 Hz</td>
+                    </tr>
+                    <tr class="- topic/row">
+                        <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__io_mapping__entry__1">CP PWM duty cycle stimulation</td>
+                        <td class="- topic/entry entry align-center colsep-1 rowsep-1" headers="doc__io_mapping__entry__2">Analog Output 3 (AO3)</td>
+                        <td class="- topic/entry entry align-center colsep-1 rowsep-1" headers="doc__io_mapping__entry__3">W</td>
+                        <td class="- topic/entry entry align-center colsep-1 rowsep-1" headers="doc__io_mapping__entry__4">-9.95V ... 0V ... 9.95V</td>
+                        <td class="- topic/entry entry align-center colsep-0 rowsep-1" headers="doc__io_mapping__entry__5">1.5% … 50% … 99%</td>
+                    </tr>
+                    <tr class="- topic/row">
+                        <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__io_mapping__entry__1">CP PWM high voltage stimulation</td>
+                        <td class="- topic/entry entry align-center colsep-1 rowsep-1" headers="doc__io_mapping__entry__2">Analog Output 2 (AO2)</td>
+                        <td class="- topic/entry entry align-center colsep-1 rowsep-1" headers="doc__io_mapping__entry__3">R</td>
+                        <td class="- topic/entry entry align-center colsep-1 rowsep-1" headers="doc__io_mapping__entry__4">0V … 5V … 10V</td>
+                        <td class="- topic/entry entry align-center colsep-0 rowsep-1" headers="doc__io_mapping__entry__5">0V … 5V … 15V</td>
+                    </tr>
+                    <tr class="- topic/row">
+                        <td class="- topic/entry entry colsep-1 rowsep-0" headers="doc__io_mapping__entry__1">CP PWM low voltage stimulation</td>
+                        <td class="- topic/entry entry align-center colsep-1 rowsep-0" headers="doc__io_mapping__entry__2">Analog Output 1 (AO1)</td>
+                        <td class="- topic/entry entry align-center colsep-1 rowsep-0" headers="doc__io_mapping__entry__3">R</td>
+                        <td class="- topic/entry entry align-center colsep-1 rowsep-0" headers="doc__io_mapping__entry__4">0V … 5V … 10V</td>
+                        <td class="- topic/entry entry align-center colsep-0 rowsep-0" headers="doc__io_mapping__entry__5">-5V … -10V … -15V</td>
+                    </tr>
+                </tbody></table>
+    </section>
+
+    <section class="- topic/section section" id="doc__fault-simulation" data-ofbid="doc__fault-simulation"><h2 class="- topic/title title sectiontitle">Fault Simulation</h2>
+        
+            <p class="- topic/p p">The CCS module features various error simulation and parameter variation
+                possibilities:</p>
+            <ul class="- topic/ul ul">
+                <li class="- topic/li li">Simulation of broken wire</li>
+                <li class="- topic/li li">Simulation of short circuit between control pilot (CP) and protective earth (PE)</li>
+                <li class="- topic/li li">Variation of PWM frequency, PWM duty cycle, and PWM high and low level</li>
+                <li class="- topic/li li">Variation of capacitive load</li>
+                <li class="- topic/li li">Variation of resistors between minimum, maximum, and nominal values</li>
+            </ul>
+            <p class="- topic/p p">The variation range of the parameters and values can be found in the <a class="- topic/xref xref" href="#doc__technical-data">Technical Data</a> section. The simulation
+                of short and broken wires, the variation of the resistor values, and the capacitive
+                load are performed by relays. The necessary relay settings can be found in <a class="- topic/xref xref" href="#doc__fig_signal_path_switching">Figure 3</a>.</p>
+
+    </section>
+
+    <section class="- topic/section section" id="doc__ccs-board-leds" data-ofbid="doc__ccs-board-leds"><h2 class="- topic/title title sectiontitle">CCS Board LEDs</h2>
+        
+            <p class="- topic/p p">The application board has a total of three LEDs. Two of those indicate the power
+                supply status: +15V and -15V, indicating if the board is operational. The third LED
+                is located between the Green PHY module and the DB9 connector, named ACT. When the
+                ACT LED is lit, it means that the SLAC protocol is working and that there is an
+                Ethernet network connection between the SECC and EVCC. The ACT LED will blink every
+                time an ISO 15118 packet is sent or received by the HIL device.</p>
+
+    </section>
+
+    <section class="- topic/section section" id="doc__connectors-main-components" data-ofbid="doc__connectors-main-components"><h2 class="- topic/title title sectiontitle">Connectors and Main Components</h2>
+        
+
+        <p class="- topic/p p"><a class="- topic/xref xref" href="#doc__layout_diagram">Figure 1</a> depicts the main components of the CCS interface board. The board should be connected 
+                to the HIL device IO terminals, which will provide proper power supply and the connections for measurement, 
+                stimulation, and switching of control pilot, proximity pilot, and relays.</p>
+            <p class="- topic/p p">The CP PE PP - PLC communication plug should be connected to the device under test
+                (EVCC or SECC) as described in the <a class="- topic/xref xref" href="#doc__communication-connection">Communication Connection</a>
+                section. The RJ45 Ethernet connector is connected to the bottom HIL Ethernet port.
+                The UART connector is optional and used for firmware updates and GreenPHY
+                microcontroller flashing.</p>
+
+    </section>
+
+    <section class="- topic/section section" id="doc__technical-data" data-ofbid="doc__technical-data"><h2 class="- topic/title title sectiontitle">Technical Data</h2>
+        
+
+        <table class="- topic/table table frame-all" id="doc__table_technical_data" data-ofbid="doc__table_technical_data" data-cols="3"><caption class="- topic/title title tablecap" data-caption-side="top" data-is-repeated="true"><span class="table--title-label">Table<span class="table--title-label-number"> 2</span><span class="table--title-label-punctuation">. </span></span><span class="table--title">Technical Data</span></caption><colgroup><col style="width:50%"/><col style="width:25%"/><col style="width:25%"/></colgroup><thead class="- topic/thead thead">
+                    <tr class="- topic/row">
+                        <th class="- topic/entry entry colsep-1 rowsep-1" id="doc__table_technical_data__entry__1">Parameter</th>
+                        <th class="- topic/entry entry colsep-1 rowsep-1" id="doc__table_technical_data__entry__2">Min</th>
+                        <th class="- topic/entry entry colsep-0 rowsep-1" id="doc__table_technical_data__entry__3">Max</th>
+                    </tr>
+                </thead><tbody class="- topic/tbody tbody">
+                    <tr class="- topic/row">
+                        <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__table_technical_data__entry__1"><strong class="+ topic/ph hi-d/b ph b">Supply voltage</strong> (via the HIL device IO connector)</td>
+                        <td class="- topic/entry entry align-center colsep-1 rowsep-1" headers="doc__table_technical_data__entry__2">0 V</td>
+                        <td class="- topic/entry entry align-center colsep-0 rowsep-1" headers="doc__table_technical_data__entry__3">5 V</td>
+                    </tr>
+                    <tr class="- topic/row">
+                        <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__table_technical_data__entry__1"><strong class="+ topic/ph hi-d/b ph b">Proximity Contact Measurement</strong></td>
+                        <td class="- topic/entry entry align-center colsep-1 rowsep-1" headers="doc__table_technical_data__entry__2">0 V</td>
+                        <td class="- topic/entry entry align-center colsep-0 rowsep-1" headers="doc__table_technical_data__entry__3">5 V</td>
+                    </tr>
+                    <tr class="- topic/row">
+                        <td class="- topic/entry entry colsep-0 rowsep-1" headers="doc__table_technical_data__entry__1 doc__table_technical_data__entry__2 doc__table_technical_data__entry__3" colspan="3"><strong class="+ topic/ph hi-d/b ph b">Control Pilot PWM Stimulation</strong></td>
+                    </tr>
+                    <tr class="- topic/row">
+                        <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__table_technical_data__entry__1">Voltage</td>
+                        <td class="- topic/entry entry align-center colsep-1 rowsep-1" headers="doc__table_technical_data__entry__2">-15 V</td>
+                        <td class="- topic/entry entry align-center colsep-0 rowsep-1" headers="doc__table_technical_data__entry__3">+15 V</td>
+                    </tr>
+                    <tr class="- topic/row">
+                        <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__table_technical_data__entry__1">Frequency</td>
+                        <td class="- topic/entry entry align-center colsep-1 rowsep-1" headers="doc__table_technical_data__entry__2">850 Hz</td>
+                        <td class="- topic/entry entry align-center colsep-0 rowsep-1" headers="doc__table_technical_data__entry__3">1160 Hz</td>
+                    </tr>
+                    <tr class="- topic/row">
+                        <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__table_technical_data__entry__1">Duty Cycle</td>
+                        <td class="- topic/entry entry align-center colsep-1 rowsep-1" headers="doc__table_technical_data__entry__2">1.5%</td>
+                        <td class="- topic/entry entry align-center colsep-0 rowsep-1" headers="doc__table_technical_data__entry__3">99%</td>
+                    </tr>
+                    <tr class="- topic/row">
+                        <td class="- topic/entry entry colsep-0 rowsep-1" headers="doc__table_technical_data__entry__1 doc__table_technical_data__entry__2 doc__table_technical_data__entry__3" colspan="3"><strong class="+ topic/ph hi-d/b ph b">Control Pilot PWM Measurement</strong></td>
+                    </tr>
+                    <tr class="- topic/row">
+                        <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__table_technical_data__entry__1">Voltage</td>
+                        <td class="- topic/entry entry align-center colsep-1 rowsep-1" headers="doc__table_technical_data__entry__2">-15 V</td>
+                        <td class="- topic/entry entry align-center colsep-0 rowsep-1" headers="doc__table_technical_data__entry__3">+15 V</td>
+                    </tr>
+                    <tr class="- topic/row">
+                        <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__table_technical_data__entry__1">Frequency</td>
+                        <td class="- topic/entry entry align-center colsep-1 rowsep-1" headers="doc__table_technical_data__entry__2">100 Hz</td>
+                        <td class="- topic/entry entry align-center colsep-0 rowsep-1" headers="doc__table_technical_data__entry__3">1200 Hz</td>
+                    </tr>
+                    <tr class="- topic/row">
+                        <td class="- topic/entry entry colsep-1 rowsep-0" headers="doc__table_technical_data__entry__1">Duty Cycle</td>
+                        <td class="- topic/entry entry align-center colsep-1 rowsep-0" headers="doc__table_technical_data__entry__2">1%</td>
+                        <td class="- topic/entry entry align-center colsep-0 rowsep-0" headers="doc__table_technical_data__entry__3">99%</td>
+                    </tr>
+                </tbody></table>
+        
+        
+    </section>
+
+    </div>
+</article></main></div>
+                        
+                        
+                        
+                        
+                        
+                        
+                    </div>
+                    
+                        <nav role="navigation" id="wh_topic_toc" aria-label="On this page" class="col-lg-2 d-none d-lg-block navbar d-print-none"> 
+                            <div id="wh_topic_toc_content">
+		                        
+	                            <div class=" wh_topic_toc "><div class="wh_topic_label">On this page</div><ul><li class="section-item"><div class="section-title"><a href="#doc__block_diagram" data-tocid="doc__block_diagram">HIL CCS Interface Layout</a></div></li><li class="section-item"><div class="section-title"><a href="#doc__analog_io" data-tocid="doc__analog_io">Physical Installation</a></div></li><li class="section-item"><div class="section-title"><a href="#doc__communication-connection" data-tocid="doc__communication-connection">Communication Connection</a></div></li><li class="section-item"><div class="section-title"><a href="#doc__ethernet-connection" data-tocid="doc__ethernet-connection">Ethernet Connection</a></div></li><li class="section-item"><div class="section-title"><a href="#doc__signal-path-switching" data-tocid="doc__signal-path-switching">Signal Path Switching</a></div></li><li class="section-item"><div class="section-title"><a href="#doc__stimulation-of-parameters" data-tocid="doc__stimulation-of-parameters">Stimulation of Parameters</a></div></li><li class="section-item"><div class="section-title"><a href="#doc__fault-simulation" data-tocid="doc__fault-simulation">Fault Simulation</a></div></li><li class="section-item"><div class="section-title"><a href="#doc__ccs-board-leds" data-tocid="doc__ccs-board-leds">CCS Board LEDs</a></div></li><li class="section-item"><div class="section-title"><a href="#doc__connectors-main-components" data-tocid="doc__connectors-main-components">Connectors and Main Components</a></div></li><li class="section-item"><div class="section-title"><a href="#doc__technical-data" data-tocid="doc__technical-data">Technical Data</a></div></li></ul></div>
+	                        	
+                        	</div>
+                        </nav>
+                    
+                </div>
+            </div>
+            
+            
+            
+        </div> 
+        <footer class="navbar navbar-default wh_footer">
+  <div class=" footer-container mx-auto ">
+    <div style="text-align:center">Typhoon HIL Inc.<span id="year"> <a href="https://www.typhoon-hil.com">www.typhoon-hil.com</a></span></div>
+  </div>
+</footer>
+        
+        <div id="go2top" class="d-print-none">
+            <span class="oxy-icon oxy-icon-up"></span>
+        </div>
+        
+        <div id="modal_img_large" class="modal">
+            <span class="close oxy-icon oxy-icon-remove"></span>
+            <div id="modal_img_container"></div>
+            <div id="caption"></div>
+        </div>
+        
+        
+<script type="text/javascript" src="../../assets/script.js"> 
+</script>
+
+        
+    </body>
+</html>

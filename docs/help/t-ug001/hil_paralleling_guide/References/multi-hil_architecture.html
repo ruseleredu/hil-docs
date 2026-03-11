@@ -1,0 +1,256 @@
+<!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en" data-whc_version="24.1">
+    <head><link rel="shortcut icon" href="../../../favicon.ico"/><link rel="icon" href="../../../favicon.ico"/><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><meta name="DC.rights.owner" content="(C) Copyright 2026"/><meta name="copyright" content="(C) Copyright 2026"/><meta name="generator" content="DITA-OT"/><meta name="DC.type" content="reference"/><meta name="description" content="In this section, modeling parameters for multi-HIL models are listed and described."/><meta name="DC.relation" content="../../../t-ug001/hil_paralleling_guide/topics/abstract.html"/><meta name="DC.format" content="HTML5"/><meta name="DC.identifier" content="doc"/>        
+      <title>Multi-HIL system architecture parameters</title><!--  Generated with Oxygen version 24.1, build number 2022030800.  --><meta name="wh-path2root" content="../../../"/><meta name="wh-toc-id" content="doc-d16877e8831"/><meta name="wh-source-relpath" content="t-ug001/hil_paralleling_guide/References/multi-hil_architecture.dita"/><meta name="wh-out-relpath" content="t-ug001/hil_paralleling_guide/References/multi-hil_architecture.html"/>
+    <!-- Latest compiled and minified Bootstrap CSS -->
+    <link rel="stylesheet" type="text/css" href="../../../oxygen-webhelp/lib/bootstrap/css/bootstrap.min.css"/>
+    
+    <link rel="stylesheet" href="../../../oxygen-webhelp/lib/jquery-ui/jquery-ui.min.css"/>
+    
+    <!-- Template default styles  -->
+    <link rel="stylesheet" type="text/css" href="../../../oxygen-webhelp/app/topic-page.css?buildId=2022030800"/>
+    
+    
+    <script src="../../../oxygen-webhelp/lib/jquery/jquery-3.5.1.min.js"></script>
+    
+    <script data-main="../../../oxygen-webhelp/app/topic-page.js" src="../../../oxygen-webhelp/lib/requirejs/require.js"></script>
+<link rel="stylesheet" type="text/css" href="../../../oxygen-webhelp/template/oxygen.css?buildId=2022030800"/><link rel="stylesheet" type="text/css" href="../../../oxygen-webhelp/template/notes.css?buildId=2022030800"/><script type="text/javascript" src="../../Scripts/mml-svg.js"> 
+</script><link rel="stylesheet" type="text/css" href="../../../assets/typhoon.css"/></head>
+
+    <body id="doc" class="wh_topic_page frmBody">
+        <a href="#wh_topic_body" class="sr-only sr-only-focusable">
+            Jump to main content
+        </a>
+        
+        
+        
+        
+        <header class="navbar navbar-default wh_header">
+    <div class="container-fluid">
+        <div class="wh_header_flex_container navbar-nav navbar-expand-md navbar-dark">
+            <div class="wh_logo_and_publication_title_container">
+                <div class="wh_logo_and_publication_title">
+                    
+                    <a href="https://www.typhoon-hil.com" class=" wh_logo d-none d-sm-block "><img src="../../../logo.svg" alt="  Typhoon HIL Documentation  Version: 2026.1  "/></a>
+                    <div class=" wh_publication_title "><a href="../../../index.html"><span class="booktitle">  <span class="ph mainbooktitle">Typhoon HIL Documentation</span>  <span class="ph booktitlealt">Version: 2026.1</span>  </span></a></div>
+                    
+                </div>
+                
+                <button type="button" data-target="#wh_top_menu_and_indexterms_link" id="wh_menu_mobile_button" data-toggle="collapse" class="navbar-toggler collapsed wh_toggle_button" aria-expanded="false" aria-label="Toggle menu" aria-controls="wh_top_menu_and_indexterms_link">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+            </div>
+
+            <div class="wh_top_menu_and_indexterms_link collapse navbar-collapse" id="wh_top_menu_and_indexterms_link">
+                
+                <nav class=" wh_top_menu " aria-label="Menu Container"><ul role="menubar" aria-label="Menu"><li role="menuitem" aria-haspopup="true" aria-expanded="false" class="has-children"><span id="tocId-d16877e21-mi" data-tocid="tocId-d16877e21" data-state="not-ready" class=" topicref application-notes"><span class="title"><a href="../../../t-an001/concepts/application_notes_introduction.html">Typhoon HIL Application Notes</a></span></span></li><li role="menuitem" aria-haspopup="true" aria-expanded="false" class="has-children"><span id="tocId-d16877e737-mi" data-tocid="tocId-d16877e737" data-state="not-ready" class=" topicref software-manual"><span class="title"><a href="../../../t-ug002/topics/software_manual_introduction.html">Typhoon HIL Software Manual</a></span></span></li><li role="menuitem" aria-haspopup="true" aria-expanded="false" class="has-children"><span id="tocId-d16877e7901-mi" data-tocid="tocId-d16877e7901" data-state="not-ready" class=" topicref hardware-manual"><span class="title"><a href="../../../t-ug001/abstract/hardware_manual_introduction.html">Typhoon HIL Hardware Manual</a></span></span></li></ul></nav>
+                
+                
+            </div>
+        </div>
+    </div>
+</header>
+        
+        
+         
+        
+        <div class=" wh_search_input navbar-form wh_topic_page_search search " role="form">
+            
+            
+            
+            <form id="searchForm" method="get" role="search" action="../../../search.html"><div><input type="search" placeholder="Search " class="wh_search_textfield" id="textToSearch" name="searchQuery" aria-label="Search query" required="required"/><button type="submit" class="wh_search_button" aria-label="Search"><span class="search_input_text">Search</span></button></div></form>
+            
+            
+            
+        </div>
+        
+        <div class="container-fluid" id="wh_topic_container">
+            <div class="row">
+
+                <nav class="wh_tools d-print-none navbar-expand-md" aria-label="Tools">
+                    
+                    <div data-tooltip-position="bottom" class=" wh_breadcrumb "><ol class="d-print-none"><li><span class="home"><a href="../../../index.html"><span>Home</span></a></span></li><li><div class="topicref hardware-manual"><div class="title"><a href="../../../t-ug001/abstract/hardware_manual_introduction.html">Typhoon HIL Hardware Manual</a></div></div></li><li><div class="topicref" data-id="doc"><div class="title"><a href="../../../t-ug001/abstract/HIL_simulators.html">Typhoon HIL simulator devices</a><div class="wh-tooltip"><p class="shortdesc">Overview of the currently supported Typhoon HIL simulator devices.</p></div></div></div></li><li><div class="topicref" data-id="doc"><div class="title"><a href="../../../t-ug001/hil_paralleling_guide/topics/abstract.html">HIL Paralleling Guide</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">This document introduces the HIL paralleling concept, defines modeling of relevant link parameters, and explains how to properly connect multiple Typhoon HIL devices.</span></p></div></div></div></li><li class="active"><div class="topicref page-break-after" data-id="doc"><div class="title"><a href="../../../t-ug001/hil_paralleling_guide/References/multi-hil_architecture.html">Multi-HIL system architecture parameters</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">In this section, modeling parameters for multi-HIL models are listed and described.</span></p></div></div></div></li></ol></div>
+                    
+                    
+                    
+                    <div class="wh_right_tools">
+                        <button class="wh_hide_highlight" aria-label="Toggle search highlights" title="Toggle search highlights"></button>
+                        <button class="webhelp_expand_collapse_sections" data-next-state="collapsed" aria-label="Collapse sections" title="Collapse sections"></button>
+                        
+                        
+                        
+                        
+                        <div class=" wh_print_link print d-none d-md-inline-block "><button onClick="window.print()" title="Print this page" aria-label="Print this page"></button></div>
+                        
+                        <button type="button" id="wh_toc_button" class="custom-toggler navbar-toggler collapsed wh_toggle_button navbar-light" aria-expanded="false" aria-label="Toggle publishing table of content" aria-controls="wh_publication_toc">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+                    </div>
+                    
+                </nav>
+            </div>
+            
+            
+            
+            
+            <div class="wh_content_area">
+                <div class="row">
+                    
+                        <nav id="wh_publication_toc" class="col-lg-3 col-md-3 col-sm-12 d-md-block d-none d-print-none" aria-label="Table of Contents Container">
+                            <div id="wh_publication_toc_content">
+		                        
+                            	<div class=" wh_publication_toc " data-tooltip-position="right"><span class="expand-button-action-labels"><span id="button-expand-action" role="button" aria-label="Expand"></span><span id="button-collapse-action" role="button" aria-label="Collapse"></span><span id="button-pending-action" role="button" aria-label="Pending"></span></span><ul role="tree" aria-label="Table of Contents"><li role="treeitem" aria-expanded="true"><div data-tocid="tocId-d16877e7901" class="topicref hardware-manual" data-state="expanded"><span role="button" tabindex="0" aria-labelledby="button-collapse-action tocId-d16877e7901-link" class="wh-expand-btn"></span><div class="title"><a href="../../../t-ug001/abstract/hardware_manual_introduction.html" id="tocId-d16877e7901-link">Typhoon HIL Hardware Manual</a></div></div><ul role="group" class="navbar-nav nav-list"><li role="treeitem"><div data-tocid="doc-d16877e7905" class="topicref" data-id="doc" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../../../t-ug001/abstract/hardware_manual_introduction.html" id="doc-d16877e7905-link">Hardware Manual Introduction</a><div class="wh-tooltip"><p class="shortdesc">Collection of some of the guides on the deployment, use, and management of Typhoon HIL hardware devices.</p></div></div></div></li><li role="treeitem" aria-expanded="true"><div data-tocid="doc-d16877e7916" class="topicref" data-id="doc" data-state="expanded"><span role="button" tabindex="0" aria-labelledby="button-collapse-action doc-d16877e7916-link" class="wh-expand-btn"></span><div class="title"><a href="../../../t-ug001/abstract/HIL_simulators.html" id="doc-d16877e7916-link">Typhoon HIL simulator devices</a><div class="wh-tooltip"><p class="shortdesc">Overview of the currently supported Typhoon HIL simulator devices.</p></div></div></div><ul role="group" class="navbar-nav nav-list"><li role="treeitem" aria-expanded="false"><div data-tocid="doc-d16877e7930" class="topicref" data-id="doc" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action doc-d16877e7930-link" class="wh-expand-btn"></span><div class="title"><a href="../../../t-ug001/hil101_user_guide/topics/hil101_abstract.html" id="doc-d16877e7930-link">HIL101 Hardware User Guide</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">Official documentation of the HIL101 simulator hardware device.</span></p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="doc-d16877e8043" class="topicref" data-id="doc" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action doc-d16877e8043-link" class="wh-expand-btn"></span><div class="title"><a href="../../../t-ug001/hil402_user_guide/topics/hil402_abstract.html" id="doc-d16877e8043-link">HIL402 Hardware User Guide</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">Official documentation of the HIL402 simulator hardware device.</span></p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="doc-d16877e8168" class="topicref" data-id="doc" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action doc-d16877e8168-link" class="wh-expand-btn"></span><div class="title"><a href="../../../t-ug001/hil404_user_guide/topics/hil404_abstract.html" id="doc-d16877e8168-link">HIL404 Hardware User Guide</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">Official documentation of the HIL404 simulator hardware device.</span></p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="doc-d16877e8282" class="topicref" data-id="doc" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action doc-d16877e8282-link" class="wh-expand-btn"></span><div class="title"><a href="../../../t-ug001/hil506_user_guide/topics/hil506_abstract.html" id="doc-d16877e8282-link">HIL506 Hardware User Guide</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">Official documentation of the HIL506 simulator hardware device.</span></p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="doc-d16877e8407" class="topicref" data-id="doc" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action doc-d16877e8407-link" class="wh-expand-btn"></span><div class="title"><a href="../../../t-ug001/hil602p_user_guide/topics/hil602p_abstract.html" id="doc-d16877e8407-link">HIL602+ Hardware User Guide</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">Official documentation of the HIL602+ simulator hardware device.</span></p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="doc-d16877e8533" class="topicref" data-id="doc" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action doc-d16877e8533-link" class="wh-expand-btn"></span><div class="title"><a href="../../../t-ug001/hil604_user_guide/topics/hil604_abstract.html" id="doc-d16877e8533-link">HIL604 Hardware User Guide</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">Official documentation of the HIL604 simulator hardware device.</span></p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="doc-d16877e8670" class="topicref" data-id="doc" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action doc-d16877e8670-link" class="wh-expand-btn"></span><div class="title"><a href="../../../t-ug001/hil606_user_guide/topics/hil606_abstract.html" id="doc-d16877e8670-link">HIL606 Hardware User Guide</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">Official documentation of the HIL606 simulator hardware device.</span></p></div></div></div></li><li role="treeitem" aria-expanded="true"><div data-tocid="doc-d16877e8795" class="topicref" data-id="doc" data-state="expanded"><span role="button" tabindex="0" aria-labelledby="button-collapse-action doc-d16877e8795-link" class="wh-expand-btn"></span><div class="title"><a href="../../../t-ug001/hil_paralleling_guide/topics/abstract.html" id="doc-d16877e8795-link">HIL Paralleling Guide</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">This document introduces the HIL paralleling concept, defines modeling of relevant link parameters, and explains how to properly connect multiple Typhoon HIL devices.</span></p></div></div></div><ul role="group" class="navbar-nav nav-list"><li role="treeitem"><div data-tocid="doc-d16877e8807" class="topicref page-break-after" data-id="doc" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../../../t-ug001/hil_paralleling_guide/concepts/introduction.html" id="doc-d16877e8807-link">Overview</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">Introduction to HIL Paralleling</span></p></div></div></div></li><li role="treeitem"><div data-tocid="doc-d16877e8819" class="topicref page-break-after" data-id="doc" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../../../t-ug001/hil_paralleling_guide/References/link_specification.html" id="doc-d16877e8819-link">High speed serial link specification</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">Detailed description of the link specification and parameters when paralleling HIL devices</span></p></div></div></div></li><li role="treeitem" class="active"><div data-tocid="doc-d16877e8831" class="topicref page-break-after" data-id="doc" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../../../t-ug001/hil_paralleling_guide/References/multi-hil_architecture.html" id="doc-d16877e8831-link">Multi-HIL system architecture parameters</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">In this section, modeling parameters for multi-HIL models are listed and described.</span></p></div></div></div></li><li role="treeitem"><div data-tocid="doc-d16877e8843" class="topicref page-break-after" data-id="doc" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../../../t-ug001/hil_paralleling_guide/References/hardware_setup.html" id="doc-d16877e8843-link">HW setup</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">Instructions on how to setup a parallel connection of hardware             devices.</span></p></div></div></div></li></ul></li><li role="treeitem" aria-expanded="false"><div data-tocid="doc-d16877e8862" class="topicref" data-id="doc" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action doc-d16877e8862-link" class="wh-expand-btn"></span><div class="title"><a href="../../../t-ug001/hil_interfacing_guide/topics/abstract.html" id="doc-d16877e8862-link">Hardware Interfacing Guide</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">Tips and examples on how to connect any controller to the HIL.</span></p></div></div></div></li></ul></li><li role="treeitem" aria-expanded="false"><div data-tocid="doc-d16877e8927" class="topicref" data-id="doc" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action doc-d16877e8927-link" class="wh-expand-btn"></span><div class="title"><a href="../../../t-ug001/hil_connect/topics/abstract.html" id="doc-d16877e8927-link">HIL Connect</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">Information about the HIL Connect, a 19" 6U interface device,             designed to adapt HIL IO signal levels to those most commonly used in the         industry.</span></p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="doc-d16877e9278" class="topicref" data-id="doc" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action doc-d16877e9278-link" class="wh-expand-btn"></span><div class="title"><a href="../../../t-ug001/abstract/HIL_interfaces.html" id="doc-d16877e9278-link">HIL Interfaces</a><div class="wh-tooltip"><p class="shortdesc">Collection of some of the guides on the deployment, use, and management of HIL Interfaces available from Typhoon HIL.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="doc-d16877e10605" class="topicref" data-id="doc" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action doc-d16877e10605-link" class="wh-expand-btn"></span><div class="title"><a href="../../../t-ug001/abstract/HIL_accessories.html" id="doc-d16877e10605-link">HIL Accessories</a><div class="wh-tooltip"><p class="shortdesc">Collection of some of the guides on the deployment, use, and management of Typhoon HIL accessories.</p></div></div></div></li></ul></li></ul></div>
+		                        
+                            </div>
+                        </nav>
+                    
+                    
+                    <div class="col-lg-9 col-md-9 col-sm-12" id="wh_topic_body">
+                        <button id="wh_close_publication_toc_button" class="close-toc-button d-none" aria-label="Toggle publishing table of content" aria-controls="wh_publication_toc" aria-expanded="true">
+                            <span class="close-toc-icon-container">
+                                <span class="close-toc-icon"></span>     
+                            </span>
+                        </button>
+                        
+                        
+                        <div class=" wh_topic_content body "><main role="main"><article role="article" aria-labelledby="ariaid-title1">
+    <h1 class="- topic/title title topictitle1" id="ariaid-title1">Multi-HIL system architecture parameters</h1>
+    
+    <div class="- topic/body reference/refbody body refbody"><p class="- topic/shortdesc shortdesc"><span class="- topic/ph ph" id="doc__description">In this section, modeling parameters for multi-HIL models are listed and described.</span></p>
+        <section class="- topic/section section" id="doc__N4bOREfOl" data-ofbid="doc__N4bOREfOl">
+            <table class="- topic/table table frame-all" id="doc__link_table" data-ofbid="doc__link_table" data-cols="7"><caption class="- topic/title title tablecap" data-caption-side="top" data-is-repeated="true"><span class="table--title-label">Table<span class="table--title-label-number"> 1</span><span class="table--title-label-punctuation">. </span></span><span class="table--title">High speed serial link parameters</span></caption><colgroup><col style="width:40%"/><col style="width:10%"/><col style="width:10%"/><col style="width:10%"/><col style="width:10%"/><col style="width:10%"/><col style="width:10%"/></colgroup><thead class="- topic/thead thead">
+                        <tr class="- topic/row">
+                            <th class="- topic/entry entry align-center colsep-1 rowsep-1" id="doc__link_table__entry__1">Parameter</th>
+                            <th class="- topic/entry entry align-center colsep-1 rowsep-1" id="doc__link_table__entry__2">HIL101</th>
+                            <th class="- topic/entry entry align-center colsep-1 rowsep-1" id="doc__link_table__entry__3">HIL404</th>
+                            <th class="- topic/entry entry align-center colsep-1 rowsep-1" id="doc__link_table__entry__4">HIL602+</th>
+                            <th class="- topic/entry entry align-center colsep-1 rowsep-1" id="doc__link_table__entry__5">HIL604</th>
+                            <th class="- topic/entry entry align-center colsep-1 rowsep-1" id="doc__link_table__entry__6">HIL506</th>
+                            <th class="- topic/entry entry align-center colsep-0 rowsep-1" id="doc__link_table__entry__7">HIL606</th>
+                        </tr>
+                    </thead><tbody class="- topic/tbody tbody">
+                        <tr class="- topic/row">
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__link_table__entry__1">Maximum number of devices in the chain</td>
+                            <td class="- topic/entry entry align-center colsep-1 rowsep-1" headers="doc__link_table__entry__2">4</td>
+                            <td class="- topic/entry entry align-center colsep-1 rowsep-1" headers="doc__link_table__entry__3">4</td>
+                            <td class="- topic/entry entry align-center colsep-1 rowsep-1" headers="doc__link_table__entry__4">4</td>
+                            <td class="- topic/entry entry align-center colsep-1 rowsep-1" headers="doc__link_table__entry__5">16</td>
+                            <td class="- topic/entry entry align-center colsep-1 rowsep-1" headers="doc__link_table__entry__6">16</td>
+                            <td class="- topic/entry entry align-center colsep-0 rowsep-1" headers="doc__link_table__entry__7">16</td>
+                        </tr>
+                        <tr class="- topic/row">
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__link_table__entry__1">Maximum number of electric variables that one SPC can send to and
+                                receive from SPCs in other devices<sup class="+ topic/ph hi-d/sup ph sup">1</sup></td>
+                            <td class="- topic/entry entry align-center colsep-1 rowsep-1" headers="doc__link_table__entry__2">8</td>
+                            <td class="- topic/entry entry align-center colsep-1 rowsep-1" headers="doc__link_table__entry__3">8</td>
+                            <td class="- topic/entry entry align-center colsep-1 rowsep-1" headers="doc__link_table__entry__4">8</td>
+                            <td class="- topic/entry entry align-center colsep-1 rowsep-1" headers="doc__link_table__entry__5">8</td>
+                            <td class="- topic/entry entry align-center colsep-1 rowsep-1" headers="doc__link_table__entry__6">8</td>
+                            <td class="- topic/entry entry align-center colsep-0 rowsep-1" headers="doc__link_table__entry__7">8</td>
+                        </tr>
+                        <tr class="- topic/row">
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__link_table__entry__1">Maximum number of electric variables that one device can send to
+                                and receive from other devices<sup class="+ topic/ph hi-d/sup ph sup">2</sup></td>
+                            <td class="- topic/entry entry align-center colsep-1 rowsep-1" headers="doc__link_table__entry__2">16</td>
+                            <td class="- topic/entry entry align-center colsep-1 rowsep-1" headers="doc__link_table__entry__3">16</td>
+                            <td class="- topic/entry entry align-center colsep-1 rowsep-1" headers="doc__link_table__entry__4">16</td>
+                            <td class="- topic/entry entry align-center colsep-1 rowsep-1" headers="doc__link_table__entry__5">16</td>
+                            <td class="- topic/entry entry align-center colsep-1 rowsep-1" headers="doc__link_table__entry__6">16</td>
+                            <td class="- topic/entry entry align-center colsep-0 rowsep-1" headers="doc__link_table__entry__7">16</td>
+                        </tr>
+                        <tr class="- topic/row">
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__link_table__entry__1">Maximum number of signal processing variables per
+                                    stream<sup class="+ topic/ph hi-d/sup ph sup">3</sup></td>
+                            <td class="- topic/entry entry align-center colsep-1 rowsep-1" headers="doc__link_table__entry__2">16</td>
+                            <td class="- topic/entry entry align-center colsep-1 rowsep-1" headers="doc__link_table__entry__3">16</td>
+                            <td class="- topic/entry entry align-center colsep-1 rowsep-1" headers="doc__link_table__entry__4">16</td>
+                            <td class="- topic/entry entry align-center colsep-1 rowsep-1" headers="doc__link_table__entry__5">16</td>
+                            <td class="- topic/entry entry align-center colsep-1 rowsep-1" headers="doc__link_table__entry__6">16</td>
+                            <td class="- topic/entry entry align-center colsep-0 rowsep-1" headers="doc__link_table__entry__7">16</td>
+                        </tr>
+                        <tr class="- topic/row">
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__link_table__entry__1">Maximum number of signal processing streams between two devices
+                                (in each direction)<sup class="+ topic/ph hi-d/sup ph sup">4</sup></td>
+                            <td class="- topic/entry entry align-center colsep-1 rowsep-1" headers="doc__link_table__entry__2">4</td>
+                            <td class="- topic/entry entry align-center colsep-1 rowsep-1" headers="doc__link_table__entry__3">4</td>
+                            <td class="- topic/entry entry align-center colsep-1 rowsep-1" headers="doc__link_table__entry__4">16</td>
+                            <td class="- topic/entry entry align-center colsep-1 rowsep-1" headers="doc__link_table__entry__5">16</td>
+                            <td class="- topic/entry entry align-center colsep-1 rowsep-1" headers="doc__link_table__entry__6">16</td>
+                            <td class="- topic/entry entry align-center colsep-0 rowsep-1" headers="doc__link_table__entry__7">16</td>
+                        </tr>
+                        <tr class="- topic/row">
+                            <td class="- topic/entry entry colsep-1 rowsep-0" headers="doc__link_table__entry__1">Simulation time synchronization<sup class="+ topic/ph hi-d/sup ph sup">5</sup></td>
+                            <td class="- topic/entry entry align-center colsep-1 rowsep-0" headers="doc__link_table__entry__2">Yes</td>
+                            <td class="- topic/entry entry align-center colsep-1 rowsep-0" headers="doc__link_table__entry__3">Yes</td>
+                            <td class="- topic/entry entry align-center colsep-1 rowsep-0" headers="doc__link_table__entry__4">Yes</td>
+                            <td class="- topic/entry entry align-center colsep-1 rowsep-0" headers="doc__link_table__entry__5">Yes</td>
+                            <td class="- topic/entry entry align-center colsep-1 rowsep-0" headers="doc__link_table__entry__6">Yes</td>
+                            <td class="- topic/entry entry align-center colsep-0 rowsep-0" headers="doc__link_table__entry__7">Yes</td>
+                        </tr>
+                    </tbody></table>
+            <ol class="- topic/ol ol">
+                <li class="- topic/li li"><p class="- topic/p p">Electrical variables between two devices are sent through the device coupling element. 
+                    Depending on the type of coupling element, the number of variables that the SPCs send are:</p>
+                    <ul class="- topic/ul ul">
+                        <li class="- topic/li li">Single Phase Device Coupling - one variable</li>
+                        <li class="- topic/li li">Three Phase Device Coupling - two variables</li>
+                        <li class="- topic/li li">Four Phase Device Coupling - three variables</li>
+                        <li class="- topic/li li">Single Phase TLM Device Coupling - one variable</li>
+                        <li class="- topic/li li">Three Phase TLM Device Coupling - three variables</li>
+                        <li class="- topic/li li">Four Phase TLM Device Coupling - three variables</li>
+                    </ul>
+                    <p class="- topic/p p">For example, with a HIL602+ device, it is possible to connect one SPC to
+                        other devices with at most 2 Three Phase Coupling Devices.</p>
+                </li>
+                <li class="- topic/li li">Independent of the previous constraint, it is possible to transfer up to 16 electric variables 
+                    from a part of model assigned to one HIL device to other parts of the model. This restriction 
+                    is made because of the transferring capacity of HIL devices.
+                </li>
+                <li class="- topic/li li">Signal processing variables are transferred between devices using the Device Transition component. 
+                    Every Device Transition component defines one stream. This restriction simply means you can 
+                    transfer up to 16 signal processing variables through one Device Transition.              
+                </li>
+                <li class="- topic/li li">Independent of the previous constraint, there is a maximum number of Device Transition components 
+                    between two devices. For example, you can connect two HIL 602+ devices with a maximum of 4 streams 
+                    (each with a maximum of 16 signal processing variables).</li>
+                <li class="- topic/li li">All paralleled HIL devices are synchronized with the master HIL (the HIL with ID0).</li>
+            </ol>
+        </section>
+    </div>
+</article></main></div>
+                        
+                        
+                        
+                        
+                        
+                        
+                    </div>
+                    
+                </div>
+            </div>
+            
+            
+            
+        </div> 
+        <footer class="navbar navbar-default wh_footer">
+  <div class=" footer-container mx-auto ">
+    <div style="text-align:center">Typhoon HIL Inc.<span id="year"> <a href="https://www.typhoon-hil.com">www.typhoon-hil.com</a></span></div>
+  </div>
+</footer>
+        
+        <div id="go2top" class="d-print-none">
+            <span class="oxy-icon oxy-icon-up"></span>
+        </div>
+        
+        <div id="modal_img_large" class="modal">
+            <span class="close oxy-icon oxy-icon-remove"></span>
+            <div id="modal_img_container"></div>
+            <div id="caption"></div>
+        </div>
+        
+        
+<script type="text/javascript" src="../../assets/script.js"> 
+</script>
+
+        
+    </body>
+</html>

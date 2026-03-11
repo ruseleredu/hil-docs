@@ -1,0 +1,416 @@
+<!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en" data-whc_version="24.1">
+    <head><link rel="shortcut icon" href="../../favicon.ico"/><link rel="icon" href="../../favicon.ico"/><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><meta name="DC.rights.owner" content="(C) Copyright 2026"/><meta name="copyright" content="(C) Copyright 2026"/><meta name="generator" content="DITA-OT"/><meta name="DC.type" content="reference"/><meta name="description" content="This application note presents how an off-the-shelf Battery Management System (BMS) can be tested in the Typhoon HIL environment. In the model described here, battery management is implemented using the Orion Jr 2 BMS."/><meta name="DC.relation" content="../../t-an001/concepts/battery_management_systems.html"/><meta name="DC.format" content="HTML5"/><meta name="DC.identifier" content="doc"/>        
+      <title>C-HIL example-Orion Jr 2 Battery Management</title><!--  Generated with Oxygen version 24.1, build number 2022030800.  --><meta name="wh-path2root" content="../../"/><meta name="wh-toc-id" content="doc-d16877e192"/><meta name="wh-source-relpath" content="t-an001/References/orion_bms_hil.dita"/><meta name="wh-out-relpath" content="t-an001/References/orion_bms_hil.html"/>
+    <!-- Latest compiled and minified Bootstrap CSS -->
+    <link rel="stylesheet" type="text/css" href="../../oxygen-webhelp/lib/bootstrap/css/bootstrap.min.css"/>
+    
+    <link rel="stylesheet" href="../../oxygen-webhelp/lib/jquery-ui/jquery-ui.min.css"/>
+    
+    <!-- Template default styles  -->
+    <link rel="stylesheet" type="text/css" href="../../oxygen-webhelp/app/topic-page.css?buildId=2022030800"/>
+    
+    
+    <script src="../../oxygen-webhelp/lib/jquery/jquery-3.5.1.min.js"></script>
+    
+    <script data-main="../../oxygen-webhelp/app/topic-page.js" src="../../oxygen-webhelp/lib/requirejs/require.js"></script>
+<link rel="stylesheet" type="text/css" href="../../oxygen-webhelp/template/oxygen.css?buildId=2022030800"/><link rel="stylesheet" type="text/css" href="../../oxygen-webhelp/template/notes.css?buildId=2022030800"/><script type="text/javascript" src="../../Scripts/mml-svg.js"> 
+</script><link rel="stylesheet" type="text/css" href="../../assets/typhoon.css"/></head>
+
+    <body id="doc" class="wh_topic_page frmBody">
+        <a href="#wh_topic_body" class="sr-only sr-only-focusable">
+            Jump to main content
+        </a>
+        
+        
+        
+        
+        <header class="navbar navbar-default wh_header">
+    <div class="container-fluid">
+        <div class="wh_header_flex_container navbar-nav navbar-expand-md navbar-dark">
+            <div class="wh_logo_and_publication_title_container">
+                <div class="wh_logo_and_publication_title">
+                    
+                    <a href="https://www.typhoon-hil.com" class=" wh_logo d-none d-sm-block "><img src="../../logo.svg" alt="  Typhoon HIL Documentation  Version: 2026.1  "/></a>
+                    <div class=" wh_publication_title "><a href="../../index.html"><span class="booktitle">  <span class="ph mainbooktitle">Typhoon HIL Documentation</span>  <span class="ph booktitlealt">Version: 2026.1</span>  </span></a></div>
+                    
+                </div>
+                
+                <button type="button" data-target="#wh_top_menu_and_indexterms_link" id="wh_menu_mobile_button" data-toggle="collapse" class="navbar-toggler collapsed wh_toggle_button" aria-expanded="false" aria-label="Toggle menu" aria-controls="wh_top_menu_and_indexterms_link">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+            </div>
+
+            <div class="wh_top_menu_and_indexterms_link collapse navbar-collapse" id="wh_top_menu_and_indexterms_link">
+                
+                <nav class=" wh_top_menu " aria-label="Menu Container"><ul role="menubar" aria-label="Menu"><li role="menuitem" aria-haspopup="true" aria-expanded="false" class="has-children"><span id="tocId-d16877e21-mi" data-tocid="tocId-d16877e21" data-state="not-ready" class=" topicref application-notes"><span class="title"><a href="../../t-an001/concepts/application_notes_introduction.html">Typhoon HIL Application Notes</a></span></span></li><li role="menuitem" aria-haspopup="true" aria-expanded="false" class="has-children"><span id="tocId-d16877e737-mi" data-tocid="tocId-d16877e737" data-state="not-ready" class=" topicref software-manual"><span class="title"><a href="../../t-ug002/topics/software_manual_introduction.html">Typhoon HIL Software Manual</a></span></span></li><li role="menuitem" aria-haspopup="true" aria-expanded="false" class="has-children"><span id="tocId-d16877e7901-mi" data-tocid="tocId-d16877e7901" data-state="not-ready" class=" topicref hardware-manual"><span class="title"><a href="../../t-ug001/abstract/hardware_manual_introduction.html">Typhoon HIL Hardware Manual</a></span></span></li></ul></nav>
+                
+                
+            </div>
+        </div>
+    </div>
+</header>
+        
+        
+         
+        
+        <div class=" wh_search_input navbar-form wh_topic_page_search search " role="form">
+            
+            
+            
+            <form id="searchForm" method="get" role="search" action="../../search.html"><div><input type="search" placeholder="Search " class="wh_search_textfield" id="textToSearch" name="searchQuery" aria-label="Search query" required="required"/><button type="submit" class="wh_search_button" aria-label="Search"><span class="search_input_text">Search</span></button></div></form>
+            
+            
+            
+        </div>
+        
+        <div class="container-fluid" id="wh_topic_container">
+            <div class="row">
+
+                <nav class="wh_tools d-print-none navbar-expand-md" aria-label="Tools">
+                    
+                    <div data-tooltip-position="bottom" class=" wh_breadcrumb "><ol class="d-print-none"><li><span class="home"><a href="../../index.html"><span>Home</span></a></span></li><li><div class="topicref application-notes"><div class="title"><a href="../../t-an001/concepts/application_notes_introduction.html">Typhoon HIL Application Notes</a></div></div></li><li><div class="topicref" data-id="doc"><div class="title"><a href="../../t-an001/concepts/battery_management_systems.html">Battery management systems</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">Battery management system (BMS) examples</span></p></div></div></div></li><li class="active"><div class="topicref" data-id="doc"><div class="title"><a href="../../t-an001/References/orion_bms_hil.html">C-HIL example-Orion Jr 2 Battery Management</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">This application note presents how an off-the-shelf Battery Management System (BMS) can be     tested in the Typhoon HIL environment. In the model described here, battery management is     implemented using the Orion Jr 2 BMS.</span></p></div></div></div></li></ol></div>
+                    
+                    
+                    
+                    <div class="wh_right_tools">
+                        <button class="wh_hide_highlight" aria-label="Toggle search highlights" title="Toggle search highlights"></button>
+                        <button class="webhelp_expand_collapse_sections" data-next-state="collapsed" aria-label="Collapse sections" title="Collapse sections"></button>
+                        
+                        
+                        
+                        
+                        <div class=" wh_print_link print d-none d-md-inline-block "><button onClick="window.print()" title="Print this page" aria-label="Print this page"></button></div>
+                        
+                        <button type="button" id="wh_toc_button" class="custom-toggler navbar-toggler collapsed wh_toggle_button navbar-light" aria-expanded="false" aria-label="Toggle publishing table of content" aria-controls="wh_publication_toc">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+                    </div>
+                    
+                </nav>
+            </div>
+            
+            
+            
+            
+            <div class="wh_content_area">
+                <div class="row">
+                    
+                        <nav id="wh_publication_toc" class="col-lg-3 col-md-3 col-sm-12 d-md-block d-none d-print-none" aria-label="Table of Contents Container">
+                            <div id="wh_publication_toc_content">
+		                        
+                            	<div class=" wh_publication_toc " data-tooltip-position="right"><span class="expand-button-action-labels"><span id="button-expand-action" role="button" aria-label="Expand"></span><span id="button-collapse-action" role="button" aria-label="Collapse"></span><span id="button-pending-action" role="button" aria-label="Pending"></span></span><ul role="tree" aria-label="Table of Contents"><li role="treeitem" aria-expanded="true"><div data-tocid="tocId-d16877e21" class="topicref application-notes" data-state="expanded"><span role="button" tabindex="0" aria-labelledby="button-collapse-action tocId-d16877e21-link" class="wh-expand-btn"></span><div class="title"><a href="../../t-an001/concepts/application_notes_introduction.html" id="tocId-d16877e21-link">Typhoon HIL Application Notes</a></div></div><ul role="group" class="navbar-nav nav-list"><li role="treeitem"><div data-tocid="doc-d16877e25" class="topicref" data-id="doc" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../../t-an001/concepts/application_notes_introduction.html" id="doc-d16877e25-link">Application Notes Introduction</a><div class="wh-tooltip"><p class="shortdesc">Brief overview of the different categories of Application Notes</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="doc-d16877e36" class="topicref" data-id="doc" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action doc-d16877e36-link" class="wh-expand-btn"></span><div class="title"><a href="../../t-an001/concepts/grid_connected_converters.html" id="doc-d16877e36-link">Grid-connected converters</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">Grid-connected converter applications featuring various grid support    functionalities.</span></p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="doc-d16877e96" class="topicref" data-id="doc" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action doc-d16877e96-link" class="wh-expand-btn"></span><div class="title"><a href="../../t-an001/concepts/automotive.html" id="doc-d16877e96-link">Automotive</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">Electric cars and other automotive applications.</span></p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="doc-d16877e132" class="topicref" data-id="doc" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action doc-d16877e132-link" class="wh-expand-btn"></span><div class="title"><a href="../../t-an001/concepts/aerospace.html" id="doc-d16877e132-link">Aerospace</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">System-level and component-level aircraft applications.</span></p></div></div></div></li><li role="treeitem" aria-expanded="true"><div data-tocid="doc-d16877e168" class="topicref" data-id="doc" data-state="expanded"><span role="button" tabindex="0" aria-labelledby="button-collapse-action doc-d16877e168-link" class="wh-expand-btn"></span><div class="title"><a href="../../t-an001/concepts/battery_management_systems.html" id="doc-d16877e168-link">Battery management systems</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">Battery management system (BMS) examples</span></p></div></div></div><ul role="group" class="navbar-nav nav-list"><li role="treeitem"><div data-tocid="doc-d16877e180" class="topicref" data-id="doc" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../../t-an001/References/battery_management_system.html" id="doc-d16877e180-link">Battery Management System</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">This application note presents an implementation of a Battery Management System (BMS) in   the Typhoon HIL environment. In the model described in this application note, the BMS logic is   implemented within the simulation using signal processing components such as the C function   component.</span></p></div></div></div></li><li role="treeitem" class="active"><div data-tocid="doc-d16877e192" class="topicref" data-id="doc" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../../t-an001/References/orion_bms_hil.html" id="doc-d16877e192-link">C-HIL example-Orion Jr 2 Battery Management</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">This application note presents how an off-the-shelf Battery Management System (BMS) can be     tested in the Typhoon HIL environment. In the model described here, battery management is     implemented using the Orion Jr 2 BMS.</span></p></div></div></div></li><li role="treeitem"><div data-tocid="doc-d16877e204" class="topicref" data-id="doc" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../../t-an001/References/foxbms_inspired_architecture.html" id="doc-d16877e204-link">BMS with FoxBMS inspired architecture</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">Detailed overview of the implementation of a battery management system (BMS) with an overall architecture inspired by the foxBMS® Open-Source Platform.</span></p></div></div></div></li></ul></li><li role="treeitem" aria-expanded="false"><div data-tocid="doc-d16877e216" class="topicref" data-id="doc" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action doc-d16877e216-link" class="wh-expand-btn"></span><div class="title"><a href="../../t-an001/concepts/how-to_guides.html" id="doc-d16877e216-link">How-to Guides</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">Guides, tips, and tricks on various aspects of Typhoon HIL toolchain usage.</span></p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="doc-d16877e312" class="topicref" data-id="doc" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action doc-d16877e312-link" class="wh-expand-btn"></span><div class="title"><a href="../../t-an001/concepts/communication_protocols.html" id="doc-d16877e312-link">Communication Protocols</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">Interoperability. Cybersecurity. Modbus, Sunspec, IEC61850, IEEE    C37.118, DNP3, CAN, OPC UA, and more.</span></p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="doc-d16877e384" class="topicref" data-id="doc" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action doc-d16877e384-link" class="wh-expand-btn"></span><div class="title"><a href="../../t-an001/concepts/power_systems.html" id="doc-d16877e384-link">Power Systems</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">Power system simulation. Relay protection testing. Power flow tool integration and   co-simulation.</span></p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="doc-d16877e468" class="topicref" data-id="doc" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action doc-d16877e468-link" class="wh-expand-btn"></span><div class="title"><a href="../../t-an001/concepts/microgrids.html" id="doc-d16877e468-link">Microgrids</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">Rapid microgrid pre-commissioning and system integration. Microgrid controller RCP and   testing.</span></p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="doc-d16877e552" class="topicref" data-id="doc" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action doc-d16877e552-link" class="wh-expand-btn"></span><div class="title"><a href="../../t-an001/concepts/electrical_drives.html" id="doc-d16877e552-link">Electrical Drives</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">Converters coupled with high-fidelity electrical machine models for high performance   motor drive applications.</span></p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="doc-d16877e601" class="topicref" data-id="doc" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action doc-d16877e601-link" class="wh-expand-btn"></span><div class="title"><a href="../../t-an001/concepts/power_supplies.html" id="doc-d16877e601-link">Power Supplies</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">Linear and switching power supplies for industrial and laboratory   applications.</span></p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="doc-d16877e625" class="topicref" data-id="doc" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action doc-d16877e625-link" class="wh-expand-btn"></span><div class="title"><a href="../../t-an001/concepts/marine_power_systems.html" id="doc-d16877e625-link">Marine Power Systems</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">Hybrid propulsion, shipboard power management, offshore renewables, offshore oil and   gas platform power supplies. </span></p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="doc-d16877e649" class="topicref" data-id="doc" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action doc-d16877e649-link" class="wh-expand-btn"></span><div class="title"><a href="../../t-an001/concepts/power_quality.html" id="doc-d16877e649-link">Power Quality</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">Real-time power quality/harmonic analysis. Incorporate active filters and FACTS devices (STATCOM, DVR,   SVC).</span></p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="doc-d16877e685" class="topicref" data-id="doc" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action doc-d16877e685-link" class="wh-expand-btn"></span><div class="title"><a href="../../t-an001/concepts/railway.html" id="doc-d16877e685-link">Railway</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">System-level and component-level application examples for railway    (traction) equipment.</span></p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="doc-d16877e709" class="topicref" data-id="doc" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action doc-d16877e709-link" class="wh-expand-btn"></span><div class="title"><a href="../../t-an001/concepts/medical_devices.html" id="doc-d16877e709-link">Medical Devices</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">X-ray, MRI, ICD, pacemakers, defibrillators, emergency ventilators, ECG, EMG,   bioelectronics.</span></p></div></div></div></li></ul></li></ul></div>
+		                        
+                            </div>
+                        </nav>
+                    
+                    
+                    <div class="col-lg-7 col-md-9 col-sm-12" id="wh_topic_body">
+                        <button id="wh_close_publication_toc_button" class="close-toc-button d-none" aria-label="Toggle publishing table of content" aria-controls="wh_publication_toc" aria-expanded="true">
+                            <span class="close-toc-icon-container">
+                                <span class="close-toc-icon"></span>     
+                            </span>
+                        </button>
+                        <button id="wh_close_topic_toc_button" class="close-toc-button d-none" aria-label="Toggle topic table of content" aria-controls="wh_topic_toc" aria-expanded="true">
+                            <span class="close-toc-icon-container">
+                                <span class="close-toc-icon"></span>     
+                            </span>
+                        </button>
+                        
+                        <div class=" wh_topic_content body "><main role="main"><article role="article" aria-labelledby="ariaid-title1">
+  <h1 class="- topic/title title topictitle1" id="ariaid-title1">C-HIL example-Orion Jr 2 Battery Management</h1>
+  
+ <div class="- topic/body reference/refbody body refbody"><p class="- topic/shortdesc shortdesc"><span class="- topic/ph ph" id="doc__description">This application note presents how an off-the-shelf Battery Management System (BMS) can be
+    tested in the Typhoon HIL environment. In the model described here, battery management is
+    implemented using the Orion Jr 2 BMS.</span></p> 
+   <section class="- topic/section section" id="doc__section_hqr_1zb_rz" data-ofbid="doc__section_hqr_1zb_rz"><h2 class="- topic/title title sectiontitle"><span class="- topic/ph ph" id="doc__an_title_intro">Introduction</span></h2>
+     
+     <p class="- topic/p p">A Battery Management System (BMS) is a system responsible for supervising and managing a
+        battery or battery pack, protecting it from operating outside of its safe operating region
+        (overvoltage, undervoltage, overtemperature, undertemperature, etc.). Another important
+        function of the BMS is balancing the battery cells to increase the longevity of each cell
+        and to improve the overall capacity of the battery pack. Control and monitoring functions
+        are applied to individual battery cells in the battery pack.</p>
+      <p class="- topic/p p">The main motivation for this application note is to show how the off-the-shelf <a class="- topic/xref xref" href="https://www.orionbms.com/products/orion-jr2-bms/" target="_blank" rel="external noopener"><u class="+ topic/ph hi-d/u ph u">Orion Jr 2 BMS</u></a> can also be tested in real-time using the Typhoon HIL
+        toolchain. This BMS is designed for Lithium-Ion battery packs with a nominal voltage of up
+        to 48 V and supports up to 16 serially connected cells.</p>
+  </section>
+  <section class="- topic/section section" id="doc__ictTBHwOS" data-ofbid="doc__ictTBHwOS"><h2 class="- topic/title title sectiontitle"><span class="- topic/ph ph" id="doc__an_title_model">Model description</span></h2>
+    
+    <p class="- topic/p p">The schematic is shown in <a class="- topic/xref xref" href="#doc__fig_jld_m5d_cvb">Figure 1</a>. The power stage also includes a simplified model of a charger
+      and a battery pack with 12 <a class="- topic/xref xref" href="../../t-ug002/References/battery_cell.html" title="Description of the Battery Cell component in Schematic Editor">Battery Cell</a> components connected in series. The Battery Cell
+        components provide very detailed battery cell representations, including diffusion
+        process, voltage hysteresis, and balancing circuit. All batteries are set equally as
+        lithium-ion and parametrized in accordance with the configurations set in the Orion Jr 2
+        BMS. In addition, the temperature of all batteries (input of the battery cell components) is
+        the same and can be changed in the simulation using a dedicated SCADA input. The nominal
+        value of the battery pack voltage is 48 V. The battery cell component is directly used from
+        the Source library category. More information about the component can be found in 
+      <a class="- topic/xref xref" href="../../t-ug002/References/battery_cell.html" title="Description of the Battery Cell component in Schematic Editor">its documentation</a>.</p>
+        <figure class="- topic/fig fig fignone" id="doc__fig_jld_m5d_cvb" data-ofbid="doc__fig_jld_m5d_cvb"><figcaption class="- topic/title title figcap"><span class="figtitleprefix fig--title-label">Figure<span class="fig--title-label-number"> 1</span><span class="fig--title-label-punctuation">. </span></span><span class="fig--title">Battery Pack connected to the charger.</span></figcaption>
+          
+          <img class="- topic/image image" id="doc__image_kld_m5d_cvb" src="../Images/bms_orion_1.png"/>
+        </figure>
+      
+      <p class="- topic/p p">The Orion IO block contains the interface between the Orion Jr 2 BMS and the Typhoon HIL device.
+        A CAN BUS subsystem is used for receiving messages about state of charge (SOC), state of
+        health (SOH), Voltages, Currents, and Balancing currents from the BMS. </p>
+      <p class="- topic/p p">When it comes to the Charger subsystem, the simplified model contains a controlled current
+        source whose value is set taking into account the charging and discharging current limits
+        received from the BMS via analog inputs. The current of the battery pack and the voltages of
+        the battery cells are measured in the simulation and sent to the BMS. The BMS calculates the
+        voltage of the battery pack from the cell voltages measured in the simulation.</p>
+      <p class="- topic/p p"><strong class="+ topic/ph hi-d/b ph b">Orion BMS operation</strong></p>
+      <p class="- topic/p p">The Orion Jr 2 BMS is intended to be used with 48 V Lithium battery packs. It receives the
+        measurements of the battery pack current, the cell voltages, cell temperatures, and
+        internal resistances, which it uses to estimate the SOC and SOH. The BMS's role is to ensure that 
+        batteries work within optimal safety conditions, and that electric charge is properly balanced 
+        across individual cells. The BMS also calculates currently available energy and maximum charging current
+        in relation to cell condition and temperature. For HIL simulation, the BMS is connected to the
+        simulated battery system and its simulated current sensor. Information on the battery during the 
+        simulation is sent from the HIL device to the Orion Jr 2 BMS via CAN communication. We use that
+        information to check whether the
+        simulated values and the measured values on Orion are comparable.</p>
+      <p class="- topic/p p">The Orion Jr 2 BMS has its own software (<u class="+ topic/ph hi-d/u ph u">Orion Jr 2 Software Utility</u>) that should be
+        downloaded in order to configure the BMS settings and allow us to compare the simulation
+        results with the ones estimated by the BMS.</p>
+  </section>
+  <section class="- topic/section section" id="doc__section_rlk_zw2_cvb" data-ofbid="doc__section_rlk_zw2_cvb"><h2 class="- topic/title title sectiontitle"><span class="- topic/ph ph" id="doc__an_title_simulation">Simulation</span></h2>
+      
+    <p class="- topic/p p">This example comes with a pre-built SCADA panel, shown in <a class="- topic/xref xref" href="#doc__fig_ypr_p5d_cvb">Figure 2</a>.
+      The root panel offers the most essential user interface elements to monitor and interact with the simulation
+        during runtime. You can customize it freely to fit your needs.</p>
+      <p class="- topic/p p">The SCADA panel allows you to observe the operation of the BMS and the behavior of the
+        battery pack through various widgets and scopes.</p>
+        <figure class="- topic/fig fig fignone" id="doc__fig_ypr_p5d_cvb" data-ofbid="doc__fig_ypr_p5d_cvb"><figcaption class="- topic/title title figcap"><span class="figtitleprefix fig--title-label">Figure<span class="fig--title-label-number"> 2</span><span class="fig--title-label-punctuation">. </span></span><span class="fig--title">orionjr2bms.cus SCADA panel</span></figcaption>
+          
+          <img class="- topic/image image" id="doc__image_zpr_p5d_cvb" src="../Images/bms_orion_2.png"/>
+        </figure>
+      
+      <p class="- topic/p p">On the left side of the SCADA panel, the 12 cells connected to the charger are represented,
+        and the direction of the current flowing through the pack is illustrated. There are also
+        measurements for the battery pack voltage and current. On the top right side, you can notice
+        the SOC measurement, calculated in the simulation.</p>
+      <p class="- topic/p p">The CAN sub-panel includes information received from the BMS through CAN communication,
+        such as the SOC value estimated by the BMS, SOH, and fault flags. Using the General Faults
+        sub-panel, it is possible to enable faults such as High temperature, Low temperature, and
+        Current Sensor Failure.</p>
+    <p class="- topic/p p">Each cell sub-panel (<a class="- topic/xref xref" href="#doc__fig_qkb_dmk_cvb">Figure 3</a>)
+      contains measurements such as cell terminal voltage and internal resistance. You can also insert shorted cell, disconnected cell, 
+      and weak cell faults.</p>
+      <p class="- topic/p p">The Shorted cell fault applies 0 V to the selected cell, while the Disconnected Cell fault
+        indicates to the BMS that a particular cell is disconnected by setting the corresponding
+        digital output to 0.</p>
+        <ul class="- topic/ul ul" id="doc__ul_ssw_tlk_cvb" data-ofbid="doc__ul_ssw_tlk_cvb">
+          <li class="- topic/li li">The Weak cell fault is triggered in the BMS when certain pre-programmed conditions are
+            met, which does not necessarily indicate a dead cell.</li>
+        </ul>
+      
+        <figure class="- topic/fig fig fignone" id="doc__fig_qkb_dmk_cvb" data-ofbid="doc__fig_qkb_dmk_cvb"><figcaption class="- topic/title title figcap"><span class="figtitleprefix fig--title-label">Figure<span class="fig--title-label-number"> 3</span><span class="fig--title-label-punctuation">. </span></span><span class="fig--title">Cell subsystem</span></figcaption>
+          
+          <img class="- topic/image image" id="doc__image_rkb_dmk_cvb" src="../Images/bms_orion_3.png"/>
+        </figure>
+      
+      <p class="- topic/p p">Within the Charger sub-panel you are able to read the actual current value as well as the
+        charge current limit, and discharge current limit.</p>
+    
+      <p class="- topic/p p">To compare results between the Orion software and those in Typhoon HIL SCADA, first ensure that
+        the Orion Jr 2 BMS is properly interfaced with the HIL device. Then, run the simulation in HIL SCADA 
+        and click <em class="+ topic/ph hi-d/i ph i">Connect to BMS</em> in the Orion software.
+        You can then import the BMS settings prepared
+        for this example. To do so, you should click on File, Load Profile from Disk, and select the
+          <em class="+ topic/ph hi-d/i ph i">bmsdefault.j2bms</em> file. This file is available in the same folder as
+        the example model. As shown in <a class="- topic/xref xref" href="#doc__fig_irx_hmk_cvb">Figure 4</a>,
+        you can use the Battery Profile tab to specify some general settings such as Maximum Cell Voltage, Minimum Cell Voltage,
+        enable/disable balancing, and specify balancing settings.</p>
+        <figure class="- topic/fig fig fignone" id="doc__fig_irx_hmk_cvb" data-ofbid="doc__fig_irx_hmk_cvb"><figcaption class="- topic/title title figcap"><span class="figtitleprefix fig--title-label">Figure<span class="fig--title-label-number"> 4</span><span class="fig--title-label-punctuation">. </span></span><span class="fig--title">Orion Jr 2 BMS Control Utility battery profile settings</span></figcaption>
+          
+          <img class="- topic/image image" id="doc__image_jrx_hmk_cvb" src="../Images/bms_orion_4.png"/>
+        </figure>
+      <p class="- topic/p p">The first test case presented here demonstrates the balancing feature, triggered when a given
+        cell voltage is out of the limits defined in the Orion software. In this example, the
+        maximum cell voltage is set to 4.1 V and the minimum cell voltage is set to 2.5 V. In 
+        Typhoon HIL SCADA, you can then trigger the balancing for a given cell by accessing its
+        sub-panel, manually specifying the voltage, and clicking VT Override. In <a class="- topic/xref xref" href="#doc__fig_b55_lmk_cvb">Figure 5</a>,
+        the voltage of cell 1 is overridden and set to 4 V.</p>
+        <p class="- topic/p p">As a consequence, after some seconds the LED of cell 1 in the SCADA root panel turns red, confirming that the passive balancing for that cell is now
+        active. If you open the Orion software and select the Live Cell Data tab you will be able to see
+        the voltage values in all cells and, in this case, cell 1 one would be marked in
+        red, confirming that the value is out of range and therefore balancing is active
+        for that cell.</p>
+        <figure class="- topic/fig fig fignone" id="doc__fig_b55_lmk_cvb" data-ofbid="doc__fig_b55_lmk_cvb"><figcaption class="- topic/title title figcap"><span class="figtitleprefix fig--title-label">Figure<span class="fig--title-label-number"> 5</span><span class="fig--title-label-punctuation">. </span></span><span class="fig--title">Orion Jr 2 BMS Control Utility balancing</span></figcaption>
+          
+          <img class="- topic/image image" id="doc__image_c55_lmk_cvb" src="../Images/bms_orion_5.png"/>
+        </figure>
+      <p class="- topic/p p">The balancing can be disabled in SCADA if you uncheck the Voltage Override checkbox or set
+        the cell voltage to a value within the defined cell voltage limits.</p>
+      <p class="- topic/p p"><a class="- topic/xref xref" href="#doc__fig_dnh_4mk_cvb">Figure 6</a> and <a class="- topic/xref xref" href="#doc__fig_z15_pmk_cvb">Figure 7</a> demonstrate BMS behavior in the case of a shorted cell fault. 
+        To force a fault, you can click on the Shorted Cell checkbox, within the cell subsystem. By doing that, the terminal voltage of this cell is set to 0 V. 
+        As a consequence, the cell that is shorted will be marked in red in Typhoon HIL SCADA, as shown in <a class="- topic/xref xref" href="#doc__fig_dnh_4mk_cvb">Figure 6</a>. 
+        In the Orion Software, you will receive a message informing you about a possible fault and will be able to confirm that
+        the voltage for this cell is 0. If you click on the Diagnostic tab, you will be able to see
+        that you have a fault detected and in which cell (<a class="- topic/xref xref" href="#doc__fig_z15_pmk_cvb">Figure 7</a>).</p>
+        <figure class="- topic/fig fig fignone" id="doc__fig_dnh_4mk_cvb" data-ofbid="doc__fig_dnh_4mk_cvb"><figcaption class="- topic/title title figcap"><span class="figtitleprefix fig--title-label">Figure<span class="fig--title-label-number"> 6</span><span class="fig--title-label-punctuation">. </span></span><span class="fig--title">Shorted cell in SCADA</span></figcaption>
+          
+          <img class="- topic/image image" id="doc__image_enh_4mk_cvb" src="../Images/bms_orion_6.png"/>
+        </figure>
+      
+      <figure class="- topic/fig fig fignone" id="doc__fig_z15_pmk_cvb" data-ofbid="doc__fig_z15_pmk_cvb"><figcaption class="- topic/title title figcap"><span class="figtitleprefix fig--title-label">Figure<span class="fig--title-label-number"> 7</span><span class="fig--title-label-punctuation">. </span></span><span class="fig--title">Shorted cell in Orion BMS</span></figcaption>
+        
+        <img class="- topic/image image" id="doc__image_ab5_pmk_cvb" src="../Images/bms_orion_7.png"/>
+      </figure>
+      <p class="- topic/p p">The Weak cell fault can be triggered by clicking on the Weak Cell checkbox, which sets the
+        SOH to a value significantly lower than the nominal one.</p>
+      <figure class="- topic/fig fig fignone" id="doc__fig_umk_smk_cvb" data-ofbid="doc__fig_umk_smk_cvb"><figcaption class="- topic/title title figcap"><span class="figtitleprefix fig--title-label">Figure<span class="fig--title-label-number"> 8</span><span class="fig--title-label-punctuation">. </span></span><span class="fig--title">Weak cell in Typhoon HIL SCADA</span></figcaption>
+        
+        <img class="- topic/image image" id="doc__image_vmk_smk_cvb" src="../Images/bms_orion_8.png"/>
+      </figure>
+    </section>
+    <section class="- topic/section section" id="doc__t6pWlscjp" data-ofbid="doc__t6pWlscjp"><h2 class="- topic/title title sectiontitle">Test automation</h2>
+      
+      <p class="- topic/p p">For this model, there is a pre-built automated test that you can use. 
+        Actions done in SCADA manually can be tested automatically through Typhoon Test.</p>
+      <p class="- topic/p p">In this automated test, the following test cases are covered:</p>
+        <ul class="- topic/ul ul" id="doc__ul_r3m_ynk_cvb" data-ofbid="doc__ul_r3m_ynk_cvb">
+          <li class="- topic/li li">Voltage pack</li>
+          <li class="- topic/li li">Cell balancing</li>
+          <li class="- topic/li li">Shorted cell</li>
+          <li class="- topic/li li">Weak cell</li>
+          <li class="- topic/li li">Open wiring fault</li>
+        </ul>
+      <p class="- topic/p p">When it comes to the Voltage pack test, a comparison between the voltage measurements in
+        the HIL simulation and in the Orion Jr 2 BMS are performed. The results are shown in <a class="- topic/xref xref" href="#doc__fig_fpw_cpk_cvb">Figure 9</a>.</p> 
+        <figure class="- topic/fig fig fignone" id="doc__fig_fpw_cpk_cvb" data-ofbid="doc__fig_fpw_cpk_cvb"><figcaption class="- topic/title title figcap"><span class="figtitleprefix fig--title-label">Figure<span class="fig--title-label-number"> 9</span><span class="fig--title-label-punctuation">. </span></span><span class="fig--title">Allure report for tests</span></figcaption>
+          
+          <img class="- topic/image image" id="doc__image_gpw_cpk_cvb" src="../Images/bms_orion_9.png"/>
+        </figure>
+      <p class="- topic/p p">The Cell balancing test verifies if the balancing is correctly activated in case the
+        voltage of a cell is out of its specified range. In this specific case, the cell voltage is
+        set to 4.3 V, while the maximum allowed voltage is set to 4.2 V. In a similar way, with the
+        remaining tests you can test the BMS response against Shorted Cell fault, Weak Cell, and
+        open wiring fault.</p>
+      <p class="- topic/p p">You can obtain a full test report by running the test from TyphoonTest IDE (for easy
+        access, press the "Run Test" button in the Example Explorer).</p>
+    </section>
+   
+   <section class="- topic/section section" id="doc__example_requirements" data-ofbid="doc__example_requirements"><h2 class="- topic/title title sectiontitle">Example requirements</h2>
+     
+     <p class="- topic/p p"><a class="- topic/xref xref" href="#doc__min_req">Table 1</a> provides detailed information about the file locations and hardware requirements 
+       for running the model in real-time, followed by the HIL device resource utilization when running the model using 
+       this minimal hardware configuration. This information is provided to help you with running and 
+       customizing the model as you see fit.</p>
+     <table class="- topic/table table frame-all" id="doc__min_req" data-ofbid="doc__min_req" data-cols="2"><caption class="- topic/title title tablecap" data-caption-side="top" data-is-repeated="true"><span class="table--title-label">Table<span class="table--title-label-number"> 1</span><span class="table--title-label-punctuation">. </span></span><span class="table--title"><span class="- topic/ph ph" id="doc__an_min-req">Minimum requirements</span></span></caption><colgroup><col style="width:50%"/><col style="width:50%"/></colgroup><thead class="- topic/thead thead">
+           <tr class="- topic/row">
+             <th class="- topic/entry entry align-center colsep-0 rowsep-1" id="doc__min_req__entry__1" colspan="2">Files</th>
+           </tr>
+         </thead><tbody class="- topic/tbody tbody">
+           <tr class="- topic/row">
+             <td class="- topic/entry entry align-center colsep-1 rowsep-1" headers="doc__min_req__entry__1"><span class="- topic/ph ph" id="doc__an_min-req_TH-files">Typhoon HIL files</span></td>
+             <td class="- topic/entry entry align-center colsep-0 rowsep-1" headers="doc__min_req__entry__1">
+               <p class="- topic/p p"><em class="+ topic/ph hi-d/i ph i">examples\models\hardware in the loop\orion_bms</em></p>
+               <p class="- topic/p p">orionjr2bms.tse</p>
+               <p class="- topic/p p">orionjr2bms.cus</p>
+               <p class="- topic/p p">bmsdefault.j2bms</p>
+               <p class="- topic/p p"><em class="+ topic/ph hi-d/i ph i">examples\tests\examples\tests\113_orion_bms\</em></p>
+               <p class="- topic/p p">test_orion_bms.py</p>
+             </td>
+           </tr>
+           <tr class="- topic/row">
+             <td class="- topic/entry entry align-center colsep-1 rowsep-1" headers="doc__min_req__entry__1">Externals</td>
+             <td class="- topic/entry entry align-center colsep-0 rowsep-1" headers="doc__min_req__entry__1">Orion Jr 2 Software Utility</td>
+           </tr>    
+           <tr class="- topic/row">
+            <td class="- topic/entry entry align-center colsep-0 rowsep-1" headers="doc__min_req__entry__1" colspan="2"><strong class="+ topic/ph hi-d/b ph b">Minimum hardware requirements</strong></td>
+            </tr>
+           <tr class="- topic/row">
+             <td class="- topic/entry entry align-center colsep-1 rowsep-1" headers="doc__min_req__entry__1"><span class="- topic/ph ph" id="doc__an_min-req_num-devices">No. of HIL devices</span></td>
+             <td class="- topic/entry entry align-center colsep-0 rowsep-1" headers="doc__min_req__entry__1"><span class="- topic/ph ph" id="doc__num_devices">1</span></td>
+           </tr>
+           <tr class="- topic/row">
+             <td class="- topic/entry entry align-center colsep-1 rowsep-1" headers="doc__min_req__entry__1"><span class="- topic/ph ph" id="doc__an_min-req_model-num">HIL device model</span></td>
+             <td class="- topic/entry entry align-center colsep-0 rowsep-1" headers="doc__min_req__entry__1"><span class="- topic/ph ph" id="doc__type_devices">HIL 604</span></td>
+           </tr>
+           <tr class="- topic/row">
+             <td class="- topic/entry entry align-center colsep-1 rowsep-1" headers="doc__min_req__entry__1"><a class="- topic/xref xref" href="../../t-ug002/concepts/device_manager.html" title="Device Manager is used to create, manipulate, and activate HIL device setups.">Device
+               configuration</a></td>
+             <td class="- topic/entry entry align-center colsep-0 rowsep-1" headers="doc__min_req__entry__1"><span class="- topic/ph ph" id="doc__num_config">1</span></td>
+           </tr>
+           <tr class="- topic/row">
+             <td class="- topic/entry entry align-center colsep-1 rowsep-1" headers="doc__min_req__entry__1"><span class="- topic/ph ph" id="doc__an_min-req_interface">Interface</span></td>
+             <td class="- topic/entry entry align-center colsep-0 rowsep-1" headers="doc__min_req__entry__1">HIL Connect, Orion 2 Jr BMS</td>
+           </tr>
+           <tr class="- topic/row">
+             <td class="- topic/entry entry align-center colsep-0 rowsep-1" headers="doc__min_req__entry__1" colspan="2"><strong class="+ topic/ph hi-d/b ph b">HIL device resource utilization</strong></td>
+           </tr>
+           <tr class="- topic/row">
+             <td class="- topic/entry entry align-center colsep-1 rowsep-1" headers="doc__min_req__entry__1"><span class="- topic/ph ph" id="doc__an_res-util_num-cores">No. of processing cores</span></td>
+             <td class="- topic/entry entry align-center colsep-0 rowsep-1" headers="doc__min_req__entry__1"><span class="- topic/ph ph" id="doc__num_cores">1</span></td>
+           </tr>
+           <tr class="- topic/row">
+             <td class="- topic/entry entry align-center colsep-1 rowsep-1" headers="doc__min_req__entry__1"><span class="- topic/ph ph" id="doc__an_res-util_max-memory">Max. matrix memory utilization</span></td>
+             <td class="- topic/entry entry align-center colsep-0 rowsep-1" headers="doc__min_req__entry__1">0.34%</td>
+           </tr>
+           <tr class="- topic/row">
+             <td class="- topic/entry entry align-center colsep-1 rowsep-1" headers="doc__min_req__entry__1"><span class="- topic/ph ph" id="doc__an_res-util_max-time">Max. time slot utilization</span></td>
+             <td class="- topic/entry entry align-center colsep-0 rowsep-1" headers="doc__min_req__entry__1">23.12%</td>
+           </tr>
+           <tr class="- topic/row">
+             <td class="- topic/entry entry align-center colsep-1 rowsep-1" headers="doc__min_req__entry__1"><span class="- topic/ph ph" id="doc__an_res-util_sim-step">Simulation step, electrical</span></td>
+             <td class="- topic/entry entry align-center colsep-0 rowsep-1" headers="doc__min_req__entry__1">1 µs</td>
+           </tr>
+           <tr class="- topic/row">
+             <td class="- topic/entry entry align-center colsep-1 rowsep-0" headers="doc__min_req__entry__1"><span class="- topic/ph ph" id="doc__an_res-util_exec-rate">Execution rate, signal processing</span></td>
+             <td class="- topic/entry entry align-center colsep-0 rowsep-0" headers="doc__min_req__entry__1">100 µs</td>
+           </tr>
+         </tbody></table>
+   </section>
+    <section class="- topic/section section" id="doc__section_er3_vnk_cvb" data-ofbid="doc__section_er3_vnk_cvb"><h2 class="- topic/title title sectiontitle"><span class="- topic/ph ph" id="doc__an_title_author">Authors</span></h2>
+      
+      <p class="- topic/p p">[1] Jovana Markovic</p>
+    </section>
+ </div>
+</article></main></div>
+                        
+                        
+                        
+                        
+                        
+                        
+                    </div>
+                    
+                        <nav role="navigation" id="wh_topic_toc" aria-label="On this page" class="col-lg-2 d-none d-lg-block navbar d-print-none"> 
+                            <div id="wh_topic_toc_content">
+		                        
+	                            <div class=" wh_topic_toc "><div class="wh_topic_label">On this page</div><ul><li class="section-item"><div class="section-title"><a href="#doc__section_hqr_1zb_rz" data-tocid="doc__section_hqr_1zb_rz"><span class="- topic/ph ph" id="doc__an_title_intro">Introduction</span></a></div></li><li class="section-item"><div class="section-title"><a href="#doc__ictTBHwOS" data-tocid="doc__ictTBHwOS"><span class="- topic/ph ph" id="doc__an_title_model">Model description</span></a></div></li><li class="section-item"><div class="section-title"><a href="#doc__section_rlk_zw2_cvb" data-tocid="doc__section_rlk_zw2_cvb"><span class="- topic/ph ph" id="doc__an_title_simulation">Simulation</span></a></div></li><li class="section-item"><div class="section-title"><a href="#doc__t6pWlscjp" data-tocid="doc__t6pWlscjp">Test automation</a></div></li><li class="section-item"><div class="section-title"><a href="#doc__example_requirements" data-tocid="doc__example_requirements">Example requirements</a></div></li><li class="section-item"><div class="section-title"><a href="#doc__section_er3_vnk_cvb" data-tocid="doc__section_er3_vnk_cvb"><span class="- topic/ph ph" id="doc__an_title_author">Authors</span></a></div></li></ul></div>
+	                        	
+                        	</div>
+                        </nav>
+                    
+                </div>
+            </div>
+            
+            
+            
+        </div> 
+        <footer class="navbar navbar-default wh_footer">
+  <div class=" footer-container mx-auto ">
+    <div style="text-align:center">Typhoon HIL Inc.<span id="year"> <a href="https://www.typhoon-hil.com">www.typhoon-hil.com</a></span></div>
+  </div>
+</footer>
+        
+        <div id="go2top" class="d-print-none">
+            <span class="oxy-icon oxy-icon-up"></span>
+        </div>
+        
+        <div id="modal_img_large" class="modal">
+            <span class="close oxy-icon oxy-icon-remove"></span>
+            <div id="modal_img_container"></div>
+            <div id="caption"></div>
+        </div>
+        
+        
+<script type="text/javascript" src="../../assets/script.js"> 
+</script>
+
+        
+    </body>
+</html>

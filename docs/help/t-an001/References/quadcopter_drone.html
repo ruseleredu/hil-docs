@@ -1,0 +1,738 @@
+<!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en" data-whc_version="24.1">
+    <head><link rel="shortcut icon" href="../../favicon.ico"/><link rel="icon" href="../../favicon.ico"/><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><meta name="DC.rights.owner" content="(C) Copyright 2026"/><meta name="copyright" content="(C) Copyright 2026"/><meta name="generator" content="DITA-OT"/><meta name="DC.type" content="reference"/><meta name="description" content="Real-time demonstration of quadcopter drone performance in both normal and fault conditions."/><meta name="DC.relation" content="../../t-an001/concepts/aerospace.html"/><meta name="DC.format" content="HTML5"/><meta name="DC.identifier" content="doc"/>        
+      <title>Quadcopter drone</title><!--  Generated with Oxygen version 24.1, build number 2022030800.  --><meta name="wh-path2root" content="../../"/><meta name="wh-toc-id" content="doc-d16877e156"/><meta name="wh-source-relpath" content="t-an001/References/quadcopter_drone.dita"/><meta name="wh-out-relpath" content="t-an001/References/quadcopter_drone.html"/>
+    <!-- Latest compiled and minified Bootstrap CSS -->
+    <link rel="stylesheet" type="text/css" href="../../oxygen-webhelp/lib/bootstrap/css/bootstrap.min.css"/>
+    
+    <link rel="stylesheet" href="../../oxygen-webhelp/lib/jquery-ui/jquery-ui.min.css"/>
+    
+    <!-- Template default styles  -->
+    <link rel="stylesheet" type="text/css" href="../../oxygen-webhelp/app/topic-page.css?buildId=2022030800"/>
+    
+    
+    <script src="../../oxygen-webhelp/lib/jquery/jquery-3.5.1.min.js"></script>
+    
+    <script data-main="../../oxygen-webhelp/app/topic-page.js" src="../../oxygen-webhelp/lib/requirejs/require.js"></script>
+<link rel="stylesheet" type="text/css" href="../../oxygen-webhelp/template/oxygen.css?buildId=2022030800"/><link rel="stylesheet" type="text/css" href="../../oxygen-webhelp/template/notes.css?buildId=2022030800"/><script type="text/javascript" src="../../Scripts/mml-svg.js"> 
+</script><link rel="stylesheet" type="text/css" href="../../assets/typhoon.css"/></head>
+
+    <body id="doc" class="wh_topic_page frmBody">
+        <a href="#wh_topic_body" class="sr-only sr-only-focusable">
+            Jump to main content
+        </a>
+        
+        
+        
+        
+        <header class="navbar navbar-default wh_header">
+    <div class="container-fluid">
+        <div class="wh_header_flex_container navbar-nav navbar-expand-md navbar-dark">
+            <div class="wh_logo_and_publication_title_container">
+                <div class="wh_logo_and_publication_title">
+                    
+                    <a href="https://www.typhoon-hil.com" class=" wh_logo d-none d-sm-block "><img src="../../logo.svg" alt="  Typhoon HIL Documentation  Version: 2026.1  "/></a>
+                    <div class=" wh_publication_title "><a href="../../index.html"><span class="booktitle">  <span class="ph mainbooktitle">Typhoon HIL Documentation</span>  <span class="ph booktitlealt">Version: 2026.1</span>  </span></a></div>
+                    
+                </div>
+                
+                <button type="button" data-target="#wh_top_menu_and_indexterms_link" id="wh_menu_mobile_button" data-toggle="collapse" class="navbar-toggler collapsed wh_toggle_button" aria-expanded="false" aria-label="Toggle menu" aria-controls="wh_top_menu_and_indexterms_link">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+            </div>
+
+            <div class="wh_top_menu_and_indexterms_link collapse navbar-collapse" id="wh_top_menu_and_indexterms_link">
+                
+                <nav class=" wh_top_menu " aria-label="Menu Container"><ul role="menubar" aria-label="Menu"><li role="menuitem" aria-haspopup="true" aria-expanded="false" class="has-children"><span id="tocId-d16877e21-mi" data-tocid="tocId-d16877e21" data-state="not-ready" class=" topicref application-notes"><span class="title"><a href="../../t-an001/concepts/application_notes_introduction.html">Typhoon HIL Application Notes</a></span></span></li><li role="menuitem" aria-haspopup="true" aria-expanded="false" class="has-children"><span id="tocId-d16877e737-mi" data-tocid="tocId-d16877e737" data-state="not-ready" class=" topicref software-manual"><span class="title"><a href="../../t-ug002/topics/software_manual_introduction.html">Typhoon HIL Software Manual</a></span></span></li><li role="menuitem" aria-haspopup="true" aria-expanded="false" class="has-children"><span id="tocId-d16877e7901-mi" data-tocid="tocId-d16877e7901" data-state="not-ready" class=" topicref hardware-manual"><span class="title"><a href="../../t-ug001/abstract/hardware_manual_introduction.html">Typhoon HIL Hardware Manual</a></span></span></li></ul></nav>
+                
+                
+            </div>
+        </div>
+    </div>
+</header>
+        
+        
+         
+        
+        <div class=" wh_search_input navbar-form wh_topic_page_search search " role="form">
+            
+            
+            
+            <form id="searchForm" method="get" role="search" action="../../search.html"><div><input type="search" placeholder="Search " class="wh_search_textfield" id="textToSearch" name="searchQuery" aria-label="Search query" required="required"/><button type="submit" class="wh_search_button" aria-label="Search"><span class="search_input_text">Search</span></button></div></form>
+            
+            
+            
+        </div>
+        
+        <div class="container-fluid" id="wh_topic_container">
+            <div class="row">
+
+                <nav class="wh_tools d-print-none navbar-expand-md" aria-label="Tools">
+                    
+                    <div data-tooltip-position="bottom" class=" wh_breadcrumb "><ol class="d-print-none"><li><span class="home"><a href="../../index.html"><span>Home</span></a></span></li><li><div class="topicref application-notes"><div class="title"><a href="../../t-an001/concepts/application_notes_introduction.html">Typhoon HIL Application Notes</a></div></div></li><li><div class="topicref" data-id="doc"><div class="title"><a href="../../t-an001/concepts/aerospace.html">Aerospace</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">System-level and component-level aircraft applications.</span></p></div></div></div></li><li class="active"><div class="topicref" data-id="doc"><div class="title"><a href="../../t-an001/References/quadcopter_drone.html">Quadcopter drone</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">Real-time demonstration of quadcopter drone performance in both normal and fault conditions.</span></p></div></div></div></li></ol></div>
+                    
+                    
+                    
+                    <div class="wh_right_tools">
+                        <button class="wh_hide_highlight" aria-label="Toggle search highlights" title="Toggle search highlights"></button>
+                        <button class="webhelp_expand_collapse_sections" data-next-state="collapsed" aria-label="Collapse sections" title="Collapse sections"></button>
+                        
+                        
+                        
+                        
+                        <div class=" wh_print_link print d-none d-md-inline-block "><button onClick="window.print()" title="Print this page" aria-label="Print this page"></button></div>
+                        
+                        <button type="button" id="wh_toc_button" class="custom-toggler navbar-toggler collapsed wh_toggle_button navbar-light" aria-expanded="false" aria-label="Toggle publishing table of content" aria-controls="wh_publication_toc">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+                    </div>
+                    
+                </nav>
+            </div>
+            
+            
+            
+            
+            <div class="wh_content_area">
+                <div class="row">
+                    
+                        <nav id="wh_publication_toc" class="col-lg-3 col-md-3 col-sm-12 d-md-block d-none d-print-none" aria-label="Table of Contents Container">
+                            <div id="wh_publication_toc_content">
+		                        
+                            	<div class=" wh_publication_toc " data-tooltip-position="right"><span class="expand-button-action-labels"><span id="button-expand-action" role="button" aria-label="Expand"></span><span id="button-collapse-action" role="button" aria-label="Collapse"></span><span id="button-pending-action" role="button" aria-label="Pending"></span></span><ul role="tree" aria-label="Table of Contents"><li role="treeitem" aria-expanded="true"><div data-tocid="tocId-d16877e21" class="topicref application-notes" data-state="expanded"><span role="button" tabindex="0" aria-labelledby="button-collapse-action tocId-d16877e21-link" class="wh-expand-btn"></span><div class="title"><a href="../../t-an001/concepts/application_notes_introduction.html" id="tocId-d16877e21-link">Typhoon HIL Application Notes</a></div></div><ul role="group" class="navbar-nav nav-list"><li role="treeitem"><div data-tocid="doc-d16877e25" class="topicref" data-id="doc" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../../t-an001/concepts/application_notes_introduction.html" id="doc-d16877e25-link">Application Notes Introduction</a><div class="wh-tooltip"><p class="shortdesc">Brief overview of the different categories of Application Notes</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="doc-d16877e36" class="topicref" data-id="doc" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action doc-d16877e36-link" class="wh-expand-btn"></span><div class="title"><a href="../../t-an001/concepts/grid_connected_converters.html" id="doc-d16877e36-link">Grid-connected converters</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">Grid-connected converter applications featuring various grid support    functionalities.</span></p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="doc-d16877e96" class="topicref" data-id="doc" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action doc-d16877e96-link" class="wh-expand-btn"></span><div class="title"><a href="../../t-an001/concepts/automotive.html" id="doc-d16877e96-link">Automotive</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">Electric cars and other automotive applications.</span></p></div></div></div></li><li role="treeitem" aria-expanded="true"><div data-tocid="doc-d16877e132" class="topicref" data-id="doc" data-state="expanded"><span role="button" tabindex="0" aria-labelledby="button-collapse-action doc-d16877e132-link" class="wh-expand-btn"></span><div class="title"><a href="../../t-an001/concepts/aerospace.html" id="doc-d16877e132-link">Aerospace</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">System-level and component-level aircraft applications.</span></p></div></div></div><ul role="group" class="navbar-nav nav-list"><li role="treeitem"><div data-tocid="doc-d16877e144" class="topicref" data-id="doc" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../../t-an001/References/npc_t_type_vienna_rectifier.html" id="doc-d16877e144-link">NPC T Type Vienna rectifier</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">Validation of the reliability of an NPC T Type Vienna rectifiers in shoot-through conditions.</span></p></div></div></div></li><li role="treeitem" class="active"><div data-tocid="doc-d16877e156" class="topicref" data-id="doc" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../../t-an001/References/quadcopter_drone.html" id="doc-d16877e156-link">Quadcopter drone</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">Real-time demonstration of quadcopter drone performance in both normal and fault conditions.</span></p></div></div></div></li></ul></li><li role="treeitem" aria-expanded="false"><div data-tocid="doc-d16877e168" class="topicref" data-id="doc" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action doc-d16877e168-link" class="wh-expand-btn"></span><div class="title"><a href="../../t-an001/concepts/battery_management_systems.html" id="doc-d16877e168-link">Battery management systems</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">Battery management system (BMS) examples</span></p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="doc-d16877e216" class="topicref" data-id="doc" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action doc-d16877e216-link" class="wh-expand-btn"></span><div class="title"><a href="../../t-an001/concepts/how-to_guides.html" id="doc-d16877e216-link">How-to Guides</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">Guides, tips, and tricks on various aspects of Typhoon HIL toolchain usage.</span></p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="doc-d16877e312" class="topicref" data-id="doc" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action doc-d16877e312-link" class="wh-expand-btn"></span><div class="title"><a href="../../t-an001/concepts/communication_protocols.html" id="doc-d16877e312-link">Communication Protocols</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">Interoperability. Cybersecurity. Modbus, Sunspec, IEC61850, IEEE    C37.118, DNP3, CAN, OPC UA, and more.</span></p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="doc-d16877e384" class="topicref" data-id="doc" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action doc-d16877e384-link" class="wh-expand-btn"></span><div class="title"><a href="../../t-an001/concepts/power_systems.html" id="doc-d16877e384-link">Power Systems</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">Power system simulation. Relay protection testing. Power flow tool integration and   co-simulation.</span></p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="doc-d16877e468" class="topicref" data-id="doc" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action doc-d16877e468-link" class="wh-expand-btn"></span><div class="title"><a href="../../t-an001/concepts/microgrids.html" id="doc-d16877e468-link">Microgrids</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">Rapid microgrid pre-commissioning and system integration. Microgrid controller RCP and   testing.</span></p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="doc-d16877e552" class="topicref" data-id="doc" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action doc-d16877e552-link" class="wh-expand-btn"></span><div class="title"><a href="../../t-an001/concepts/electrical_drives.html" id="doc-d16877e552-link">Electrical Drives</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">Converters coupled with high-fidelity electrical machine models for high performance   motor drive applications.</span></p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="doc-d16877e601" class="topicref" data-id="doc" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action doc-d16877e601-link" class="wh-expand-btn"></span><div class="title"><a href="../../t-an001/concepts/power_supplies.html" id="doc-d16877e601-link">Power Supplies</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">Linear and switching power supplies for industrial and laboratory   applications.</span></p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="doc-d16877e625" class="topicref" data-id="doc" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action doc-d16877e625-link" class="wh-expand-btn"></span><div class="title"><a href="../../t-an001/concepts/marine_power_systems.html" id="doc-d16877e625-link">Marine Power Systems</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">Hybrid propulsion, shipboard power management, offshore renewables, offshore oil and   gas platform power supplies. </span></p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="doc-d16877e649" class="topicref" data-id="doc" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action doc-d16877e649-link" class="wh-expand-btn"></span><div class="title"><a href="../../t-an001/concepts/power_quality.html" id="doc-d16877e649-link">Power Quality</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">Real-time power quality/harmonic analysis. Incorporate active filters and FACTS devices (STATCOM, DVR,   SVC).</span></p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="doc-d16877e685" class="topicref" data-id="doc" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action doc-d16877e685-link" class="wh-expand-btn"></span><div class="title"><a href="../../t-an001/concepts/railway.html" id="doc-d16877e685-link">Railway</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">System-level and component-level application examples for railway    (traction) equipment.</span></p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="doc-d16877e709" class="topicref" data-id="doc" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action doc-d16877e709-link" class="wh-expand-btn"></span><div class="title"><a href="../../t-an001/concepts/medical_devices.html" id="doc-d16877e709-link">Medical Devices</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">X-ray, MRI, ICD, pacemakers, defibrillators, emergency ventilators, ECG, EMG,   bioelectronics.</span></p></div></div></div></li></ul></li></ul></div>
+		                        
+                            </div>
+                        </nav>
+                    
+                    
+                    <div class="col-lg-7 col-md-9 col-sm-12" id="wh_topic_body">
+                        <button id="wh_close_publication_toc_button" class="close-toc-button d-none" aria-label="Toggle publishing table of content" aria-controls="wh_publication_toc" aria-expanded="true">
+                            <span class="close-toc-icon-container">
+                                <span class="close-toc-icon"></span>     
+                            </span>
+                        </button>
+                        <button id="wh_close_topic_toc_button" class="close-toc-button d-none" aria-label="Toggle topic table of content" aria-controls="wh_topic_toc" aria-expanded="true">
+                            <span class="close-toc-icon-container">
+                                <span class="close-toc-icon"></span>     
+                            </span>
+                        </button>
+                        
+                        <div class=" wh_topic_content body "><main role="main"><article role="article" aria-labelledby="ariaid-title1">
+ <h1 class="- topic/title title topictitle1" id="ariaid-title1">Quadcopter drone</h1>
+ 
+ <div class="- topic/body reference/refbody body refbody"><p class="- topic/shortdesc shortdesc"><span class="- topic/ph ph" id="doc__description">Real-time demonstration of quadcopter drone performance in both normal and fault conditions.</span></p>
+  <section class="- topic/section section" id="doc__section_hqr_1zb_rz" data-ofbid="doc__section_hqr_1zb_rz"><h2 class="- topic/title title sectiontitle"><span class="- topic/ph ph" id="doc__an_title_intro">Introduction</span></h2>
+   
+   <p class="- topic/p p">This quadcopter drone model provides an example of the ubiquitous propulsion system for
+    unmanned aerial vehicles (UAV) with four electric motors. Brushless DC motors (BLDC) are the
+    most popular type of electric motors used in drone applications.</p>
+   <p class="- topic/p p">This example model contains four Brushless DC motors supplied by power from a Lithium-Ion
+    battery. Propulsion system control allows the drone to take off and land vertically. This is
+    accomplished by setting equal throttle values to all drone motors, with two motors revolving in
+    the positive direction (anti-clockwise) and the other two revolving in the negative direction
+    (clockwise) to prevent rotating the drone around the vertical axis. Hence, the sum of the
+    mechanical torque exerted on the drone's body is approximately zero.</p>
+   <p class="- topic/p p">The implemented control algorithm is based on a Trapezoidal (six-step) control approach. It is
+    also possible to simulate drone operation under fault conditions by disconnecting the output of
+    the rotor position sensor in one of the motors.</p>
+   <p class="- topic/p p">This application example model implements a real-world BLDC motor with parameters that are
+    publicly available and can be found <a class="- topic/xref xref" href="https://store.tmotor.com/goods.php?id=768" target="_blank" rel="external noopener">here</a>. Therefore, the model demonstrates the use of
+    ready-to-use power electronics and machine components in order to build an aerospace
+    system-level application.</p>
+  </section>
+  <section class="- topic/section section" id="doc__section_lqh_zpl_y3b" data-ofbid="doc__section_lqh_zpl_y3b"><h2 class="- topic/title title sectiontitle"><span class="- topic/ph ph" id="doc__an_title_model">Model description</span></h2>
+   
+   <p class="- topic/p p">The model comprises of:</p>
+    <ul class="- topic/ul ul" id="doc__ul_r42_sld_xvb" data-ofbid="doc__ul_r42_sld_xvb">
+     <li class="- topic/li li">four subsystems, one for each motor</li>
+     <li class="- topic/li li">Li-Ion battery</li>
+     <li class="- topic/li li">Throttle and fault SCADA inputs</li>
+    </ul>
+   
+   <figure class="- topic/fig fig fignone" id="doc__fig_dzl_hks_1kb" data-ofbid="doc__fig_dzl_hks_1kb"><figcaption class="- topic/title title figcapcenter"><span class="figtitleprefix fig--title-label">Figure<span class="fig--title-label-number"> 1</span><span class="fig--title-label-punctuation">. </span></span><span class="fig--title">Drone propulsion system</span></figcaption>
+    
+    <div class="imagecenter break"><img class="- topic/image image imagecenter break" id="doc__image_ezl_hks_1kb" src="../Images/quadcopter_drone_01.jpg"/></div>
+   </figure>
+   <p class="- topic/p p">Subsystems are labeled with an identification number corresponding to the motor they emulate,
+    as shown in <a class="- topic/xref xref" href="#doc__fig_dzl_hks_1kb">Figure 1</a>. Each subsystem
+    contains an identical BLDC machine, a Three phase inverter with its corresponding control, power
+    measurements, and load and thrust calculation. The motor subsystems are based on the BLDC closed
+    loop sensor control example, available in the software installation.</p><figure class="- topic/fig fig fignone" id="doc__fig_vvd_njc_zvb" data-ofbid="doc__fig_vvd_njc_zvb"><figcaption class="- topic/title title figcap"><span class="figtitleprefix fig--title-label">Figure<span class="fig--title-label-number"> 2</span><span class="fig--title-label-punctuation">. </span></span><span class="fig--title">Motor subsystem</span></figcaption>
+     
+     <img class="- topic/image image" id="doc__image_wvd_njc_zvb" src="../Images/quadcopter_drone_02.jpg"/>
+    </figure>
+   <p class="- topic/p p">The Motor No.1 and Motor No.4 subsystems emulate two motors revolving in a positive direction
+    while the other two subsystems emulate two motors revolving in a negative direction. Different
+    revolving directions lead to slight modifications in the following components:</p><ul class="- topic/ul ul" id="doc__ul_znz_wyd_xvb" data-ofbid="doc__ul_znz_wyd_xvb">
+     <li class="- topic/li li">Commutation logic C function block </li>
+     <li class="- topic/li li">Regulators</li>
+     <li class="- topic/li li">Load and thrust polynomial coefficients in the Model initialization function</li>
+    </ul>
+   <p class="- topic/p p">The propulsion system in this model is realised using a BLDC machine with the following
+     parameters:</p><table class="- topic/table table frame-all" id="doc__table_xbq_gnv_yvb" data-ofbid="doc__table_xbq_gnv_yvb" data-cols="2"><caption class="- topic/title title tablecap" data-caption-side="top" data-is-repeated="true"><span class="table--title-label">Table<span class="table--title-label-number"> 1</span><span class="table--title-label-punctuation">. </span></span><span class="table--title">Electrical motor parameters</span></caption><colgroup><col style="width:50%"/><col style="width:50%"/></colgroup><tbody class="- topic/tbody tbody">
+       <tr class="- topic/row">
+        <td class="- topic/entry entry align-center colsep-1 rowsep-1">Type</td>
+        <td class="- topic/entry entry align-center colsep-0 rowsep-1">Brushless DC machine</td>
+       </tr>
+       <tr class="- topic/row">
+        <td class="- topic/entry entry align-center colsep-1 rowsep-1">Nominal voltage</td>
+        <td class="- topic/entry entry align-center colsep-0 rowsep-1">48 V</td>
+       </tr>
+       <tr class="- topic/row">
+        <td class="- topic/entry entry align-center colsep-1 rowsep-1">Maximum power</td>
+        <td class="- topic/entry entry align-center colsep-0 rowsep-1">1.95 kW</td>
+       </tr>
+       <tr class="- topic/row">
+        <td class="- topic/entry entry align-center colsep-1 rowsep-1">Maximum RPM</td>
+        <td class="- topic/entry entry align-center colsep-0 rowsep-1">4820</td>
+       </tr>
+       <tr class="- topic/row">
+        <td class="- topic/entry entry align-center colsep-1 rowsep-0">Number of pole pairs</td>
+        <td class="- topic/entry entry align-center colsep-0 rowsep-0">2</td>
+       </tr>
+      </tbody></table>
+   <p class="- topic/p p">The propulsion system is supplied by a Lithium-Ion battery with the following
+     parameters:</p><table class="- topic/table table frame-all" id="doc__table_ubw_f4v_yvb" data-ofbid="doc__table_ubw_f4v_yvb" data-cols="2"><caption class="- topic/title title tablecap" data-caption-side="top" data-is-repeated="true"><span class="table--title-label">Table<span class="table--title-label-number"> 2</span><span class="table--title-label-punctuation">. </span></span><span class="table--title">Battery parameters</span></caption><colgroup><col style="width:50%"/><col style="width:50%"/></colgroup><tbody class="- topic/tbody tbody">
+       <tr class="- topic/row">
+        <td class="- topic/entry entry align-center colsep-1 rowsep-1">Type</td>
+        <td class="- topic/entry entry align-center colsep-0 rowsep-1">Lithium-Ion</td>
+       </tr>
+       <tr class="- topic/row">
+        <td class="- topic/entry entry align-center colsep-1 rowsep-1">Nominal voltage</td>
+        <td class="- topic/entry entry align-center colsep-0 rowsep-1">48 V</td>
+       </tr>
+       <tr class="- topic/row">
+        <td class="- topic/entry entry align-center colsep-1 rowsep-0">Capacity</td>
+        <td class="- topic/entry entry align-center colsep-0 rowsep-0">30 Ah</td>
+       </tr>
+      </tbody></table>
+   <p class="- topic/p p">The semiconductor switches within the Three Phase Inverter component are controlled by the
+    Trapezoidal control algorithm implemented using Signal processing components. The switching
+    frequency is 10 kHz. The control module is shown in <a class="- topic/xref xref" href="#doc__fig_k2b_vkc_zvb">Figure 3</a>.</p>
+    <figure class="- topic/fig fig fignone" id="doc__fig_k2b_vkc_zvb" data-ofbid="doc__fig_k2b_vkc_zvb"><figcaption class="- topic/title title figcap"><span class="figtitleprefix fig--title-label">Figure<span class="fig--title-label-number"> 3</span><span class="fig--title-label-punctuation">. </span></span><span class="fig--title">Drive control module</span></figcaption>
+     
+     <img class="- topic/image image" id="doc__image_l2b_vkc_zvb" src="../Images/quadcopter_drone_03.jpg"/>
+    </figure>
+    <figure class="- topic/fig fig fignone" id="doc__fig_clt_jqc_zvb" data-ofbid="doc__fig_clt_jqc_zvb"><figcaption class="- topic/title title figcap"><span class="figtitleprefix fig--title-label">Figure<span class="fig--title-label-number"> 4</span><span class="fig--title-label-punctuation">. </span></span><span class="fig--title">BLDC machine waveforms implementing Trapezoidal control [1]</span></figcaption>
+     
+     <img class="- topic/image image" id="doc__image_dlt_jqc_zvb" src="../Images/quadcopter_drone_04.PNG"/>
+    </figure>
+   
+   <p class="- topic/p p">Trapezoidal control is illustrated by the waveforms shown in <a class="- topic/xref xref" href="#doc__fig_clt_jqc_zvb">Figure 4</a>, where:</p><ul class="- topic/ul ul">
+   <li class="- topic/li li">e<sub class="+ topic/ph hi-d/sub ph sub">as</sub>, e<sub class="+ topic/ph hi-d/sub ph sub">bs</sub>, e<sub class="+ topic/ph hi-d/sub ph sub">cs</sub> are the phase electromotive forces (EMF);</li>
+   <li class="- topic/li li">i<sub class="+ topic/ph hi-d/sub ph sub">as</sub>, i<sub class="+ topic/ph hi-d/sub ph sub">bs</sub>, i<sub class="+ topic/ph hi-d/sub ph sub">cs</sub> are the stator phase currents;</li>
+   <li class="- topic/li li">e<sub class="+ topic/ph hi-d/sub ph sub">as</sub>i<sub class="+ topic/ph hi-d/sub ph sub">as</sub>, e<sub class="+ topic/ph hi-d/sub ph sub">bs</sub>i<sub class="+ topic/ph hi-d/sub ph sub">bs</sub>, e<sub class="+ topic/ph hi-d/sub ph sub">cs</sub>i<sub class="+ topic/ph hi-d/sub ph sub">cs</sub> are
+    the generated torques per phase;</li>
+   <li class="- topic/li li">P<sub class="+ topic/ph hi-d/sub ph sub">o</sub> is the machine power output;</li>
+   <li class="- topic/li li">θ<sub class="+ topic/ph hi-d/sub ph sub">r</sub> is the rotor position in electrical degrees.</li></ul>
+   <p class="- topic/p p">During flat portions of the phase EMF, the coil must conduct constant current with the same
+    polarity as the EMF in order to maintain a constant machine output power. Position sensors
+    together with the <a class="- topic/xref xref" href="../../t-ug002/References/brushless_dc_machine.html#doc__table_omy_j4c_hmb">
+     flux waveform dependence on rotor electrical angle</a> table are used to determine the
+    precise moment to energize the coil.</p>
+   <p class="- topic/p p">The rotor position is given by a Hall Effect Sensor with a resolution of 60 degrees. The
+    sensor outputs one digital signal per phase, which is fed to the Commutation logic block where
+    the Trapezoidal control is implemented. In every instant, according to the rotor position, just
+    a pair of IGBTs are being driven- one top and one bottom switch from adjacent legs of the
+    three-phase full bridge inverter topology. Hence, one of the phases is always disconnected.
+    Moreover, in this example, once the pair of switches to be driven is defined, only the bottom
+    one will be modulated by a PWM signal. This way, the current ripple can be reduced. Notice that
+    the logic is different for positive and negative revolving motors, i.e. for the same combination
+    of position signals (digital inputs), the respective control logic drives a different pair of
+    switches in the inverter.</p>
+   <p class="- topic/p p">You can set the reference speed for every motor by setting the Throttle SCADA input. The
+    Throttle is a value ranging from 0% to 100% of the maximum speed (505 rad/s). For motors
+    revolving in negative direction, this reference speed will be multiplied by -1.</p>
+   <p class="- topic/p p">Two control loops are implemented in order to efficiently control the motor drives: speed and
+    current control loops. Due to the fact that only two phases are conducting in every instant, the
+    Current sampling logic uses the position sensor signals to determine which current will serve as
+    the actual current value for comparison with the reference current value from the outer loop.
+    The PI current regulator provides the duty cycle value for the PWM modulator, which is fully
+    implemented in the Signal processing domain. From the commutation logic and the regulators, the
+    gate drive signals for each IGBT within the inverter are defined.</p>
+   <p class="- topic/p p">Machine power output is calculated by multiplying the electrical torque and mechanical speed
+    and then filtering the signal from the high-frequency signal components.</p>
+   <p class="- topic/p p">Motor load is defined as a function of speed using a fourth order polynomial. </p>
+   <div class="- topic/p p">
+    <ul class="- topic/ul ul" id="doc__ul_unt_cyv_yvb" data-ofbid="doc__ul_unt_cyv_yvb">
+     <li class="- topic/li li">For motors with a positive revolving direction: <span class="+ topic/foreign mathml-d/mathml foreign mathml">
+       <math xmlns="http://www.w3.org/1998/Math/MathML">
+        <msup>
+         <mrow>
+          <mi>b</mi>
+          <mn>4</mn>
+          <mi>∙</mi>
+          <mi>x</mi>
+         </mrow>
+         <mrow>
+          <mn>4</mn>
+         </mrow>
+        </msup>
+        <mo>+</mo>
+        <mi>b</mi>
+        <mn>3</mn>
+        <mi>∙</mi>
+        <msup>
+         <mrow>
+          <mi>x</mi>
+         </mrow>
+         <mrow>
+          <mn>3</mn>
+         </mrow>
+        </msup>
+        <mo>+</mo>
+        <mi>b</mi>
+        <mn>2</mn>
+        <mi>∙</mi>
+        <msup>
+         <mrow>
+          <mi>x</mi>
+         </mrow>
+         <mrow>
+          <mn>2</mn>
+         </mrow>
+        </msup>
+        <mo>+</mo>
+        <mi>b</mi>
+        <mn>1</mn>
+        <mi>∙</mi>
+        <mi>x</mi>
+        <mo>+</mo>
+        <mi>b</mi>
+        <mn>0</mn>
+        <mo>=</mo>
+        <mn>0</mn>
+       </math>
+      </span>, where x is the motor mechanical speed [rpm] and b0, b1, b2, b3, and b4 are
+      polynomial coefficients.</li>
+     <li class="- topic/li li">For motors with a negative revolving direction: <span class="+ topic/foreign mathml-d/mathml foreign mathml">
+       <math xmlns="http://www.w3.org/1998/Math/MathML">
+        <msup>
+         <mrow>
+          <mi>c</mi>
+          <mn>4</mn>
+          <mi>∙</mi>
+          <mi>x</mi>
+         </mrow>
+         <mrow>
+          <mn>4</mn>
+         </mrow>
+        </msup>
+        <mo>+</mo>
+        <mi>c</mi>
+        <mn>3</mn>
+        <mi>∙</mi>
+        <msup>
+         <mrow>
+          <mi>x</mi>
+         </mrow>
+         <mrow>
+          <mn>3</mn>
+         </mrow>
+        </msup>
+        <mo>+</mo>
+        <mi>c</mi>
+        <mn>2</mn>
+        <mi>∙</mi>
+        <msup>
+         <mrow>
+          <mi>x</mi>
+         </mrow>
+         <mrow>
+          <mn>2</mn>
+         </mrow>
+        </msup>
+        <mo>+</mo>
+        <mi>c</mi>
+        <mn>1</mn>
+        <mi>∙</mi>
+        <mi>x</mi>
+        <mo>+</mo>
+        <mi>c</mi>
+        <mn>0</mn>
+        <mo>=</mo>
+        <mn>0</mn>
+       </math>
+      </span>, where x is the motor mechanical speed [rpm] and c0, c1, c2, c3, and c4 are
+      polynomial coefficients.</li>
+    </ul>
+   </div>
+   <p class="- topic/p p">The generated thrust is also defined as a function of machine speed using a fourth order
+    polynomial.</p>
+   <ul class="- topic/ul ul" id="doc__ul_kdt_yzv_yvb" data-ofbid="doc__ul_kdt_yzv_yvb">
+     <li class="- topic/li li">For motors with a positive revolving direction: <span class="+ topic/foreign mathml-d/mathml foreign mathml">
+       <math xmlns="http://www.w3.org/1998/Math/MathML">
+        <msup>
+         <mrow>
+          <mi>a</mi>
+          <mn>4</mn>
+          <mi>∙</mi>
+          <mi>x</mi>
+         </mrow>
+         <mrow>
+          <mn>4</mn>
+         </mrow>
+        </msup>
+        <mo>+</mo>
+        <mi>a</mi>
+        <mn>3</mn>
+        <mi>∙</mi>
+        <msup>
+         <mrow>
+          <mi>x</mi>
+         </mrow>
+         <mrow>
+          <mn>3</mn>
+         </mrow>
+        </msup>
+        <mo>+</mo>
+        <mi>a</mi>
+        <mn>2</mn>
+        <mi>∙</mi>
+        <msup>
+         <mrow>
+          <mi>x</mi>
+         </mrow>
+         <mrow>
+          <mn>2</mn>
+         </mrow>
+        </msup>
+        <mo>+</mo>
+        <mi>a</mi>
+        <mn>1</mn>
+        <mi>∙</mi>
+        <mi>x</mi>
+        <mo>+</mo>
+        <mi>a</mi>
+        <mn>0</mn>
+        <mo>=</mo>
+        <mn>0</mn>
+       </math>
+      </span>, where x is the motor mechanical speed [rpm] and a0, a1, a2, a3, and a4 are
+      polynomial coefficients.</li>
+     <li class="- topic/li li">For motors with a negative revolving direction: <span class="+ topic/foreign mathml-d/mathml foreign mathml">
+       <math xmlns="http://www.w3.org/1998/Math/MathML">
+        <msup>
+         <mrow>
+          <mi>d</mi>
+          <mn>4</mn>
+          <mi>∙</mi>
+          <mi>x</mi>
+         </mrow>
+         <mrow>
+          <mn>4</mn>
+         </mrow>
+        </msup>
+        <mo>+</mo>
+        <mi>d</mi>
+        <mn>3</mn>
+        <mi>∙</mi>
+        <msup>
+         <mrow>
+          <mi>x</mi>
+         </mrow>
+         <mrow>
+          <mn>3</mn>
+         </mrow>
+        </msup>
+        <mo>+</mo>
+        <mi>d</mi>
+        <mn>2</mn>
+        <mi>∙</mi>
+        <msup>
+         <mrow>
+          <mi>x</mi>
+         </mrow>
+         <mrow>
+          <mn>2</mn>
+         </mrow>
+        </msup>
+        <mo>+</mo>
+        <mi>d</mi>
+        <mn>1</mn>
+        <mi>∙</mi>
+        <mi>x</mi>
+        <mo>+</mo>
+        <mi>d</mi>
+        <mn>0</mn>
+        <mo>=</mo>
+        <mn>0</mn>
+       </math>
+      </span>, where x is the motor mechanical speed [rpm] and d0, d1, d2, d3, and d4 are
+      polynomial coefficients.</li>
+    </ul>
+   <p class="- topic/p p">All load and thrust polynomial coefficients are defined in the Model initialization
+    function.</p>
+   <p class="- topic/p p">The generated thrust of each motor is summed to acquire the thrust generated by the drone. </p>
+   <p class="- topic/p p">In addition to simulating under normal operating conditions, you can also simulate a fault
+    state in Motor No.4 by setting the Fault SCADA input to value 1. This action mimics a loss of
+    connection between the Hall Effect sensor and the motor drive controller.</p>
+   <p class="- topic/p p">Signal processing execution is divided on two CPU cores. Machine output signals, speed, and
+    current control loops are executed on CPU core 0. Gate drive signal generation is executed on
+    CPU core 1. To designate which core is utilized, a <a class="- topic/xref xref" href="../../t-ug002/References/cpu_marker.html" title="Description of the CPU marker component in Schematic Editor">CPU marker</a> component is used. CPU core 0
+    operates at two different execution rates in order to decouple speed and the current control
+    loop, while CPU core 1 operates on a single execution rate.</p>
+  </section>
+  <section class="- topic/section section" id="doc__section_urt_fvw_2jb" data-ofbid="doc__section_urt_fvw_2jb"><h2 class="- topic/title title sectiontitle"><span class="- topic/ph ph" id="doc__an_title_simulation">Simulation</span></h2>
+   
+   <p class="- topic/p p">This application comes with a pre-built SCADA panel (<a class="- topic/xref xref" href="#doc__fig_jvm_gwc_zvb">Figure 5</a>). The panel offers most essential
+    user interface elements (widgets) to monitor and interact with the simulation in runtime. You
+    can customize it freely to fit your needs.</p>
+    <figure class="- topic/fig fig fignone" id="doc__fig_jvm_gwc_zvb" data-ofbid="doc__fig_jvm_gwc_zvb"><figcaption class="- topic/title title figcap"><span class="figtitleprefix fig--title-label">Figure<span class="fig--title-label-number"> 5</span><span class="fig--title-label-punctuation">. </span></span><span class="fig--title">Quadcopter drone SCADA panel</span></figcaption>
+     
+     <img class="- topic/image image" id="doc__image_kvm_gwc_zvb" src="../Images/quadcopter_drone_05.jpg"/>
+    </figure>
+   <p class="- topic/p p">The SCADA panel allows you to monitor the state of each motor. It consists of:</p>
+   <ul class="- topic/ul ul" id="doc__ul_q15_bdl_xvb" data-ofbid="doc__ul_q15_bdl_xvb">
+     <li class="- topic/li li"><em class="+ topic/ph hi-d/i ph i">Motor</em> widget group;</li>
+     <li class="- topic/li li">Hall effect sensor fault checkbox;</li>
+     <li class="- topic/li li">Throttle slider;</li>
+     <li class="- topic/li li">Control options subpanel;</li>
+     <li class="- topic/li li">Battery SOC bar widget;</li>
+     <li class="- topic/li li">Capture/Scope widget.</li>
+    </ul>
+   <p class="- topic/p p">The Motor group widgets show the speed and thrust of each motor.</p>
+   <p class="- topic/p p">Checking the Hall sensor fault checkbox will set SCADA input Fault to value 1, emulating the
+    loss of communication between the Hall Effect sensor and the control algorithm in the Motor
+    No.4. </p>
+   <p class="- topic/p p">The <span class="+ topic/ph ui-d/uicontrol ph uicontrol">Throttle</span> slider sets the value for the Throttle SCADA input. This value is
+    propagated to all motors, setting an equal absolute value of speed reference for all of
+    them.</p>
+   <p class="- topic/p p">The <span class="+ topic/ph ui-d/uicontrol ph uicontrol">Control options</span> subpanel consists of Text box widgets for parametrization of speed
+    and current PI regulators of each motor. You can change proportional and integral gains for
+    every PI regulator in runtime.</p>
+   <p class="- topic/p p">The <span class="+ topic/ph ui-d/uicontrol ph uicontrol">Battery SOC</span> bar widget shows the current state of charge for the Li-Ion
+    battery.</p>
+   <p class="- topic/p p">The <span class="+ topic/ph ui-d/uicontrol ph uicontrol">Capture/Scope widget</span> allows you to
+    monitor important signals from the real-time simulation with a resolution up to 2 million points
+    per second. Phase EMF and current signals for Motor No. 4 are displayed as default settings of
+    the widget.</p>
+   <p class="- topic/p p">To evaluate the control algorithm and drone operation, start the simulation and set the
+    throttle slider to 50. In the Capture/Scope widget, switch to Capture mode and trigger it.
+    Obtained signals are shown in <a class="- topic/xref xref" href="#doc__fig_ejq_fxc_zvb">Figure 6</a>.</p>
+    <figure class="- topic/fig fig fignone" id="doc__fig_ejq_fxc_zvb" data-ofbid="doc__fig_ejq_fxc_zvb"><figcaption class="- topic/title title figcap"><span class="figtitleprefix fig--title-label">Figure<span class="fig--title-label-number"> 6</span><span class="fig--title-label-punctuation">. </span></span><span class="fig--title">Phase currents and EMFs for Motor No.4</span></figcaption>
+     
+     <img class="- topic/image image" id="doc__image_fjq_fxc_zvb" src="../Images/quadcopter_drone_06.jpg"/>
+    </figure>
+   <p class="- topic/p p">From these signals, we can distinguish the two main regions of current conduction for Motor
+    No.4. The first region is when current is conducted during the flat portions of phase EMF. In
+    this region, currents have the same polarity as the EMF signal, which is the intended behavior
+    when implementing a Trapezoidal control algorithm. The other region of current conduction is
+    during the slope periods with positive polarity of the phase EMF. Here, the accumulated magnetic
+    energy in the motor's windings is discharged through the free-wheeling diodes and the
+    corresponding top switch within the Three phase inverter. This current decreases electrical
+    toque produced by the machine, which can be seen as a drawback. <a class="- topic/xref xref" href="#doc__fig_gw1_rxc_zvb">Figure 7</a> displays the total mechanical torque
+    exerted on the drone's body.</p>
+    <figure class="- topic/fig fig fignone" id="doc__fig_gw1_rxc_zvb" data-ofbid="doc__fig_gw1_rxc_zvb"><figcaption class="- topic/title title figcap"><span class="figtitleprefix fig--title-label">Figure<span class="fig--title-label-number"> 7</span><span class="fig--title-label-punctuation">. </span></span><span class="fig--title">Mechanical torque exerted on drone's body</span></figcaption>
+     
+     <img class="- topic/image image" id="doc__image_hw1_rxc_zvb" src="../Images/quadcopter_drone_07.jpg"/>
+    </figure>
+   <p class="- topic/p p">As mentioned before, it is necessary to have a zero net mechanical torque exerted on the
+    drone's body in order to prevent the drone from rotating around its vertical axis and to provide
+    stability and steady flight. <a class="- topic/xref xref" href="#doc__fig_gw1_rxc_zvb">Figure 7</a>
+    demonstrates that the mean value of the net torque is approximately zero, as desired.</p>
+   <p class="- topic/p p"><a class="- topic/xref xref" href="#doc__fig_ebm_lyc_zvb">Figure 8</a> displays the absolute value
+    of the rotating speed for each motor.</p>
+    <figure class="- topic/fig fig fignone" id="doc__fig_ebm_lyc_zvb" data-ofbid="doc__fig_ebm_lyc_zvb"><figcaption class="- topic/title title figcap"><span class="figtitleprefix fig--title-label">Figure<span class="fig--title-label-number"> 8</span><span class="fig--title-label-punctuation">. </span></span><span class="fig--title">Rotating speed</span></figcaption>
+     
+     <img class="- topic/image image" id="doc__image_fbm_lyc_zvb" src="../Images/quadcopter_drone_08.jpg"/>
+    </figure>
+   <p class="- topic/p p">Using the following equation for calculating the reference speed: </p>
+   <p class="- topic/p p"><span class="+ topic/foreign mathml-d/mathml foreign mathml">
+     <math xmlns="http://www.w3.org/1998/Math/MathML">
+      <msub>
+       <mrow>
+        <mi>w</mi>
+       </mrow>
+       <mrow>
+        <mi>r</mi>
+        <mi>e</mi>
+        <mi>f</mi>
+       </mrow>
+      </msub>
+      <mo>=</mo>
+      <mi>T</mi>
+      <mi>h</mi>
+      <mi>r</mi>
+      <mi>o</mi>
+      <mi>t</mi>
+      <mi>t</mi>
+      <mi>l</mi>
+      <mi>e</mi>
+      <mo>/</mo>
+      <mn>100</mn>
+      <mo>∙</mo>
+      <msub>
+       <mrow>
+        <mi>w</mi>
+       </mrow>
+       <mrow>
+        <mi>m</mi>
+        <mi>a</mi>
+        <mi>x</mi>
+       </mrow>
+      </msub>
+     </math>
+    </span></p>
+   <p class="- topic/p p">and with w<sub class="+ topic/ph hi-d/sub ph sub">max</sub> equal to 505 rad/s and the throttle set to 50%, the calculated
+    reference speed is equal to 252.5 rad/s.</p>
+   <p class="- topic/p p"><a class="- topic/xref xref" href="#doc__fig_ebm_lyc_zvb">Figure 8</a> confirms that the mean value
+    of revolving speed for each motor is according to the expected value.</p>
+  </section>
+  <section class="- topic/section section" id="doc__test_automation" data-ofbid="doc__test_automation"><h2 class="- topic/title title sectiontitle">Test automation</h2>
+   
+   <p class="- topic/p p">The provided test script evaluates the drone responses under acceleration with different
+    throttle values (40%, 80% and 100%), the resultant mechanical torque exerted on the body of
+    drone, take off capability for different loads and recognition of fault states.</p>
+   <p class="- topic/p p">For each throttle input, the speed and mechanical torque of all four motors are captured and
+    the following assertions are tested:</p>
+   <ul class="- topic/ul ul" id="doc__ul_xbq_sp4_dsb" data-ofbid="doc__ul_xbq_sp4_dsb">
+    <li class="- topic/li li">speed is constant;</li>
+    <li class="- topic/li li">net torque exerted on the drone's body is constant (equal zero).</li> 
+   </ul>
+   <p class="- topic/p p">Two additional assertions are tested:</p><ul class="- topic/ul ul" id="doc__ul_mgg_3cc_zvb" data-ofbid="doc__ul_mgg_3cc_zvb">
+     <li class="- topic/li li">drone is able to take off with specified load; </li>
+     <li class="- topic/li li">loss of communication between position sensor and controller in Motor No.4 leads to control
+      breakdown.</li>
+    </ul>
+   <p class="- topic/p p"><a class="- topic/xref xref" href="#doc__fig_gyh_ccd_zvb">Figure 9</a> demonstrates part of the
+    generated test report, highlighting the net torque exerted on the drone's body for acceleration
+    at 80% throttle. All test conditions pass regarding the drone's air stability and reference
+    speed tracking.</p>
+    <figure class="- topic/fig fig fignone" id="doc__fig_gyh_ccd_zvb" data-ofbid="doc__fig_gyh_ccd_zvb"><figcaption class="- topic/title title figcap"><span class="figtitleprefix fig--title-label">Figure<span class="fig--title-label-number"> 9</span><span class="fig--title-label-punctuation">. </span></span><span class="fig--title">Mechanical torque exerted on drone's body for 80% throttle</span></figcaption>
+     
+     <img class="- topic/image image" id="doc__image_hyh_ccd_zvb" src="../Images/quadcopter_drone_09.jpg"/>
+    </figure>
+   <p class="- topic/p p"><a class="- topic/xref xref" href="#doc__fig_yqc_kcd_zvb">Figure 10</a> demonstrates the speed
+    response for Motor No.4 after a failure occurs on the position sensor connection. As expected,
+    this test fails since the motor doesn't follow the speed reference after the failure occurs (1 s
+    of simulation). Instead, its speed drops down to 0.</p>
+   <figure class="- topic/fig fig fignone" id="doc__fig_yqc_kcd_zvb" data-ofbid="doc__fig_yqc_kcd_zvb"><figcaption class="- topic/title title figcap"><span class="figtitleprefix fig--title-label">Figure<span class="fig--title-label-number"> 10</span><span class="fig--title-label-punctuation">. </span></span><span class="fig--title">Fault condition speed response</span></figcaption>
+     
+     <img class="- topic/image image" id="doc__image_zqc_kcd_zvb" src="../Images/quadcopter_drone_10.jpg"/>
+    </figure>
+   <p class="- topic/p p">In addition, the drone's launch capabilities with different load values are tested for two
+    throttle values (40% and 80%) and two load values (4 kg and 12 kg). All test cases pass except
+    the one with 40% throttle and 12 kg load. In this case, the drone's thrust force is not
+    sufficient for takeoff.</p>
+   <p class="- topic/p p">You can obtain a full test report by running the test from TyphoonTest IDE (for easy access,
+    press the "Open Test" button in <a class="- topic/xref xref" href="../../t-ug002/concepts/example_explorer.html" title="General Description of the Typhoon HIL Control Center Example Explorer.">Example Explorer</a>).</p>
+  </section>
+  <section class="- topic/section section" id="doc__example_requirements" data-ofbid="doc__example_requirements"><h2 class="- topic/title title sectiontitle">Example requirements</h2>
+   
+   <p class="- topic/p p"><a class="- topic/xref xref" href="#doc__min_req">Table 3</a> provides detailed information about the file locations and hardware requirements 
+    for running the model in real-time, followed by the HIL device resource utilization when running the model using 
+    this minimal hardware configuration. This information is provided to help you with running and 
+    customizing the model as you see fit.</p>
+   <table class="- topic/table table frame-all" id="doc__min_req" data-ofbid="doc__min_req" data-cols="2"><caption class="- topic/title title tablecap" data-caption-side="top" data-is-repeated="true"><span class="table--title-label">Table<span class="table--title-label-number"> 3</span><span class="table--title-label-punctuation">. </span></span><span class="table--title"><span class="- topic/ph ph" id="doc__an_min-req">Minimum requirements</span></span></caption><colgroup><col style="width:50%"/><col style="width:50%"/></colgroup><thead class="- topic/thead thead">
+      <tr class="- topic/row">
+       <th class="- topic/entry entry align-center colsep-0 rowsep-1" id="doc__min_req__entry__1" colspan="2">Files</th>
+      </tr>
+     </thead><tbody class="- topic/tbody tbody">
+      <tr class="- topic/row">
+       <td class="- topic/entry entry align-center colsep-1 rowsep-1" headers="doc__min_req__entry__1"><span class="- topic/ph ph" id="doc__an_min-req_TH-files">Typhoon HIL files</span></td>
+       <td class="- topic/entry entry align-center colsep-0 rowsep-1" headers="doc__min_req__entry__1">
+        <p class="- topic/p p"><em class="+ topic/ph hi-d/i ph i">examples\models\aerospace\quadcopter drone</em></p>
+        <p class="- topic/p p">quadcopter drone.tse</p>        
+         <p class="- topic/p p">quadcopter drone.cus</p>
+        <p class="- topic/p p"><em class="+ topic/ph hi-d/i ph i">examples\tests\113_quadcopter_drone\</em></p>
+        <p class="- topic/p p">test_quadcopter_drone.py</p>
+       </td>
+      </tr>
+      <tr class="- topic/row">
+       <td class="- topic/entry entry align-center colsep-0 rowsep-1" headers="doc__min_req__entry__1" colspan="2"><strong class="+ topic/ph hi-d/b ph b">Minimum hardware requirements</strong></td>
+      </tr>
+      <tr class="- topic/row">
+       <td class="- topic/entry entry align-center colsep-1 rowsep-1" headers="doc__min_req__entry__1"><span class="- topic/ph ph" id="doc__an_min-req_num-devices">No. of HIL devices</span></td>
+       <td class="- topic/entry entry align-center colsep-0 rowsep-1" headers="doc__min_req__entry__1"><span class="- topic/ph ph" id="doc__num_devices">1</span></td>
+      </tr>
+      <tr class="- topic/row">
+       <td class="- topic/entry entry align-center colsep-1 rowsep-1" headers="doc__min_req__entry__1"><span class="- topic/ph ph" id="doc__an_min-req_model-num">HIL device model</span></td>
+       <td class="- topic/entry entry align-center colsep-0 rowsep-1" headers="doc__min_req__entry__1"><span class="- topic/ph ph" id="doc__type_devices">HIL606</span></td>
+      </tr>
+      <tr class="- topic/row">
+       <td class="- topic/entry entry align-center colsep-1 rowsep-1" headers="doc__min_req__entry__1"><u class="+ topic/ph hi-d/u ph u"><a class="- topic/xref xref" href="../../t-ug002/concepts/device_manager.html" title="Device Manager is used to create, manipulate, and activate HIL device setups.">Device configuration</a></u></td>
+       <td class="- topic/entry entry align-center colsep-0 rowsep-1" headers="doc__min_req__entry__1"><span class="- topic/ph ph" id="doc__num_config">3 (Four Machine Solvers required)</span></td>
+      </tr>
+      <tr class="- topic/row">
+       <td class="- topic/entry entry align-center colsep-0 rowsep-1" headers="doc__min_req__entry__1" colspan="2"><strong class="+ topic/ph hi-d/b ph b">HIL device resource utilization</strong></td>
+      </tr>
+      <tr class="- topic/row">
+       <td class="- topic/entry entry align-center colsep-1 rowsep-1" headers="doc__min_req__entry__1"><span class="- topic/ph ph" id="doc__an_res-util_num-cores">No. of processing cores</span></td>
+       <td class="- topic/entry entry align-center colsep-0 rowsep-1" headers="doc__min_req__entry__1"><span class="- topic/ph ph" id="doc__num_cores">4</span></td>
+      </tr>
+      <tr class="- topic/row">
+       <td class="- topic/entry entry align-center colsep-1 rowsep-1" headers="doc__min_req__entry__1"><span class="- topic/ph ph" id="doc__an_res-util_max-memory">Max. matrix memory utilization</span></td>
+       <td class="- topic/entry entry align-center colsep-0 rowsep-1" headers="doc__min_req__entry__1">21.26%</td>
+      </tr>
+      <tr class="- topic/row">
+       <td class="- topic/entry entry align-center colsep-1 rowsep-1" headers="doc__min_req__entry__1"><span class="- topic/ph ph" id="doc__an_res-util_max-time">Max. time slot utilization</span></td>
+       <td class="- topic/entry entry align-center colsep-0 rowsep-1" headers="doc__min_req__entry__1">60%</td>
+      </tr>
+      <tr class="- topic/row">
+       <td class="- topic/entry entry align-center colsep-1 rowsep-1" headers="doc__min_req__entry__1"><span class="- topic/ph ph" id="doc__an_res-util_sim-step">Simulation step, electrical</span></td>
+       <td class="- topic/entry entry align-center colsep-0 rowsep-1" headers="doc__min_req__entry__1">0.5 µs</td>
+      </tr>
+      <tr class="- topic/row">
+       <td class="- topic/entry entry align-center colsep-1 rowsep-0" headers="doc__min_req__entry__1"><span class="- topic/ph ph" id="doc__an_res-util_exec-rate">Execution rate, signal processing</span></td>
+       <td class="- topic/entry entry align-center colsep-0 rowsep-0" headers="doc__min_req__entry__1">Multirate (5 μs, 25 μs, 50 μs)</td>
+      </tr>
+     </tbody></table>
+  </section>
+  <section class="- topic/section section" id="doc__section_qys_h4c_xtb" data-ofbid="doc__section_qys_h4c_xtb"><h2 class="- topic/title title sectiontitle">References</h2>
+    
+    <p class="- topic/p p">[1] Krishnan, R. (2017). <em class="+ topic/ph hi-d/i ph i">Permanent Magnet Synchronous and Brushless DC Motor Drives.</em>
+    CRC Press.</p>
+  </section>
+  <section class="- topic/section section" id="doc__authors" data-ofbid="doc__authors"><h2 class="- topic/title title sectiontitle">Authors</h2>
+   
+   <ol class="- topic/ol ol">
+    <li class="- topic/li li">Nikola Samardzic</li>
+   </ol>
+  </section>
+ </div>
+</article></main></div>
+                        
+                        
+                        
+                        
+                        
+                        
+                    </div>
+                    
+                        <nav role="navigation" id="wh_topic_toc" aria-label="On this page" class="col-lg-2 d-none d-lg-block navbar d-print-none"> 
+                            <div id="wh_topic_toc_content">
+		                        
+	                            <div class=" wh_topic_toc "><div class="wh_topic_label">On this page</div><ul><li class="section-item"><div class="section-title"><a href="#doc__section_hqr_1zb_rz" data-tocid="doc__section_hqr_1zb_rz"><span class="- topic/ph ph" id="doc__an_title_intro">Introduction</span></a></div></li><li class="section-item"><div class="section-title"><a href="#doc__section_lqh_zpl_y3b" data-tocid="doc__section_lqh_zpl_y3b"><span class="- topic/ph ph" id="doc__an_title_model">Model description</span></a></div></li><li class="section-item"><div class="section-title"><a href="#doc__section_urt_fvw_2jb" data-tocid="doc__section_urt_fvw_2jb"><span class="- topic/ph ph" id="doc__an_title_simulation">Simulation</span></a></div></li><li class="section-item"><div class="section-title"><a href="#doc__test_automation" data-tocid="doc__test_automation">Test automation</a></div></li><li class="section-item"><div class="section-title"><a href="#doc__example_requirements" data-tocid="doc__example_requirements">Example requirements</a></div></li><li class="section-item"><div class="section-title"><a href="#doc__section_qys_h4c_xtb" data-tocid="doc__section_qys_h4c_xtb">References</a></div></li><li class="section-item"><div class="section-title"><a href="#doc__authors" data-tocid="doc__authors">Authors</a></div></li></ul></div>
+	                        	
+                        	</div>
+                        </nav>
+                    
+                </div>
+            </div>
+            
+            
+            
+        </div> 
+        <footer class="navbar navbar-default wh_footer">
+  <div class=" footer-container mx-auto ">
+    <div style="text-align:center">Typhoon HIL Inc.<span id="year"> <a href="https://www.typhoon-hil.com">www.typhoon-hil.com</a></span></div>
+  </div>
+</footer>
+        
+        <div id="go2top" class="d-print-none">
+            <span class="oxy-icon oxy-icon-up"></span>
+        </div>
+        
+        <div id="modal_img_large" class="modal">
+            <span class="close oxy-icon oxy-icon-remove"></span>
+            <div id="modal_img_container"></div>
+            <div id="caption"></div>
+        </div>
+        
+        
+<script type="text/javascript" src="../../assets/script.js"> 
+</script>
+
+        
+    </body>
+</html>

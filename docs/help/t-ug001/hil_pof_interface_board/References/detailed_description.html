@@ -1,0 +1,712 @@
+<!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en" data-whc_version="24.1">
+    <head><link rel="shortcut icon" href="../../../favicon.ico"/><link rel="icon" href="../../../favicon.ico"/><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><meta name="DC.rights.owner" content="(C) Copyright 2026"/><meta name="copyright" content="(C) Copyright 2026"/><meta name="generator" content="DITA-OT"/><meta name="DC.type" content="reference"/><meta name="description" content="Detailed description of the HIL POF Interface Board"/><meta name="DC.relation" content="../../../t-ug001/hil_pof_interface_board/topics/abstract.html"/><meta name="DC.format" content="HTML5"/><meta name="DC.identifier" content="doc"/>        
+      <title>Detailed description</title><!--  Generated with Oxygen version 24.1, build number 2022030800.  --><meta name="wh-path2root" content="../../../"/><meta name="wh-toc-id" content="doc-d16877e10311"/><meta name="wh-source-relpath" content="t-ug001/hil_pof_interface_board/References/detailed_description.dita"/><meta name="wh-out-relpath" content="t-ug001/hil_pof_interface_board/References/detailed_description.html"/>
+    <!-- Latest compiled and minified Bootstrap CSS -->
+    <link rel="stylesheet" type="text/css" href="../../../oxygen-webhelp/lib/bootstrap/css/bootstrap.min.css"/>
+    
+    <link rel="stylesheet" href="../../../oxygen-webhelp/lib/jquery-ui/jquery-ui.min.css"/>
+    
+    <!-- Template default styles  -->
+    <link rel="stylesheet" type="text/css" href="../../../oxygen-webhelp/app/topic-page.css?buildId=2022030800"/>
+    
+    
+    <script src="../../../oxygen-webhelp/lib/jquery/jquery-3.5.1.min.js"></script>
+    
+    <script data-main="../../../oxygen-webhelp/app/topic-page.js" src="../../../oxygen-webhelp/lib/requirejs/require.js"></script>
+<link rel="stylesheet" type="text/css" href="../../../oxygen-webhelp/template/oxygen.css?buildId=2022030800"/><link rel="stylesheet" type="text/css" href="../../../oxygen-webhelp/template/notes.css?buildId=2022030800"/><script type="text/javascript" src="../../Scripts/mml-svg.js"> 
+</script><link rel="stylesheet" type="text/css" href="../../../assets/typhoon.css"/></head>
+
+    <body id="doc" class="wh_topic_page frmBody">
+        <a href="#wh_topic_body" class="sr-only sr-only-focusable">
+            Jump to main content
+        </a>
+        
+        
+        
+        
+        <header class="navbar navbar-default wh_header">
+    <div class="container-fluid">
+        <div class="wh_header_flex_container navbar-nav navbar-expand-md navbar-dark">
+            <div class="wh_logo_and_publication_title_container">
+                <div class="wh_logo_and_publication_title">
+                    
+                    <a href="https://www.typhoon-hil.com" class=" wh_logo d-none d-sm-block "><img src="../../../logo.svg" alt="  Typhoon HIL Documentation  Version: 2026.1  "/></a>
+                    <div class=" wh_publication_title "><a href="../../../index.html"><span class="booktitle">  <span class="ph mainbooktitle">Typhoon HIL Documentation</span>  <span class="ph booktitlealt">Version: 2026.1</span>  </span></a></div>
+                    
+                </div>
+                
+                <button type="button" data-target="#wh_top_menu_and_indexterms_link" id="wh_menu_mobile_button" data-toggle="collapse" class="navbar-toggler collapsed wh_toggle_button" aria-expanded="false" aria-label="Toggle menu" aria-controls="wh_top_menu_and_indexterms_link">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+            </div>
+
+            <div class="wh_top_menu_and_indexterms_link collapse navbar-collapse" id="wh_top_menu_and_indexterms_link">
+                
+                <nav class=" wh_top_menu " aria-label="Menu Container"><ul role="menubar" aria-label="Menu"><li role="menuitem" aria-haspopup="true" aria-expanded="false" class="has-children"><span id="tocId-d16877e21-mi" data-tocid="tocId-d16877e21" data-state="not-ready" class=" topicref application-notes"><span class="title"><a href="../../../t-an001/concepts/application_notes_introduction.html">Typhoon HIL Application Notes</a></span></span></li><li role="menuitem" aria-haspopup="true" aria-expanded="false" class="has-children"><span id="tocId-d16877e737-mi" data-tocid="tocId-d16877e737" data-state="not-ready" class=" topicref software-manual"><span class="title"><a href="../../../t-ug002/topics/software_manual_introduction.html">Typhoon HIL Software Manual</a></span></span></li><li role="menuitem" aria-haspopup="true" aria-expanded="false" class="has-children"><span id="tocId-d16877e7901-mi" data-tocid="tocId-d16877e7901" data-state="not-ready" class=" topicref hardware-manual"><span class="title"><a href="../../../t-ug001/abstract/hardware_manual_introduction.html">Typhoon HIL Hardware Manual</a></span></span></li></ul></nav>
+                
+                
+            </div>
+        </div>
+    </div>
+</header>
+        
+        
+         
+        
+        <div class=" wh_search_input navbar-form wh_topic_page_search search " role="form">
+            
+            
+            
+            <form id="searchForm" method="get" role="search" action="../../../search.html"><div><input type="search" placeholder="Search " class="wh_search_textfield" id="textToSearch" name="searchQuery" aria-label="Search query" required="required"/><button type="submit" class="wh_search_button" aria-label="Search"><span class="search_input_text">Search</span></button></div></form>
+            
+            
+            
+        </div>
+        
+        <div class="container-fluid" id="wh_topic_container">
+            <div class="row">
+
+                <nav class="wh_tools d-print-none navbar-expand-md" aria-label="Tools">
+                    
+                    <div data-tooltip-position="bottom" class=" wh_breadcrumb "><ol class="d-print-none"><li><span class="home"><a href="../../../index.html"><span>Home</span></a></span></li><li><div class="topicref hardware-manual"><div class="title"><a href="../../../t-ug001/abstract/hardware_manual_introduction.html">Typhoon HIL Hardware Manual</a></div></div></li><li><div class="topicref" data-id="doc"><div class="title"><a href="../../../t-ug001/abstract/HIL_interfaces.html">HIL Interfaces</a><div class="wh-tooltip"><p class="shortdesc">Collection of some of the guides on the deployment, use, and management of HIL Interfaces available from Typhoon HIL.</p></div></div></div></li><li><div class="topicref" data-id="doc"><div class="title"><a href="../../../t-ug001/hil_pof_interface_board/topics/abstract.html">HIL POF Interface Board</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">Information about the HIL POF Interface Board, an interface         board which allows for converting HIL voltage digital signals to Optical signals, and vice versa.</span></p></div></div></div></li><li class="active"><div class="topicref page-break-after" data-id="doc"><div class="title"><a href="../../../t-ug001/hil_pof_interface_board/References/detailed_description.html">Detailed description</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">Detailed description of the HIL POF Interface         Board</span></p></div></div></div></li></ol></div>
+                    
+                    
+                    
+                    <div class="wh_right_tools">
+                        <button class="wh_hide_highlight" aria-label="Toggle search highlights" title="Toggle search highlights"></button>
+                        <button class="webhelp_expand_collapse_sections" data-next-state="collapsed" aria-label="Collapse sections" title="Collapse sections"></button>
+                        
+                        
+                        
+                        
+                        <div class=" wh_print_link print d-none d-md-inline-block "><button onClick="window.print()" title="Print this page" aria-label="Print this page"></button></div>
+                        
+                        <button type="button" id="wh_toc_button" class="custom-toggler navbar-toggler collapsed wh_toggle_button navbar-light" aria-expanded="false" aria-label="Toggle publishing table of content" aria-controls="wh_publication_toc">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+                    </div>
+                    
+                </nav>
+            </div>
+            
+            
+            
+            
+            <div class="wh_content_area">
+                <div class="row">
+                    
+                        <nav id="wh_publication_toc" class="col-lg-3 col-md-3 col-sm-12 d-md-block d-none d-print-none" aria-label="Table of Contents Container">
+                            <div id="wh_publication_toc_content">
+		                        
+                            	<div class=" wh_publication_toc " data-tooltip-position="right"><span class="expand-button-action-labels"><span id="button-expand-action" role="button" aria-label="Expand"></span><span id="button-collapse-action" role="button" aria-label="Collapse"></span><span id="button-pending-action" role="button" aria-label="Pending"></span></span><ul role="tree" aria-label="Table of Contents"><li role="treeitem" aria-expanded="true"><div data-tocid="tocId-d16877e7901" class="topicref hardware-manual" data-state="expanded"><span role="button" tabindex="0" aria-labelledby="button-collapse-action tocId-d16877e7901-link" class="wh-expand-btn"></span><div class="title"><a href="../../../t-ug001/abstract/hardware_manual_introduction.html" id="tocId-d16877e7901-link">Typhoon HIL Hardware Manual</a></div></div><ul role="group" class="navbar-nav nav-list"><li role="treeitem"><div data-tocid="doc-d16877e7905" class="topicref" data-id="doc" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../../../t-ug001/abstract/hardware_manual_introduction.html" id="doc-d16877e7905-link">Hardware Manual Introduction</a><div class="wh-tooltip"><p class="shortdesc">Collection of some of the guides on the deployment, use, and management of Typhoon HIL hardware devices.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="doc-d16877e7916" class="topicref" data-id="doc" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action doc-d16877e7916-link" class="wh-expand-btn"></span><div class="title"><a href="../../../t-ug001/abstract/HIL_simulators.html" id="doc-d16877e7916-link">Typhoon HIL simulator devices</a><div class="wh-tooltip"><p class="shortdesc">Overview of the currently supported Typhoon HIL simulator devices.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="doc-d16877e8927" class="topicref" data-id="doc" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action doc-d16877e8927-link" class="wh-expand-btn"></span><div class="title"><a href="../../../t-ug001/hil_connect/topics/abstract.html" id="doc-d16877e8927-link">HIL Connect</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">Information about the HIL Connect, a 19" 6U interface device,             designed to adapt HIL IO signal levels to those most commonly used in the         industry.</span></p></div></div></div></li><li role="treeitem" aria-expanded="true"><div data-tocid="doc-d16877e9278" class="topicref" data-id="doc" data-state="expanded"><span role="button" tabindex="0" aria-labelledby="button-collapse-action doc-d16877e9278-link" class="wh-expand-btn"></span><div class="title"><a href="../../../t-ug001/abstract/HIL_interfaces.html" id="doc-d16877e9278-link">HIL Interfaces</a><div class="wh-tooltip"><p class="shortdesc">Collection of some of the guides on the deployment, use, and management of HIL Interfaces available from Typhoon HIL.</p></div></div></div><ul role="group" class="navbar-nav nav-list"><li role="treeitem" aria-expanded="false"><div data-tocid="doc-d16877e9292" class="topicref" data-id="doc" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action doc-d16877e9292-link" class="wh-expand-btn"></span><div class="title"><a href="../../../t-ug001/hil_dS_Interface_Type-A/topics/abstract.html" id="doc-d16877e9292-link">HIL dS Interface Type-A</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">Information about the HIL dS Interface Type-A, an interface             board which allows for connecting dSPACE hardware to Typhoon HIL         simulators.</span></p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="doc-d16877e9381" class="topicref" data-id="doc" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action doc-d16877e9381-link" class="wh-expand-btn"></span><div class="title"><a href="../../../t-ug001/hil_dS_Interface_Type-B/topics/abstract.html" id="doc-d16877e9381-link">HIL dS Interface Type-B</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">Information about the HIL dS Interface Type-B, an interface             board which allows for connecting dSPACE hardware to Typhoon HIL         simulators.</span></p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="doc-d16877e9482" class="topicref" data-id="doc" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action doc-d16877e9482-link" class="wh-expand-btn"></span><div class="title"><a href="../../../t-ug001/hil_dS_Interface_Type-C/topics/abstract.html" id="doc-d16877e9482-link">HIL dS Interface Type-C</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">Information about the HIL dS Interface Type-C, an interface             board which allows for connecting dSPACE hardware to Typhoon HIL         simulators.</span></p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="doc-d16877e9584" class="topicref" data-id="doc" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action doc-d16877e9584-link" class="wh-expand-btn"></span><div class="title"><a href="../../../t-ug001/hil_breakout_board/topics/abstract.html" id="doc-d16877e9584-link">HIL Breakout Board</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">Information about the HIL Breakout Board, a passive breakout board which provides easy access to individual HIL signals.</span></p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="doc-d16877e9685" class="topicref" data-id="doc" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action doc-d16877e9685-link" class="wh-expand-btn"></span><div class="title"><a href="../../../t-ug001/hil_remote_io/topics/abstract.html" id="doc-d16877e9685-link">HIL Remote IO Interface</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">Information about the HIL Remote IO Interface, a device for IO             expansion in HIL test setups.</span></p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="doc-d16877e9811" class="topicref" data-id="doc" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action doc-d16877e9811-link" class="wh-expand-btn"></span><div class="title"><a href="../../../t-ug001/hil_power_link_interface/topics/abstract.html" id="doc-d16877e9811-link">HIL Power Link Interface</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">Information about the HIL Power Link Interface designed for             converting electrical signals to optical signals, and vice versa.</span></p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="doc-d16877e9888" class="topicref" data-id="doc" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action doc-d16877e9888-link" class="wh-expand-btn"></span><div class="title"><a href="../../../t-ug001/hil_dsp_180_interface/topics/abstract.html" id="doc-d16877e9888-link">HIL DSP 180 Interface</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">Information about the HIL DSP 180 Interface, an interface board             which allows for connecting Texas Instruments Control Card boards to Typhoon HIL             simulators.</span></p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="doc-d16877e9965" class="topicref" data-id="doc" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action doc-d16877e9965-link" class="wh-expand-btn"></span><div class="title"><a href="../../../t-ug001/hil_ti_launchpad_interface/topics/abstract.html" id="doc-d16877e9965-link">HIL TI Launchpad Interface</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">Information about the HIL TI Launchpad Interface, an interface             board which allows for connecting TI's LaunchPad™ boards to Typhoon HIL         simulators.</span></p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="doc-d16877e10055" class="topicref" data-id="doc" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action doc-d16877e10055-link" class="wh-expand-btn"></span><div class="title"><a href="../../../t-ug001/hil_ti_ugrid_launchpad_interface/topics/abstract.html" id="doc-d16877e10055-link">HIL TI uGrid Launchpad Interface</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">Information about the HIL TI uGrid Launchpad Interface, an             interface board which allows for connecting up to three TI LaunchPad™ boards to Typhoon             HIL simulators.</span></p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="doc-d16877e10132" class="topicref" data-id="doc" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action doc-d16877e10132-link" class="wh-expand-btn"></span><div class="title"><a href="../../../t-ug001/hil_infineon_triboard_interface/topics/abstract.html" id="doc-d16877e10132-link">HIL Infineon TriBoard Interface </a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">Information about the HIL Infineon TriBoard Interface, an             interface board which allows for connecting Infineon TriBoard evaluation boards to             Typhoon HIL simulators.</span></p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="doc-d16877e10209" class="topicref" data-id="doc" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action doc-d16877e10209-link" class="wh-expand-btn"></span><div class="title"><a href="../../../t-ug001/hil_nucleo-64_interface/topics/abstract.html" id="doc-d16877e10209-link">HIL Nucleo-64 Interface</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">Information about the HIL Nucleo-64 Interface, an interface board             which allows for seamlessly connecting STM Nucleo-64™ development kits to Typhoon HIL             simulators.</span></p></div></div></div></li><li role="treeitem" aria-expanded="true"><div data-tocid="doc-d16877e10287" class="topicref" data-id="doc" data-state="expanded"><span role="button" tabindex="0" aria-labelledby="button-collapse-action doc-d16877e10287-link" class="wh-expand-btn"></span><div class="title"><a href="../../../t-ug001/hil_pof_interface_board/topics/abstract.html" id="doc-d16877e10287-link">HIL POF Interface Board</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">Information about the HIL POF Interface Board, an interface         board which allows for converting HIL voltage digital signals to Optical signals, and vice versa.</span></p></div></div></div><ul role="group" class="navbar-nav nav-list"><li role="treeitem"><div data-tocid="doc-d16877e10299" class="topicref page-break-after" data-id="doc" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../../../t-ug001/hil_pof_interface_board/concepts/overview.html" id="doc-d16877e10299-link">Overview</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">Overview of the purpose and connectivity of the HIL POF             Interface Board</span></p></div></div></div></li><li role="treeitem" class="active"><div data-tocid="doc-d16877e10311" class="topicref page-break-after" data-id="doc" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../../../t-ug001/hil_pof_interface_board/References/detailed_description.html" id="doc-d16877e10311-link">Detailed description</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">Detailed description of the HIL POF Interface         Board</span></p></div></div></div></li><li role="treeitem"><div data-tocid="doc-d16877e10323" class="topicref page-break-after" data-id="doc" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../../../t-ug001/hil_pof_interface_board/References/mechanical.html" id="doc-d16877e10323-link">Mechanical</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">Dimensions and mechanical guidelines for the HIL POF Interface             Board</span></p></div></div></div></li><li role="treeitem"><div data-tocid="doc-d16877e10335" class="topicref page-break-after" data-id="doc" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../../../t-ug001/hil_pof_interface_board/References/scope_of_delivery.html" id="doc-d16877e10335-link">Scope of delivery</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">Scope of delivery of the HIL POF Interface Board         package</span></p></div></div></div></li></ul></li><li role="treeitem" aria-expanded="false"><div data-tocid="doc-d16877e10364" class="topicref" data-id="doc" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action doc-d16877e10364-link" class="wh-expand-btn"></span><div class="title"><a href="../../../t-ug001/hil_ccs_interface/topics/abstract.html" id="doc-d16877e10364-link">HIL CCS Interface</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">Information about the HIL CCS Interface, a dedicated module for testing smart     charge communication of electric vehicles and electric vehicle supply equipment.</span></p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="doc-d16877e10441" class="topicref" data-id="doc" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action doc-d16877e10441-link" class="wh-expand-btn"></span><div class="title"><a href="../../../t-ug001/hil_ev_charging_interface/topics/abstract.html" id="doc-d16877e10441-link">HIL Electric Vehicle Charging Interface</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">Information about the HIL Electric Vehicle Charging Interface             solution, a dedicated module for testing and validating Electric Vehicle Supply             Equipment (EVSE). This interface requires a connected power amplifier to         function.</span></p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="doc-d16877e10543" class="topicref" data-id="doc" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action doc-d16877e10543-link" class="wh-expand-btn"></span><div class="title"><a href="../../../t-ug001/hil_regatron_interface/topics/abstract.html" id="doc-d16877e10543-link">HIL Regatron Interface Device</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">Information about the HIL Regatron Interface Device, an interface             which allows for seamless communication between Regatron Power Source devices and             Typhoon HIL simulators.</span></p></div></div></div></li></ul></li><li role="treeitem" aria-expanded="false"><div data-tocid="doc-d16877e10605" class="topicref" data-id="doc" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action doc-d16877e10605-link" class="wh-expand-btn"></span><div class="title"><a href="../../../t-ug001/abstract/HIL_accessories.html" id="doc-d16877e10605-link">HIL Accessories</a><div class="wh-tooltip"><p class="shortdesc">Collection of some of the guides on the deployment, use, and management of Typhoon HIL accessories.</p></div></div></div></li></ul></li></ul></div>
+		                        
+                            </div>
+                        </nav>
+                    
+                    
+                    <div class="col-lg-7 col-md-9 col-sm-12" id="wh_topic_body">
+                        <button id="wh_close_publication_toc_button" class="close-toc-button d-none" aria-label="Toggle publishing table of content" aria-controls="wh_publication_toc" aria-expanded="true">
+                            <span class="close-toc-icon-container">
+                                <span class="close-toc-icon"></span>     
+                            </span>
+                        </button>
+                        <button id="wh_close_topic_toc_button" class="close-toc-button d-none" aria-label="Toggle topic table of content" aria-controls="wh_topic_toc" aria-expanded="true">
+                            <span class="close-toc-icon-container">
+                                <span class="close-toc-icon"></span>     
+                            </span>
+                        </button>
+                        
+                        <div class=" wh_topic_content body "><main role="main"><article role="article" aria-labelledby="ariaid-title1">
+    <h1 class="- topic/title title topictitle1" id="ariaid-title1">Detailed description</h1>
+    
+    <div class="- topic/body reference/refbody body refbody"><p class="- topic/shortdesc shortdesc"><span class="- topic/ph ph" id="doc__description">Detailed description of the HIL POF Interface
+        Board</span></p>
+        <section class="- topic/section section" id="doc__signal_spec" data-ofbid="doc__signal_spec"><h2 class="- topic/title title sectiontitle">Signal Specification</h2>
+            
+            <p class="- topic/p p"><a class="- topic/xref xref" href="#doc__electrical_signal">Table 1</a> describes the electrical characteristics of the Digital I/O signals, while 
+            <a class="- topic/xref xref" href="#doc__optical_signal">Table 2</a> describes the optical characteristics of the optical connectors.</p>
+            <table class="- topic/table table frame-all" id="doc__electrical_signal" data-ofbid="doc__electrical_signal" data-cols="6"><caption class="- topic/title title tablecap" data-caption-side="top" data-is-repeated="true"><span class="table--title-label">Table<span class="table--title-label-number"> 1</span><span class="table--title-label-punctuation">. </span></span><span class="table--title">Electrical Characteristics</span></caption><colgroup><col style="width:22.22222222222222%"/><col style="width:11.11111111111111%"/><col style="width:11.11111111111111%"/><col style="width:11.11111111111111%"/><col style="width:11.11111111111111%"/><col style="width:33.33333333333333%"/></colgroup><thead class="- topic/thead thead">
+                        <tr class="- topic/row">
+                            <th class="- topic/entry entry colsep-1 rowsep-1" id="doc__electrical_signal__entry__1">Type</th>
+                            <th class="- topic/entry entry colsep-1 rowsep-1" id="doc__electrical_signal__entry__2"># of Channels</th>
+                            <th class="- topic/entry entry colsep-1 rowsep-1" id="doc__electrical_signal__entry__3">Range</th>
+                            <th class="- topic/entry entry colsep-1 rowsep-1" id="doc__electrical_signal__entry__4">V<sub class="+ topic/ph hi-d/sub ph sub">H min</sub></th>
+                            <th class="- topic/entry entry colsep-1 rowsep-1" id="doc__electrical_signal__entry__5">V<sub class="+ topic/ph hi-d/sub ph sub">L max</sub></th>
+                            <th class="- topic/entry entry colsep-0 rowsep-1" id="doc__electrical_signal__entry__6">Comments</th>
+                        </tr>
+                    </thead><tbody class="- topic/tbody tbody">
+                        <tr class="- topic/row">
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__electrical_signal__entry__1">Digital Input</td>
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__electrical_signal__entry__2">32</td>
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__electrical_signal__entry__3">5 V</td>
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__electrical_signal__entry__4">3.5 V</td>
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__electrical_signal__entry__5">1.5 V</td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="doc__electrical_signal__entry__6">Input resistance: 100 kΩ</td>
+                        </tr>
+                        <tr class="- topic/row">
+                            <td class="- topic/entry entry colsep-1 rowsep-0" headers="doc__electrical_signal__entry__1">Digital Output</td>
+                            <td class="- topic/entry entry colsep-1 rowsep-0" headers="doc__electrical_signal__entry__2">32</td>
+                            <td class="- topic/entry entry colsep-1 rowsep-0" headers="doc__electrical_signal__entry__3">5 V</td>
+                            <td class="- topic/entry entry colsep-1 rowsep-0" headers="doc__electrical_signal__entry__4">4.5 V</td>
+                            <td class="- topic/entry entry colsep-1 rowsep-0" headers="doc__electrical_signal__entry__5">0.8 V</td>
+                            <td class="- topic/entry entry colsep-0 rowsep-0" headers="doc__electrical_signal__entry__6">Output resistance: 430 Ω</td>
+                        </tr>
+                    </tbody></table>
+            <table class="- topic/table table frame-all" id="doc__optical_signal" data-ofbid="doc__optical_signal" data-cols="4"><caption class="- topic/title title tablecap" data-caption-side="top" data-is-repeated="true"><span class="table--title-label">Table<span class="table--title-label-number"> 2</span><span class="table--title-label-punctuation">. </span></span><span class="table--title">Optical Characteristics</span></caption><colgroup><col style="width:22.22222222222222%"/><col style="width:11.11111111111111%"/><col style="width:22.22222222222222%"/><col style="width:44.44444444444444%"/></colgroup><thead class="- topic/thead thead">
+                        <tr class="- topic/row">
+                            <th class="- topic/entry entry colsep-1 rowsep-1" id="doc__optical_signal__entry__1">Type</th>
+                            <th class="- topic/entry entry colsep-1 rowsep-1" id="doc__optical_signal__entry__2"># of Channels</th>
+                            <th class="- topic/entry entry colsep-1 rowsep-1" id="doc__optical_signal__entry__3">Baud Rate</th>
+                            <th class="- topic/entry entry colsep-0 rowsep-1" id="doc__optical_signal__entry__4">Comments</th>
+                        </tr>
+                    </thead><tbody class="- topic/tbody tbody">
+                        <tr class="- topic/row">
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__optical_signal__entry__1">Input</td>
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__optical_signal__entry__2">32</td>
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__optical_signal__entry__3">50 Mbaud</td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="doc__optical_signal__entry__4">Based on <strong class="+ topic/ph hi-d/b ph b">AFBR-2634Z</strong></td>
+                        </tr>
+                        <tr class="- topic/row">
+                            <td class="- topic/entry entry colsep-1 rowsep-0" headers="doc__optical_signal__entry__1">Output</td>
+                            <td class="- topic/entry entry colsep-1 rowsep-0" headers="doc__optical_signal__entry__2">32</td>
+                            <td class="- topic/entry entry colsep-1 rowsep-0" headers="doc__optical_signal__entry__3">50 Mbaud</td>
+                            <td class="- topic/entry entry colsep-0 rowsep-0" headers="doc__optical_signal__entry__4">Based on <strong class="+ topic/ph hi-d/b ph b">AFBR-2634Z</strong></td>
+                        </tr>
+                    </tbody></table>
+        </section>
+        <section class="- topic/section section" id="doc__block_diagram" data-ofbid="doc__block_diagram"><h2 class="- topic/title title sectiontitle">Functional Specification</h2>
+            
+            <p class="- topic/p p">Inputs are implemented as OR logic between Optical inputs and Electrical Inputs. 
+                Electrical inputs are available on male DIL41612 connector (the pinout is same as on HIL Device).</p>
+            <figure class="- topic/fig fig fignone" id="doc__input_channel_block_diagram" data-ofbid="doc__input_channel_block_diagram"><figcaption class="- topic/title title figcap"><span class="figtitleprefix fig--title-label">Figure<span class="fig--title-label-number"> 1</span><span class="fig--title-label-punctuation">. </span></span><span class="fig--title">Input Channel Block Diagram</span></figcaption>
+                
+                <img class="- topic/image image" id="doc__image_qfg_rtp_5pb" src="../Images/hil_pof_interface_board_06.png"/>
+            </figure>
+            <p class="- topic/p p">Outputs are available as both Optical and electrical outputs. 
+                Electrical outputs are passthrough from the HIL simulator device and are available on the DIN41612 male connector. 
+                The pinout is the same as on the HIL device.</p>
+        </section>
+
+        <section class="- topic/section section" id="doc__pinout" data-ofbid="doc__pinout"><h2 class="- topic/title title sectiontitle">Pinout</h2>
+            
+            <p class="- topic/p p">The board is directly pluggable into the Analog I/O connector of any Typhoon HIL simulator device via the 
+                96 pin DIN 41612/IEC receptacle connector. Optical inputs and outputs are available on top side of the 
+                board, with channel markings printed on the board silkscreen as shown in <a class="- topic/xref xref" href="#doc__pinout_diagram">Figure 2</a>.</p>  
+            <figure class="- topic/fig fig fignone" id="doc__pinout_diagram" data-ofbid="doc__pinout_diagram"><figcaption class="- topic/title title figcap"><span class="figtitleprefix fig--title-label">Figure<span class="fig--title-label-number"> 2</span><span class="fig--title-label-punctuation">. </span></span><span class="fig--title">Optical Inputs and Outputs - TOP view</span></figcaption>
+                
+                <img class="- topic/image image" src="../Images/hil_pof_interface_board_03.png"/>
+            </figure>
+            <p class="- topic/p p"><a class="- topic/xref xref" href="#doc__table_im2_sfv_kpb">Table 3</a> shows how all Analog and Digital I/Os are mapped to the corresponding 
+            optical connectors.</p>
+                <table class="- topic/table table frame-all" id="doc__table_im2_sfv_kpb" data-ofbid="doc__table_im2_sfv_kpb" data-cols="12"><caption class="- topic/title title tablecap" data-caption-side="top" data-is-repeated="true"><span class="table--title-label">Table<span class="table--title-label-number"> 3</span><span class="table--title-label-punctuation">. </span></span><span class="table--title">DIN 41612 Male connectors</span></caption><colgroup><col style="width:8.196721311475411%"/><col style="width:8.196721311475411%"/><col style="width:8.196721311475411%"/><col style="width:8.196721311475411%"/><col style="width:8.196721311475411%"/><col style="width:8.196721311475411%"/><col style="width:8.196721311475411%"/><col style="width:8.196721311475411%"/><col style="width:8.196721311475411%"/><col style="width:8.196721311475411%"/><col style="width:8.196721311475411%"/><col style="width:9.836065573770492%"/></colgroup><thead class="- topic/thead thead">
+                            <tr class="- topic/row">
+                                <th class="- topic/entry entry colsep-1 rowsep-1" id="doc__table_im2_sfv_kpb__entry__1" colspan="6">Analog I/O Connector</th>
+                                <th class="- topic/entry entry colsep-0 rowsep-1" id="doc__table_im2_sfv_kpb__entry__2" colspan="6">Digital I/O Connector</th>
+                            </tr>
+                            <tr class="- topic/row">
+                                <th class="- topic/entry entry colsep-1 rowsep-1" id="doc__table_im2_sfv_kpb__entry__3" colspan="2">Row A</th>
+                                <th class="- topic/entry entry colsep-1 rowsep-1" id="doc__table_im2_sfv_kpb__entry__4" colspan="2">Row B</th>
+                                <th class="- topic/entry entry colsep-1 rowsep-1" id="doc__table_im2_sfv_kpb__entry__5" colspan="2">Row C</th>
+                                <th class="- topic/entry entry colsep-1 rowsep-1" id="doc__table_im2_sfv_kpb__entry__6" colspan="2">Row A</th>
+                                <th class="- topic/entry entry colsep-1 rowsep-1" id="doc__table_im2_sfv_kpb__entry__7" colspan="2">Row B</th>
+                                <th class="- topic/entry entry colsep-0 rowsep-1" id="doc__table_im2_sfv_kpb__entry__8" colspan="2">Row C</th>
+                            </tr>
+                        </thead><tbody class="- topic/tbody tbody">
+                            <tr class="- topic/row">
+                                <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__table_im2_sfv_kpb__entry__1 doc__table_im2_sfv_kpb__entry__3">1</td>
+                                <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__table_im2_sfv_kpb__entry__1 doc__table_im2_sfv_kpb__entry__3">AO1</td>
+                                <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__table_im2_sfv_kpb__entry__1 doc__table_im2_sfv_kpb__entry__4">1</td>
+                                <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__table_im2_sfv_kpb__entry__1 doc__table_im2_sfv_kpb__entry__4">AO17</td>
+                                <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__table_im2_sfv_kpb__entry__1 doc__table_im2_sfv_kpb__entry__5">1</td>
+                                <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__table_im2_sfv_kpb__entry__1 doc__table_im2_sfv_kpb__entry__5">GND</td>
+                                <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__table_im2_sfv_kpb__entry__2 doc__table_im2_sfv_kpb__entry__6">1</td>
+                                <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__table_im2_sfv_kpb__entry__2 doc__table_im2_sfv_kpb__entry__6">DI1</td>
+                                <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__table_im2_sfv_kpb__entry__2 doc__table_im2_sfv_kpb__entry__7">1</td>
+                                <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__table_im2_sfv_kpb__entry__2 doc__table_im2_sfv_kpb__entry__7">DO1</td>
+                                <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__table_im2_sfv_kpb__entry__2 doc__table_im2_sfv_kpb__entry__8">1</td>
+                                <td class="- topic/entry entry colsep-0 rowsep-1" headers="doc__table_im2_sfv_kpb__entry__2 doc__table_im2_sfv_kpb__entry__8">+3.3 VD</td>
+                            </tr>
+                            <tr class="- topic/row">
+                                <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__table_im2_sfv_kpb__entry__1 doc__table_im2_sfv_kpb__entry__3">2</td>
+                                <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__table_im2_sfv_kpb__entry__1 doc__table_im2_sfv_kpb__entry__3">AO2</td>
+                                <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__table_im2_sfv_kpb__entry__1 doc__table_im2_sfv_kpb__entry__4">2</td>
+                                <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__table_im2_sfv_kpb__entry__1 doc__table_im2_sfv_kpb__entry__4">AO18</td>
+                                <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__table_im2_sfv_kpb__entry__1 doc__table_im2_sfv_kpb__entry__5">2</td>
+                                <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__table_im2_sfv_kpb__entry__1 doc__table_im2_sfv_kpb__entry__5">GND</td>
+                                <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__table_im2_sfv_kpb__entry__2 doc__table_im2_sfv_kpb__entry__6">2</td>
+                                <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__table_im2_sfv_kpb__entry__2 doc__table_im2_sfv_kpb__entry__6">DI2</td>
+                                <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__table_im2_sfv_kpb__entry__2 doc__table_im2_sfv_kpb__entry__7">2</td>
+                                <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__table_im2_sfv_kpb__entry__2 doc__table_im2_sfv_kpb__entry__7">DO2</td>
+                                <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__table_im2_sfv_kpb__entry__2 doc__table_im2_sfv_kpb__entry__8">2</td>
+                                <td class="- topic/entry entry colsep-0 rowsep-1" headers="doc__table_im2_sfv_kpb__entry__2 doc__table_im2_sfv_kpb__entry__8">+3.3 VD</td>
+                            </tr>
+                            <tr class="- topic/row">
+                                <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__table_im2_sfv_kpb__entry__1 doc__table_im2_sfv_kpb__entry__3">3</td>
+                                <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__table_im2_sfv_kpb__entry__1 doc__table_im2_sfv_kpb__entry__3">AO3</td>
+                                <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__table_im2_sfv_kpb__entry__1 doc__table_im2_sfv_kpb__entry__4">3</td>
+                                <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__table_im2_sfv_kpb__entry__1 doc__table_im2_sfv_kpb__entry__4">AO19</td>
+                                <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__table_im2_sfv_kpb__entry__1 doc__table_im2_sfv_kpb__entry__5">3</td>
+                                <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__table_im2_sfv_kpb__entry__1 doc__table_im2_sfv_kpb__entry__5">GND</td>
+                                <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__table_im2_sfv_kpb__entry__2 doc__table_im2_sfv_kpb__entry__6">3</td>
+                                <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__table_im2_sfv_kpb__entry__2 doc__table_im2_sfv_kpb__entry__6">DI3</td>
+                                <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__table_im2_sfv_kpb__entry__2 doc__table_im2_sfv_kpb__entry__7">3</td>
+                                <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__table_im2_sfv_kpb__entry__2 doc__table_im2_sfv_kpb__entry__7">DO3</td>
+                                <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__table_im2_sfv_kpb__entry__2 doc__table_im2_sfv_kpb__entry__8">3</td>
+                                <td class="- topic/entry entry colsep-0 rowsep-1" headers="doc__table_im2_sfv_kpb__entry__2 doc__table_im2_sfv_kpb__entry__8">+3.3 VD</td>
+                            </tr>
+                            <tr class="- topic/row">
+                                <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__table_im2_sfv_kpb__entry__1 doc__table_im2_sfv_kpb__entry__3">4</td>
+                                <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__table_im2_sfv_kpb__entry__1 doc__table_im2_sfv_kpb__entry__3">AO4</td>
+                                <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__table_im2_sfv_kpb__entry__1 doc__table_im2_sfv_kpb__entry__4">4</td>
+                                <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__table_im2_sfv_kpb__entry__1 doc__table_im2_sfv_kpb__entry__4">AO20</td>
+                                <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__table_im2_sfv_kpb__entry__1 doc__table_im2_sfv_kpb__entry__5">4</td>
+                                <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__table_im2_sfv_kpb__entry__1 doc__table_im2_sfv_kpb__entry__5">GND</td>
+                                <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__table_im2_sfv_kpb__entry__2 doc__table_im2_sfv_kpb__entry__6">4</td>
+                                <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__table_im2_sfv_kpb__entry__2 doc__table_im2_sfv_kpb__entry__6">DI4</td>
+                                <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__table_im2_sfv_kpb__entry__2 doc__table_im2_sfv_kpb__entry__7">4</td>
+                                <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__table_im2_sfv_kpb__entry__2 doc__table_im2_sfv_kpb__entry__7">DO4</td>
+                                <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__table_im2_sfv_kpb__entry__2 doc__table_im2_sfv_kpb__entry__8">4</td>
+                                <td class="- topic/entry entry colsep-0 rowsep-1" headers="doc__table_im2_sfv_kpb__entry__2 doc__table_im2_sfv_kpb__entry__8">+3.3 VD</td>
+                            </tr>
+                            <tr class="- topic/row">
+                                <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__table_im2_sfv_kpb__entry__1 doc__table_im2_sfv_kpb__entry__3">5</td>
+                                <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__table_im2_sfv_kpb__entry__1 doc__table_im2_sfv_kpb__entry__3">AO5</td>
+                                <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__table_im2_sfv_kpb__entry__1 doc__table_im2_sfv_kpb__entry__4">5</td>
+                                <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__table_im2_sfv_kpb__entry__1 doc__table_im2_sfv_kpb__entry__4">AO21</td>
+                                <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__table_im2_sfv_kpb__entry__1 doc__table_im2_sfv_kpb__entry__5">5</td>
+                                <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__table_im2_sfv_kpb__entry__1 doc__table_im2_sfv_kpb__entry__5">GND</td>
+                                <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__table_im2_sfv_kpb__entry__2 doc__table_im2_sfv_kpb__entry__6">5</td>
+                                <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__table_im2_sfv_kpb__entry__2 doc__table_im2_sfv_kpb__entry__6">DI5</td>
+                                <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__table_im2_sfv_kpb__entry__2 doc__table_im2_sfv_kpb__entry__7">5</td>
+                                <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__table_im2_sfv_kpb__entry__2 doc__table_im2_sfv_kpb__entry__7">DO5</td>
+                                <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__table_im2_sfv_kpb__entry__2 doc__table_im2_sfv_kpb__entry__8">5</td>
+                                <td class="- topic/entry entry colsep-0 rowsep-1" headers="doc__table_im2_sfv_kpb__entry__2 doc__table_im2_sfv_kpb__entry__8">+3.3 VD</td>
+                            </tr>
+                            <tr class="- topic/row">
+                                <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__table_im2_sfv_kpb__entry__1 doc__table_im2_sfv_kpb__entry__3">6</td>
+                                <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__table_im2_sfv_kpb__entry__1 doc__table_im2_sfv_kpb__entry__3">AO6</td>
+                                <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__table_im2_sfv_kpb__entry__1 doc__table_im2_sfv_kpb__entry__4">6</td>
+                                <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__table_im2_sfv_kpb__entry__1 doc__table_im2_sfv_kpb__entry__4">AO22</td>
+                                <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__table_im2_sfv_kpb__entry__1 doc__table_im2_sfv_kpb__entry__5">6</td>
+                                <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__table_im2_sfv_kpb__entry__1 doc__table_im2_sfv_kpb__entry__5">GND</td>
+                                <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__table_im2_sfv_kpb__entry__2 doc__table_im2_sfv_kpb__entry__6">6</td>
+                                <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__table_im2_sfv_kpb__entry__2 doc__table_im2_sfv_kpb__entry__6">DI6</td>
+                                <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__table_im2_sfv_kpb__entry__2 doc__table_im2_sfv_kpb__entry__7">6</td>
+                                <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__table_im2_sfv_kpb__entry__2 doc__table_im2_sfv_kpb__entry__7">DO6</td>
+                                <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__table_im2_sfv_kpb__entry__2 doc__table_im2_sfv_kpb__entry__8">6</td>
+                                <td class="- topic/entry entry colsep-0 rowsep-1" headers="doc__table_im2_sfv_kpb__entry__2 doc__table_im2_sfv_kpb__entry__8">GND</td>
+                            </tr>
+                            <tr class="- topic/row">
+                                <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__table_im2_sfv_kpb__entry__1 doc__table_im2_sfv_kpb__entry__3">7</td>
+                                <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__table_im2_sfv_kpb__entry__1 doc__table_im2_sfv_kpb__entry__3">AO7</td>
+                                <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__table_im2_sfv_kpb__entry__1 doc__table_im2_sfv_kpb__entry__4">7</td>
+                                <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__table_im2_sfv_kpb__entry__1 doc__table_im2_sfv_kpb__entry__4">AO23</td>
+                                <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__table_im2_sfv_kpb__entry__1 doc__table_im2_sfv_kpb__entry__5">7</td>
+                                <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__table_im2_sfv_kpb__entry__1 doc__table_im2_sfv_kpb__entry__5">GND</td>
+                                <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__table_im2_sfv_kpb__entry__2 doc__table_im2_sfv_kpb__entry__6">7</td>
+                                <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__table_im2_sfv_kpb__entry__2 doc__table_im2_sfv_kpb__entry__6">DI7</td>
+                                <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__table_im2_sfv_kpb__entry__2 doc__table_im2_sfv_kpb__entry__7">7</td>
+                                <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__table_im2_sfv_kpb__entry__2 doc__table_im2_sfv_kpb__entry__7">DO7</td>
+                                <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__table_im2_sfv_kpb__entry__2 doc__table_im2_sfv_kpb__entry__8">7</td>
+                                <td class="- topic/entry entry colsep-0 rowsep-1" headers="doc__table_im2_sfv_kpb__entry__2 doc__table_im2_sfv_kpb__entry__8">GND</td>
+                            </tr>
+                            <tr class="- topic/row">
+                                <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__table_im2_sfv_kpb__entry__1 doc__table_im2_sfv_kpb__entry__3">8</td>
+                                <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__table_im2_sfv_kpb__entry__1 doc__table_im2_sfv_kpb__entry__3">AO8</td>
+                                <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__table_im2_sfv_kpb__entry__1 doc__table_im2_sfv_kpb__entry__4">8</td>
+                                <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__table_im2_sfv_kpb__entry__1 doc__table_im2_sfv_kpb__entry__4">AO24</td>
+                                <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__table_im2_sfv_kpb__entry__1 doc__table_im2_sfv_kpb__entry__5">8</td>
+                                <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__table_im2_sfv_kpb__entry__1 doc__table_im2_sfv_kpb__entry__5">GND</td>
+                                <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__table_im2_sfv_kpb__entry__2 doc__table_im2_sfv_kpb__entry__6">8</td>
+                                <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__table_im2_sfv_kpb__entry__2 doc__table_im2_sfv_kpb__entry__6">DI8</td>
+                                <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__table_im2_sfv_kpb__entry__2 doc__table_im2_sfv_kpb__entry__7">8</td>
+                                <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__table_im2_sfv_kpb__entry__2 doc__table_im2_sfv_kpb__entry__7">DO8</td>
+                                <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__table_im2_sfv_kpb__entry__2 doc__table_im2_sfv_kpb__entry__8">8</td>
+                                <td class="- topic/entry entry colsep-0 rowsep-1" headers="doc__table_im2_sfv_kpb__entry__2 doc__table_im2_sfv_kpb__entry__8">GND</td>
+                            </tr>
+                            <tr class="- topic/row">
+                                <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__table_im2_sfv_kpb__entry__1 doc__table_im2_sfv_kpb__entry__3">9</td>
+                                <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__table_im2_sfv_kpb__entry__1 doc__table_im2_sfv_kpb__entry__3">AO9</td>
+                                <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__table_im2_sfv_kpb__entry__1 doc__table_im2_sfv_kpb__entry__4">9</td>
+                                <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__table_im2_sfv_kpb__entry__1 doc__table_im2_sfv_kpb__entry__4">AO25</td>
+                                <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__table_im2_sfv_kpb__entry__1 doc__table_im2_sfv_kpb__entry__5">9</td>
+                                <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__table_im2_sfv_kpb__entry__1 doc__table_im2_sfv_kpb__entry__5">GND</td>
+                                <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__table_im2_sfv_kpb__entry__2 doc__table_im2_sfv_kpb__entry__6">9</td>
+                                <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__table_im2_sfv_kpb__entry__2 doc__table_im2_sfv_kpb__entry__6">DI9</td>
+                                <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__table_im2_sfv_kpb__entry__2 doc__table_im2_sfv_kpb__entry__7">9</td>
+                                <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__table_im2_sfv_kpb__entry__2 doc__table_im2_sfv_kpb__entry__7">DO9</td>
+                                <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__table_im2_sfv_kpb__entry__2 doc__table_im2_sfv_kpb__entry__8">9</td>
+                                <td class="- topic/entry entry colsep-0 rowsep-1" headers="doc__table_im2_sfv_kpb__entry__2 doc__table_im2_sfv_kpb__entry__8">GND</td>
+                            </tr>
+                            <tr class="- topic/row">
+                                <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__table_im2_sfv_kpb__entry__1 doc__table_im2_sfv_kpb__entry__3">10</td>
+                                <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__table_im2_sfv_kpb__entry__1 doc__table_im2_sfv_kpb__entry__3">AO10</td>
+                                <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__table_im2_sfv_kpb__entry__1 doc__table_im2_sfv_kpb__entry__4">10</td>
+                                <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__table_im2_sfv_kpb__entry__1 doc__table_im2_sfv_kpb__entry__4">AO26</td>
+                                <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__table_im2_sfv_kpb__entry__1 doc__table_im2_sfv_kpb__entry__5">10</td>
+                                <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__table_im2_sfv_kpb__entry__1 doc__table_im2_sfv_kpb__entry__5">GND</td>
+                                <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__table_im2_sfv_kpb__entry__2 doc__table_im2_sfv_kpb__entry__6">10</td>
+                                <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__table_im2_sfv_kpb__entry__2 doc__table_im2_sfv_kpb__entry__6">DI10</td>
+                                <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__table_im2_sfv_kpb__entry__2 doc__table_im2_sfv_kpb__entry__7">10</td>
+                                <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__table_im2_sfv_kpb__entry__2 doc__table_im2_sfv_kpb__entry__7">DO10</td>
+                                <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__table_im2_sfv_kpb__entry__2 doc__table_im2_sfv_kpb__entry__8">10</td>
+                                <td class="- topic/entry entry colsep-0 rowsep-1" headers="doc__table_im2_sfv_kpb__entry__2 doc__table_im2_sfv_kpb__entry__8">GND</td>
+                            </tr>
+                            <tr class="- topic/row">
+                                <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__table_im2_sfv_kpb__entry__1 doc__table_im2_sfv_kpb__entry__3">11</td>
+                                <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__table_im2_sfv_kpb__entry__1 doc__table_im2_sfv_kpb__entry__3">AO11</td>
+                                <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__table_im2_sfv_kpb__entry__1 doc__table_im2_sfv_kpb__entry__4">11</td>
+                                <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__table_im2_sfv_kpb__entry__1 doc__table_im2_sfv_kpb__entry__4">AO27</td>
+                                <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__table_im2_sfv_kpb__entry__1 doc__table_im2_sfv_kpb__entry__5">11</td>
+                                <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__table_im2_sfv_kpb__entry__1 doc__table_im2_sfv_kpb__entry__5">GND</td>
+                                <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__table_im2_sfv_kpb__entry__2 doc__table_im2_sfv_kpb__entry__6">11</td>
+                                <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__table_im2_sfv_kpb__entry__2 doc__table_im2_sfv_kpb__entry__6">DI11</td>
+                                <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__table_im2_sfv_kpb__entry__2 doc__table_im2_sfv_kpb__entry__7">11</td>
+                                <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__table_im2_sfv_kpb__entry__2 doc__table_im2_sfv_kpb__entry__7">DO11</td>
+                                <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__table_im2_sfv_kpb__entry__2 doc__table_im2_sfv_kpb__entry__8">11</td>
+                                <td class="- topic/entry entry colsep-0 rowsep-1" headers="doc__table_im2_sfv_kpb__entry__2 doc__table_im2_sfv_kpb__entry__8">GND</td>
+                            </tr>
+                            <tr class="- topic/row">
+                                <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__table_im2_sfv_kpb__entry__1 doc__table_im2_sfv_kpb__entry__3">12</td>
+                                <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__table_im2_sfv_kpb__entry__1 doc__table_im2_sfv_kpb__entry__3">AO12</td>
+                                <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__table_im2_sfv_kpb__entry__1 doc__table_im2_sfv_kpb__entry__4">12</td>
+                                <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__table_im2_sfv_kpb__entry__1 doc__table_im2_sfv_kpb__entry__4">AO28</td>
+                                <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__table_im2_sfv_kpb__entry__1 doc__table_im2_sfv_kpb__entry__5">12</td>
+                                <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__table_im2_sfv_kpb__entry__1 doc__table_im2_sfv_kpb__entry__5">GND</td>
+                                <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__table_im2_sfv_kpb__entry__2 doc__table_im2_sfv_kpb__entry__6">12</td>
+                                <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__table_im2_sfv_kpb__entry__2 doc__table_im2_sfv_kpb__entry__6">DI12</td>
+                                <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__table_im2_sfv_kpb__entry__2 doc__table_im2_sfv_kpb__entry__7">12</td>
+                                <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__table_im2_sfv_kpb__entry__2 doc__table_im2_sfv_kpb__entry__7">DO12</td>
+                                <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__table_im2_sfv_kpb__entry__2 doc__table_im2_sfv_kpb__entry__8">12</td>
+                                <td class="- topic/entry entry colsep-0 rowsep-1" headers="doc__table_im2_sfv_kpb__entry__2 doc__table_im2_sfv_kpb__entry__8">GND</td>
+                            </tr>
+                            <tr class="- topic/row">
+                                <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__table_im2_sfv_kpb__entry__1 doc__table_im2_sfv_kpb__entry__3">13</td>
+                                <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__table_im2_sfv_kpb__entry__1 doc__table_im2_sfv_kpb__entry__3">AO13</td>
+                                <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__table_im2_sfv_kpb__entry__1 doc__table_im2_sfv_kpb__entry__4">13</td>
+                                <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__table_im2_sfv_kpb__entry__1 doc__table_im2_sfv_kpb__entry__4">AO29</td>
+                                <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__table_im2_sfv_kpb__entry__1 doc__table_im2_sfv_kpb__entry__5">13</td>
+                                <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__table_im2_sfv_kpb__entry__1 doc__table_im2_sfv_kpb__entry__5">GND</td>
+                                <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__table_im2_sfv_kpb__entry__2 doc__table_im2_sfv_kpb__entry__6">13</td>
+                                <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__table_im2_sfv_kpb__entry__2 doc__table_im2_sfv_kpb__entry__6">DI13</td>
+                                <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__table_im2_sfv_kpb__entry__2 doc__table_im2_sfv_kpb__entry__7">13</td>
+                                <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__table_im2_sfv_kpb__entry__2 doc__table_im2_sfv_kpb__entry__7">DO13</td>
+                                <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__table_im2_sfv_kpb__entry__2 doc__table_im2_sfv_kpb__entry__8">13</td>
+                                <td class="- topic/entry entry colsep-0 rowsep-1" headers="doc__table_im2_sfv_kpb__entry__2 doc__table_im2_sfv_kpb__entry__8">GND</td>
+                            </tr>
+                            <tr class="- topic/row">
+                                <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__table_im2_sfv_kpb__entry__1 doc__table_im2_sfv_kpb__entry__3">14</td>
+                                <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__table_im2_sfv_kpb__entry__1 doc__table_im2_sfv_kpb__entry__3">AO14</td>
+                                <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__table_im2_sfv_kpb__entry__1 doc__table_im2_sfv_kpb__entry__4">14</td>
+                                <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__table_im2_sfv_kpb__entry__1 doc__table_im2_sfv_kpb__entry__4">AO30</td>
+                                <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__table_im2_sfv_kpb__entry__1 doc__table_im2_sfv_kpb__entry__5">14</td>
+                                <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__table_im2_sfv_kpb__entry__1 doc__table_im2_sfv_kpb__entry__5">GND</td>
+                                <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__table_im2_sfv_kpb__entry__2 doc__table_im2_sfv_kpb__entry__6">14</td>
+                                <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__table_im2_sfv_kpb__entry__2 doc__table_im2_sfv_kpb__entry__6">DI14</td>
+                                <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__table_im2_sfv_kpb__entry__2 doc__table_im2_sfv_kpb__entry__7">14</td>
+                                <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__table_im2_sfv_kpb__entry__2 doc__table_im2_sfv_kpb__entry__7">DO14</td>
+                                <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__table_im2_sfv_kpb__entry__2 doc__table_im2_sfv_kpb__entry__8">14</td>
+                                <td class="- topic/entry entry colsep-0 rowsep-1" headers="doc__table_im2_sfv_kpb__entry__2 doc__table_im2_sfv_kpb__entry__8">GND</td>
+                            </tr>
+                            <tr class="- topic/row">
+                                <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__table_im2_sfv_kpb__entry__1 doc__table_im2_sfv_kpb__entry__3">15</td>
+                                <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__table_im2_sfv_kpb__entry__1 doc__table_im2_sfv_kpb__entry__3">AO15</td>
+                                <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__table_im2_sfv_kpb__entry__1 doc__table_im2_sfv_kpb__entry__4">15</td>
+                                <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__table_im2_sfv_kpb__entry__1 doc__table_im2_sfv_kpb__entry__4">AO31</td>
+                                <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__table_im2_sfv_kpb__entry__1 doc__table_im2_sfv_kpb__entry__5">15</td>
+                                <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__table_im2_sfv_kpb__entry__1 doc__table_im2_sfv_kpb__entry__5">GND</td>
+                                <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__table_im2_sfv_kpb__entry__2 doc__table_im2_sfv_kpb__entry__6">15</td>
+                                <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__table_im2_sfv_kpb__entry__2 doc__table_im2_sfv_kpb__entry__6">DI15</td>
+                                <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__table_im2_sfv_kpb__entry__2 doc__table_im2_sfv_kpb__entry__7">15</td>
+                                <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__table_im2_sfv_kpb__entry__2 doc__table_im2_sfv_kpb__entry__7">DO15</td>
+                                <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__table_im2_sfv_kpb__entry__2 doc__table_im2_sfv_kpb__entry__8">15</td>
+                                <td class="- topic/entry entry colsep-0 rowsep-1" headers="doc__table_im2_sfv_kpb__entry__2 doc__table_im2_sfv_kpb__entry__8">GND</td>
+                            </tr>
+                            <tr class="- topic/row">
+                                <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__table_im2_sfv_kpb__entry__1 doc__table_im2_sfv_kpb__entry__3">16</td>
+                                <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__table_im2_sfv_kpb__entry__1 doc__table_im2_sfv_kpb__entry__3">AO16</td>
+                                <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__table_im2_sfv_kpb__entry__1 doc__table_im2_sfv_kpb__entry__4">16</td>
+                                <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__table_im2_sfv_kpb__entry__1 doc__table_im2_sfv_kpb__entry__4">AO32</td>
+                                <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__table_im2_sfv_kpb__entry__1 doc__table_im2_sfv_kpb__entry__5">16</td>
+                                <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__table_im2_sfv_kpb__entry__1 doc__table_im2_sfv_kpb__entry__5">GND</td>
+                                <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__table_im2_sfv_kpb__entry__2 doc__table_im2_sfv_kpb__entry__6">16</td>
+                                <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__table_im2_sfv_kpb__entry__2 doc__table_im2_sfv_kpb__entry__6">DI16</td>
+                                <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__table_im2_sfv_kpb__entry__2 doc__table_im2_sfv_kpb__entry__7">16</td>
+                                <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__table_im2_sfv_kpb__entry__2 doc__table_im2_sfv_kpb__entry__7">DO16</td>
+                                <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__table_im2_sfv_kpb__entry__2 doc__table_im2_sfv_kpb__entry__8">16</td>
+                                <td class="- topic/entry entry colsep-0 rowsep-1" headers="doc__table_im2_sfv_kpb__entry__2 doc__table_im2_sfv_kpb__entry__8">GND</td>
+                            </tr>
+                            <tr class="- topic/row">
+                                <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__table_im2_sfv_kpb__entry__1 doc__table_im2_sfv_kpb__entry__3">17</td>
+                                <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__table_im2_sfv_kpb__entry__1 doc__table_im2_sfv_kpb__entry__3">+12 V</td>
+                                <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__table_im2_sfv_kpb__entry__1 doc__table_im2_sfv_kpb__entry__4">17</td>
+                                <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__table_im2_sfv_kpb__entry__1 doc__table_im2_sfv_kpb__entry__4">+12 V</td>
+                                <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__table_im2_sfv_kpb__entry__1 doc__table_im2_sfv_kpb__entry__5">17</td>
+                                <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__table_im2_sfv_kpb__entry__1 doc__table_im2_sfv_kpb__entry__5">GND</td>
+                                <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__table_im2_sfv_kpb__entry__2 doc__table_im2_sfv_kpb__entry__6">17</td>
+                                <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__table_im2_sfv_kpb__entry__2 doc__table_im2_sfv_kpb__entry__6">DI17</td>
+                                <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__table_im2_sfv_kpb__entry__2 doc__table_im2_sfv_kpb__entry__7">17</td>
+                                <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__table_im2_sfv_kpb__entry__2 doc__table_im2_sfv_kpb__entry__7">DO17</td>
+                                <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__table_im2_sfv_kpb__entry__2 doc__table_im2_sfv_kpb__entry__8">17</td>
+                                <td class="- topic/entry entry colsep-0 rowsep-1" headers="doc__table_im2_sfv_kpb__entry__2 doc__table_im2_sfv_kpb__entry__8">GND</td>
+                            </tr>
+                            <tr class="- topic/row">
+                                <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__table_im2_sfv_kpb__entry__1 doc__table_im2_sfv_kpb__entry__3">18</td>
+                                <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__table_im2_sfv_kpb__entry__1 doc__table_im2_sfv_kpb__entry__3">+12 V</td>
+                                <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__table_im2_sfv_kpb__entry__1 doc__table_im2_sfv_kpb__entry__4">18</td>
+                                <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__table_im2_sfv_kpb__entry__1 doc__table_im2_sfv_kpb__entry__4">+12 V</td>
+                                <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__table_im2_sfv_kpb__entry__1 doc__table_im2_sfv_kpb__entry__5">18</td>
+                                <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__table_im2_sfv_kpb__entry__1 doc__table_im2_sfv_kpb__entry__5">GND</td>
+                                <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__table_im2_sfv_kpb__entry__2 doc__table_im2_sfv_kpb__entry__6">18</td>
+                                <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__table_im2_sfv_kpb__entry__2 doc__table_im2_sfv_kpb__entry__6">DI18</td>
+                                <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__table_im2_sfv_kpb__entry__2 doc__table_im2_sfv_kpb__entry__7">18</td>
+                                <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__table_im2_sfv_kpb__entry__2 doc__table_im2_sfv_kpb__entry__7">DO18</td>
+                                <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__table_im2_sfv_kpb__entry__2 doc__table_im2_sfv_kpb__entry__8">18</td>
+                                <td class="- topic/entry entry colsep-0 rowsep-1" headers="doc__table_im2_sfv_kpb__entry__2 doc__table_im2_sfv_kpb__entry__8">GND</td>
+                            </tr>
+                            <tr class="- topic/row">
+                                <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__table_im2_sfv_kpb__entry__1 doc__table_im2_sfv_kpb__entry__3">19</td>
+                                <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__table_im2_sfv_kpb__entry__1 doc__table_im2_sfv_kpb__entry__3">-12 V</td>
+                                <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__table_im2_sfv_kpb__entry__1 doc__table_im2_sfv_kpb__entry__4">19</td>
+                                <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__table_im2_sfv_kpb__entry__1 doc__table_im2_sfv_kpb__entry__4">-12 V</td>
+                                <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__table_im2_sfv_kpb__entry__1 doc__table_im2_sfv_kpb__entry__5">19</td>
+                                <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__table_im2_sfv_kpb__entry__1 doc__table_im2_sfv_kpb__entry__5">GND</td>
+                                <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__table_im2_sfv_kpb__entry__2 doc__table_im2_sfv_kpb__entry__6">19</td>
+                                <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__table_im2_sfv_kpb__entry__2 doc__table_im2_sfv_kpb__entry__6">DI19</td>
+                                <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__table_im2_sfv_kpb__entry__2 doc__table_im2_sfv_kpb__entry__7">19</td>
+                                <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__table_im2_sfv_kpb__entry__2 doc__table_im2_sfv_kpb__entry__7">DO19</td>
+                                <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__table_im2_sfv_kpb__entry__2 doc__table_im2_sfv_kpb__entry__8">19</td>
+                                <td class="- topic/entry entry colsep-0 rowsep-1" headers="doc__table_im2_sfv_kpb__entry__2 doc__table_im2_sfv_kpb__entry__8">GND</td>
+                            </tr>
+                            <tr class="- topic/row">
+                                <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__table_im2_sfv_kpb__entry__1 doc__table_im2_sfv_kpb__entry__3">20</td>
+                                <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__table_im2_sfv_kpb__entry__1 doc__table_im2_sfv_kpb__entry__3">-12 V</td>
+                                <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__table_im2_sfv_kpb__entry__1 doc__table_im2_sfv_kpb__entry__4">20</td>
+                                <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__table_im2_sfv_kpb__entry__1 doc__table_im2_sfv_kpb__entry__4">-12 V</td>
+                                <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__table_im2_sfv_kpb__entry__1 doc__table_im2_sfv_kpb__entry__5">20</td>
+                                <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__table_im2_sfv_kpb__entry__1 doc__table_im2_sfv_kpb__entry__5">GND</td>
+                                <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__table_im2_sfv_kpb__entry__2 doc__table_im2_sfv_kpb__entry__6">20</td>
+                                <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__table_im2_sfv_kpb__entry__2 doc__table_im2_sfv_kpb__entry__6">DI20</td>
+                                <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__table_im2_sfv_kpb__entry__2 doc__table_im2_sfv_kpb__entry__7">20</td>
+                                <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__table_im2_sfv_kpb__entry__2 doc__table_im2_sfv_kpb__entry__7">DO20</td>
+                                <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__table_im2_sfv_kpb__entry__2 doc__table_im2_sfv_kpb__entry__8">20</td>
+                                <td class="- topic/entry entry colsep-0 rowsep-1" headers="doc__table_im2_sfv_kpb__entry__2 doc__table_im2_sfv_kpb__entry__8">GND</td>
+                            </tr>
+                            <tr class="- topic/row">
+                                <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__table_im2_sfv_kpb__entry__1 doc__table_im2_sfv_kpb__entry__3">21</td>
+                                <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__table_im2_sfv_kpb__entry__1 doc__table_im2_sfv_kpb__entry__3">+5 V</td>
+                                <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__table_im2_sfv_kpb__entry__1 doc__table_im2_sfv_kpb__entry__4">21</td>
+                                <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__table_im2_sfv_kpb__entry__1 doc__table_im2_sfv_kpb__entry__4">+5 V</td>
+                                <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__table_im2_sfv_kpb__entry__1 doc__table_im2_sfv_kpb__entry__5">21</td>
+                                <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__table_im2_sfv_kpb__entry__1 doc__table_im2_sfv_kpb__entry__5">GND</td>
+                                <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__table_im2_sfv_kpb__entry__2 doc__table_im2_sfv_kpb__entry__6">21</td>
+                                <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__table_im2_sfv_kpb__entry__2 doc__table_im2_sfv_kpb__entry__6">DI21</td>
+                                <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__table_im2_sfv_kpb__entry__2 doc__table_im2_sfv_kpb__entry__7">21</td>
+                                <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__table_im2_sfv_kpb__entry__2 doc__table_im2_sfv_kpb__entry__7">DO21</td>
+                                <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__table_im2_sfv_kpb__entry__2 doc__table_im2_sfv_kpb__entry__8">21</td>
+                                <td class="- topic/entry entry colsep-0 rowsep-1" headers="doc__table_im2_sfv_kpb__entry__2 doc__table_im2_sfv_kpb__entry__8">GND</td>
+                            </tr>
+                            <tr class="- topic/row">
+                                <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__table_im2_sfv_kpb__entry__1 doc__table_im2_sfv_kpb__entry__3">22</td>
+                                <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__table_im2_sfv_kpb__entry__1 doc__table_im2_sfv_kpb__entry__3">+5 V</td>
+                                <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__table_im2_sfv_kpb__entry__1 doc__table_im2_sfv_kpb__entry__4">22</td>
+                                <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__table_im2_sfv_kpb__entry__1 doc__table_im2_sfv_kpb__entry__4">+5 V</td>
+                                <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__table_im2_sfv_kpb__entry__1 doc__table_im2_sfv_kpb__entry__5">22</td>
+                                <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__table_im2_sfv_kpb__entry__1 doc__table_im2_sfv_kpb__entry__5">GND</td>
+                                <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__table_im2_sfv_kpb__entry__2 doc__table_im2_sfv_kpb__entry__6">22</td>
+                                <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__table_im2_sfv_kpb__entry__2 doc__table_im2_sfv_kpb__entry__6">DI22</td>
+                                <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__table_im2_sfv_kpb__entry__2 doc__table_im2_sfv_kpb__entry__7">22</td>
+                                <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__table_im2_sfv_kpb__entry__2 doc__table_im2_sfv_kpb__entry__7">DO22</td>
+                                <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__table_im2_sfv_kpb__entry__2 doc__table_im2_sfv_kpb__entry__8">22</td>
+                                <td class="- topic/entry entry colsep-0 rowsep-1" headers="doc__table_im2_sfv_kpb__entry__2 doc__table_im2_sfv_kpb__entry__8">GND</td>
+                            </tr>
+                            <tr class="- topic/row">
+                                <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__table_im2_sfv_kpb__entry__1 doc__table_im2_sfv_kpb__entry__3">23</td>
+                                <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__table_im2_sfv_kpb__entry__1 doc__table_im2_sfv_kpb__entry__3">-5 V</td>
+                                <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__table_im2_sfv_kpb__entry__1 doc__table_im2_sfv_kpb__entry__4">23</td>
+                                <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__table_im2_sfv_kpb__entry__1 doc__table_im2_sfv_kpb__entry__4">-5 V</td>
+                                <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__table_im2_sfv_kpb__entry__1 doc__table_im2_sfv_kpb__entry__5">23</td>
+                                <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__table_im2_sfv_kpb__entry__1 doc__table_im2_sfv_kpb__entry__5">GND</td>
+                                <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__table_im2_sfv_kpb__entry__2 doc__table_im2_sfv_kpb__entry__6">23</td>
+                                <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__table_im2_sfv_kpb__entry__2 doc__table_im2_sfv_kpb__entry__6">DI23</td>
+                                <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__table_im2_sfv_kpb__entry__2 doc__table_im2_sfv_kpb__entry__7">23</td>
+                                <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__table_im2_sfv_kpb__entry__2 doc__table_im2_sfv_kpb__entry__7">DO23</td>
+                                <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__table_im2_sfv_kpb__entry__2 doc__table_im2_sfv_kpb__entry__8">23</td>
+                                <td class="- topic/entry entry colsep-0 rowsep-1" headers="doc__table_im2_sfv_kpb__entry__2 doc__table_im2_sfv_kpb__entry__8">GND</td>
+                            </tr>
+                            <tr class="- topic/row">
+                                <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__table_im2_sfv_kpb__entry__1 doc__table_im2_sfv_kpb__entry__3">24</td>
+                                <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__table_im2_sfv_kpb__entry__1 doc__table_im2_sfv_kpb__entry__3">-5 V</td>
+                                <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__table_im2_sfv_kpb__entry__1 doc__table_im2_sfv_kpb__entry__4">24</td>
+                                <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__table_im2_sfv_kpb__entry__1 doc__table_im2_sfv_kpb__entry__4">-5 V</td>
+                                <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__table_im2_sfv_kpb__entry__1 doc__table_im2_sfv_kpb__entry__5">24</td>
+                                <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__table_im2_sfv_kpb__entry__1 doc__table_im2_sfv_kpb__entry__5">GND</td>
+                                <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__table_im2_sfv_kpb__entry__2 doc__table_im2_sfv_kpb__entry__6">24</td>
+                                <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__table_im2_sfv_kpb__entry__2 doc__table_im2_sfv_kpb__entry__6">DI24</td>
+                                <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__table_im2_sfv_kpb__entry__2 doc__table_im2_sfv_kpb__entry__7">24</td>
+                                <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__table_im2_sfv_kpb__entry__2 doc__table_im2_sfv_kpb__entry__7">DO24</td>
+                                <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__table_im2_sfv_kpb__entry__2 doc__table_im2_sfv_kpb__entry__8">24</td>
+                                <td class="- topic/entry entry colsep-0 rowsep-1" headers="doc__table_im2_sfv_kpb__entry__2 doc__table_im2_sfv_kpb__entry__8">GND</td>
+                            </tr>
+                            <tr class="- topic/row">
+                                <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__table_im2_sfv_kpb__entry__1 doc__table_im2_sfv_kpb__entry__3">25</td>
+                                <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__table_im2_sfv_kpb__entry__1 doc__table_im2_sfv_kpb__entry__3">AI1</td>
+                                <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__table_im2_sfv_kpb__entry__1 doc__table_im2_sfv_kpb__entry__4">25</td>
+                                <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__table_im2_sfv_kpb__entry__1 doc__table_im2_sfv_kpb__entry__4">AI9</td>
+                                <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__table_im2_sfv_kpb__entry__1 doc__table_im2_sfv_kpb__entry__5">25</td>
+                                <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__table_im2_sfv_kpb__entry__1 doc__table_im2_sfv_kpb__entry__5">GND</td>
+                                <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__table_im2_sfv_kpb__entry__2 doc__table_im2_sfv_kpb__entry__6">25</td>
+                                <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__table_im2_sfv_kpb__entry__2 doc__table_im2_sfv_kpb__entry__6">DI25</td>
+                                <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__table_im2_sfv_kpb__entry__2 doc__table_im2_sfv_kpb__entry__7">25</td>
+                                <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__table_im2_sfv_kpb__entry__2 doc__table_im2_sfv_kpb__entry__7">DO25</td>
+                                <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__table_im2_sfv_kpb__entry__2 doc__table_im2_sfv_kpb__entry__8">25</td>
+                                <td class="- topic/entry entry colsep-0 rowsep-1" headers="doc__table_im2_sfv_kpb__entry__2 doc__table_im2_sfv_kpb__entry__8">GND</td>
+                            </tr>
+                            <tr class="- topic/row">
+                                <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__table_im2_sfv_kpb__entry__1 doc__table_im2_sfv_kpb__entry__3">26</td>
+                                <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__table_im2_sfv_kpb__entry__1 doc__table_im2_sfv_kpb__entry__3">AI2</td>
+                                <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__table_im2_sfv_kpb__entry__1 doc__table_im2_sfv_kpb__entry__4">26</td>
+                                <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__table_im2_sfv_kpb__entry__1 doc__table_im2_sfv_kpb__entry__4">AI10</td>
+                                <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__table_im2_sfv_kpb__entry__1 doc__table_im2_sfv_kpb__entry__5">26</td>
+                                <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__table_im2_sfv_kpb__entry__1 doc__table_im2_sfv_kpb__entry__5">GND</td>
+                                <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__table_im2_sfv_kpb__entry__2 doc__table_im2_sfv_kpb__entry__6">26</td>
+                                <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__table_im2_sfv_kpb__entry__2 doc__table_im2_sfv_kpb__entry__6">DI26</td>
+                                <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__table_im2_sfv_kpb__entry__2 doc__table_im2_sfv_kpb__entry__7">26</td>
+                                <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__table_im2_sfv_kpb__entry__2 doc__table_im2_sfv_kpb__entry__7">DO26</td>
+                                <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__table_im2_sfv_kpb__entry__2 doc__table_im2_sfv_kpb__entry__8">26</td>
+                                <td class="- topic/entry entry colsep-0 rowsep-1" headers="doc__table_im2_sfv_kpb__entry__2 doc__table_im2_sfv_kpb__entry__8">GND</td>
+                            </tr>
+                            <tr class="- topic/row">
+                                <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__table_im2_sfv_kpb__entry__1 doc__table_im2_sfv_kpb__entry__3">27</td>
+                                <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__table_im2_sfv_kpb__entry__1 doc__table_im2_sfv_kpb__entry__3">AI3</td>
+                                <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__table_im2_sfv_kpb__entry__1 doc__table_im2_sfv_kpb__entry__4">27</td>
+                                <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__table_im2_sfv_kpb__entry__1 doc__table_im2_sfv_kpb__entry__4">AI11</td>
+                                <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__table_im2_sfv_kpb__entry__1 doc__table_im2_sfv_kpb__entry__5">27</td>
+                                <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__table_im2_sfv_kpb__entry__1 doc__table_im2_sfv_kpb__entry__5">GND</td>
+                                <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__table_im2_sfv_kpb__entry__2 doc__table_im2_sfv_kpb__entry__6">27</td>
+                                <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__table_im2_sfv_kpb__entry__2 doc__table_im2_sfv_kpb__entry__6">DI27</td>
+                                <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__table_im2_sfv_kpb__entry__2 doc__table_im2_sfv_kpb__entry__7">27</td>
+                                <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__table_im2_sfv_kpb__entry__2 doc__table_im2_sfv_kpb__entry__7">DO27</td>
+                                <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__table_im2_sfv_kpb__entry__2 doc__table_im2_sfv_kpb__entry__8">27</td>
+                                <td class="- topic/entry entry colsep-0 rowsep-1" headers="doc__table_im2_sfv_kpb__entry__2 doc__table_im2_sfv_kpb__entry__8">GND</td>
+                            </tr>
+                            <tr class="- topic/row">
+                                <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__table_im2_sfv_kpb__entry__1 doc__table_im2_sfv_kpb__entry__3">28</td>
+                                <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__table_im2_sfv_kpb__entry__1 doc__table_im2_sfv_kpb__entry__3">AI4</td>
+                                <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__table_im2_sfv_kpb__entry__1 doc__table_im2_sfv_kpb__entry__4">28</td>
+                                <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__table_im2_sfv_kpb__entry__1 doc__table_im2_sfv_kpb__entry__4">AI12</td>
+                                <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__table_im2_sfv_kpb__entry__1 doc__table_im2_sfv_kpb__entry__5">28</td>
+                                <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__table_im2_sfv_kpb__entry__1 doc__table_im2_sfv_kpb__entry__5">GND</td>
+                                <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__table_im2_sfv_kpb__entry__2 doc__table_im2_sfv_kpb__entry__6">28</td>
+                                <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__table_im2_sfv_kpb__entry__2 doc__table_im2_sfv_kpb__entry__6">DI28</td>
+                                <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__table_im2_sfv_kpb__entry__2 doc__table_im2_sfv_kpb__entry__7">28</td>
+                                <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__table_im2_sfv_kpb__entry__2 doc__table_im2_sfv_kpb__entry__7">DO28</td>
+                                <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__table_im2_sfv_kpb__entry__2 doc__table_im2_sfv_kpb__entry__8">28</td>
+                                <td class="- topic/entry entry colsep-0 rowsep-1" headers="doc__table_im2_sfv_kpb__entry__2 doc__table_im2_sfv_kpb__entry__8">+5 VD</td>
+                            </tr>
+                            <tr class="- topic/row">
+                                <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__table_im2_sfv_kpb__entry__1 doc__table_im2_sfv_kpb__entry__3">29</td>
+                                <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__table_im2_sfv_kpb__entry__1 doc__table_im2_sfv_kpb__entry__3">AI5</td>
+                                <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__table_im2_sfv_kpb__entry__1 doc__table_im2_sfv_kpb__entry__4">29</td>
+                                <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__table_im2_sfv_kpb__entry__1 doc__table_im2_sfv_kpb__entry__4">AI13</td>
+                                <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__table_im2_sfv_kpb__entry__1 doc__table_im2_sfv_kpb__entry__5">29</td>
+                                <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__table_im2_sfv_kpb__entry__1 doc__table_im2_sfv_kpb__entry__5">GND</td>
+                                <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__table_im2_sfv_kpb__entry__2 doc__table_im2_sfv_kpb__entry__6">29</td>
+                                <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__table_im2_sfv_kpb__entry__2 doc__table_im2_sfv_kpb__entry__6">DI29</td>
+                                <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__table_im2_sfv_kpb__entry__2 doc__table_im2_sfv_kpb__entry__7">29</td>
+                                <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__table_im2_sfv_kpb__entry__2 doc__table_im2_sfv_kpb__entry__7">DO29</td>
+                                <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__table_im2_sfv_kpb__entry__2 doc__table_im2_sfv_kpb__entry__8">29</td>
+                                <td class="- topic/entry entry colsep-0 rowsep-1" headers="doc__table_im2_sfv_kpb__entry__2 doc__table_im2_sfv_kpb__entry__8">+5 VD</td>
+                            </tr>
+                            <tr class="- topic/row">
+                                <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__table_im2_sfv_kpb__entry__1 doc__table_im2_sfv_kpb__entry__3">30</td>
+                                <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__table_im2_sfv_kpb__entry__1 doc__table_im2_sfv_kpb__entry__3">AI6</td>
+                                <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__table_im2_sfv_kpb__entry__1 doc__table_im2_sfv_kpb__entry__4">30</td>
+                                <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__table_im2_sfv_kpb__entry__1 doc__table_im2_sfv_kpb__entry__4">AI14</td>
+                                <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__table_im2_sfv_kpb__entry__1 doc__table_im2_sfv_kpb__entry__5">30</td>
+                                <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__table_im2_sfv_kpb__entry__1 doc__table_im2_sfv_kpb__entry__5">GND</td>
+                                <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__table_im2_sfv_kpb__entry__2 doc__table_im2_sfv_kpb__entry__6">30</td>
+                                <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__table_im2_sfv_kpb__entry__2 doc__table_im2_sfv_kpb__entry__6">DI30</td>
+                                <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__table_im2_sfv_kpb__entry__2 doc__table_im2_sfv_kpb__entry__7">30</td>
+                                <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__table_im2_sfv_kpb__entry__2 doc__table_im2_sfv_kpb__entry__7">DO30</td>
+                                <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__table_im2_sfv_kpb__entry__2 doc__table_im2_sfv_kpb__entry__8">30</td>
+                                <td class="- topic/entry entry colsep-0 rowsep-1" headers="doc__table_im2_sfv_kpb__entry__2 doc__table_im2_sfv_kpb__entry__8">+5 VD</td>
+                            </tr>
+                            <tr class="- topic/row">
+                                <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__table_im2_sfv_kpb__entry__1 doc__table_im2_sfv_kpb__entry__3">31</td>
+                                <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__table_im2_sfv_kpb__entry__1 doc__table_im2_sfv_kpb__entry__3">AI7</td>
+                                <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__table_im2_sfv_kpb__entry__1 doc__table_im2_sfv_kpb__entry__4">31</td>
+                                <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__table_im2_sfv_kpb__entry__1 doc__table_im2_sfv_kpb__entry__4">AI15</td>
+                                <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__table_im2_sfv_kpb__entry__1 doc__table_im2_sfv_kpb__entry__5">31</td>
+                                <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__table_im2_sfv_kpb__entry__1 doc__table_im2_sfv_kpb__entry__5">GND</td>
+                                <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__table_im2_sfv_kpb__entry__2 doc__table_im2_sfv_kpb__entry__6">31</td>
+                                <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__table_im2_sfv_kpb__entry__2 doc__table_im2_sfv_kpb__entry__6">DI31</td>
+                                <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__table_im2_sfv_kpb__entry__2 doc__table_im2_sfv_kpb__entry__7">31</td>
+                                <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__table_im2_sfv_kpb__entry__2 doc__table_im2_sfv_kpb__entry__7">DO31</td>
+                                <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__table_im2_sfv_kpb__entry__2 doc__table_im2_sfv_kpb__entry__8">31</td>
+                                <td class="- topic/entry entry colsep-0 rowsep-1" headers="doc__table_im2_sfv_kpb__entry__2 doc__table_im2_sfv_kpb__entry__8">+5 VD</td>
+                            </tr>
+                            <tr class="- topic/row">
+                                <td class="- topic/entry entry colsep-1 rowsep-0" headers="doc__table_im2_sfv_kpb__entry__1 doc__table_im2_sfv_kpb__entry__3">32</td>
+                                <td class="- topic/entry entry colsep-1 rowsep-0" headers="doc__table_im2_sfv_kpb__entry__1 doc__table_im2_sfv_kpb__entry__3">AI8</td>
+                                <td class="- topic/entry entry colsep-1 rowsep-0" headers="doc__table_im2_sfv_kpb__entry__1 doc__table_im2_sfv_kpb__entry__4">32</td>
+                                <td class="- topic/entry entry colsep-1 rowsep-0" headers="doc__table_im2_sfv_kpb__entry__1 doc__table_im2_sfv_kpb__entry__4">AI16</td>
+                                <td class="- topic/entry entry colsep-1 rowsep-0" headers="doc__table_im2_sfv_kpb__entry__1 doc__table_im2_sfv_kpb__entry__5">32</td>
+                                <td class="- topic/entry entry colsep-1 rowsep-0" headers="doc__table_im2_sfv_kpb__entry__1 doc__table_im2_sfv_kpb__entry__5">GND</td>
+                                <td class="- topic/entry entry colsep-1 rowsep-0" headers="doc__table_im2_sfv_kpb__entry__2 doc__table_im2_sfv_kpb__entry__6">32</td>
+                                <td class="- topic/entry entry colsep-1 rowsep-0" headers="doc__table_im2_sfv_kpb__entry__2 doc__table_im2_sfv_kpb__entry__6">DI32</td>
+                                <td class="- topic/entry entry colsep-1 rowsep-0" headers="doc__table_im2_sfv_kpb__entry__2 doc__table_im2_sfv_kpb__entry__7">32</td>
+                                <td class="- topic/entry entry colsep-1 rowsep-0" headers="doc__table_im2_sfv_kpb__entry__2 doc__table_im2_sfv_kpb__entry__7">DO32</td>
+                                <td class="- topic/entry entry colsep-1 rowsep-0" headers="doc__table_im2_sfv_kpb__entry__2 doc__table_im2_sfv_kpb__entry__8">32</td>
+                                <td class="- topic/entry entry colsep-0 rowsep-0" headers="doc__table_im2_sfv_kpb__entry__2 doc__table_im2_sfv_kpb__entry__8">+5 VD</td>
+                            </tr>
+                        </tbody></table>
+            
+        </section>      
+    </div>
+</article></main></div>
+                        
+                        
+                        
+                        
+                        
+                        
+                    </div>
+                    
+                        <nav role="navigation" id="wh_topic_toc" aria-label="On this page" class="col-lg-2 d-none d-lg-block navbar d-print-none"> 
+                            <div id="wh_topic_toc_content">
+		                        
+	                            <div class=" wh_topic_toc "><div class="wh_topic_label">On this page</div><ul><li class="section-item"><div class="section-title"><a href="#doc__signal_spec" data-tocid="doc__signal_spec">Signal Specification</a></div></li><li class="section-item"><div class="section-title"><a href="#doc__block_diagram" data-tocid="doc__block_diagram">Functional Specification</a></div></li><li class="section-item"><div class="section-title"><a href="#doc__pinout" data-tocid="doc__pinout">Pinout</a></div></li></ul></div>
+	                        	
+                        	</div>
+                        </nav>
+                    
+                </div>
+            </div>
+            
+            
+            
+        </div> 
+        <footer class="navbar navbar-default wh_footer">
+  <div class=" footer-container mx-auto ">
+    <div style="text-align:center">Typhoon HIL Inc.<span id="year"> <a href="https://www.typhoon-hil.com">www.typhoon-hil.com</a></span></div>
+  </div>
+</footer>
+        
+        <div id="go2top" class="d-print-none">
+            <span class="oxy-icon oxy-icon-up"></span>
+        </div>
+        
+        <div id="modal_img_large" class="modal">
+            <span class="close oxy-icon oxy-icon-remove"></span>
+            <div id="modal_img_container"></div>
+            <div id="caption"></div>
+        </div>
+        
+        
+<script type="text/javascript" src="../../assets/script.js"> 
+</script>
+
+        
+    </body>
+</html>

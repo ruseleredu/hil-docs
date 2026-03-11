@@ -1,0 +1,393 @@
+<!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en" data-whc_version="24.1">
+    <head><link rel="shortcut icon" href="../../favicon.ico"/><link rel="icon" href="../../favicon.ico"/><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><meta name="DC.rights.owner" content="(C) Copyright 2026"/><meta name="copyright" content="(C) Copyright 2026"/><meta name="generator" content="DITA-OT"/><meta name="DC.type" content="reference"/><meta name="description" content="Demonstration of the performance of both switching and average microgrid controller components in the Microgrid Library"/><meta name="DC.relation" content="../../t-an001/concepts/microgrids.html"/><meta name="DC.format" content="HTML5"/><meta name="DC.identifier" content="doc"/>        
+      <title>Plug-and-play microgrid library and testing of microgrid controller</title><!--  Generated with Oxygen version 24.1, build number 2022030800.  --><meta name="wh-path2root" content="../../"/><meta name="wh-toc-id" content="doc-d16877e480"/><meta name="wh-source-relpath" content="t-an001/References/terrestrial_microgrid_(switching).dita"/><meta name="wh-out-relpath" content="t-an001/References/terrestrial_microgrid_(switching).html"/>
+    <!-- Latest compiled and minified Bootstrap CSS -->
+    <link rel="stylesheet" type="text/css" href="../../oxygen-webhelp/lib/bootstrap/css/bootstrap.min.css"/>
+    
+    <link rel="stylesheet" href="../../oxygen-webhelp/lib/jquery-ui/jquery-ui.min.css"/>
+    
+    <!-- Template default styles  -->
+    <link rel="stylesheet" type="text/css" href="../../oxygen-webhelp/app/topic-page.css?buildId=2022030800"/>
+    
+    
+    <script src="../../oxygen-webhelp/lib/jquery/jquery-3.5.1.min.js"></script>
+    
+    <script data-main="../../oxygen-webhelp/app/topic-page.js" src="../../oxygen-webhelp/lib/requirejs/require.js"></script>
+<link rel="stylesheet" type="text/css" href="../../oxygen-webhelp/template/oxygen.css?buildId=2022030800"/><link rel="stylesheet" type="text/css" href="../../oxygen-webhelp/template/notes.css?buildId=2022030800"/><script type="text/javascript" src="../../Scripts/mml-svg.js"> 
+</script><link rel="stylesheet" type="text/css" href="../../assets/typhoon.css"/></head>
+
+    <body id="doc" class="wh_topic_page frmBody">
+        <a href="#wh_topic_body" class="sr-only sr-only-focusable">
+            Jump to main content
+        </a>
+        
+        
+        
+        
+        <header class="navbar navbar-default wh_header">
+    <div class="container-fluid">
+        <div class="wh_header_flex_container navbar-nav navbar-expand-md navbar-dark">
+            <div class="wh_logo_and_publication_title_container">
+                <div class="wh_logo_and_publication_title">
+                    
+                    <a href="https://www.typhoon-hil.com" class=" wh_logo d-none d-sm-block "><img src="../../logo.svg" alt="  Typhoon HIL Documentation  Version: 2026.1  "/></a>
+                    <div class=" wh_publication_title "><a href="../../index.html"><span class="booktitle">  <span class="ph mainbooktitle">Typhoon HIL Documentation</span>  <span class="ph booktitlealt">Version: 2026.1</span>  </span></a></div>
+                    
+                </div>
+                
+                <button type="button" data-target="#wh_top_menu_and_indexterms_link" id="wh_menu_mobile_button" data-toggle="collapse" class="navbar-toggler collapsed wh_toggle_button" aria-expanded="false" aria-label="Toggle menu" aria-controls="wh_top_menu_and_indexterms_link">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+            </div>
+
+            <div class="wh_top_menu_and_indexterms_link collapse navbar-collapse" id="wh_top_menu_and_indexterms_link">
+                
+                <nav class=" wh_top_menu " aria-label="Menu Container"><ul role="menubar" aria-label="Menu"><li role="menuitem" aria-haspopup="true" aria-expanded="false" class="has-children"><span id="tocId-d16877e21-mi" data-tocid="tocId-d16877e21" data-state="not-ready" class=" topicref application-notes"><span class="title"><a href="../../t-an001/concepts/application_notes_introduction.html">Typhoon HIL Application Notes</a></span></span></li><li role="menuitem" aria-haspopup="true" aria-expanded="false" class="has-children"><span id="tocId-d16877e737-mi" data-tocid="tocId-d16877e737" data-state="not-ready" class=" topicref software-manual"><span class="title"><a href="../../t-ug002/topics/software_manual_introduction.html">Typhoon HIL Software Manual</a></span></span></li><li role="menuitem" aria-haspopup="true" aria-expanded="false" class="has-children"><span id="tocId-d16877e7901-mi" data-tocid="tocId-d16877e7901" data-state="not-ready" class=" topicref hardware-manual"><span class="title"><a href="../../t-ug001/abstract/hardware_manual_introduction.html">Typhoon HIL Hardware Manual</a></span></span></li></ul></nav>
+                
+                
+            </div>
+        </div>
+    </div>
+</header>
+        
+        
+         
+        
+        <div class=" wh_search_input navbar-form wh_topic_page_search search " role="form">
+            
+            
+            
+            <form id="searchForm" method="get" role="search" action="../../search.html"><div><input type="search" placeholder="Search " class="wh_search_textfield" id="textToSearch" name="searchQuery" aria-label="Search query" required="required"/><button type="submit" class="wh_search_button" aria-label="Search"><span class="search_input_text">Search</span></button></div></form>
+            
+            
+            
+        </div>
+        
+        <div class="container-fluid" id="wh_topic_container">
+            <div class="row">
+
+                <nav class="wh_tools d-print-none navbar-expand-md" aria-label="Tools">
+                    
+                    <div data-tooltip-position="bottom" class=" wh_breadcrumb "><ol class="d-print-none"><li><span class="home"><a href="../../index.html"><span>Home</span></a></span></li><li><div class="topicref application-notes"><div class="title"><a href="../../t-an001/concepts/application_notes_introduction.html">Typhoon HIL Application Notes</a></div></div></li><li><div class="topicref" data-id="doc"><div class="title"><a href="../../t-an001/concepts/microgrids.html">Microgrids</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">Rapid microgrid pre-commissioning and system integration. Microgrid controller RCP and   testing.</span></p></div></div></div></li><li class="active"><div class="topicref" data-id="doc"><div class="title"><a href="../../t-an001/References/terrestrial_microgrid_(switching).html">Plug-and-play microgrid library and testing of microgrid controller</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">Demonstration of the performance of both switching and average microgrid controller     components in the Microgrid Library</span></p></div></div></div></li></ol></div>
+                    
+                    
+                    
+                    <div class="wh_right_tools">
+                        <button class="wh_hide_highlight" aria-label="Toggle search highlights" title="Toggle search highlights"></button>
+                        <button class="webhelp_expand_collapse_sections" data-next-state="collapsed" aria-label="Collapse sections" title="Collapse sections"></button>
+                        
+                        
+                        
+                        
+                        <div class=" wh_print_link print d-none d-md-inline-block "><button onClick="window.print()" title="Print this page" aria-label="Print this page"></button></div>
+                        
+                        <button type="button" id="wh_toc_button" class="custom-toggler navbar-toggler collapsed wh_toggle_button navbar-light" aria-expanded="false" aria-label="Toggle publishing table of content" aria-controls="wh_publication_toc">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+                    </div>
+                    
+                </nav>
+            </div>
+            
+            
+            
+            
+            <div class="wh_content_area">
+                <div class="row">
+                    
+                        <nav id="wh_publication_toc" class="col-lg-3 col-md-3 col-sm-12 d-md-block d-none d-print-none" aria-label="Table of Contents Container">
+                            <div id="wh_publication_toc_content">
+		                        
+                            	<div class=" wh_publication_toc " data-tooltip-position="right"><span class="expand-button-action-labels"><span id="button-expand-action" role="button" aria-label="Expand"></span><span id="button-collapse-action" role="button" aria-label="Collapse"></span><span id="button-pending-action" role="button" aria-label="Pending"></span></span><ul role="tree" aria-label="Table of Contents"><li role="treeitem" aria-expanded="true"><div data-tocid="tocId-d16877e21" class="topicref application-notes" data-state="expanded"><span role="button" tabindex="0" aria-labelledby="button-collapse-action tocId-d16877e21-link" class="wh-expand-btn"></span><div class="title"><a href="../../t-an001/concepts/application_notes_introduction.html" id="tocId-d16877e21-link">Typhoon HIL Application Notes</a></div></div><ul role="group" class="navbar-nav nav-list"><li role="treeitem"><div data-tocid="doc-d16877e25" class="topicref" data-id="doc" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../../t-an001/concepts/application_notes_introduction.html" id="doc-d16877e25-link">Application Notes Introduction</a><div class="wh-tooltip"><p class="shortdesc">Brief overview of the different categories of Application Notes</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="doc-d16877e36" class="topicref" data-id="doc" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action doc-d16877e36-link" class="wh-expand-btn"></span><div class="title"><a href="../../t-an001/concepts/grid_connected_converters.html" id="doc-d16877e36-link">Grid-connected converters</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">Grid-connected converter applications featuring various grid support    functionalities.</span></p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="doc-d16877e96" class="topicref" data-id="doc" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action doc-d16877e96-link" class="wh-expand-btn"></span><div class="title"><a href="../../t-an001/concepts/automotive.html" id="doc-d16877e96-link">Automotive</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">Electric cars and other automotive applications.</span></p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="doc-d16877e132" class="topicref" data-id="doc" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action doc-d16877e132-link" class="wh-expand-btn"></span><div class="title"><a href="../../t-an001/concepts/aerospace.html" id="doc-d16877e132-link">Aerospace</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">System-level and component-level aircraft applications.</span></p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="doc-d16877e168" class="topicref" data-id="doc" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action doc-d16877e168-link" class="wh-expand-btn"></span><div class="title"><a href="../../t-an001/concepts/battery_management_systems.html" id="doc-d16877e168-link">Battery management systems</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">Battery management system (BMS) examples</span></p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="doc-d16877e216" class="topicref" data-id="doc" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action doc-d16877e216-link" class="wh-expand-btn"></span><div class="title"><a href="../../t-an001/concepts/how-to_guides.html" id="doc-d16877e216-link">How-to Guides</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">Guides, tips, and tricks on various aspects of Typhoon HIL toolchain usage.</span></p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="doc-d16877e312" class="topicref" data-id="doc" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action doc-d16877e312-link" class="wh-expand-btn"></span><div class="title"><a href="../../t-an001/concepts/communication_protocols.html" id="doc-d16877e312-link">Communication Protocols</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">Interoperability. Cybersecurity. Modbus, Sunspec, IEC61850, IEEE    C37.118, DNP3, CAN, OPC UA, and more.</span></p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="doc-d16877e384" class="topicref" data-id="doc" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action doc-d16877e384-link" class="wh-expand-btn"></span><div class="title"><a href="../../t-an001/concepts/power_systems.html" id="doc-d16877e384-link">Power Systems</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">Power system simulation. Relay protection testing. Power flow tool integration and   co-simulation.</span></p></div></div></div></li><li role="treeitem" aria-expanded="true"><div data-tocid="doc-d16877e468" class="topicref" data-id="doc" data-state="expanded"><span role="button" tabindex="0" aria-labelledby="button-collapse-action doc-d16877e468-link" class="wh-expand-btn"></span><div class="title"><a href="../../t-an001/concepts/microgrids.html" id="doc-d16877e468-link">Microgrids</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">Rapid microgrid pre-commissioning and system integration. Microgrid controller RCP and   testing.</span></p></div></div></div><ul role="group" class="navbar-nav nav-list"><li role="treeitem" class="active"><div data-tocid="doc-d16877e480" class="topicref" data-id="doc" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../../t-an001/References/terrestrial_microgrid_(switching).html" id="doc-d16877e480-link">Plug-and-play microgrid library and testing of microgrid controller</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">Demonstration of the performance of both switching and average microgrid controller     components in the Microgrid Library</span></p></div></div></div></li><li role="treeitem"><div data-tocid="doc-d16877e492" class="topicref" data-id="doc" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../../t-an001/References/generic_pv_plant.html" id="doc-d16877e492-link">Generic PV plant</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">Description and demonstration of the capabilities of the Generic PV Plant   component</span></p></div></div></div></li><li role="treeitem"><div data-tocid="doc-d16877e504" class="topicref" data-id="doc" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../../t-an001/References/generic_battery.html" id="doc-d16877e504-link">Generic battery</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">Description and demonstration of the capabilities of the Generic Battery component</span></p></div></div></div></li><li role="treeitem"><div data-tocid="doc-d16877e516" class="topicref" data-id="doc" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../../t-an001/References/wind_farm_microgrid.html" id="doc-d16877e516-link">Microgrid powered by a wind farm</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">Microgrid operation of a mini wind farm, battery unit, large consumer area, and power system connection in both island and reconnection modes</span></p></div></div></div></li><li role="treeitem"><div data-tocid="doc-d16877e528" class="topicref" data-id="doc" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../../t-an001/References/series_compensator_example.html" id="doc-d16877e528-link">Series Compensator example</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">Demonstration of a Series Compensator response to a fault,       including MOV and bypass switch functionality.</span></p></div></div></div></li><li role="treeitem"><div data-tocid="doc-d16877e540" class="topicref" data-id="doc" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../../t-an001/References/switching_and_average_models_grid-connected_bat_inv.html" id="doc-d16877e540-link">Switching and average models of grid-connected battery inverter </a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">Performance comparison of the switching and average models of grid-connected battery     inverters available in Schematic Editor</span></p></div></div></div></li></ul></li><li role="treeitem" aria-expanded="false"><div data-tocid="doc-d16877e552" class="topicref" data-id="doc" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action doc-d16877e552-link" class="wh-expand-btn"></span><div class="title"><a href="../../t-an001/concepts/electrical_drives.html" id="doc-d16877e552-link">Electrical Drives</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">Converters coupled with high-fidelity electrical machine models for high performance   motor drive applications.</span></p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="doc-d16877e601" class="topicref" data-id="doc" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action doc-d16877e601-link" class="wh-expand-btn"></span><div class="title"><a href="../../t-an001/concepts/power_supplies.html" id="doc-d16877e601-link">Power Supplies</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">Linear and switching power supplies for industrial and laboratory   applications.</span></p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="doc-d16877e625" class="topicref" data-id="doc" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action doc-d16877e625-link" class="wh-expand-btn"></span><div class="title"><a href="../../t-an001/concepts/marine_power_systems.html" id="doc-d16877e625-link">Marine Power Systems</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">Hybrid propulsion, shipboard power management, offshore renewables, offshore oil and   gas platform power supplies. </span></p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="doc-d16877e649" class="topicref" data-id="doc" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action doc-d16877e649-link" class="wh-expand-btn"></span><div class="title"><a href="../../t-an001/concepts/power_quality.html" id="doc-d16877e649-link">Power Quality</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">Real-time power quality/harmonic analysis. Incorporate active filters and FACTS devices (STATCOM, DVR,   SVC).</span></p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="doc-d16877e685" class="topicref" data-id="doc" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action doc-d16877e685-link" class="wh-expand-btn"></span><div class="title"><a href="../../t-an001/concepts/railway.html" id="doc-d16877e685-link">Railway</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">System-level and component-level application examples for railway    (traction) equipment.</span></p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="doc-d16877e709" class="topicref" data-id="doc" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action doc-d16877e709-link" class="wh-expand-btn"></span><div class="title"><a href="../../t-an001/concepts/medical_devices.html" id="doc-d16877e709-link">Medical Devices</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">X-ray, MRI, ICD, pacemakers, defibrillators, emergency ventilators, ECG, EMG,   bioelectronics.</span></p></div></div></div></li></ul></li></ul></div>
+		                        
+                            </div>
+                        </nav>
+                    
+                    
+                    <div class="col-lg-7 col-md-9 col-sm-12" id="wh_topic_body">
+                        <button id="wh_close_publication_toc_button" class="close-toc-button d-none" aria-label="Toggle publishing table of content" aria-controls="wh_publication_toc" aria-expanded="true">
+                            <span class="close-toc-icon-container">
+                                <span class="close-toc-icon"></span>     
+                            </span>
+                        </button>
+                        <button id="wh_close_topic_toc_button" class="close-toc-button d-none" aria-label="Toggle topic table of content" aria-controls="wh_topic_toc" aria-expanded="true">
+                            <span class="close-toc-icon-container">
+                                <span class="close-toc-icon"></span>     
+                            </span>
+                        </button>
+                        
+                        <div class=" wh_topic_content body "><main role="main"><article role="article" aria-labelledby="ariaid-title1">
+ <h1 class="- topic/title title topictitle1" id="ariaid-title1">Plug-and-play microgrid library and testing of microgrid controller</h1>
+  
+ <div class="- topic/body reference/refbody body refbody"><p class="- topic/shortdesc shortdesc"><span class="- topic/ph ph" id="doc__description">Demonstration of the performance of both switching and average microgrid controller
+    components in the Microgrid Library</span></p>
+  <section class="- topic/section section" id="doc__section_fd2_4qg_blb" data-ofbid="doc__section_fd2_4qg_blb"><h2 class="- topic/title title sectiontitle"><span class="- topic/ph ph" id="doc__an_title_intro">Introduction</span></h2>
+    
+    <p class="- topic/p p">The <span class="+ topic/ph ui-d/uicontrol ph uicontrol">Microgrid toolbox</span>
+      <span class="- topic/ph ph"> (see more <a class="- topic/xref xref" href="../../t-ug002/concepts/microgrid_toolbox.html" title="Schematic Editor functionalities available through the Microgrid Toolbox">here</a>)</span>, is designed to provide you with realistic
+        component-level building blocks that can be easily used for system-level modeling and
+        real-time microgrid controller (MC) testing. Converter-based library components come in 
+        two varieties: switching and average. Switching is highly recommended for system-level 
+        testing of real converter controllers that require detailed power electronics models in order 
+        to interface the PWM outputs. The average models are behavioural twins of the switching models 
+        in terms of parametrization and dynamics, but take significantly less computation resources,
+        making the better choice for situatuations where no PWM interface is needed. This example
+        demonstrates a MC and its ability to handle a microgrid islanding situation by observing the 
+        net power flow at the point of common coupling (PCC) and engaging grid-forming mode in different
+        distributed energy resources (DERs). In two separate cases, a <em class="+ topic/ph hi-d/i ph i">battery inverter</em> and a 
+        <em class="+ topic/ph hi-d/i ph i">diesel generator (DG)</em> are transferred from grid-following to grid-forming mode to compare
+        their dynamic response.</p>
+  </section>
+  <section class="- topic/section section" id="doc__section_drr_2lm_blb" data-ofbid="doc__section_drr_2lm_blb"><h2 class="- topic/title title sectiontitle"><span class="- topic/ph ph" id="doc__an_title_model">Model description</span></h2>
+    
+      <p class="- topic/p p">The microgrid model (<a class="- topic/xref xref" href="#doc__fig_kyz_pnx_clb">Figure 1</a>)
+        consists of four DERs (an Energy Storage System (ESS), a Wind Plant, a PV Plant, and a Diesel
+        Genset (DG)) and three types of loads (a constant load, an interruptible load, and a variable
+        load), all connected to the same point of common coupling (PCC). All components except the
+        interruptible load are plug-and-play, directly introduced from our <a class="- topic/xref xref" href="../../t-ug002/topics/microgrid.html" title="This section describes the Microgrid library category in Typhoon HIL Schematic Editor.">Microgrid Library</a>. Each
+        DER has its own 12.5 kV/480 V transformer. The ESS subsystem (consisting of a 
+        <a class="- topic/xref xref" href="../../t-ug002/References/battery_inverter.html" title="Description of the legacy Switching and Average Battery Inverter components, which models a battery inverter implemented with a three-phase two-level inverter with a current control loop.">Battery inverter</a> and a <a class="- topic/xref xref" href="../../t-ug002/References/battery.html" title="Description of the Battery component in Schematic Editor">Battery</a>), 
+        the <a class="- topic/xref xref" href="../../t-ug002/References/wind_power_plant.html" title="Description of the legacy Switching and Average Wind Power Plant components.">Wind Plant</a>, the 
+        <a class="- topic/xref xref" href="../../t-ug002/References/pv_plant.html" title="Description of the legacy Switching and Average PV Plant components.">PV Plant</a> are all
+        converter-based.</p>
+        <p class="- topic/p p">This model is designed to test one or more real converter controllers with PWM outputs in
+        a microgrid system environment. For this reason, switching models of each component are
+        used. By default, the microgrid components use the HIL’s internal modulator with SP-modeled
+        control loops, as shown inside the Battery Inverter switching model (<a class="- topic/xref xref" href="#doc__fig_whb_l4x_clb">Figure 2</a>). By unlinking the component
+        from the library, you can remove the internal control and replace it with a real, external
+        controller.</p>
+    <figure class="- topic/fig fig fignone" id="doc__fig_kyz_pnx_clb" data-ofbid="doc__fig_kyz_pnx_clb"><figcaption class="- topic/title title figcap"><span class="figtitleprefix fig--title-label">Figure<span class="fig--title-label-number"> 1</span><span class="fig--title-label-punctuation">. </span></span><span class="fig--title">Microgrid model</span></figcaption>
+          
+          <img class="- topic/image image" id="doc__image_lyz_pnx_clb" src="../Images/terrestrial_microgrid_(switching)_01.png"/>
+        </figure>
+    <figure class="- topic/fig fig fignone" id="doc__fig_whb_l4x_clb" data-ofbid="doc__fig_whb_l4x_clb"><figcaption class="- topic/title title figcap"><span class="figtitleprefix fig--title-label">Figure<span class="fig--title-label-number"> 2</span><span class="fig--title-label-punctuation">. </span></span><span class="fig--title">Battery inverter switching model subsystem</span></figcaption>
+          
+          <img class="- topic/image image" id="doc__image_xhb_l4x_clb" src="../Images/terrestrial_microgrid_(switching)_02.png"/>
+        </figure>
+    <p class="- topic/p p">In addition to the internally modeled converter controller, each DER in this example has an
+        extra “Interface” subsystem used to interface the microgrid component with the MC as shown
+        in <a class="- topic/xref xref" href="#doc__fig_xrh_vpx_clb">Figure 3</a>. In this example, the
+        interface uses only generic <a class="- topic/xref xref" href="../../t-ug002/topics/signal_processing_components.html" title="This section describes the general properties of all signal processing components in the Typhoon HIL Schematic Editor core library.">Signal
+          Processing (SP) components</a> so that it can be simulated with both a HIL
+        device or Virtual HIL. For a real HIL-based system integration approach, the interface can
+        be replaced with one of the industry-standard communication protocol components (CAN,
+        Modbus, IEC61850 and others from the <a class="- topic/xref xref" href="../../t-ug002/References/communication.html" title="Summary of the Communication components available in Schematic Editor">Communication
+          library</a>).</p>
+      <figure class="- topic/fig fig fignone" id="doc__fig_xrh_vpx_clb" data-ofbid="doc__fig_xrh_vpx_clb"><figcaption class="- topic/title title figcap"><span class="figtitleprefix fig--title-label">Figure<span class="fig--title-label-number"> 3</span><span class="fig--title-label-punctuation">. </span></span><span class="fig--title">Diesel genset with a microgrid controller interface</span></figcaption>
+          
+          <img class="- topic/image image" id="doc__image_yrh_vpx_clb" src="../Images/terrestrial_microgrid_(switching)_03.png"/>
+        </figure>
+      <p class="- topic/p p">The MC is the brain of the microgrid. It can monitor and issue commands to the DER units
+        and command the synchronization relay to connect or disconnect the microgrid from the main
+        grid, depending on the operation mode requested by the microgrid operator and any grid
+        faults. The MC also handles power flow regulation through the PCC. By sending power
+        references to the grid-forming DER, the active and reactive power flowing through the PCC
+        can be zeroed, allowing for smooth intentional islanding.</p>
+      <p class="- topic/p p">All DERs can be put into operation through the DER control signal coming from the MC, but
+        only the ESS and the DG have extra inputs/outputs. Since they are the only two DERs not
+        based on intermittent energy source, they can be selectively engaged by the MC as a
+        grid-forming source. They provide information about power to the MC and receive power
+        references in return.</p>
+      <p class="- topic/p p">The MC is fully implemented using <a class="- topic/xref xref" href="../../t-ug002/topics/signal_processing_components.html" title="This section describes the general properties of all signal processing components in the Typhoon HIL Schematic Editor core library.">Signal Processing Components</a> (<a class="- topic/xref xref" href="#doc__fig_pg3_prx_clb">Figure 4</a>). At the core of the MC logic
+        are state machines (SM1 and SM2), implemented using <a class="- topic/xref xref" href="../../t-ug002/References/c_function.html" title="Description of the C function component in Schematic Editor, which enables importing functions from the C programing language.">C function</a> components. They issue commands to the PCC circuit
+        breaker and grid-forming DERs, with the support of the PI
+        Controllers, Signal Routing, and Rate Transition components.</p>
+        <p class="- topic/p p">When using a HIL device, the MC's compiled C code runs on the
+        HIL's ARM real-time processor, allowing the HIL device to be used for rapid control
+        prototyping of the MC. In this setup, the HIL acts as supervisory device towards real DERs
+        and loads (or lab emulators) through the use of analog/digital I/Os and communication
+        protocols.</p>
+      <figure class="- topic/fig fig fignone" id="doc__fig_pg3_prx_clb" data-ofbid="doc__fig_pg3_prx_clb"><figcaption class="- topic/title title figcap"><span class="figtitleprefix fig--title-label">Figure<span class="fig--title-label-number"> 4</span><span class="fig--title-label-punctuation">. </span></span><span class="fig--title">Microgrid controller subsystem</span></figcaption>
+        
+        <img class="- topic/image image" id="doc__image_qg3_prx_clb" src="../Images/terrestrial_microgrid_(switching)_04.png"/>
+      </figure>
+      <p class="- topic/p p">The PCC monitor oversees the power flow through the PCC and keeps the MC informed of the
+        main breaker status. The breaker status signal serves as a trigger for the MC to start
+        controlling the power flow by managing the DERs. Via this mechanism, the PCC monitor can
+        perform synchronization protection and control, over/under voltage, and over/under frequency
+        protection. The implementation of the PCC monitor is shown in <a class="- topic/xref xref" href="#doc__fig_yft_czx_clb">Figure 5</a>.</p>
+      <figure class="- topic/fig fig fignone" id="doc__fig_yft_czx_clb" data-ofbid="doc__fig_yft_czx_clb"><figcaption class="- topic/title title figcap"><span class="figtitleprefix fig--title-label">Figure<span class="fig--title-label-number"> 5</span><span class="fig--title-label-punctuation">. </span></span><span class="fig--title">PCC monitor subsystem</span></figcaption>
+        
+        <img class="- topic/image image" id="doc__image_zft_czx_clb" src="../Images/terrestrial_microgrid_(switching)_05.png"/>
+      </figure>
+  </section>
+    <section class="- topic/section section" id="doc__section_o3w_sll_dlb" data-ofbid="doc__section_o3w_sll_dlb"><h2 class="- topic/title title sectiontitle"><span class="- topic/ph ph" id="doc__an_title_simulation">Simulation</span></h2>
+      
+      <p class="- topic/p p">This application comes with a pre-built SCADA panel shown in <a class="- topic/xref xref" href="#doc__fig_ymn_vml_dlb">Figure 6</a>. It offers the most essential user interface elements (widgets) to monitor and
+        interact with the simulation at runtime, allowing you to further customize it according to your
+        needs.</p>
+      <figure class="- topic/fig fig fignone" id="doc__fig_ymn_vml_dlb" data-ofbid="doc__fig_ymn_vml_dlb"><figcaption class="- topic/title title figcap"><span class="figtitleprefix fig--title-label">Figure<span class="fig--title-label-number"> 6</span><span class="fig--title-label-punctuation">. </span></span><span class="fig--title">SCADA panel</span></figcaption>
+        
+        <img class="- topic/image image" id="doc__image_ust_bnl_dlb" src="../Images/terrestrial_microgrid_(switching)_06.png"/>
+      </figure>
+      <p class="- topic/p p">The first scenario is when all DER units are enabled and connected to the main grid. In
+        this configuration, the DER units operate in grid-following mode. The microgrid operator can
+        change the microgrid status by issuing a command to change the operation mode from “Grid
+        Tied” to “Islanded”, which configures an intentional islanding. The microgrid operator can
+        decide which grid forming capable DER is the main unit. Initially, the Battery Inverter is
+        chosen.</p>
+      <p class="- topic/p p">The microgrid operator can use the “MC” widget group in the SCADA panel (<a class="- topic/xref xref" href="#doc__fig_kh4_z4l_dlb">Figure 7</a>) to issue commands to the MC
+        and observe its response. Through this interface, the main microgrid DER can be chosen and
+        the microgrid operation mode selected. The active/reactive power offset graphs provide the
+        information on the active and reactive power needed to be either sourced or absorbed by the
+        grid-forming DER in order to reach net zero flow through the PCC. The first graph in <a class="- topic/xref xref" href="#doc__fig_c2c_mpl_dlb">Figure 8</a> shows the voltage and current
+        of the battery inverter during the process of zeroing the PCC power flow and contactor
+        opening. The second graph shows the active and reactive power offset and the third viewport
+        shows the status of the PCC contactor. Also, the offset characteristic shown in <a class="- topic/xref xref" href="#doc__fig_kh4_z4l_dlb">Figure 7</a> gives the operator an idea of
+        the ESS’s dynamic response to the intentional islanding.</p>
+        <figure class="- topic/fig fig fignone" id="doc__fig_kh4_z4l_dlb" data-ofbid="doc__fig_kh4_z4l_dlb"><figcaption class="- topic/title title figcap"><span class="figtitleprefix fig--title-label">Figure<span class="fig--title-label-number"> 7</span><span class="fig--title-label-punctuation">. </span></span><span class="fig--title">Battery dynamic response during intentional islanding</span></figcaption>
+          
+          <img class="- topic/image image" id="doc__image_lh4_z4l_dlb" src="../Images/terrestrial_microgrid_(switching)_07.png"/>
+        </figure>
+            <figure class="- topic/fig fig fignone" id="doc__fig_c2c_mpl_dlb" data-ofbid="doc__fig_c2c_mpl_dlb"><figcaption class="- topic/title title figcap"><span class="figtitleprefix fig--title-label">Figure<span class="fig--title-label-number"> 8</span><span class="fig--title-label-punctuation">. </span></span><span class="fig--title">Transition from grid-tied to islanded mode using the battery</span></figcaption>
+              
+              <img class="- topic/image image" id="doc__image_d2c_mpl_dlb" src="../Images/terrestrial_microgrid_(switching)_08.png"/>
+            </figure>
+        <p class="- topic/p p">The same intentional islanding experiment can be done with the DG as the main DER unit.
+          <a class="- topic/xref xref" href="#doc__fig_vzj_crl_dlb">Figure 9</a> shows the active/reactive
+        power offset commands sent by the MC to the DG. Due to the inertia and different dynamics of
+        the DG, the response is slower compared to battery.</p>
+      <figure class="- topic/fig fig fignone" id="doc__fig_vzj_crl_dlb" data-ofbid="doc__fig_vzj_crl_dlb"><figcaption class="- topic/title title figcap"><span class="figtitleprefix fig--title-label">Figure<span class="fig--title-label-number"> 9</span><span class="fig--title-label-punctuation">. </span></span><span class="fig--title">Diesel genset dynamic response during intentional islanding</span></figcaption>
+          
+          <img class="- topic/image image" id="doc__image_wzj_crl_dlb" src="../Images/terrestrial_microgrid_(switching)_09.png"/>
+        </figure><figure class="- topic/fig fig fignone" id="doc__fig_w4x_jrl_dlb" data-ofbid="doc__fig_w4x_jrl_dlb"><figcaption class="- topic/title title figcap"><span class="figtitleprefix fig--title-label">Figure<span class="fig--title-label-number"> 10</span><span class="fig--title-label-punctuation">. </span></span><span class="fig--title">Transition from grid-tied to islanding mode using the diesel genset</span></figcaption>
+          
+          <img class="- topic/image image" id="doc__image_x4x_jrl_dlb" src="../Images/terrestrial_microgrid_(switching)_10.png"/>
+        </figure>
+      <p class="- topic/p p">By pressing the “Cause fault on grid” macro button the operator can simulate unintentional
+        islanding. The PCC monitor opens the contactor and informs the MC, which signals the
+        grid-forming DER that the system has islanded. The DER unit chosen by the microgrid operator
+        will then switch to grid-forming mode, but without the offset sequence that is only present
+        in intentional islanding. This application also contains the TyphoonTest IDE script example
+        (path provided in the table below) which can be used as a starting point for developing your
+        own MC test automation.</p>
+    </section>
+   <section class="- topic/section section" id="doc__section_pils_s3" data-ofbid="doc__section_pils_s3"><h2 class="- topic/title title sectiontitle"><span class="- topic/ph ph" id="doc__an_title_test-automation">Test automation</span></h2>
+     
+     <p class="- topic/p p">The provided test automation script demonstrates the transition of the microgrid example
+        model into grid forming (or intentional islanding) mode after a fault in the grid. The first
+        test case (upper graph in <a class="- topic/xref xref" href="#doc__test_microgrid_ess">Figure 11</a>) shows the PCC active power offset when the Energy Storage System is forming the grid,
+        while the other case represents performance when the Diesel Genset is in grid forming mode
+        (bottom graph in <a class="- topic/xref xref" href="#doc__test_microgrid_ess">Figure 11</a>). The
+        test must be performed with a HIL6-series device, and it performs best in configuration
+        2.</p>
+     <figure class="- topic/fig fig fignone" id="doc__test_microgrid_ess" data-ofbid="doc__test_microgrid_ess"><figcaption class="- topic/title title figcapcenter"><span class="figtitleprefix fig--title-label">Figure<span class="fig--title-label-number"> 11</span><span class="fig--title-label-punctuation">. </span></span><span class="fig--title">Point of common coupling  (PCC) active power offset during intentional
+          islanding</span></figcaption>
+       
+       <div class="imagecenter break"><img class="- topic/image image imagecenter break" src="../Images/terrestrial_microgrid_(switching)_11.png"/></div>
+     </figure>
+   </section>
+   
+   <section class="- topic/section section" id="doc__example_requirements" data-ofbid="doc__example_requirements"><h2 class="- topic/title title sectiontitle">Example requirements</h2>
+     
+     <p class="- topic/p p"><a class="- topic/xref xref" href="#doc__min_req">Table 1</a> provides detailed information about the file locations and hardware requirements 
+       for running the model in real-time, followed by the HIL device resource utilization when running the model using 
+       this minimal hardware configuration. This information is provided to help you with running and 
+       customizing the model as you see fit.</p>
+     <table class="- topic/table table frame-all" id="doc__min_req" data-ofbid="doc__min_req" data-cols="2"><caption class="- topic/title title tablecap" data-caption-side="top" data-is-repeated="true"><span class="table--title-label">Table<span class="table--title-label-number"> 1</span><span class="table--title-label-punctuation">. </span></span><span class="table--title"><span class="- topic/ph ph" id="doc__an_min-req">Minimum requirements</span></span></caption><colgroup><col style="width:50%"/><col style="width:50%"/></colgroup><thead class="- topic/thead thead">
+           <tr class="- topic/row">
+             <th class="- topic/entry entry align-center colsep-0 rowsep-1" id="doc__min_req__entry__1" colspan="2">Files</th>
+           </tr>
+         </thead><tbody class="- topic/tbody tbody">
+           <tr class="- topic/row">
+             <td class="- topic/entry entry align-center colsep-1 rowsep-1" headers="doc__min_req__entry__1"><span class="- topic/ph ph" id="doc__an_min-req_TH-files">Typhoon HIL files</span></td>
+             <td class="- topic/entry entry align-center colsep-0 rowsep-1" headers="doc__min_req__entry__1"><p class="- topic/p p"><em class="+ topic/ph hi-d/i ph i">examples\models\microgrid\microgrid example\terrestrial microgrid
+               (switching)\</em></p>
+               <p class="- topic/p p">terrestrial microgrid.tse</p>
+               <p class="- topic/p p">terrestrial microgrid.cus</p>
+               <p class="- topic/p p"><em class="+ topic/ph hi-d/i ph i">examples\tests\104_terrestrial_microgrid_(switching)</em></p>
+               <p class="- topic/p p">test_terrestrial_microgrid_(switching).py</p></td>
+           </tr>
+           <tr class="- topic/row">
+             <td class="- topic/entry entry align-center colsep-0 rowsep-1" headers="doc__min_req__entry__1" colspan="2"><strong class="+ topic/ph hi-d/b ph b">Minimum hardware requirements</strong></td>
+           </tr>
+           <tr class="- topic/row">
+             <td class="- topic/entry entry align-center colsep-1 rowsep-1" headers="doc__min_req__entry__1"><span class="- topic/ph ph" id="doc__an_min-req_num-devices">No. of HIL devices</span></td>
+             <td class="- topic/entry entry align-center colsep-0 rowsep-1" headers="doc__min_req__entry__1"><span class="- topic/ph ph" id="doc__num_devices">1</span></td>
+           </tr>
+           <tr class="- topic/row">
+             <td class="- topic/entry entry align-center colsep-1 rowsep-1" headers="doc__min_req__entry__1"><span class="- topic/ph ph" id="doc__an_min-req_model-num">HIL device model</span></td>
+             <td class="- topic/entry entry align-center colsep-0 rowsep-1" headers="doc__min_req__entry__1"><span class="- topic/ph ph" id="doc__type_devices">HIL602+</span></td>
+           </tr>
+           <tr class="- topic/row">
+             <td class="- topic/entry entry align-center colsep-1 rowsep-1" headers="doc__min_req__entry__1"><u class="+ topic/ph hi-d/u ph u"><a class="- topic/xref xref" href="../../t-ug002/concepts/device_manager.html" title="Device Manager is used to create, manipulate, and activate HIL device setups.">Device configuration</a></u></td>
+             <td class="- topic/entry entry align-center colsep-0 rowsep-1" headers="doc__min_req__entry__1"><span class="- topic/ph ph" id="doc__num_config">1</span></td>
+           </tr>
+           <tr class="- topic/row">
+             <td class="- topic/entry entry align-center colsep-0 rowsep-1" headers="doc__min_req__entry__1" colspan="2"><strong class="+ topic/ph hi-d/b ph b">HIL device resource utilization</strong></td>
+           </tr>
+           <tr class="- topic/row">
+             <td class="- topic/entry entry align-center colsep-1 rowsep-1" headers="doc__min_req__entry__1"><span class="- topic/ph ph" id="doc__an_res-util_num-cores">No. of processing cores</span></td>
+             <td class="- topic/entry entry align-center colsep-0 rowsep-1" headers="doc__min_req__entry__1"><span class="- topic/ph ph" id="doc__num_cores">4</span></td>
+           </tr>
+           <tr class="- topic/row">
+             <td class="- topic/entry entry align-center colsep-1 rowsep-1" headers="doc__min_req__entry__1"><span class="- topic/ph ph" id="doc__an_res-util_max-memory">Max. matrix memory utilization</span></td>
+             <td class="- topic/entry entry align-center colsep-0 rowsep-1" headers="doc__min_req__entry__1"><p class="- topic/p p">73.68%(core0)</p><p class="- topic/p p">82.59%(core1)</p><p class="- topic/p p">77.86%(core2)</p><p class="- topic/p p">77.37%(core3)</p></td>
+           </tr>
+           <tr class="- topic/row">
+             <td class="- topic/entry entry align-center colsep-1 rowsep-1" headers="doc__min_req__entry__1"><span class="- topic/ph ph" id="doc__an_res-util_max-time">Max. time slot utilization</span></td>
+             <td class="- topic/entry entry align-center colsep-0 rowsep-1" headers="doc__min_req__entry__1"><p class="- topic/p p">72.5%(core0)</p><p class="- topic/p p">19.53%(core1)</p><p class="- topic/p p">21.25%(core2)</p><p class="- topic/p p">20.31%(core3)</p></td>
+           </tr>
+           <tr class="- topic/row">
+             <td class="- topic/entry entry align-center colsep-1 rowsep-1" headers="doc__min_req__entry__1"><span class="- topic/ph ph" id="doc__an_res-util_sim-step">Simulation step, electrical</span></td>
+             <td class="- topic/entry entry align-center colsep-0 rowsep-1" headers="doc__min_req__entry__1">4 µs</td>
+           </tr>
+           <tr class="- topic/row">
+             <td class="- topic/entry entry align-center colsep-1 rowsep-0" headers="doc__min_req__entry__1"><span class="- topic/ph ph" id="doc__an_res-util_exec-rate">Execution rate, signal processing</span></td>
+             <td class="- topic/entry entry align-center colsep-0 rowsep-0" headers="doc__min_req__entry__1">Multirate (200 µs, 1 ms)</td>
+           </tr>
+         </tbody></table>
+   </section>
+   <section class="- topic/section section" id="doc__section_pils_s5" data-ofbid="doc__section_pils_s5"><h2 class="- topic/title title sectiontitle"><span class="- topic/ph ph" id="doc__an_title_author">Authors</span></h2>
+     
+     <p class="- topic/p p">[1] Ognjen Gagrica</p>
+      <p class="- topic/p p">[2] Simisa Simic</p>
+   </section>
+    
+ </div>
+</article></main></div>
+                        
+                        
+                        
+                        
+                        
+                        
+                    </div>
+                    
+                        <nav role="navigation" id="wh_topic_toc" aria-label="On this page" class="col-lg-2 d-none d-lg-block navbar d-print-none"> 
+                            <div id="wh_topic_toc_content">
+		                        
+	                            <div class=" wh_topic_toc "><div class="wh_topic_label">On this page</div><ul><li class="section-item"><div class="section-title"><a href="#doc__section_fd2_4qg_blb" data-tocid="doc__section_fd2_4qg_blb"><span class="- topic/ph ph" id="doc__an_title_intro">Introduction</span></a></div></li><li class="section-item"><div class="section-title"><a href="#doc__section_drr_2lm_blb" data-tocid="doc__section_drr_2lm_blb"><span class="- topic/ph ph" id="doc__an_title_model">Model description</span></a></div></li><li class="section-item"><div class="section-title"><a href="#doc__section_o3w_sll_dlb" data-tocid="doc__section_o3w_sll_dlb"><span class="- topic/ph ph" id="doc__an_title_simulation">Simulation</span></a></div></li><li class="section-item"><div class="section-title"><a href="#doc__section_pils_s3" data-tocid="doc__section_pils_s3"><span class="- topic/ph ph" id="doc__an_title_test-automation">Test automation</span></a></div></li><li class="section-item"><div class="section-title"><a href="#doc__example_requirements" data-tocid="doc__example_requirements">Example requirements</a></div></li><li class="section-item"><div class="section-title"><a href="#doc__section_pils_s5" data-tocid="doc__section_pils_s5"><span class="- topic/ph ph" id="doc__an_title_author">Authors</span></a></div></li></ul></div>
+	                        	
+                        	</div>
+                        </nav>
+                    
+                </div>
+            </div>
+            
+            
+            
+        </div> 
+        <footer class="navbar navbar-default wh_footer">
+  <div class=" footer-container mx-auto ">
+    <div style="text-align:center">Typhoon HIL Inc.<span id="year"> <a href="https://www.typhoon-hil.com">www.typhoon-hil.com</a></span></div>
+  </div>
+</footer>
+        
+        <div id="go2top" class="d-print-none">
+            <span class="oxy-icon oxy-icon-up"></span>
+        </div>
+        
+        <div id="modal_img_large" class="modal">
+            <span class="close oxy-icon oxy-icon-remove"></span>
+            <div id="modal_img_container"></div>
+            <div id="caption"></div>
+        </div>
+        
+        
+<script type="text/javascript" src="../../assets/script.js"> 
+</script>
+
+        
+    </body>
+</html>

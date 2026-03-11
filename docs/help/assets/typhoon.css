@@ -1,0 +1,256 @@
+@font-face {
+    font-display: swap;
+    font-family: Helvetica Neue LT Std Medium;
+    font-style: normal;
+    font-weight: 500;
+    src: url(../../fonts/HelveticaNeueLTStd-Md.woff2) format("woff2"),url(../../fonts/HelveticaNeueLTStd-Md.woff) format("woff")
+}
+
+@font-face {
+    font-display: swap;
+    font-family: Helvetica Neue LT Std Bold;
+    font-style: normal;
+    font-weight: 700;
+    src: url(../../fonts/HelveticaNeueLTStd-Bd.woff2) format("woff2"),url(../../fonts/HelveticaNeueLTStd-Bd.woff) format("woff")
+}
+
+@font-face {
+    font-display: swap;
+    font-family: Helvetica Neue LT Std Roman;
+    font-style: normal;
+    font-weight: 400;
+    src: url(../../fonts/HelveticaNeueLTStd-Roman.woff2) format("woff2"),url(../../fonts/HelveticaNeueLTStd-Roman.woff) format("woff")
+}
+
+@font-face {
+    font-display: swap;
+    font-family: Helvetica LT Std Light;
+    font-style: normal;
+    font-weight: 300;
+    src: url(../../fonts/HelveticaLTStd-Light.woff2) format("woff2"),url(../../fonts/HelveticaLTStd-Light.woff) format("woff")
+}
+
+@font-face {
+    font-display: block;
+    font-family: icomoon;
+    font-style: normal;
+    font-weight: 400;
+    src: url(../../fonts/icomoon.eot);
+    src: url(../../fonts/icomoon.eot#iefix) format("embedded-opentype"),url(../../fonts/icomoon.ttf) format("truetype"),url(../../fonts/icomoon.woff) format("woff"),url(../img/icomoon.svg#icomoon) format("svg")
+}
+
+body {
+	font-size:14px;
+	font-family: Helvetica Neue LT Std Roman, Helvetica, Aptos, sans-serif !important;
+}
+.wh_top_menu {
+	margin:2em 0 0 0;
+}
+.wh_search_input {
+	padding:1em 0 2em 0;
+	width:100%;
+}
+.wh_search_input,.wh_tools,.wh_main_page .wh_search_input {
+	background:transparent;
+}
+.wh_header {
+	text-align:center;
+}
+.wh_publication_title > a {
+	font-size: 1.4em;
+}
+.wh_header, .wh_top_menu a,.wh_publication_title > a,.wh_top_menu ul ul li a:hover {
+	background:#fff;
+	color:#000;
+}
+.navbar-default {
+	box-shadow: none;
+	-webkit-box-shadow: none;
+	background:transparent;
+}
+.wh_logo_and_publication_title_container,.wh_logo_and_publication_title,.wh_logo.hidden-xs,.wh_publication_title {
+	display:block;
+	width:100%;
+	margin:0 auto;
+}
+.wh_publication_title {
+	margin-top:-15px;
+}
+.wh_publication_title a {
+	padding:0;
+	margin:0;
+}
+.wh_top_menu ul ul li {
+	border: 0;
+}
+.wh_top_menu_and_indexterms_link.collapse.navbar-collapse, .wh_breadcrumb  {
+	width:100%;
+}
+.wh_breadcrumb ol {
+	color: #9f95a3;
+}
+.wh_breadcrumb li:not(:last-of-type)::after {
+	content: "|"
+}
+.wh_breadcrumb ol .active {
+	color: #333;
+}
+.wh_side_toc {
+	background:#fff;
+}
+p.shortdesc {
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 10px;
+}
+#concept_ljq_fpp_3y .wh_top_menu > ul > li:nth-child(1) > span > a,
+#concept_hlf_w4p_3y div.wh_top_menu_and_indexterms_link.collapse.navbar-collapse > div > ul > li:nth-child(2) > span > a,
+#topic_z5n_npp_3y .wh_top_menu > ul > li:nth-child(3) > span > a,
+#topic_wzz_jnn_4y .wh_top_menu > ul > li:nth-child(4) > span > a,
+#concept_epn_l3f_nz .wh_top_menu > ul > li:nth-child(5) > span > a,
+#concept_zj1_n24_lz .wh_top_menu > ul > li:nth-child(6) > span > a,
+#reference_w1j_35t_qz .wh_top_menu > ul > li:nth-child(7) > span > a,
+ {
+	color: #E90C17 !important;
+}
+.wh_topic_content.body a {
+	color: #5e91cc;
+}
+.wh_topic_content .title.topictitle1 {
+	color:#000;
+}
+.wh_side_toc > ul > li:nth-child(1) > .topicref > a {
+	color: #000;
+}
+.wh_side_toc a {
+	color:#9f95a3;
+}
+.wh_side_toc a:hover {
+	color:#E90C17;
+	text-decoration: none;
+}
+.wh_side_toc .active {
+	color:#000;
+}
+.wh_right_tools {
+	right:10px;
+}
+.MathJax_SVG {
+    padding: 10px 0 !important;
+    display: block;
+}
+script[id^=MathJax] {
+	display: none !important
+}
+.MathJax_SVG > svg {
+    max-width: 750px;
+    width: 100%;
+}
+.container .wh_content_area ol, .container .wh_content_area ul {
+	margin-top: 10px;
+}
+.wh_footer {
+	color:#333;
+}
+
+
+div.note {
+  border: none !important;
+  border-radius: 0px !important;
+  background-image: url("../t-ug002/Images/m2_note_16x16.svg");
+  background-size: 24px;
+  background-color: #ebebeb !important;
+  background-position-y: 12px !important;
+}
+
+div.important {
+  border: none !important;
+  border-radius: 0px !important;
+  background-image: url("../t-ug002/Images/m2_important_16x16.svg");
+  background-size: 24px;
+  background-color: #fccfd1 !important;
+  background-position-y: 12px !important;
+}
+
+div.note[class~="topic/note"].realtime_ignored {
+  border: none !important;
+  border-radius: 0px !important;
+  background-image: url("../t-ug002/Images/real_time_gray.svg");
+  background-size: 24px;
+  background-color: #ebebeb !important;
+  background-position-y: 12px !important;
+}
+
+div.note[class~="topic/note"].realtime_notsupported {
+  border: none !important;
+  border-radius: 0px !important;
+  background-image: url("../t-ug002/Images/real_time_red.svg");
+  background-size: 24px;
+  background-color: #ebebeb !important;
+  background-position-y: 12px !important;
+}
+
+div.note[class~="topic/note"].typhoonsim_ignored {
+  border: none !important;
+  border-radius: 0px !important;
+  background-image: url("../t-ug002/Images/typhoonsim_gray.svg");
+  background-size: 24px;
+  background-color: #ebebeb !important;
+  background-position-y: 12px !important;
+}
+
+div.note[class~="topic/note"].typhoonsim_notsupported {
+  border: none !important;
+  border-radius: 0px !important;
+  background-image: url("../t-ug002/Images/typhoonsim_red.svg");
+  background-size: 24px;
+  background-color: #ebebeb !important;
+  background-position-y: 12px !important;
+}
+
+li.has-children:not(.wh_top_menu li) ul {
+	border:1px solid #ccc;
+    display: block;
+    margin: 0 auto;
+    margin-bottom: 15px;
+}
+.figcapcenter, .figcap {
+	font-style: italic;
+	font-size: 12px;
+}
+.fig--title-label-number {
+display: contents !important;
+}
+figure.fig {
+	text-align:center;
+}
+figure.fig .figcap, figure.fig .figcapcenter {
+    text-align: left;
+}
+button#wh_menu_mobile_button {
+	background-color: #ddd;
+}
+button#wh_toc_button {
+    margin-top: 25px;
+}
+.imagecenter img {
+    display: initial;
+}
+img.break {
+    display: initial;
+}
+table {
+	width: 100% !important;
+}
+
+#go2top {
+top: 37px !important;
+}
+/* Title adjustment */
+.wh_logo + .wh_publication_title {
+	margin-left: 0 !important;
+}
+.booklibrary, .booktitlealt {
+	display: block;
+	font-size: 12px;
+}

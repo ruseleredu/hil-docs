@@ -1,0 +1,1 @@
+define({"topics":[{"title":"Grid","shortdesc":"<p class=\"shortdesc\"><span class=\"ph\">Description of the Grid component, which models a grid power source.<\/span><\/p>","href":"t-ug002\/References\/grid_generic.html","attributes":{"data-id":"doc"},"menu":{"hasChildren":false},"tocID":"doc-d16877e4296","topics":[]}]});

@@ -1,0 +1,618 @@
+<!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en" data-whc_version="24.1">
+    <head><link rel="shortcut icon" href="../../favicon.ico"/><link rel="icon" href="../../favicon.ico"/><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><meta name="DC.rights.owner" content="(C) Copyright 2026"/><meta name="copyright" content="(C) Copyright 2026"/><meta name="generator" content="DITA-OT"/><meta name="DC.type" content="reference"/><meta name="description" content="Simulation of multi-HIL capabilities using the IEC 61850 communication protocol"/><meta name="DC.relation" content="../../t-an001/concepts/power_systems.html"/><meta name="DC.format" content="HTML5"/><meta name="DC.identifier" content="doc"/>        
+      <title>Digital substation with IEC 61850 process bus</title><!--  Generated with Oxygen version 24.1, build number 2022030800.  --><meta name="wh-path2root" content="../../"/><meta name="wh-toc-id" content="doc-d16877e444"/><meta name="wh-source-relpath" content="t-an001/References/digital_substation.dita"/><meta name="wh-out-relpath" content="t-an001/References/digital_substation.html"/>
+    <!-- Latest compiled and minified Bootstrap CSS -->
+    <link rel="stylesheet" type="text/css" href="../../oxygen-webhelp/lib/bootstrap/css/bootstrap.min.css"/>
+    
+    <link rel="stylesheet" href="../../oxygen-webhelp/lib/jquery-ui/jquery-ui.min.css"/>
+    
+    <!-- Template default styles  -->
+    <link rel="stylesheet" type="text/css" href="../../oxygen-webhelp/app/topic-page.css?buildId=2022030800"/>
+    
+    
+    <script src="../../oxygen-webhelp/lib/jquery/jquery-3.5.1.min.js"></script>
+    
+    <script data-main="../../oxygen-webhelp/app/topic-page.js" src="../../oxygen-webhelp/lib/requirejs/require.js"></script>
+<link rel="stylesheet" type="text/css" href="../../oxygen-webhelp/template/oxygen.css?buildId=2022030800"/><link rel="stylesheet" type="text/css" href="../../oxygen-webhelp/template/notes.css?buildId=2022030800"/><script type="text/javascript" src="../../Scripts/mml-svg.js"> 
+</script><link rel="stylesheet" type="text/css" href="../../assets/typhoon.css"/></head>
+
+    <body id="doc" class="wh_topic_page frmBody">
+        <a href="#wh_topic_body" class="sr-only sr-only-focusable">
+            Jump to main content
+        </a>
+        
+        
+        
+        
+        <header class="navbar navbar-default wh_header">
+    <div class="container-fluid">
+        <div class="wh_header_flex_container navbar-nav navbar-expand-md navbar-dark">
+            <div class="wh_logo_and_publication_title_container">
+                <div class="wh_logo_and_publication_title">
+                    
+                    <a href="https://www.typhoon-hil.com" class=" wh_logo d-none d-sm-block "><img src="../../logo.svg" alt="  Typhoon HIL Documentation  Version: 2026.1  "/></a>
+                    <div class=" wh_publication_title "><a href="../../index.html"><span class="booktitle">  <span class="ph mainbooktitle">Typhoon HIL Documentation</span>  <span class="ph booktitlealt">Version: 2026.1</span>  </span></a></div>
+                    
+                </div>
+                
+                <button type="button" data-target="#wh_top_menu_and_indexterms_link" id="wh_menu_mobile_button" data-toggle="collapse" class="navbar-toggler collapsed wh_toggle_button" aria-expanded="false" aria-label="Toggle menu" aria-controls="wh_top_menu_and_indexterms_link">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+            </div>
+
+            <div class="wh_top_menu_and_indexterms_link collapse navbar-collapse" id="wh_top_menu_and_indexterms_link">
+                
+                <nav class=" wh_top_menu " aria-label="Menu Container"><ul role="menubar" aria-label="Menu"><li role="menuitem" aria-haspopup="true" aria-expanded="false" class="has-children"><span id="tocId-d16877e21-mi" data-tocid="tocId-d16877e21" data-state="not-ready" class=" topicref application-notes"><span class="title"><a href="../../t-an001/concepts/application_notes_introduction.html">Typhoon HIL Application Notes</a></span></span></li><li role="menuitem" aria-haspopup="true" aria-expanded="false" class="has-children"><span id="tocId-d16877e737-mi" data-tocid="tocId-d16877e737" data-state="not-ready" class=" topicref software-manual"><span class="title"><a href="../../t-ug002/topics/software_manual_introduction.html">Typhoon HIL Software Manual</a></span></span></li><li role="menuitem" aria-haspopup="true" aria-expanded="false" class="has-children"><span id="tocId-d16877e7901-mi" data-tocid="tocId-d16877e7901" data-state="not-ready" class=" topicref hardware-manual"><span class="title"><a href="../../t-ug001/abstract/hardware_manual_introduction.html">Typhoon HIL Hardware Manual</a></span></span></li></ul></nav>
+                
+                
+            </div>
+        </div>
+    </div>
+</header>
+        
+        
+         
+        
+        <div class=" wh_search_input navbar-form wh_topic_page_search search " role="form">
+            
+            
+            
+            <form id="searchForm" method="get" role="search" action="../../search.html"><div><input type="search" placeholder="Search " class="wh_search_textfield" id="textToSearch" name="searchQuery" aria-label="Search query" required="required"/><button type="submit" class="wh_search_button" aria-label="Search"><span class="search_input_text">Search</span></button></div></form>
+            
+            
+            
+        </div>
+        
+        <div class="container-fluid" id="wh_topic_container">
+            <div class="row">
+
+                <nav class="wh_tools d-print-none navbar-expand-md" aria-label="Tools">
+                    
+                    <div data-tooltip-position="bottom" class=" wh_breadcrumb "><ol class="d-print-none"><li><span class="home"><a href="../../index.html"><span>Home</span></a></span></li><li><div class="topicref application-notes"><div class="title"><a href="../../t-an001/concepts/application_notes_introduction.html">Typhoon HIL Application Notes</a></div></div></li><li><div class="topicref" data-id="doc"><div class="title"><a href="../../t-an001/concepts/power_systems.html">Power Systems</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">Power system simulation. Relay protection testing. Power flow tool integration and   co-simulation.</span></p></div></div></div></li><li class="active"><div class="topicref" data-id="doc"><div class="title"><a href="../../t-an001/References/digital_substation.html">Digital substation with IEC 61850 process bus</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">Simulation of multi-HIL capabilities using the IEC 61850 communication protocol</span></p></div></div></div></li></ol></div>
+                    
+                    
+                    
+                    <div class="wh_right_tools">
+                        <button class="wh_hide_highlight" aria-label="Toggle search highlights" title="Toggle search highlights"></button>
+                        <button class="webhelp_expand_collapse_sections" data-next-state="collapsed" aria-label="Collapse sections" title="Collapse sections"></button>
+                        
+                        
+                        
+                        
+                        <div class=" wh_print_link print d-none d-md-inline-block "><button onClick="window.print()" title="Print this page" aria-label="Print this page"></button></div>
+                        
+                        <button type="button" id="wh_toc_button" class="custom-toggler navbar-toggler collapsed wh_toggle_button navbar-light" aria-expanded="false" aria-label="Toggle publishing table of content" aria-controls="wh_publication_toc">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+                    </div>
+                    
+                </nav>
+            </div>
+            
+            
+            
+            
+            <div class="wh_content_area">
+                <div class="row">
+                    
+                        <nav id="wh_publication_toc" class="col-lg-3 col-md-3 col-sm-12 d-md-block d-none d-print-none" aria-label="Table of Contents Container">
+                            <div id="wh_publication_toc_content">
+		                        
+                            	<div class=" wh_publication_toc " data-tooltip-position="right"><span class="expand-button-action-labels"><span id="button-expand-action" role="button" aria-label="Expand"></span><span id="button-collapse-action" role="button" aria-label="Collapse"></span><span id="button-pending-action" role="button" aria-label="Pending"></span></span><ul role="tree" aria-label="Table of Contents"><li role="treeitem" aria-expanded="true"><div data-tocid="tocId-d16877e21" class="topicref application-notes" data-state="expanded"><span role="button" tabindex="0" aria-labelledby="button-collapse-action tocId-d16877e21-link" class="wh-expand-btn"></span><div class="title"><a href="../../t-an001/concepts/application_notes_introduction.html" id="tocId-d16877e21-link">Typhoon HIL Application Notes</a></div></div><ul role="group" class="navbar-nav nav-list"><li role="treeitem"><div data-tocid="doc-d16877e25" class="topicref" data-id="doc" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../../t-an001/concepts/application_notes_introduction.html" id="doc-d16877e25-link">Application Notes Introduction</a><div class="wh-tooltip"><p class="shortdesc">Brief overview of the different categories of Application Notes</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="doc-d16877e36" class="topicref" data-id="doc" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action doc-d16877e36-link" class="wh-expand-btn"></span><div class="title"><a href="../../t-an001/concepts/grid_connected_converters.html" id="doc-d16877e36-link">Grid-connected converters</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">Grid-connected converter applications featuring various grid support    functionalities.</span></p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="doc-d16877e96" class="topicref" data-id="doc" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action doc-d16877e96-link" class="wh-expand-btn"></span><div class="title"><a href="../../t-an001/concepts/automotive.html" id="doc-d16877e96-link">Automotive</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">Electric cars and other automotive applications.</span></p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="doc-d16877e132" class="topicref" data-id="doc" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action doc-d16877e132-link" class="wh-expand-btn"></span><div class="title"><a href="../../t-an001/concepts/aerospace.html" id="doc-d16877e132-link">Aerospace</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">System-level and component-level aircraft applications.</span></p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="doc-d16877e168" class="topicref" data-id="doc" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action doc-d16877e168-link" class="wh-expand-btn"></span><div class="title"><a href="../../t-an001/concepts/battery_management_systems.html" id="doc-d16877e168-link">Battery management systems</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">Battery management system (BMS) examples</span></p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="doc-d16877e216" class="topicref" data-id="doc" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action doc-d16877e216-link" class="wh-expand-btn"></span><div class="title"><a href="../../t-an001/concepts/how-to_guides.html" id="doc-d16877e216-link">How-to Guides</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">Guides, tips, and tricks on various aspects of Typhoon HIL toolchain usage.</span></p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="doc-d16877e312" class="topicref" data-id="doc" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action doc-d16877e312-link" class="wh-expand-btn"></span><div class="title"><a href="../../t-an001/concepts/communication_protocols.html" id="doc-d16877e312-link">Communication Protocols</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">Interoperability. Cybersecurity. Modbus, Sunspec, IEC61850, IEEE    C37.118, DNP3, CAN, OPC UA, and more.</span></p></div></div></div></li><li role="treeitem" aria-expanded="true"><div data-tocid="doc-d16877e384" class="topicref" data-id="doc" data-state="expanded"><span role="button" tabindex="0" aria-labelledby="button-collapse-action doc-d16877e384-link" class="wh-expand-btn"></span><div class="title"><a href="../../t-an001/concepts/power_systems.html" id="doc-d16877e384-link">Power Systems</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">Power system simulation. Relay protection testing. Power flow tool integration and   co-simulation.</span></p></div></div></div><ul role="group" class="navbar-nav nav-list"><li role="treeitem"><div data-tocid="doc-d16877e396" class="topicref" data-id="doc" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../../t-an001/References/opendss_power_flow_co_simulation.html" id="doc-d16877e396-link">OpenDSS &amp; Typhoon HIL co-simulation</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">Demonstration of a simple power-flow analysis of a PV Plant using       OpenDSS and Typhoon HIL real-time co-simulation.</span></p></div></div></div></li><li role="treeitem"><div data-tocid="doc-d16877e408" class="topicref" data-id="doc" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../../t-an001/References/distance_protection_relay.html" id="doc-d16877e408-link">Distance protection relay with false tripping prevention</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">Simulation of a distance protection relay connecting two grids with fault injection.</span></p></div></div></div></li><li role="treeitem"><div data-tocid="doc-d16877e420" class="topicref" data-id="doc" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../../t-an001/References/ieee_34_node_islanding.html" id="doc-d16877e420-link">IEEE 34 node islanding with implemented Artificial Neural Network (ANN)</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">Demonstration of the use of Artificial Neural Networks (ANNs) in a microgrid.</span></p></div></div></div></li><li role="treeitem"><div data-tocid="doc-d16877e432" class="topicref" data-id="doc" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../../t-an001/References/automatic_recloser.html" id="doc-d16877e432-link">Automatic recloser</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">Demonstration of an automatic recloser example model with built in       phase and earth protections.</span></p></div></div></div></li><li role="treeitem" class="active"><div data-tocid="doc-d16877e444" class="topicref" data-id="doc" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../../t-an001/References/digital_substation.html" id="doc-d16877e444-link">Digital substation with IEC 61850 process bus</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">Simulation of multi-HIL capabilities using the IEC 61850 communication protocol</span></p></div></div></div></li><li role="treeitem"><div data-tocid="doc-d16877e456" class="topicref" data-id="doc" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../../t-an001/References/differential_protection_example.html" id="doc-d16877e456-link">Differential Protection example</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">Percentage differential protection function (ANSI 87) with an unrestrained element.</span></p></div></div></div></li></ul></li><li role="treeitem" aria-expanded="false"><div data-tocid="doc-d16877e468" class="topicref" data-id="doc" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action doc-d16877e468-link" class="wh-expand-btn"></span><div class="title"><a href="../../t-an001/concepts/microgrids.html" id="doc-d16877e468-link">Microgrids</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">Rapid microgrid pre-commissioning and system integration. Microgrid controller RCP and   testing.</span></p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="doc-d16877e552" class="topicref" data-id="doc" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action doc-d16877e552-link" class="wh-expand-btn"></span><div class="title"><a href="../../t-an001/concepts/electrical_drives.html" id="doc-d16877e552-link">Electrical Drives</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">Converters coupled with high-fidelity electrical machine models for high performance   motor drive applications.</span></p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="doc-d16877e601" class="topicref" data-id="doc" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action doc-d16877e601-link" class="wh-expand-btn"></span><div class="title"><a href="../../t-an001/concepts/power_supplies.html" id="doc-d16877e601-link">Power Supplies</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">Linear and switching power supplies for industrial and laboratory   applications.</span></p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="doc-d16877e625" class="topicref" data-id="doc" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action doc-d16877e625-link" class="wh-expand-btn"></span><div class="title"><a href="../../t-an001/concepts/marine_power_systems.html" id="doc-d16877e625-link">Marine Power Systems</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">Hybrid propulsion, shipboard power management, offshore renewables, offshore oil and   gas platform power supplies. </span></p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="doc-d16877e649" class="topicref" data-id="doc" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action doc-d16877e649-link" class="wh-expand-btn"></span><div class="title"><a href="../../t-an001/concepts/power_quality.html" id="doc-d16877e649-link">Power Quality</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">Real-time power quality/harmonic analysis. Incorporate active filters and FACTS devices (STATCOM, DVR,   SVC).</span></p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="doc-d16877e685" class="topicref" data-id="doc" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action doc-d16877e685-link" class="wh-expand-btn"></span><div class="title"><a href="../../t-an001/concepts/railway.html" id="doc-d16877e685-link">Railway</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">System-level and component-level application examples for railway    (traction) equipment.</span></p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="doc-d16877e709" class="topicref" data-id="doc" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action doc-d16877e709-link" class="wh-expand-btn"></span><div class="title"><a href="../../t-an001/concepts/medical_devices.html" id="doc-d16877e709-link">Medical Devices</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">X-ray, MRI, ICD, pacemakers, defibrillators, emergency ventilators, ECG, EMG,   bioelectronics.</span></p></div></div></div></li></ul></li></ul></div>
+		                        
+                            </div>
+                        </nav>
+                    
+                    
+                    <div class="col-lg-7 col-md-9 col-sm-12" id="wh_topic_body">
+                        <button id="wh_close_publication_toc_button" class="close-toc-button d-none" aria-label="Toggle publishing table of content" aria-controls="wh_publication_toc" aria-expanded="true">
+                            <span class="close-toc-icon-container">
+                                <span class="close-toc-icon"></span>     
+                            </span>
+                        </button>
+                        <button id="wh_close_topic_toc_button" class="close-toc-button d-none" aria-label="Toggle topic table of content" aria-controls="wh_topic_toc" aria-expanded="true">
+                            <span class="close-toc-icon-container">
+                                <span class="close-toc-icon"></span>     
+                            </span>
+                        </button>
+                        
+                        <div class=" wh_topic_content body "><main role="main"><article role="article" aria-labelledby="ariaid-title1">
+  <h1 class="- topic/title title topictitle1" id="ariaid-title1">Digital substation with IEC 61850 process bus</h1>
+  
+ <div class="- topic/body reference/refbody body refbody"><p class="- topic/shortdesc shortdesc"><span class="- topic/ph ph" id="doc__description">Simulation of multi-HIL capabilities using the IEC 61850 communication protocol</span></p>
+  <section class="- topic/section section" id="doc__section_fd2_4qg_blb" data-ofbid="doc__section_fd2_4qg_blb"><h2 class="- topic/title title sectiontitle"><span class="- topic/ph ph" id="doc__an_title_intro">Introduction</span></h2>
+    
+      <p class="- topic/p p">Digital Substations are a category of electrical substations with a process bus that allows
+        for data exchange via copper or fiber optic wires using Ethernet networks [<a class="- topic/xref xref" href="#doc__section_y2p_f4k_b1c">1</a>]. Devices communicate through
+        communication protocols as outlined in the IEC 61850 standard, which defines some key
+        requirements such as:</p>
+      <ul class="- topic/ul ul" id="doc__ul_evf_plg_j1c" data-ofbid="doc__ul_evf_plg_j1c">
+        <li class="- topic/li li">high availability</li>
+        <li class="- topic/li li">ensuring interoperability among different vendors,</li>
+        <li class="- topic/li li">the need to introduce an additional device in the substation, called a merging unit
+          (MU), which handles communication with conventional equipment</li>
+      </ul>
+    <p class="- topic/p p">The increased need for cybersecurity in the network [<a class="- topic/xref xref" href="#doc__section_y2p_f4k_b1c">2</a>][<a class="- topic/xref xref" href="#doc__section_y2p_f4k_b1c">3</a>]. These devices are merging units
+        (MUs). The advantages of using the IEC 61850 standard are the long-term cost reduction, lower
+        cabling needs, and the low cost of equipment extension when establishing new power networks
+          [<a class="- topic/xref xref" href="#doc__section_y2p_f4k_b1c">3</a>]. Additionally, there is an
+        increase in operator safety, as the risk of accidental opening of the secondary side of
+        measurement transformers is reduced, and current and voltage measurements are transmitted
+        through communication networks such as fiber optics.</p>
+    <p class="- topic/p p">In this application note, an example is presented for digital substations using two HIL
+        devices (ID 0 and ID 1). The Ethernet wiring of the setup is presented in <a class="- topic/xref xref" href="#doc__figure_01">Figure 1</a>:</p>
+      <figure class="- topic/fig fig fignone" id="doc__figure_01" data-ofbid="doc__figure_01"><figcaption class="- topic/title title figcap"><span class="figtitleprefix fig--title-label">Figure<span class="fig--title-label-number"> 1</span><span class="fig--title-label-punctuation">. </span></span><span class="fig--title">Ethernet wiring of the setup</span></figcaption>
+        
+        <img class="- topic/image image" src="../Images/digital_substation_01.png"/>
+      </figure>
+    <p class="- topic/p p">The HIL device with ID 0 simulates the switchyard which consists of a transmission line, a 
+      transformer, switchgear equipment, and CT/VTs. The second HIL device with ID 1 simulates the 
+      protection systems in the control building. The HIL devices communicate through the IEC 61850 
+      standard. The measurements are transmitted via Sampled Values (SV). The trip signals, feedback 
+      signals, and reset signals are transmitted through Generic Object Oriented Substation Event (GOOSE) messages.</p>
+    </section>
+   <section class="- topic/section section" id="doc__section_drr_2lm_blb" data-ofbid="doc__section_drr_2lm_blb"><h2 class="- topic/title title sectiontitle"><span class="- topic/ph ph" id="doc__an_title_model">Model description</span></h2>
+     
+     <p class="- topic/p p">As shown in <a class="- topic/xref xref" href="#doc__figure_02">Figure 2</a> and <a class="- topic/xref xref" href="#doc__figure_03">Figure 3</a>, the model schematic is partitioned between
+        two HIL devices. The power stage of the substation is incorporated in the HIL device with ID 0,
+        encompassing the substation’s power system, bays (with merging unit and circuit breaker
+        control), and the SV Setup component.</p>
+    <figure class="- topic/fig fig fignone" id="doc__figure_02" data-ofbid="doc__figure_02"><figcaption class="- topic/title title figcap"><span class="figtitleprefix fig--title-label">Figure<span class="fig--title-label-number"> 2</span><span class="fig--title-label-punctuation">. </span></span><span class="fig--title">Typhoon HIL schematic model for a substation</span></figcaption>
+        
+        <img class="- topic/image image" src="../Images/digital_substation_02.png" width="710"/>
+      </figure>
+     <p class="- topic/p p">The control building of the substation is situated in the HIL device with ID 1.</p>
+    <figure class="- topic/fig fig fignone" id="doc__figure_03" data-ofbid="doc__figure_03"><figcaption class="- topic/title title figcap"><span class="figtitleprefix fig--title-label">Figure<span class="fig--title-label-number"> 3</span><span class="fig--title-label-punctuation">. </span></span><span class="fig--title">Typhoon HIL schematic model for a control building room</span></figcaption>
+        
+        <img class="- topic/image image" src="../Images/digital_substation_03.png"/>
+      </figure>
+     <p class="- topic/p p">An interface between the simulated conventional components and the IEC 61850 network is 
+       achieved through merging units. In this example, a model of a generic merging unit is used. 
+       The model of a merging unit consists of an SV Publisher, a GOOSE Publisher, and a GOOSE 
+       Subscriber component. The merging units are positioned in the substation yard, in proximity 
+       to the measurement equipment and circuit breakers. These components are simulated on the HIL device with ID 0.</p>
+     <p class="- topic/p p">Each bay contains one model of a merging unit, in addition to the model of circuit breaker. The model of a substation consists of four bays:</p>
+      
+        <ul class="- topic/ul ul" id="doc__ul_olh_zmk_b1c" data-ofbid="doc__ul_olh_zmk_b1c">
+          <li class="- topic/li li">High voltage (HV) busbar,</li>
+          <li class="- topic/li li">Medium voltage (MV) busbar,</li>
+          <li class="- topic/li li">Two feeders connected to the loads.</li>
+        </ul>
+    
+     <p class="- topic/p p">The protection relays operate within the control building. In this example, the HIL 
+       device with ID 1 is a centralized protection system. The HIL device with ID 1 subscribes 
+       to all four SV streams and GOOSE messages with the circuit breakers feedback signal 
+       from the MUs. The HIL device with ID 1 publishes GOOSE messages with the trip signals.</p>
+    <figure class="- topic/fig fig fignone" id="doc__figure_04" data-ofbid="doc__figure_04"><figcaption class="- topic/title title figcap"><span class="figtitleprefix fig--title-label">Figure<span class="fig--title-label-number"> 4</span><span class="fig--title-label-punctuation">. </span></span><span class="fig--title">Model of a bay control logic</span></figcaption>
+        
+        <img class="- topic/image image" src="../Images/digital_substation_04.png" width="710"/>
+      </figure>
+     <p class="- topic/p p">Protections have been implemented to each of the two feeders and the power transformer. The 
+       feeders are equipped with overcurrent, overvoltage and undervoltage protections, while the 
+       transformer features differential protection. Additionally, a backup overcurrent protection 
+       has been implemented for the MV busbar.</p>
+     <p class="- topic/p p">The configuration of SV protocol is described in <a class="- topic/xref xref" href="#doc__table_um2_pvh_d1c1">Table 1</a>, 
+       <a class="- topic/xref xref" href="#doc__table_um2_pvh_d1c2">Table 2</a>, <a class="- topic/xref xref" href="#doc__table_um2_pvh_d1c3">Table 3</a>, and <a class="- topic/xref xref" href="#doc__table_um2_pvh_d1c4">Table 4</a>:</p>
+      
+        <table class="- topic/table table frame-all" id="doc__table_um2_pvh_d1c1" data-ofbid="doc__table_um2_pvh_d1c1" data-cols="2"><caption class="- topic/title title tablecap" data-caption-side="top" data-is-repeated="true"><span class="table--title-label">Table<span class="table--title-label-number"> 1</span><span class="table--title-label-punctuation">. </span></span><span class="table--title">Publisher 01 - Bay 01 (HV Busbar)</span></caption><colgroup><col style="width:33.33333333333333%"/><col style="width:66.66666666666666%"/></colgroup><thead class="- topic/thead thead">
+              <tr class="- topic/row">
+                <th class="- topic/entry entry align-center colsep-1 rowsep-1" id="doc__table_um2_pvh_d1c1__entry__1">Description</th>
+                <th class="- topic/entry entry align-center colsep-0 rowsep-1" id="doc__table_um2_pvh_d1c1__entry__2">Value</th>
+              </tr>
+            </thead><tbody class="- topic/tbody tbody">
+              <tr class="- topic/row">
+                <td class="- topic/entry entry align-center colsep-1 rowsep-1" headers="doc__table_um2_pvh_d1c1__entry__1">Mac Address</td>
+                <td class="- topic/entry entry align-center colsep-0 rowsep-1" headers="doc__table_um2_pvh_d1c1__entry__2">01:0C:CD:04:00:01</td>
+              </tr>
+              <tr class="- topic/row">
+                <td class="- topic/entry entry align-center colsep-1 rowsep-1" headers="doc__table_um2_pvh_d1c1__entry__1">SV ID</td>
+                <td class="- topic/entry entry align-center colsep-0 rowsep-1" headers="doc__table_um2_pvh_d1c1__entry__2">MU_TYPHOON_HV</td>
+              </tr>
+              <tr class="- topic/row">
+                <td class="- topic/entry entry align-center colsep-1 rowsep-1" headers="doc__table_um2_pvh_d1c1__entry__1">APP ID</td>
+                <td class="- topic/entry entry align-center colsep-0 rowsep-1" headers="doc__table_um2_pvh_d1c1__entry__2">0x4001</td>
+              </tr>
+              <tr class="- topic/row">
+                <td class="- topic/entry entry align-center colsep-1 rowsep-1" headers="doc__table_um2_pvh_d1c1__entry__1">ConfRev</td>
+                <td class="- topic/entry entry align-center colsep-0 rowsep-1" headers="doc__table_um2_pvh_d1c1__entry__2">1</td>
+              </tr>
+              <tr class="- topic/row">
+                <td class="- topic/entry entry align-center colsep-1 rowsep-1" headers="doc__table_um2_pvh_d1c1__entry__1">Vlan ID</td>
+                <td class="- topic/entry entry align-center colsep-0 rowsep-1" headers="doc__table_um2_pvh_d1c1__entry__2">0</td>
+              </tr>
+              <tr class="- topic/row">
+                <td class="- topic/entry entry align-center colsep-1 rowsep-0" headers="doc__table_um2_pvh_d1c1__entry__1">Priority</td>
+                <td class="- topic/entry entry align-center colsep-0 rowsep-0" headers="doc__table_um2_pvh_d1c1__entry__2">7</td>
+              </tr>
+            </tbody></table>
+      
+     
+       <table class="- topic/table table frame-all" id="doc__table_um2_pvh_d1c2" data-ofbid="doc__table_um2_pvh_d1c2" data-cols="2"><caption class="- topic/title title tablecap" data-caption-side="top" data-is-repeated="true"><span class="table--title-label">Table<span class="table--title-label-number"> 2</span><span class="table--title-label-punctuation">. </span></span><span class="table--title">Publisher 02 - Bay 02 (MV Busbar)</span></caption><colgroup><col style="width:33.33333333333333%"/><col style="width:66.66666666666666%"/></colgroup><thead class="- topic/thead thead">
+             <tr class="- topic/row">
+               <th class="- topic/entry entry align-center colsep-1 rowsep-1" id="doc__table_um2_pvh_d1c2__entry__1">Description</th>
+               <th class="- topic/entry entry align-center colsep-0 rowsep-1" id="doc__table_um2_pvh_d1c2__entry__2">Value</th>
+             </tr>
+           </thead><tbody class="- topic/tbody tbody">
+             <tr class="- topic/row">
+               <td class="- topic/entry entry align-center colsep-1 rowsep-1" headers="doc__table_um2_pvh_d1c2__entry__1">Mac Address</td>
+               <td class="- topic/entry entry align-center colsep-0 rowsep-1" headers="doc__table_um2_pvh_d1c2__entry__2">01:0C:CD:04:00:02</td>
+             </tr>
+             <tr class="- topic/row">
+               <td class="- topic/entry entry align-center colsep-1 rowsep-1" headers="doc__table_um2_pvh_d1c2__entry__1">SV ID</td>
+               <td class="- topic/entry entry align-center colsep-0 rowsep-1" headers="doc__table_um2_pvh_d1c2__entry__2">MU_TYPHOON_MV</td>
+             </tr>
+             <tr class="- topic/row">
+               <td class="- topic/entry entry align-center colsep-1 rowsep-1" headers="doc__table_um2_pvh_d1c2__entry__1">APP ID</td>
+               <td class="- topic/entry entry align-center colsep-0 rowsep-1" headers="doc__table_um2_pvh_d1c2__entry__2">0x4002</td>
+             </tr>
+             <tr class="- topic/row">
+               <td class="- topic/entry entry align-center colsep-1 rowsep-1" headers="doc__table_um2_pvh_d1c2__entry__1">ConfRev</td>
+               <td class="- topic/entry entry align-center colsep-0 rowsep-1" headers="doc__table_um2_pvh_d1c2__entry__2">1</td>
+             </tr>
+             <tr class="- topic/row">
+               <td class="- topic/entry entry align-center colsep-1 rowsep-1" headers="doc__table_um2_pvh_d1c2__entry__1">Vlan ID</td>
+               <td class="- topic/entry entry align-center colsep-0 rowsep-1" headers="doc__table_um2_pvh_d1c2__entry__2">0</td>
+             </tr>
+             <tr class="- topic/row">
+               <td class="- topic/entry entry align-center colsep-1 rowsep-0" headers="doc__table_um2_pvh_d1c2__entry__1">Priority</td>
+               <td class="- topic/entry entry align-center colsep-0 rowsep-0" headers="doc__table_um2_pvh_d1c2__entry__2">6</td>
+             </tr>
+           </tbody></table>
+     
+       <table class="- topic/table table frame-all" id="doc__table_um2_pvh_d1c3" data-ofbid="doc__table_um2_pvh_d1c3" data-cols="2"><caption class="- topic/title title tablecap" data-caption-side="top" data-is-repeated="true"><span class="table--title-label">Table<span class="table--title-label-number"> 3</span><span class="table--title-label-punctuation">. </span></span><span class="table--title">Publisher 03 - Bay 03 (Feeder 01)</span></caption><colgroup><col style="width:33.33333333333333%"/><col style="width:66.66666666666666%"/></colgroup><thead class="- topic/thead thead">
+             <tr class="- topic/row">
+               <th class="- topic/entry entry align-center colsep-1 rowsep-1" id="doc__table_um2_pvh_d1c3__entry__1">Description</th>
+               <th class="- topic/entry entry align-center colsep-0 rowsep-1" id="doc__table_um2_pvh_d1c3__entry__2">Value</th>
+             </tr>
+           </thead><tbody class="- topic/tbody tbody">
+             <tr class="- topic/row">
+               <td class="- topic/entry entry align-center colsep-1 rowsep-1" headers="doc__table_um2_pvh_d1c3__entry__1">Mac Address</td>
+               <td class="- topic/entry entry align-center colsep-0 rowsep-1" headers="doc__table_um2_pvh_d1c3__entry__2">01:0C:CD:04:00:03</td>
+             </tr>
+             <tr class="- topic/row">
+               <td class="- topic/entry entry align-center colsep-1 rowsep-1" headers="doc__table_um2_pvh_d1c3__entry__1">SV ID</td>
+               <td class="- topic/entry entry align-center colsep-0 rowsep-1" headers="doc__table_um2_pvh_d1c3__entry__2">MU_TYPHOON_F01</td>
+             </tr>
+             <tr class="- topic/row">
+               <td class="- topic/entry entry align-center colsep-1 rowsep-1" headers="doc__table_um2_pvh_d1c3__entry__1">APP ID</td>
+               <td class="- topic/entry entry align-center colsep-0 rowsep-1" headers="doc__table_um2_pvh_d1c3__entry__2">0x4003</td>
+             </tr>
+             <tr class="- topic/row">
+               <td class="- topic/entry entry align-center colsep-1 rowsep-1" headers="doc__table_um2_pvh_d1c3__entry__1">ConfRev</td>
+               <td class="- topic/entry entry align-center colsep-0 rowsep-1" headers="doc__table_um2_pvh_d1c3__entry__2">1</td>
+             </tr>
+             <tr class="- topic/row">
+               <td class="- topic/entry entry align-center colsep-1 rowsep-1" headers="doc__table_um2_pvh_d1c3__entry__1">Vlan ID</td>
+               <td class="- topic/entry entry align-center colsep-0 rowsep-1" headers="doc__table_um2_pvh_d1c3__entry__2">0</td>
+             </tr>
+             <tr class="- topic/row">
+               <td class="- topic/entry entry align-center colsep-1 rowsep-0" headers="doc__table_um2_pvh_d1c3__entry__1">Priority</td>
+               <td class="- topic/entry entry align-center colsep-0 rowsep-0" headers="doc__table_um2_pvh_d1c3__entry__2">5</td>
+             </tr>
+           </tbody></table>
+     
+       <table class="- topic/table table frame-all" id="doc__table_um2_pvh_d1c4" data-ofbid="doc__table_um2_pvh_d1c4" data-cols="2"><caption class="- topic/title title tablecap" data-caption-side="top" data-is-repeated="true"><span class="table--title-label">Table<span class="table--title-label-number"> 4</span><span class="table--title-label-punctuation">. </span></span><span class="table--title">Publisher 04 - Bay 04 (Feeder 02)</span></caption><colgroup><col style="width:33.33333333333333%"/><col style="width:66.66666666666666%"/></colgroup><thead class="- topic/thead thead">
+             <tr class="- topic/row">
+               <th class="- topic/entry entry align-center colsep-1 rowsep-1" id="doc__table_um2_pvh_d1c4__entry__1">Description</th>
+               <th class="- topic/entry entry align-center colsep-0 rowsep-1" id="doc__table_um2_pvh_d1c4__entry__2">Value</th>
+             </tr>
+           </thead><tbody class="- topic/tbody tbody">
+             <tr class="- topic/row">
+               <td class="- topic/entry entry align-center colsep-1 rowsep-1" headers="doc__table_um2_pvh_d1c4__entry__1">Mac Address</td>
+               <td class="- topic/entry entry align-center colsep-0 rowsep-1" headers="doc__table_um2_pvh_d1c4__entry__2">01:0C:CD:04:00:04</td>
+             </tr>
+             <tr class="- topic/row">
+               <td class="- topic/entry entry align-center colsep-1 rowsep-1" headers="doc__table_um2_pvh_d1c4__entry__1">SV ID</td>
+               <td class="- topic/entry entry align-center colsep-0 rowsep-1" headers="doc__table_um2_pvh_d1c4__entry__2">MU_TYPHOON_F02</td>
+             </tr>
+             <tr class="- topic/row">
+               <td class="- topic/entry entry align-center colsep-1 rowsep-1" headers="doc__table_um2_pvh_d1c4__entry__1">APP ID</td>
+               <td class="- topic/entry entry align-center colsep-0 rowsep-1" headers="doc__table_um2_pvh_d1c4__entry__2">0x4004</td>
+             </tr>
+             <tr class="- topic/row">
+               <td class="- topic/entry entry align-center colsep-1 rowsep-1" headers="doc__table_um2_pvh_d1c4__entry__1">ConfRev</td>
+               <td class="- topic/entry entry align-center colsep-0 rowsep-1" headers="doc__table_um2_pvh_d1c4__entry__2">1</td>
+             </tr>
+             <tr class="- topic/row">
+               <td class="- topic/entry entry align-center colsep-1 rowsep-1" headers="doc__table_um2_pvh_d1c4__entry__1">Vlan ID</td>
+               <td class="- topic/entry entry align-center colsep-0 rowsep-1" headers="doc__table_um2_pvh_d1c4__entry__2">0</td>
+             </tr>
+             <tr class="- topic/row">
+               <td class="- topic/entry entry align-center colsep-1 rowsep-0" headers="doc__table_um2_pvh_d1c4__entry__1">Priority</td>
+               <td class="- topic/entry entry align-center colsep-0 rowsep-0" headers="doc__table_um2_pvh_d1c4__entry__2">4</td>
+             </tr>
+           </tbody></table>
+     
+     <p class="- topic/p p">The GOOSE configuration is shown in <a class="- topic/xref xref" href="#doc__table_g1d_kwh_d1c5">Table 5</a>, 
+       <a class="- topic/xref xref" href="#doc__table_g1d_kwh_d1c6">Table 6</a>, <a class="- topic/xref xref" href="#doc__table_g1d_kwh_d1c7">Table 7</a>, 
+       and <a class="- topic/xref xref" href="#doc__table_g1d_kwh_d1c8">Table 8</a>:</p>
+     
+        <table class="- topic/table table frame-all" id="doc__table_g1d_kwh_d1c5" data-ofbid="doc__table_g1d_kwh_d1c5" data-cols="6"><caption class="- topic/title title tablecap" data-caption-side="top" data-is-repeated="true"><span class="table--title-label">Table<span class="table--title-label-number"> 5</span><span class="table--title-label-punctuation">. </span></span><span class="table--title">Dataset Bay 01 - HV CB (MAC: 01-0C-CD-04-00-05)</span></caption><colgroup><col style="width:8.333333333333332%"/><col style="width:25%"/><col style="width:8.333333333333332%"/><col style="width:16.666666666666664%"/><col style="width:8.333333333333332%"/><col style="width:33.33333333333333%"/></colgroup><thead class="- topic/thead thead">
+              <tr class="- topic/row">
+                <th class="- topic/entry entry align-center colsep-1 rowsep-1" id="doc__table_g1d_kwh_d1c5__entry__1">Index</th>
+                <th class="- topic/entry entry align-center colsep-1 rowsep-1" id="doc__table_g1d_kwh_d1c5__entry__2">Description</th>
+                <th class="- topic/entry entry align-center colsep-1 rowsep-1" id="doc__table_g1d_kwh_d1c5__entry__3">Detail</th>
+                <th class="- topic/entry entry align-center colsep-1 rowsep-1" id="doc__table_g1d_kwh_d1c5__entry__4">Publisher</th>
+                <th class="- topic/entry entry align-center colsep-1 rowsep-1" id="doc__table_g1d_kwh_d1c5__entry__5">Subscriber</th>
+                <th class="- topic/entry entry align-center colsep-0 rowsep-1" id="doc__table_g1d_kwh_d1c5__entry__6">SEL487 GOOSE Function</th>
+              </tr>
+            </thead><tbody class="- topic/tbody tbody">
+              <tr class="- topic/row">
+                <td class="- topic/entry entry align-center colsep-1 rowsep-1" headers="doc__table_g1d_kwh_d1c5__entry__1">0</td>
+                <td class="- topic/entry entry align-center colsep-1 rowsep-1" headers="doc__table_g1d_kwh_d1c5__entry__2">HV Circuit Beaker</td>
+                <td class="- topic/entry entry align-center colsep-1 rowsep-1" headers="doc__table_g1d_kwh_d1c5__entry__3">Trip</td>
+                <td class="- topic/entry entry align-center colsep-1 rowsep-1" headers="doc__table_g1d_kwh_d1c5__entry__4">HV Busbar</td>
+                <td class="- topic/entry entry align-center colsep-1 rowsep-1" headers="doc__table_g1d_kwh_d1c5__entry__5">MU-01</td>
+                <td class="- topic/entry entry align-center colsep-0 rowsep-1" headers="doc__table_g1d_kwh_d1c5__entry__6">PRO.TRIPSPTRC2.Tr.general</td>
+              </tr>
+              <tr class="- topic/row">
+                <td class="- topic/entry entry align-center colsep-1 rowsep-0" headers="doc__table_g1d_kwh_d1c5__entry__1">1</td>
+                <td class="- topic/entry entry align-center colsep-1 rowsep-0" headers="doc__table_g1d_kwh_d1c5__entry__2">HV Circuit Beaker</td>
+                <td class="- topic/entry entry align-center colsep-1 rowsep-0" headers="doc__table_g1d_kwh_d1c5__entry__3">Feedback</td>
+                <td class="- topic/entry entry align-center colsep-1 rowsep-0" headers="doc__table_g1d_kwh_d1c5__entry__4">HV Busbar</td>
+                <td class="- topic/entry entry align-center colsep-1 rowsep-0" headers="doc__table_g1d_kwh_d1c5__entry__5">MU-01</td>
+                <td class="- topic/entry entry align-center colsep-0 rowsep-0" headers="doc__table_g1d_kwh_d1c5__entry__6">ANN.VBGGIO1.St.Ind001.stVal</td>
+              </tr>
+            </tbody></table>
+      
+       <table class="- topic/table table frame-all" id="doc__table_g1d_kwh_d1c6" data-ofbid="doc__table_g1d_kwh_d1c6" data-cols="6"><caption class="- topic/title title tablecap" data-caption-side="top" data-is-repeated="true"><span class="table--title-label">Table<span class="table--title-label-number"> 6</span><span class="table--title-label-punctuation">. </span></span><span class="table--title">Dataset Bay 02 - MV CB (MAC: 01-0C-CD-04-00-06)</span></caption><colgroup><col style="width:8.333333333333332%"/><col style="width:25%"/><col style="width:8.333333333333332%"/><col style="width:16.666666666666664%"/><col style="width:8.333333333333332%"/><col style="width:33.33333333333333%"/></colgroup><thead class="- topic/thead thead">
+             <tr class="- topic/row">
+               <th class="- topic/entry entry align-center colsep-1 rowsep-1" id="doc__table_g1d_kwh_d1c6__entry__1">Index</th>
+               <th class="- topic/entry entry align-center colsep-1 rowsep-1" id="doc__table_g1d_kwh_d1c6__entry__2">Description</th>
+               <th class="- topic/entry entry align-center colsep-1 rowsep-1" id="doc__table_g1d_kwh_d1c6__entry__3">Detail</th>
+               <th class="- topic/entry entry align-center colsep-1 rowsep-1" id="doc__table_g1d_kwh_d1c6__entry__4">Publisher</th>
+               <th class="- topic/entry entry align-center colsep-1 rowsep-1" id="doc__table_g1d_kwh_d1c6__entry__5">Subscriber</th>
+               <th class="- topic/entry entry align-center colsep-0 rowsep-1" id="doc__table_g1d_kwh_d1c6__entry__6">SEL487 GOOSE Function</th>
+             </tr>
+           </thead><tbody class="- topic/tbody tbody">
+             <tr class="- topic/row">
+               <td class="- topic/entry entry align-center colsep-1 rowsep-1" headers="doc__table_g1d_kwh_d1c6__entry__1">0</td>
+               <td class="- topic/entry entry align-center colsep-1 rowsep-1" headers="doc__table_g1d_kwh_d1c6__entry__2">MV Circuit Beaker</td>
+               <td class="- topic/entry entry align-center colsep-1 rowsep-1" headers="doc__table_g1d_kwh_d1c6__entry__3">Trip</td>
+               <td class="- topic/entry entry align-center colsep-1 rowsep-1" headers="doc__table_g1d_kwh_d1c6__entry__4">MV Busbar</td>
+               <td class="- topic/entry entry align-center colsep-1 rowsep-1" headers="doc__table_g1d_kwh_d1c6__entry__5">MU-02</td>
+               <td class="- topic/entry entry align-center colsep-0 rowsep-1" headers="doc__table_g1d_kwh_d1c6__entry__6">PRO.TRIPSPTRC3.Tr.general</td>
+             </tr>
+             <tr class="- topic/row">
+               <td class="- topic/entry entry align-center colsep-1 rowsep-0" headers="doc__table_g1d_kwh_d1c6__entry__1">1</td>
+               <td class="- topic/entry entry align-center colsep-1 rowsep-0" headers="doc__table_g1d_kwh_d1c6__entry__2">MV Circuit Beaker</td>
+               <td class="- topic/entry entry align-center colsep-1 rowsep-0" headers="doc__table_g1d_kwh_d1c6__entry__3">Feedback</td>
+               <td class="- topic/entry entry align-center colsep-1 rowsep-0" headers="doc__table_g1d_kwh_d1c6__entry__4">MV Busbar</td>
+               <td class="- topic/entry entry align-center colsep-1 rowsep-0" headers="doc__table_g1d_kwh_d1c6__entry__5">MU-02</td>
+               <td class="- topic/entry entry align-center colsep-0 rowsep-0" headers="doc__table_g1d_kwh_d1c6__entry__6">ANN.VBGGIO1.St.Ind002.stVal</td>
+             </tr>
+           </tbody></table>
+     
+       <table class="- topic/table table frame-all" id="doc__table_g1d_kwh_d1c7" data-ofbid="doc__table_g1d_kwh_d1c7" data-cols="6"><caption class="- topic/title title tablecap" data-caption-side="top" data-is-repeated="true"><span class="table--title-label">Table<span class="table--title-label-number"> 7</span><span class="table--title-label-punctuation">. </span></span><span class="table--title">Dataset Bay 03 - F01 CB (MAC: 01-0C-CD-04-00-07)</span></caption><colgroup><col style="width:8.333333333333332%"/><col style="width:25%"/><col style="width:8.333333333333332%"/><col style="width:16.666666666666664%"/><col style="width:8.333333333333332%"/><col style="width:33.33333333333333%"/></colgroup><thead class="- topic/thead thead">
+             <tr class="- topic/row">
+               <th class="- topic/entry entry align-center colsep-1 rowsep-1" id="doc__table_g1d_kwh_d1c7__entry__1">Index</th>
+               <th class="- topic/entry entry align-center colsep-1 rowsep-1" id="doc__table_g1d_kwh_d1c7__entry__2">Description</th>
+               <th class="- topic/entry entry align-center colsep-1 rowsep-1" id="doc__table_g1d_kwh_d1c7__entry__3">Detail</th>
+               <th class="- topic/entry entry align-center colsep-1 rowsep-1" id="doc__table_g1d_kwh_d1c7__entry__4">Publisher</th>
+               <th class="- topic/entry entry align-center colsep-1 rowsep-1" id="doc__table_g1d_kwh_d1c7__entry__5">Subscriber</th>
+               <th class="- topic/entry entry align-center colsep-0 rowsep-1" id="doc__table_g1d_kwh_d1c7__entry__6">SEL487 GOOSE Function</th>
+             </tr>
+           </thead><tbody class="- topic/tbody tbody">
+             <tr class="- topic/row">
+               <td class="- topic/entry entry align-center colsep-1 rowsep-1" headers="doc__table_g1d_kwh_d1c7__entry__1">0</td>
+               <td class="- topic/entry entry align-center colsep-1 rowsep-1" headers="doc__table_g1d_kwh_d1c7__entry__2">F01 Circuit Beaker</td>
+               <td class="- topic/entry entry align-center colsep-1 rowsep-1" headers="doc__table_g1d_kwh_d1c7__entry__3">Trip</td>
+               <td class="- topic/entry entry align-center colsep-1 rowsep-1" headers="doc__table_g1d_kwh_d1c7__entry__4">Feeder 01</td>
+               <td class="- topic/entry entry align-center colsep-1 rowsep-1" headers="doc__table_g1d_kwh_d1c7__entry__5">MU-03</td>
+               <td class="- topic/entry entry align-center colsep-0 rowsep-1" headers="doc__table_g1d_kwh_d1c7__entry__6">PRO.TRIPWPTRC5.Tr.general</td>
+             </tr>
+             <tr class="- topic/row">
+               <td class="- topic/entry entry align-center colsep-1 rowsep-0" headers="doc__table_g1d_kwh_d1c7__entry__1">1</td>
+               <td class="- topic/entry entry align-center colsep-1 rowsep-0" headers="doc__table_g1d_kwh_d1c7__entry__2">F01 Circuit Beaker</td>
+               <td class="- topic/entry entry align-center colsep-1 rowsep-0" headers="doc__table_g1d_kwh_d1c7__entry__3">Feedback</td>
+               <td class="- topic/entry entry align-center colsep-1 rowsep-0" headers="doc__table_g1d_kwh_d1c7__entry__4">Feeder 01</td>
+               <td class="- topic/entry entry align-center colsep-1 rowsep-0" headers="doc__table_g1d_kwh_d1c7__entry__5">MU-03</td>
+               <td class="- topic/entry entry align-center colsep-0 rowsep-0" headers="doc__table_g1d_kwh_d1c7__entry__6">ANN.VBGGIO1.St.Ind003.stVal</td>
+             </tr>
+           </tbody></table>
+     
+        <table class="- topic/table table frame-all" id="doc__table_g1d_kwh_d1c8" data-ofbid="doc__table_g1d_kwh_d1c8" data-cols="6"><caption class="- topic/title title tablecap" data-caption-side="top" data-is-repeated="true"><span class="table--title-label">Table<span class="table--title-label-number"> 8</span><span class="table--title-label-punctuation">. </span></span><span class="table--title">Dataset Bay 04 - HV CB (MAC: 01-0C-CD-04-00-08)</span></caption><colgroup><col style="width:8.333333333333332%"/><col style="width:25%"/><col style="width:8.333333333333332%"/><col style="width:16.666666666666664%"/><col style="width:8.333333333333332%"/><col style="width:33.33333333333333%"/></colgroup><thead class="- topic/thead thead">
+              <tr class="- topic/row">
+                <th class="- topic/entry entry align-center colsep-1 rowsep-1" id="doc__table_g1d_kwh_d1c8__entry__1">Index</th>
+                <th class="- topic/entry entry align-center colsep-1 rowsep-1" id="doc__table_g1d_kwh_d1c8__entry__2">Description</th>
+                <th class="- topic/entry entry align-center colsep-1 rowsep-1" id="doc__table_g1d_kwh_d1c8__entry__3">Detail</th>
+                <th class="- topic/entry entry align-center colsep-1 rowsep-1" id="doc__table_g1d_kwh_d1c8__entry__4">Publisher</th>
+                <th class="- topic/entry entry align-center colsep-1 rowsep-1" id="doc__table_g1d_kwh_d1c8__entry__5">Subscriber</th>
+                <th class="- topic/entry entry align-center colsep-0 rowsep-1" id="doc__table_g1d_kwh_d1c8__entry__6">SEL487 GOOSE Function</th>
+              </tr>
+            </thead><tbody class="- topic/tbody tbody">
+              <tr class="- topic/row">
+                <td class="- topic/entry entry align-center colsep-1 rowsep-1" headers="doc__table_g1d_kwh_d1c8__entry__1">0</td>
+                <td class="- topic/entry entry align-center colsep-1 rowsep-1" headers="doc__table_g1d_kwh_d1c8__entry__2">F02 Circuit Beaker</td>
+                <td class="- topic/entry entry align-center colsep-1 rowsep-1" headers="doc__table_g1d_kwh_d1c8__entry__3">Trip</td>
+                <td class="- topic/entry entry align-center colsep-1 rowsep-1" headers="doc__table_g1d_kwh_d1c8__entry__4">HV Busbar</td>
+                <td class="- topic/entry entry align-center colsep-1 rowsep-1" headers="doc__table_g1d_kwh_d1c8__entry__5">MU-04</td>
+                <td class="- topic/entry entry align-center colsep-0 rowsep-1" headers="doc__table_g1d_kwh_d1c8__entry__6">PRO.TRIPSPTRC2.Tr.general</td>
+              </tr>
+              <tr class="- topic/row">
+                <td class="- topic/entry entry align-center colsep-1 rowsep-0" headers="doc__table_g1d_kwh_d1c8__entry__1">1</td>
+                <td class="- topic/entry entry align-center colsep-1 rowsep-0" headers="doc__table_g1d_kwh_d1c8__entry__2">F02 Circuit Beaker</td>
+                <td class="- topic/entry entry align-center colsep-1 rowsep-0" headers="doc__table_g1d_kwh_d1c8__entry__3">Feedback</td>
+                <td class="- topic/entry entry align-center colsep-1 rowsep-0" headers="doc__table_g1d_kwh_d1c8__entry__4">HV Busbar</td>
+                <td class="- topic/entry entry align-center colsep-1 rowsep-0" headers="doc__table_g1d_kwh_d1c8__entry__5">MU-04</td>
+                <td class="- topic/entry entry align-center colsep-0 rowsep-0" headers="doc__table_g1d_kwh_d1c8__entry__6">ANN.VBGGIO1.St.Ind004.stVal</td>
+              </tr>
+            </tbody></table>
+      
+  </section>
+ 
+   <section class="- topic/section section" id="doc__section_czt_r4m_blb" data-ofbid="doc__section_czt_r4m_blb"><h2 class="- topic/title title sectiontitle"><span class="- topic/ph ph" id="doc__an_title_simulation">Simulation</span></h2>
+      
+      <p class="- topic/p p">This example uses two HIL Devices to simulate communication over the IEC 61850 standard. It
+        comes with a pre-built SCADA Panel with two levels: the root panel shown in <a class="- topic/xref xref" href="#doc__figure_06">Figure 5</a>, and the control building shown in <a class="- topic/xref xref" href="#doc__figure_07">Figure 6</a>. These panels offers the most essential user
+        interface elements (widgets) to monitor and interact with the simulation at runtime,
+        allowing you to further customize it according to your needs.</p>
+        <p class="- topic/p p">The root SCADA panel presents the electrical diagram of the substation yard, featuring widgets for monitoring
+        substation parameters, status of the circuit breakers, and widgets for operating faults in
+        the feeders and in the protection zone of the power transformer.</p>
+      <figure class="- topic/fig fig fignone" id="doc__figure_06" data-ofbid="doc__figure_06"><figcaption class="- topic/title title figcap"><span class="figtitleprefix fig--title-label">Figure<span class="fig--title-label-number"> 5</span><span class="fig--title-label-punctuation">. </span></span><span class="fig--title">SCADA panel</span></figcaption>
+        
+        <img class="- topic/image image" src="../Images/digital_substation_05.png"/>
+      </figure>
+     <p class="- topic/p p">Meanwhile, the SCADA panel for the control building shows the process bus diagram of the
+      station. At the top, the status of feeder and transformer protections is presented, along
+      with the time synchronization status via PTP. At the bottom, the electrical parameters of each
+      merging unit are shown, in addition to the status of circuit breakers and trip signals
+      received from the protections. The Target RST button is used for resetting the fault statuses
+      of the protective relays.</p>
+      <figure class="- topic/fig fig fignone" id="doc__figure_07" data-ofbid="doc__figure_07"><figcaption class="- topic/title title figcap"><span class="figtitleprefix fig--title-label">Figure<span class="fig--title-label-number"> 6</span><span class="fig--title-label-punctuation">. </span></span><span class="fig--title">SCADA panel for the substation control building</span></figcaption>
+        
+        <img class="- topic/image image" src="../Images/digital_substation_06.png"/>
+      </figure>
+      <p class="- topic/p p">By selecting the Fault 01: 1ph combo box we can simulate a transformer fault (<a class="- topic/xref xref" href="#doc__pte-trans-fault">Figure 7</a>). The
+        simulated fault is phase-to-earth. The first viewport shows the HV busbar measurements,
+        while the second and third shows the statuses of the circuit breaker and fault signals,
+        respectively. In this case, the differential protection operates within 60 ms. Both HV and
+        MV circuit breakers have tripped and isolated the transformer.transformer.</p>
+     <figure class="- topic/fig fig fignone" id="doc__pte-trans-fault" data-ofbid="doc__pte-trans-fault"><figcaption class="- topic/title title figcap"><span class="figtitleprefix fig--title-label">Figure<span class="fig--title-label-number"> 7</span><span class="fig--title-label-punctuation">. </span></span><span class="fig--title">Phase-to-Earth transformer fault</span></figcaption>
+            
+       <img class="- topic/image image" id="doc__image_csz_znk_b1c" src="../Images/digital_substation_07.png"/>
+     </figure>
+     <p class="- topic/p p">By selecting the <em class="+ topic/ph hi-d/i ph i">Fault 03: 1ph</em> combo box we can simulate a line fault (<a class="- topic/xref xref" href="#doc__pte-line-fault">Figure 8</a>). In this case, the
+        test objectives are to validate over-current line protection and the selectivity of the
+        system. The simulated fault is phase-to-earth. On the first and second viewports, the MV
+        busbar measurements and Feeder measurements are presented, while the third and fourth
+        viewports show the circuit breaker and fault signals statuses. In this case, the
+        over-current line protection operates within a little less than 0.4 seconds. Only Feeder 02
+        circuit breakers tripped and isolated the feeder, while the rest of the system continued
+        working under nominal conditions.</p>
+     <figure class="- topic/fig fig fignone" id="doc__pte-line-fault" data-ofbid="doc__pte-line-fault"><figcaption class="- topic/title title figcap"><span class="figtitleprefix fig--title-label">Figure<span class="fig--title-label-number"> 8</span><span class="fig--title-label-punctuation">. </span></span><span class="fig--title">Phase-to-Earth line fault</span></figcaption>
+        
+        <img class="- topic/image image" id="doc__image_y4q_c4k_b1c" src="../Images/digital_substation_08.png"/>
+      </figure></section>
+   <section class="- topic/section section" id="doc__test_automation" data-ofbid="doc__test_automation"><h2 class="- topic/title title sectiontitle">Test Automation</h2>
+     
+     <p class="- topic/p p">We don’t have a test automation for this example yet. Let us know if you wish to contribute
+       and we will gladly have you signed on the application note!</p>
+   </section>
+   
+    <section class="- topic/section section" id="doc__example_requirements" data-ofbid="doc__example_requirements"><h2 class="- topic/title title sectiontitle">Example requirements</h2>
+      
+      <p class="- topic/p p"><a class="- topic/xref xref" href="#doc__min_req">Table 9</a> provides detailed information about the
+        file locations and hardware requirements for running the model in real-time, followed by the
+        HIL device resource utilization when running the model using this minimal hardware
+        configuration. This information is provided to help you with running and customizing the
+        model as you see fit.</p>
+      <table class="- topic/table table frame-all" id="doc__min_req" data-ofbid="doc__min_req" data-cols="2"><caption class="- topic/title title tablecap" data-caption-side="top" data-is-repeated="true"><span class="table--title-label">Table<span class="table--title-label-number"> 9</span><span class="table--title-label-punctuation">. </span></span><span class="table--title"><span class="- topic/ph ph" id="doc__an_min-req">Minimum requirements</span></span></caption><colgroup><col style="width:50%"/><col style="width:50%"/></colgroup><thead class="- topic/thead thead">
+            <tr class="- topic/row">
+              <th class="- topic/entry entry align-center colsep-0 rowsep-1" id="doc__min_req__entry__1" colspan="2">Files</th>
+            </tr>
+          </thead><tbody class="- topic/tbody tbody">
+            <tr class="- topic/row">
+              <td class="- topic/entry entry align-center colsep-1 rowsep-1" headers="doc__min_req__entry__1"><span class="- topic/ph ph" id="doc__an_min-req_TH-files">Typhoon HIL files</span></td>
+              <td class="- topic/entry entry align-center colsep-0 rowsep-1" headers="doc__min_req__entry__1">
+                <p class="- topic/p p"><em class="+ topic/ph hi-d/i ph i">examples\models\power systems\digital substation</em></p>
+                <p class="- topic/p p">digital substation.tse</p>
+                <p class="- topic/p p">digital substation.cus</p>
+                <p class="- topic/p p">digital substation.scd</p>
+              </td>
+            </tr>
+            <tr class="- topic/row">
+              <td class="- topic/entry entry align-center colsep-0 rowsep-1" headers="doc__min_req__entry__1" colspan="2"><strong class="+ topic/ph hi-d/b ph b">Minimum hardware requirements</strong></td>
+            </tr>
+            <tr class="- topic/row">
+              <td class="- topic/entry entry align-center colsep-1 rowsep-1" headers="doc__min_req__entry__1"><span class="- topic/ph ph" id="doc__an_min-req_num-devices">No. of HIL devices</span></td>
+              <td class="- topic/entry entry align-center colsep-0 rowsep-1" headers="doc__min_req__entry__1"><span class="- topic/ph ph" id="doc__num_devices">2</span></td>
+            </tr>
+            <tr class="- topic/row">
+              <td class="- topic/entry entry align-center colsep-1 rowsep-1" headers="doc__min_req__entry__1"><span class="- topic/ph ph" id="doc__an_min-req_model-num">HIL device model</span></td>
+              <td class="- topic/entry entry align-center colsep-0 rowsep-1" headers="doc__min_req__entry__1"><span class="- topic/ph ph" id="doc__type_devices">HIL404</span></td>
+            </tr>
+            <tr class="- topic/row">
+              <td class="- topic/entry entry align-center colsep-1 rowsep-1" headers="doc__min_req__entry__1"><u class="+ topic/ph hi-d/u ph u"><a class="- topic/xref xref" href="../../t-ug002/concepts/device_manager.html" title="Device Manager is used to create, manipulate, and activate HIL device setups.">Device
+                    configuration</a></u></td>
+              <td class="- topic/entry entry align-center colsep-0 rowsep-1" headers="doc__min_req__entry__1"><span class="- topic/ph ph" id="doc__num_config">3</span></td>
+            </tr>
+            <tr class="- topic/row">
+              <td class="- topic/entry entry align-center colsep-0 rowsep-1" headers="doc__min_req__entry__1" colspan="2"><strong class="+ topic/ph hi-d/b ph b">HIL device resource utilization</strong></td>
+            </tr>
+            <tr class="- topic/row">
+              <td class="- topic/entry entry align-center colsep-1 rowsep-1" headers="doc__min_req__entry__1"><span class="- topic/ph ph" id="doc__an_res-util_num-cores">No. of processing cores</span></td>
+              <td class="- topic/entry entry align-center colsep-0 rowsep-1" headers="doc__min_req__entry__1"><span class="- topic/ph ph" id="doc__num_cores">2</span></td>
+            </tr>
+            <tr class="- topic/row">
+              <td class="- topic/entry entry align-center colsep-1 rowsep-1" headers="doc__min_req__entry__1"><span class="- topic/ph ph" id="doc__an_res-util_max-memory">Max. matrix memory utilization</span></td>
+              <td class="- topic/entry entry align-center colsep-0 rowsep-1" headers="doc__min_req__entry__1">73.75%</td>
+            </tr>
+            <tr class="- topic/row">
+              <td class="- topic/entry entry align-center colsep-1 rowsep-1" headers="doc__min_req__entry__1"><span class="- topic/ph ph" id="doc__an_res-util_max-time">Max. time slot utilization</span></td>
+              <td class="- topic/entry entry align-center colsep-0 rowsep-1" headers="doc__min_req__entry__1">45.36%</td>
+            </tr>
+            <tr class="- topic/row">
+              <td class="- topic/entry entry align-center colsep-1 rowsep-1" headers="doc__min_req__entry__1"><span class="- topic/ph ph" id="doc__an_res-util_sim-step">Simulation step, electrical</span></td>
+              <td class="- topic/entry entry align-center colsep-0 rowsep-1" headers="doc__min_req__entry__1">1 µs</td>
+            </tr>
+            <tr class="- topic/row">
+              <td class="- topic/entry entry align-center colsep-1 rowsep-0" headers="doc__min_req__entry__1"><span class="- topic/ph ph" id="doc__an_res-util_exec-rate">Execution rate, signal
+                processing</span></td>
+              <td class="- topic/entry entry align-center colsep-0 rowsep-0" headers="doc__min_req__entry__1">100 µs</td>
+            </tr>
+          </tbody></table>
+    </section>
+    <section class="- topic/section section" id="doc__section_y2p_f4k_b1c" data-ofbid="doc__section_y2p_f4k_b1c"><h2 class="- topic/title title sectiontitle">References</h2>
+      
+      <p class="- topic/p p">[1] ARC Advisory Group, “The Next-Generation Digital Substation”, White Paper, Feb.
+        2021</p>
+      <p class="- topic/p p">[2] M. Adamiak, D. Baigent and R. Mackiewicz, “IEC 61850 Communication Networks and Systems
+        in Substations: An Overview for Users”, The Protection &amp; Control Journal, pp. 61-68,
+        2009.</p>
+      <p class="- topic/p p">[3] R. Mackiewicz, “Overview of the IEC 61850 and Benefits”, 2006 IEEE PES Power Systems
+        Conference and Exposition, Atlanta, GA, USA, pp. 623-630, 2006.</p>
+    </section>
+    <section class="- topic/section section" id="doc__section_ccj_hkl_1qb" data-ofbid="doc__section_ccj_hkl_1qb"><h2 class="- topic/title title sectiontitle">Authors</h2>
+      
+      <p class="- topic/p p">[1] Jhonatan Antônio Cassol</p>
+      <p class="- topic/p p">[2] Simisa Simic</p>
+    </section>
+ </div>
+</article></main></div>
+                        
+                        
+                        
+                        
+                        
+                        
+                    </div>
+                    
+                        <nav role="navigation" id="wh_topic_toc" aria-label="On this page" class="col-lg-2 d-none d-lg-block navbar d-print-none"> 
+                            <div id="wh_topic_toc_content">
+		                        
+	                            <div class=" wh_topic_toc "><div class="wh_topic_label">On this page</div><ul><li class="section-item"><div class="section-title"><a href="#doc__section_fd2_4qg_blb" data-tocid="doc__section_fd2_4qg_blb"><span class="- topic/ph ph" id="doc__an_title_intro">Introduction</span></a></div></li><li class="section-item"><div class="section-title"><a href="#doc__section_drr_2lm_blb" data-tocid="doc__section_drr_2lm_blb"><span class="- topic/ph ph" id="doc__an_title_model">Model description</span></a></div></li><li class="section-item"><div class="section-title"><a href="#doc__section_czt_r4m_blb" data-tocid="doc__section_czt_r4m_blb"><span class="- topic/ph ph" id="doc__an_title_simulation">Simulation</span></a></div></li><li class="section-item"><div class="section-title"><a href="#doc__test_automation" data-tocid="doc__test_automation">Test Automation</a></div></li><li class="section-item"><div class="section-title"><a href="#doc__example_requirements" data-tocid="doc__example_requirements">Example requirements</a></div></li><li class="section-item"><div class="section-title"><a href="#doc__section_y2p_f4k_b1c" data-tocid="doc__section_y2p_f4k_b1c">References</a></div></li><li class="section-item"><div class="section-title"><a href="#doc__section_ccj_hkl_1qb" data-tocid="doc__section_ccj_hkl_1qb">Authors</a></div></li></ul></div>
+	                        	
+                        	</div>
+                        </nav>
+                    
+                </div>
+            </div>
+            
+            
+            
+        </div> 
+        <footer class="navbar navbar-default wh_footer">
+  <div class=" footer-container mx-auto ">
+    <div style="text-align:center">Typhoon HIL Inc.<span id="year"> <a href="https://www.typhoon-hil.com">www.typhoon-hil.com</a></span></div>
+  </div>
+</footer>
+        
+        <div id="go2top" class="d-print-none">
+            <span class="oxy-icon oxy-icon-up"></span>
+        </div>
+        
+        <div id="modal_img_large" class="modal">
+            <span class="close oxy-icon oxy-icon-remove"></span>
+            <div id="modal_img_container"></div>
+            <div id="caption"></div>
+        </div>
+        
+        
+<script type="text/javascript" src="../../assets/script.js"> 
+</script>
+
+        
+    </body>
+</html>

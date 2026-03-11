@@ -1,0 +1,630 @@
+<!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en" data-whc_version="24.1">
+    <head><link rel="shortcut icon" href="../../favicon.ico"/><link rel="icon" href="../../favicon.ico"/><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><meta name="DC.rights.owner" content="(C) Copyright 2026"/><meta name="copyright" content="(C) Copyright 2026"/><meta name="generator" content="DITA-OT"/><meta name="DC.type" content="reference"/><meta name="description" content="Guidelines for all necessary software and/or hardware requirements in order to run your first example model in real-time simulation or TyphoonSim."/><meta name="DC.relation" content="../../t-ug002/topics/quick_start_guide_abstract.html"/><meta name="DC.format" content="HTML5"/><meta name="DC.identifier" content="doc"/>        
+      <title>Quick Start: Typhoon HIL Control Center</title><!--  Generated with Oxygen version 24.1, build number 2022030800.  --><meta name="wh-path2root" content="../../"/><meta name="wh-toc-id" content="doc-d16877e783"/><meta name="wh-source-relpath" content="t-ug002/concepts/realtime_quick_start_guide.dita"/><meta name="wh-out-relpath" content="t-ug002/concepts/realtime_quick_start_guide.html"/>
+    <!-- Latest compiled and minified Bootstrap CSS -->
+    <link rel="stylesheet" type="text/css" href="../../oxygen-webhelp/lib/bootstrap/css/bootstrap.min.css"/>
+    
+    <link rel="stylesheet" href="../../oxygen-webhelp/lib/jquery-ui/jquery-ui.min.css"/>
+    
+    <!-- Template default styles  -->
+    <link rel="stylesheet" type="text/css" href="../../oxygen-webhelp/app/topic-page.css?buildId=2022030800"/>
+    
+    
+    <script src="../../oxygen-webhelp/lib/jquery/jquery-3.5.1.min.js"></script>
+    
+    <script data-main="../../oxygen-webhelp/app/topic-page.js" src="../../oxygen-webhelp/lib/requirejs/require.js"></script>
+<link rel="stylesheet" type="text/css" href="../../oxygen-webhelp/template/oxygen.css?buildId=2022030800"/><link rel="stylesheet" type="text/css" href="../../oxygen-webhelp/template/notes.css?buildId=2022030800"/><script type="text/javascript" src="../../Scripts/mml-svg.js"> 
+</script><link rel="stylesheet" type="text/css" href="../../assets/typhoon.css"/></head>
+
+    <body id="doc" class="wh_topic_page frmBody">
+        <a href="#wh_topic_body" class="sr-only sr-only-focusable">
+            Jump to main content
+        </a>
+        
+        
+        
+        
+        <header class="navbar navbar-default wh_header">
+    <div class="container-fluid">
+        <div class="wh_header_flex_container navbar-nav navbar-expand-md navbar-dark">
+            <div class="wh_logo_and_publication_title_container">
+                <div class="wh_logo_and_publication_title">
+                    
+                    <a href="https://www.typhoon-hil.com" class=" wh_logo d-none d-sm-block "><img src="../../logo.svg" alt="  Typhoon HIL Documentation  Version: 2026.1  "/></a>
+                    <div class=" wh_publication_title "><a href="../../index.html"><span class="booktitle">  <span class="ph mainbooktitle">Typhoon HIL Documentation</span>  <span class="ph booktitlealt">Version: 2026.1</span>  </span></a></div>
+                    
+                </div>
+                
+                <button type="button" data-target="#wh_top_menu_and_indexterms_link" id="wh_menu_mobile_button" data-toggle="collapse" class="navbar-toggler collapsed wh_toggle_button" aria-expanded="false" aria-label="Toggle menu" aria-controls="wh_top_menu_and_indexterms_link">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+            </div>
+
+            <div class="wh_top_menu_and_indexterms_link collapse navbar-collapse" id="wh_top_menu_and_indexterms_link">
+                
+                <nav class=" wh_top_menu " aria-label="Menu Container"><ul role="menubar" aria-label="Menu"><li role="menuitem" aria-haspopup="true" aria-expanded="false" class="has-children"><span id="tocId-d16877e21-mi" data-tocid="tocId-d16877e21" data-state="not-ready" class=" topicref application-notes"><span class="title"><a href="../../t-an001/concepts/application_notes_introduction.html">Typhoon HIL Application Notes</a></span></span></li><li role="menuitem" aria-haspopup="true" aria-expanded="false" class="has-children"><span id="tocId-d16877e737-mi" data-tocid="tocId-d16877e737" data-state="not-ready" class=" topicref software-manual"><span class="title"><a href="../../t-ug002/topics/software_manual_introduction.html">Typhoon HIL Software Manual</a></span></span></li><li role="menuitem" aria-haspopup="true" aria-expanded="false" class="has-children"><span id="tocId-d16877e7901-mi" data-tocid="tocId-d16877e7901" data-state="not-ready" class=" topicref hardware-manual"><span class="title"><a href="../../t-ug001/abstract/hardware_manual_introduction.html">Typhoon HIL Hardware Manual</a></span></span></li></ul></nav>
+                
+                
+            </div>
+        </div>
+    </div>
+</header>
+        
+        
+         
+        
+        <div class=" wh_search_input navbar-form wh_topic_page_search search " role="form">
+            
+            
+            
+            <form id="searchForm" method="get" role="search" action="../../search.html"><div><input type="search" placeholder="Search " class="wh_search_textfield" id="textToSearch" name="searchQuery" aria-label="Search query" required="required"/><button type="submit" class="wh_search_button" aria-label="Search"><span class="search_input_text">Search</span></button></div></form>
+            
+            
+            
+        </div>
+        
+        <div class="container-fluid" id="wh_topic_container">
+            <div class="row">
+
+                <nav class="wh_tools d-print-none navbar-expand-md" aria-label="Tools">
+                    
+                    <div data-tooltip-position="bottom" class=" wh_breadcrumb "><ol class="d-print-none"><li><span class="home"><a href="../../index.html"><span>Home</span></a></span></li><li><div class="topicref software-manual"><div class="title"><a href="../../t-ug002/topics/software_manual_introduction.html">Typhoon HIL Software Manual</a></div></div></li><li><div class="topicref" data-id="doc"><div class="title"><a href="../../t-ug002/topics/quick_start_guide_abstract.html">Typhoon HIL Quick Start Guide</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">Instructions in this section should help you quickly install all             necessary software tools and setup hardware components in order to run an example model,             either in real-time simulation or TyphoonSim.</span></p></div></div></div></li><li class="active"><div class="topicref" data-id="doc"><div class="title"><a href="../../t-ug002/concepts/realtime_quick_start_guide.html">Quick Start: Typhoon HIL Control Center </a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">Guidelines for all necessary software and/or hardware             requirements in order to run your first example model in real-time simulation or             TyphoonSim.</span></p></div></div></div></li></ol></div>
+                    
+                    
+                    
+                    <div class="wh_right_tools">
+                        <button class="wh_hide_highlight" aria-label="Toggle search highlights" title="Toggle search highlights"></button>
+                        <button class="webhelp_expand_collapse_sections" data-next-state="collapsed" aria-label="Collapse sections" title="Collapse sections"></button>
+                        
+                        
+                        
+                        
+                        <div class=" wh_print_link print d-none d-md-inline-block "><button onClick="window.print()" title="Print this page" aria-label="Print this page"></button></div>
+                        
+                        <button type="button" id="wh_toc_button" class="custom-toggler navbar-toggler collapsed wh_toggle_button navbar-light" aria-expanded="false" aria-label="Toggle publishing table of content" aria-controls="wh_publication_toc">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+                    </div>
+                    
+                </nav>
+            </div>
+            
+            
+            
+            
+            <div class="wh_content_area">
+                <div class="row">
+                    
+                        <nav id="wh_publication_toc" class="col-lg-3 col-md-3 col-sm-12 d-md-block d-none d-print-none" aria-label="Table of Contents Container">
+                            <div id="wh_publication_toc_content">
+		                        
+                            	<div class=" wh_publication_toc " data-tooltip-position="right"><span class="expand-button-action-labels"><span id="button-expand-action" role="button" aria-label="Expand"></span><span id="button-collapse-action" role="button" aria-label="Collapse"></span><span id="button-pending-action" role="button" aria-label="Pending"></span></span><ul role="tree" aria-label="Table of Contents"><li role="treeitem" aria-expanded="true"><div data-tocid="tocId-d16877e737" class="topicref software-manual" data-state="expanded"><span role="button" tabindex="0" aria-labelledby="button-collapse-action tocId-d16877e737-link" class="wh-expand-btn"></span><div class="title"><a href="../../t-ug002/topics/software_manual_introduction.html" id="tocId-d16877e737-link">Typhoon HIL Software Manual</a></div></div><ul role="group" class="navbar-nav nav-list"><li role="treeitem"><div data-tocid="doc-d16877e749" class="topicref" data-id="doc" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../../t-ug002/topics/software_manual_introduction.html" id="doc-d16877e749-link">Introduction</a><div class="wh-tooltip"><p class="shortdesc">Overview of the categories covered in the Typhoon HIL Software Manual </p></div></div></div></li><li role="treeitem"><div data-tocid="doc-d16877e760" class="topicref" data-id="doc" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../../t-ug002/concepts/system_requirements.html" id="doc-d16877e760-link">System Requirements</a><div class="wh-tooltip"><p class="shortdesc">Guidelines for the hardware and/or software environment necessary to     run Typhoon HIL software, for both PC and Test Server/Virtual Machine-based setups.</p></div></div></div></li><li role="treeitem" aria-expanded="true"><div data-tocid="doc-d16877e771" class="topicref" data-id="doc" data-state="expanded"><span role="button" tabindex="0" aria-labelledby="button-collapse-action doc-d16877e771-link" class="wh-expand-btn"></span><div class="title"><a href="../../t-ug002/topics/quick_start_guide_abstract.html" id="doc-d16877e771-link">Typhoon HIL Quick Start Guide</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">Instructions in this section should help you quickly install all             necessary software tools and setup hardware components in order to run an example model,             either in real-time simulation or TyphoonSim.</span></p></div></div></div><ul role="group" class="navbar-nav nav-list"><li role="treeitem" class="active"><div data-tocid="doc-d16877e783" class="topicref" data-id="doc" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../../t-ug002/concepts/realtime_quick_start_guide.html" id="doc-d16877e783-link">Quick Start: Typhoon HIL Control Center </a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">Guidelines for all necessary software and/or hardware             requirements in order to run your first example model in real-time simulation or             TyphoonSim.</span></p></div></div></div></li><li role="treeitem"><div data-tocid="doc-d16877e795" class="topicref" data-id="doc" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../../t-ug002/concepts/typhoonsim_quick_start_guide.html" id="doc-d16877e795-link">Quick Start: TyphoonSim Standalone</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">Guidelines for all necessary software requirements in order to         run your first example model in TyphoonSim simulation.</span></p></div></div></div></li><li role="treeitem"><div data-tocid="doc-d16877e807" class="topicref" data-id="doc" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../../t-ug002/concepts/licensing_typhoonsim.html" id="doc-d16877e807-link">TyphoonSim license</a><div class="wh-tooltip"><p class="shortdesc">This document describes the TyphoonSim license type.</p></div></div></div></li></ul></li><li role="treeitem" aria-expanded="false"><div data-tocid="doc-d16877e818" class="topicref" data-id="doc" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action doc-d16877e818-link" class="wh-expand-btn"></span><div class="title"><a href="../../t-ug002/concepts/toolboxes.html" id="doc-d16877e818-link">Typhoon HIL Toolboxes</a><div class="wh-tooltip"><p class="shortdesc">List of the Toolbox Packages available in the Typhoon HIL software suite</p></div></div></div></li><li role="treeitem"><div data-tocid="doc-d16877e1039" class="topicref" data-id="doc" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../../t-ug002/concepts/connecting_to_your_hil_device.html" id="doc-d16877e1039-link">Connecting to your HIL device</a><div class="wh-tooltip"><p class="shortdesc">Guidelines on how to connect to a HIL device using either USB or Ethernet         ports.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="doc-d16877e1050" class="topicref" data-id="doc" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action doc-d16877e1050-link" class="wh-expand-btn"></span><div class="title"><a href="../../t-ug002/concepts/device_manager.html" id="doc-d16877e1050-link">Device Manager</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph uicontrol">Device Manager</span> is used to create, manipulate, and activate HIL         device setups.</p></div></div></div></li><li role="treeitem"><div data-tocid="doc-d16877e1151" class="topicref" data-id="doc" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../../t-ug002/concepts/typhoon_hil_control_center.html" id="doc-d16877e1151-link">Typhoon HIL Control Center</a><div class="wh-tooltip"><p class="shortdesc">This section provides a general description of  Typhoon HIL Control Center and lists the     main software components accessible from it, as well as additional software tools which can be     invoked from its interface.</p></div></div></div></li><li role="treeitem"><div data-tocid="doc-d16877e1162" class="topicref" data-id="doc" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../../t-ug002/concepts/typhoonsim.html" id="doc-d16877e1162-link">TyphoonSim</a><div class="wh-tooltip"><p class="shortdesc">This section provides a general description of the TyphoonSim software, which is     available as both a standalone software and integrated in Typhoon HIL Control     Center.</p></div></div></div></li><li role="treeitem"><div data-tocid="doc-d16877e1173" class="topicref" data-id="doc" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../../t-ug002/concepts/example_explorer.html" id="doc-d16877e1173-link">Example Explorer</a><div class="wh-tooltip"><p class="shortdesc">General Description of the Typhoon HIL Control Center         Example Explorer.</p></div></div></div></li><li role="treeitem"><div data-tocid="doc-d16877e1184" class="topicref" data-id="doc" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../../t-ug002/topics/signal_access_management.html" id="doc-d16877e1184-link">Signal Access Management</a><div class="wh-tooltip"><p class="shortdesc">This feature allows you to change the visibility of signals</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="doc-d16877e1196" class="topicref" data-id="doc" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action doc-d16877e1196-link" class="wh-expand-btn"></span><div class="title"><a href="../../t-ug002/concepts/schematic_editor.html" id="doc-d16877e1196-link">Schematic Editor</a><div class="wh-tooltip"><p class="shortdesc">Introduction to the Schematic Editor tool in Typhoon HIL software toolchain</p></div></div></div></li><li role="treeitem"><div data-tocid="doc-d16877e1712" class="topicref" data-id="doc" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../../t-ug002/concepts/typhoonsim_solvers_guide.html" id="doc-d16877e1712-link">TyphoonSim Solver Engine</a><div class="wh-tooltip"><p class="shortdesc">Summary of the TyphoonSim solver engine algorithms and capabilities   as well as its modeling principles and simulation workflow.</p></div></div></div></li><li role="treeitem"><div data-tocid="doc-d16877e1723" class="topicref" data-id="doc" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../../t-ug002/topics/general_simulation_context_definitions.html" id="doc-d16877e1723-link">Simulation context definitions</a><div class="wh-tooltip"><p class="shortdesc">Introductory overview of the different simulation contexts - Real-time (VHIL) and     TyphoonSim. Core library component and feature availability and visibility for each of these     contexts are explained in detail.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="doc-d16877e1734" class="topicref" data-id="doc" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action doc-d16877e1734-link" class="wh-expand-btn"></span><div class="title"><a href="../../t-ug002/concepts/schematic_editor_component_libraries.html" id="doc-d16877e1734-link">Schematic Editor Component Libraries</a><div class="wh-tooltip"><p class="shortdesc">Detailed functionality and use of the pre-built Component Libraries in Schematic   Editor</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="doc-d16877e6773" class="topicref" data-id="doc" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action doc-d16877e6773-link" class="wh-expand-btn"></span><div class="title"><a href="../../t-ug002/concepts/third-party_integrations.html" id="doc-d16877e6773-link">Third-party integrations</a><div class="wh-tooltip"><p class="shortdesc">This section provides an overview of the key third party integrations within Typhoon     HIL's toolchain.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="doc-d16877e6828" class="topicref" data-id="doc" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action doc-d16877e6828-link" class="wh-expand-btn"></span><div class="title"><a href="../../t-ug002/concepts/hil_scada.html" id="doc-d16877e6828-link">HIL SCADA</a><div class="wh-tooltip"><p class="shortdesc">Description of the HIL SCADA tool in Typhoon HIL Control Center</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="doc-d16877e7379" class="topicref" data-id="doc" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action doc-d16877e7379-link" class="wh-expand-btn"></span><div class="title"><a href="../../t-ug002/concepts/wave_generator_tool.html" id="doc-d16877e7379-link">Waveform Generator</a><div class="wh-tooltip"><p class="shortdesc">This section describes the waveform generator tool in Typhoon HIL Control Center.</p></div></div></div></li><li role="treeitem"><div data-tocid="doc-d16877e7467" class="topicref" data-id="doc" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../../t-ug002/concepts/test_and_calibration_tool.html" id="doc-d16877e7467-link">Test and Calibration Tool</a><div class="wh-tooltip"><p class="shortdesc">Description of the Test and Calibration tool in Typhoon HIL Control Center</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="doc-d16877e7478" class="topicref" data-id="doc" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action doc-d16877e7478-link" class="wh-expand-btn"></span><div class="title"><a href="../../t-ug002/concepts/typhoontest_ide.html" id="doc-d16877e7478-link">TyphoonTest IDE</a><div class="wh-tooltip"><p class="shortdesc">This section describes TyphoonTest IDE</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="doc-d16877e7588" class="topicref" data-id="doc" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action doc-d16877e7588-link" class="wh-expand-btn"></span><div class="title"><a href="../../t-ug002/concepts/signal_analyzer.html" id="doc-d16877e7588-link">Signal Analyzer</a><div class="wh-tooltip"><p class="shortdesc">Description of the Signal Analyzer tool in Typhoon HIL Control Center.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="doc-d16877e7610" class="topicref" data-id="doc" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action doc-d16877e7610-link" class="wh-expand-btn"></span><div class="title"><a href="../../t-ug002/concepts/lookup_table_extraction_tool.html" id="doc-d16877e7610-link">Lookup table extraction tool</a><div class="wh-tooltip"><p class="shortdesc">Description of the Typhoon HIL Control Center tool for extracting characteristics (lookup tables) from datasheet graphs and charts into a format that can be imported by non-linear models.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="doc-d16877e7677" class="topicref" data-id="doc" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action doc-d16877e7677-link" class="wh-expand-btn"></span><div class="title"><a href="../../t-ug002/concepts/package_manager.html" id="doc-d16877e7677-link">Package Manager</a><div class="wh-tooltip"><p class="shortdesc">Description of the Typhoon HIL Control Center tool for creating and managing Typhoon packages that contain Schematic examples, Schematic and widget libraries, documentation etc.</p></div></div></div></li><li role="treeitem"><div data-tocid="doc-d16877e7798" class="topicref" data-id="doc" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../../t-ug002/concepts/usage_logging.html" id="doc-d16877e7798-link">Usage Logging</a><div class="wh-tooltip"><p class="shortdesc">This section briefly describes Typhoon HIL software logging feature.</p></div></div></div></li><li role="treeitem"><div data-tocid="doc-d16877e7809" class="topicref" data-id="doc" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../../t-ug002/concepts/python_interpreters.html" id="doc-d16877e7809-link">Python Interpreters</a><div class="wh-tooltip"><p class="shortdesc">Overview of how you can use Typhoon HIL Python Interpreters to further customize your         test files.</p></div></div></div></li></ul></li></ul></div>
+		                        
+                            </div>
+                        </nav>
+                    
+                    
+                    <div class="col-lg-7 col-md-9 col-sm-12" id="wh_topic_body">
+                        <button id="wh_close_publication_toc_button" class="close-toc-button d-none" aria-label="Toggle publishing table of content" aria-controls="wh_publication_toc" aria-expanded="true">
+                            <span class="close-toc-icon-container">
+                                <span class="close-toc-icon"></span>     
+                            </span>
+                        </button>
+                        <button id="wh_close_topic_toc_button" class="close-toc-button d-none" aria-label="Toggle topic table of content" aria-controls="wh_topic_toc" aria-expanded="true">
+                            <span class="close-toc-icon-container">
+                                <span class="close-toc-icon"></span>     
+                            </span>
+                        </button>
+                        
+                        <div class=" wh_topic_content body "><main role="main"><article role="article" aria-labelledby="ariaid-title1">
+    <h1 class="- topic/title title topictitle1" id="ariaid-title1">Quick Start: Typhoon HIL Control Center </h1>
+    
+    <div class="- topic/body reference/refbody body refbody"><p class="- topic/shortdesc shortdesc"><span class="- topic/ph ph" id="doc__description">Guidelines for all necessary software and/or hardware
+            requirements in order to run your first example model in real-time simulation or
+            TyphoonSim.</span></p>
+        <section class="- topic/section section">
+            <div class="- topic/note note note note_note"><span class="note__title">Note:</span> Please refer to the <a class="- topic/xref xref" href="system_requirements.html" title="Guidelines for the hardware and/or software environment necessary to run Typhoon HIL software, for both PC and Test Server/Virtual Machine-based setups.">System Requirements</a> page for recommendations on 
+                the hardware and/or software environment necessary to run Typhoon HIL software, for both PC and 
+                Test Server/Virtual Machine-based setups.</div>
+        </section>
+        <section class="- topic/section section" id="doc__user_regs" data-ofbid="doc__user_regs"><h2 class="- topic/title title sectiontitle">User Registration</h2>
+            
+            <div class="- topic/div div">
+            <p class="- topic/p p">In order to get started using Typhoon HIL Control Center (THCC), you need an
+                    appropriate <span class="+ topic/ph ui-d/uicontrol ph uicontrol">activation key</span> during the activation process.
+                    If you have purchased a HIL device, you will receive your activation key after
+                    your purchase of a HIL unit is processed. If you are only setting up a <a class="- topic/xref xref" href="https://www.typhoon-hil.com/products/software/additional-features-extensions/virtual-hil/" target="_blank" rel="external noopener">Virtual HIL</a> license, please follow the
+                    instructions <a class="- topic/xref xref" href="https://www.typhoon-hil.com/products/software-download/" target="_blank" rel="external noopener">here</a> to receive your activation
+                    key.</p>
+                <div class="- topic/note note note note_note" id="doc__note_pfc_b1j_fdc" data-ofbid="doc__note_pfc_b1j_fdc"><span class="note__title">Note:</span> With a single activation key, you can create multiple
+                        customer accounts.</div>
+            <div class="- topic/p p">Additionally, if you want to register and get a license for TyphoonSim, you should follow these steps:<ol class="- topic/ol ol">
+                <li class="- topic/li li">Open an internet browser and navigate to <a class="- topic/xref xref" href="https://www.typhoon-hil.com/products/software/typhoonsim/" target="_blank" rel="external noopener">TyphoonSim</a>.</li>
+                <li class="- topic/li li">Click on the <span class="+ topic/ph ui-d/uicontrol ph uicontrol">Get a License</span> button and fill in the
+                    form. </li>
+                <li class="- topic/li li">After that, you will receive all the necessary information to your
+                    e-mail.</li>
+            </ol></div>
+            </div>
+            <div class="- topic/sectiondiv sectiondiv" id="doc__reg_steps">
+                <p class="- topic/p p">Registration for real-time/VHIL simulation in THCC consists of the following
+                    steps:</p>
+                <ol class="- topic/ol ol" id="doc__ol_qfc_b1j_fdc" data-ofbid="doc__ol_qfc_b1j_fdc">
+                    <li class="- topic/li li">Open an internet browser and navigate to the <a class="- topic/xref xref" href="http://subscription.typhoon-hil.com/download/" target="_blank" rel="external noopener">Subscription Portal</a>.</li>
+                    <li class="- topic/li li">Click on the <span class="+ topic/ph ui-d/uicontrol ph uicontrol">Sign up</span> button in the bottom right
+                        corner (<a class="- topic/xref xref" href="#doc__signup_form">Figure 1</a>). <figure class="- topic/fig fig fignone" id="doc__signup_form" data-ofbid="doc__signup_form"><figcaption class="- topic/title title figcap"><span class="figtitleprefix fig--title-label">Figure<span class="fig--title-label-number"> 1</span><span class="fig--title-label-punctuation">. </span></span><span class="fig--title">User login portal</span></figcaption>
+                            
+                            <img class="- topic/image image" id="doc__image_rfc_b1j_fdc" src="../Images/quickstart_04.png"/>
+                        </figure>
+                    </li>
+                    <li class="- topic/li li">The Registration page will open, where you can fill out a registration form
+                            (<a class="- topic/xref xref" href="#doc__registration_form">Figure 2</a>). You must enter all requested
+                        information, including the <span class="+ topic/ph ui-d/uicontrol ph uicontrol">activation key</span> you
+                        received previously. <figure class="- topic/fig fig fignone" id="doc__registration_form" data-ofbid="doc__registration_form"><figcaption class="- topic/title title figcap"><span class="figtitleprefix fig--title-label">Figure<span class="fig--title-label-number"> 2</span><span class="fig--title-label-punctuation">. </span></span><span class="fig--title">Registration Form</span></figcaption>
+                            
+                            <img class="- topic/image image" id="doc__image_sfc_b1j_fdc" src="../Images/quickstart_05.png"/>
+                        </figure></li>
+                    <li class="- topic/li li">You will receive a confirmation message on screen and via email to the
+                        address provided (<a class="- topic/xref xref" href="#doc__registration_confirm">Figure 3</a>). Follow the
+                        instructions in your email message to activate your account. <figure class="- topic/fig fig fignone" id="doc__registration_confirm" data-ofbid="doc__registration_confirm"><figcaption class="- topic/title title figcap"><span class="figtitleprefix fig--title-label">Figure<span class="fig--title-label-number"> 3</span><span class="fig--title-label-punctuation">. </span></span><span class="fig--title">Registration Confirmation Message</span></figcaption>
+                            
+                            <img class="- topic/image image" id="doc__image_tfc_b1j_fdc" src="../Images/quickstart_06.png"/>
+                        </figure>
+                    </li>
+                    <li class="- topic/li li">After following the instructions in the email message, you will be
+                        redirected to a new web page that informs you that your account is
+                        successfully activated (<a class="- topic/xref xref" href="#doc__activation_confirm">Figure 4</a>). <figure class="- topic/fig fig fignone" id="doc__activation_confirm" data-ofbid="doc__activation_confirm"><figcaption class="- topic/title title figcap"><span class="figtitleprefix fig--title-label">Figure<span class="fig--title-label-number"> 4</span><span class="fig--title-label-punctuation">. </span></span><span class="fig--title">Successfully completed account activation</span></figcaption>
+                            
+                            <img class="- topic/image image" id="doc__image_ufc_b1j_fdc" src="../Images/quickstart_07.png"/>
+                        </figure>
+                    </li>
+                    <li class="- topic/li li">You can now return to the <a class="- topic/xref xref" href="http://subscription.typhoon-hil.com/download/" target="_blank" rel="external noopener">Typhoon HIL Download page</a> and login using your
+                        credentials (<a class="- topic/xref xref" href="#doc__signup_form">Figure 1</a>).</li>
+                </ol>
+            </div>
+        </section>
+        <section class="- topic/section section" id="doc__section_tmf_zkb_jcc" data-ofbid="doc__section_tmf_zkb_jcc"><h2 class="- topic/title title sectiontitle">Software Download</h2>
+            
+            <p class="- topic/p p">To begin, open an internet browser and navigate to the <a class="- topic/xref xref" href="http://subscription.typhoon-hil.com/download/" target="_blank" rel="external noopener">Subscription Portal</a>.</p>
+            <p class="- topic/p p">If you already have an account, you can log in by clicking on the
+                    <span class="+ topic/ph ui-d/uicontrol ph uicontrol">Login</span> button (<a class="- topic/xref xref" href="#doc__login_form">Figure 5</a>).</p>
+            <figure class="- topic/fig fig fignone" id="doc__login_form" data-ofbid="doc__login_form"><figcaption class="- topic/title title figcap"><span class="figtitleprefix fig--title-label">Figure<span class="fig--title-label-number"> 5</span><span class="fig--title-label-punctuation">. </span></span><span class="fig--title">Login Form</span></figcaption>
+                
+                <img class="- topic/image image" id="doc__image_tdm_4z3_fdc" src="../Images/quickstart_01.png"/>
+            </figure>
+            <p class="- topic/p p">If you do not have a Typhoon HIL customer account, please create one following the
+                steps in the <a class="- topic/xref xref" href="#doc__user_regs">User Registration</a> section.</p>
+            <p class="- topic/p p">By logging in with a customer account, you can access the
+                    <span class="+ topic/ph ui-d/uicontrol ph uicontrol">Download</span> tab at the top of the screen (<a class="- topic/xref xref" href="#doc__portal_login">Figure 6</a>).</p>
+            <figure class="- topic/fig fig fignone" id="doc__portal_login" data-ofbid="doc__portal_login"><figcaption class="- topic/title title figcap"><span class="figtitleprefix fig--title-label">Figure<span class="fig--title-label-number"> 6</span><span class="fig--title-label-punctuation">. </span></span><span class="fig--title">Download Tab</span></figcaption>
+                
+                <img class="- topic/image image" id="doc__image_udm_4z3_fdc" src="../Images/quickstart_02.png"/>
+            </figure>
+            <p class="- topic/p p">The <span class="+ topic/ph ui-d/uicontrol ph uicontrol">Typhoon HIL Download</span> site consists of four sections
+                (pages). There you can download the latest software and firmware, and links to
+                important documentation. In the <span class="+ topic/ph ui-d/uicontrol ph uicontrol">Software</span> download section
+                    (<a class="- topic/xref xref" href="#doc__sd">Figure 7</a>), you
+                can download the latest version of Typhoon HIL software and its appropriate
+                dependencies. Older versions of the software are also accessible from the page. </p>
+            <figure class="- topic/fig fig fignone" id="doc__sd" data-ofbid="doc__sd"><figcaption class="- topic/title title figcap"><span class="figtitleprefix fig--title-label">Figure<span class="fig--title-label-number"> 7</span><span class="fig--title-label-punctuation">. </span></span><span class="fig--title">Typhoon HIL software download page</span></figcaption>
+                
+                <img class="- topic/image image" id="doc__image_vdm_4z3_fdc" src="../Images/quickstart_03.png"/>
+            </figure>
+            <div class="- topic/note note note note_note" id="doc__note_wdm_4z3_fdc" data-ofbid="doc__note_wdm_4z3_fdc"><span class="note__title">Note:</span> All device firmware files are packed together with the
+                        <em class="+ topic/ph hi-d/i ph i"><a class="- topic/xref xref" href="https://www.typhoon-hil.com/documentation/typhoon-hil-software-manual/concepts/typhoon_hil_control_center.html" target="_blank" rel="external noopener">Typhoon HIL Control Center</a></em> installation and additional firmware download is not
+                required. For more information about updating firmware, consult the <a class="- topic/xref xref" href="#doc__firmware_update">Syncing HIL Firmware in Device Manager</a> section of this guide.</div>
+        </section>
+        <section class="- topic/section section" id="doc__software_install" data-ofbid="doc__software_install"><h2 class="- topic/title title sectiontitle">Software Installation and Configuration</h2>
+            
+        <div class="- topic/sectiondiv sectiondiv" id="doc__system_requirements">
+            <p class="- topic/p p">Before installing the software, please verify that your system setup meets the
+                recommended <a class="- topic/xref xref" href="system_requirements.html" title="Guidelines for the hardware and/or software environment necessary to run Typhoon HIL software, for both PC and Test Server/Virtual Machine-based setups.">System Requirements</a> and that you
+                can access the <span class="+ topic/ph ui-d/uicontrol ph uicontrol">Software tab</span> in the <a class="- topic/xref xref" href="http://subscription.typhoon-hil.com/download/" target="_blank" rel="external noopener">Subscription Portal</a>.</p>
+            <div class="- topic/div div" id="doc__windows_installation">
+                <p class="- topic/p p"><strong class="+ topic/ph hi-d/b ph b">Installation steps - Windows 10/11</strong></p>
+                <ol class="- topic/ol ol" id="doc__ol_tn1_1bj_fdc" data-ofbid="doc__ol_tn1_1bj_fdc">
+                    <li class="- topic/li li">Login to your Typhoon HIL account and download the latest version of the
+                                <em class="+ topic/ph hi-d/i ph i"><a class="- topic/xref xref" href="https://www.typhoon-hil.com/documentation/typhoon-hil-software-manual/concepts/typhoon_hil_control_center.html" target="_blank" rel="external noopener">Typhoon HIL Control Center</a></em> installation file from the
+                            <span class="+ topic/ph ui-d/uicontrol ph uicontrol">Software tab</span> in the <a class="- topic/xref xref" href="http://subscription.typhoon-hil.com/download/" target="_blank" rel="external noopener">Subscription Portal</a>. If you don't have a user
+                        account, please follow the <a class="- topic/xref xref" href="#doc__user_regs">User Registration</a> steps.</li>
+                    <li class="- topic/li li">Start the installation. <div class="- topic/note note note note_note" id="doc__note_un1_1bj_fdc" data-ofbid="doc__note_un1_1bj_fdc"><span class="note__title">Note:</span> During installation, you can select the
+                                destination folder for the <em class="+ topic/ph hi-d/i ph i">Typhoon HIL Control Center</em>
+                                application. By default, it will be installed to a new folder at
+                                <em class="+ topic/ph hi-d/i ph i">C:\Program Files\Typhoon HIL Control Center [software version number]</em>
+                                (see <a class="- topic/xref xref" href="#doc__destination_window">Figure 8</a>) for Windows
+                                installations or <em class="+ topic/ph hi-d/i ph i">/opt/typhoon/typhoon_hil_control_center_[software version number]</em>
+                                for Linux installations.</div>
+                        <figure class="- topic/fig fig fignone" id="doc__destination_window" data-ofbid="doc__destination_window"><figcaption class="- topic/title title figcap"><span class="figtitleprefix fig--title-label">Figure<span class="fig--title-label-number"> 8</span><span class="fig--title-label-punctuation">. </span></span><span class="fig--title">Destination Window</span></figcaption>
+                            
+                            <img class="- topic/image image" id="doc__image_vn1_1bj_fdc" src="../Images/quickstart_08.png" height="286" width="375"/>
+                        </figure>
+                    </li>
+                    <li class="- topic/li li">At the end of the installation process, you will receive a message stating
+                        you can now launch <em class="+ topic/ph hi-d/i ph i">Typhoon HIL Control Center</em> via the installed
+                        shortcuts. For now, simply click <span class="+ topic/ph ui-d/uicontrol ph uicontrol">Finish</span>. <p class="- topic/p p">If you have
+                        your HIL device with you, you can now start <a class="- topic/xref xref" href="#doc__driver_installation">HIL Driver Installation</a>.</p>
+                        <figure class="- topic/fig fig fignone" id="doc__installation_completion" data-ofbid="doc__installation_completion"><figcaption class="- topic/title title figcap"><span class="figtitleprefix fig--title-label">Figure<span class="fig--title-label-number"> 9</span><span class="fig--title-label-punctuation">. </span></span><span class="fig--title">Complete the installation by clicking on Finish</span></figcaption>
+                            
+                            <img class="- topic/image image" id="doc__image_wn1_1bj_fdc" src="../Images/quickstart_09.png" height="286" width="375"/>
+                        </figure>
+                    </li>
+                </ol>
+            </div>
+            <div class="- topic/div div" id="doc__linux_installation">
+                    <strong class="+ topic/ph hi-d/b ph b">Installation steps - Linux</strong>
+                    <p class="- topic/p p"><u class="+ topic/ph hi-d/u ph u">Installation:</u></p>
+                    <p class="- topic/p p">Linux installation is command line based and the
+                        installer has a *.gzip.run extension. To run the installer, type the
+                        following as root (or use sudo):</p>
+                        <pre class="+ topic/pre pr-d/codeblock pre codeblock" id="doc__codeblock_xn1_1bj_fdc" data-ofbid="doc__codeblock_xn1_1bj_fdc"><code># sh installation_file.gzip.run
+$ sudo sh installation_file.gzip.run</code></pre>
+                    <div class="- topic/note note note note_note" id="doc__note_yn1_1bj_fdc" data-ofbid="doc__note_yn1_1bj_fdc"><span class="note__title">Note:</span> 
+                        <p class="- topic/p p">The installer can be marked to run as an executable as follows:</p>
+                        <pre class="+ topic/pre pr-d/codeblock pre codeblock" id="doc__codeblock_zn1_1bj_fdc" data-ofbid="doc__codeblock_zn1_1bj_fdc"><code>$ chmod 775 installation_file.gzip.run 
+# ./installation_file.gzip.run</code></pre>
+                        <p class="- topic/p p">or</p>
+                        <pre class="+ topic/pre pr-d/codeblock pre codeblock" id="doc__codeblock_a41_1bj_fdc" data-ofbid="doc__codeblock_a41_1bj_fdc"><code>$ sudo ./installation._file.gzip.run</code></pre>
+                    </div>
+                    <p class="- topic/p p">Typhoon HIL software will be installed in the <strong class="+ topic/ph hi-d/b ph b">/opt/typhoon/typhoon_hil_control_center_{version}</strong> directory,
+                        where <strong class="+ topic/ph hi-d/b ph b">{version}</strong> is the actual software version used.</p>
+                    <p class="- topic/p p"><u class="+ topic/ph hi-d/u ph u">After Install:</u></p>
+                    <p class="- topic/p p">Every user with access to use the software should
+                        automatically be added to the `plugdev` group.</p>
+                        <div class="- topic/p p">In case of issues, try adding users manually with:
+                        <pre class="+ topic/pre pr-d/codeblock pre codeblock" id="doc__codeblock_b41_1bj_fdc" data-ofbid="doc__codeblock_b41_1bj_fdc"><code>$ sudo usermod -a -G plugdev user_name</code></pre></div><p class="- topic/p p">as
+                        this will enable USB access rights for that user. Changes will be activated
+                        only after the user logs in again or after computer restart.</p>
+                        <p class="- topic/p p">If the required dependencies are not installed as part of installation, you can
+                        install them manually later by executing:</p>
+                        <pre class="+ topic/pre pr-d/codeblock pre codeblock" id="doc__codeblock_c41_1bj_fdc" data-ofbid="doc__codeblock_c41_1bj_fdc"><code>$ sudo dpkg --add-architecture i386
+$ sudo apt-get -y update
+$ sudo apt-get install -y build-essential libxcb-xinerama0 libc6:i386 libstdc++6:i386 zlib1g:i386</code></pre>
+                    <p class="- topic/p p"><u class="+ topic/ph hi-d/u ph u">Uninstallation:</u></p>
+                    <p class="- topic/p p">To uninstall, simply remove the installation directory in <strong class="+ topic/ph hi-d/b ph b">/opt</strong> with:</p>
+                    <pre class="+ topic/pre pr-d/codeblock pre codeblock" id="doc__codeblock_d41_1bj_fdc" data-ofbid="doc__codeblock_d41_1bj_fdc"><code>$ sudo rm -rf /opt/typhoon/thcc-target-version
+$ sudo rm -rf /usr/share/applications/typhoon_hil_control_center_{version}.desktop</code></pre></div>
+        </div>
+        </section>
+        <section class="- topic/section section" id="doc__driver_installation" data-ofbid="doc__driver_installation"><h2 class="- topic/title title sectiontitle">HIL Driver Installation</h2>
+            
+            <div class="- topic/note note note note_note" id="doc__note_zwv_rdj_fdc" data-ofbid="doc__note_zwv_rdj_fdc"><span class="note__title">Note:</span> This section is necessary only if you are setting up a
+                supported HIL device. If you are only intending to use a Virtual HIL license, please
+                continue to the <a class="- topic/xref xref" href="#doc__licensing">Licensing</a> section.</div>
+            <p class="- topic/p p">Once you have successfully <a class="- topic/xref xref" href="#doc__software_install">installed
+                    the Typhoon HIL Control Center software</a>, you can <span class="- topic/ph ph">connect your HIL device to your testbed setup by using the USB cable you received in your Typhoon HIL package, and turn your HIL on. It is recommended to use a USB 3.0 port if available. 
+                USB drivers are automatically installed with Typhoon HIL Control Center software.</span></p>
+            <div class="- topic/note note note note_note" id="doc__note_axv_rdj_fdc" data-ofbid="doc__note_axv_rdj_fdc"><span class="note__title">Note:</span> If you wish to connect to your HIL via Ethernet instead of USB, please refer to the <a class="- topic/xref xref" href="https://www.typhoon-hil.com/documentation/typhoon-hil-software-manual/concepts/connecting_to_your_hil_device.html#doc__ethernet_connection" target="_blank" rel="external noopener">Setting up an Ethernet Connection</a> guide instead.</div>
+            <p class="- topic/p p"><span class="- topic/ph ph">Once your drivers are successfully installed,
+                    start <em class="+ topic/ph hi-d/i ph i"><a class="- topic/xref xref" href="typhoon_hil_control_center.html" title="This section provides a general description of Typhoon HIL Control Center and lists the main software components accessible from it, as well as additional software tools which can be invoked from its interface.">Typhoon HIL Control
+                            Center</a></em> and check if your HIL device is detected by opening
+                    the <a class="- topic/xref xref" href="device_manager.html" title="Device Manager is used to create, manipulate, and activate HIL device setups.">Device Manager</a> tool in the top left corner of the
+                    application. If detection is successful, you should be able to see your HIL
+                    device in the "Detected on network" section. If you instead get the message
+                    shown below, you must install the drivers manually. The procedure for manual
+                    driver installation is available in the <span class="+ topic/ph ui-d/uicontrol ph uicontrol">Manual HIL USB Driver
+                        Reinstallation</span> section of the <a class="- topic/xref xref" href="https://ticket.typhoon-hil.com/kb/faq.php?id=44" target="_blank" rel="external noopener">USB connection to HIL Lost / Unable to detect HIL FAQ
+                        Guide</a>.</span></p>
+            <figure class="- topic/fig fig fignone" id="doc__device_not_detected" data-ofbid="doc__device_not_detected"><figcaption class="- topic/title title figcap"><span class="figtitleprefix fig--title-label">Figure<span class="fig--title-label-number"> 10</span><span class="fig--title-label-punctuation">. </span></span><span class="fig--title">HIL device not detected</span></figcaption>
+                
+                <img class="- topic/image image" id="doc__image_bxv_rdj_fdc" src="../Images/quickstart_10.png"/>
+            </figure>
+        </section>
+        <section class="- topic/section section" id="doc__licensing" data-ofbid="doc__licensing"><h2 class="- topic/title title sectiontitle">Licensing</h2>
+            <p class="- topic/p p">After starting the software, you must log
+                in with the credentials you used in the <a class="- topic/xref xref" href="#doc__user_regs">User Registration</a> section, in
+                order to activate your license. Click on the login icon in the top right corner
+                    (<a class="- topic/xref xref" href="#doc__image_rwp_lww_fdc">Login to Typhoon HIL Control Center</a>)
+                and log in with your e-mail and password. The license will be pulled automatically.</p>
+                <figure class="- topic/fig fig fignone" id="doc__fig_cyp_fxw_fdc" data-ofbid="doc__fig_cyp_fxw_fdc"><figcaption class="- topic/title title figcap"><span class="figtitleprefix fig--title-label">Figure<span class="fig--title-label-number"> 11</span><span class="fig--title-label-punctuation">. </span></span><span class="fig--title">Login to Typhoon HIL Control Center</span></figcaption>
+                    
+                    <img class="- topic/image image" id="doc__image_rwp_lww_fdc" src="../Images/quickstart_24.png"/>
+                </figure>
+            <p class="- topic/p p">After logging in, you must restart the software to apply the license. If you
+                logged in correctly, after restarting the software, the Login button will appear
+                green. If you requested the license for TyphoonSim and it is approved, you will be
+                able to use TyphoonSim inside the Typhoon HIL Control Center as well.</p>
+            <p class="- topic/p p">Alternatively, if you want to change the license manually, follow the steps below.</p>
+            <div class="- topic/div div">
+                <p class="- topic/p p"><strong class="+ topic/ph hi-d/b ph b">Manual license import and change</strong></p>
+                <p class="- topic/p p">License files can be imported
+                using the <span class="+ topic/ph ui-d/uicontrol ph uicontrol">License</span> panel in <em class="+ topic/ph hi-d/i ph i"><a class="- topic/xref xref" href="https://www.typhoon-hil.com/documentation/typhoon-hil-software-manual/concepts/typhoon_hil_control_center.html" target="_blank" rel="external noopener">Typhoon HIL Control Center</a></em>
+                    (<a class="- topic/xref xref" href="#doc__license_panel">Figure 12</a>).</p><figure class="- topic/fig fig fignone" id="doc__license_panel" data-ofbid="doc__license_panel"><figcaption class="- topic/title title figcap"><span class="figtitleprefix fig--title-label">Figure<span class="fig--title-label-number"> 12</span><span class="fig--title-label-punctuation">. </span></span><span class="fig--title">License panel in Typhoon HIL Control Center</span></figcaption>
+                
+                <img class="- topic/image image" id="doc__image_ln3_wdj_fdc" src="../Images/quickstart_11.png"/>
+                    </figure>
+            </div>
+            <div class="- topic/div div" id="doc__manual_license_import">
+                <p class="- topic/p p">To import the license manually:</p>
+                    <ol class="- topic/ol ol" id="doc__ol_mn3_wdj_fdc" data-ofbid="doc__ol_mn3_wdj_fdc">
+                        <li class="- topic/li li">Start <em class="+ topic/ph hi-d/i ph i"><a class="- topic/xref xref" href="https://www.typhoon-hil.com/documentation/typhoon-hil-software-manual/concepts/typhoon_hil_control_center.html" target="_blank" rel="external noopener">Typhoon HIL Control Center</a></em></li>
+                        <li class="- topic/li li">Click the <span class="+ topic/ph ui-d/uicontrol ph uicontrol">Download license</span> button</li>
+                        <li class="- topic/li li">Enter your <a class="- topic/xref xref" href="#doc__user_regs">activation key</a></li>
+                        <li class="- topic/li li">The license should be automatically downloaded and imported, in which
+                            case you can now proceed to step 8</li>
+                        <li class="- topic/li li">Alternatively, you can download your license filed directly from your
+                                <a class="- topic/xref xref" href="https://subscription.typhoon-hil.com/accounts/login/" target="_blank" rel="external noopener">Subscription Portal account
+                                page</a></li>
+                        <li class="- topic/li li">Click <span class="+ topic/ph ui-d/uicontrol ph uicontrol">License -&gt; Import license</span></li>
+                        <li class="- topic/li li">Navigate to, select, and import the license file</li>
+                        <li class="- topic/li li">If the license file is successfully imported, the message shown in <a class="- topic/xref xref" href="#doc__successful_import">Figure 13</a> will popup <figure class="- topic/fig fig fignone" id="doc__successful_import" data-ofbid="doc__successful_import"><figcaption class="- topic/title title figcap"><span class="figtitleprefix fig--title-label">Figure<span class="fig--title-label-number"> 13</span><span class="fig--title-label-punctuation">. </span></span><span class="fig--title">Successfully imported license file message</span></figcaption>
+                                
+                                <img class="- topic/image image" id="doc__image_nn3_wdj_fdc" src="../Images/quickstart_12.png" height="148" width="480"/>
+                            </figure></li>
+                        <li class="- topic/li li">Restart <em class="+ topic/ph hi-d/i ph i"><a class="- topic/xref xref" href="https://www.typhoon-hil.com/documentation/typhoon-hil-software-manual/concepts/typhoon_hil_control_center.html" target="_blank" rel="external noopener">Typhoon HIL Control Center</a></em> to apply the new license file</li>
+                        <li class="- topic/li li">If the license file is correctly imported, the license button will
+                            appear green, as shown in <a class="- topic/xref xref" href="#doc__active_license">Figure 14</a>
+                            <figure class="- topic/fig fig fignone" id="doc__active_license" data-ofbid="doc__active_license"><figcaption class="- topic/title title figcap"><span class="figtitleprefix fig--title-label">Figure<span class="fig--title-label-number"> 14</span><span class="fig--title-label-punctuation">. </span></span><span class="fig--title">Successfully imported license</span></figcaption>
+                                
+                                <img class="- topic/image image" id="doc__image_on3_wdj_fdc" src="../Images/quickstart_13.png"/>
+                            </figure></li>
+                    </ol>
+                <p class="- topic/p p">Once imported, the license will be saved in the license folder (typically
+                    C:\Users\[name_of_user]\AppData\Local\typhoon\license).</p>
+                    <div class="- topic/note note note note_note" id="doc__note_pn3_wdj_fdc" data-ofbid="doc__note_pn3_wdj_fdc"><span class="note__title">Note:</span> If the procedure fails, this is most likely due to missing
+                    or incorrect proxy settings. Please double check them.</div>
+                    <div class="- topic/note note note note_note" id="doc__note_qn3_wdj_fdc" data-ofbid="doc__note_qn3_wdj_fdc"><span class="note__title">Note:</span> License file content changes may result
+                    in an inability to compile Schematic Editor models and/or an inability to run
+                    certain compiled models on HIL devices.</div>
+                    </div>
+                    <div class="- topic/div div" id="doc__manual_license_change">
+                    <p class="- topic/p p">To change the license manually:</p>
+                <p class="- topic/p p">There is a button that allows you to manage/switch between
+                    multiple licenses. This is useful when a Virtual HIL user becomes a user of a
+                    HIL device, as well as for companies/users who have multiple sites.</p>
+                    <ol class="- topic/ol ol" id="doc__ol_rn3_wdj_fdc" data-ofbid="doc__ol_rn3_wdj_fdc">
+                        <li class="- topic/li li">Start <em class="+ topic/ph hi-d/i ph i"><a class="- topic/xref xref" href="https://www.typhoon-hil.com/documentation/typhoon-hil-software-manual/concepts/typhoon_hil_control_center.html" target="_blank" rel="external noopener">Typhoon HIL Control Center</a></em></li>
+                        <li class="- topic/li li">Click <span class="+ topic/ph ui-d/uicontrol ph uicontrol">License -&gt; Change license</span></li>
+                        <li class="- topic/li li">Enter your <a class="- topic/xref xref" href="#doc__user_regs">activation key</a></li>
+                        <li class="- topic/li li">The new license will be automatically applied</li>
+                    </ol>
+                    <figure class="- topic/fig fig fignone" id="doc__change_license" data-ofbid="doc__change_license"><figcaption class="- topic/title title figcap"><span class="figtitleprefix fig--title-label">Figure<span class="fig--title-label-number"> 15</span><span class="fig--title-label-punctuation">. </span></span><span class="fig--title">Change license window</span></figcaption>
+                        
+                        <img class="- topic/image image" id="doc__image_sn3_wdj_fdc" src="../Images/quickstart_14.png" width="710"/>
+                    </figure>
+                    <div class="- topic/note note note note_note" id="doc__note_tn3_wdj_fdc" data-ofbid="doc__note_tn3_wdj_fdc"><span class="note__title">Note:</span> It is possible to define a global license which will be shared
+      among all users on a given PC. To do this on a Windows platform, create the following folder
+      structure on your operating system drive root: <strong class="+ topic/ph hi-d/b ph b">.typhoon_hil\license\</strong> (example:
+      C:\.typhoon_hil\license) and place the license file into that license folder. On Linux, the
+      global license folder is defined as <strong class="+ topic/ph hi-d/b ph b">TYPHOON_LICENSE_DIR/license</strong> where
+        <strong class="+ topic/ph hi-d/b ph b">TYPHOON_LICENSE_DIR</strong> is the environment variable. This global license will always take
+      priority over the license in the user folder. To stop using the global license, just delete
+      the folder structure of the global license.</div>
+            </div>
+        </section>
+        <section class="- topic/section section" id="doc__firmware_update" data-ofbid="doc__firmware_update"><h2 class="- topic/title title sectiontitle">Syncing HIL Firmware in Device Manager</h2>
+            
+            <p class="- topic/p p"><a class="- topic/xref xref" href="device_manager.html" title="Device Manager is used to create, manipulate, and activate HIL device setups.">Device Manager</a> allows you to automatically upgrade firmware on
+                multiple HIL devices and customize their device settings. All device firmware files
+                are packed together with the Typhoon HIL Control Center installation and an
+                additional firmware download is not required.</p>
+            <p class="- topic/p p">Device Manager lets you either start the upgrade process on the desired device or, 
+                if your firmware is up to date, change your firmware configuration. Updating multiple 
+                connected devices of the same type is also possible; the Device Manager will update 
+                them sequentially, one at a time.</p>
+            <div class="- topic/note note note note_note"><span class="note__title">Note:</span> The <span class="+ topic/ph ui-d/uicontrol ph uicontrol">Change Configuration</span> option is available for
+                multiple devices only if all selected devices are of the same type and their
+                firmware is up to date.</div>
+            <div class="- topic/note note important note_important"><span class="note__title">Important:</span> Do not turn off or unplug the HIL device during the firmware
+                update procedure as it may result in the HIL device being unusable.</div>
+            <div class="- topic/note note important note_important"><span class="note__title">Important:</span> During the firmware update procedure, all other Typhoon HIL
+                applications should be closed.</div>
+            <p class="- topic/p p">Perform the firmware upgrade procedure by following the steps below:</p>
+            <ul class="- topic/ul ul">
+                <li class="- topic/li li">Power up and connect the HIL device</li>
+                <li class="- topic/li li"><p class="- topic/p p">Open <span class="+ topic/ph ui-d/uicontrol ph uicontrol">Device Manager</span>. Upon start, Device Manager will
+                    automatically detect all connected HIL devices and show their firmware
+                    status, as described in <a class="- topic/xref xref" href="#doc__table_rnd_mnn_d5b">Table 1</a></p>
+                    <table class="- topic/table table frame-all" id="doc__table_rnd_mnn_d5b" data-ofbid="doc__table_rnd_mnn_d5b" data-cols="2"><caption class="- topic/title title tablecap" data-caption-side="top" data-is-repeated="true"><span class="table--title-label">Table<span class="table--title-label-number"> 1</span><span class="table--title-label-punctuation">. </span></span><span class="table--title">Meaning of firmware status icons</span></caption><colgroup><col style="width:16.666666666666664%"/><col style="width:83.33333333333334%"/></colgroup><thead class="- topic/thead thead">
+                                <tr class="- topic/row">
+                                    <th class="- topic/entry entry colsep-1 rowsep-1" id="doc__table_rnd_mnn_d5b__entry__1">Status icon</th>
+                                    <th class="- topic/entry entry colsep-0 rowsep-1" id="doc__table_rnd_mnn_d5b__entry__2">Description</th>
+                                </tr>
+                            </thead><tbody class="- topic/tbody tbody">
+                                <tr class="- topic/row">
+                                    <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__table_rnd_mnn_d5b__entry__1"><img class="- topic/image image" id="doc__image_my3_b5n_d4b" src="../Images/dev_manager_17.jpg"/></td>
+                                    <td class="- topic/entry entry colsep-0 rowsep-1" headers="doc__table_rnd_mnn_d5b__entry__2">Firmware is synced with the currently opened Typhoon HIL software installation.</td>
+                                </tr>
+                                <tr class="- topic/row">
+                                    <td class="- topic/entry entry colsep-1 rowsep-0" headers="doc__table_rnd_mnn_d5b__entry__1"><img class="- topic/image image" id="doc__image_acj_24n_d5b" src="../Images/dev_manager_16.jpg"/></td>
+                                    <td class="- topic/entry entry colsep-0 rowsep-0" headers="doc__table_rnd_mnn_d5b__entry__2">Firmware is out of sync with currently opened Typhoon HIL Control Center
+                                        software. Firmware version may be older or newer than the THCC compatible version.</td>
+                                </tr>
+                            </tbody></table>
+                    </li>
+                <li class="- topic/li li"><p class="- topic/p p">Select the desired HIL device and click on the <span class="+ topic/ph ui-d/uicontrol ph uicontrol">Sync
+                        Firmware</span> button (<img class="- topic/image image" src="../Images/dev_manager_15.jpg" height="25" width="26"/>). Device Manager will find the appropriate firmware and start
+                    the update process automatically</p>
+                    <div class="- topic/note note note note_note" id="doc__note_wqy_3gf_xwb" data-ofbid="doc__note_wqy_3gf_xwb"><span class="note__title">Note:</span> <span class="+ topic/ph ui-d/uicontrol ph uicontrol">Sync Firmware</span> will search for
+                        firmware files in the following locations:<ol class="- topic/ol ol" id="doc__ol_sjj_mgf_xwb" data-ofbid="doc__ol_sjj_mgf_xwb">
+                            <li class="- topic/li li">Installation folder/typhoon/apps/firmware_files</li>
+                            <li class="- topic/li li">%LOCALAPPDATA%\typhoon\firmware_files</li>
+                            <li class="- topic/li li">Remote download from the <a class="- topic/xref xref" href="https://subscription.typhoon-hil.com/customer" target="_blank" rel="external noopener">Typhoon HIL Subscription</a> portal.</li>
+                        </ol></div></li>
+                <li class="- topic/li li"><p class="- topic/p p">Firmware update progress for each selected device is shown in a separate window
+                </p><div class="imagecenter break"><img class="- topic/image image imagecenter break" id="doc__image_zpk_mhp_kbb" src="../Images/HIL_firmware_manager_02.jpg"/></div></li>
+                <li class="- topic/li li"><p class="- topic/p p">The firmware upgrade or configuration change procedure can take more than a minute to complete.
+                        After updates are finished on all devices, an appropriate message is shown. </p><div class="imagecenter break"><img class="- topic/image image imagecenter break" id="doc__image_ojy_lgx_q1b" src="../Images/HIL_firmware_manager_03.jpg"/></div></li>
+            </ul>
+        </section>
+
+        <section class="- topic/section section" id="doc__first_sim" data-ofbid="doc__first_sim"><h2 class="- topic/title title sectiontitle">Running your first simulation</h2>
+            
+            <p class="- topic/p p">In order to run an example model in real-time simulation, follow the instructions in
+                    <a class="- topic/xref xref" href="#doc__run_real">Running the Induction Machine Open-loop Control
+                    Example</a>.</p>
+            <p class="- topic/p p">If you want to run an example model in TyphoonSim, follow the instructions in <a class="- topic/xref xref" href="#doc__run_tysim">Run an example model in TyphoonSim within Typhoon HIL
+                    Control Center</a>.</p>
+            <div class="- topic/div div" id="doc__run_real"><strong class="+ topic/ph hi-d/b ph b">Running the Induction Machine Open-loop
+                    Control Example</strong>
+                <ol class="- topic/ol ol" id="doc__ol_e4m_2fj_fdc" data-ofbid="doc__ol_e4m_2fj_fdc">
+                    <li class="- topic/li li">Power on your HIL device.</li>
+                    <li class="- topic/li li">After opening <em class="+ topic/ph hi-d/i ph i"><a class="- topic/xref xref" href="https://www.typhoon-hil.com/documentation/typhoon-hil-software-manual/concepts/typhoon_hil_control_center.html" target="_blank" rel="external noopener">Typhoon HIL Control Center</a></em>, select the <a class="- topic/xref xref" href="https://www.typhoon-hil.com/documentation/typhoon-hil-software-manual/concepts/example_explorer.html" target="_blank" rel="external noopener">Examples Explorer</a> icon and find the <span class="+ topic/ph ui-d/uicontrol ph uicontrol">Induction
+                            machine with open loop control</span> model.
+                            <figure class="- topic/fig fig fignone" id="doc__induction_machine_model" data-ofbid="doc__induction_machine_model"><figcaption class="- topic/title title figcap"><span class="figtitleprefix fig--title-label">Figure<span class="fig--title-label-number"> 16</span><span class="fig--title-label-punctuation">. </span></span><span class="fig--title">Induction machine with open loop control example in Typhoon HIL
+                                Control Center</span></figcaption>
+                                
+                                <img class="- topic/image image" id="doc__image_f4m_2fj_fdc" src="../Images/quickstart_15.png"/>
+                            </figure>
+                    </li>
+                    <li class="- topic/li li">
+                        <p class="- topic/p p">Select the <span class="+ topic/ph ui-d/uicontrol ph uicontrol">Open model</span> button.</p>
+                        <figure class="- topic/fig fig fignone" id="doc__open_model" data-ofbid="doc__open_model"><figcaption class="- topic/title title figcap"><span class="figtitleprefix fig--title-label">Figure<span class="fig--title-label-number"> 17</span><span class="fig--title-label-punctuation">. </span></span><span class="fig--title">How to open an example model</span></figcaption>
+                            
+                            <img class="- topic/image image" id="doc__image_g4m_2fj_fdc" src="../Images/quickstart_16.png"/>
+                        </figure>
+                        <p class="- topic/p p">The model will now open in <a class="- topic/xref xref" href="https://www.typhoon-hil.com/documentation/typhoon-hil-software-manual/concepts/schematic_editor.html" target="_blank" rel="external noopener">Schematic Editor</a>. If this
+                            is your first time opening <span class="+ topic/ph ui-d/uicontrol ph uicontrol">Schematic Editor</span>, it
+                            may take some time while libraries are loaded.</p>
+                        <figure class="- topic/fig fig fignone" id="doc__induction_machine_se" data-ofbid="doc__induction_machine_se"><figcaption class="- topic/title title figcap"><span class="figtitleprefix fig--title-label">Figure<span class="fig--title-label-number"> 18</span><span class="fig--title-label-punctuation">. </span></span><span class="fig--title">Induction machine model in Schematic Editor</span></figcaption>
+                            
+                            <img class="- topic/image image" id="doc__image_h4m_2fj_fdc" src="../Images/quickstart_17.png" height="525" width="723"/>
+                        </figure>
+                        <p class="- topic/p p">To run the simulation, press the <span class="+ topic/ph ui-d/uicontrol ph uicontrol">Compile and load model in HIL
+                                SCADA</span> button. After compilation has completed <a class="- topic/xref xref" href="https://www.typhoon-hil.com/documentation/typhoon-hil-software-manual/concepts/hil_scada.html" target="_blank" rel="external noopener">HIL SCADA</a> will open.</p>
+                        <figure class="- topic/fig fig fignone" id="doc__compile_and_load_scada" data-ofbid="doc__compile_and_load_scada"><figcaption class="- topic/title title figcap"><span class="figtitleprefix fig--title-label">Figure<span class="fig--title-label-number"> 19</span><span class="fig--title-label-punctuation">. </span></span><span class="fig--title">Compile and load model in HIL SCADA button</span></figcaption>
+                            
+                            <img class="- topic/image image" id="doc__image_i4m_2fj_fdc" src="../Images/quickstart_18.png" height="116" width="537"/>
+                        </figure>
+                    </li>
+                    <li class="- topic/li li">When the compiled model is loaded into <span class="+ topic/ph ui-d/uicontrol ph uicontrol">HIL SCADA</span>, the
+                        appropriate SCADA panel file for the particular model will be automatically
+                        recognized and displayed below the label <span class="+ topic/ph ui-d/uicontrol ph uicontrol">Panels files found in
+                            Model directory</span>. The SCADA Panel file for example models can
+                        be found in the same folder where the model file is located. <figure class="- topic/fig fig fignone" id="doc__open_scada_panel" data-ofbid="doc__open_scada_panel"><figcaption class="- topic/title title figcap"><span class="figtitleprefix fig--title-label">Figure<span class="fig--title-label-number"> 20</span><span class="fig--title-label-punctuation">. </span></span><span class="fig--title">Open SCADA panel in HIL SCADA</span></figcaption>
+                            
+                            <img class="- topic/image image" id="doc__image_j4m_2fj_fdc" src="../Images/quickstart_19.png"/>
+                        </figure>
+                    </li>
+                    <li class="- topic/li li">
+                        <p class="- topic/p p">After loading the SCADA panel, the simulation can be started by pressing
+                            the <span class="+ topic/ph ui-d/uicontrol ph uicontrol">Run</span> button (<a class="- topic/xref xref" href="#doc__run_panel">Figure 21</a>).
+                            The simulation will start and the signals observed from the simulation
+                            will be displayed in the <a class="- topic/xref xref" href="https://www.typhoon-hil.com/documentation/typhoon-hil-software-manual/concepts/capture-scope_widget.html" target="_blank" rel="external noopener">Capture/Scope Widget</a> (<a class="- topic/xref xref" href="#doc__induction_capture_scope">Figure 22</a>).</p>
+                        <figure class="- topic/fig fig fignone" id="doc__run_panel" data-ofbid="doc__run_panel"><figcaption class="- topic/title title figcap"><span class="figtitleprefix fig--title-label">Figure<span class="fig--title-label-number"> 21</span><span class="fig--title-label-punctuation">. </span></span><span class="fig--title">Start the simulation</span></figcaption>
+                            
+                            <img class="- topic/image image" id="doc__image_k4m_2fj_fdc" src="../Images/quickstart_20.png"/>
+                        </figure>
+                        <figure class="- topic/fig fig fignone" id="doc__induction_capture_scope" data-ofbid="doc__induction_capture_scope"><figcaption class="- topic/title title figcap"><span class="figtitleprefix fig--title-label">Figure<span class="fig--title-label-number"> 22</span><span class="fig--title-label-punctuation">. </span></span><span class="fig--title">HIL SCADA Panel</span></figcaption>
+                            
+                            <img class="- topic/image image" id="doc__image_l4m_2fj_fdc" src="../Images/quickstart_21.png"/>
+                        </figure>
+                        <p class="- topic/p p">The <a class="- topic/xref xref" href="https://www.typhoon-hil.com/documentation/typhoon-hil-software-manual/concepts/capture-scope_widget.html" target="_blank" rel="external noopener">Capture/Scope Widget</a> is a powerful tool in which you can observe
+                            simulated signals. Signal settings and Display settings allow you to
+                            find and display a particular signal from the model and adjust its
+                            visual properties.</p>
+                    </li>
+                    <li class="- topic/li li"><span class="+ topic/ph ui-d/uicontrol ph uicontrol">HIL SCADA</span> allows you to create a fully customized
+                        user interface. You can monitor the simulation signals in many different
+                        ways using a wide selection of <a class="- topic/xref xref" href="https://www.typhoon-hil.com/documentation/typhoon-hil-software-manual/concepts/panel_widgets.html" target="_blank" rel="external noopener">Panel Widgets</a>. This is
+                        done by dragging and dropping widgets from the <a class="- topic/xref xref" href="https://www.typhoon-hil.com/documentation/typhoon-hil-software-manual/concepts/library_dock.html" target="_blank" rel="external noopener">Library Explorer Dock</a>, 
+                            which is on left side of the window (<a class="- topic/xref xref" href="#doc__scada_widgets">Figure 23</a>). Once added, you can configure and use the
+                        widgets to monitor or control model execution, either directly or by using
+                        Python code. You can even group multiple widgets into your own custom <a class="- topic/xref xref" href="https://www.typhoon-hil.com/documentation/typhoon-hil-software-manual/concepts/scada_widget_library.html" target="_blank" rel="external noopener">Widget Libraries</a> for use across
+                        multiple panels. Furthermore, SCADA can be used as a human-machine interface
+                        (HMI) towards external devices (controllers, laboratory equipment, etc.).
+                        For more information on using widgets, please refer to the <a class="- topic/xref xref" href="https://www.typhoon-hil.com/documentation/typhoon-hil-software-manual/concepts/hil_scada.html" target="_blank" rel="external noopener">HIL SCADA</a> documentation section. 
+                        <figure class="- topic/fig fig fignone" id="doc__scada_widgets" data-ofbid="doc__scada_widgets"><figcaption class="- topic/title title figcap"><span class="figtitleprefix fig--title-label">Figure<span class="fig--title-label-number"> 23</span><span class="fig--title-label-punctuation">. </span></span><span class="fig--title">HIL SCADA widgets</span></figcaption>
+                            
+                            <img class="- topic/image image" id="doc__image_m4m_2fj_fdc" src="../Images/quickstart_22.png"/>
+                        </figure>
+                    </li>
+                </ol>
+            </div>
+            <div class="- topic/div div"><strong class="+ topic/ph hi-d/b ph b">Run a model using Virtual HIL</strong><p class="- topic/p p">If no HIL device is
+                    connected, you will still have the option to compile and run the model using
+                    Virtual HIL. Virtual HIL is a software module within the Typhoon HIL software
+                    toolchain which emulates Typhoon HIL simulator devices in <em class="+ topic/ph hi-d/i ph i">non-real time</em>
+                    on a PC. Due to the software-based nature of Virtual HIL, there is no external
+                    IO support.</p>
+                <p class="- topic/p p">In case Virtual HIL is available for the compiled model (<a class="- topic/xref xref" href="#doc__virtual_hil">Figure 24</a>), that option will also be shown.</p><figure class="- topic/fig fig fignone" id="doc__virtual_hil" data-ofbid="doc__virtual_hil"><figcaption class="- topic/title title figcap"><span class="figtitleprefix fig--title-label">Figure<span class="fig--title-label-number"> 24</span><span class="fig--title-label-punctuation">. </span></span><span class="fig--title">Load model to Virtual HIL option</span></figcaption>
+                    
+                    <img class="- topic/image image" id="doc__image_n4m_2fj_fdc" src="../Images/HIL%20SCADA_09.png"/>
+                </figure>
+                <p class="- topic/p p">When using Virtual HIL, you can select both which HIL device you would like to
+                    emulate and its <a class="- topic/xref xref" href="https://www.typhoon-hil.com/documentation/typhoon-hil-software-manual/concepts/device_table.html" target="_blank" rel="external noopener">device configuration</a> in
+                    the <span class="+ topic/ph ui-d/uicontrol ph uicontrol">Model -&gt; Schematic Settings</span> menu option in
+                        <span class="+ topic/ph ui-d/uicontrol ph uicontrol">Schematic Editor</span> (<a class="- topic/xref xref" href="#doc__schematic_settings">Figure 25</a>). You can find out more in the <a class="- topic/xref xref" href="https://www.typhoon-hil.com/documentation/typhoon-hil-software-manual/concepts/schematic_editor_menus_and_toolbar.html" target="_blank" rel="external noopener">Schematic Editor menus and toolbar</a> documentation.</p>
+                <figure class="- topic/fig fig fignone" id="doc__schematic_settings" data-ofbid="doc__schematic_settings"><figcaption class="- topic/title title figcap"><span class="figtitleprefix fig--title-label">Figure<span class="fig--title-label-number"> 25</span><span class="fig--title-label-punctuation">. </span></span><span class="fig--title">Load model to Virtual HIL option</span></figcaption>
+                    
+                    <img class="- topic/image image" id="doc__image_o4m_2fj_fdc" src="../Images/schematic_editor_menus_and_toolbar_02.PNG"/>
+                </figure></div>
+            <div class="- topic/div div"><strong class="+ topic/ph hi-d/b ph b">Additional Examples</strong>
+                <p class="- topic/p p">You can find a wide array of example models available in the <a class="- topic/xref xref" href="https://www.typhoon-hil.com/documentation/typhoon-hil-software-manual/concepts/example_explorer.html" target="_blank" rel="external noopener">Example Explorer</a> window, sorted by application area (shown
+                    previously in <a class="- topic/xref xref" href="#doc__induction_machine_model">Figure 16</a>. Most example models
+                    do not require an external control which makes them especially suitable for
+                    simulating on Virtual HIL. Additionally, several models have accompanying <a class="- topic/xref xref" href="https://www.typhoon-hil.com/documentation/typhoon-hil-application-notes/concepts/application_notes_introduction.html" target="_blank" rel="external noopener">Application Notes</a> 
+                    and accompanying <a class="- topic/xref xref" href="https://www.typhoon-hil.com/documentation/typhoon-hil-software-manual/concepts/typhoontest_ide.html" target="_blank" rel="external noopener">Test Automation scripts</a>. If you are just getting started with
+                    testing using Typhoon HIL software, it is recommended to select an example model
+                    that best fits your application and experiment with what modeling options best
+                    fit your needs.</p>
+                    <p class="- topic/p p">More Information</p>
+                    <p class="- topic/p p">For more information on Typhoon HIL
+                    software and hardware, please refer to the provided Typhoon HIL Documentation, which can be
+                    easily accessed <a class="- topic/xref xref" href="https://www.typhoon-hil.com/documentation/typhoon-hil-software-manual/topics/software_manual_introduction.html" target="_blank" rel="external noopener">on the
+                        web</a> or offline via the <span class="+ topic/ph ui-d/uicontrol ph uicontrol">Help</span>
+                    button (shown in <a class="- topic/xref xref" href="#doc__documentation_hub">Figure 26</a>).</p>
+                <figure class="- topic/fig fig fignone" id="doc__documentation_hub" data-ofbid="doc__documentation_hub"><figcaption class="- topic/title title figcap"><span class="figtitleprefix fig--title-label">Figure<span class="fig--title-label-number"> 26</span><span class="fig--title-label-punctuation">. </span></span><span class="fig--title">Help button for accessing support resources, including the Typhoon HIL Documentation environment</span></figcaption>
+                    
+                    <img class="- topic/image image" id="doc__image_p4m_2fj_fdc" src="../Images/quickstart_23.png" width="400"/>
+                </figure>
+                <div class="- topic/note note note note_note" id="doc__hil_specialist_recommendation" data-ofbid="doc__hil_specialist_recommendation"><span class="note__title">Note:</span> For detailed
+                    guidance on how to make your own real-time simulations in the Typhoon HIL
+                    toolchain, we strongly recommend taking the <a class="- topic/xref xref" href="https://hil.academy/hil-specialist-certification-2-0/" target="_blank" rel="external noopener">HIL Specialist courses available</a> in
+                        <a class="- topic/xref xref" href="https://hil.academy/" target="_blank" rel="external noopener">HIL
+                        Academy</a>.</div></div>
+            <div class="- topic/div div" id="doc__run_tysim"><strong class="+ topic/ph hi-d/b ph b">Run an example model in TyphoonSim
+                    within Typhoon HIL Control Center</strong>
+                <p class="- topic/p p">In order to run a model in TyphoonSim within Typhoon HIL Control Center, you
+                    should follow the instructions given in the <strong class="+ topic/ph hi-d/b ph b">Quick Start: TyphoonSim</strong>
+                    document: <a class="- topic/xref xref" href="https://www.typhoon-hil.com/documentation/typhoon-hil-software-manual/concepts/typhoonsim_quick_start_guide.html#doc__first_sim" target="_blank" rel="external noopener">Running your first simulation</a>. The
+                    only distinction is that you'll be running the Typhoon HIL Control Center
+                    software with integrated TyphoonSim, rather than the standalone version of
+                    TyphoonSim.</p></div>
+        </section>
+     </div>
+</article></main></div>
+                        
+                        
+                        
+                        
+                        
+                        
+                    </div>
+                    
+                        <nav role="navigation" id="wh_topic_toc" aria-label="On this page" class="col-lg-2 d-none d-lg-block navbar d-print-none"> 
+                            <div id="wh_topic_toc_content">
+		                        
+	                            <div class=" wh_topic_toc "><div class="wh_topic_label">On this page</div><ul><li class="section-item"><div class="section-title"><a href="#doc__user_regs" data-tocid="doc__user_regs">User Registration</a></div></li><li class="section-item"><div class="section-title"><a href="#doc__section_tmf_zkb_jcc" data-tocid="doc__section_tmf_zkb_jcc">Software Download</a></div></li><li class="section-item"><div class="section-title"><a href="#doc__software_install" data-tocid="doc__software_install">Software Installation and Configuration</a></div></li><li class="section-item"><div class="section-title"><a href="#doc__driver_installation" data-tocid="doc__driver_installation">HIL Driver Installation</a></div></li><li class="section-item"><div class="section-title"><a href="#doc__licensing" data-tocid="doc__licensing">Licensing</a></div></li><li class="section-item"><div class="section-title"><a href="#doc__firmware_update" data-tocid="doc__firmware_update">Syncing HIL Firmware in Device Manager</a></div></li><li class="section-item"><div class="section-title"><a href="#doc__first_sim" data-tocid="doc__first_sim">Running your first simulation</a></div></li></ul></div>
+	                        	
+                        	</div>
+                        </nav>
+                    
+                </div>
+            </div>
+            
+            
+            
+        </div> 
+        <footer class="navbar navbar-default wh_footer">
+  <div class=" footer-container mx-auto ">
+    <div style="text-align:center">Typhoon HIL Inc.<span id="year"> <a href="https://www.typhoon-hil.com">www.typhoon-hil.com</a></span></div>
+  </div>
+</footer>
+        
+        <div id="go2top" class="d-print-none">
+            <span class="oxy-icon oxy-icon-up"></span>
+        </div>
+        
+        <div id="modal_img_large" class="modal">
+            <span class="close oxy-icon oxy-icon-remove"></span>
+            <div id="modal_img_container"></div>
+            <div id="caption"></div>
+        </div>
+        
+        
+<script type="text/javascript" src="../../assets/script.js"> 
+</script>
+
+        
+    </body>
+</html>

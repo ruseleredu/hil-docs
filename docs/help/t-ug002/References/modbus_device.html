@@ -1,0 +1,1244 @@
+<!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en" data-whc_version="24.1">
+    <head><link rel="shortcut icon" href="../../favicon.ico"/><link rel="icon" href="../../favicon.ico"/><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><meta name="DC.rights.owner" content="(C) Copyright 2026"/><meta name="copyright" content="(C) Copyright 2026"/><meta name="generator" content="DITA-OT"/><meta name="DC.type" content="reference"/><meta name="description" content="Description of the Modbus Device component in Schematic Editor."/><meta name="DC.relation" content="../../t-ug002/References/communication.html"/><meta name="DC.format" content="HTML5"/><meta name="DC.identifier" content="doc"/>        
+      <title>Modbus Device</title><!--  Generated with Oxygen version 24.1, build number 2022030800.  --><meta name="wh-path2root" content="../../"/><meta name="wh-toc-id" content="doc-d16877e2363"/><meta name="wh-source-relpath" content="t-ug002/References/modbus_device.dita"/><meta name="wh-out-relpath" content="t-ug002/References/modbus_device.html"/>
+    <!-- Latest compiled and minified Bootstrap CSS -->
+    <link rel="stylesheet" type="text/css" href="../../oxygen-webhelp/lib/bootstrap/css/bootstrap.min.css"/>
+    
+    <link rel="stylesheet" href="../../oxygen-webhelp/lib/jquery-ui/jquery-ui.min.css"/>
+    
+    <!-- Template default styles  -->
+    <link rel="stylesheet" type="text/css" href="../../oxygen-webhelp/app/topic-page.css?buildId=2022030800"/>
+    
+    
+    <script src="../../oxygen-webhelp/lib/jquery/jquery-3.5.1.min.js"></script>
+    
+    <script data-main="../../oxygen-webhelp/app/topic-page.js" src="../../oxygen-webhelp/lib/requirejs/require.js"></script>
+<link rel="stylesheet" type="text/css" href="../../oxygen-webhelp/template/oxygen.css?buildId=2022030800"/><link rel="stylesheet" type="text/css" href="../../oxygen-webhelp/template/notes.css?buildId=2022030800"/><script type="text/javascript" src="../../Scripts/mml-svg.js"> 
+</script><link rel="stylesheet" type="text/css" href="../../assets/typhoon.css"/></head>
+
+    <body id="doc" class="wh_topic_page frmBody">
+        <a href="#wh_topic_body" class="sr-only sr-only-focusable">
+            Jump to main content
+        </a>
+        
+        
+        
+        
+        <header class="navbar navbar-default wh_header">
+    <div class="container-fluid">
+        <div class="wh_header_flex_container navbar-nav navbar-expand-md navbar-dark">
+            <div class="wh_logo_and_publication_title_container">
+                <div class="wh_logo_and_publication_title">
+                    
+                    <a href="https://www.typhoon-hil.com" class=" wh_logo d-none d-sm-block "><img src="../../logo.svg" alt="  Typhoon HIL Documentation  Version: 2026.1  "/></a>
+                    <div class=" wh_publication_title "><a href="../../index.html"><span class="booktitle">  <span class="ph mainbooktitle">Typhoon HIL Documentation</span>  <span class="ph booktitlealt">Version: 2026.1</span>  </span></a></div>
+                    
+                </div>
+                
+                <button type="button" data-target="#wh_top_menu_and_indexterms_link" id="wh_menu_mobile_button" data-toggle="collapse" class="navbar-toggler collapsed wh_toggle_button" aria-expanded="false" aria-label="Toggle menu" aria-controls="wh_top_menu_and_indexterms_link">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+            </div>
+
+            <div class="wh_top_menu_and_indexterms_link collapse navbar-collapse" id="wh_top_menu_and_indexterms_link">
+                
+                <nav class=" wh_top_menu " aria-label="Menu Container"><ul role="menubar" aria-label="Menu"><li role="menuitem" aria-haspopup="true" aria-expanded="false" class="has-children"><span id="tocId-d16877e21-mi" data-tocid="tocId-d16877e21" data-state="not-ready" class=" topicref application-notes"><span class="title"><a href="../../t-an001/concepts/application_notes_introduction.html">Typhoon HIL Application Notes</a></span></span></li><li role="menuitem" aria-haspopup="true" aria-expanded="false" class="has-children"><span id="tocId-d16877e737-mi" data-tocid="tocId-d16877e737" data-state="not-ready" class=" topicref software-manual"><span class="title"><a href="../../t-ug002/topics/software_manual_introduction.html">Typhoon HIL Software Manual</a></span></span></li><li role="menuitem" aria-haspopup="true" aria-expanded="false" class="has-children"><span id="tocId-d16877e7901-mi" data-tocid="tocId-d16877e7901" data-state="not-ready" class=" topicref hardware-manual"><span class="title"><a href="../../t-ug001/abstract/hardware_manual_introduction.html">Typhoon HIL Hardware Manual</a></span></span></li></ul></nav>
+                
+                
+            </div>
+        </div>
+    </div>
+</header>
+        
+        
+         
+        
+        <div class=" wh_search_input navbar-form wh_topic_page_search search " role="form">
+            
+            
+            
+            <form id="searchForm" method="get" role="search" action="../../search.html"><div><input type="search" placeholder="Search " class="wh_search_textfield" id="textToSearch" name="searchQuery" aria-label="Search query" required="required"/><button type="submit" class="wh_search_button" aria-label="Search"><span class="search_input_text">Search</span></button></div></form>
+            
+            
+            
+        </div>
+        
+        <div class="container-fluid" id="wh_topic_container">
+            <div class="row">
+
+                <nav class="wh_tools d-print-none navbar-expand-md" aria-label="Tools">
+                    
+                    <div data-tooltip-position="bottom" class=" wh_breadcrumb "><ol class="d-print-none"><li><span class="home"><a href="../../index.html"><span>Home</span></a></span></li><li><div class="topicref software-manual"><div class="title"><a href="../../t-ug002/topics/software_manual_introduction.html">Typhoon HIL Software Manual</a></div></div></li><li><div class="topicref" data-id="doc"><div class="title"><a href="../../t-ug002/concepts/schematic_editor_component_libraries.html">Schematic Editor Component Libraries</a><div class="wh-tooltip"><p class="shortdesc">Detailed functionality and use of the pre-built Component Libraries in Schematic   Editor</p></div></div></div></li><li><div class="topicref" data-id="doc"><div class="title"><a href="../../t-ug002/topics/component_library.html">Component Library</a><div class="wh-tooltip"><p class="shortdesc">Description of the general properties of the component library in Schematic     Editor, including a list of the main types of components available in it.</p></div></div></div></li><li><div class="topicref" data-id="doc"><div class="title"><a href="../../t-ug002/References/communication.html">Communication</a><div class="wh-tooltip"><p class="shortdesc">Summary of the Communication components available in Schematic Editor</p></div></div></div></li><li class="active"><div class="topicref" data-id="doc"><div class="title"><a href="../../t-ug002/References/modbus_device.html">Modbus Device</a><div class="wh-tooltip"><p class="shortdesc">Description of the Modbus Device component in Schematic Editor.</p></div></div></div></li></ol></div>
+                    
+                    
+                    
+                    <div class="wh_right_tools">
+                        <button class="wh_hide_highlight" aria-label="Toggle search highlights" title="Toggle search highlights"></button>
+                        <button class="webhelp_expand_collapse_sections" data-next-state="collapsed" aria-label="Collapse sections" title="Collapse sections"></button>
+                        
+                        
+                        
+                        
+                        <div class=" wh_print_link print d-none d-md-inline-block "><button onClick="window.print()" title="Print this page" aria-label="Print this page"></button></div>
+                        
+                        <button type="button" id="wh_toc_button" class="custom-toggler navbar-toggler collapsed wh_toggle_button navbar-light" aria-expanded="false" aria-label="Toggle publishing table of content" aria-controls="wh_publication_toc">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+                    </div>
+                    
+                </nav>
+            </div>
+            
+            
+            
+            
+            <div class="wh_content_area">
+                <div class="row">
+                    
+                        <nav id="wh_publication_toc" class="col-lg-3 col-md-3 col-sm-12 d-md-block d-none d-print-none" aria-label="Table of Contents Container">
+                            <div id="wh_publication_toc_content">
+		                        
+                            	<div class=" wh_publication_toc " data-tooltip-position="right"><span class="expand-button-action-labels"><span id="button-expand-action" role="button" aria-label="Expand"></span><span id="button-collapse-action" role="button" aria-label="Collapse"></span><span id="button-pending-action" role="button" aria-label="Pending"></span></span><ul role="tree" aria-label="Table of Contents"><li role="treeitem" aria-expanded="true"><div data-tocid="tocId-d16877e737" class="topicref software-manual" data-state="expanded"><span role="button" tabindex="0" aria-labelledby="button-collapse-action tocId-d16877e737-link" class="wh-expand-btn"></span><div class="title"><a href="../../t-ug002/topics/software_manual_introduction.html" id="tocId-d16877e737-link">Typhoon HIL Software Manual</a></div></div><ul role="group" class="navbar-nav nav-list"><li role="treeitem"><div data-tocid="doc-d16877e749" class="topicref" data-id="doc" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../../t-ug002/topics/software_manual_introduction.html" id="doc-d16877e749-link">Introduction</a><div class="wh-tooltip"><p class="shortdesc">Overview of the categories covered in the Typhoon HIL Software Manual </p></div></div></div></li><li role="treeitem"><div data-tocid="doc-d16877e760" class="topicref" data-id="doc" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../../t-ug002/concepts/system_requirements.html" id="doc-d16877e760-link">System Requirements</a><div class="wh-tooltip"><p class="shortdesc">Guidelines for the hardware and/or software environment necessary to     run Typhoon HIL software, for both PC and Test Server/Virtual Machine-based setups.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="doc-d16877e771" class="topicref" data-id="doc" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action doc-d16877e771-link" class="wh-expand-btn"></span><div class="title"><a href="../../t-ug002/topics/quick_start_guide_abstract.html" id="doc-d16877e771-link">Typhoon HIL Quick Start Guide</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">Instructions in this section should help you quickly install all             necessary software tools and setup hardware components in order to run an example model,             either in real-time simulation or TyphoonSim.</span></p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="doc-d16877e818" class="topicref" data-id="doc" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action doc-d16877e818-link" class="wh-expand-btn"></span><div class="title"><a href="../../t-ug002/concepts/toolboxes.html" id="doc-d16877e818-link">Typhoon HIL Toolboxes</a><div class="wh-tooltip"><p class="shortdesc">List of the Toolbox Packages available in the Typhoon HIL software suite</p></div></div></div></li><li role="treeitem"><div data-tocid="doc-d16877e1039" class="topicref" data-id="doc" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../../t-ug002/concepts/connecting_to_your_hil_device.html" id="doc-d16877e1039-link">Connecting to your HIL device</a><div class="wh-tooltip"><p class="shortdesc">Guidelines on how to connect to a HIL device using either USB or Ethernet         ports.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="doc-d16877e1050" class="topicref" data-id="doc" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action doc-d16877e1050-link" class="wh-expand-btn"></span><div class="title"><a href="../../t-ug002/concepts/device_manager.html" id="doc-d16877e1050-link">Device Manager</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph uicontrol">Device Manager</span> is used to create, manipulate, and activate HIL         device setups.</p></div></div></div></li><li role="treeitem"><div data-tocid="doc-d16877e1151" class="topicref" data-id="doc" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../../t-ug002/concepts/typhoon_hil_control_center.html" id="doc-d16877e1151-link">Typhoon HIL Control Center</a><div class="wh-tooltip"><p class="shortdesc">This section provides a general description of  Typhoon HIL Control Center and lists the     main software components accessible from it, as well as additional software tools which can be     invoked from its interface.</p></div></div></div></li><li role="treeitem"><div data-tocid="doc-d16877e1162" class="topicref" data-id="doc" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../../t-ug002/concepts/typhoonsim.html" id="doc-d16877e1162-link">TyphoonSim</a><div class="wh-tooltip"><p class="shortdesc">This section provides a general description of the TyphoonSim software, which is     available as both a standalone software and integrated in Typhoon HIL Control     Center.</p></div></div></div></li><li role="treeitem"><div data-tocid="doc-d16877e1173" class="topicref" data-id="doc" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../../t-ug002/concepts/example_explorer.html" id="doc-d16877e1173-link">Example Explorer</a><div class="wh-tooltip"><p class="shortdesc">General Description of the Typhoon HIL Control Center         Example Explorer.</p></div></div></div></li><li role="treeitem"><div data-tocid="doc-d16877e1184" class="topicref" data-id="doc" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../../t-ug002/topics/signal_access_management.html" id="doc-d16877e1184-link">Signal Access Management</a><div class="wh-tooltip"><p class="shortdesc">This feature allows you to change the visibility of signals</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="doc-d16877e1196" class="topicref" data-id="doc" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action doc-d16877e1196-link" class="wh-expand-btn"></span><div class="title"><a href="../../t-ug002/concepts/schematic_editor.html" id="doc-d16877e1196-link">Schematic Editor</a><div class="wh-tooltip"><p class="shortdesc">Introduction to the Schematic Editor tool in Typhoon HIL software toolchain</p></div></div></div></li><li role="treeitem"><div data-tocid="doc-d16877e1712" class="topicref" data-id="doc" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../../t-ug002/concepts/typhoonsim_solvers_guide.html" id="doc-d16877e1712-link">TyphoonSim Solver Engine</a><div class="wh-tooltip"><p class="shortdesc">Summary of the TyphoonSim solver engine algorithms and capabilities   as well as its modeling principles and simulation workflow.</p></div></div></div></li><li role="treeitem"><div data-tocid="doc-d16877e1723" class="topicref" data-id="doc" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../../t-ug002/topics/general_simulation_context_definitions.html" id="doc-d16877e1723-link">Simulation context definitions</a><div class="wh-tooltip"><p class="shortdesc">Introductory overview of the different simulation contexts - Real-time (VHIL) and     TyphoonSim. Core library component and feature availability and visibility for each of these     contexts are explained in detail.</p></div></div></div></li><li role="treeitem" aria-expanded="true"><div data-tocid="doc-d16877e1734" class="topicref" data-id="doc" data-state="expanded"><span role="button" tabindex="0" aria-labelledby="button-collapse-action doc-d16877e1734-link" class="wh-expand-btn"></span><div class="title"><a href="../../t-ug002/concepts/schematic_editor_component_libraries.html" id="doc-d16877e1734-link">Schematic Editor Component Libraries</a><div class="wh-tooltip"><p class="shortdesc">Detailed functionality and use of the pre-built Component Libraries in Schematic   Editor</p></div></div></div><ul role="group" class="navbar-nav nav-list"><li role="treeitem" aria-expanded="false"><div data-tocid="doc-d16877e1745" class="topicref" data-id="doc" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action doc-d16877e1745-link" class="wh-expand-btn"></span><div class="title"><a href="../../t-ug002/concepts/modeling_principles.html" id="doc-d16877e1745-link">Modeling principles</a><div class="wh-tooltip"><p class="shortdesc">This section describes modeling principles used in Typhoon HIL's software.</p></div></div></div></li><li role="treeitem"><div data-tocid="doc-d16877e2042" class="topicref" data-id="doc" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../../t-ug002/concepts/model_partitioning.html" id="doc-d16877e2042-link">Model partitioning</a><div class="wh-tooltip"><p class="shortdesc">This section describes the general motivation and gives some practical guidelines for         model partitioning.</p></div></div></div></li><li role="treeitem" aria-expanded="true"><div data-tocid="doc-d16877e2053" class="topicref" data-id="doc" data-state="expanded"><span role="button" tabindex="0" aria-labelledby="button-collapse-action doc-d16877e2053-link" class="wh-expand-btn"></span><div class="title"><a href="../../t-ug002/topics/component_library.html" id="doc-d16877e2053-link">Component Library</a><div class="wh-tooltip"><p class="shortdesc">Description of the general properties of the component library in Schematic     Editor, including a list of the main types of components available in it.</p></div></div></div><ul role="group" class="navbar-nav nav-list"><li role="treeitem" aria-expanded="false"><div data-tocid="doc-d16877e2064" class="topicref" data-id="doc" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action doc-d16877e2064-link" class="wh-expand-btn"></span><div class="title"><a href="../../t-ug002/topics/circuit_breakers.html" id="doc-d16877e2064-link">Circuit breakers</a><div class="wh-tooltip"><p class="shortdesc">This section describes the general properties of all circuit breaker components in     Typhoon HIL Schematic Editor. There are currently 2 different circuit breaker components in     Schematic Editor.</p></div></div></div></li><li role="treeitem" aria-expanded="true"><div data-tocid="doc-d16877e2097" class="topicref" data-id="doc" data-state="expanded"><span role="button" tabindex="0" aria-labelledby="button-collapse-action doc-d16877e2097-link" class="wh-expand-btn"></span><div class="title"><a href="../../t-ug002/References/communication.html" id="doc-d16877e2097-link">Communication</a><div class="wh-tooltip"><p class="shortdesc">Summary of the Communication components available in Schematic Editor</p></div></div></div><ul role="group" class="navbar-nav nav-list"><li role="treeitem"><div data-tocid="doc-d16877e2108" class="topicref" data-id="doc" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../../t-ug002/References/communication_protocols_implementation_info.html" id="doc-d16877e2108-link">Implementation information</a><div class="wh-tooltip"><p class="shortdesc">Basic information about the implementation of communication protocols in the Typhoon         HIL toolchain</p></div></div></div></li><li role="treeitem"><div data-tocid="doc-d16877e2119" class="topicref" data-id="doc" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../../t-ug002/References/c37_118_protocol.html" id="doc-d16877e2119-link">IEEE C37.118 protocol</a><div class="wh-tooltip"><p class="shortdesc">Description of the IEEE C37.118 protocol and its implementation in the Typhoon HIL         toolchain.</p></div></div></div></li><li role="treeitem"><div data-tocid="doc-d16877e2130" class="topicref" data-id="doc" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../../t-ug002/References/can_bus_protocol.html" id="doc-d16877e2130-link">CAN Bus protocol</a><div class="wh-tooltip"><p class="shortdesc">Description of the CAN Bus protocol implementation in the Typhoon HIL             toolchain.</p></div></div></div></li><li role="treeitem"><div data-tocid="doc-d16877e2141" class="topicref" data-id="doc" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../../t-ug002/References/can_fd_protocol.html" id="doc-d16877e2141-link">CAN FD Protocol</a><div class="wh-tooltip"><p class="shortdesc">Description of the CAN FD protocol implementation in the Typhoon HIL         toolchain.</p></div></div></div></li><li role="treeitem"><div data-tocid="doc-d16877e2152" class="topicref" data-id="doc" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../../t-ug002/References/canopen_protocol.html" id="doc-d16877e2152-link">CANopen protocol</a><div class="wh-tooltip"><p class="shortdesc">Description of the basics of the CANopen protocol and its implementation in the         Typhoon HIL toolchain.</p></div></div></div></li><li role="treeitem"><div data-tocid="doc-d16877e2163" class="topicref" data-id="doc" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../../t-ug002/References/chademo.html" id="doc-d16877e2163-link">CHAdeMO protocol</a><div class="wh-tooltip"><p class="shortdesc">Description of the CHAdeMO 1.0 protocol implementation in the Typhoon HIL toolchain.</p></div></div></div></li><li role="treeitem"><div data-tocid="doc-d16877e2174" class="topicref" data-id="doc" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../../t-ug002/References/j1939_protocol.html" id="doc-d16877e2174-link">J1939 Protocol</a><div class="wh-tooltip"><p class="shortdesc">Description of the J1939 protocol implementation in the Typhoon HIL         toolchain.</p></div></div></div></li><li role="treeitem"><div data-tocid="doc-d16877e2185" class="topicref" data-id="doc" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../../t-ug002/References/dnp3_outstation.html" id="doc-d16877e2185-link">DNP3 Outstation</a><div class="wh-tooltip"><p class="shortdesc">Description of the DNP3 Outstation component in Schematic Editor.</p></div></div></div></li><li role="treeitem"><div data-tocid="doc-d16877e2196" class="topicref" data-id="doc" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../../t-ug002/References/iso15118_protocol.html" id="doc-d16877e2196-link">ISO 15118-2 Protocol</a><div class="wh-tooltip"><p class="shortdesc">Description of the ISO 15118-2 Protocol implementation in the Typhoon HIL toolchain.  </p></div></div></div></li><li role="treeitem"><div data-tocid="doc-d16877e2207" class="topicref" data-id="doc" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../../t-ug002/References/iso_15118_20_protocol.html" id="doc-d16877e2207-link">ISO 15118-20 Protocol</a><div class="wh-tooltip"><p class="shortdesc">Description of the ISO 15118-20 protocol implementation in the Typhoon HIL         toolchain.</p></div></div></div></li><li role="treeitem"><div data-tocid="doc-d16877e2219" class="topicref" data-id="doc" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../../t-ug002/References/din70121_protocol.html" id="doc-d16877e2219-link">DIN 70121 Protocol</a><div class="wh-tooltip"><p class="shortdesc">Description of the DIN 70121 Protocol implementation in the Typhoon HIL toolchain. </p></div></div></div></li><li role="treeitem"><div data-tocid="doc-d16877e2230" class="topicref" data-id="doc" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../../t-ug002/References/ethercat_protocol.html" id="doc-d16877e2230-link">EtherCAT Protocol</a><div class="wh-tooltip"><p class="shortdesc">Description of the EtherCAT protocol implementation in the Typhoon HIL         toolchain.</p></div></div></div></li><li role="treeitem"><div data-tocid="doc-d16877e2241" class="topicref" data-id="doc" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../../t-ug002/References/ethernet-ip.html" id="doc-d16877e2241-link">EtherNET/IP</a><div class="wh-tooltip"><p class="shortdesc">Description of the EtherNET/IP protocol and its implementation in the Typhoon HIL         toolchain.</p></div></div></div></li><li role="treeitem"><div data-tocid="doc-d16877e2252" class="topicref" data-id="doc" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../../t-ug002/References/ethernet_variable_exchange.html" id="doc-d16877e2252-link">Ethernet Variable Exchange</a><div class="wh-tooltip"><p class="shortdesc">This section provides basic information regarding Ethernet Variable Exchange (ETH VE)         protocol components.</p></div></div></div></li><li role="treeitem"><div data-tocid="doc-d16877e2263" class="topicref" data-id="doc" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../../t-ug002/References/ethernet_communication_udp.html" id="doc-d16877e2263-link">Ethernet UDP Communication</a><div class="wh-tooltip"><p class="shortdesc">This section provides basic information regarding Ethernet UDP Communication protocol         components.</p></div></div></div></li><li role="treeitem"><div data-tocid="doc-d16877e2274" class="topicref" data-id="doc" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../../t-ug002/References/ethernet_communication_tcp.html" id="doc-d16877e2274-link">Ethernet TCP Communication</a><div class="wh-tooltip"><p class="shortdesc">This section provides basic information regarding Ethernet TCP Communication protocol         components.</p></div></div></div></li><li role="treeitem"><div data-tocid="doc-d16877e2285" class="topicref" data-id="doc" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../../t-ug002/References/iec_60870_server.html" id="doc-d16877e2285-link">IEC 60870 Server</a><div class="wh-tooltip"><p class="shortdesc">Description of the IEC 60870 protocol implementation in the Typhoon HIL         toolchain.</p></div></div></div></li><li role="treeitem"><div data-tocid="doc-d16877e2296" class="topicref" data-id="doc" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../../t-ug002/References/iec_61375_trdp_protocol.html" id="doc-d16877e2296-link">IEC 61375 TRDP protocol</a><div class="wh-tooltip"><p class="shortdesc">Description of the IEC 61375 TRDP protocol implementation in the Typhoon HIL     toolchain.</p></div></div></div></li><li role="treeitem"><div data-tocid="doc-d16877e2307" class="topicref" data-id="doc" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../../t-ug002/References/iec_61850_goose_protocol.html" id="doc-d16877e2307-link">IEC 61850 GOOSE protocol</a><div class="wh-tooltip"><p class="shortdesc">Description of the IEC 61850 GOOSE protocol implementation in the Typhoon HIL     toolchain.</p></div></div></div></li><li role="treeitem"><div data-tocid="doc-d16877e2318" class="topicref" data-id="doc" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../../t-ug002/References/iec_61850_mms_protocol.html" id="doc-d16877e2318-link">IEC 61850 MMS Protocol</a><div class="wh-tooltip"><p class="shortdesc">Description of the IEC 61850 MMS protocol implementation in the Typhoon HIL         toolchain.</p></div></div></div></li><li role="treeitem"><div data-tocid="doc-d16877e2329" class="topicref" data-id="doc" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../../t-ug002/References/iec_61850_sampled_values_protocol.html" id="doc-d16877e2329-link">IEC 61850 Sampled Values protocol</a><div class="wh-tooltip"><p class="shortdesc">Description of the IEC 61850 Sampled Values (SV) protocol implementation in the Typhoon     HIL toolchain.</p></div></div></div></li><li role="treeitem"><div data-tocid="doc-d16877e2341" class="topicref" data-id="doc" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../../t-ug002/References/iec_61869_sampled_values_protocol.html" id="doc-d16877e2341-link">IEC 61869 Sampled Values protocol</a><div class="wh-tooltip"><p class="shortdesc">Description of the IEC 61869 Sampled Values (SV) protocol implementation in the Typhoon     HIL toolchain.</p></div></div></div></li><li role="treeitem"><div data-tocid="doc-d16877e2352" class="topicref" data-id="doc" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../../t-ug002/References/lin_bus_protocol.html" id="doc-d16877e2352-link">LIN Bus Protocol</a><div class="wh-tooltip"><p class="shortdesc">Description of the LIN protocol and its implementation in the Typhoon HIL         toolchain.</p></div></div></div></li><li role="treeitem" class="active"><div data-tocid="doc-d16877e2363" class="topicref" data-id="doc" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../../t-ug002/References/modbus_device.html" id="doc-d16877e2363-link">Modbus Device</a><div class="wh-tooltip"><p class="shortdesc">Description of the Modbus Device component in Schematic Editor.</p></div></div></div></li><li role="treeitem"><div data-tocid="doc-d16877e2374" class="topicref" data-id="doc" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../../t-ug002/References/modbus_client.html" id="doc-d16877e2374-link">Modbus Client</a><div class="wh-tooltip"><p class="shortdesc">Description of the Modbus Client component in Schematic Editor.</p></div></div></div></li><li role="treeitem"><div data-tocid="doc-d16877e2385" class="topicref" data-id="doc" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../../t-ug002/References/sent_protocol.html" id="doc-d16877e2385-link">SENT protocol</a><div class="wh-tooltip"><p class="shortdesc">Description of the SENT protocol and its implementation in the Typhoon HIL         toolchain.</p></div></div></div></li><li role="treeitem"><div data-tocid="doc-d16877e2396" class="topicref" data-id="doc" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../../t-ug002/References/opc_ua_server.html" id="doc-d16877e2396-link">OPC UA Server</a><div class="wh-tooltip"><p class="shortdesc">This section describes the OPC UA Server implementation in the Typhoon HIL             toolchain.</p></div></div></div></li><li role="treeitem"><div data-tocid="doc-d16877e2407" class="topicref" data-id="doc" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../../t-ug002/References/profinet_io_device.html" id="doc-d16877e2407-link">PROFINET IO Device</a><div class="wh-tooltip"><p class="shortdesc">Description of the PROFINET IO Device component in Schematic Editor.</p></div></div></div></li><li role="treeitem"><div data-tocid="doc-d16877e2418" class="topicref" data-id="doc" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../../t-ug002/References/spi_protocol.html" id="doc-d16877e2418-link">SPI protocol</a><div class="wh-tooltip"><p class="shortdesc">Description of the SPI protocol and its implementation in the Typhoon HIL         toolchain.</p></div></div></div></li><li role="treeitem"><div data-tocid="doc-d16877e2429" class="topicref" data-id="doc" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../../t-ug002/References/sunspec_modbus_device.html" id="doc-d16877e2429-link">SunSpec Modbus Device</a><div class="wh-tooltip"><p class="shortdesc">Description of the SunSpec Modbus device in Schematic Editor</p></div></div></div></li><li role="treeitem"><div data-tocid="doc-d16877e2440" class="topicref" data-id="doc" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../../t-ug002/References/sfp_link.html" id="doc-d16877e2440-link">SFP Simulation Link</a><div class="wh-tooltip"><p class="shortdesc">Description of the SFP Simulation Link protocol and its implementation in the Typhoon         HIL Toolchain.</p></div></div></div></li><li role="treeitem"><div data-tocid="doc-d16877e2451" class="topicref" data-id="doc" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../../t-ug002/References/serial.html" id="doc-d16877e2451-link">Serial</a><div class="wh-tooltip"><p class="shortdesc">Description of the Serial communication protocol and its implementation in the             Typhoon HIL Toolchain.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="doc-d16877e2463" class="topicref" data-id="doc" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action doc-d16877e2463-link" class="wh-expand-btn"></span><div class="title"><a href="../../t-ug002/concepts/proprietary_protocols.html" id="doc-d16877e2463-link">Proprietary Protocols</a><div class="wh-tooltip"><p class="shortdesc">Brief overview of proprietary protocols supported by Typhoon HIL</p></div></div></div></li></ul></li><li role="treeitem"><div data-tocid="doc-d16877e2507" class="topicref" data-id="doc" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../../t-ug002/topics/contactors.html" id="doc-d16877e2507-link">Contactors</a><div class="wh-tooltip"><p class="shortdesc">This section provides a general description of contactors components in Typhoon HIL     Schematic Editor</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="doc-d16877e2518" class="topicref" data-id="doc" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action doc-d16877e2518-link" class="wh-expand-btn"></span><div class="title"><a href="../../t-ug002/topics/converters.html" id="doc-d16877e2518-link">Converters</a><div class="wh-tooltip"><p class="shortdesc">This section provides a general description of converter components in Typhoon HIL   Schematic Editor</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="doc-d16877e3361" class="topicref" data-id="doc" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action doc-d16877e3361-link" class="wh-expand-btn"></span><div class="title"><a href="../../t-ug002/topics/converters-extras.html" id="doc-d16877e3361-link">Converters - extras</a><div class="wh-tooltip"><p class="shortdesc">This section describes additional components related to converter modeling.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="doc-d16877e3405" class="topicref" data-id="doc" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action doc-d16877e3405-link" class="wh-expand-btn"></span><div class="title"><a href="../../t-ug002/topics/hil_interfaces.html" id="doc-d16877e3405-link">HIL Interfaces</a><div class="wh-tooltip"><p class="shortdesc">This section describes the HIL Interface components in Typhoon HIL Schematic     Editor.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="doc-d16877e3582" class="topicref" data-id="doc" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action doc-d16877e3582-link" class="wh-expand-btn"></span><div class="title"><a href="../../t-ug002/topics/machines.html" id="doc-d16877e3582-link">Machines</a><div class="wh-tooltip"><p class="shortdesc">This section describes the concepts used in the modeling and implementation of     electrical machine components in Typhoon HIL Schematic Editor.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="doc-d16877e3980" class="topicref" data-id="doc" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action doc-d16877e3980-link" class="wh-expand-btn"></span><div class="title"><a href="../../t-ug002/topics/measurements.html" id="doc-d16877e3980-link">Measurements</a><div class="wh-tooltip"><p class="shortdesc">This section describes measurement components in Schematic Editor, including voltage and     current measurements and RMS measurements.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="doc-d16877e4013" class="topicref" data-id="doc" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action doc-d16877e4013-link" class="wh-expand-btn"></span><div class="title"><a href="../../t-ug002/topics/microgrid.html" id="doc-d16877e4013-link">Microgrid</a><div class="wh-tooltip"><p class="shortdesc">This section describes the Microgrid library category in Typhoon HIL Schematic Editor. </p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="doc-d16877e4472" class="topicref" data-id="doc" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action doc-d16877e4472-link" class="wh-expand-btn"></span><div class="title"><a href="../../t-ug002/topics/circuit_partitioning_components.html" id="doc-d16877e4472-link">Model Partitioning Components</a><div class="wh-tooltip"><p class="shortdesc">This section describes the general properties of circuit properties components in     Typhoon HIL's Schematic Editor, such as core couplings, device couplings, core markers, device     markers, etc.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="doc-d16877e4583" class="topicref" data-id="doc" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action doc-d16877e4583-link" class="wh-expand-btn"></span><div class="title"><a href="../../t-ug002/References/passive_components.html" id="doc-d16877e4583-link">Passive components</a><div class="wh-tooltip"><p class="shortdesc">This section describes passive components, including linear passive components,   nonlinear passive components, and variable passive components.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="doc-d16877e4682" class="topicref" data-id="doc" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action doc-d16877e4682-link" class="wh-expand-btn"></span><div class="title"><a href="../../t-ug002/topics/phil_interfaces.html" id="doc-d16877e4682-link">PHIL Interfaces</a><div class="wh-tooltip"><p class="shortdesc">This section describes the general properties of Power Hardware-In-the-Loop (PHIL)     interface components.</p></div></div></div></li><li role="treeitem"><div data-tocid="doc-d16877e4737" class="topicref" data-id="doc" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../../t-ug002/References/port_components.html" id="doc-d16877e4737-link">Port components</a><div class="wh-tooltip"><p class="shortdesc">Description of the collection of Port components in Schematic Editor, which are used         to connect internal subsystem elements to the outside schematic.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="doc-d16877e4748" class="topicref" data-id="doc" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action doc-d16877e4748-link" class="wh-expand-btn"></span><div class="title"><a href="../../t-ug002/topics/signal_processing_components.html" id="doc-d16877e4748-link">Signal Processing Components</a><div class="wh-tooltip"><p class="shortdesc">This section describes the general properties of all signal processing components in     the Typhoon HIL Schematic Editor core library.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="doc-d16877e6064" class="topicref" data-id="doc" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action doc-d16877e6064-link" class="wh-expand-btn"></span><div class="title"><a href="../../t-ug002/topics/sources.html" id="doc-d16877e6064-link">Sources</a><div class="wh-tooltip"><p class="shortdesc">This section describes source components in Schematic Editor, including independent   sources, controlled sources, externally controlled sources, signal controlled sources, batteries,   photovoltaic panels, constant power loads/sources, and engine-generator sources.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="doc-d16877e6222" class="topicref" data-id="doc" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action doc-d16877e6222-link" class="wh-expand-btn"></span><div class="title"><a href="../../t-ug002/topics/system_library.html" id="doc-d16877e6222-link">System</a><div class="wh-tooltip"><p class="shortdesc">This section describes additional components in the System library in Schematic   Editor</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="doc-d16877e6321" class="topicref" data-id="doc" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action doc-d16877e6321-link" class="wh-expand-btn"></span><div class="title"><a href="../../t-ug002/topics/test_suite.html" id="doc-d16877e6321-link">Test Suite</a><div class="wh-tooltip"><p class="shortdesc">This section describes the Test Suite components of Typhoon HIL's built in Schematic Editor Library,     which currently includes the grid simulator, DC measurements, anti-islanding container, and     grid fault components.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="doc-d16877e6398" class="topicref" data-id="doc" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action doc-d16877e6398-link" class="wh-expand-btn"></span><div class="title"><a href="../../t-ug002/topics/transformers.html" id="doc-d16877e6398-link">Transformers</a><div class="wh-tooltip"><p class="shortdesc">This section describes the general properties of all transformer components in Typhoon     HIL's Schematic Editor, such as an ideal transformer, a single-phase three winding transformer,     a three-phase four winding transformer, etc.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="doc-d16877e6553" class="topicref" data-id="doc" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action doc-d16877e6553-link" class="wh-expand-btn"></span><div class="title"><a href="../../t-ug002/topics/transmission_lines.html" id="doc-d16877e6553-link">Transmission lines</a><div class="wh-tooltip"><p class="shortdesc">This section describes the general properties of all transmission line type components     in Schematic Editor. </p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="doc-d16877e6619" class="topicref" data-id="doc" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action doc-d16877e6619-link" class="wh-expand-btn"></span><div class="title"><a href="../../t-ug002/topics/typhoonsim_components.html" id="doc-d16877e6619-link">TyphoonSim</a><div class="wh-tooltip"><p class="shortdesc">This section describes general properties of the TyphoonSim specific components in Typhoon     HIL's Schematic Editor</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="doc-d16877e6685" class="topicref" data-id="doc" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action doc-d16877e6685-link" class="wh-expand-btn"></span><div class="title"><a href="../../t-ug002/topics/component_additional_information.html" id="doc-d16877e6685-link">Component additional information</a><div class="wh-tooltip"><p class="shortdesc">This section describes the general properties of several components in Typhoon HIL's     Schematic Editor whose feature set and capabilities require separate sections.</p></div></div></div></li></ul></li></ul></li><li role="treeitem" aria-expanded="false"><div data-tocid="doc-d16877e6773" class="topicref" data-id="doc" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action doc-d16877e6773-link" class="wh-expand-btn"></span><div class="title"><a href="../../t-ug002/concepts/third-party_integrations.html" id="doc-d16877e6773-link">Third-party integrations</a><div class="wh-tooltip"><p class="shortdesc">This section provides an overview of the key third party integrations within Typhoon     HIL's toolchain.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="doc-d16877e6828" class="topicref" data-id="doc" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action doc-d16877e6828-link" class="wh-expand-btn"></span><div class="title"><a href="../../t-ug002/concepts/hil_scada.html" id="doc-d16877e6828-link">HIL SCADA</a><div class="wh-tooltip"><p class="shortdesc">Description of the HIL SCADA tool in Typhoon HIL Control Center</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="doc-d16877e7379" class="topicref" data-id="doc" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action doc-d16877e7379-link" class="wh-expand-btn"></span><div class="title"><a href="../../t-ug002/concepts/wave_generator_tool.html" id="doc-d16877e7379-link">Waveform Generator</a><div class="wh-tooltip"><p class="shortdesc">This section describes the waveform generator tool in Typhoon HIL Control Center.</p></div></div></div></li><li role="treeitem"><div data-tocid="doc-d16877e7467" class="topicref" data-id="doc" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../../t-ug002/concepts/test_and_calibration_tool.html" id="doc-d16877e7467-link">Test and Calibration Tool</a><div class="wh-tooltip"><p class="shortdesc">Description of the Test and Calibration tool in Typhoon HIL Control Center</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="doc-d16877e7478" class="topicref" data-id="doc" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action doc-d16877e7478-link" class="wh-expand-btn"></span><div class="title"><a href="../../t-ug002/concepts/typhoontest_ide.html" id="doc-d16877e7478-link">TyphoonTest IDE</a><div class="wh-tooltip"><p class="shortdesc">This section describes TyphoonTest IDE</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="doc-d16877e7588" class="topicref" data-id="doc" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action doc-d16877e7588-link" class="wh-expand-btn"></span><div class="title"><a href="../../t-ug002/concepts/signal_analyzer.html" id="doc-d16877e7588-link">Signal Analyzer</a><div class="wh-tooltip"><p class="shortdesc">Description of the Signal Analyzer tool in Typhoon HIL Control Center.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="doc-d16877e7610" class="topicref" data-id="doc" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action doc-d16877e7610-link" class="wh-expand-btn"></span><div class="title"><a href="../../t-ug002/concepts/lookup_table_extraction_tool.html" id="doc-d16877e7610-link">Lookup table extraction tool</a><div class="wh-tooltip"><p class="shortdesc">Description of the Typhoon HIL Control Center tool for extracting characteristics (lookup tables) from datasheet graphs and charts into a format that can be imported by non-linear models.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="doc-d16877e7677" class="topicref" data-id="doc" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action doc-d16877e7677-link" class="wh-expand-btn"></span><div class="title"><a href="../../t-ug002/concepts/package_manager.html" id="doc-d16877e7677-link">Package Manager</a><div class="wh-tooltip"><p class="shortdesc">Description of the Typhoon HIL Control Center tool for creating and managing Typhoon packages that contain Schematic examples, Schematic and widget libraries, documentation etc.</p></div></div></div></li><li role="treeitem"><div data-tocid="doc-d16877e7798" class="topicref" data-id="doc" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../../t-ug002/concepts/usage_logging.html" id="doc-d16877e7798-link">Usage Logging</a><div class="wh-tooltip"><p class="shortdesc">This section briefly describes Typhoon HIL software logging feature.</p></div></div></div></li><li role="treeitem"><div data-tocid="doc-d16877e7809" class="topicref" data-id="doc" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../../t-ug002/concepts/python_interpreters.html" id="doc-d16877e7809-link">Python Interpreters</a><div class="wh-tooltip"><p class="shortdesc">Overview of how you can use Typhoon HIL Python Interpreters to further customize your         test files.</p></div></div></div></li></ul></li></ul></div>
+		                        
+                            </div>
+                        </nav>
+                    
+                    
+                    <div class="col-lg-7 col-md-9 col-sm-12" id="wh_topic_body">
+                        <button id="wh_close_publication_toc_button" class="close-toc-button d-none" aria-label="Toggle publishing table of content" aria-controls="wh_publication_toc" aria-expanded="true">
+                            <span class="close-toc-icon-container">
+                                <span class="close-toc-icon"></span>     
+                            </span>
+                        </button>
+                        <button id="wh_close_topic_toc_button" class="close-toc-button d-none" aria-label="Toggle topic table of content" aria-controls="wh_topic_toc" aria-expanded="true">
+                            <span class="close-toc-icon-container">
+                                <span class="close-toc-icon"></span>     
+                            </span>
+                        </button>
+                        
+                        <div class=" wh_topic_content body "><main role="main"><article role="article" aria-labelledby="ariaid-title1">
+<h1 class="- topic/title title topictitle1" id="ariaid-title1">Modbus Device</h1>
+
+<div class="- topic/body reference/refbody body refbody"><p class="- topic/shortdesc shortdesc">Description of the Modbus Device component in Schematic Editor.</p>
+        <section class="- topic/section section" id="doc__section_n3r_4jd_bdc" data-ofbid="doc__section_n3r_4jd_bdc">
+            <div class="- topic/note note note note_note typhoonsim_ignored"><span class="note__title">Component Ignored:</span> This component
+                is ignored in TyphoonSim. Inputs to this component will be discarded and outputs
+                from the component will be zeroed during TyphoonSim simulation.</div>
+        </section>
+        <section class="- topic/section section" id="doc__section_wbp_25f_dqb" data-ofbid="doc__section_wbp_25f_dqb"><h2 class="- topic/title title sectiontitle">Introduction to Modbus protocol</h2>
+            
+            <p class="- topic/p p">Modbus is an industrial serial communication protocol standard that has been in use
+                for many years. The protocol defines function codes and an encoding scheme for
+                transferring data mostly as either single points (1-bit) or as 16-bit data
+                registers. Besides basic 16-bit registers Typhoon HIL Modbus Client supports reading
+                and writing both 32-bit and 64-bit registers. This basic data packet is then
+                encapsulated according to the protocol specifications for Modbus ASCII, RTU, or TCP.
+                Modbus/TCP protocol is implemented in the Typhoon HIL toolchain.</p>
+            <p class="- topic/p p">Modbus is defined as a master/slave protocol, meaning a device operating as master
+                will poll one or more devices operating as a slave. This means a slave device cannot
+                willingly send information, it must wait to be asked for it. The master will write
+                and read data to a slave device’s registers.</p>
+            <p class="- topic/p p">Modbus/TCP makes the definition of master and slave less obvious because Ethernet
+                allows peer to peer communication. The definition of client and server are better
+                known entities in Ethernet based networking. In this context, the slave becomes the
+                server and the master becomes the client.</p>
+            <p class="- topic/p p">Four types of registers are defined in Modbus protocol and they are listed in <a class="- topic/xref xref" href="#doc__table_flc_gkt_qz">Table 1</a>.</p>
+            <table class="- topic/table table frame-all" id="doc__table_flc_gkt_qz" data-ofbid="doc__table_flc_gkt_qz" data-cols="3"><caption class="- topic/title title tablecap" data-caption-side="top" data-is-repeated="true"><span class="table--title-label">Table<span class="table--title-label-number"> 1</span><span class="table--title-label-punctuation">. </span></span><span class="table--title">Registers defined in Modbus protocol</span></caption><colgroup><col style="width:33.33333333333333%"/><col style="width:33.33333333333333%"/><col style="width:33.33333333333333%"/></colgroup><thead class="- topic/thead thead">
+                        <tr class="- topic/row">
+                            <th class="- topic/entry entry align-center colsep-1 rowsep-1" id="doc__table_flc_gkt_qz__entry__1">Register type</th>
+                            <th class="- topic/entry entry align-center colsep-1 rowsep-1" id="doc__table_flc_gkt_qz__entry__2">Access</th>
+                            <th class="- topic/entry entry align-center colsep-0 rowsep-1" id="doc__table_flc_gkt_qz__entry__3">Size</th>
+                        </tr>
+                    </thead><tbody class="- topic/tbody tbody">
+                        <tr class="- topic/row">
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__table_flc_gkt_qz__entry__1">Coil (Discrete output)</td>
+                            <td class="- topic/entry entry align-center colsep-1 rowsep-1" headers="doc__table_flc_gkt_qz__entry__2">read/write</td>
+                            <td class="- topic/entry entry align-center colsep-0 rowsep-1" headers="doc__table_flc_gkt_qz__entry__3">1 bit</td>
+                        </tr>
+                        <tr class="- topic/row">
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__table_flc_gkt_qz__entry__1">Discrete input</td>
+                            <td class="- topic/entry entry align-center colsep-1 rowsep-1" headers="doc__table_flc_gkt_qz__entry__2">read only</td>
+                            <td class="- topic/entry entry align-center colsep-0 rowsep-1" headers="doc__table_flc_gkt_qz__entry__3">1 bit</td>
+                        </tr>
+                        <tr class="- topic/row">
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__table_flc_gkt_qz__entry__1">Input registers</td>
+                            <td class="- topic/entry entry align-center colsep-1 rowsep-1" headers="doc__table_flc_gkt_qz__entry__2">read only</td>
+                            <td class="- topic/entry entry align-center colsep-0 rowsep-1" headers="doc__table_flc_gkt_qz__entry__3">16 bits</td>
+                        </tr>
+                        <tr class="- topic/row">
+                            <td class="- topic/entry entry colsep-1 rowsep-0" headers="doc__table_flc_gkt_qz__entry__1">Holding registers</td>
+                            <td class="- topic/entry entry align-center colsep-1 rowsep-0" headers="doc__table_flc_gkt_qz__entry__2">read/write</td>
+                            <td class="- topic/entry entry align-center colsep-0 rowsep-0" headers="doc__table_flc_gkt_qz__entry__3">16 bits</td>
+                        </tr>
+                    </tbody></table>
+            <p class="- topic/p p">Modbus protocol defines a set of functions that can be performed on registers.
+                Functions that are supported in the Typhoon HIL toolchain are listed in <a class="- topic/xref xref" href="#doc__table_lzl_pkt_qz">Table 2</a>.</p>
+            <table class="- topic/table table frame-all" id="doc__table_lzl_pkt_qz" data-ofbid="doc__table_lzl_pkt_qz" data-cols="3"><caption class="- topic/title title tablecap" data-caption-side="top" data-is-repeated="true"><span class="table--title-label">Table<span class="table--title-label-number"> 2</span><span class="table--title-label-punctuation">. </span></span><span class="table--title">Modbus function set</span></caption><colgroup><col style="width:19.193857965451055%"/><col style="width:25.143953934740882%"/><col style="width:55.66218809980806%"/></colgroup><thead class="- topic/thead thead">
+                        <tr class="- topic/row">
+                            <th class="- topic/entry entry align-center colsep-1 rowsep-1" id="doc__table_lzl_pkt_qz__entry__1" colspan="2">Function type</th>
+                            <th class="- topic/entry entry align-center colsep-0 rowsep-1" id="doc__table_lzl_pkt_qz__entry__2">Function name</th>
+                        </tr>
+                    </thead><tbody class="- topic/tbody tbody">
+                        <tr class="- topic/row">
+                            <td class="- topic/entry entry vertical_text align-center colsep-1 rowsep-0" headers="doc__table_lzl_pkt_qz__entry__1" rowspan="12">Data
+                                Access</td>
+                            <td class="- topic/entry entry align-center colsep-1 rowsep-1" headers="doc__table_lzl_pkt_qz__entry__1" rowspan="4">1-bit access</td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="doc__table_lzl_pkt_qz__entry__2">Read Discrete Inputs</td>
+                        </tr>
+                        <tr class="- topic/row">
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="doc__table_lzl_pkt_qz__entry__2">Read Coils</td>
+                        </tr>
+                        <tr class="- topic/row">
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="doc__table_lzl_pkt_qz__entry__2">Write Single Coil</td>
+                        </tr>
+                        <tr class="- topic/row">
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="doc__table_lzl_pkt_qz__entry__2">Write Multiple Coils</td>
+                        </tr>
+                        <tr class="- topic/row">
+                            <td class="- topic/entry entry align-center colsep-1 rowsep-1" headers="doc__table_lzl_pkt_qz__entry__1" rowspan="5">16-bit access</td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="doc__table_lzl_pkt_qz__entry__2">Read Input Registers</td>
+                        </tr>
+                        <tr class="- topic/row">
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="doc__table_lzl_pkt_qz__entry__2">Read Holding Registers</td>
+                        </tr>
+                        <tr class="- topic/row">
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="doc__table_lzl_pkt_qz__entry__2">Write Single Holding Registers</td>
+                        </tr>
+                        <tr class="- topic/row">
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="doc__table_lzl_pkt_qz__entry__2">Write Multiple Holding Registers</td>
+                        </tr>
+                        <tr class="- topic/row">
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="doc__table_lzl_pkt_qz__entry__2">Read/Write Multiple Registers</td>
+                        </tr>
+                        <tr class="- topic/row">
+                            <td class="- topic/entry entry align-center colsep-1 rowsep-0" headers="doc__table_lzl_pkt_qz__entry__1" rowspan="3">16 - 64 bit access</td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="doc__table_lzl_pkt_qz__entry__2">Read Input Registers Advanced</td>
+                        </tr>
+                        <tr class="- topic/row">
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="doc__table_lzl_pkt_qz__entry__2">Read Holding Registers Advanced</td>
+                        </tr>
+                        <tr class="- topic/row">
+                            <td class="- topic/entry entry colsep-0 rowsep-0" headers="doc__table_lzl_pkt_qz__entry__2">Write Registers Advanced</td>
+                        </tr>
+                    </tbody></table>
+            <p class="- topic/p p">Modbus protocol is supported by the following Typhoon HIL devices: <span class="- topic/ph ph">HIL402, HIL101, HIL404, HIL602+,
+                HIL604, HIL506, and HIL606</span>.</p>
+        </section>
+    <section class="- topic/section section" id="doc__section_jty_kpp_gnb" data-ofbid="doc__section_jty_kpp_gnb"><h2 class="- topic/title title sectiontitle">Modbus Device Component</h2>
+            
+            <p class="- topic/p p">The Modbus Device component, which can be found under the Communication tab,
+                implements Modbus TCP Server (Slave) functionality. In the Component Dialog window,
+                different properties are defined. </p>
+            <figure class="- topic/fig fig fignone" id="doc__fig_xwy_cwy_5cc" data-ofbid="doc__fig_xwy_cwy_5cc"><figcaption class="- topic/title title figcapcenter"><span class="figtitleprefix fig--title-label">Figure<span class="fig--title-label-number"> 1</span><span class="fig--title-label-punctuation">. </span></span><span class="fig--title">Modbus Device component</span></figcaption>
+                
+                <div class="imagecenter break"><img class="- topic/image image imagecenter break" id="doc__image_etb_4wy_5cc" src="../Images/modbus_device_01.jpg" height="182" width="202"/></div>
+            </figure>
+            <p class="- topic/p p">The properties for the Modbus Device component are divided into four sections (tabs)
+                : <em class="+ topic/ph hi-d/i ph i">General,</em>
+                <em class="+ topic/ph hi-d/i ph i">Network settings</em>, <em class="+ topic/ph hi-d/i ph i">Advanced</em>, and <em class="+ topic/ph hi-d/i ph i">Faults Tab</em>.  </p>
+            <p class="- topic/p p"><strong class="+ topic/ph hi-d/b ph b">General Tab</strong></p>
+            <p class="- topic/p p">Through the <span class="+ topic/ph ui-d/uicontrol ph uicontrol">Modbus configuration</span> property, all aspects of the protocol can be
+                defined. This property is defined through the name-space, usually in the
+                    <em class="+ topic/ph hi-d/i ph i">Model/Model Initialization</em> window. Configuration is defined in the form
+                of a Python dictionary with fields defined in <a class="- topic/xref xref" href="#doc__table_rsr_mrp_gnb">Table 3</a>.</p>
+            <p class="- topic/p p"><span class="+ topic/ph ui-d/uicontrol ph uicontrol">Execution rate</span> is the Signal Processing execution rate and should be
+                compatible with the rest of the schematic.</p>
+            <p class="- topic/p p"><strong class="+ topic/ph hi-d/b ph b">Network settings Tab</strong></p>
+            <p class="- topic/p p">The <span class="+ topic/ph ui-d/uicontrol ph uicontrol">Ethernet port</span> property defines which ethernet port on the back of the HIL
+                device will be used by the Modbus Server application. For 4th generation devices
+                (HIL101, HIL404, HIL506, and HIL606), any available port can be used for
+                communication, while older devices only support communication over port 1.</p>
+            <p class="- topic/p p">Network settings can be defined through the Configuration dictionary,
+                Dialog window or through SCADA. </p>
+            <p class="- topic/p p">By default the Network settings are taken from the Configuration dictionary. The
+                dictionary fields corresponding to each parameter are described in the <a class="- topic/xref xref" href="#doc__table_rsr_mrp_gnb">Table 3</a>.</p>
+            <p class="- topic/p p">Defining Network settings through the Dialog window is useful if there are multiple
+                Modbus Servers with the same register maps but different IP addresses. Instead of
+                creating duplicate configurations, you can define one and change the Network
+                settings in all components separately. Defining Network settings in this manner also
+                allows for changing the parameters using Schematic API.</p>
+            <p class="- topic/p p">Defining Network settings through SCADA is useful if you are not sure what IPs are
+                taken on the network. Instead of changing the settings and recompiling the model,
+                you can change the parameters in SCADA before the simulation starts. Selecting SCADA
+                as a parameter source will create SCADA Input components that can be accessed throug the
+                SCADA window. This is illustrated in <a class="- topic/xref xref" href="#doc__fig_gpp_fr5_b4b">Figure 2</a>. </p>
+            <figure class="- topic/fig fig fignone" id="doc__fig_gpp_fr5_b4b" data-ofbid="doc__fig_gpp_fr5_b4b"><figcaption class="- topic/title title figcapcenter"><span class="figtitleprefix fig--title-label">Figure<span class="fig--title-label-number"> 2</span><span class="fig--title-label-punctuation">. </span></span><span class="fig--title">IP address definition through SCADA</span></figcaption>
+                
+                <div class="imagecenter break"><img class="- topic/image image imagecenter break" id="doc__image_hpp_fr5_b4b" src="../Images/modbus_device_14.jpg" height="302" width="491"/></div>
+            </figure>
+            <p class="- topic/p p">It is important to mention that the parameters can be changed at any time during the
+                simulation, but the values will be applied only when the simulation is started.
+                Changing the parameters during the simulation will not have an effect on the current simulation. The only
+                parameter that can be modified at any time is the Slave ID.</p>
+            <p class="- topic/p p">Defining Network settings in this manner also allows for changing the
+                parameters using HIL API.</p>
+            <p class="- topic/p p"><strong class="+ topic/ph hi-d/b ph b">Advanced Tab</strong></p>
+            <p class="- topic/p p">If the <span class="+ topic/ph ui-d/uicontrol ph uicontrol">Enable pipeline</span> property is selected, Modbus Server can receive
+                multiple client requests even if it has not yet processed the previous one. If
+                pipelining is disabled, the Modbus Server will listen for new requests only
+                after the current request has been handled.</p>
+            <p class="- topic/p p">If the <span class="+ topic/ph ui-d/uicontrol ph uicontrol">Show IP address port</span> property is selected, a new port called
+                    <em class="+ topic/ph hi-d/i ph i">ip_addr</em> will appear on the component through which the Modbus IP address
+                is passed to the simulation. This is convenient to show the IP address of the Modbus
+                server when the <em class="+ topic/ph hi-d/i ph i">dynamic</em> IP allocation option is enabled in configuration or
+                to check if the Modbus server is started. The value is a vector of length 4 where
+                the values in the form [192, 168, 0, 150] for the ip '192.168.0.150'.</p>
+            <p class="- topic/p p">The <em class="+ topic/ph hi-d/i ph i">ip_addr</em> port can also be used to confirm that the Modbus server is up and
+                running.</p>
+            <p class="- topic/p p">The <span class="+ topic/ph ui-d/uicontrol ph uicontrol">Show request counter port(s)</span> property can help user track different
+                requests coming from the Client. By choosing <em class="+ topic/ph hi-d/i ph i">Read counter port</em>, <em class="+ topic/ph hi-d/i ph i">Read
+                    counter port (separate)</em>, <em class="+ topic/ph hi-d/i ph i">Write counter port</em>, <em class="+ topic/ph hi-d/i ph i">Write counter port
+                    (separate)</em>, <em class="+ topic/ph hi-d/i ph i">Both counter ports</em>, <em class="+ topic/ph hi-d/i ph i">Both counter ports (separate)</em>
+                or <em class="+ topic/ph hi-d/i ph i">Function code counter port</em>, additional ports are created on the component
+                called <em class="+ topic/ph hi-d/i ph i">read_cnt</em>, <em class="+ topic/ph hi-d/i ph i">write_cnt</em> or <em class="+ topic/ph hi-d/i ph i">fnc_code_cnt</em>. Using these ports,
+                you can know the number of read/write requests that the Server has received from the
+                Client. This is useful in cases when the simulation needs to know if the
+                communication link is alive.</p>
+            <p class="- topic/p p">The difference between <em class="+ topic/ph hi-d/i ph i">Read counter port</em> and <em class="+ topic/ph hi-d/i ph i">Read counter port
+                    (separate)</em> is how the read requests are counted. Both property values will
+                create a <em class="+ topic/ph hi-d/i ph i">read_cnt</em>, but dimension of that port will be different, depending on
+                the property value. If the <em class="+ topic/ph hi-d/i ph i">Read counter port</em> is selected, the port will have
+                dimension 1 and all read requests will be counted together, that is, the counter
+                value will increase by one each time a read request is received. If the <em class="+ topic/ph hi-d/i ph i">Read
+                    counter port (separate)</em> is selected, <em class="+ topic/ph hi-d/i ph i">read_cnt</em> port will have
+                dimension 4 and read request for each register type will be counted separately.
+                    <em class="+ topic/ph hi-d/i ph i">read_cnt[0]</em> will count read Coil requests, <em class="+ topic/ph hi-d/i ph i">read_cnt[1]</em> will count
+                read Discrete requests, <em class="+ topic/ph hi-d/i ph i">read_cnt[2]</em> reads Holding and <em class="+ topic/ph hi-d/i ph i">read_cnt[3]</em>
+                reads Input registers requests. The same applies for <em class="+ topic/ph hi-d/i ph i">Write counter port</em> and
+                    <em class="+ topic/ph hi-d/i ph i">Write counter port (separate)</em> property values. Only difference is that
+                the <em class="+ topic/ph hi-d/i ph i">write_cnt</em> will have dimension 2 for <em class="+ topic/ph hi-d/i ph i">Write counter port (separate)</em>,
+                where <em class="+ topic/ph hi-d/i ph i">write_cnt[0]</em> counts the writes to Coil registers and
+                    <em class="+ topic/ph hi-d/i ph i">write_cnt[1]</em> counts the writes to Holding registers.</p>
+            <div class="- topic/p p">If the <em class="+ topic/ph hi-d/i ph i">Function code counter port</em> value is selected, the <em class="+ topic/ph hi-d/i ph i">fnc_code_cnt</em>
+                port will be created on the component. The dimension of this port will be 9 and the
+                counter will count each function code received from the client. The counter values
+                are packed in the following manner:<ul class="- topic/ul ul" id="doc__ul_mgq_tvd_hmb" data-ofbid="doc__ul_mgq_tvd_hmb">
+                    <li class="- topic/li li">
+                        <em class="+ topic/ph hi-d/i ph i">fnc_code_cnt[0]</em> - 0x01 Read Coils</li>
+                    <li class="- topic/li li">
+                        <em class="+ topic/ph hi-d/i ph i">fnc_code_cnt[1]</em> - 0x02 Read Discrete Inputs</li>
+                    <li class="- topic/li li">
+                        <em class="+ topic/ph hi-d/i ph i">fnc_code_cnt[2]</em> - 0x03 Read Holding Registers</li>
+                    <li class="- topic/li li">
+                        <em class="+ topic/ph hi-d/i ph i">fnc_code_cnt[3]</em> - 0x04 Read Input Registers</li>
+                    <li class="- topic/li li">
+                        <em class="+ topic/ph hi-d/i ph i">fnc_code_cnt[4]</em> - 0x05 Write Single Coil</li>
+                    <li class="- topic/li li">
+                        <em class="+ topic/ph hi-d/i ph i">fnc_code_cnt[5]</em> - 0x06 Write Single Register</li>
+                    <li class="- topic/li li">
+                        <em class="+ topic/ph hi-d/i ph i">fnc_code_cnt[6]</em> - 0x0F Write Multiple Coils</li>
+                    <li class="- topic/li li">
+                        <em class="+ topic/ph hi-d/i ph i">fnc_code_cnt[7]</em> - 0x10 Write Multiple Registers</li>
+                    <li class="- topic/li li">
+                        <em class="+ topic/ph hi-d/i ph i">fnc_code_cnt[8]</em> - 0x17 Read/Write Multiple Registers</li>
+                </ul>
+            </div>
+            <p class="- topic/p p"><strong class="+ topic/ph hi-d/b ph b">Faults Tab</strong></p>
+            <p class="- topic/p p">Two types of communication faults can be simulated in the Modbus Server component. </p>
+            <p class="- topic/p p">The <span class="+ topic/ph ui-d/uicontrol ph uicontrol">Message delay</span> fault injects a delay in the Server's response to the Client.
+                When the Server receives a request it will wait for a given amount of time before
+                sending the response. The value of the <em class="+ topic/ph hi-d/i ph i">Message delay</em> property can be either
+                    <em class="+ topic/ph hi-d/i ph i">Model</em> or <em class="+ topic/ph hi-d/i ph i">SCADA</em>. If <em class="+ topic/ph hi-d/i ph i">Model</em> is selected, a new terminal
+                    <em class="+ topic/ph hi-d/i ph i">msg_delay</em> will be created on the component so that an external signal can
+                be connected. If the <em class="+ topic/ph hi-d/i ph i">SCADA</em> value is selected, a SCADA Input component, with
+                the name <em class="+ topic/ph hi-d/i ph i">Message delay</em> will be created inside the Server component and you
+                can change this value through the SCADA window once the simulation is running. The
+                delay value is specified in seconds with a resolution of 1 us. The valid range is
+                between 0 and 1800 seconds.</p>
+            <p class="- topic/p p">If the <span class="+ topic/ph ui-d/uicontrol ph uicontrol">Connection loss</span> fault is active, all opened connections to the Server
+                will be closed and no new requests will be accepted during the time the fault is
+                active. Once the fault is cleared, the Server can accept new connections. The value
+                of the <em class="+ topic/ph hi-d/i ph i">Connection loss</em> property can be either <em class="+ topic/ph hi-d/i ph i">Model</em> or <em class="+ topic/ph hi-d/i ph i">SCADA</em>.
+                If <em class="+ topic/ph hi-d/i ph i">Model</em> is selected, a new terminal <em class="+ topic/ph hi-d/i ph i">conn_loss</em> will be created on the
+                component so that an external signal can be connected. If the <em class="+ topic/ph hi-d/i ph i">SCADA</em> value is
+                selected, a SCADA Input component, with the name <em class="+ topic/ph hi-d/i ph i">Connection loss</em> will be
+                created inside the Server component and you can change this value through the SCADA
+                window once the simulation is running. The valid values are 0 for no fault and 1 for
+                active fault.</p>
+        </section>
+    <section class="- topic/section section" id="doc__section_mxq_ppp_gnb" data-ofbid="doc__section_mxq_ppp_gnb"><h2 class="- topic/title title sectiontitle">Modbus Configuration</h2>
+            
+            <p class="- topic/p p">The Modbus Device configuration is defined as a Python dictionary with predefined
+                fields. The dictionary is usually defined in the Namespace, either through a Model
+                Initialization script or through the component mask.</p>
+            <div class="- topic/p p">Each configuration dictionary has mandatory and optional fields that can be separated
+                in the following groups:<ul class="- topic/ul ul" id="doc__ul_tzn_zqp_gnb" data-ofbid="doc__ul_tzn_zqp_gnb">
+                    <li class="- topic/li li">
+                        <strong class="+ topic/ph hi-d/b ph b">Network parameters</strong> - through these fields, values such as IP address,
+                        Netmask, Port, Gateway, etc. are defined</li>
+                    <li class="- topic/li li">
+                        <strong class="+ topic/ph hi-d/b ph b">Register map</strong> - through these fields register addresses, types,
+                        values, etc. are defined. Two versions of register maps can be used. Version
+                        1 is a simpler version with less features where as in Version 2, features
+                        like min, max and scale values can be defined for each register. These
+                        versions are explained in <a class="- topic/xref xref" href="#doc__section_ptk_s35_gnb">Register Map Version 1</a> and
+                            <a class="- topic/xref xref" href="#doc__section_xj1_hk5_gnb">Register Map Version 2</a>.</li>
+                    <li class="- topic/li li">
+                        <strong class="+ topic/ph hi-d/b ph b">Additional parameters</strong> - used to define some additional settings</li>
+                </ul>
+            </div>
+            <p class="- topic/p p">Detailed information about each parameter is described in the <a class="- topic/xref xref" href="#doc__table_rsr_mrp_gnb">Table 3</a>:</p>
+            <table class="- topic/table table frame-all" id="doc__table_rsr_mrp_gnb" data-ofbid="doc__table_rsr_mrp_gnb" data-cols="4"><caption class="- topic/title title tablecap" data-caption-side="top" data-is-repeated="true"><span class="table--title-label">Table<span class="table--title-label-number"> 3</span><span class="table--title-label-punctuation">. </span></span><span class="table--title">Modbus configuration parameters</span></caption><colgroup><col style="width:14.376996805111823%"/><col style="width:28.993610223642175%"/><col style="width:7.987220447284344%"/><col style="width:48.64217252396166%"/></colgroup><thead class="- topic/thead thead">
+                        <tr class="- topic/row">
+                            <th class="- topic/entry entry colsep-1 rowsep-1" id="doc__table_rsr_mrp_gnb__entry__1">Group (Location)</th>
+                            <th class="- topic/entry entry colsep-1 rowsep-1" id="doc__table_rsr_mrp_gnb__entry__2">Parameter</th>
+                            <th class="- topic/entry entry colsep-1 rowsep-1" id="doc__table_rsr_mrp_gnb__entry__3">M/O*</th>
+                            <th class="- topic/entry entry colsep-0 rowsep-1" id="doc__table_rsr_mrp_gnb__entry__4">Description</th>
+                        </tr>
+                    </thead><tbody class="- topic/tbody tbody">
+                        <tr class="- topic/row">
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__table_rsr_mrp_gnb__entry__1" rowspan="5">Network Parameters (Network settings Tab)</td>
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__table_rsr_mrp_gnb__entry__2">ip_address</td>
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__table_rsr_mrp_gnb__entry__3">M</td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="doc__table_rsr_mrp_gnb__entry__4">
+                                <p class="- topic/p p">Device IP address (network dependent). IP address can be defined
+                                    as static (ex. '192.168.0.50') or it can be defined as dynamic
+                                    (ex. 'dynamic:50'). If the IP is defined as dynamic, the Modbus
+                                    application will try to find the first free IP address on the
+                                    network and use that address. It does that by simple pinging on
+                                    the network until it does not get the response. The number 50 in
+                                    'dynamic:50' indicates that the pinging will start from
+                                    192.168.0.50 address (or more precisely xxx.xxx.xxx.50, where
+                                    first three segments of the IP indicate the network domain).</p>
+                            </td>
+                        </tr>
+                        <tr class="- topic/row">
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__table_rsr_mrp_gnb__entry__2">port</td>
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__table_rsr_mrp_gnb__entry__3">M</td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="doc__table_rsr_mrp_gnb__entry__4">Communication port number (default 502 for Modbus
+                                protocol)</td>
+                        </tr>
+                        <tr class="- topic/row">
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__table_rsr_mrp_gnb__entry__2">netmask</td>
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__table_rsr_mrp_gnb__entry__3">M</td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="doc__table_rsr_mrp_gnb__entry__4">Subnet mask (network dependent)</td>
+                        </tr>
+                        <tr class="- topic/row">
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__table_rsr_mrp_gnb__entry__2">slave_id</td>
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__table_rsr_mrp_gnb__entry__3">M</td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="doc__table_rsr_mrp_gnb__entry__4">Slave identification number</td>
+                        </tr>
+                        <tr class="- topic/row">
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__table_rsr_mrp_gnb__entry__2">gateway</td>
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__table_rsr_mrp_gnb__entry__3">O</td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="doc__table_rsr_mrp_gnb__entry__4">
+                                <p class="- topic/p p">Specify the network gateway. </p>
+                                <p class="- topic/p p">The gateway can be defined in two ways: a) in format
+                                    xxx.xxx.xxx.xxx or b) as a Linux <em class="+ topic/ph hi-d/i ph i">route</em> system command. If
+                                    a) option is used, the <em class="+ topic/ph hi-d/i ph i">route</em> command is formed
+                                    automatically in the form:</p>
+                                <p class="- topic/p p">
+                                    <em class="+ topic/ph hi-d/i ph i">route add -net &lt;specified IP in the form xxx.xxx.xxx.0&gt;
+                                        netmask &lt;specified netmask&gt; gw &lt;specified
+                                        gateway&gt;</em>
+                                </p>
+                                <p class="- topic/p p">For example, if the IP is 192.168.0.210, netmask is 255.255.255.0
+                                    and gateway is 192.168.0.100, the <em class="+ topic/ph hi-d/i ph i">route</em> command will
+                                    be:</p>
+                                <p class="- topic/p p">
+                                    <em class="+ topic/ph hi-d/i ph i">route add -net 192.168.0.0 netmask 255.255.255.0 gw
+                                        192.168.0.100</em>
+                                </p>
+                                <p class="- topic/p p">The b) option lets you explicitly form the <em class="+ topic/ph hi-d/i ph i">route</em> command
+                                    like in the example above. If option a) is used, the IP address
+                                    cannot be defined as dynamic.</p>
+                            </td>
+                        </tr>
+                        <tr class="- topic/row">
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__table_rsr_mrp_gnb__entry__1" rowspan="8">Register Map V1 (Model Initialization Panel)</td>
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__table_rsr_mrp_gnb__entry__2">coil_input_addresses</td>
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__table_rsr_mrp_gnb__entry__3">M</td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="doc__table_rsr_mrp_gnb__entry__4">List of Coil input addresses</td>
+                        </tr>
+                        <tr class="- topic/row">
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__table_rsr_mrp_gnb__entry__2">coil_output_addresses</td>
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__table_rsr_mrp_gnb__entry__3">M</td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="doc__table_rsr_mrp_gnb__entry__4">List of Coil output addresses</td>
+                        </tr>
+                        <tr class="- topic/row">
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__table_rsr_mrp_gnb__entry__2">discrete_input_addresses</td>
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__table_rsr_mrp_gnb__entry__3">M</td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="doc__table_rsr_mrp_gnb__entry__4">List of Discrete Input addresses</td>
+                        </tr>
+                        <tr class="- topic/row">
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__table_rsr_mrp_gnb__entry__2">holding_register_input_addresses</td>
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__table_rsr_mrp_gnb__entry__3">M</td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="doc__table_rsr_mrp_gnb__entry__4">List of Holding Register input addresses</td>
+                        </tr>
+                        <tr class="- topic/row">
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__table_rsr_mrp_gnb__entry__2">holding_register_output_addresses</td>
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__table_rsr_mrp_gnb__entry__3">M</td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="doc__table_rsr_mrp_gnb__entry__4">List of Holding Register output addresses</td>
+                        </tr>
+                        <tr class="- topic/row">
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__table_rsr_mrp_gnb__entry__2">input_register_addresses</td>
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__table_rsr_mrp_gnb__entry__3">M</td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="doc__table_rsr_mrp_gnb__entry__4">List of Input Register addresses</td>
+                        </tr>
+                        <tr class="- topic/row">
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__table_rsr_mrp_gnb__entry__2">coil_output_init</td>
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__table_rsr_mrp_gnb__entry__3">O</td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="doc__table_rsr_mrp_gnb__entry__4">List of initial values for coil output registers</td>
+                        </tr>
+                        <tr class="- topic/row">
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__table_rsr_mrp_gnb__entry__2">holding_register_output_init</td>
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__table_rsr_mrp_gnb__entry__3">O</td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="doc__table_rsr_mrp_gnb__entry__4">List of initial values for holding output registers</td>
+                        </tr>
+                        <tr class="- topic/row">
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__table_rsr_mrp_gnb__entry__1" rowspan="4">Register Map V2 (Model Initialization Panel)</td>
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__table_rsr_mrp_gnb__entry__2">coil_registers</td>
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__table_rsr_mrp_gnb__entry__3">M</td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="doc__table_rsr_mrp_gnb__entry__4">Coil register definitions</td>
+                        </tr>
+                        <tr class="- topic/row">
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__table_rsr_mrp_gnb__entry__2">discrete_registers</td>
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__table_rsr_mrp_gnb__entry__3">M</td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="doc__table_rsr_mrp_gnb__entry__4">Discrete register definitions</td>
+                        </tr>
+                        <tr class="- topic/row">
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__table_rsr_mrp_gnb__entry__2">holding_registers</td>
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__table_rsr_mrp_gnb__entry__3">M</td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="doc__table_rsr_mrp_gnb__entry__4">Holding register definitions</td>
+                        </tr>
+                        <tr class="- topic/row">
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__table_rsr_mrp_gnb__entry__2">input_registers</td>
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__table_rsr_mrp_gnb__entry__3">M</td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="doc__table_rsr_mrp_gnb__entry__4">Input register definitions</td>
+                        </tr>
+                        <tr class="- topic/row">
+                            <td class="- topic/entry entry colsep-1 rowsep-0" headers="doc__table_rsr_mrp_gnb__entry__1" rowspan="4">Additional Parameters (Model Initialization
+                                Panel)</td>
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__table_rsr_mrp_gnb__entry__2">slave_id_echo</td>
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__table_rsr_mrp_gnb__entry__3">O</td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="doc__table_rsr_mrp_gnb__entry__4">If True, sets the slave id value to be echoed back. Otherwise,
+                                the slave id is defined by slave_id (default value is True).</td>
+                        </tr>
+                        <tr class="- topic/row">
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__table_rsr_mrp_gnb__entry__2">coil_write_any_value</td>
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__table_rsr_mrp_gnb__entry__3">O</td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="doc__table_rsr_mrp_gnb__entry__4">If False, only the value of 0xFF00 is represented as logical 1.
+                                If True, all nonzero values are represented as logical 1 (default
+                                value is False)</td>
+                        </tr>
+                        <tr class="- topic/row">
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__table_rsr_mrp_gnb__entry__2">default_device</td>
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__table_rsr_mrp_gnb__entry__3">O</td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="doc__table_rsr_mrp_gnb__entry__4">Used in configuration where messages are filtered using slave ID.
+                                If the received slave ID does not mach any device in the model,
+                                values form "default_device" will be returned to the Client. Values
+                                are True/False. More details in <a class="- topic/xref xref" href="#doc__section_gdy_4mr_dhb">Filtering Modbus messages using slave ID values</a>.</td>
+                        </tr>
+                        <tr class="- topic/row">
+                            <td class="- topic/entry entry colsep-1 rowsep-0" headers="doc__table_rsr_mrp_gnb__entry__2">unimplemented_register_exception</td>
+                            <td class="- topic/entry entry colsep-1 rowsep-0" headers="doc__table_rsr_mrp_gnb__entry__3">O</td>
+                            <td class="- topic/entry entry colsep-0 rowsep-0" headers="doc__table_rsr_mrp_gnb__entry__4">If value is set to True, Modbus server will return exception when
+                                accessing unimplemented registers. If the value is False, the server
+                                will return 0 for unimplemented 1bit registers and -1 (65535) for
+                                unimplemented 16bit registers. Default value is False.</td>
+                        </tr>
+                    </tbody></table>
+        </section>
+        <section class="- topic/section section" id="doc__section_ptk_s35_gnb" data-ofbid="doc__section_ptk_s35_gnb"><h2 class="- topic/title title sectiontitle">Register Map Version 1</h2>
+            
+            <p class="- topic/p p">Register Map Version 1 refers to an older method of defining register maps. In this
+                method, registers are defined in a string form where user defines the register
+                address(es) and type(s).</p>
+            <p class="- topic/p p">Also, in this method, Coil and Holding registers are split into two parts, input and
+                output. Reading the register value from the Client will sample the signal connected
+                to the input of the Modbus Device component and writing the value to the register
+                will update the output of the component. This means that the input and output
+                register cannot have the same register address since the change on the input will
+                automatically change the output value which is not desired.</p>
+            <p class="- topic/p p"><strong class="+ topic/ph hi-d/b ph b">Defining the addresses for Coil and Discrete registers</strong></p>
+            <p class="- topic/p p">Coil and Discrete registers are defined simply by a list of address values (between 0
+                and 65535) as shown below:</p>
+            <pre class="+ topic/pre pr-d/codeblock pre codeblock language-python"><span class="hl-string">"coil_input_addresses"</span>: <span class="hl-string">"0, 1, 2, 3, 4"</span>
+<span class="hl-string">"coil_output_addresses"</span>: <span class="hl-string">"100, 101, 102, 103, 104"</span>
+<span class="hl-string">"discrete_input_registers"</span>: <span class="hl-string">"0, 1, 2, 3, 4"</span></pre>
+            <p class="- topic/p p"><strong class="+ topic/ph hi-d/b ph b">Defining the addresses for Holding and Input registers</strong></p>
+            <p class="- topic/p p">Although the Input and Holding registers are 16-bit long (as defined by the Modbus
+                protocol), multiple registers can be grouped together to represent 32- and 64-bit
+                registers of different type. Registers can be defined as shown in <a class="- topic/xref xref" href="#doc__table_rpd_23q_d1b">Table 4</a>.</p>
+            <table class="- topic/table table frame-all" id="doc__table_rpd_23q_d1b" data-ofbid="doc__table_rpd_23q_d1b" data-cols="3"><caption class="- topic/title title tablecap" data-caption-side="top" data-is-repeated="true"><span class="table--title-label">Table<span class="table--title-label-number"> 4</span><span class="table--title-label-punctuation">. </span></span><span class="table--title">Register type, length and address configuration </span></caption><colgroup><col style="width:19.37984496124031%"/><col style="width:28.488372093023255%"/><col style="width:52.131782945736425%"/></colgroup><thead class="- topic/thead thead">
+                        <tr class="- topic/row">
+                            <th class="- topic/entry entry colsep-1 rowsep-1" id="doc__table_rpd_23q_d1b__entry__1">Register in group</th>
+                            <th class="- topic/entry entry colsep-1 rowsep-1" id="doc__table_rpd_23q_d1b__entry__2">Register type</th>
+                            <th class="- topic/entry entry colsep-0 rowsep-1" id="doc__table_rpd_23q_d1b__entry__3">Address value</th>
+                        </tr>
+                    </thead><tbody class="- topic/tbody tbody">
+                        <tr class="- topic/row">
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__table_rpd_23q_d1b__entry__1">1 (16 bit)</td>
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__table_rpd_23q_d1b__entry__2">
+                                <p class="- topic/p p">unsigned integer</p>
+                                <p class="- topic/p p">integer</p>
+                            </td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="doc__table_rpd_23q_d1b__entry__3">Any positive integer value (between 0 and 65535)</td>
+                        </tr>
+                        <tr class="- topic/row">
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__table_rpd_23q_d1b__entry__1">2 (32 bit)</td>
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__table_rpd_23q_d1b__entry__2">
+                                <p class="- topic/p p">unsigned integer</p>
+                                <p class="- topic/p p">integer</p>
+                                <p class="- topic/p p">floating point</p>
+                            </td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="doc__table_rpd_23q_d1b__entry__3">Any array of 2 consecutive integer values (between 0 and
+                                65535)</td>
+                        </tr>
+                        <tr class="- topic/row">
+                            <td class="- topic/entry entry colsep-1 rowsep-0" headers="doc__table_rpd_23q_d1b__entry__1">4 (64 bit)</td>
+                            <td class="- topic/entry entry colsep-1 rowsep-0" headers="doc__table_rpd_23q_d1b__entry__2">
+                                <p class="- topic/p p">unsigned integer</p>
+                                <p class="- topic/p p">integer</p>
+                                <p class="- topic/p p">floating point</p>
+                            </td>
+                            <td class="- topic/entry entry colsep-0 rowsep-0" headers="doc__table_rpd_23q_d1b__entry__3">Any array of 4 consecutive integer values (between 0 and
+                                65535)</td>
+                        </tr>
+                    </tbody></table>
+            <p class="- topic/p p">To illustrate what this looks in Typhoon HIL Control Center, the different
+                configuration of <em class="+ topic/ph hi-d/i ph i">Input Registers </em>is shown below:</p>
+            <ol class="- topic/ol ol" id="doc__ol_as4_z3q_d1b" data-ofbid="doc__ol_as4_z3q_d1b">
+                <li class="- topic/li li">All registers are 16-bit width of various
+                    types:<pre class="+ topic/pre pr-d/codeblock pre codeblock language-python"><span class="hl-string">"input_register_adresses"</span>: <span class="hl-string">'0, 1, 2i, 3u, 4i, 5, 6, 7u'</span></pre>
+                </li>
+                <li class="- topic/li li">All registers are 32-bit width of various
+                    types:<pre class="+ topic/pre pr-d/codeblock pre codeblock language-python"><span class="hl-string">"input_register_adresses"</span>: <span class="hl-string">'[0,1]u, [2,3], [4,5]f, [6,7]i, [8,9]i, [10,11]f'</span><span class="hl-string">'</span></pre>
+                </li>
+                <li class="- topic/li li">All registers are 64-bit width of various
+                    types:<pre class="+ topic/pre pr-d/codeblock pre codeblock language-python"><span class="hl-string">"input_register_adresses"</span>: <span class="hl-string">'[0,1,2,3]f, [4,5,6,7]u, [8,9,10,11]i, [12,13,14,15]'</span></pre>
+                </li>
+                <li class="- topic/li li">Registers are of various lengths and types:
+                    <pre class="+ topic/pre pr-d/codeblock pre codeblock language-python"><span class="hl-string">"input_register_adresses"</span>: <span class="hl-string">'[0,1]f, 2u, 3i, [4,5,6,7]f, 8, [9,10]i, [11,12,13,14]u'</span></pre></li>
+            </ol>
+            <p class="- topic/p p">To specify the length of the register, just group appropriate number of addresses in
+                square brackets.</p>
+            <p class="- topic/p p">To specify the type of register, write u (for unsigned integer), i (for integer) or f
+                (for floating point) after the address value. If the type is not specified
+                explicitly, register will be defined as unsigned integer. If the register is 16- or
+                32-bit, the type must be specified after the closing bracket.</p>
+            <p class="- topic/p p">A register of 16-bit length cannot be defined as floating point.</p>
+            <p class="- topic/p p"><strong class="+ topic/ph hi-d/b ph b">Defining the register Endianness</strong></p>
+            <p class="- topic/p p">Different devices require different register Endianness. Little Endian defines that
+                the least significant word is stored first in the memory, and Big Endian defines
+                that the most significant word is first stored in the memory. For example, if you
+                define the 32bit unsigned register as [0,1]u, and writes the value 0xBBBB AAAA to
+                that register, the value will be stored as:</p>
+            <p class="- topic/p p">Little Endian: 0 → 0xAAAA; 1 → 0xBBBB</p>
+            <p class="- topic/p p">Big Endian: 0 → 0xBBBB; 1 → 0xAAAA</p>
+            <p class="- topic/p p">By default, in Typhoon HIL, registers are defined as Big Endian.</p>
+            <p class="- topic/p p">To define the register to be Little Endian, instead of [0,1]u, user can rearrange the
+                address order to [1,0]u. This way, the most significant word will be stored on
+                address 3 and least significant word will be stored on address 0, thus achieving the
+                Little Endian configuration. The same applies for 64 bit registers.</p>
+            <p class="- topic/p p"><strong class="+ topic/ph hi-d/b ph b">Defining the registers initial values</strong></p>
+            <p class="- topic/p p">Initial values can be specified for coil and holding output registers as a list of
+                values. If initial values are not specified, registers will be initialized with
+                values of 0.</p>
+            <p class="- topic/p p">Values for coil output registers can be specified as integer values or as True/False
+                values. Every integer value that is not equal to 0 is represented as ON and value of
+                0 is represented as OFF state. For example, if coil outputs are defined with "0, 1,
+                2, 3, 4, 5" addresses, the initial values can be defined as [0, True, 0, 1, -56, 65]
+                which corresponds to [OFF, ON, OFF, ON, ON, ON] states.</p>
+            <p class="- topic/p p">Number of initial values for coil output registers must match the number of addresses
+                specified.</p>
+            <p class="- topic/p p">Values for holding output registers can be specified as values in specified range
+                where register definition defines that range. For example, if the register is
+                defined as 32bit unsigned register ([0,1]u), the specified value must be in range 0
+                - 2<sup class="+ topic/ph hi-d/sup ph sup">32</sup>-1. </p>
+            <p class="- topic/p p">Example of holding output register initialization for addresses "0i, [1,2]u,
+                [3,4,5,6]f" can be [-65, 1244, -0.235]. It is important to emphasize that number of
+                initialization values are the same as number of address groups, and not the number
+                of addresses.</p>
+            <p class="- topic/p p"><strong class="+ topic/ph hi-d/b ph b">Example of Register Map Version 1</strong></p>
+            <p class="- topic/p p">Example of a Modbus device configuration with 5 <em class="+ topic/ph hi-d/i ph i">Coils_in</em>, 5 <em class="+ topic/ph hi-d/i ph i">Coils_out,</em>
+                5 <em class="+ topic/ph hi-d/i ph i">Discrete Inputs</em>, 8 <em class="+ topic/ph hi-d/i ph i">Holding_in,</em> 8 <em class="+ topic/ph hi-d/i ph i">Holding_out</em> and 8 <em class="+ topic/ph hi-d/i ph i">Input
+                    Registers </em> is shown below.</p>
+            <pre class="+ topic/pre pr-d/codeblock pre codeblock language-python"><span class="hl-string">"coil_input_addresses"</span>: <span class="hl-string">"0, 1, 2, 3, 4"</span>,
+<span class="hl-string">"coil_output_addresses"</span>: <span class="hl-string">"100, 101, 102, 103, 104"</span>,
+<span class="hl-string">"discrete_input_addresses"</span>: <span class="hl-string">"0, 1, 2, 3, 4"</span>,
+<span class="hl-string">"holding_register_input_addresses"</span>: <span class="hl-string">"0u, 1i, \
+</span>                                    [<span class="hl-number">2</span>,<span class="hl-number">3</span>]u, [<span class="hl-number">4</span>,<span class="hl-number">5</span>]i, [<span class="hl-number">6</span>,<span class="hl-number">7</span>]f, \
+                                    [<span class="hl-number">8</span>,<span class="hl-number">9</span>,<span class="hl-number">10</span>,<span class="hl-number">11</span>]u, [<span class="hl-number">12</span>,<span class="hl-number">13</span>,<span class="hl-number">14</span>,<span class="hl-number">15</span>]i, [<span class="hl-number">16</span>,<span class="hl-number">17</span>,<span class="hl-number">18</span>,<span class="hl-number">19</span>]f<span class="hl-string">"
+</span><span class="hl-string">"holding_register_output_addresses"</span>: <span class="hl-string">"100u, 101i, \
+</span>                                    [<span class="hl-number">102</span>,<span class="hl-number">103</span>]u, [<span class="hl-number">104</span>,<span class="hl-number">105</span>]i, [<span class="hl-number">106</span>,<span class="hl-number">107</span>]f, \
+                                    [<span class="hl-number">108</span>,<span class="hl-number">109</span>,<span class="hl-number">110</span>,<span class="hl-number">111</span>]u, [<span class="hl-number">112</span>,<span class="hl-number">113</span>,<span class="hl-number">114</span>,<span class="hl-number">115</span>]i, [<span class="hl-number">116</span>,<span class="hl-number">117</span>,<span class="hl-number">118</span>,<span class="hl-number">119</span>]f<span class="hl-string">",
+</span><span class="hl-string">"input_register_addresses"</span>: <span class="hl-string">"0u, 1i, \
+</span>                            [<span class="hl-number">2</span>,<span class="hl-number">3</span>]u, [<span class="hl-number">4</span>,<span class="hl-number">5</span>]i, [<span class="hl-number">6</span>,<span class="hl-number">7</span>]f, \
+                            [<span class="hl-number">8</span>,<span class="hl-number">9</span>,<span class="hl-number">10</span>,<span class="hl-number">11</span>]u, [<span class="hl-number">12</span>,<span class="hl-number">13</span>,<span class="hl-number">14</span>,<span class="hl-number">15</span>]i, [<span class="hl-number">16</span>,<span class="hl-number">17</span>,<span class="hl-number">18</span>,<span class="hl-number">19</span>]f<span class="hl-string">",
+</span><span class="hl-string">"coil_output_init"</span>: [<span class="hl-number">1</span>, <span class="hl-number">0</span>, <span class="hl-number">234</span>, -<span class="hl-number">121</span>, False],
+<span class="hl-string">"holding_register_output_init"</span>: [<span class="hl-number">11</span>, -<span class="hl-number">12</span>,
+                                 <span class="hl-number">13</span>, -<span class="hl-number">6554</span>, <span class="hl-number">121.98</span>,
+                                 <span class="hl-number">456696</span>, <span class="hl-number">9998424</span>, -<span class="hl-number">564.112</span>]</pre>
+        </section>
+    <section class="- topic/section section" id="doc__section_xj1_hk5_gnb" data-ofbid="doc__section_xj1_hk5_gnb"><h2 class="- topic/title title sectiontitle">Register Map Version 2</h2>
+            
+            <p class="- topic/p p">Register Map Version 2 refers to a newer method of defining register maps. In this
+                method, registers are defined in a python list where each register is defined as a
+                dictionary.</p>
+            <p class="- topic/p p">In comparison to Version 1, this version introduces the possibility to define more
+                parameters for register and allow input and output registers to have the same
+                address value.</p>
+            <p class="- topic/p p">An example of a register map is illustrated below:</p>
+            <pre class="+ topic/pre pr-d/codeblock pre codeblock language-python"><span class="hl-string">"coil_registers"</span>: [
+    {<span class="hl-string">"addr"</span>: <span class="hl-number">0</span>, <span class="hl-string">"io_type"</span>: <span class="hl-string">"in"</span>, <span class="hl-string">"val_spec"</span>: <span class="hl-string">"scada"</span>, <span class="hl-string">"init_val"</span>: False},
+    {<span class="hl-string">"addr"</span>: <span class="hl-number">1</span>},
+    {<span class="hl-string">"addr"</span>: <span class="hl-number">2</span>, <span class="hl-string">"io_type"</span>: <span class="hl-string">"inout"</span>, <span class="hl-string">"init_val"</span>: True}
+]</pre>
+            <p class="- topic/p p">Different register types have different fields that can be defined, but only
+                    <em class="+ topic/ph hi-d/i ph i">addr</em> field is mandatory. The table below lists all the parameters for
+                each register type. The description of each field is defined in <a class="- topic/xref xref" href="#doc__table_dh5_wr5_gnb">Table 5</a>.</p>
+            <table class="- topic/table table frame-all" id="doc__table_dh5_wr5_gnb" data-ofbid="doc__table_dh5_wr5_gnb" data-cols="5"><caption class="- topic/title title tablecap" data-caption-side="top" data-is-repeated="true"><span class="table--title-label">Table<span class="table--title-label-number"> 5</span><span class="table--title-label-punctuation">. </span></span><span class="table--title">Register definition</span></caption><colgroup><col style="width:20.383693045563543%"/><col style="width:12.789768185451639%"/><col style="width:7.993605115907274%"/><col style="width:34.53237410071942%"/><col style="width:24.300559552358113%"/></colgroup><thead class="- topic/thead thead">
+                        <tr class="- topic/row">
+                            <th class="- topic/entry entry colsep-1 rowsep-1" id="doc__table_dh5_wr5_gnb__entry__1">Register type</th>
+                            <th class="- topic/entry entry colsep-1 rowsep-1" id="doc__table_dh5_wr5_gnb__entry__2">Field name</th>
+                            <th class="- topic/entry entry colsep-1 rowsep-1" id="doc__table_dh5_wr5_gnb__entry__3">M/O</th>
+                            <th class="- topic/entry entry colsep-1 rowsep-1" id="doc__table_dh5_wr5_gnb__entry__4">Allowed values</th>
+                            <th class="- topic/entry entry colsep-0 rowsep-1" id="doc__table_dh5_wr5_gnb__entry__5">Default value</th>
+                        </tr>
+                    </thead><tbody class="- topic/tbody tbody">
+                        <tr class="- topic/row">
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__table_dh5_wr5_gnb__entry__1" rowspan="5">Coil registers</td>
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__table_dh5_wr5_gnb__entry__2">addr</td>
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__table_dh5_wr5_gnb__entry__3">M</td>
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__table_dh5_wr5_gnb__entry__4">integer number between 0 and 65535</td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="doc__table_dh5_wr5_gnb__entry__5"></td>
+                        </tr>
+                        <tr class="- topic/row">
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__table_dh5_wr5_gnb__entry__2">name</td>
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__table_dh5_wr5_gnb__entry__3">O</td>
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__table_dh5_wr5_gnb__entry__4">ASCII string</td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="doc__table_dh5_wr5_gnb__entry__5">"coilX"</td>
+                        </tr>
+                        <tr class="- topic/row">
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__table_dh5_wr5_gnb__entry__2">io_type</td>
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__table_dh5_wr5_gnb__entry__3">O</td>
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__table_dh5_wr5_gnb__entry__4">"in", "out", "inout"</td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="doc__table_dh5_wr5_gnb__entry__5">"in"</td>
+                        </tr>
+                        <tr class="- topic/row">
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__table_dh5_wr5_gnb__entry__2">val_spec</td>
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__table_dh5_wr5_gnb__entry__3">O</td>
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__table_dh5_wr5_gnb__entry__4">"model", "scada", "const"</td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="doc__table_dh5_wr5_gnb__entry__5">"model"</td>
+                        </tr>
+                        <tr class="- topic/row">
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__table_dh5_wr5_gnb__entry__2">init_val</td>
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__table_dh5_wr5_gnb__entry__3">O</td>
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__table_dh5_wr5_gnb__entry__4">any value that can be converted to Boolean type</td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="doc__table_dh5_wr5_gnb__entry__5">False</td>
+                        </tr>
+                        <tr class="- topic/row">
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__table_dh5_wr5_gnb__entry__1" rowspan="5">Discrete registers</td>
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__table_dh5_wr5_gnb__entry__2">addr</td>
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__table_dh5_wr5_gnb__entry__3">M</td>
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__table_dh5_wr5_gnb__entry__4">integer number between 0 and 65535</td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="doc__table_dh5_wr5_gnb__entry__5">/</td>
+                        </tr>
+                        <tr class="- topic/row">
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__table_dh5_wr5_gnb__entry__2">name</td>
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__table_dh5_wr5_gnb__entry__3">O</td>
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__table_dh5_wr5_gnb__entry__4">ASCII string</td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="doc__table_dh5_wr5_gnb__entry__5">"discreteX</td>
+                        </tr>
+                        <tr class="- topic/row">
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__table_dh5_wr5_gnb__entry__2">io_type</td>
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__table_dh5_wr5_gnb__entry__3">O</td>
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__table_dh5_wr5_gnb__entry__4">"in"</td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="doc__table_dh5_wr5_gnb__entry__5">"in"</td>
+                        </tr>
+                        <tr class="- topic/row">
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__table_dh5_wr5_gnb__entry__2">val_spec</td>
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__table_dh5_wr5_gnb__entry__3">O</td>
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__table_dh5_wr5_gnb__entry__4">"model", "scada", "const"</td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="doc__table_dh5_wr5_gnb__entry__5">"model"</td>
+                        </tr>
+                        <tr class="- topic/row">
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__table_dh5_wr5_gnb__entry__2">init_val</td>
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__table_dh5_wr5_gnb__entry__3">O</td>
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__table_dh5_wr5_gnb__entry__4">any value that can be converted to Boolean type</td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="doc__table_dh5_wr5_gnb__entry__5">False</td>
+                        </tr>
+                        <tr class="- topic/row">
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__table_dh5_wr5_gnb__entry__1" rowspan="11">Holding registers</td>
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__table_dh5_wr5_gnb__entry__2">addr</td>
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__table_dh5_wr5_gnb__entry__3">M</td>
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__table_dh5_wr5_gnb__entry__4">integer number between 0 and 65535 or a list of numbers</td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="doc__table_dh5_wr5_gnb__entry__5"></td>
+                        </tr>
+                        <tr class="- topic/row">
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__table_dh5_wr5_gnb__entry__2">name</td>
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__table_dh5_wr5_gnb__entry__3">O</td>
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__table_dh5_wr5_gnb__entry__4">ASCII string</td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="doc__table_dh5_wr5_gnb__entry__5">"holdingX"</td>
+                        </tr>
+                        <tr class="- topic/row">
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__table_dh5_wr5_gnb__entry__2">length</td>
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__table_dh5_wr5_gnb__entry__3">O</td>
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__table_dh5_wr5_gnb__entry__4">1, 2, 4</td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="doc__table_dh5_wr5_gnb__entry__5">1</td>
+                        </tr>
+                        <tr class="- topic/row">
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__table_dh5_wr5_gnb__entry__2">data_type</td>
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__table_dh5_wr5_gnb__entry__3">O</td>
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__table_dh5_wr5_gnb__entry__4">"int", "uint", "float"</td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="doc__table_dh5_wr5_gnb__entry__5">"int"</td>
+                        </tr>
+                        <tr class="- topic/row">
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__table_dh5_wr5_gnb__entry__2">word_order</td>
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__table_dh5_wr5_gnb__entry__3">O</td>
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__table_dh5_wr5_gnb__entry__4">"BE", "LE"</td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="doc__table_dh5_wr5_gnb__entry__5">"BE"</td>
+                        </tr>
+                        <tr class="- topic/row">
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__table_dh5_wr5_gnb__entry__2">io_type</td>
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__table_dh5_wr5_gnb__entry__3">O</td>
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__table_dh5_wr5_gnb__entry__4">"in", "out", "inout"</td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="doc__table_dh5_wr5_gnb__entry__5">"in"</td>
+                        </tr>
+                        <tr class="- topic/row">
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__table_dh5_wr5_gnb__entry__2">val_spec</td>
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__table_dh5_wr5_gnb__entry__3">O</td>
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__table_dh5_wr5_gnb__entry__4">"model", "scada", "const"</td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="doc__table_dh5_wr5_gnb__entry__5">"model"</td>
+                        </tr>
+                        <tr class="- topic/row">
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__table_dh5_wr5_gnb__entry__2">init_val</td>
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__table_dh5_wr5_gnb__entry__3">O</td>
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__table_dh5_wr5_gnb__entry__4">int, uint or float value</td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="doc__table_dh5_wr5_gnb__entry__5">False</td>
+                        </tr>
+                        <tr class="- topic/row">
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__table_dh5_wr5_gnb__entry__2">min</td>
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__table_dh5_wr5_gnb__entry__3">O</td>
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__table_dh5_wr5_gnb__entry__4">int, uint or float value</td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="doc__table_dh5_wr5_gnb__entry__5">None</td>
+                        </tr>
+                        <tr class="- topic/row">
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__table_dh5_wr5_gnb__entry__2">max</td>
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__table_dh5_wr5_gnb__entry__3">O</td>
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__table_dh5_wr5_gnb__entry__4">int, uint or float value</td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="doc__table_dh5_wr5_gnb__entry__5">None</td>
+                        </tr>
+                        <tr class="- topic/row">
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__table_dh5_wr5_gnb__entry__2">scale</td>
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__table_dh5_wr5_gnb__entry__3">O</td>
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__table_dh5_wr5_gnb__entry__4">int, uint or float value</td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="doc__table_dh5_wr5_gnb__entry__5">1</td>
+                        </tr>
+                        <tr class="- topic/row">
+                            <td class="- topic/entry entry colsep-1 rowsep-0" headers="doc__table_dh5_wr5_gnb__entry__1" rowspan="11">Input registers</td>
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__table_dh5_wr5_gnb__entry__2">addr</td>
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__table_dh5_wr5_gnb__entry__3">M</td>
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__table_dh5_wr5_gnb__entry__4">integer number between 0 and 65535 or a list of numbers</td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="doc__table_dh5_wr5_gnb__entry__5"></td>
+                        </tr>
+                        <tr class="- topic/row">
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__table_dh5_wr5_gnb__entry__2">name</td>
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__table_dh5_wr5_gnb__entry__3">O</td>
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__table_dh5_wr5_gnb__entry__4">ASCII string</td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="doc__table_dh5_wr5_gnb__entry__5">"holdingX"</td>
+                        </tr>
+                        <tr class="- topic/row">
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__table_dh5_wr5_gnb__entry__2">length</td>
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__table_dh5_wr5_gnb__entry__3">O</td>
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__table_dh5_wr5_gnb__entry__4">1, 2, 4</td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="doc__table_dh5_wr5_gnb__entry__5">1</td>
+                        </tr>
+                        <tr class="- topic/row">
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__table_dh5_wr5_gnb__entry__2">data_type</td>
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__table_dh5_wr5_gnb__entry__3">O</td>
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__table_dh5_wr5_gnb__entry__4">"int", "uint", "float"</td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="doc__table_dh5_wr5_gnb__entry__5">"int"</td>
+                        </tr>
+                        <tr class="- topic/row">
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__table_dh5_wr5_gnb__entry__2">word_order</td>
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__table_dh5_wr5_gnb__entry__3">O</td>
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__table_dh5_wr5_gnb__entry__4">"BE", "LE"</td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="doc__table_dh5_wr5_gnb__entry__5">"BE"</td>
+                        </tr>
+                        <tr class="- topic/row">
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__table_dh5_wr5_gnb__entry__2">io_type</td>
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__table_dh5_wr5_gnb__entry__3">O</td>
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__table_dh5_wr5_gnb__entry__4">"in"</td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="doc__table_dh5_wr5_gnb__entry__5">"in"</td>
+                        </tr>
+                        <tr class="- topic/row">
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__table_dh5_wr5_gnb__entry__2">val_spec</td>
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__table_dh5_wr5_gnb__entry__3">O</td>
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__table_dh5_wr5_gnb__entry__4">"model", "scada", "const"</td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="doc__table_dh5_wr5_gnb__entry__5">"model"</td>
+                        </tr>
+                        <tr class="- topic/row">
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__table_dh5_wr5_gnb__entry__2">init_val</td>
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__table_dh5_wr5_gnb__entry__3">O</td>
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__table_dh5_wr5_gnb__entry__4">int, uint or float value</td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="doc__table_dh5_wr5_gnb__entry__5">False</td>
+                        </tr>
+                        <tr class="- topic/row">
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__table_dh5_wr5_gnb__entry__2">min</td>
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__table_dh5_wr5_gnb__entry__3">O</td>
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__table_dh5_wr5_gnb__entry__4">int, uint or float value</td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="doc__table_dh5_wr5_gnb__entry__5">None</td>
+                        </tr>
+                        <tr class="- topic/row">
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__table_dh5_wr5_gnb__entry__2">max</td>
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__table_dh5_wr5_gnb__entry__3">O</td>
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__table_dh5_wr5_gnb__entry__4">int, uint or float value</td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="doc__table_dh5_wr5_gnb__entry__5">None</td>
+                        </tr>
+                        <tr class="- topic/row">
+                            <td class="- topic/entry entry colsep-1 rowsep-0" headers="doc__table_dh5_wr5_gnb__entry__2">scale</td>
+                            <td class="- topic/entry entry colsep-1 rowsep-0" headers="doc__table_dh5_wr5_gnb__entry__3">O</td>
+                            <td class="- topic/entry entry colsep-1 rowsep-0" headers="doc__table_dh5_wr5_gnb__entry__4">int, uint or float value</td>
+                            <td class="- topic/entry entry colsep-0 rowsep-0" headers="doc__table_dh5_wr5_gnb__entry__5">1</td>
+                        </tr>
+                    </tbody></table>
+            <div class="- topic/p p">Functionality of each parameter is defined as follows:<ul class="- topic/ul ul" id="doc__ul_gbx_nx5_gnb" data-ofbid="doc__ul_gbx_nx5_gnb">
+                    <li class="- topic/li li"><strong class="+ topic/ph hi-d/b ph b">addr</strong> - Register address<ul class="- topic/ul ul" id="doc__ul_fvk_px5_gnb" data-ofbid="doc__ul_fvk_px5_gnb">
+                            <li class="- topic/li li"><strong class="+ topic/ph hi-d/b ph b">Coils and Discrete registers</strong> - address is defined as an
+                                integer value</li>
+                            <li class="- topic/li li"><strong class="+ topic/ph hi-d/b ph b">Holding and Input registers</strong> - address can be defined as an
+                                integer value or as a list of values. If the value is an integer,
+                                register length is defined by the <em class="+ topic/ph hi-d/i ph i">length</em> parameter. If the
+                                value is a list, number of elements in the list defines the register
+                                length (ex. [0, 1, 2, 3] defines a 64 bit register)</li>
+                        </ul></li>
+                    <li class="- topic/li li"><strong class="+ topic/ph hi-d/b ph b">name</strong> - Register name. The name has a practical use only if
+                            <em class="+ topic/ph hi-d/i ph i">val_spec</em> is defined as <em class="+ topic/ph hi-d/i ph i">scada</em>. In this case, the value
+                        defines the name that will be shown in SCADA window</li>
+                </ul><ul class="- topic/ul ul" id="doc__ul_esr_hy5_gnb" data-ofbid="doc__ul_esr_hy5_gnb">
+                    <li class="- topic/li li"><strong class="+ topic/ph hi-d/b ph b">length</strong> - Register length<ul class="- topic/ul ul" id="doc__ul_emp_jy5_gnb" data-ofbid="doc__ul_emp_jy5_gnb">
+                            <li class="- topic/li li"><strong class="+ topic/ph hi-d/b ph b">Holding and Input registers</strong> - this value of 1, 2 or 4 defines
+                                if register will be 16, 32 or 64 bit respectively.</li>
+                        </ul></li>
+                    <li class="- topic/li li"><strong class="+ topic/ph hi-d/b ph b">data_type</strong> - Register data type<ul class="- topic/ul ul" id="doc__ul_wm1_vy5_gnb" data-ofbid="doc__ul_wm1_vy5_gnb">
+                            <li class="- topic/li li"><strong class="+ topic/ph hi-d/b ph b">Holding and Input registers</strong> - this parameter defines if the
+                                register stores the integer, unsigned integer or floating point
+                                value</li>
+                        </ul></li>
+                    <li class="- topic/li li"><strong class="+ topic/ph hi-d/b ph b">word_order</strong> - Register word order<ul class="- topic/ul ul" id="doc__ul_zcg_1z5_gnb" data-ofbid="doc__ul_zcg_1z5_gnb">
+                            <li class="- topic/li li"><strong class="+ topic/ph hi-d/b ph b">Holding and Input registers</strong> - this parameter defines if the
+                                value is stored in Little Endian or Big Endian format. <p class="- topic/p p">Little
+                                    Endian define that the least significant word is stored first in
+                                    the memory, and Big Endian define that the most significant word
+                                    is the first stored in the memory. For example, if the user
+                                    defined 32bit unsigned register as [0,1]u, and writes the value
+                                    0xBBBB AAAA to that register, the value will be stored
+                                    as:</p><p class="- topic/p p">Little Endian: 0 → 0xAAAA; 1 → 0xBBBB</p><p class="- topic/p p">Big
+                                    Endian: 0 → 0xBBBB; 1 → 0xAAAA</p></li>
+                        </ul></li>
+                    <li class="- topic/li li"><strong class="+ topic/ph hi-d/b ph b">io_type</strong> - Register input/output type.<ul class="- topic/ul ul" id="doc__ul_hkz_hz5_gnb" data-ofbid="doc__ul_hkz_hz5_gnb">
+                            <li class="- topic/li li"><strong class="+ topic/ph hi-d/b ph b">Discrete and Input registers</strong> - these registers can be defined
+                                only as input registers. This means that a signal from the model can
+                                be connected to the input terminal of the Modbus Device component in
+                                order to control the register value.</li>
+                            <li class="- topic/li li"><strong class="+ topic/ph hi-d/b ph b">Coil and Holding registers</strong> - these registers can be defined
+                                as input, output or in/out registers. Input defines that the input
+                                signal is used to control the register value and output means that
+                                the register value is available on the output terminal of the
+                                component. If the register is defined as in/out, this means that the
+                                value can be controlled using signal from the model connected on the
+                                input, but the value can be changed using Modbus Client also. In
+                                order for this concept to function, the register value is updated on
+                                event, if the input signal changes its value or when a Client
+                                request is received. With registers defined as input, the value is
+                                continuously updated.</li>
+                        </ul></li>
+                    <li class="- topic/li li"><strong class="+ topic/ph hi-d/b ph b">val_spec</strong> - This parameter defines how the register value is
+                        specified. <em class="+ topic/ph hi-d/i ph i">Model</em> defines that the value is controlled using a signal
+                        from the model. This value adds an input, output or both on the component
+                        (depending on the <em class="+ topic/ph hi-d/i ph i">io_type</em>). <em class="+ topic/ph hi-d/i ph i">Scada</em> defines that the value is
+                        controlled using SCADA Input component. This component is automatically
+                        created and its value can be controlled from SCADA window. <em class="+ topic/ph hi-d/i ph i">Const</em>
+                        defines that the register has a constant value and cannot be changed from
+                        the simulation.</li>
+                </ul><ul class="- topic/ul ul" id="doc__ul_ijb_r1v_gnb" data-ofbid="doc__ul_ijb_r1v_gnb">
+                    <li class="- topic/li li"><strong class="+ topic/ph hi-d/b ph b">init_val </strong>- Initial value of the Register. The initial value can be
+                        defined if a register is defined as in or in/out or if it is defined to be
+                        SCADA controlled or a constant.</li>
+                </ul><ul class="- topic/ul ul" id="doc__ul_rvp_w1v_gnb" data-ofbid="doc__ul_rvp_w1v_gnb">
+                    <li class="- topic/li li"><strong class="+ topic/ph hi-d/b ph b">min</strong> - Limitation of the register value. Lower limit of the register
+                        value can be defined using <em class="+ topic/ph hi-d/i ph i">min</em> parameter. This limitation is applied
+                        to the signals coming to and from the Modbus component. In other words, if
+                        the limitation is set to -1 and a client writes -5, the value of the
+                        register will be -5, but the output of the component will be limited to
+                        -1.</li>
+                    <li class="- topic/li li"><strong class="+ topic/ph hi-d/b ph b">max</strong> - Limitation of the register value. Upper limit of the register
+                        value can be defined using <em class="+ topic/ph hi-d/i ph i">max</em> parameter. This limitation is applied
+                        to the signals coming to and from the Modbus component. In other words, if
+                        the limitation is set to 5 and a client writes 10, the value of the register
+                        will be 10, but the output of the component will be limited to 5.</li>
+                    <li class="- topic/li li"><strong class="+ topic/ph hi-d/b ph b">scale</strong> - Scaling of the register value. Scaling value is applied
+                        differently for input and output registers. For input registers, input
+                        signal is multiplied with <em class="+ topic/ph hi-d/i ph i">scale</em> value and written to the register
+                        value. For output registers, register value is divided by the <em class="+ topic/ph hi-d/i ph i">scale</em>
+                        value and sent to the output of the component. </li>
+                </ul></div>
+            <p class="- topic/p p"><strong class="+ topic/ph hi-d/b ph b">Example of Register Map Version 2</strong></p>
+        </section>
+    <section class="- topic/section section" id="doc__section_fjj_jpp_gnb" data-ofbid="doc__section_fjj_jpp_gnb">
+            <p class="- topic/p p">Example of a Modbus device configuration with 10 <em class="+ topic/ph hi-d/i ph i">Coils</em>, 5 <em class="+ topic/ph hi-d/i ph i">Discrete
+                    Inputs</em>, 16 <em class="+ topic/ph hi-d/i ph i">Holding,</em> and 8 <em class="+ topic/ph hi-d/i ph i">Input Registers </em> is shown below.</p>
+            <pre class="+ topic/pre pr-d/codeblock pre codeblock language-python"><span class="hl-string">"coil_registers"</span>: [
+    {<span class="hl-string">"addr"</span>: <span class="hl-number">0</span>, <span class="hl-string">"io_type"</span>: <span class="hl-string">"in"</span>}, 
+    {<span class="hl-string">"addr"</span>: <span class="hl-number">1</span>, <span class="hl-string">"io_type"</span>: <span class="hl-string">"in"</span>}, 
+    {<span class="hl-string">"addr"</span>: <span class="hl-number">2</span>, <span class="hl-string">"io_type"</span>: <span class="hl-string">"in"</span>}, 
+    {<span class="hl-string">"addr"</span>: <span class="hl-number">3</span>, <span class="hl-string">"io_type"</span>: <span class="hl-string">"in"</span>}, 
+    {<span class="hl-string">"addr"</span>: <span class="hl-number">4</span>, <span class="hl-string">"io_type"</span>: <span class="hl-string">"in"</span>},
+    {<span class="hl-string">"addr"</span>: <span class="hl-number">100</span>, <span class="hl-string">"io_type"</span>: <span class="hl-string">"out"</span>, <span class="hl-string">"init_val"</span>: <span class="hl-number">1</span>}, 
+    {<span class="hl-string">"addr"</span>: <span class="hl-number">101</span>, <span class="hl-string">"io_type"</span>: <span class="hl-string">"out"</span>, <span class="hl-string">"init_val"</span>: <span class="hl-number">0</span>}, 
+    {<span class="hl-string">"addr"</span>: <span class="hl-number">102</span>, <span class="hl-string">"io_type"</span>: <span class="hl-string">"out"</span>, <span class="hl-string">"init_val"</span>: <span class="hl-number">234</span>}, 
+    {<span class="hl-string">"addr"</span>: <span class="hl-number">103</span>, <span class="hl-string">"io_type"</span>: <span class="hl-string">"out"</span>, <span class="hl-string">"init_val"</span>: -<span class="hl-number">121</span>}, 
+    {<span class="hl-string">"addr"</span>: <span class="hl-number">104</span>, <span class="hl-string">"io_type"</span>: <span class="hl-string">"out"</span>, <span class="hl-string">"init_val"</span>: False},
+],
+<span class="hl-string">"discrete_registers"</span>: [
+    {<span class="hl-string">"addr"</span>: <span class="hl-number">0</span>}, 
+    {<span class="hl-string">"addr"</span>: <span class="hl-number">1</span>}, 
+    {<span class="hl-string">"addr"</span>: <span class="hl-number">2</span>}, 
+    {<span class="hl-string">"addr"</span>: <span class="hl-number">3</span>}, 
+    {<span class="hl-string">"addr"</span>: <span class="hl-number">4</span>},
+]
+<span class="hl-string">"holding_registers"</span>: [
+    {<span class="hl-string">"addr"</span>: <span class="hl-number">0</span>,   <span class="hl-string">"length"</span>: <span class="hl-number">1</span>, <span class="hl-string">"data_type"</span>: <span class="hl-string">"uint"</span>,  <span class="hl-string">"io_type"</span>: <span class="hl-string">"in"</span>}, 
+    {<span class="hl-string">"addr"</span>: <span class="hl-number">1</span>,   <span class="hl-string">"length"</span>: <span class="hl-number">1</span>, <span class="hl-string">"data_type"</span>: <span class="hl-string">"int"</span>,   <span class="hl-string">"io_type"</span>: <span class="hl-string">"in"</span>}, 
+    {<span class="hl-string">"addr"</span>: <span class="hl-number">2</span>,   <span class="hl-string">"length"</span>: <span class="hl-number">2</span>, <span class="hl-string">"data_type"</span>: <span class="hl-string">"uint"</span>,  <span class="hl-string">"io_type"</span>: <span class="hl-string">"in"</span>}, 
+    {<span class="hl-string">"addr"</span>: <span class="hl-number">4</span>,   <span class="hl-string">"length"</span>: <span class="hl-number">2</span>, <span class="hl-string">"data_type"</span>: <span class="hl-string">"int"</span>,   <span class="hl-string">"io_type"</span>: <span class="hl-string">"in"</span>}, 
+    {<span class="hl-string">"addr"</span>: <span class="hl-number">6</span>,   <span class="hl-string">"length"</span>: <span class="hl-number">2</span>, <span class="hl-string">"data_type"</span>: <span class="hl-string">"float"</span>, <span class="hl-string">"io_type"</span>: <span class="hl-string">"in"</span>}, 
+    {<span class="hl-string">"addr"</span>: <span class="hl-number">8</span>,   <span class="hl-string">"length"</span>: <span class="hl-number">4</span>, <span class="hl-string">"data_type"</span>: <span class="hl-string">"uint"</span>,  <span class="hl-string">"io_type"</span>: <span class="hl-string">"in"</span>}, 
+    {<span class="hl-string">"addr"</span>: <span class="hl-number">12</span>,  <span class="hl-string">"length"</span>: <span class="hl-number">4</span>, <span class="hl-string">"data_type"</span>: <span class="hl-string">"int"</span>,   <span class="hl-string">"io_type"</span>: <span class="hl-string">"in"</span>}, 
+    {<span class="hl-string">"addr"</span>: <span class="hl-number">16</span>,  <span class="hl-string">"length"</span>: <span class="hl-number">4</span>, <span class="hl-string">"data_type"</span>: <span class="hl-string">"float"</span>, <span class="hl-string">"io_type"</span>: <span class="hl-string">"in"</span>}, 
+    {<span class="hl-string">"addr"</span>: <span class="hl-number">100</span>, <span class="hl-string">"length"</span>: <span class="hl-number">1</span>, <span class="hl-string">"data_type"</span>: <span class="hl-string">"uint"</span>,  <span class="hl-string">"io_type"</span>: <span class="hl-string">"out"</span>, <span class="hl-string">"init_val"</span>: <span class="hl-number">11</span>}, 
+    {<span class="hl-string">"addr"</span>: <span class="hl-number">101</span>, <span class="hl-string">"length"</span>: <span class="hl-number">1</span>, <span class="hl-string">"data_type"</span>: <span class="hl-string">"int"</span>,   <span class="hl-string">"io_type"</span>: <span class="hl-string">"out"</span>, <span class="hl-string">"init_val"</span>: -<span class="hl-number">12</span>}, 
+    {<span class="hl-string">"addr"</span>: <span class="hl-number">102</span>, <span class="hl-string">"length"</span>: <span class="hl-number">2</span>, <span class="hl-string">"data_type"</span>: <span class="hl-string">"uint"</span>,  <span class="hl-string">"io_type"</span>: <span class="hl-string">"out"</span>, <span class="hl-string">"init_val"</span>: <span class="hl-number">13</span>}, 
+    {<span class="hl-string">"addr"</span>: <span class="hl-number">104</span>, <span class="hl-string">"length"</span>: <span class="hl-number">2</span>, <span class="hl-string">"data_type"</span>: <span class="hl-string">"int"</span>,   <span class="hl-string">"io_type"</span>: <span class="hl-string">"out"</span>, <span class="hl-string">"init_val"</span>: -<span class="hl-number">6554</span>}, 
+    {<span class="hl-string">"addr"</span>: <span class="hl-number">106</span>, <span class="hl-string">"length"</span>: <span class="hl-number">2</span>, <span class="hl-string">"data_type"</span>: <span class="hl-string">"float"</span>, <span class="hl-string">"io_type"</span>: <span class="hl-string">"out"</span>, <span class="hl-string">"init_val"</span>: <span class="hl-number">121.98</span>}, 
+    {<span class="hl-string">"addr"</span>: <span class="hl-number">108</span>, <span class="hl-string">"length"</span>: <span class="hl-number">4</span>, <span class="hl-string">"data_type"</span>: <span class="hl-string">"uint"</span>,  <span class="hl-string">"io_type"</span>: <span class="hl-string">"out"</span>, <span class="hl-string">"init_val"</span>: <span class="hl-number">456696</span>}, 
+    {<span class="hl-string">"addr"</span>: <span class="hl-number">112</span>, <span class="hl-string">"length"</span>: <span class="hl-number">4</span>, <span class="hl-string">"data_type"</span>: <span class="hl-string">"int"</span>,   <span class="hl-string">"io_type"</span>: <span class="hl-string">"out"</span>, <span class="hl-string">"init_val"</span>: <span class="hl-number">9998424</span>}, 
+    {<span class="hl-string">"addr"</span>: <span class="hl-number">116</span>, <span class="hl-string">"length"</span>: <span class="hl-number">4</span>, <span class="hl-string">"data_type"</span>: <span class="hl-string">"float"</span>, <span class="hl-string">"io_type"</span>: <span class="hl-string">"out"</span>, <span class="hl-string">"init_val"</span>: -<span class="hl-number">564.112</span>}, 
+]
+<span class="hl-string">"input_registers"</span>: [
+    {<span class="hl-string">"addr"</span>: <span class="hl-number">0</span>,  <span class="hl-string">"length"</span>: <span class="hl-number">1</span>, <span class="hl-string">"data_type"</span>: <span class="hl-string">"uint"</span>}, 
+    {<span class="hl-string">"addr"</span>: <span class="hl-number">1</span>,  <span class="hl-string">"length"</span>: <span class="hl-number">1</span>, <span class="hl-string">"data_type"</span>: <span class="hl-string">"int"</span>}, 
+    {<span class="hl-string">"addr"</span>: <span class="hl-number">2</span>,  <span class="hl-string">"length"</span>: <span class="hl-number">2</span>, <span class="hl-string">"data_type"</span>: <span class="hl-string">"uint"</span>}, 
+    {<span class="hl-string">"addr"</span>: <span class="hl-number">4</span>,  <span class="hl-string">"length"</span>: <span class="hl-number">2</span>, <span class="hl-string">"data_type"</span>: <span class="hl-string">"int"</span>}, 
+    {<span class="hl-string">"addr"</span>: <span class="hl-number">6</span>,  <span class="hl-string">"length"</span>: <span class="hl-number">2</span>, <span class="hl-string">"data_type"</span>: <span class="hl-string">"float"</span>}, 
+    {<span class="hl-string">"addr"</span>: <span class="hl-number">8</span>,  <span class="hl-string">"length"</span>: <span class="hl-number">4</span>, <span class="hl-string">"data_type"</span>: <span class="hl-string">"uint"</span>}, 
+    {<span class="hl-string">"addr"</span>: <span class="hl-number">12</span>, <span class="hl-string">"length"</span>: <span class="hl-number">4</span>, <span class="hl-string">"data_type"</span>: <span class="hl-string">"int"</span>}, 
+    {<span class="hl-string">"addr"</span>: <span class="hl-number">16</span>, <span class="hl-string">"length"</span>: <span class="hl-number">4</span>, <span class="hl-string">"data_type"</span>: <span class="hl-string">"float"</span>}, 
+]</pre>
+            <p class="- topic/p p"><strong class="+ topic/ph hi-d/b ph b">Backward compatibility</strong></p>
+            <p class="- topic/p p">The Register Map Version 2 can also support the Version 1 configuration if there is a
+                need for it. The code below illustrates this.</p>
+            <pre class="+ topic/pre pr-d/codeblock pre codeblock language-python"><span class="hl-string">"coil_registers"</span>: {
+    <span class="hl-string">"coil_input_addresses"</span>: <span class="hl-string">"0, 1, 2, 3, 4"</span>,
+    <span class="hl-string">"coil_output_addresses"</span>: <span class="hl-string">"100, 101, 102, 103, 104"</span>,
+    <span class="hl-string">"coil_output_init"</span>: [<span class="hl-number">1</span>, <span class="hl-number">0</span>, <span class="hl-number">234</span>, -<span class="hl-number">121</span>, False]
+}
+<span class="hl-string">"discrete_registers"</span>: {
+    <span class="hl-string">"discrete_input_addresses"</span>: <span class="hl-string">"0, 1, 2, 3, 4"</span>
+}
+<span class="hl-string">"holding_registers"</span>: {
+    <span class="hl-string">"holding_register_input_addresses"</span>: <span class="hl-string">"0u, 1i, \
+</span>                                        [<span class="hl-number">2</span>,<span class="hl-number">3</span>]u, [<span class="hl-number">4</span>,<span class="hl-number">5</span>]i, [<span class="hl-number">6</span>,<span class="hl-number">7</span>]f, \
+                                        [<span class="hl-number">8</span>,<span class="hl-number">9</span>,<span class="hl-number">10</span>,<span class="hl-number">11</span>]u, [<span class="hl-number">12</span>,<span class="hl-number">13</span>,<span class="hl-number">14</span>,<span class="hl-number">15</span>]i, [<span class="hl-number">16</span>,<span class="hl-number">17</span>,<span class="hl-number">18</span>,<span class="hl-number">19</span>]f<span class="hl-string">",
+</span>    <span class="hl-string">"holding_register_output_addresses"</span>: <span class="hl-string">"100u, 101i, \
+</span>                                        [<span class="hl-number">102</span>,<span class="hl-number">103</span>]u, [<span class="hl-number">104</span>,<span class="hl-number">105</span>]i, [<span class="hl-number">106</span>,<span class="hl-number">107</span>]f, \
+                                        [<span class="hl-number">108</span>,<span class="hl-number">109</span>,<span class="hl-number">110</span>,<span class="hl-number">111</span>]u, [<span class="hl-number">112</span>,<span class="hl-number">113</span>,<span class="hl-number">114</span>,<span class="hl-number">115</span>]i, [<span class="hl-number">116</span>,<span class="hl-number">117</span>,<span class="hl-number">118</span>,<span class="hl-number">119</span>]f<span class="hl-string">",
+</span>    <span class="hl-string">"holding_register_output_init"</span>: [<span class="hl-number">11</span>, -<span class="hl-number">12</span>,
+                                     <span class="hl-number">13</span>, -<span class="hl-number">6554</span>, <span class="hl-number">121.98</span>,
+                                     <span class="hl-number">456696</span>, <span class="hl-number">9998424</span>, -<span class="hl-number">564.112</span>]
+}
+<span class="hl-string">"input_registers"</span>: {
+    <span class="hl-string">"input_register_addresses"</span>: <span class="hl-string">"0u, 1i, \
+</span>                                [<span class="hl-number">2</span>,<span class="hl-number">3</span>]u, [<span class="hl-number">4</span>,<span class="hl-number">5</span>]i, [<span class="hl-number">6</span>,<span class="hl-number">7</span>]f, \
+                                [<span class="hl-number">8</span>,<span class="hl-number">9</span>,<span class="hl-number">10</span>,<span class="hl-number">11</span>]u, [<span class="hl-number">12</span>,<span class="hl-number">13</span>,<span class="hl-number">14</span>,<span class="hl-number">15</span>]i, [<span class="hl-number">16</span>,<span class="hl-number">17</span>,<span class="hl-number">18</span>,<span class="hl-number">19</span>]f<span class="hl-string">",
+</span>}</pre>
+        </section>
+    <section class="- topic/section section" id="doc__section_pjb_jlv_gnb" data-ofbid="doc__section_pjb_jlv_gnb"><h2 class="- topic/title title sectiontitle">Modbus configuration examples</h2>
+            
+            <p class="- topic/p p">Example of  complete Modbus configuration using Register Map Version 1 is illustrated
+                below.</p>
+            <pre class="+ topic/pre pr-d/codeblock pre codeblock language-python">configuration = {
+    <span class="hl-string">"ip_addr"</span>: <span class="hl-string">"192.168.0.100"</span>,
+    <span class="hl-string">"netmask"</span>: <span class="hl-string">"255.255.255.0"</span>,
+    <span class="hl-string">"port"</span>: <span class="hl-number">502</span>,
+    <span class="hl-string">"slave_id"</span>: <span class="hl-number">17</span>,
+    <span class="hl-string">"slave_id_echo"</span>: False,
+    <span class="hl-string">"unimplemented_register_exception"</span>: True,
+    <span class="hl-string">"coil_input_addresses"</span>: <span class="hl-string">"0"</span>,
+    <span class="hl-string">"coil_output_addresses"</span>: <span class="hl-string">"100"</span>,    
+    <span class="hl-string">"discrete_input_addresses"</span>: <span class="hl-string">"0"</span>,
+    <span class="hl-string">"holding_register_input_addresses"</span>: <span class="hl-string">"0"</span>,
+    <span class="hl-string">"holding_register_output_addresses"</span>: <span class="hl-string">"100"</span>,
+    <span class="hl-string">"input_register_addresses"</span>: <span class="hl-string">"0"</span>
+}</pre>
+            <p class="- topic/p p">Example of  complete Modbus configuration using Register Map Version 2 is illustrated
+                below.</p>
+            <pre class="+ topic/pre pr-d/codeblock pre codeblock language-python">configuration = {
+    <span class="hl-string">"ip_addr"</span>: <span class="hl-string">"192.168.0.100"</span>,
+    <span class="hl-string">"netmask"</span>: <span class="hl-string">"255.255.255.0"</span>,
+    <span class="hl-string">"port"</span>: <span class="hl-number">502</span>,
+    <span class="hl-string">"slave_id"</span>: <span class="hl-number">17</span>,
+    <span class="hl-string">"slave_id_echo"</span>: False,
+    <span class="hl-string">"unimplemented_register_exception"</span>: True,
+    <span class="hl-string">"coil_registers"</span>: [
+        {<span class="hl-string">"addr"</span>: <span class="hl-number">0</span>},
+        {<span class="hl-string">"addr"</span>: <span class="hl-number">100</span>, <span class="hl-string">"io_type"</span>: <span class="hl-string">"out"</span>}
+    ],
+    <span class="hl-string">"discrete_registers"</span>: [
+        {<span class="hl-string">"addr"</span>: <span class="hl-number">0</span>}
+    ],
+    <span class="hl-string">"holding_registers"</span>: [
+        {<span class="hl-string">"addr"</span>: <span class="hl-number">0</span>},
+        {<span class="hl-string">"addr"</span>: <span class="hl-number">100</span>, <span class="hl-string">"io_type"</span>: <span class="hl-string">"out"</span>}
+    ],
+    <span class="hl-string">"input_registers"</span>: [
+        {<span class="hl-string">"addr"</span>: <span class="hl-number">0</span>}
+    ]
+}</pre>
+        </section>
+    <section class="- topic/section section" id="doc__section_qth_glv_gnb" data-ofbid="doc__section_qth_glv_gnb"><h2 class="- topic/title title sectiontitle">Modbus device under the hood</h2>
+            
+            <p class="- topic/p p">In order to better understand the Modbus Device component and how the configuration
+                affects the component structure the  following Register Map will be considered:</p>
+            <pre class="+ topic/pre pr-d/codeblock pre codeblock language-python"><span class="hl-string">"coil_registers"</span>: [],
+<span class="hl-string">"discrete_registers"</span>: [],
+<span class="hl-string">"holding_registers"</span>: [
+    {<span class="hl-string">"addr"</span>: <span class="hl-number">0</span>, <span class="hl-string">"name"</span>: <span class="hl-string">"holding0"</span>, io_type: <span class="hl-string">"in"</span>,    <span class="hl-string">"val_spec"</span>: <span class="hl-string">"model"</span>, <span class="hl-string">"min"</span>: <span class="hl-number">1</span>,    <span class="hl-string">"max"</span>: <span class="hl-number">100</span>,  <span class="hl-string">"scale"</span>: <span class="hl-number">1</span>},
+    {<span class="hl-string">"addr"</span>: <span class="hl-number">1</span>, <span class="hl-string">"name"</span>: <span class="hl-string">"holding1"</span>, io_type: <span class="hl-string">"out"</span>,   <span class="hl-string">"val_spec"</span>: <span class="hl-string">"model"</span>, <span class="hl-string">"min"</span>: <span class="hl-number">2</span>,    <span class="hl-string">"max"</span>: <span class="hl-number">200</span>,  <span class="hl-string">"scale"</span>: <span class="hl-number">2</span>},
+    {<span class="hl-string">"addr"</span>: <span class="hl-number">2</span>, <span class="hl-string">"name"</span>: <span class="hl-string">"holding2"</span>, io_type: <span class="hl-string">"inout"</span>, <span class="hl-string">"val_spec"</span>: <span class="hl-string">"model"</span>, <span class="hl-string">"min"</span>: <span class="hl-number">3</span>,    <span class="hl-string">"max"</span>: <span class="hl-number">300</span>,  <span class="hl-string">"scale"</span>: <span class="hl-number">3</span>},
+    {<span class="hl-string">"addr"</span>: <span class="hl-number">3</span>, <span class="hl-string">"name"</span>: <span class="hl-string">"holding3"</span>, io_type: <span class="hl-string">"in"</span>,    <span class="hl-string">"val_spec"</span>: <span class="hl-string">"scada"</span>, <span class="hl-string">"min"</span>: None, <span class="hl-string">"max"</span>: None, <span class="hl-string">"scale"</span>: <span class="hl-number">1</span>},
+    {<span class="hl-string">"addr"</span>: <span class="hl-number">4</span>, <span class="hl-string">"name"</span>: <span class="hl-string">"holding4"</span>,                   <span class="hl-string">"val_spec"</span>: <span class="hl-string">"const"</span>},
+],
+<span class="hl-string">"input_registers"</span> []</pre>
+            <p class="- topic/p p">The inside of the Modbus component is shown in <a class="- topic/xref xref" href="#doc__fig_s1j_5pv_gnb">Figure 3</a>.</p>
+            <figure class="- topic/fig fig fignone" id="doc__fig_s1j_5pv_gnb" data-ofbid="doc__fig_s1j_5pv_gnb"><figcaption class="- topic/title title figcapcenter"><span class="figtitleprefix fig--title-label">Figure<span class="fig--title-label-number"> 3</span><span class="fig--title-label-punctuation">. </span></span><span class="fig--title">Modbus Device under the hood</span></figcaption>
+                
+                <div class="imagecenter break"><img class="- topic/image image imagecenter break" id="doc__image_t1j_5pv_gnb" src="../Images/modbus_device_13.jpg" height="415" width="840"/></div>
+            </figure>
+            <p class="- topic/p p">Since there are no Coil, Discrete and Input registers defined, there is nothing
+                generated for these registers. Input and output signal dimensions are 0.</p>
+            <p class="- topic/p p">For the Holding registers, appropriate SCADA Input, Gain and Limit components are
+                generated. SCADA Input components are generated for all the registers that are
+                defined with <em class="+ topic/ph hi-d/i ph i">scada</em>
+                <em class="+ topic/ph hi-d/i ph i">val spec</em> parameter (in this case holding3 register). Input scaling is
+                performed on all <em class="+ topic/ph hi-d/i ph i">in</em> and <em class="+ topic/ph hi-d/i ph i">inout</em> registers, as well as limiting. The same
+                is for the <em class="+ topic/ph hi-d/i ph i">out</em> and <em class="+ topic/ph hi-d/i ph i">inout</em> registers, the only difference is that the
+                scale value is changed accordingly.</p>
+            <p class="- topic/p p">Registers defined as <em class="+ topic/ph hi-d/i ph i">const</em> do not alter the structure of the Modbus Device
+                component in any way.</p>
+        </section>
+    <section class="- topic/section section" id="doc__section_d2y_bjq_d1b" data-ofbid="doc__section_d2y_bjq_d1b"><h2 class="- topic/title title sectiontitle">Multiple Modbus device definition</h2>
+            
+            <p class="- topic/p p">In Typhoon HIL Control Center, multiple instances of Modbus devices can be present in
+                the model. Every instance is represented as a different device and must have its own
+                configuration defined. The configuration definition is the same as for a single
+                Modbus device.</p>
+            <p class="- topic/p p">If multiple instances of a Modbus device are used, all devices must have different IP
+                addresses (<a class="- topic/xref xref" href="#doc__fig_nrd_lmt_qz">Figure 4</a>). Values of IP
+                addresses can be arbitrary as long as they are unique and belong to the same network
+                (first three bytes are defined by the network and only last byte can be
+                changed).</p>
+            <figure class="- topic/fig fig fignone" id="doc__fig_nrd_lmt_qz" data-ofbid="doc__fig_nrd_lmt_qz"><figcaption class="- topic/title title figcapcenter"><span class="figtitleprefix fig--title-label">Figure<span class="fig--title-label-number"> 4</span><span class="fig--title-label-punctuation">. </span></span><span class="fig--title">Multiple Modbus device configurations with different IP addresses</span></figcaption>
+                
+                <div class="imagecenter break"><img class="- topic/image image imagecenter break" id="doc__image_ord_lmt_qz" src="../Images/modbus_device_04.jpg" height="308" width="495"/></div>
+            </figure>
+        </section>
+    <section class="- topic/section section" id="doc__section_gdy_4mr_dhb" data-ofbid="doc__section_gdy_4mr_dhb"><h2 class="- topic/title title sectiontitle">Filtering Modbus messages using slave ID values</h2>
+            
+            <p class="- topic/p p">Some Modbus site configurations require multiple devices to have the same register
+                map and IP address. In this case, the slave ID is used to route a message to the
+                appropriate device. One example of this is illustrated in <a class="- topic/xref xref" href="#doc__fig_i1s_34d_c4b">Figure 5</a>. Multiple devices are present in
+                the model and all have the same register map. If the request message from the Client
+                has a slave ID value of 1, 2, 3, …, the specific device is targeted and its values
+                are reported to the Client. If the slave ID is 100, an aggregated value of all
+                devices is reported to the server.</p>
+            <figure class="- topic/fig fig fignone" id="doc__fig_i1s_34d_c4b" data-ofbid="doc__fig_i1s_34d_c4b"><figcaption class="- topic/title title figcapcenter"><span class="figtitleprefix fig--title-label">Figure<span class="fig--title-label-number"> 5</span><span class="fig--title-label-punctuation">. </span></span><span class="fig--title">Modbus Device in Site setup</span></figcaption>
+                
+                <div class="imagecenter break"><img class="- topic/image image imagecenter break" id="doc__image_j1s_34d_c4b" src="../Images/modbus_device_09.jpg" height="198" width="228"/></div>
+            </figure>
+            <p class="- topic/p p">To achieve this configuration, the configuration must be defined for each device
+                (including the aggregated value of all devices, as it behaves as a separate device)
+                to ensure that the IP address of all devices are the same, while the slave_id values
+                are different, as shown in <a class="- topic/xref xref" href="#doc__fig_pl5_prr_dhb">Figure 6</a>.</p>
+            <figure class="- topic/fig fig fignone" id="doc__fig_pl5_prr_dhb" data-ofbid="doc__fig_pl5_prr_dhb"><figcaption class="- topic/title title figcapcenter"><span class="figtitleprefix fig--title-label">Figure<span class="fig--title-label-number"> 6</span><span class="fig--title-label-punctuation">. </span></span><span class="fig--title">Modbus configuration in Site setup</span></figcaption>
+                
+                <div class="imagecenter break"><img class="- topic/image image imagecenter break" id="doc__image_ql5_prr_dhb" src="../Images/modbus_device_10.jpg" height="444" width="328"/></div>
+            </figure>
+            <p class="- topic/p p">One of the devices in the setup can be defined as a "default device". In this case,
+                if the slave ID received from the Client does not mach any value from other devices,
+                the value from the default device will be reported back. In <a class="- topic/xref xref" href="#doc__fig_pl5_prr_dhb">Figure 6</a>, the aggregate device is defined as the default. If none of the
+                devices is defined as the default, the values from last accessed device will be
+                reported back.</p>
+            <p class="- topic/p p">It can also be useful to disable slave ID echo in the device configuration for these
+                cases. By default, this option is enabled, meaning that the value of slave ID
+                defined in the Client's request will be returned back. If it is disabled, the true
+                value of the slave ID for that device will be returned. In other words, if the
+                Client sends slave ID 5, but only 3 devices are implemented like in the example
+                configuration, a value of 5 will be reported back even though the device 100 is
+                reporting back its values. If slave ID echo is disabled, the ID 100 will be
+                returned, and the Client will know which device reported the values.</p>
+        </section>
+    <section class="- topic/section section" id="doc__section_ask_blv_gnb" data-ofbid="doc__section_ask_blv_gnb"><h2 class="- topic/title title sectiontitle">Modbus Device component limitations</h2>
+            
+            <p class="- topic/p p">It is important to mention that although the support of 64 bit register manipulation
+                is supported with the Modbus protocol, all registers in the HIL devices are 32 bit
+                long so the received and sending data will be converted to 32 bit values.</p>
+        </section>
+        <section class="- topic/section section" id="doc__section_crl_byf_dqb" data-ofbid="doc__section_crl_byf_dqb"><h2 class="- topic/title title sectiontitle">Time synchronization</h2>
+            
+            <p class="- topic/p p">If there is a need for time synchronization, please take a look at <a class="- topic/xref xref" href="../concepts/../References/time_synchronization.html" title="This section describes how to perform time synchronization of HIL device(s).">Time synchronization</a>.</p>
+        </section>
+        <section class="- topic/section section" id="doc__section_fqk_xxf_dqb" data-ofbid="doc__section_fqk_xxf_dqb"><h2 class="- topic/title title sectiontitle">Virtual HIL support</h2>
+            
+            <p class="- topic/p p">Virtual HIL currently does not support this protocol. When using a non-real-time environment (e.g. when running the model on  a local computer), 
+                inputs to this component will be discarded and outputs from this component will be zeroed.</p>
+        </section>
+    </div>
+</article></main></div>
+                        
+                        
+                        
+                        
+                        
+                        
+                    </div>
+                    
+                        <nav role="navigation" id="wh_topic_toc" aria-label="On this page" class="col-lg-2 d-none d-lg-block navbar d-print-none"> 
+                            <div id="wh_topic_toc_content">
+		                        
+	                            <div class=" wh_topic_toc "><div class="wh_topic_label">On this page</div><ul><li class="section-item"><div class="section-title"><a href="#doc__section_wbp_25f_dqb" data-tocid="doc__section_wbp_25f_dqb">Introduction to Modbus protocol</a></div></li><li class="section-item"><div class="section-title"><a href="#doc__section_jty_kpp_gnb" data-tocid="doc__section_jty_kpp_gnb">Modbus Device Component</a></div></li><li class="section-item"><div class="section-title"><a href="#doc__section_mxq_ppp_gnb" data-tocid="doc__section_mxq_ppp_gnb">Modbus Configuration</a></div></li><li class="section-item"><div class="section-title"><a href="#doc__section_ptk_s35_gnb" data-tocid="doc__section_ptk_s35_gnb">Register Map Version 1</a></div></li><li class="section-item"><div class="section-title"><a href="#doc__section_xj1_hk5_gnb" data-tocid="doc__section_xj1_hk5_gnb">Register Map Version 2</a></div></li><li class="section-item"><div class="section-title"><a href="#doc__section_pjb_jlv_gnb" data-tocid="doc__section_pjb_jlv_gnb">Modbus configuration examples</a></div></li><li class="section-item"><div class="section-title"><a href="#doc__section_qth_glv_gnb" data-tocid="doc__section_qth_glv_gnb">Modbus device under the hood</a></div></li><li class="section-item"><div class="section-title"><a href="#doc__section_d2y_bjq_d1b" data-tocid="doc__section_d2y_bjq_d1b">Multiple Modbus device definition</a></div></li><li class="section-item"><div class="section-title"><a href="#doc__section_gdy_4mr_dhb" data-tocid="doc__section_gdy_4mr_dhb">Filtering Modbus messages using slave ID values</a></div></li><li class="section-item"><div class="section-title"><a href="#doc__section_ask_blv_gnb" data-tocid="doc__section_ask_blv_gnb">Modbus Device component limitations</a></div></li><li class="section-item"><div class="section-title"><a href="#doc__section_crl_byf_dqb" data-tocid="doc__section_crl_byf_dqb">Time synchronization</a></div></li><li class="section-item"><div class="section-title"><a href="#doc__section_fqk_xxf_dqb" data-tocid="doc__section_fqk_xxf_dqb">Virtual HIL support</a></div></li></ul></div>
+	                        	
+                        	</div>
+                        </nav>
+                    
+                </div>
+            </div>
+            
+            
+            
+        </div> 
+        <footer class="navbar navbar-default wh_footer">
+  <div class=" footer-container mx-auto ">
+    <div style="text-align:center">Typhoon HIL Inc.<span id="year"> <a href="https://www.typhoon-hil.com">www.typhoon-hil.com</a></span></div>
+  </div>
+</footer>
+        
+        <div id="go2top" class="d-print-none">
+            <span class="oxy-icon oxy-icon-up"></span>
+        </div>
+        
+        <div id="modal_img_large" class="modal">
+            <span class="close oxy-icon oxy-icon-remove"></span>
+            <div id="modal_img_container"></div>
+            <div id="caption"></div>
+        </div>
+        
+        
+<script type="text/javascript" src="../../assets/script.js"> 
+</script>
+
+        
+    </body>
+</html>

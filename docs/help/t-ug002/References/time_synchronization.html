@@ -1,0 +1,467 @@
+<!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en" data-whc_version="24.1">
+    <head><link rel="shortcut icon" href="../../favicon.ico"/><link rel="icon" href="../../favicon.ico"/><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><meta name="DC.rights.owner" content="(C) Copyright 2026"/><meta name="copyright" content="(C) Copyright 2026"/><meta name="generator" content="DITA-OT"/><meta name="DC.type" content="reference"/><meta name="description" content="This section describes how to perform time synchronization of HIL device(s)."/><meta name="DC.relation" content="../../t-ug002/References/system.html"/><meta name="DC.format" content="HTML5"/><meta name="DC.identifier" content="doc"/>        
+      <title>Time synchronization</title><!--  Generated with Oxygen version 24.1, build number 2022030800.  --><meta name="wh-path2root" content="../../"/><meta name="wh-toc-id" content="doc-d16877e6042"/><meta name="wh-source-relpath" content="t-ug002/References/time_synchronization.dita"/><meta name="wh-out-relpath" content="t-ug002/References/time_synchronization.html"/>
+    <!-- Latest compiled and minified Bootstrap CSS -->
+    <link rel="stylesheet" type="text/css" href="../../oxygen-webhelp/lib/bootstrap/css/bootstrap.min.css"/>
+    
+    <link rel="stylesheet" href="../../oxygen-webhelp/lib/jquery-ui/jquery-ui.min.css"/>
+    
+    <!-- Template default styles  -->
+    <link rel="stylesheet" type="text/css" href="../../oxygen-webhelp/app/topic-page.css?buildId=2022030800"/>
+    
+    
+    <script src="../../oxygen-webhelp/lib/jquery/jquery-3.5.1.min.js"></script>
+    
+    <script data-main="../../oxygen-webhelp/app/topic-page.js" src="../../oxygen-webhelp/lib/requirejs/require.js"></script>
+<link rel="stylesheet" type="text/css" href="../../oxygen-webhelp/template/oxygen.css?buildId=2022030800"/><link rel="stylesheet" type="text/css" href="../../oxygen-webhelp/template/notes.css?buildId=2022030800"/><script type="text/javascript" src="../../Scripts/mml-svg.js"> 
+</script><link rel="stylesheet" type="text/css" href="../../assets/typhoon.css"/></head>
+
+    <body id="doc" class="wh_topic_page frmBody">
+        <a href="#wh_topic_body" class="sr-only sr-only-focusable">
+            Jump to main content
+        </a>
+        
+        
+        
+        
+        <header class="navbar navbar-default wh_header">
+    <div class="container-fluid">
+        <div class="wh_header_flex_container navbar-nav navbar-expand-md navbar-dark">
+            <div class="wh_logo_and_publication_title_container">
+                <div class="wh_logo_and_publication_title">
+                    
+                    <a href="https://www.typhoon-hil.com" class=" wh_logo d-none d-sm-block "><img src="../../logo.svg" alt="  Typhoon HIL Documentation  Version: 2026.1  "/></a>
+                    <div class=" wh_publication_title "><a href="../../index.html"><span class="booktitle">  <span class="ph mainbooktitle">Typhoon HIL Documentation</span>  <span class="ph booktitlealt">Version: 2026.1</span>  </span></a></div>
+                    
+                </div>
+                
+                <button type="button" data-target="#wh_top_menu_and_indexterms_link" id="wh_menu_mobile_button" data-toggle="collapse" class="navbar-toggler collapsed wh_toggle_button" aria-expanded="false" aria-label="Toggle menu" aria-controls="wh_top_menu_and_indexterms_link">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+            </div>
+
+            <div class="wh_top_menu_and_indexterms_link collapse navbar-collapse" id="wh_top_menu_and_indexterms_link">
+                
+                <nav class=" wh_top_menu " aria-label="Menu Container"><ul role="menubar" aria-label="Menu"><li role="menuitem" aria-haspopup="true" aria-expanded="false" class="has-children"><span id="tocId-d16877e21-mi" data-tocid="tocId-d16877e21" data-state="not-ready" class=" topicref application-notes"><span class="title"><a href="../../t-an001/concepts/application_notes_introduction.html">Typhoon HIL Application Notes</a></span></span></li><li role="menuitem" aria-haspopup="true" aria-expanded="false" class="has-children"><span id="tocId-d16877e737-mi" data-tocid="tocId-d16877e737" data-state="not-ready" class=" topicref software-manual"><span class="title"><a href="../../t-ug002/topics/software_manual_introduction.html">Typhoon HIL Software Manual</a></span></span></li><li role="menuitem" aria-haspopup="true" aria-expanded="false" class="has-children"><span id="tocId-d16877e7901-mi" data-tocid="tocId-d16877e7901" data-state="not-ready" class=" topicref hardware-manual"><span class="title"><a href="../../t-ug001/abstract/hardware_manual_introduction.html">Typhoon HIL Hardware Manual</a></span></span></li></ul></nav>
+                
+                
+            </div>
+        </div>
+    </div>
+</header>
+        
+        
+         
+        
+        <div class=" wh_search_input navbar-form wh_topic_page_search search " role="form">
+            
+            
+            
+            <form id="searchForm" method="get" role="search" action="../../search.html"><div><input type="search" placeholder="Search " class="wh_search_textfield" id="textToSearch" name="searchQuery" aria-label="Search query" required="required"/><button type="submit" class="wh_search_button" aria-label="Search"><span class="search_input_text">Search</span></button></div></form>
+            
+            
+            
+        </div>
+        
+        <div class="container-fluid" id="wh_topic_container">
+            <div class="row">
+
+                <nav class="wh_tools d-print-none navbar-expand-md" aria-label="Tools">
+                    
+                    <div data-tooltip-position="bottom" class=" wh_breadcrumb "><ol class="d-print-none"><li><span class="home"><a href="../../index.html"><span>Home</span></a></span></li><li><div class="topicref software-manual"><div class="title"><a href="../../t-ug002/topics/software_manual_introduction.html">Typhoon HIL Software Manual</a></div></div></li><li><div class="topicref" data-id="doc"><div class="title"><a href="../../t-ug002/concepts/schematic_editor_component_libraries.html">Schematic Editor Component Libraries</a><div class="wh-tooltip"><p class="shortdesc">Detailed functionality and use of the pre-built Component Libraries in Schematic   Editor</p></div></div></div></li><li><div class="topicref" data-id="doc"><div class="title"><a href="../../t-ug002/topics/component_library.html">Component Library</a><div class="wh-tooltip"><p class="shortdesc">Description of the general properties of the component library in Schematic     Editor, including a list of the main types of components available in it.</p></div></div></div></li><li><div class="topicref" data-id="doc"><div class="title"><a href="../../t-ug002/topics/signal_processing_components.html">Signal Processing Components</a><div class="wh-tooltip"><p class="shortdesc">This section describes the general properties of all signal processing components in     the Typhoon HIL Schematic Editor core library.</p></div></div></div></li><li><div class="topicref" data-id="doc"><div class="title"><a href="../../t-ug002/References/system.html">System</a><div class="wh-tooltip"><p class="shortdesc">Summary of the System signal processing components available in Schematic Editor.</p></div></div></div></li><li class="active"><div class="topicref" data-id="doc"><div class="title"><a href="../../t-ug002/References/time_synchronization.html">Time synchronization</a><div class="wh-tooltip"><p class="shortdesc">This section describes how to perform time synchronization of HIL         device(s).</p></div></div></div></li></ol></div>
+                    
+                    
+                    
+                    <div class="wh_right_tools">
+                        <button class="wh_hide_highlight" aria-label="Toggle search highlights" title="Toggle search highlights"></button>
+                        <button class="webhelp_expand_collapse_sections" data-next-state="collapsed" aria-label="Collapse sections" title="Collapse sections"></button>
+                        
+                        
+                        
+                        
+                        <div class=" wh_print_link print d-none d-md-inline-block "><button onClick="window.print()" title="Print this page" aria-label="Print this page"></button></div>
+                        
+                        <button type="button" id="wh_toc_button" class="custom-toggler navbar-toggler collapsed wh_toggle_button navbar-light" aria-expanded="false" aria-label="Toggle publishing table of content" aria-controls="wh_publication_toc">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+                    </div>
+                    
+                </nav>
+            </div>
+            
+            
+            
+            
+            <div class="wh_content_area">
+                <div class="row">
+                    
+                        <nav id="wh_publication_toc" class="col-lg-3 col-md-3 col-sm-12 d-md-block d-none d-print-none" aria-label="Table of Contents Container">
+                            <div id="wh_publication_toc_content">
+		                        
+                            	<div class=" wh_publication_toc " data-tooltip-position="right"><span class="expand-button-action-labels"><span id="button-expand-action" role="button" aria-label="Expand"></span><span id="button-collapse-action" role="button" aria-label="Collapse"></span><span id="button-pending-action" role="button" aria-label="Pending"></span></span><ul role="tree" aria-label="Table of Contents"><li role="treeitem" aria-expanded="true"><div data-tocid="tocId-d16877e737" class="topicref software-manual" data-state="expanded"><span role="button" tabindex="0" aria-labelledby="button-collapse-action tocId-d16877e737-link" class="wh-expand-btn"></span><div class="title"><a href="../../t-ug002/topics/software_manual_introduction.html" id="tocId-d16877e737-link">Typhoon HIL Software Manual</a></div></div><ul role="group" class="navbar-nav nav-list"><li role="treeitem"><div data-tocid="doc-d16877e749" class="topicref" data-id="doc" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../../t-ug002/topics/software_manual_introduction.html" id="doc-d16877e749-link">Introduction</a><div class="wh-tooltip"><p class="shortdesc">Overview of the categories covered in the Typhoon HIL Software Manual </p></div></div></div></li><li role="treeitem"><div data-tocid="doc-d16877e760" class="topicref" data-id="doc" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../../t-ug002/concepts/system_requirements.html" id="doc-d16877e760-link">System Requirements</a><div class="wh-tooltip"><p class="shortdesc">Guidelines for the hardware and/or software environment necessary to     run Typhoon HIL software, for both PC and Test Server/Virtual Machine-based setups.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="doc-d16877e771" class="topicref" data-id="doc" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action doc-d16877e771-link" class="wh-expand-btn"></span><div class="title"><a href="../../t-ug002/topics/quick_start_guide_abstract.html" id="doc-d16877e771-link">Typhoon HIL Quick Start Guide</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">Instructions in this section should help you quickly install all             necessary software tools and setup hardware components in order to run an example model,             either in real-time simulation or TyphoonSim.</span></p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="doc-d16877e818" class="topicref" data-id="doc" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action doc-d16877e818-link" class="wh-expand-btn"></span><div class="title"><a href="../../t-ug002/concepts/toolboxes.html" id="doc-d16877e818-link">Typhoon HIL Toolboxes</a><div class="wh-tooltip"><p class="shortdesc">List of the Toolbox Packages available in the Typhoon HIL software suite</p></div></div></div></li><li role="treeitem"><div data-tocid="doc-d16877e1039" class="topicref" data-id="doc" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../../t-ug002/concepts/connecting_to_your_hil_device.html" id="doc-d16877e1039-link">Connecting to your HIL device</a><div class="wh-tooltip"><p class="shortdesc">Guidelines on how to connect to a HIL device using either USB or Ethernet         ports.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="doc-d16877e1050" class="topicref" data-id="doc" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action doc-d16877e1050-link" class="wh-expand-btn"></span><div class="title"><a href="../../t-ug002/concepts/device_manager.html" id="doc-d16877e1050-link">Device Manager</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph uicontrol">Device Manager</span> is used to create, manipulate, and activate HIL         device setups.</p></div></div></div></li><li role="treeitem"><div data-tocid="doc-d16877e1151" class="topicref" data-id="doc" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../../t-ug002/concepts/typhoon_hil_control_center.html" id="doc-d16877e1151-link">Typhoon HIL Control Center</a><div class="wh-tooltip"><p class="shortdesc">This section provides a general description of  Typhoon HIL Control Center and lists the     main software components accessible from it, as well as additional software tools which can be     invoked from its interface.</p></div></div></div></li><li role="treeitem"><div data-tocid="doc-d16877e1162" class="topicref" data-id="doc" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../../t-ug002/concepts/typhoonsim.html" id="doc-d16877e1162-link">TyphoonSim</a><div class="wh-tooltip"><p class="shortdesc">This section provides a general description of the TyphoonSim software, which is     available as both a standalone software and integrated in Typhoon HIL Control     Center.</p></div></div></div></li><li role="treeitem"><div data-tocid="doc-d16877e1173" class="topicref" data-id="doc" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../../t-ug002/concepts/example_explorer.html" id="doc-d16877e1173-link">Example Explorer</a><div class="wh-tooltip"><p class="shortdesc">General Description of the Typhoon HIL Control Center         Example Explorer.</p></div></div></div></li><li role="treeitem"><div data-tocid="doc-d16877e1184" class="topicref" data-id="doc" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../../t-ug002/topics/signal_access_management.html" id="doc-d16877e1184-link">Signal Access Management</a><div class="wh-tooltip"><p class="shortdesc">This feature allows you to change the visibility of signals</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="doc-d16877e1196" class="topicref" data-id="doc" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action doc-d16877e1196-link" class="wh-expand-btn"></span><div class="title"><a href="../../t-ug002/concepts/schematic_editor.html" id="doc-d16877e1196-link">Schematic Editor</a><div class="wh-tooltip"><p class="shortdesc">Introduction to the Schematic Editor tool in Typhoon HIL software toolchain</p></div></div></div></li><li role="treeitem"><div data-tocid="doc-d16877e1712" class="topicref" data-id="doc" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../../t-ug002/concepts/typhoonsim_solvers_guide.html" id="doc-d16877e1712-link">TyphoonSim Solver Engine</a><div class="wh-tooltip"><p class="shortdesc">Summary of the TyphoonSim solver engine algorithms and capabilities   as well as its modeling principles and simulation workflow.</p></div></div></div></li><li role="treeitem"><div data-tocid="doc-d16877e1723" class="topicref" data-id="doc" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../../t-ug002/topics/general_simulation_context_definitions.html" id="doc-d16877e1723-link">Simulation context definitions</a><div class="wh-tooltip"><p class="shortdesc">Introductory overview of the different simulation contexts - Real-time (VHIL) and     TyphoonSim. Core library component and feature availability and visibility for each of these     contexts are explained in detail.</p></div></div></div></li><li role="treeitem" aria-expanded="true"><div data-tocid="doc-d16877e1734" class="topicref" data-id="doc" data-state="expanded"><span role="button" tabindex="0" aria-labelledby="button-collapse-action doc-d16877e1734-link" class="wh-expand-btn"></span><div class="title"><a href="../../t-ug002/concepts/schematic_editor_component_libraries.html" id="doc-d16877e1734-link">Schematic Editor Component Libraries</a><div class="wh-tooltip"><p class="shortdesc">Detailed functionality and use of the pre-built Component Libraries in Schematic   Editor</p></div></div></div><ul role="group" class="navbar-nav nav-list"><li role="treeitem" aria-expanded="false"><div data-tocid="doc-d16877e1745" class="topicref" data-id="doc" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action doc-d16877e1745-link" class="wh-expand-btn"></span><div class="title"><a href="../../t-ug002/concepts/modeling_principles.html" id="doc-d16877e1745-link">Modeling principles</a><div class="wh-tooltip"><p class="shortdesc">This section describes modeling principles used in Typhoon HIL's software.</p></div></div></div></li><li role="treeitem"><div data-tocid="doc-d16877e2042" class="topicref" data-id="doc" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../../t-ug002/concepts/model_partitioning.html" id="doc-d16877e2042-link">Model partitioning</a><div class="wh-tooltip"><p class="shortdesc">This section describes the general motivation and gives some practical guidelines for         model partitioning.</p></div></div></div></li><li role="treeitem" aria-expanded="true"><div data-tocid="doc-d16877e2053" class="topicref" data-id="doc" data-state="expanded"><span role="button" tabindex="0" aria-labelledby="button-collapse-action doc-d16877e2053-link" class="wh-expand-btn"></span><div class="title"><a href="../../t-ug002/topics/component_library.html" id="doc-d16877e2053-link">Component Library</a><div class="wh-tooltip"><p class="shortdesc">Description of the general properties of the component library in Schematic     Editor, including a list of the main types of components available in it.</p></div></div></div><ul role="group" class="navbar-nav nav-list"><li role="treeitem" aria-expanded="false"><div data-tocid="doc-d16877e2064" class="topicref" data-id="doc" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action doc-d16877e2064-link" class="wh-expand-btn"></span><div class="title"><a href="../../t-ug002/topics/circuit_breakers.html" id="doc-d16877e2064-link">Circuit breakers</a><div class="wh-tooltip"><p class="shortdesc">This section describes the general properties of all circuit breaker components in     Typhoon HIL Schematic Editor. There are currently 2 different circuit breaker components in     Schematic Editor.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="doc-d16877e2097" class="topicref" data-id="doc" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action doc-d16877e2097-link" class="wh-expand-btn"></span><div class="title"><a href="../../t-ug002/References/communication.html" id="doc-d16877e2097-link">Communication</a><div class="wh-tooltip"><p class="shortdesc">Summary of the Communication components available in Schematic Editor</p></div></div></div></li><li role="treeitem"><div data-tocid="doc-d16877e2507" class="topicref" data-id="doc" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../../t-ug002/topics/contactors.html" id="doc-d16877e2507-link">Contactors</a><div class="wh-tooltip"><p class="shortdesc">This section provides a general description of contactors components in Typhoon HIL     Schematic Editor</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="doc-d16877e2518" class="topicref" data-id="doc" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action doc-d16877e2518-link" class="wh-expand-btn"></span><div class="title"><a href="../../t-ug002/topics/converters.html" id="doc-d16877e2518-link">Converters</a><div class="wh-tooltip"><p class="shortdesc">This section provides a general description of converter components in Typhoon HIL   Schematic Editor</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="doc-d16877e3361" class="topicref" data-id="doc" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action doc-d16877e3361-link" class="wh-expand-btn"></span><div class="title"><a href="../../t-ug002/topics/converters-extras.html" id="doc-d16877e3361-link">Converters - extras</a><div class="wh-tooltip"><p class="shortdesc">This section describes additional components related to converter modeling.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="doc-d16877e3405" class="topicref" data-id="doc" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action doc-d16877e3405-link" class="wh-expand-btn"></span><div class="title"><a href="../../t-ug002/topics/hil_interfaces.html" id="doc-d16877e3405-link">HIL Interfaces</a><div class="wh-tooltip"><p class="shortdesc">This section describes the HIL Interface components in Typhoon HIL Schematic     Editor.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="doc-d16877e3582" class="topicref" data-id="doc" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action doc-d16877e3582-link" class="wh-expand-btn"></span><div class="title"><a href="../../t-ug002/topics/machines.html" id="doc-d16877e3582-link">Machines</a><div class="wh-tooltip"><p class="shortdesc">This section describes the concepts used in the modeling and implementation of     electrical machine components in Typhoon HIL Schematic Editor.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="doc-d16877e3980" class="topicref" data-id="doc" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action doc-d16877e3980-link" class="wh-expand-btn"></span><div class="title"><a href="../../t-ug002/topics/measurements.html" id="doc-d16877e3980-link">Measurements</a><div class="wh-tooltip"><p class="shortdesc">This section describes measurement components in Schematic Editor, including voltage and     current measurements and RMS measurements.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="doc-d16877e4013" class="topicref" data-id="doc" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action doc-d16877e4013-link" class="wh-expand-btn"></span><div class="title"><a href="../../t-ug002/topics/microgrid.html" id="doc-d16877e4013-link">Microgrid</a><div class="wh-tooltip"><p class="shortdesc">This section describes the Microgrid library category in Typhoon HIL Schematic Editor. </p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="doc-d16877e4472" class="topicref" data-id="doc" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action doc-d16877e4472-link" class="wh-expand-btn"></span><div class="title"><a href="../../t-ug002/topics/circuit_partitioning_components.html" id="doc-d16877e4472-link">Model Partitioning Components</a><div class="wh-tooltip"><p class="shortdesc">This section describes the general properties of circuit properties components in     Typhoon HIL's Schematic Editor, such as core couplings, device couplings, core markers, device     markers, etc.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="doc-d16877e4583" class="topicref" data-id="doc" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action doc-d16877e4583-link" class="wh-expand-btn"></span><div class="title"><a href="../../t-ug002/References/passive_components.html" id="doc-d16877e4583-link">Passive components</a><div class="wh-tooltip"><p class="shortdesc">This section describes passive components, including linear passive components,   nonlinear passive components, and variable passive components.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="doc-d16877e4682" class="topicref" data-id="doc" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action doc-d16877e4682-link" class="wh-expand-btn"></span><div class="title"><a href="../../t-ug002/topics/phil_interfaces.html" id="doc-d16877e4682-link">PHIL Interfaces</a><div class="wh-tooltip"><p class="shortdesc">This section describes the general properties of Power Hardware-In-the-Loop (PHIL)     interface components.</p></div></div></div></li><li role="treeitem"><div data-tocid="doc-d16877e4737" class="topicref" data-id="doc" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../../t-ug002/References/port_components.html" id="doc-d16877e4737-link">Port components</a><div class="wh-tooltip"><p class="shortdesc">Description of the collection of Port components in Schematic Editor, which are used         to connect internal subsystem elements to the outside schematic.</p></div></div></div></li><li role="treeitem" aria-expanded="true"><div data-tocid="doc-d16877e4748" class="topicref" data-id="doc" data-state="expanded"><span role="button" tabindex="0" aria-labelledby="button-collapse-action doc-d16877e4748-link" class="wh-expand-btn"></span><div class="title"><a href="../../t-ug002/topics/signal_processing_components.html" id="doc-d16877e4748-link">Signal Processing Components</a><div class="wh-tooltip"><p class="shortdesc">This section describes the general properties of all signal processing components in     the Typhoon HIL Schematic Editor core library.</p></div></div></div><ul role="group" class="navbar-nav nav-list"><li role="treeitem" aria-expanded="false"><div data-tocid="doc-d16877e4759" class="topicref" data-id="doc" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action doc-d16877e4759-link" class="wh-expand-btn"></span><div class="title"><a href="../../t-ug002/References/discrete.html" id="doc-d16877e4759-link">Discrete</a><div class="wh-tooltip"><p class="shortdesc">Overview of the components available in the Discrete sub-section of the Signal     Processing library components in Schematic Editor.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="doc-d16877e4914" class="topicref" data-id="doc" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action doc-d16877e4914-link" class="wh-expand-btn"></span><div class="title"><a href="../../t-ug002/References/extras.html" id="doc-d16877e4914-link">Extras</a><div class="wh-tooltip"><p class="shortdesc">Summary of the Extra components in Schematic Editor</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="doc-d16877e5191" class="topicref" data-id="doc" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action doc-d16877e5191-link" class="wh-expand-btn"></span><div class="title"><a href="../../t-ug002/References/functions_and_tables.html" id="doc-d16877e5191-link">Functions and Tables</a><div class="wh-tooltip"><p class="shortdesc">Summary of the Functions and Tables components available in Schematic     Editor.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="doc-d16877e5257" class="topicref" data-id="doc" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action doc-d16877e5257-link" class="wh-expand-btn"></span><div class="title"><a href="../../t-ug002/References/logical.html" id="doc-d16877e5257-link">Logical Operations</a><div class="wh-tooltip"><p class="shortdesc">Summary of the Logical components available in Schematic Editor.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="doc-d16877e5312" class="topicref" data-id="doc" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action doc-d16877e5312-link" class="wh-expand-btn"></span><div class="title"><a href="../../t-ug002/References/math_operations.html" id="doc-d16877e5312-link">Math Operations</a><div class="wh-tooltip"><p class="shortdesc">Summary of the Math Operations components available in Schematic Editor.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="doc-d16877e5445" class="topicref" data-id="doc" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action doc-d16877e5445-link" class="wh-expand-btn"></span><div class="title"><a href="../../t-ug002/References/power_measurements.html" id="doc-d16877e5445-link">Power Measurements</a><div class="wh-tooltip"><p class="shortdesc">Summary of the Power Measurements components available in Schematic Editor.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="doc-d16877e5556" class="topicref" data-id="doc" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action doc-d16877e5556-link" class="wh-expand-btn"></span><div class="title"><a href="../../t-ug002/References/power_systems.html" id="doc-d16877e5556-link">Power Systems</a><div class="wh-tooltip"><p class="shortdesc">Summary of the Power Systems components available in Schematic Editor.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="doc-d16877e5677" class="topicref" data-id="doc" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action doc-d16877e5677-link" class="wh-expand-btn"></span><div class="title"><a href="../../t-ug002/References/sinks.html" id="doc-d16877e5677-link">Sinks</a><div class="wh-tooltip"><p class="shortdesc">Summary of the Sinks components available in Schematic Editor.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="doc-d16877e5732" class="topicref" data-id="doc" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action doc-d16877e5732-link" class="wh-expand-btn"></span><div class="title"><a href="../../t-ug002/References/sources.html" id="doc-d16877e5732-link">Signal Processing Sources</a><div class="wh-tooltip"><p class="shortdesc">Summary of the Source components available through the Signal Processing category of     the Schematic Editor core library.</p></div></div></div></li><li role="treeitem" aria-expanded="true"><div data-tocid="doc-d16877e5898" class="topicref" data-id="doc" data-state="expanded"><span role="button" tabindex="0" aria-labelledby="button-collapse-action doc-d16877e5898-link" class="wh-expand-btn"></span><div class="title"><a href="../../t-ug002/References/system.html" id="doc-d16877e5898-link">System</a><div class="wh-tooltip"><p class="shortdesc">Summary of the System signal processing components available in Schematic Editor.</p></div></div></div><ul role="group" class="navbar-nav nav-list"><li role="treeitem"><div data-tocid="doc-d16877e5909" class="topicref" data-id="doc" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../../t-ug002/References/boolean_join.html" id="doc-d16877e5909-link">Boolean Join</a><div class="wh-tooltip"><p class="shortdesc">Description of the Boolean Join component in Schematic Editor, which converts boolean         values into an unsigned integer signal.</p></div></div></div></li><li role="treeitem"><div data-tocid="doc-d16877e5920" class="topicref" data-id="doc" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../../t-ug002/References/boolean_split.html" id="doc-d16877e5920-link">Boolean Split</a><div class="wh-tooltip"><p class="shortdesc"> Description of the Boolean Split component in Schematic Editor, which is used to     convert an unsigned integer value into binary signals using weighted binary code. </p></div></div></div></li><li role="treeitem"><div data-tocid="doc-d16877e5931" class="topicref" data-id="doc" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../../t-ug002/References/bus_join.html" id="doc-d16877e5931-link">Bus Join</a><div class="wh-tooltip"><p class="shortdesc">Description of the Bus Join component in Schematic Editor, which concatenates input         signals into a bus.</p></div></div></div></li><li role="treeitem"><div data-tocid="doc-d16877e5942" class="topicref" data-id="doc" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../../t-ug002/References/bus_modify.html" id="doc-d16877e5942-link">Bus Modify</a><div class="wh-tooltip"><p class="shortdesc">Description of the Bus Modify component in Schematic Editor, which changes one             (or more) elements in the input vector and outputs a modified vector signal.</p></div></div></div></li><li role="treeitem"><div data-tocid="doc-d16877e5953" class="topicref" data-id="doc" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../../t-ug002/References/bus_selector.html" id="doc-d16877e5953-link">Bus Selector</a><div class="wh-tooltip"><p class="shortdesc"> Description of the Bus Selector component in Schematic Editor, which transposes             signals from an input vector and outputs a scalar and/or a vector signal.</p></div></div></div></li><li role="treeitem"><div data-tocid="doc-d16877e5964" class="topicref" data-id="doc" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../../t-ug002/References/bus_split.html" id="doc-d16877e5964-link">Bus Split</a><div class="wh-tooltip"><p class="shortdesc"> Description of the Bus Split components in Schematic Editor, which are used to split     vectors from its input, convert vectors into scalars, or make vectors on its outputs. </p></div></div></div></li><li role="treeitem"><div data-tocid="doc-d16877e5975" class="topicref" data-id="doc" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../../t-ug002/References/cpu_time_slot_utilization.html" id="doc-d16877e5975-link">CPU Time Slot utilization</a><div class="wh-tooltip"><p class="shortdesc">Description of the CPU Time Slot utilization in Schematic Editor.</p></div></div></div></li><li role="treeitem"><div data-tocid="doc-d16877e5986" class="topicref" data-id="doc" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../../t-ug002/References/data_type_conversion.html" id="doc-d16877e5986-link">Data Type Conversion</a><div class="wh-tooltip"><p class="shortdesc">Description of the Data Type Conversion components in Schematic Editor, which         converts the data type of the input signal into a selected data type.</p></div></div></div></li><li role="treeitem"><div data-tocid="doc-d16877e5997" class="topicref" data-id="doc" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../../t-ug002/References/hil_flag_status.html" id="doc-d16877e5997-link">HIL Flags Status</a><div class="wh-tooltip"><p class="shortdesc"> Description of the HIL Flags Status component in Schematic Editor, which outputs the     flag status of HIL device. </p></div></div></div></li><li role="treeitem"><div data-tocid="doc-d16877e6008" class="topicref" data-id="doc" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../../t-ug002/References/multiport_signal_switch.html" id="doc-d16877e6008-link">Multiport Signal Switch</a><div class="wh-tooltip"><p class="shortdesc">Description of the Multiport Signal Switch component in Schematic Editor, which         selects one of several inputs depending on the value of a control signal.</p></div></div></div></li><li role="treeitem"><div data-tocid="doc-d16877e6020" class="topicref" data-id="doc" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../../t-ug002/References/rate_transition.html" id="doc-d16877e6020-link">Rate Transition</a><div class="wh-tooltip"><p class="shortdesc">Description of the Rate Transition component in Schematic Editor, which manages data         transfer between circuits that operate at different execution rates.</p></div></div></div></li><li role="treeitem"><div data-tocid="doc-d16877e6031" class="topicref" data-id="doc" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../../t-ug002/References/signal_switch.html" id="doc-d16877e6031-link">Signal Switch</a><div class="wh-tooltip"><p class="shortdesc">Description of the Signal Switch component, which selects one of two inputs depending         on the value of a control signal.</p></div></div></div></li><li role="treeitem" class="active"><div data-tocid="doc-d16877e6042" class="topicref" data-id="doc" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../../t-ug002/References/time_synchronization.html" id="doc-d16877e6042-link">Time synchronization</a><div class="wh-tooltip"><p class="shortdesc">This section describes how to perform time synchronization of HIL         device(s).</p></div></div></div></li><li role="treeitem"><div data-tocid="doc-d16877e6053" class="topicref" data-id="doc" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../../t-ug002/References/timestamp_to_datetime.html" id="doc-d16877e6053-link">Timestamp To Datetime</a><div class="wh-tooltip"><p class="shortdesc">This section describes the use of the Timestamp To Datetime component.</p></div></div></div></li></ul></li></ul></li><li role="treeitem" aria-expanded="false"><div data-tocid="doc-d16877e6064" class="topicref" data-id="doc" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action doc-d16877e6064-link" class="wh-expand-btn"></span><div class="title"><a href="../../t-ug002/topics/sources.html" id="doc-d16877e6064-link">Sources</a><div class="wh-tooltip"><p class="shortdesc">This section describes source components in Schematic Editor, including independent   sources, controlled sources, externally controlled sources, signal controlled sources, batteries,   photovoltaic panels, constant power loads/sources, and engine-generator sources.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="doc-d16877e6222" class="topicref" data-id="doc" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action doc-d16877e6222-link" class="wh-expand-btn"></span><div class="title"><a href="../../t-ug002/topics/system_library.html" id="doc-d16877e6222-link">System</a><div class="wh-tooltip"><p class="shortdesc">This section describes additional components in the System library in Schematic   Editor</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="doc-d16877e6321" class="topicref" data-id="doc" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action doc-d16877e6321-link" class="wh-expand-btn"></span><div class="title"><a href="../../t-ug002/topics/test_suite.html" id="doc-d16877e6321-link">Test Suite</a><div class="wh-tooltip"><p class="shortdesc">This section describes the Test Suite components of Typhoon HIL's built in Schematic Editor Library,     which currently includes the grid simulator, DC measurements, anti-islanding container, and     grid fault components.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="doc-d16877e6398" class="topicref" data-id="doc" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action doc-d16877e6398-link" class="wh-expand-btn"></span><div class="title"><a href="../../t-ug002/topics/transformers.html" id="doc-d16877e6398-link">Transformers</a><div class="wh-tooltip"><p class="shortdesc">This section describes the general properties of all transformer components in Typhoon     HIL's Schematic Editor, such as an ideal transformer, a single-phase three winding transformer,     a three-phase four winding transformer, etc.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="doc-d16877e6553" class="topicref" data-id="doc" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action doc-d16877e6553-link" class="wh-expand-btn"></span><div class="title"><a href="../../t-ug002/topics/transmission_lines.html" id="doc-d16877e6553-link">Transmission lines</a><div class="wh-tooltip"><p class="shortdesc">This section describes the general properties of all transmission line type components     in Schematic Editor. </p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="doc-d16877e6619" class="topicref" data-id="doc" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action doc-d16877e6619-link" class="wh-expand-btn"></span><div class="title"><a href="../../t-ug002/topics/typhoonsim_components.html" id="doc-d16877e6619-link">TyphoonSim</a><div class="wh-tooltip"><p class="shortdesc">This section describes general properties of the TyphoonSim specific components in Typhoon     HIL's Schematic Editor</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="doc-d16877e6685" class="topicref" data-id="doc" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action doc-d16877e6685-link" class="wh-expand-btn"></span><div class="title"><a href="../../t-ug002/topics/component_additional_information.html" id="doc-d16877e6685-link">Component additional information</a><div class="wh-tooltip"><p class="shortdesc">This section describes the general properties of several components in Typhoon HIL's     Schematic Editor whose feature set and capabilities require separate sections.</p></div></div></div></li></ul></li></ul></li><li role="treeitem" aria-expanded="false"><div data-tocid="doc-d16877e6773" class="topicref" data-id="doc" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action doc-d16877e6773-link" class="wh-expand-btn"></span><div class="title"><a href="../../t-ug002/concepts/third-party_integrations.html" id="doc-d16877e6773-link">Third-party integrations</a><div class="wh-tooltip"><p class="shortdesc">This section provides an overview of the key third party integrations within Typhoon     HIL's toolchain.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="doc-d16877e6828" class="topicref" data-id="doc" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action doc-d16877e6828-link" class="wh-expand-btn"></span><div class="title"><a href="../../t-ug002/concepts/hil_scada.html" id="doc-d16877e6828-link">HIL SCADA</a><div class="wh-tooltip"><p class="shortdesc">Description of the HIL SCADA tool in Typhoon HIL Control Center</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="doc-d16877e7379" class="topicref" data-id="doc" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action doc-d16877e7379-link" class="wh-expand-btn"></span><div class="title"><a href="../../t-ug002/concepts/wave_generator_tool.html" id="doc-d16877e7379-link">Waveform Generator</a><div class="wh-tooltip"><p class="shortdesc">This section describes the waveform generator tool in Typhoon HIL Control Center.</p></div></div></div></li><li role="treeitem"><div data-tocid="doc-d16877e7467" class="topicref" data-id="doc" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../../t-ug002/concepts/test_and_calibration_tool.html" id="doc-d16877e7467-link">Test and Calibration Tool</a><div class="wh-tooltip"><p class="shortdesc">Description of the Test and Calibration tool in Typhoon HIL Control Center</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="doc-d16877e7478" class="topicref" data-id="doc" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action doc-d16877e7478-link" class="wh-expand-btn"></span><div class="title"><a href="../../t-ug002/concepts/typhoontest_ide.html" id="doc-d16877e7478-link">TyphoonTest IDE</a><div class="wh-tooltip"><p class="shortdesc">This section describes TyphoonTest IDE</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="doc-d16877e7588" class="topicref" data-id="doc" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action doc-d16877e7588-link" class="wh-expand-btn"></span><div class="title"><a href="../../t-ug002/concepts/signal_analyzer.html" id="doc-d16877e7588-link">Signal Analyzer</a><div class="wh-tooltip"><p class="shortdesc">Description of the Signal Analyzer tool in Typhoon HIL Control Center.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="doc-d16877e7610" class="topicref" data-id="doc" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action doc-d16877e7610-link" class="wh-expand-btn"></span><div class="title"><a href="../../t-ug002/concepts/lookup_table_extraction_tool.html" id="doc-d16877e7610-link">Lookup table extraction tool</a><div class="wh-tooltip"><p class="shortdesc">Description of the Typhoon HIL Control Center tool for extracting characteristics (lookup tables) from datasheet graphs and charts into a format that can be imported by non-linear models.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="doc-d16877e7677" class="topicref" data-id="doc" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action doc-d16877e7677-link" class="wh-expand-btn"></span><div class="title"><a href="../../t-ug002/concepts/package_manager.html" id="doc-d16877e7677-link">Package Manager</a><div class="wh-tooltip"><p class="shortdesc">Description of the Typhoon HIL Control Center tool for creating and managing Typhoon packages that contain Schematic examples, Schematic and widget libraries, documentation etc.</p></div></div></div></li><li role="treeitem"><div data-tocid="doc-d16877e7798" class="topicref" data-id="doc" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../../t-ug002/concepts/usage_logging.html" id="doc-d16877e7798-link">Usage Logging</a><div class="wh-tooltip"><p class="shortdesc">This section briefly describes Typhoon HIL software logging feature.</p></div></div></div></li><li role="treeitem"><div data-tocid="doc-d16877e7809" class="topicref" data-id="doc" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../../t-ug002/concepts/python_interpreters.html" id="doc-d16877e7809-link">Python Interpreters</a><div class="wh-tooltip"><p class="shortdesc">Overview of how you can use Typhoon HIL Python Interpreters to further customize your         test files.</p></div></div></div></li></ul></li></ul></div>
+		                        
+                            </div>
+                        </nav>
+                    
+                    
+                    <div class="col-lg-7 col-md-9 col-sm-12" id="wh_topic_body">
+                        <button id="wh_close_publication_toc_button" class="close-toc-button d-none" aria-label="Toggle publishing table of content" aria-controls="wh_publication_toc" aria-expanded="true">
+                            <span class="close-toc-icon-container">
+                                <span class="close-toc-icon"></span>     
+                            </span>
+                        </button>
+                        <button id="wh_close_topic_toc_button" class="close-toc-button d-none" aria-label="Toggle topic table of content" aria-controls="wh_topic_toc" aria-expanded="true">
+                            <span class="close-toc-icon-container">
+                                <span class="close-toc-icon"></span>     
+                            </span>
+                        </button>
+                        
+                        <div class=" wh_topic_content body "><main role="main"><article role="article" aria-labelledby="ariaid-title1">
+    <h1 class="- topic/title title topictitle1" id="ariaid-title1">Time synchronization</h1>
+    
+    <div class="- topic/body reference/refbody body refbody"><p class="- topic/shortdesc shortdesc">This section describes how to perform time synchronization of HIL
+        device(s).</p>
+        <section class="- topic/section section" id="doc__Rvgn6H4U4" data-ofbid="doc__Rvgn6H4U4">
+            <div class="- topic/note note note note_note typhoonsim_ignored"><span class="note__title">Component Ignored:</span> This component
+                is ignored in TyphoonSim. Inputs to this component will be discarded and outputs
+                from the component will be zeroed during TyphoonSim simulation.</div>
+        <div class="- topic/note note note note_note typhoonsim_notsupported"><span class="note__title">Real-time only:</span> This document is valid only for real-time/VHIL
+                simulation.</div></section>
+        <section class="- topic/section section" id="doc__section_asc_yhm_jbb" data-ofbid="doc__section_asc_yhm_jbb"><h2 class="- topic/title title sectiontitle">IRIG-B</h2>
+            
+            <p class="- topic/p p">IRIG-B is a serial date-time format consisting of a 1-second frame that contains
+                100 pulses divided into fields. The time-synchronized device decodes the second,
+                minute, hour and day fields and sets its internal time clock upon detecting the
+                valid time data in the IRIG time mode.</p>
+            <p class="- topic/p p">HIL devices support unmodulated IRIG-B input. The unmodulated IRIG-B time-code is
+                    IRIG-B00<em class="+ topic/ph hi-d/i ph i">x</em>. The last digit, either 2 or 0, indicates the coded
+                expression(s).</p>
+            <p class="- topic/p p">The time-code format IRIG-B002 is a binary-coded decimal (BCD) timecode (HH, MM,
+                SS, DDD). This format represents the traditional, or legacy IRIG-B.</p>
+            <p class="- topic/p p">The time-code format IRIG-B000 consists of a BCD timecode (HH, MM, SS, DDD), plus
+                straight binary seconds (SBS) of the day (0-86400 s), and also contains control
+                function extensions that include data for: year, leap seconds, daylight time,
+                UTC time offset, time quality and parity (odd).</p>
+            <p class="- topic/p p"><strong class="+ topic/ph hi-d/b ph b">When using the IRIG-B000 time-code format, the HIL device will only parse
+                    timecode data.</strong></p>
+            <p class="- topic/p p">Time synchronization can be achieved with a precision of 100th of a second. This
+                means that the HIL device will decode the tens of seconds, second, minute, hour and
+                day fields and will set the internal time clock upon detecting the valid time data
+                in the IRIG time mode at the resolution of 10 ms.</p>
+        </section>
+        <section class="- topic/section section" id="doc__section_t5w_3bl_wwb" data-ofbid="doc__section_t5w_3bl_wwb"><h2 class="- topic/title title sectiontitle">PTP</h2>
+            
+            <p class="- topic/p p">The Precision Time Protocol (PTP) is a protocol used to synchronize clocks
+                throughout a computer network. On a local area network, it achieves clock
+                accuracy in the sub-microsecond range, making it suitable for measurement and
+                control systems. PTP is described in the IEE 1588 standard.</p>
+            <p class="- topic/p p">The IEEE 1588 standards describe a hierarchical master–slave architecture for
+                clock distribution. Under this architecture, a time distribution system consists
+                of one or more communication media (network segments), and one or more clocks.
+                An ordinary clock is a device with a single network connection and is either the
+                source of (master or leader) or destination for (slave or follower) a
+                synchronization reference. A boundary clock has multiple network connections and
+                can accurately synchronize one network segment to another. A synchronization
+                master is selected for each of the network segments in the system. The root
+                timing reference is called the grandmaster. The grandmaster transmits
+                synchronization information to the clocks residing on its network segment.</p>
+            <p class="- topic/p p">An example of a PTP network architecture is shown in <a class="- topic/xref xref" href="#doc__fig_o55_s2l_wwb">Figure 1</a>.</p>
+            <figure class="- topic/fig fig fignone" id="doc__fig_o55_s2l_wwb" data-ofbid="doc__fig_o55_s2l_wwb"><figcaption class="- topic/title title figcapcenter"><span class="figtitleprefix fig--title-label">Figure<span class="fig--title-label-number"> 1</span><span class="fig--title-label-punctuation">. </span></span><span class="fig--title">PTP network architecture [1]</span></figcaption>
+                
+                <div class="imagecenter break"><img class="- topic/image image imagecenter break" id="doc__image_p55_s2l_wwb" src="../Images/time_synchronization_04.PNG" height="280" width="459"/></div>
+            </figure>
+            <p class="- topic/p p">IEEE 1588 includes a profile concept defining PTP operating parameters and
+                options. Several profiles have been defined for applications including
+                telecommunications, electric power distribution and audiovisual.</p>
+            <p class="- topic/p p"><strong class="+ topic/ph hi-d/b ph b">HIL devices are capable of working only as an Ordinary Clock.</strong></p>
+        </section>
+        <section class="- topic/section section" id="doc__section_sjs_nfz_tkb" data-ofbid="doc__section_sjs_nfz_tkb"><h2 class="- topic/title title sectiontitle">Time synchronization usage</h2>
+            
+            <p class="- topic/p p">Three levels of synchronization can be defined for the HIL device:</p><ol class="- topic/ol ol" id="doc__ol_utd_yg2_x1c" data-ofbid="doc__ol_utd_yg2_x1c">
+                    <li class="- topic/li li">
+                        <div class="- topic/div div" id="doc__full_device_synchronization"><p class="- topic/p p"><strong class="+ topic/ph hi-d/b ph b">Full device synchronization</strong></p>
+                        <p class="- topic/p p">HIL device capabilities when fully synchronized include:</p><ul class="- topic/ul ul" id="doc__ul_jfy_zr2_x1c" data-ofbid="doc__ul_jfy_zr2_x1c">
+                                <li class="- topic/li li">Synchronizing the internal device clock, which helps prevent
+                                    drifts over long periods of time</li>
+                                <li class="- topic/li li">Simulation start time synchronization (the simulation will start on
+                                    the second rollover, i.e. at the beginning of the next second)</li>
+                                <li class="- topic/li li">Real time trigger timestamps for signal capture</li>
+                                <li class="- topic/li li">Internal system time synchronization</li>
+                                <li class="- topic/li li">Communication protocols synchronization</li>
+                            </ul><table class="- topic/table table frame-all" id="doc__table_msb_nr2_x1c" data-ofbid="doc__table_msb_nr2_x1c" data-cols="3"><caption class="- topic/title title tablecap" data-caption-side="top" data-is-repeated="true"><span class="table--title-label">Table<span class="table--title-label-number"> 1</span><span class="table--title-label-punctuation">. </span></span><span class="table--title">Device support and configuration</span></caption><colgroup><col style="width:25%"/><col style="width:25%"/><col style="width:50%"/></colgroup><thead class="- topic/thead thead">
+                                    <tr class="- topic/row">
+                                        <th class="- topic/entry entry colsep-1 rowsep-1" id="doc__table_msb_nr2_x1c__entry__1">Synchronization source</th>
+                                        <th class="- topic/entry entry colsep-1 rowsep-1" id="doc__table_msb_nr2_x1c__entry__2">HIL device</th>
+                                        <th class="- topic/entry entry colsep-0 rowsep-1" id="doc__table_msb_nr2_x1c__entry__3"><a class="- topic/xref xref" href="#doc__section_b1k_4kl_wwb">Time Synchronization component</a>
+                                            configuration</th>
+                                    </tr>
+                                </thead><tbody class="- topic/tbody tbody">
+                                    <tr class="- topic/row valign-middle">
+                                        <td class="- topic/entry entry align-center colsep-1 rowsep-1" headers="doc__table_msb_nr2_x1c__entry__1" rowspan="2">PTP</td>
+                                        <td class="- topic/entry entry align-center colsep-1 rowsep-1" headers="doc__table_msb_nr2_x1c__entry__2">HIL101, HIL404, HIL506, and HIL606</td>
+                                        <td class="- topic/entry entry colsep-0 rowsep-1" headers="doc__table_msb_nr2_x1c__entry__3">With PTP as the synchronization source, select any
+                                            available ethernet port and a desired PTP
+                                            configuration</td>
+                                    </tr>
+                                    <tr class="- topic/row">
+                                        <td class="- topic/entry entry align-center colsep-1 rowsep-1" headers="doc__table_msb_nr2_x1c__entry__2">HIL602+ and HIL604 </td>
+                                        <td class="- topic/entry entry colsep-0 rowsep-1" headers="doc__table_msb_nr2_x1c__entry__3">With PTP as the synchronization source, select
+                                            ethernet port 2 and a desired PTP configuration</td>
+                                    </tr>
+                                    <tr class="- topic/row">
+                                        <td class="- topic/entry entry align-center colsep-1 rowsep-0" headers="doc__table_msb_nr2_x1c__entry__1">IRIG-B</td>
+                                        <td class="- topic/entry entry align-center colsep-1 rowsep-0" headers="doc__table_msb_nr2_x1c__entry__2">HIL604, HIL506, and HIL606</td>
+                                        <td class="- topic/entry entry colsep-0 rowsep-0" headers="doc__table_msb_nr2_x1c__entry__3">Select "IRIG-B" as the synchronization source</td>
+                                    </tr>
+                                </tbody></table>
+                        <p class="- topic/p p">In case of full device synchronization of HIL602+ and HIL604 devices over
+                            PTP, ethernet port 2 cannot be used for any other application,
+                            except for the <a class="- topic/xref xref" href="iec_61850_sampled_values_protocol.html" title="Description of the IEC 61850 Sampled Values (SV) protocol implementation in the Typhoon HIL toolchain.">IEC 61850 Sampled Values protocol</a>.</p>
+                        <div class="- topic/note note important note_important" id="doc__note_f4z_nr2_x1c" data-ofbid="doc__note_f4z_nr2_x1c"><span class="note__title">Important:</span> In order to achieve full system
+                            synchronization over PTP, it is necessary to use the hardware time
+                            stamping method.</div></div></li>
+                    <li class="- topic/li li">
+                        <div class="- topic/div div" id="doc__internal_system_time_synchronization"><p class="- topic/p p"><strong class="+ topic/ph hi-d/b ph b">Internal system time synchronization</strong></p>
+                        <p class="- topic/p p">Some applications in the Typhoon HIL toolchain use the HIL device internal
+                            system time as a synchronization source. For this reason, the internal
+                            system time of a HIL device can be synchronized using PTP, even on
+                            devices that do not support full device synchronization.
+                            </p><p class="- topic/p p">Applications that are synchronized by the internal system device
+                                time:</p><ul class="- topic/ul ul" id="doc__ul_ssn_hff_x1c" data-ofbid="doc__ul_ssn_hff_x1c">
+                                <li class="- topic/li li"><a class="- topic/xref xref" href="c37_118_protocol.html" title="Description of the IEEE C37.118 protocol and its implementation in the Typhoon HIL toolchain.">IEEE C37.118 protocol</a></li>
+                            </ul><p class="- topic/p p"><a class="- topic/xref xref" href="#doc__section_b1k_4kl_wwb">Time Synchronization component</a>
+                                configuration for internal system time synchronization over PTP:</p><ul class="- topic/ul ul" id="doc__ul_z1v_bgf_x1c" data-ofbid="doc__ul_z1v_bgf_x1c">
+                                <li class="- topic/li li">Select "PTP" as the synchronization source</li>
+                                <li class="- topic/li li">Select the ethernet port 1</li>
+                                <li class="- topic/li li">Select a preset or configure a custom PTP configuration<div class="- topic/note note important note_important" id="doc__note_c1v_ggf_x1c" data-ofbid="doc__note_c1v_ggf_x1c"><span class="note__title">Important:</span> In order to
+                                        synchronize the internal system time on a device that does
+                                        not support full device synchronization, it is necessary to
+                                        use the software time stamping method.</div></li>
+                            </ul></div></li>
+                    <li class="- topic/li li">
+                        <div class="- topic/div div" id="doc__individual_protocol_synchronization"><p class="- topic/p p"><strong class="+ topic/ph hi-d/b ph b">Individual communication
+                            protocols synchronization</strong></p>
+                        <p class="- topic/p p">For supported protocols, it is possible to configure individual,
+                            application-based synchronization without having full system
+                            synchronization. Instructions for each protocol are located on their
+                            <a class="- topic/xref xref" href="communication.html" title="Summary of the Communication components available in Schematic Editor">respective documentation pages</a>.</p>
+                        <p class="- topic/p p">Communication protocols that support application-based time
+                        synchronization include:</p><ul class="- topic/ul ul" id="doc__ul_q2y_mn2_x1c" data-ofbid="doc__ul_q2y_mn2_x1c">
+                                <li class="- topic/li li"><a class="- topic/xref xref" href="iec_61850_sampled_values_protocol.html" title="Description of the IEC 61850 Sampled Values (SV) protocol implementation in the Typhoon HIL toolchain.">IEC 61850 Sampled Values protocol</a></li>
+                            </ul></div>
+                    </li>
+                </ol>
+            <p class="- topic/p p">To better understand the usage of time synchronization, three cases will be
+                described:</p><ul class="- topic/ul ul" id="doc__ul_ehs_sfz_tkb" data-ofbid="doc__ul_ehs_sfz_tkb">
+                    <li class="- topic/li li">HIL working in standalone mode (without synchronization)</li>
+                    <li class="- topic/li li">HIL connected to PC (without synchronization)</li>
+                    <li class="- topic/li li">HIL with IRIG-B/PTP connection</li>
+                </ul>
+            <table class="- topic/table table frame-all" id="doc__table_mpx_dgz_tkb" data-ofbid="doc__table_mpx_dgz_tkb" data-cols="2"><caption class="- topic/title title tablecap" data-caption-side="top" data-is-repeated="true"><span class="table--title-label">Table<span class="table--title-label-number"> 2</span><span class="table--title-label-punctuation">. </span></span><span class="table--title">Time synchronization usage explained</span></caption><colgroup><col style="width:35.46099290780141%"/><col style="width:64.53900709219857%"/></colgroup><thead class="- topic/thead thead">
+                        <tr class="- topic/row">
+                            <th class="- topic/entry entry align-center colsep-1 rowsep-1" id="doc__table_mpx_dgz_tkb__entry__1">HIL Configuration</th>
+                            <th class="- topic/entry entry colsep-0 rowsep-1" id="doc__table_mpx_dgz_tkb__entry__2">Description</th>
+                        </tr>
+                    </thead><tbody class="- topic/tbody tbody">
+                        <tr class="- topic/row">
+                            <td class="- topic/entry entry align-center colsep-1 rowsep-1" headers="doc__table_mpx_dgz_tkb__entry__1"><img class="- topic/image image" id="doc__image_lfx_qjz_tkb" src="../Images/time_synchronization_01.png" height="49" width="210"/><p class="- topic/p p">HIL working in
+                                    standalone mode</p></td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="doc__table_mpx_dgz_tkb__entry__2">When the HIL is tuning during standalone boot, without a connection
+                                to the PC, the HIL time will start counting from January 1,
+                                1970. All the network messages (coming from the
+                                communication protocols) will be stamped with this time value.
+                            </td>
+                        </tr>
+                        <tr class="- topic/row">
+                            <td class="- topic/entry entry align-center colsep-1 rowsep-1" headers="doc__table_mpx_dgz_tkb__entry__1"><img class="- topic/image image" id="doc__image_kpc_tjz_tkb" src="../Images/time_synchronization_02.png" height="129" width="210"/><p class="- topic/p p">HIL connected to
+                                    PC</p></td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="doc__table_mpx_dgz_tkb__entry__2">When the HIL is connected to the PC, the current time is read from
+                                the PC and that time is applied to the HIL.</td>
+                        </tr>
+                        <tr class="- topic/row">
+                            <td class="- topic/entry entry align-center colsep-1 rowsep-0" headers="doc__table_mpx_dgz_tkb__entry__1"><img class="- topic/image image" id="doc__image_lrk_5jz_tkb" src="../Images/time_synchronization_03.png" height="131" width="210"/><p class="- topic/p p">HIL with IRIG-B/PTP
+                                    connection</p></td>
+                            <td class="- topic/entry entry colsep-0 rowsep-0" headers="doc__table_mpx_dgz_tkb__entry__2">When IRIG-B/PTP is connected, the exact time information is
+                                received every second and the HIL time is updated constantly,
+                                ensuring that all network messages have the correct time
+                                stamp.</td>
+                        </tr>
+                    </tbody></table>
+        </section>
+        <section class="- topic/section section" id="doc__section_b1k_4kl_wwb" data-ofbid="doc__section_b1k_4kl_wwb"><h2 class="- topic/title title sectiontitle">Time Synchronization component</h2>
+            
+            <p class="- topic/p p">The Time Synchronization component is used to configure the time synchronization
+                on a HIL device and monitor its status.</p>
+            <figure class="- topic/fig fig fignone" id="doc__fig_dq3_vsb_p1c" data-ofbid="doc__fig_dq3_vsb_p1c"><figcaption class="- topic/title title figcap"><span class="figtitleprefix fig--title-label">Figure<span class="fig--title-label-number"> 2</span><span class="fig--title-label-punctuation">. </span></span><span class="fig--title">Time Synchronization component icon</span></figcaption>
+                
+                <img class="- topic/image image" id="doc__image_fzr_xsb_p1c" src="../Images/time_synchronization_06.png" height="179" width="216"/>
+            </figure>
+            <table class="- topic/table table frame-all" id="doc__table_f4g_cs5_41c" data-ofbid="doc__table_f4g_cs5_41c" data-cols="3"><caption class="- topic/title title tablecap" data-caption-side="top" data-is-repeated="true"><span class="table--title-label">Table<span class="table--title-label-number"> 3</span><span class="table--title-label-punctuation">. </span></span><span class="table--title">Time Synchronization component properties</span></caption><colgroup><col style="width:33.33333333333333%"/><col style="width:33.33333333333333%"/><col style="width:33.33333333333333%"/></colgroup><thead class="- topic/thead thead">
+                        <tr class="- topic/row">
+                            <th class="- topic/entry entry colsep-1 rowsep-1" id="doc__table_f4g_cs5_41c__entry__1">Tab</th>
+                            <th class="- topic/entry entry colsep-1 rowsep-1" id="doc__table_f4g_cs5_41c__entry__2">Property name</th>
+                            <th class="- topic/entry entry colsep-0 rowsep-1" id="doc__table_f4g_cs5_41c__entry__3">Description</th>
+                        </tr>
+                    </thead><tbody class="- topic/tbody tbody">
+                        <tr class="- topic/row valign-top">
+                            <td class="- topic/entry entry colsep-1 rowsep-1 valign-top" headers="doc__table_f4g_cs5_41c__entry__1" rowspan="6">General</td>
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__table_f4g_cs5_41c__entry__2">Sync source</td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="doc__table_f4g_cs5_41c__entry__3">Choose whether to use PTP or IRIG-B as the synchronization
+                                source</td>
+                        </tr>
+                        <tr class="- topic/row">
+                            <td class="- topic/entry entry colsep-1 rowsep-1 valign-top" headers="doc__table_f4g_cs5_41c__entry__2">Ethernet port</td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="doc__table_f4g_cs5_41c__entry__3">Select the ethernet port through which the PTP signal will be
+                                received</td>
+                        </tr>
+                        <tr class="- topic/row">
+                            <td class="- topic/entry entry colsep-1 rowsep-1 valign-top" headers="doc__table_f4g_cs5_41c__entry__2">Execution rate</td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="doc__table_f4g_cs5_41c__entry__3">Signal Processing execution rate</td>
+                        </tr>
+                        <tr class="- topic/row">
+                            <td class="- topic/entry entry colsep-1 rowsep-1 valign-top" headers="doc__table_f4g_cs5_41c__entry__2">Enable VLAN tagging</td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="doc__table_f4g_cs5_41c__entry__3">Choose whether to enable VLAN tagging for PTP messages or not.
+                            If enabled, outbound PTP messages will be tagged with the defined VLAN
+                            priority and ID values, while the inbound messages are filtered based on
+                            the defined VLAN ID.</td>
+                        </tr>
+                        <tr class="- topic/row">
+                            <td class="- topic/entry entry colsep-1 rowsep-1 valign-top" headers="doc__table_f4g_cs5_41c__entry__2">VLAN priority</td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="doc__table_f4g_cs5_41c__entry__3">Define the network priority of VLAN tagged PTP messages. Allowed
+                            values are from 0 (lowest) to 7 (highest).</td>
+                        </tr>
+                        <tr class="- topic/row">
+                            <td class="- topic/entry entry colsep-1 rowsep-1 valign-top" headers="doc__table_f4g_cs5_41c__entry__2">VLAN ID</td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="doc__table_f4g_cs5_41c__entry__3">Defines the VLAN identifier used to distinguish other VLANs within
+                            the same network. Allowed values are from 0 to 4094</td>
+                        </tr>
+                        <tr class="- topic/row valign-top">
+                            <td class="- topic/entry entry colsep-1 rowsep-0 valign-top" headers="doc__table_f4g_cs5_41c__entry__1">PTP Options</td>
+                            <td class="- topic/entry entry colsep-1 rowsep-0" headers="doc__table_f4g_cs5_41c__entry__2">PTP configuration</td>
+                            <td class="- topic/entry entry colsep-0 rowsep-0" headers="doc__table_f4g_cs5_41c__entry__3">Choose between preconfigured and custom PTP configuration
+                                options. Custom options are expected to be provided as a dictionary
+                                    (<a class="- topic/xref xref" href="#doc__codeblock_ytf_2cd_p1c">example</a>). PTP is based on the Linux <a class="- topic/xref xref" href="https://manpages.ubuntu.com/manpages/bionic/man8/ptp4l.8.html" target="_blank" rel="external noopener">ptp4l</a> library and the
+                                options can be changed according to the library
+                                specification.</td>
+                        </tr>
+                    </tbody></table>
+            <p class="- topic/p p">Predefined IEC 61850-9-3 PTP options include:</p><ul class="- topic/ul ul" id="doc__ul_x54_xfl_wwb" data-ofbid="doc__ul_x54_xfl_wwb">
+                    <li class="- topic/li li">measurement of the link delay is performed by peer-to-peer (Pdelay) message
+                        exchange</li>
+                    <li class="- topic/li li">domainNumber: 0 (default), 93 (when a conflict exist with another PTP time
+                        distribution)</li>
+                    <li class="- topic/li li">Announce interval: 1 s (fixed)</li>
+                    <li class="- topic/li li">Sync interval: 1 s (fixed)</li>
+                    <li class="- topic/li li">Pdelay interval: 1 s (fixed)</li>
+                    <li class="- topic/li li">Announce receipt time-out: 3 s (fixed)</li>
+                    <li class="- topic/li li">priority1: 255 for clientOnly</li>
+                    <li class="- topic/li li">priority2: 255 for clientOnly</li>
+                </ul>
+            <div class="- topic/p p">An example of a custom PTP configuration option is as follows:<pre class="+ topic/pre pr-d/codeblock pre codeblock" id="doc__codeblock_ytf_2cd_p1c" data-ofbid="doc__codeblock_ytf_2cd_p1c"><code>{
+"time_stamping": "hardware",
+"network_transport": "L2",
+"clientOnly": "1",
+"priority1": "255",
+"priority2": "255",
+"domainNumber": "0",
+"delay_mechanism": "E2E",
+"logAnnounceInterval": "0",
+"logSyncInterval": "0",
+"logMinPdelayReqInterval": "0",
+"announceReceiptTimeout": "3"
+}</code></pre></div>
+            <p class="- topic/p p">The Time Synchronization component has five outputs:</p><ul class="- topic/ul ul">
+                    <li class="- topic/li li">GPS - Indicates presence of the external IRIG-B source. A value of 1
+                        indicates that the system is actively being synchronized.</li>
+                    <li class="- topic/li li">PTP - Indicates presence of the external PTP source. A value of 1 indicates
+                        that the system is actively being synchronized.</li>
+                    <li class="- topic/li li">Synchronized - Indication whether the HIL device has achieved full
+                        synchronization or not. The output value will be 1 if the device was
+                        actively being synchronized by the selected external source at simulation
+                        start. If synchronization is lost at any point during the simulation, the
+                        HIL device will be considered out of sync for the remainder of the
+                        simulation, even if synchronization is reestablished.</li>
+                <li class="- topic/li li">UTC seconds - A 32-bit unsigned integer that represents the number of seconds
+                    that have elapsed since January 1, 1970, not counting leap seconds.</li>
+                <li class="- topic/li li">UTC nanoseconds - A 32-bit unsigned integer that represents the sub-second
+                    part the current UTC timestamp, provided in nanoseconds.</li>
+                </ul>
+            <div class="- topic/note note note note_note" id="doc__note_nnj_yyx_ydc" data-ofbid="doc__note_nnj_yyx_ydc"><span class="note__title">Note:</span> Current UTC time provided through the Time Synchronization
+                component corresponds to the <a class="- topic/xref xref" href="#doc__internal_system_time_synchronization">Internal system time</a> of the HIL device</div>
+        </section>
+        <section class="- topic/section section" id="doc__section_ksj_cgl_wwb" data-ofbid="doc__section_ksj_cgl_wwb"><h2 class="- topic/title title sectiontitle">Multi HIL Setup</h2>
+            
+            <p class="- topic/p p">In a multi HIL setup, it is only required to configure time synchronization for the master HIL device.
+            Other HIL devices in the setup will be synchronized through it.</p>
+            <p class="- topic/p p">However, there are some limitations when synchronizing slave/follower HIL devices through the master HIL device, including:</p>
+            <ul class="- topic/ul ul">
+                <li class="- topic/li li">Internal system time on slave/follower HIL devices will not be updated by the master HIL device</li>
+                <li class="- topic/li li">IEC 61850 Sampled Values protocol on slave/follower HIL devices will be synchronized on HIL101, HIL404, HIL602+, HIL604, HIL506, and HIL606 devices</li>
+            </ul>
+            <p class="- topic/p p">To overcome these limitations, slave/follower HIL devices can be additionally configured for dedicated
+            <a class="- topic/xref xref" href="#doc__internal_system_time_synchronization">Internal system time synchronization</a> or
+            <a class="- topic/xref xref" href="#doc__individual_protocol_synchronization">Individual protocol synchronization</a>
+            regardless of whether the master HIL device is synchronized or not.</p>
+            <p class="- topic/p p">The <em class="+ topic/ph hi-d/i ph i">Synchronized</em> output of the Time Synchronization will always be 0 on slave/follower HIL devices.</p>
+        </section>
+        <section class="- topic/section section" id="doc__section_y5d_y1q_y1c" data-ofbid="doc__section_y5d_y1q_y1c"><h2 class="- topic/title title sectiontitle">Virtual HIL support</h2>
+            
+            <p class="- topic/p p">Virtual HIL does not support time synchronization. When
+                using a Virtual HIL environment (e.g. when running the model on a local computer),
+                the configuration of the <a class="- topic/xref xref" href="#doc__section_b1k_4kl_wwb">Time Synchronization component</a> will
+                be discarded and its outputs will be zeroed.</p>
+        </section>
+        <section class="- topic/section section" id="doc__citations" data-ofbid="doc__citations"><h2 class="- topic/title title sectiontitle">References</h2>
+            
+            <ol class="- topic/ol ol" id="doc__ol_bwg_r52_1xb" data-ofbid="doc__ol_bwg_r52_1xb">
+                <li class="- topic/li li" id="doc__1" data-ofbid="doc__1">Industrial Ethernet Book, <a class="- topic/xref xref" href="https://iebmedia.com/technology/industrial-ethernet/safeguarding-ptp-protocol-with-parallel-redundancy-protocol/" target="_blank" rel="external noopener">Safeguarding PTP Protocol with Parallel
+                        Redundancy Protocol</a>, September 20, 2021</li>
+            </ol>
+        </section>
+    </div>
+</article></main></div>
+                        
+                        
+                        
+                        
+                        
+                        
+                    </div>
+                    
+                        <nav role="navigation" id="wh_topic_toc" aria-label="On this page" class="col-lg-2 d-none d-lg-block navbar d-print-none"> 
+                            <div id="wh_topic_toc_content">
+		                        
+	                            <div class=" wh_topic_toc "><div class="wh_topic_label">On this page</div><ul><li class="section-item"><div class="section-title"><a href="#doc__section_asc_yhm_jbb" data-tocid="doc__section_asc_yhm_jbb">IRIG-B</a></div></li><li class="section-item"><div class="section-title"><a href="#doc__section_t5w_3bl_wwb" data-tocid="doc__section_t5w_3bl_wwb">PTP</a></div></li><li class="section-item"><div class="section-title"><a href="#doc__section_sjs_nfz_tkb" data-tocid="doc__section_sjs_nfz_tkb">Time synchronization usage</a></div></li><li class="section-item"><div class="section-title"><a href="#doc__section_b1k_4kl_wwb" data-tocid="doc__section_b1k_4kl_wwb">Time Synchronization component</a></div></li><li class="section-item"><div class="section-title"><a href="#doc__section_ksj_cgl_wwb" data-tocid="doc__section_ksj_cgl_wwb">Multi HIL Setup</a></div></li><li class="section-item"><div class="section-title"><a href="#doc__section_y5d_y1q_y1c" data-tocid="doc__section_y5d_y1q_y1c">Virtual HIL support</a></div></li><li class="section-item"><div class="section-title"><a href="#doc__citations" data-tocid="doc__citations">References</a></div></li></ul></div>
+	                        	
+                        	</div>
+                        </nav>
+                    
+                </div>
+            </div>
+            
+            
+            
+        </div> 
+        <footer class="navbar navbar-default wh_footer">
+  <div class=" footer-container mx-auto ">
+    <div style="text-align:center">Typhoon HIL Inc.<span id="year"> <a href="https://www.typhoon-hil.com">www.typhoon-hil.com</a></span></div>
+  </div>
+</footer>
+        
+        <div id="go2top" class="d-print-none">
+            <span class="oxy-icon oxy-icon-up"></span>
+        </div>
+        
+        <div id="modal_img_large" class="modal">
+            <span class="close oxy-icon oxy-icon-remove"></span>
+            <div id="modal_img_container"></div>
+            <div id="caption"></div>
+        </div>
+        
+        
+<script type="text/javascript" src="../../assets/script.js"> 
+</script>
+
+        
+    </body>
+</html>

@@ -1,0 +1,1 @@
+define({"topics":[{"title":"Series Compensator","shortdesc":"<p class=\"shortdesc\"><span class=\"ph\">Description of the Series Compensator component, for compensating physical inductance of transmission lines.<\/span><\/p>","href":"t-ug002\/References\/series_compensator.html","attributes":{"data-id":"doc"},"menu":{"hasChildren":false},"tocID":"doc-d16877e4273","topics":[]}]});
