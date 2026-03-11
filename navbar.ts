@@ -74,6 +74,18 @@ const navbarItems: NavbarItem[] = [
             },
         ],
     },
+    {
+        to: 'pathname:///docs/index.html', // Link to a page in your API docs
+        label: 'HIL Docs',
+        position: 'left',
+        type: "dropdown",
+        items: [
+            {
+                to: "pathname:///docs/tml_doc/index.html",
+                label: "Typhoon modeling language (TML)",
+            },
+        ],
+    },
     //{ to: '/blog', label: 'Blog', position: 'left' },
     {
         href: 'https://github.com/ruseleredu/hil-docs',
