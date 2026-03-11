@@ -1,0 +1,11 @@
+{
+  "position": 2,
+  "label": "PC",
+  "className": "category-highlight",
+  "link": {
+    "type": "generated-index",
+    "title": "PC",
+    "description": "PC related documentation and resources.",
+    "slug": "/pc"
+  }
+}
