@@ -1,0 +1,417 @@
+<!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en" data-whc_version="24.1">
+    <head><link rel="shortcut icon" href="../../favicon.ico"/><link rel="icon" href="../../favicon.ico"/><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><meta name="DC.rights.owner" content="(C) Copyright 2026"/><meta name="copyright" content="(C) Copyright 2026"/><meta name="generator" content="DITA-OT"/><meta name="DC.type" content="reference"/><meta name="description" content="Demonstration of how two OPC UA servers can be configured and simulated in one HIL device within HIL SCADA"/><meta name="DC.relation" content="../../t-an001/concepts/communication_protocols.html"/><meta name="DC.format" content="HTML5"/><meta name="DC.identifier" content="doc"/>        
+      <title>OPC with HIL SCADA-based client</title><!--  Generated with Oxygen version 24.1, build number 2022030800.  --><meta name="wh-path2root" content="../../"/><meta name="wh-toc-id" content="doc-d16877e372"/><meta name="wh-source-relpath" content="t-an001/References/OPC_UA_SCADA_client.dita"/><meta name="wh-out-relpath" content="t-an001/References/OPC_UA_SCADA_client.html"/>
+    <!-- Latest compiled and minified Bootstrap CSS -->
+    <link rel="stylesheet" type="text/css" href="../../oxygen-webhelp/lib/bootstrap/css/bootstrap.min.css"/>
+    
+    <link rel="stylesheet" href="../../oxygen-webhelp/lib/jquery-ui/jquery-ui.min.css"/>
+    
+    <!-- Template default styles  -->
+    <link rel="stylesheet" type="text/css" href="../../oxygen-webhelp/app/topic-page.css?buildId=2022030800"/>
+    
+    
+    <script src="../../oxygen-webhelp/lib/jquery/jquery-3.5.1.min.js"></script>
+    
+    <script data-main="../../oxygen-webhelp/app/topic-page.js" src="../../oxygen-webhelp/lib/requirejs/require.js"></script>
+<link rel="stylesheet" type="text/css" href="../../oxygen-webhelp/template/oxygen.css?buildId=2022030800"/><link rel="stylesheet" type="text/css" href="../../oxygen-webhelp/template/notes.css?buildId=2022030800"/><script type="text/javascript" src="../../Scripts/mml-svg.js"> 
+</script><link rel="stylesheet" type="text/css" href="../../assets/typhoon.css"/></head>
+
+    <body id="doc" class="wh_topic_page frmBody">
+        <a href="#wh_topic_body" class="sr-only sr-only-focusable">
+            Jump to main content
+        </a>
+        
+        
+        
+        
+        <header class="navbar navbar-default wh_header">
+    <div class="container-fluid">
+        <div class="wh_header_flex_container navbar-nav navbar-expand-md navbar-dark">
+            <div class="wh_logo_and_publication_title_container">
+                <div class="wh_logo_and_publication_title">
+                    
+                    <a href="https://www.typhoon-hil.com" class=" wh_logo d-none d-sm-block "><img src="../../logo.svg" alt="  Typhoon HIL Documentation  Version: 2026.1  "/></a>
+                    <div class=" wh_publication_title "><a href="../../index.html"><span class="booktitle">  <span class="ph mainbooktitle">Typhoon HIL Documentation</span>  <span class="ph booktitlealt">Version: 2026.1</span>  </span></a></div>
+                    
+                </div>
+                
+                <button type="button" data-target="#wh_top_menu_and_indexterms_link" id="wh_menu_mobile_button" data-toggle="collapse" class="navbar-toggler collapsed wh_toggle_button" aria-expanded="false" aria-label="Toggle menu" aria-controls="wh_top_menu_and_indexterms_link">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+            </div>
+
+            <div class="wh_top_menu_and_indexterms_link collapse navbar-collapse" id="wh_top_menu_and_indexterms_link">
+                
+                <nav class=" wh_top_menu " aria-label="Menu Container"><ul role="menubar" aria-label="Menu"><li role="menuitem" aria-haspopup="true" aria-expanded="false" class="has-children"><span id="tocId-d16877e21-mi" data-tocid="tocId-d16877e21" data-state="not-ready" class=" topicref application-notes"><span class="title"><a href="../../t-an001/concepts/application_notes_introduction.html">Typhoon HIL Application Notes</a></span></span></li><li role="menuitem" aria-haspopup="true" aria-expanded="false" class="has-children"><span id="tocId-d16877e737-mi" data-tocid="tocId-d16877e737" data-state="not-ready" class=" topicref software-manual"><span class="title"><a href="../../t-ug002/topics/software_manual_introduction.html">Typhoon HIL Software Manual</a></span></span></li><li role="menuitem" aria-haspopup="true" aria-expanded="false" class="has-children"><span id="tocId-d16877e7901-mi" data-tocid="tocId-d16877e7901" data-state="not-ready" class=" topicref hardware-manual"><span class="title"><a href="../../t-ug001/abstract/hardware_manual_introduction.html">Typhoon HIL Hardware Manual</a></span></span></li></ul></nav>
+                
+                
+            </div>
+        </div>
+    </div>
+</header>
+        
+        
+         
+        
+        <div class=" wh_search_input navbar-form wh_topic_page_search search " role="form">
+            
+            
+            
+            <form id="searchForm" method="get" role="search" action="../../search.html"><div><input type="search" placeholder="Search " class="wh_search_textfield" id="textToSearch" name="searchQuery" aria-label="Search query" required="required"/><button type="submit" class="wh_search_button" aria-label="Search"><span class="search_input_text">Search</span></button></div></form>
+            
+            
+            
+        </div>
+        
+        <div class="container-fluid" id="wh_topic_container">
+            <div class="row">
+
+                <nav class="wh_tools d-print-none navbar-expand-md" aria-label="Tools">
+                    
+                    <div data-tooltip-position="bottom" class=" wh_breadcrumb "><ol class="d-print-none"><li><span class="home"><a href="../../index.html"><span>Home</span></a></span></li><li><div class="topicref application-notes"><div class="title"><a href="../../t-an001/concepts/application_notes_introduction.html">Typhoon HIL Application Notes</a></div></div></li><li><div class="topicref" data-id="doc"><div class="title"><a href="../../t-an001/concepts/communication_protocols.html">Communication Protocols</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">Interoperability. Cybersecurity. Modbus, Sunspec, IEC61850, IEEE    C37.118, DNP3, CAN, OPC UA, and more.</span></p></div></div></div></li><li class="active"><div class="topicref" data-id="doc"><div class="title"><a href="../../t-an001/References/OPC_UA_SCADA_client.html">OPC with HIL SCADA-based client</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">Demonstration of how two OPC UA servers can be configured and simulated in     one HIL device within HIL SCADA</span></p></div></div></div></li></ol></div>
+                    
+                    
+                    
+                    <div class="wh_right_tools">
+                        <button class="wh_hide_highlight" aria-label="Toggle search highlights" title="Toggle search highlights"></button>
+                        <button class="webhelp_expand_collapse_sections" data-next-state="collapsed" aria-label="Collapse sections" title="Collapse sections"></button>
+                        
+                        
+                        
+                        
+                        <div class=" wh_print_link print d-none d-md-inline-block "><button onClick="window.print()" title="Print this page" aria-label="Print this page"></button></div>
+                        
+                        <button type="button" id="wh_toc_button" class="custom-toggler navbar-toggler collapsed wh_toggle_button navbar-light" aria-expanded="false" aria-label="Toggle publishing table of content" aria-controls="wh_publication_toc">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+                    </div>
+                    
+                </nav>
+            </div>
+            
+            
+            
+            
+            <div class="wh_content_area">
+                <div class="row">
+                    
+                        <nav id="wh_publication_toc" class="col-lg-3 col-md-3 col-sm-12 d-md-block d-none d-print-none" aria-label="Table of Contents Container">
+                            <div id="wh_publication_toc_content">
+		                        
+                            	<div class=" wh_publication_toc " data-tooltip-position="right"><span class="expand-button-action-labels"><span id="button-expand-action" role="button" aria-label="Expand"></span><span id="button-collapse-action" role="button" aria-label="Collapse"></span><span id="button-pending-action" role="button" aria-label="Pending"></span></span><ul role="tree" aria-label="Table of Contents"><li role="treeitem" aria-expanded="true"><div data-tocid="tocId-d16877e21" class="topicref application-notes" data-state="expanded"><span role="button" tabindex="0" aria-labelledby="button-collapse-action tocId-d16877e21-link" class="wh-expand-btn"></span><div class="title"><a href="../../t-an001/concepts/application_notes_introduction.html" id="tocId-d16877e21-link">Typhoon HIL Application Notes</a></div></div><ul role="group" class="navbar-nav nav-list"><li role="treeitem"><div data-tocid="doc-d16877e25" class="topicref" data-id="doc" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../../t-an001/concepts/application_notes_introduction.html" id="doc-d16877e25-link">Application Notes Introduction</a><div class="wh-tooltip"><p class="shortdesc">Brief overview of the different categories of Application Notes</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="doc-d16877e36" class="topicref" data-id="doc" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action doc-d16877e36-link" class="wh-expand-btn"></span><div class="title"><a href="../../t-an001/concepts/grid_connected_converters.html" id="doc-d16877e36-link">Grid-connected converters</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">Grid-connected converter applications featuring various grid support    functionalities.</span></p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="doc-d16877e96" class="topicref" data-id="doc" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action doc-d16877e96-link" class="wh-expand-btn"></span><div class="title"><a href="../../t-an001/concepts/automotive.html" id="doc-d16877e96-link">Automotive</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">Electric cars and other automotive applications.</span></p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="doc-d16877e132" class="topicref" data-id="doc" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action doc-d16877e132-link" class="wh-expand-btn"></span><div class="title"><a href="../../t-an001/concepts/aerospace.html" id="doc-d16877e132-link">Aerospace</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">System-level and component-level aircraft applications.</span></p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="doc-d16877e168" class="topicref" data-id="doc" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action doc-d16877e168-link" class="wh-expand-btn"></span><div class="title"><a href="../../t-an001/concepts/battery_management_systems.html" id="doc-d16877e168-link">Battery management systems</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">Battery management system (BMS) examples</span></p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="doc-d16877e216" class="topicref" data-id="doc" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action doc-d16877e216-link" class="wh-expand-btn"></span><div class="title"><a href="../../t-an001/concepts/how-to_guides.html" id="doc-d16877e216-link">How-to Guides</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">Guides, tips, and tricks on various aspects of Typhoon HIL toolchain usage.</span></p></div></div></div></li><li role="treeitem" aria-expanded="true"><div data-tocid="doc-d16877e312" class="topicref" data-id="doc" data-state="expanded"><span role="button" tabindex="0" aria-labelledby="button-collapse-action doc-d16877e312-link" class="wh-expand-btn"></span><div class="title"><a href="../../t-an001/concepts/communication_protocols.html" id="doc-d16877e312-link">Communication Protocols</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">Interoperability. Cybersecurity. Modbus, Sunspec, IEC61850, IEEE    C37.118, DNP3, CAN, OPC UA, and more.</span></p></div></div></div><ul role="group" class="navbar-nav nav-list"><li role="treeitem"><div data-tocid="doc-d16877e324" class="topicref" data-id="doc" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../../t-an001/References/pv_inverter_with_iec61850_mms.html" id="doc-d16877e324-link">PV inverter with IEC 61850 MMS</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">Demonstration of remote control of a PV inverter by IEC 61850 MMS</span></p></div></div></div></li><li role="treeitem"><div data-tocid="doc-d16877e336" class="topicref" data-id="doc" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../../t-an001/References/multi_protocol_gateway_for_derms.html" id="doc-d16877e336-link">Multi-protocol gateway for DERMS </a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">Demonstration of a communications test environment for a DERMS gateway, by making use     of: generic DER components, communication protocols, and their client/server     implementations.</span></p></div></div></div></li><li role="treeitem"><div data-tocid="doc-d16877e348" class="topicref" data-id="doc" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../../t-an001/References/modbus_device_with_hil_scada_based_client.html" id="doc-d16877e348-link">Modbus Device with HIL SCADA-based client</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">Demonstration of remote control of a battery inverter by Modbus client</span></p></div></div></div></li><li role="treeitem"><div data-tocid="doc-d16877e360" class="topicref" data-id="doc" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../../t-an001/References/sfp_with_mmc.html" id="doc-d16877e360-link">SFP with Modular Multi-level Converter (MMC)</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">Demonstration of the capabilities of Aurora Small Form-factor Pluggable (SFP) simulation link to establish communication between a HIL device and a controller.</span></p></div></div></div></li><li role="treeitem" class="active"><div data-tocid="doc-d16877e372" class="topicref" data-id="doc" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../../t-an001/References/OPC_UA_SCADA_client.html" id="doc-d16877e372-link">OPC with HIL SCADA-based client</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">Demonstration of how two OPC UA servers can be configured and simulated in     one HIL device within HIL SCADA</span></p></div></div></div></li></ul></li><li role="treeitem" aria-expanded="false"><div data-tocid="doc-d16877e384" class="topicref" data-id="doc" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action doc-d16877e384-link" class="wh-expand-btn"></span><div class="title"><a href="../../t-an001/concepts/power_systems.html" id="doc-d16877e384-link">Power Systems</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">Power system simulation. Relay protection testing. Power flow tool integration and   co-simulation.</span></p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="doc-d16877e468" class="topicref" data-id="doc" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action doc-d16877e468-link" class="wh-expand-btn"></span><div class="title"><a href="../../t-an001/concepts/microgrids.html" id="doc-d16877e468-link">Microgrids</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">Rapid microgrid pre-commissioning and system integration. Microgrid controller RCP and   testing.</span></p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="doc-d16877e552" class="topicref" data-id="doc" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action doc-d16877e552-link" class="wh-expand-btn"></span><div class="title"><a href="../../t-an001/concepts/electrical_drives.html" id="doc-d16877e552-link">Electrical Drives</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">Converters coupled with high-fidelity electrical machine models for high performance   motor drive applications.</span></p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="doc-d16877e601" class="topicref" data-id="doc" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action doc-d16877e601-link" class="wh-expand-btn"></span><div class="title"><a href="../../t-an001/concepts/power_supplies.html" id="doc-d16877e601-link">Power Supplies</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">Linear and switching power supplies for industrial and laboratory   applications.</span></p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="doc-d16877e625" class="topicref" data-id="doc" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action doc-d16877e625-link" class="wh-expand-btn"></span><div class="title"><a href="../../t-an001/concepts/marine_power_systems.html" id="doc-d16877e625-link">Marine Power Systems</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">Hybrid propulsion, shipboard power management, offshore renewables, offshore oil and   gas platform power supplies. </span></p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="doc-d16877e649" class="topicref" data-id="doc" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action doc-d16877e649-link" class="wh-expand-btn"></span><div class="title"><a href="../../t-an001/concepts/power_quality.html" id="doc-d16877e649-link">Power Quality</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">Real-time power quality/harmonic analysis. Incorporate active filters and FACTS devices (STATCOM, DVR,   SVC).</span></p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="doc-d16877e685" class="topicref" data-id="doc" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action doc-d16877e685-link" class="wh-expand-btn"></span><div class="title"><a href="../../t-an001/concepts/railway.html" id="doc-d16877e685-link">Railway</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">System-level and component-level application examples for railway    (traction) equipment.</span></p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="doc-d16877e709" class="topicref" data-id="doc" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action doc-d16877e709-link" class="wh-expand-btn"></span><div class="title"><a href="../../t-an001/concepts/medical_devices.html" id="doc-d16877e709-link">Medical Devices</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">X-ray, MRI, ICD, pacemakers, defibrillators, emergency ventilators, ECG, EMG,   bioelectronics.</span></p></div></div></div></li></ul></li></ul></div>
+		                        
+                            </div>
+                        </nav>
+                    
+                    
+                    <div class="col-lg-7 col-md-9 col-sm-12" id="wh_topic_body">
+                        <button id="wh_close_publication_toc_button" class="close-toc-button d-none" aria-label="Toggle publishing table of content" aria-controls="wh_publication_toc" aria-expanded="true">
+                            <span class="close-toc-icon-container">
+                                <span class="close-toc-icon"></span>     
+                            </span>
+                        </button>
+                        <button id="wh_close_topic_toc_button" class="close-toc-button d-none" aria-label="Toggle topic table of content" aria-controls="wh_topic_toc" aria-expanded="true">
+                            <span class="close-toc-icon-container">
+                                <span class="close-toc-icon"></span>     
+                            </span>
+                        </button>
+                        
+                        <div class=" wh_topic_content body "><main role="main"><article role="article" aria-labelledby="ariaid-title1">
+  <h1 class="- topic/title title topictitle1" id="ariaid-title1">OPC with HIL SCADA-based client</h1>
+  
+ <div class="- topic/body reference/refbody body refbody"><p class="- topic/shortdesc shortdesc"><span class="- topic/ph ph" id="doc__description">Demonstration of how two OPC UA servers can be configured and simulated in
+    one HIL device within HIL SCADA</span></p>
+  <section class="- topic/section section" id="doc__section_fd2_4qg_blb" data-ofbid="doc__section_fd2_4qg_blb"><h2 class="- topic/title title sectiontitle"><span class="- topic/ph ph" id="doc__an_title_intro">Introduction</span></h2>
+    
+      <p class="- topic/p p">Open Platform Communication (OPC) is an interoperability standard for the communication
+        and data exchange of industrial devices and applications. UA stands for “Unified
+        Architecture” and refers to the latest version of the standard, which is platform-independent
+        and ensures data exchange among devices from multiple vendors.</p>
+    <p class="- topic/p p">With the <a class="- topic/xref xref" href="../../t-ug002/References/opc_ua_server.html" title="This section describes the OPC UA Server implementation in the Typhoon HIL toolchain.">OPC UA Server</a> component in Typhoon HIL
+        Control Center Schematic Editor, it is possible to simulate an OPC UA server instance in a
+        HIL device in real-time. Usually, the OPC UA server is connected to the plant, while the OPC
+        UA client is commonly used for remote control and monitoring in SCADA systems. So, in order
+        to simulate a complete OPC UA network example in THCC, the OPC UA client was implemented in
+        Typhoon HIL SCADA using Python, while the OPC UA Server component was used to simulate the
+        server side in the HIL device. This application note shows how to see and operate the OPC UA
+        client and server in Typhoon HIL, without the need for any external third-party software. </p>
+      <p class="- topic/p p">The Python <em class="+ topic/ph hi-d/i ph i">opcua-asyncio</em> is the Python open source library used to simulate the OPC
+        UA client in the Typhoon HIL SCADA application. <em class="+ topic/ph hi-d/i ph i">opcua-asyncio</em> is an asynchronous
+        based OPC UA client and server library based on <em class="+ topic/ph hi-d/i ph i">python-opcua</em> (OPC UA binary protocol
+        implementation). This library has been tested against many different OPC UA stacks, and
+        offers a good coverage when it comes to testing your OPC UA implementation. For more
+        information about this library please refer to the following link: <a class="- topic/xref xref" href="https://github.com/FreeOpcUa/opcua-asyncio" target="_blank" rel="external noopener">https://github.com/FreeOpcUa/opcua-asyncio</a>. </p>
+      <p class="- topic/p p">This library is shipped together with Typhoon HIL Control Center installation, so there is
+        no need for any preliminary setup.</p>
+  </section>
+  <section class="- topic/section section" id="doc__section_drr_2lm_blb" data-ofbid="doc__section_drr_2lm_blb"><h2 class="- topic/title title sectiontitle"><span class="- topic/ph ph" id="doc__an_title_model">Model description</span></h2>
+      
+      <p class="- topic/p p">This example model demonstrates how two OPC UA servers can be configured and simulated in
+        one HIL device. The example model consists of two OPC UA servers, with the same IP address
+        but different ports, that perform the measurements of Voltage and Current from a simple
+        circuit, consisting of one fixed DC voltage source and two resistors (<a class="- topic/xref xref" href="#doc__fig_kyz_pnx_clb">Figure 1</a>). The <a class="- topic/xref xref" href="../../t-ug002/References/opc_ua_server.html" title="This section describes the OPC UA Server implementation in the Typhoon HIL toolchain.">OPC UA Server</a> components are directly used from the
+        Communication protocol category in the Schematic Editor Library Explorer.</p>
+      <div class="- topic/p p">
+        <figure class="- topic/fig fig fignone" id="doc__fig_kyz_pnx_clb" data-ofbid="doc__fig_kyz_pnx_clb"><figcaption class="- topic/title title figcap"><span class="figtitleprefix fig--title-label">Figure<span class="fig--title-label-number"> 1</span><span class="fig--title-label-punctuation">. </span></span><span class="fig--title">OPC UA example</span></figcaption>
+          
+          <img class="- topic/image image" id="doc__image_ybg_xs5_bpb" src="../Images/opc_01.png"/>
+        </figure>
+      </div>
+      <p class="- topic/p p">The two OPC UA server components control a single switch which connects a second resistor
+        to the circuit, causing an increase in the load and a corresponding increase in current
+        that can be seen in the SCADA panel with the OPC UA client. </p>
+      <p class="- topic/p p">Configuration is done within the Initialization script where it is possible to configure
+        all the settings regarding the OPC UA server. This configurations includes the IP address,
+        port number, and inputs and outputs variables settings. The configuration adopted for this
+        model is shown below.</p>
+      <pre class="+ topic/pre pr-d/codeblock pre codeblock"><code>config1 = {
+      'ip_addr': '192.168.42.79',
+      'port': 16664,
+      'netmask': '255.255.255.0',
+      'nodes_in' : {
+      'current_in': (0, 'real'),
+      'voltage_in': (1, 'real'),
+      'current_voltage':([0,1], 'real')
+      },
+      'nodes_out' : {
+      'cmd_out': (0, 'int'),
+      },
+      }
+      
+      config2 = {
+      'ip_addr': '192.168.42.79',
+      'port': 16665,
+      'netmask': '255.255.255.0',
+      'nodes': {
+      'Measurements':
+      {
+      'Current in': (0, 'real', 'in'),
+      'Voltage in': (1, 'real', 'in'),
+      'Current and voltage': ([0, 1], 'real', 'in'),
+      },
+      
+      'Outputs':{
+      'Cmd out': (0, 'int', 'out'),
+      }
+      }
+      }
+    </code></pre>
+      <p class="- topic/p p">In order to run this example, it is important to note the IP address configuration. As the
+        OPC UA client will be executed in SCADA, your computer network needs to be in the same IP
+        range 192.168.42.<strong class="+ topic/ph hi-d/b ph b">XX</strong>, where <strong class="+ topic/ph hi-d/b ph b">XX</strong> can be any value between 2 and 254 (excluding the
+        server's IP). Make sure you configure your network as a static IP and verify if this IP is
+        available for usage (i.e., using the PING command from Command Prompt in Windows). </p>
+      <div class="- topic/note note note note_note"><span class="note__title">Note:</span> Make sure you connect the ethernet cable to the correct ethernet port on the HIL
+        device.</div> Since OPC UA is a Linux based communication protocol, the following FAQ
+      provides an explanation: <a class="- topic/xref xref" href="https://ticket.typhoon-hil.com/kb/faq.php?id=77" target="_blank" rel="external noopener"><u class="+ topic/ph hi-d/u ph u">Typhoon HIL (typhoon-hil.com)</u></a>.
+  </section>
+   <section class="- topic/section section" id="doc__section_czt_rav_blb" data-ofbid="doc__section_czt_rav_blb"><h2 class="- topic/title title sectiontitle"><span class="- topic/ph ph" id="doc__an_title_simulation">Simulation</span></h2>
+    
+      <p class="- topic/p p">This example comes with a pre-built SCADA panel (<a class="- topic/xref xref" href="#doc__fig_ohh_d1k_zvb">Figure 2</a>). The panel offers the most essential user
+        interface elements (widgets) to monitor and interact with the simulation in runtime. You can
+        customize it freely to fit your needs. For this application, the provided SCADA panel is
+        quite simple, containing a combo box where you can set the Client status to ON or OFF along
+        with widgets that show the current and voltage measurements.</p>
+      <figure class="- topic/fig fig fignone" id="doc__fig_ohh_d1k_zvb" data-ofbid="doc__fig_ohh_d1k_zvb"><figcaption class="- topic/title title figcap"><span class="figtitleprefix fig--title-label">Figure<span class="fig--title-label-number"> 2</span><span class="fig--title-label-punctuation">. </span></span><span class="fig--title">SCADA panel</span></figcaption>
+        
+        <img class="- topic/image image" id="doc__image_phh_d1k_zvb" src="../Images/opc_03.png"/>
+      </figure>
+      <p class="- topic/p p">Client implementation is done within the Initialization script and inside the SCADA widgets
+        by using <em class="+ topic/ph hi-d/i ph i">python-asyncua</em> library, as shown below.</p> A brief description of the code follows below.<div class="- topic/p p">
+        <pre class="+ topic/pre pr-d/codeblock pre codeblock"><code>import asyncua
+          import asyncio
+          from asyncua import Client,ua
+          
+          
+          import time 
+          
+          
+          global cl
+          global url
+          global url2
+          global cl2
+          server_ip_address = '192.168.42.79'
+          port_number = 16664
+          netmask = '255.255.255.0'
+          url = 'opc.tcp://{}:{}'.format(server_ip_address, port_number)
+          
+          server_ip_address2 = '192.168.42.79'
+          port_number2 = 16665
+          netmask2 = '255.255.255.0'
+          url2 = 'opc.tcp://{}:{}'.format(server_ip_address2, port_number2)
+          cl2 = Client(url2)
+          
+          
+          async def get_voltage(url):
+          async with Client(url) as cl:
+          voltage_in = cl.get_node("ns=1;s=voltage_in")
+          voltage = await voltage_in.get_value()
+          return voltage
+          
+          async def get_current(url):
+          async with Client(url) as cl:
+          current_in =  cl.get_node("ns=1;s=current_in")
+          current = await current_in.get_value()
+          return current
+          
+          async def set_cmd(url,variable):
+          async with Client(url) as cl:
+          cmd_out = cl.get_node("ns=1;s=cmd_out")
+          await cmd_out.set_value(ua.Variant(variable, ua.VariantType.Int32))
+          return 0
+          async def get_voltage_v2(url2):
+          async with Client(url2) as cl:
+          voltage_in = cl.get_node("ns=1;s=Voltage in")
+          voltage = await voltage_in.get_value()
+          return voltage
+          
+          async def get_current_v2(url2):
+          async with Client(url2) as cl:
+          current_in =  cl.get_node("ns=1;s=Current in")
+          current = await current_in.get_value()
+          return current
+          async def set_cmd_v2(url1,variable):
+          async with Client(url2) as cl2:
+          cmd_out = cl.get_node("ns=1;s=Cmd out")
+          await cmd_out.set_value(ua.Variant(variable, ua.VariantType.Int32))
+          return 0
+          
+          hil.set_source_constant_value('Vs1', value=10.0)</code></pre>
+      </div>
+      <p class="- topic/p p">This script starts by importing the <em class="+ topic/ph hi-d/i ph i">asyncua</em> library and declaring all the functions
+        necessary to perform read and write operations to the OPC UA server. At the beginning, the
+        Server's IP address and port must be provided in this the script as an endpoint URL, this is
+        a network location that OPC UA Client can use to find and connect to the OPC UA Servers. </p>
+      <p class="- topic/p p">To be able to read variables from the OPC UA server you must use the
+        <em class="+ topic/ph hi-d/i ph i">get_node()</em> property with the node in which the variable is located and then the
+        property <em class="+ topic/ph hi-d/i ph i">get_value()</em> to get the value of the variable in question. Note that, for all
+        the variables, you should use namespace (ns) equals to 1. </p>
+      <p class="- topic/p p">To be able to write to any OPC UA server, you need to call the <em class="+ topic/ph hi-d/i ph i">get_node()</em> and
+          <em class="+ topic/ph hi-d/i ph i">set_value()</em> properties, passing the variable you want to write as an argument. </p>
+      <p class="- topic/p p">After the initialization of the Client, it is necessary to define actions to be performed
+        during simulation runtime. To do that you can use widgets from the SCADA library and call
+        the OPC UA Client functions inside those widgets. The following is an example of how to call
+        functions to read and write variables in the Server within the Va1 Widget and show their
+        results.</p>
+      <pre class="+ topic/pre pr-d/codeblock pre codeblock"><code>global url
+       displayValue = asyncio.run(get_voltage(url))</code></pre>
+      <p class="- topic/p p">Additionally, below is an example of how to do the same with the Client Status widget.</p>
+      <pre class="+ topic/pre pr-d/codeblock pre codeblock"><code>if inputValue == 'On':
+       # do something when 'Case 1' is selected
+       asyncio.run(set_cmd(url,1))
+       pass
+       elif inputValue == 'Off':
+       # do something when 'Case 2' is selected
+       asyncio.run(set_cmd(url,0))
+       pass
+     </code></pre>
+      <p class="- topic/p p">After you set up the OPC UA Client with the proper functions and widgets, you can load the
+        model to to a HIL device or VHIL and execute the simulation.</p>
+      <p class="- topic/p p">When you run the simulation the OPC UA client connects and begins to read the Voltage and
+        Current Measurements from the Server. If everything goes accordingly, you can expect the
+        voltage measurement to be 10 V and the current to be 100 A. </p>
+      <figure class="- topic/fig fig fignone" id="doc__fig_pzn_w1k_zvb" data-ofbid="doc__fig_pzn_w1k_zvb"><figcaption class="- topic/title title figcap"><span class="figtitleprefix fig--title-label">Figure<span class="fig--title-label-number"> 3</span><span class="fig--title-label-punctuation">. </span></span><span class="fig--title">SCADA panel during simulation runtime</span></figcaption>
+        
+        <img class="- topic/image image" id="doc__image_qzn_w1k_zvb" src="../Images/opc_07.png"/>
+      </figure><p class="- topic/p p">When you change the Client Status combo box widget from OFF to ON, that sends a
+        command to close the contactor S2 in the model, controlled by the OPC UA server. If the
+        contactor is closed correctly, the LED cmd_out will light up and you can expect an increase
+        in current measurement from 100 A to 200 A.</p>
+      <div class="- topic/p p">
+        <figure class="- topic/fig fig fignone" id="doc__fig_eny_y1k_zvb" data-ofbid="doc__fig_eny_y1k_zvb"><figcaption class="- topic/title title figcap"><span class="figtitleprefix fig--title-label">Figure<span class="fig--title-label-number"> 4</span><span class="fig--title-label-punctuation">. </span></span><span class="fig--title">SCADA panel after contactor is closed</span></figcaption>
+          
+          <img class="- topic/image image" id="doc__image_fny_y1k_zvb" src="../Images/opc_08.png"/>
+        </figure>
+      </div><p class="- topic/p p">This application note showed how to setup an OPC UA network in Schematic Editor. The
+        OPC UA Server is simulated in the HIL device, by making use of the OPC UA Server component
+        in Schematic Editor, while the OPC UA Client is simulated in the HIL SCADA application using the
+        Python OPC UA open-source implementation.</p><p class="- topic/p p">With this example model it is possible to
+        perform tests and troubleshooting of an OPC UA network, by replacing the Client with any
+        other device compatible with OPA UA. </p>
+      <table class="- topic/table table frame-all" id="doc__table_vsq_wky_clb" data-ofbid="doc__table_vsq_wky_clb" data-cols="2"><caption class="- topic/title title tablecap" data-caption-side="top" data-is-repeated="true"><span class="table--title-label">Table<span class="table--title-label-number"> 1</span><span class="table--title-label-punctuation">. </span></span><span class="table--title"><span class="- topic/ph ph" id="doc__an_min-req">Minimum requirements</span></span></caption><colgroup><col style="width:50%"/><col style="width:50%"/></colgroup><thead class="- topic/thead thead">
+            <tr class="- topic/row">
+              <th class="- topic/entry entry colsep-0 rowsep-1" id="doc__table_vsq_wky_clb__entry__1" colspan="2">Files</th>
+            </tr>
+          </thead><tbody class="- topic/tbody tbody">
+            <tr class="- topic/row">
+              <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__table_vsq_wky_clb__entry__1"><span class="- topic/ph ph" id="doc__an_min-req_TH-files">Typhoon HIL files</span></td>
+              <td class="- topic/entry entry align-center colsep-0 rowsep-1" headers="doc__table_vsq_wky_clb__entry__1">
+                <p class="- topic/p p">examples\models\communication protocols\opc ua\OPC UA SCADA setup.tse,</p>
+                <p class="- topic/p p">scada client.cus</p>
+              </td>
+            </tr>
+            <tr class="- topic/row">
+              <td class="- topic/entry entry colsep-0 rowsep-1" headers="doc__table_vsq_wky_clb__entry__1" colspan="2">
+                <strong class="+ topic/ph hi-d/b ph b">Minimum hardware requirements</strong></td>
+            </tr>
+            <tr class="- topic/row">
+              <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__table_vsq_wky_clb__entry__1"><span class="- topic/ph ph" id="doc__an_min-req_num-devices">No. of HIL devices</span></td>
+              <td class="- topic/entry entry colsep-0 rowsep-1" headers="doc__table_vsq_wky_clb__entry__1"><span class="- topic/ph ph" id="doc__num_devices">1</span></td>
+            </tr>
+            <tr class="- topic/row">
+              <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__table_vsq_wky_clb__entry__1"><span class="- topic/ph ph" id="doc__an_min-req_model-num">HIL device model</span></td>
+              <td class="- topic/entry entry colsep-0 rowsep-1" headers="doc__table_vsq_wky_clb__entry__1"><span class="- topic/ph ph" id="doc__type_devices">HIL101</span></td>
+            </tr>
+            <tr class="- topic/row">
+              <td class="- topic/entry entry colsep-1 rowsep-0" headers="doc__table_vsq_wky_clb__entry__1"><a class="- topic/xref xref" href="../../t-ug002/concepts/device_manager.html" title="Device Manager is used to create, manipulate, and activate HIL device setups.">Device
+                  configuration</a></td>
+              <td class="- topic/entry entry align-center colsep-0 rowsep-0" headers="doc__table_vsq_wky_clb__entry__1">1</td>
+            </tr>
+          </tbody></table></section>
+   <section class="- topic/section section" id="doc__section_pils_s3" data-ofbid="doc__section_pils_s3"><h2 class="- topic/title title sectiontitle"><span class="- topic/ph ph" id="doc__an_title_test-automation">Test automation</span></h2>
+     
+     <p class="- topic/p p">We don’t have a test automation for this example yet. <a class="- topic/xref xref" href="https://www.typhoon-hil.com/contact/" target="_blank" rel="external noopener">Let us
+       know</a> if you wish to contribute and we will gladly have you signed on the
+       application note!</p>
+   </section>
+    <section class="- topic/section section" id="doc__section_apv_y4q_cpb" data-ofbid="doc__section_apv_y4q_cpb"><h2 class="- topic/title title sectiontitle">Authors</h2>
+      
+      <p class="- topic/p p">[1] Jovana Markovic</p>
+    </section>
+ </div>
+</article></main></div>
+                        
+                        
+                        
+                        
+                        
+                        
+                    </div>
+                    
+                        <nav role="navigation" id="wh_topic_toc" aria-label="On this page" class="col-lg-2 d-none d-lg-block navbar d-print-none"> 
+                            <div id="wh_topic_toc_content">
+		                        
+	                            <div class=" wh_topic_toc "><div class="wh_topic_label">On this page</div><ul><li class="section-item"><div class="section-title"><a href="#doc__section_fd2_4qg_blb" data-tocid="doc__section_fd2_4qg_blb"><span class="- topic/ph ph" id="doc__an_title_intro">Introduction</span></a></div></li><li class="section-item"><div class="section-title"><a href="#doc__section_drr_2lm_blb" data-tocid="doc__section_drr_2lm_blb"><span class="- topic/ph ph" id="doc__an_title_model">Model description</span></a></div></li><li class="section-item"><div class="section-title"><a href="#doc__section_czt_rav_blb" data-tocid="doc__section_czt_rav_blb"><span class="- topic/ph ph" id="doc__an_title_simulation">Simulation</span></a></div></li><li class="section-item"><div class="section-title"><a href="#doc__section_pils_s3" data-tocid="doc__section_pils_s3"><span class="- topic/ph ph" id="doc__an_title_test-automation">Test automation</span></a></div></li><li class="section-item"><div class="section-title"><a href="#doc__section_apv_y4q_cpb" data-tocid="doc__section_apv_y4q_cpb">Authors</a></div></li></ul></div>
+	                        	
+                        	</div>
+                        </nav>
+                    
+                </div>
+            </div>
+            
+            
+            
+        </div> 
+        <footer class="navbar navbar-default wh_footer">
+  <div class=" footer-container mx-auto ">
+    <div style="text-align:center">Typhoon HIL Inc.<span id="year"> <a href="https://www.typhoon-hil.com">www.typhoon-hil.com</a></span></div>
+  </div>
+</footer>
+        
+        <div id="go2top" class="d-print-none">
+            <span class="oxy-icon oxy-icon-up"></span>
+        </div>
+        
+        <div id="modal_img_large" class="modal">
+            <span class="close oxy-icon oxy-icon-remove"></span>
+            <div id="modal_img_container"></div>
+            <div id="caption"></div>
+        </div>
+        
+        
+<script type="text/javascript" src="../../assets/script.js"> 
+</script>
+
+        
+    </body>
+</html>

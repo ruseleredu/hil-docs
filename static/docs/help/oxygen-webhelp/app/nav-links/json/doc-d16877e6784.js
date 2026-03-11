@@ -1,0 +1,1 @@
+define({"topics":[{"title":"Typhoon HIL XIL API Python Guide","shortdesc":"<p class=\"shortdesc\">How to start to use ASAM XIL API for creating tests in a Python environment <\/p>","href":"t-ug002\/concepts\/asam_xil_api_python_guide.html","attributes":{"data-id":"doc"},"menu":{"hasChildren":false},"tocID":"doc-d16877e6795","topics":[]}]});

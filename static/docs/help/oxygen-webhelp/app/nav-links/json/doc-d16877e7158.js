@@ -1,0 +1,1 @@
+define({"topics":[{"title":"Capture and Scope presets","shortdesc":"<p class=\"shortdesc\">This section describes the mutual function of presets<\/p>","href":"t-ug002\/concepts\/capture_and_scope_presets.html","attributes":{"data-id":"doc"},"menu":{"hasChildren":false},"tocID":"doc-d16877e7169","topics":[]}]});

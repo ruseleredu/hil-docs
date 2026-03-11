@@ -1,0 +1,1 @@
+define({"topics":[{"title":"Shipboard PMS","shortdesc":"<p class=\"shortdesc\"><span class=\"ph\">Demonstration of the functionality and normal operation of a Shipboard Power Management System (PMS)<\/span><\/p>","href":"t-an001\/References\/shipboard_pms.html","attributes":{"data-id":"doc"},"menu":{"hasChildren":false},"tocID":"doc-d16877e637","topics":[]}]});

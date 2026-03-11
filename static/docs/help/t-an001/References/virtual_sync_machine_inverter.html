@@ -1,0 +1,566 @@
+<!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en" data-whc_version="24.1">
+    <head><link rel="shortcut icon" href="../../favicon.ico"/><link rel="icon" href="../../favicon.ico"/><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><meta name="DC.rights.owner" content="(C) Copyright 2026"/><meta name="copyright" content="(C) Copyright 2026"/><meta name="generator" content="DITA-OT"/><meta name="DC.type" content="reference"/><meta name="description" content="Control demonstration of grid-connected converters to help maintain grid stability"/><meta name="DC.relation" content="../../t-an001/concepts/grid_connected_converters.html"/><meta name="DC.format" content="HTML5"/><meta name="DC.identifier" content="doc"/>        
+      <title>Grid-connected inverter with virtual synchronous machine</title><!--  Generated with Oxygen version 24.1, build number 2022030800.  --><meta name="wh-path2root" content="../../"/><meta name="wh-toc-id" content="doc-d16877e48"/><meta name="wh-source-relpath" content="t-an001/References/virtual_sync_machine_inverter.dita"/><meta name="wh-out-relpath" content="t-an001/References/virtual_sync_machine_inverter.html"/>
+    <!-- Latest compiled and minified Bootstrap CSS -->
+    <link rel="stylesheet" type="text/css" href="../../oxygen-webhelp/lib/bootstrap/css/bootstrap.min.css"/>
+    
+    <link rel="stylesheet" href="../../oxygen-webhelp/lib/jquery-ui/jquery-ui.min.css"/>
+    
+    <!-- Template default styles  -->
+    <link rel="stylesheet" type="text/css" href="../../oxygen-webhelp/app/topic-page.css?buildId=2022030800"/>
+    
+    
+    <script src="../../oxygen-webhelp/lib/jquery/jquery-3.5.1.min.js"></script>
+    
+    <script data-main="../../oxygen-webhelp/app/topic-page.js" src="../../oxygen-webhelp/lib/requirejs/require.js"></script>
+<link rel="stylesheet" type="text/css" href="../../oxygen-webhelp/template/oxygen.css?buildId=2022030800"/><link rel="stylesheet" type="text/css" href="../../oxygen-webhelp/template/notes.css?buildId=2022030800"/><script type="text/javascript" src="../../Scripts/mml-svg.js"> 
+</script><link rel="stylesheet" type="text/css" href="../../assets/typhoon.css"/></head>
+
+    <body id="doc" class="wh_topic_page frmBody">
+        <a href="#wh_topic_body" class="sr-only sr-only-focusable">
+            Jump to main content
+        </a>
+        
+        
+        
+        
+        <header class="navbar navbar-default wh_header">
+    <div class="container-fluid">
+        <div class="wh_header_flex_container navbar-nav navbar-expand-md navbar-dark">
+            <div class="wh_logo_and_publication_title_container">
+                <div class="wh_logo_and_publication_title">
+                    
+                    <a href="https://www.typhoon-hil.com" class=" wh_logo d-none d-sm-block "><img src="../../logo.svg" alt="  Typhoon HIL Documentation  Version: 2026.1  "/></a>
+                    <div class=" wh_publication_title "><a href="../../index.html"><span class="booktitle">  <span class="ph mainbooktitle">Typhoon HIL Documentation</span>  <span class="ph booktitlealt">Version: 2026.1</span>  </span></a></div>
+                    
+                </div>
+                
+                <button type="button" data-target="#wh_top_menu_and_indexterms_link" id="wh_menu_mobile_button" data-toggle="collapse" class="navbar-toggler collapsed wh_toggle_button" aria-expanded="false" aria-label="Toggle menu" aria-controls="wh_top_menu_and_indexterms_link">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+            </div>
+
+            <div class="wh_top_menu_and_indexterms_link collapse navbar-collapse" id="wh_top_menu_and_indexterms_link">
+                
+                <nav class=" wh_top_menu " aria-label="Menu Container"><ul role="menubar" aria-label="Menu"><li role="menuitem" aria-haspopup="true" aria-expanded="false" class="has-children"><span id="tocId-d16877e21-mi" data-tocid="tocId-d16877e21" data-state="not-ready" class=" topicref application-notes"><span class="title"><a href="../../t-an001/concepts/application_notes_introduction.html">Typhoon HIL Application Notes</a></span></span></li><li role="menuitem" aria-haspopup="true" aria-expanded="false" class="has-children"><span id="tocId-d16877e737-mi" data-tocid="tocId-d16877e737" data-state="not-ready" class=" topicref software-manual"><span class="title"><a href="../../t-ug002/topics/software_manual_introduction.html">Typhoon HIL Software Manual</a></span></span></li><li role="menuitem" aria-haspopup="true" aria-expanded="false" class="has-children"><span id="tocId-d16877e7901-mi" data-tocid="tocId-d16877e7901" data-state="not-ready" class=" topicref hardware-manual"><span class="title"><a href="../../t-ug001/abstract/hardware_manual_introduction.html">Typhoon HIL Hardware Manual</a></span></span></li></ul></nav>
+                
+                
+            </div>
+        </div>
+    </div>
+</header>
+        
+        
+         
+        
+        <div class=" wh_search_input navbar-form wh_topic_page_search search " role="form">
+            
+            
+            
+            <form id="searchForm" method="get" role="search" action="../../search.html"><div><input type="search" placeholder="Search " class="wh_search_textfield" id="textToSearch" name="searchQuery" aria-label="Search query" required="required"/><button type="submit" class="wh_search_button" aria-label="Search"><span class="search_input_text">Search</span></button></div></form>
+            
+            
+            
+        </div>
+        
+        <div class="container-fluid" id="wh_topic_container">
+            <div class="row">
+
+                <nav class="wh_tools d-print-none navbar-expand-md" aria-label="Tools">
+                    
+                    <div data-tooltip-position="bottom" class=" wh_breadcrumb "><ol class="d-print-none"><li><span class="home"><a href="../../index.html"><span>Home</span></a></span></li><li><div class="topicref application-notes"><div class="title"><a href="../../t-an001/concepts/application_notes_introduction.html">Typhoon HIL Application Notes</a></div></div></li><li><div class="topicref" data-id="doc"><div class="title"><a href="../../t-an001/concepts/grid_connected_converters.html">Grid-connected converters</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">Grid-connected converter applications featuring various grid support    functionalities.</span></p></div></div></div></li><li class="active"><div class="topicref" data-id="doc"><div class="title"><a href="../../t-an001/References/virtual_sync_machine_inverter.html">Grid-connected inverter with virtual synchronous machine</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">Control demonstration of grid-connected converters to help maintain grid   stability</span></p></div></div></div></li></ol></div>
+                    
+                    
+                    
+                    <div class="wh_right_tools">
+                        <button class="wh_hide_highlight" aria-label="Toggle search highlights" title="Toggle search highlights"></button>
+                        <button class="webhelp_expand_collapse_sections" data-next-state="collapsed" aria-label="Collapse sections" title="Collapse sections"></button>
+                        
+                        
+                        
+                        
+                        <div class=" wh_print_link print d-none d-md-inline-block "><button onClick="window.print()" title="Print this page" aria-label="Print this page"></button></div>
+                        
+                        <button type="button" id="wh_toc_button" class="custom-toggler navbar-toggler collapsed wh_toggle_button navbar-light" aria-expanded="false" aria-label="Toggle publishing table of content" aria-controls="wh_publication_toc">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+                    </div>
+                    
+                </nav>
+            </div>
+            
+            
+            
+            
+            <div class="wh_content_area">
+                <div class="row">
+                    
+                        <nav id="wh_publication_toc" class="col-lg-3 col-md-3 col-sm-12 d-md-block d-none d-print-none" aria-label="Table of Contents Container">
+                            <div id="wh_publication_toc_content">
+		                        
+                            	<div class=" wh_publication_toc " data-tooltip-position="right"><span class="expand-button-action-labels"><span id="button-expand-action" role="button" aria-label="Expand"></span><span id="button-collapse-action" role="button" aria-label="Collapse"></span><span id="button-pending-action" role="button" aria-label="Pending"></span></span><ul role="tree" aria-label="Table of Contents"><li role="treeitem" aria-expanded="true"><div data-tocid="tocId-d16877e21" class="topicref application-notes" data-state="expanded"><span role="button" tabindex="0" aria-labelledby="button-collapse-action tocId-d16877e21-link" class="wh-expand-btn"></span><div class="title"><a href="../../t-an001/concepts/application_notes_introduction.html" id="tocId-d16877e21-link">Typhoon HIL Application Notes</a></div></div><ul role="group" class="navbar-nav nav-list"><li role="treeitem"><div data-tocid="doc-d16877e25" class="topicref" data-id="doc" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../../t-an001/concepts/application_notes_introduction.html" id="doc-d16877e25-link">Application Notes Introduction</a><div class="wh-tooltip"><p class="shortdesc">Brief overview of the different categories of Application Notes</p></div></div></div></li><li role="treeitem" aria-expanded="true"><div data-tocid="doc-d16877e36" class="topicref" data-id="doc" data-state="expanded"><span role="button" tabindex="0" aria-labelledby="button-collapse-action doc-d16877e36-link" class="wh-expand-btn"></span><div class="title"><a href="../../t-an001/concepts/grid_connected_converters.html" id="doc-d16877e36-link">Grid-connected converters</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">Grid-connected converter applications featuring various grid support    functionalities.</span></p></div></div></div><ul role="group" class="navbar-nav nav-list"><li role="treeitem" class="active"><div data-tocid="doc-d16877e48" class="topicref" data-id="doc" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../../t-an001/References/virtual_sync_machine_inverter.html" id="doc-d16877e48-link">Grid-connected inverter with virtual synchronous machine</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">Control demonstration of grid-connected converters to help maintain grid   stability</span></p></div></div></div></li><li role="treeitem"><div data-tocid="doc-d16877e60" class="topicref" data-id="doc" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../../t-an001/References/back_to_back_dfig_wind.html" id="doc-d16877e60-link">Wind Turbine with Doubly-fed Induction Generator</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">Demonstration of the functionality and normal operation of a Type-3    wind turbine, using a doubly-fed induction generator (DFIG) with the rotor connected to the    stator via a back-to-back frequency converter.</span></p></div></div></div></li><li role="treeitem"><div data-tocid="doc-d16877e72" class="topicref" data-id="doc" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../../t-an001/References/multifunctional_grid_connected_converter.html" id="doc-d16877e72-link">Multifunctional grid connected converter</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">Demonstration of a simple converter leg with advanced non-linear load compensation. Seven different operation modes are supported.</span></p></div></div></div></li><li role="treeitem"><div data-tocid="doc-d16877e84" class="topicref" data-id="doc" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../../t-an001/References/mmc_in_hvdc.html" id="doc-d16877e84-link">Modular Multi-level Converter (MMC) in High-voltage direct current (HVDC) transmission</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">Demonstration on the use of an MMC in one of its main applications: High-voltage DC   electric power transmission.</span></p></div></div></div></li></ul></li><li role="treeitem" aria-expanded="false"><div data-tocid="doc-d16877e96" class="topicref" data-id="doc" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action doc-d16877e96-link" class="wh-expand-btn"></span><div class="title"><a href="../../t-an001/concepts/automotive.html" id="doc-d16877e96-link">Automotive</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">Electric cars and other automotive applications.</span></p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="doc-d16877e132" class="topicref" data-id="doc" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action doc-d16877e132-link" class="wh-expand-btn"></span><div class="title"><a href="../../t-an001/concepts/aerospace.html" id="doc-d16877e132-link">Aerospace</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">System-level and component-level aircraft applications.</span></p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="doc-d16877e168" class="topicref" data-id="doc" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action doc-d16877e168-link" class="wh-expand-btn"></span><div class="title"><a href="../../t-an001/concepts/battery_management_systems.html" id="doc-d16877e168-link">Battery management systems</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">Battery management system (BMS) examples</span></p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="doc-d16877e216" class="topicref" data-id="doc" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action doc-d16877e216-link" class="wh-expand-btn"></span><div class="title"><a href="../../t-an001/concepts/how-to_guides.html" id="doc-d16877e216-link">How-to Guides</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">Guides, tips, and tricks on various aspects of Typhoon HIL toolchain usage.</span></p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="doc-d16877e312" class="topicref" data-id="doc" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action doc-d16877e312-link" class="wh-expand-btn"></span><div class="title"><a href="../../t-an001/concepts/communication_protocols.html" id="doc-d16877e312-link">Communication Protocols</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">Interoperability. Cybersecurity. Modbus, Sunspec, IEC61850, IEEE    C37.118, DNP3, CAN, OPC UA, and more.</span></p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="doc-d16877e384" class="topicref" data-id="doc" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action doc-d16877e384-link" class="wh-expand-btn"></span><div class="title"><a href="../../t-an001/concepts/power_systems.html" id="doc-d16877e384-link">Power Systems</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">Power system simulation. Relay protection testing. Power flow tool integration and   co-simulation.</span></p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="doc-d16877e468" class="topicref" data-id="doc" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action doc-d16877e468-link" class="wh-expand-btn"></span><div class="title"><a href="../../t-an001/concepts/microgrids.html" id="doc-d16877e468-link">Microgrids</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">Rapid microgrid pre-commissioning and system integration. Microgrid controller RCP and   testing.</span></p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="doc-d16877e552" class="topicref" data-id="doc" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action doc-d16877e552-link" class="wh-expand-btn"></span><div class="title"><a href="../../t-an001/concepts/electrical_drives.html" id="doc-d16877e552-link">Electrical Drives</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">Converters coupled with high-fidelity electrical machine models for high performance   motor drive applications.</span></p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="doc-d16877e601" class="topicref" data-id="doc" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action doc-d16877e601-link" class="wh-expand-btn"></span><div class="title"><a href="../../t-an001/concepts/power_supplies.html" id="doc-d16877e601-link">Power Supplies</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">Linear and switching power supplies for industrial and laboratory   applications.</span></p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="doc-d16877e625" class="topicref" data-id="doc" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action doc-d16877e625-link" class="wh-expand-btn"></span><div class="title"><a href="../../t-an001/concepts/marine_power_systems.html" id="doc-d16877e625-link">Marine Power Systems</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">Hybrid propulsion, shipboard power management, offshore renewables, offshore oil and   gas platform power supplies. </span></p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="doc-d16877e649" class="topicref" data-id="doc" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action doc-d16877e649-link" class="wh-expand-btn"></span><div class="title"><a href="../../t-an001/concepts/power_quality.html" id="doc-d16877e649-link">Power Quality</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">Real-time power quality/harmonic analysis. Incorporate active filters and FACTS devices (STATCOM, DVR,   SVC).</span></p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="doc-d16877e685" class="topicref" data-id="doc" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action doc-d16877e685-link" class="wh-expand-btn"></span><div class="title"><a href="../../t-an001/concepts/railway.html" id="doc-d16877e685-link">Railway</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">System-level and component-level application examples for railway    (traction) equipment.</span></p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="doc-d16877e709" class="topicref" data-id="doc" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action doc-d16877e709-link" class="wh-expand-btn"></span><div class="title"><a href="../../t-an001/concepts/medical_devices.html" id="doc-d16877e709-link">Medical Devices</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">X-ray, MRI, ICD, pacemakers, defibrillators, emergency ventilators, ECG, EMG,   bioelectronics.</span></p></div></div></div></li></ul></li></ul></div>
+		                        
+                            </div>
+                        </nav>
+                    
+                    
+                    <div class="col-lg-7 col-md-9 col-sm-12" id="wh_topic_body">
+                        <button id="wh_close_publication_toc_button" class="close-toc-button d-none" aria-label="Toggle publishing table of content" aria-controls="wh_publication_toc" aria-expanded="true">
+                            <span class="close-toc-icon-container">
+                                <span class="close-toc-icon"></span>     
+                            </span>
+                        </button>
+                        <button id="wh_close_topic_toc_button" class="close-toc-button d-none" aria-label="Toggle topic table of content" aria-controls="wh_topic_toc" aria-expanded="true">
+                            <span class="close-toc-icon-container">
+                                <span class="close-toc-icon"></span>     
+                            </span>
+                        </button>
+                        
+                        <div class=" wh_topic_content body "><main role="main"><article role="article" aria-labelledby="ariaid-title1">
+ <h1 class="- topic/title title topictitle1" id="ariaid-title1">Grid-connected inverter with virtual synchronous machine</h1>
+ 
+ <div class="- topic/body reference/refbody body refbody"><p class="- topic/shortdesc shortdesc"><span class="- topic/ph ph" id="doc__description">Control demonstration of grid-connected converters to help maintain grid
+  stability</span></p>
+  <section class="- topic/section section" id="doc__section_hqr_1zb_rz" data-ofbid="doc__section_hqr_1zb_rz"><h2 class="- topic/title title sectiontitle"><span class="- topic/ph ph" id="doc__an_title_intro">Introduction</span></h2>
+   <p class="- topic/p p">Synchronous generators (SG) contribute to the transient grid stability
+   through rotating mass inertia. An increased presence of grid-connected, converter-based,
+   distributed energy resources (DER) has a negative cumulative impact on the transient stability
+   characteristic of the power system. One solution to counter this problem is to modify converter
+   control so that it can mimic the dynamics of a SG and provide virtual inertia. This application
+   demonstrates a grid-connected inverter with the ability to act as a virtual synchronous generator
+   (VSG).</p></section>
+  <section class="- topic/section section" id="doc__section_bl1_clx_mz" data-ofbid="doc__section_bl1_clx_mz"><h2 class="- topic/title title sectiontitle">VSG model</h2>
+   
+  <p class="- topic/p p">The VSG consists of an energy source, a converter, and a control mechanism. The VSG control
+    block is based on the following the swing equations for SGs.</p>
+  <p class="- topic/p p">Swing Equation:</p>
+  <p class="- topic/p p"><span class="+ topic/foreign mathml-d/mathml foreign mathml">
+   <math xmlns="http://www.w3.org/1998/Math/MathML"><mover accent="true"><mrow><mi>θ</mi></mrow><mo>¨</mo></mover><mo>=</mo><mfrac><mrow><mn>1</mn></mrow><mrow><mi>J</mi></mrow></mfrac><mfenced separators="|"><mrow><msub><mrow><mi>T</mi></mrow><mrow><mi>e</mi></mrow></msub><mo>-</mo><msub><mrow><mi>T</mi></mrow><mrow><mi>m</mi></mrow></msub><mo>-</mo><msub><mrow><mi>D</mi></mrow><mrow><mi>p</mi></mrow></msub><mover accent="true"><mrow><mi>θ</mi></mrow><mo>˙</mo></mover></mrow></mfenced></math>
+   </span></p>
+  <p class="- topic/p p">Electromagnetic torque:</p>
+  <p class="- topic/p p"><span class="+ topic/foreign mathml-d/mathml foreign mathml">
+    <math xmlns="http://www.w3.org/1998/Math/MathML">
+     <msub>
+      <mrow>
+       <mi mathvariant="normal">T</mi>
+      </mrow>
+      <mrow>
+       <mi mathvariant="normal">e</mi>
+      </mrow>
+     </msub>
+     <mo>=</mo>
+     <msub>
+      <mrow>
+       <mi>M</mi>
+      </mrow>
+      <mrow>
+       <mi>f</mi>
+      </mrow>
+     </msub>
+     <msub>
+      <mrow>
+       <mi>i</mi>
+      </mrow>
+      <mi>f</mi>
+     </msub>
+     <mfenced open="〈" close="〉" separators="|"><mrow><mi>i</mi><mo>,</mo><mover accent="true"><mrow><mrow><mrow><mi mathvariant="normal">sin</mi></mrow><mo>⁡</mo><mrow><mi>θ</mi></mrow></mrow></mrow><mo>~</mo></mover></mrow></mfenced>
+    </math>
+   </span>
+  </p>
+  <p class="- topic/p p">Three-phase generated voltage:</p>
+  <p class="- topic/p p"><span class="+ topic/foreign mathml-d/mathml foreign mathml">
+   <math xmlns="http://www.w3.org/1998/Math/MathML"><mi>e</mi><mo>=</mo><mover accent="true"><mrow><mi>θ</mi></mrow><mo>˙</mo></mover><msub><mrow><mi>M</mi></mrow><mrow><mi>f</mi></mrow></msub><msub><mrow><mi>i</mi></mrow><mrow><mi>f</mi></mrow></msub><mover accent="true"><mrow><mrow><mrow><mi mathvariant="normal">sin</mi></mrow><mo>⁡</mo><mrow><mi>θ</mi></mrow></mrow></mrow><mo>~</mo></mover></math>
+   </span></p>
+  <p class="- topic/p p">Reactive power:</p>
+  <p class="- topic/p p"><span class="+ topic/foreign mathml-d/mathml foreign mathml">
+   <math xmlns="http://www.w3.org/1998/Math/MathML"><mi>Q</mi><mo>=</mo><mo>-</mo><mover accent="true"><mrow><mi>θ</mi></mrow><mo>˙</mo></mover><msub><mrow><mi>M</mi></mrow><mrow><mi>f</mi></mrow></msub><msub><mrow><mi>i</mi></mrow><mrow><mi>f</mi></mrow></msub><mfenced open="〈" close="〉" separators="|"><mrow><mi>i</mi><mo>,</mo><mover accent="true"><mrow><mrow><mrow><mi mathvariant="normal">cos</mi></mrow><mo>⁡</mo><mrow><mi>θ</mi></mrow></mrow></mrow><mo>~</mo></mover></mrow></mfenced></math>
+   </span></p>
+  <p class="- topic/p p">where:</p>
+  <p class="- topic/p p"><span class="+ topic/foreign mathml-d/mathml foreign mathml">
+    <math xmlns="http://www.w3.org/1998/Math/MathML">
+     <mover accent="true">
+      <mrow>
+       <mi>s</mi>
+       <mi>i</mi>
+       <mi>n</mi>
+       <mo>⁡</mo>
+       <mi>θ</mi>
+      </mrow>
+      <mo>~</mo>
+     </mover>
+     <mi> </mi>
+     <mo>=</mo>
+     <mfenced open="[" close="]" separators="|">
+      <mrow>
+       <mtable>
+        <mtr>
+         <mtd>
+          <mrow>
+           <mrow>
+            <mi mathvariant="normal">sin</mi>
+           </mrow>
+           <mo>⁡</mo>
+           <mrow>
+            <mi>θ</mi>
+           </mrow>
+          </mrow>
+         </mtd>
+        </mtr>
+        <mtr>
+         <mtd>
+          <mrow>
+           <mrow>
+            <mi mathvariant="normal">sin</mi>
+           </mrow>
+           <mo>⁡</mo>
+           <mrow>
+            <mo>(</mo>
+            <mi>θ</mi>
+            <mo>-</mo>
+            <mfrac>
+             <mrow>
+              <mn>2</mn>
+              <mi>π</mi>
+             </mrow>
+             <mrow>
+              <mn>3</mn>
+             </mrow>
+            </mfrac>
+            <mo>)</mo>
+           </mrow>
+          </mrow>
+         </mtd>
+        </mtr>
+        <mtr>
+         <mtd>
+          <mrow>
+           <mrow>
+            <mi mathvariant="normal">sin</mi>
+           </mrow>
+           <mo>⁡</mo>
+           <mrow>
+            <mo>(</mo>
+            <mi>θ</mi>
+            <mo>+</mo>
+            <mfrac>
+             <mrow>
+              <mn>2</mn>
+              <mi>π</mi>
+             </mrow>
+             <mrow>
+              <mn>3</mn>
+             </mrow>
+            </mfrac>
+            <mo>)</mo>
+           </mrow>
+          </mrow>
+         </mtd>
+        </mtr>
+       </mtable>
+      </mrow>
+     </mfenced>
+    </math>
+   </span></p>
+   <p class="- topic/p p"><span class="+ topic/foreign mathml-d/mathml foreign mathml">
+    <math xmlns="http://www.w3.org/1998/Math/MathML">
+     <mover accent="true">
+      <mrow>
+       <mrow>
+        <mrow>
+         <mi mathvariant="normal">cos</mi>
+        </mrow>
+        <mo>⁡</mo>
+        <mrow>
+         <mi>θ</mi>
+        </mrow>
+       </mrow>
+       <mo>⁡</mo>
+      </mrow>
+      <mo>~</mo>
+     </mover>
+     <mi> </mi>
+     <mo>=</mo>
+     <mfenced open="[" close="]" separators="|">
+      <mrow>
+       <mtable>
+        <mtr>
+         <mtd>
+          <mrow>
+           <mrow>
+            <mi mathvariant="normal">cos</mi>
+           </mrow>
+           <mo>⁡</mo>
+           <mrow>
+            <mi>θ</mi>
+           </mrow>
+          </mrow>
+         </mtd>
+        </mtr>
+        <mtr>
+         <mtd>
+          <mrow>
+           <mrow>
+            <mi mathvariant="normal">cos</mi>
+           </mrow>
+           <mo>⁡</mo>
+           <mrow>
+            <mi>θ</mi>
+            <mo>-</mo>
+            <mfrac>
+             <mrow>
+              <mn>2</mn>
+              <mi>π</mi>
+             </mrow>
+             <mrow>
+              <mn>3</mn>
+             </mrow>
+            </mfrac>
+           </mrow>
+          </mrow>
+         </mtd>
+        </mtr>
+        <mtr>
+         <mtd>
+          <mrow>
+           <mrow>
+            <mi mathvariant="normal">cos</mi>
+           </mrow>
+           <mo>⁡</mo>
+           <mrow>
+            <mi>θ</mi>
+            <mo>+</mo>
+            <mfrac>
+             <mrow>
+              <mn>2</mn>
+              <mi>π</mi>
+             </mrow>
+             <mrow>
+              <mn>3</mn>
+             </mrow>
+            </mfrac>
+           </mrow>
+          </mrow>
+         </mtd>
+        </mtr>
+       </mtable>
+      </mrow>
+     </mfenced>
+    </math>
+   </span>
+    </p>
+  <p class="- topic/p p">Virtual inertia is proportional to the nominal power of the VSG divided by the maximum
+    allowable rate of frequency change.</p>
+ </section>
+  <section class="- topic/section section" id="doc__section_lqh_zpl_y3b" data-ofbid="doc__section_lqh_zpl_y3b"><h2 class="- topic/title title sectiontitle"><span class="- topic/ph ph" id="doc__an_title_model">Model description</span></h2>
+   
+   <p class="- topic/p p">The electrical part of the model is shown in <a class="- topic/xref xref" href="#doc__fig_k45_13d_1jb">Figure 1</a>. It is a three-phase inverter model. For powering the DC link, the inverter
+    uses an ideal DC source. The grid-side connection of the inverter is implemented using an LC
+    filter. The suggested parameters of the filter for this model are C = 20e-6 F and L = 2.6e-3 H
+    (the parameters are set in the model initialization panel). On the left side of the schematic
+    there is the three-phase grid with an RL impedance. Components for the phase measurements of
+    current and voltage are located between the grid and the inverter.</p><figure class="- topic/fig fig fignone" id="doc__fig_k45_13d_1jb" data-ofbid="doc__fig_k45_13d_1jb"><figcaption class="- topic/title title figcap"><span class="figtitleprefix fig--title-label">Figure<span class="fig--title-label-number"> 1</span><span class="fig--title-label-punctuation">. </span></span><span class="fig--title">Three-phase grid-connected inverter</span></figcaption>
+     
+     <img class="- topic/image image break" id="doc__image_l45_13d_1jb" src="../Images/virtual_sync_machine_inverter_01.jpg"/>
+    </figure>
+   <p class="- topic/p p">The control part consists of active- and reactive-power regulation loops which are shown in
+     <a class="- topic/xref xref" href="#doc__fig_iqc_dw3_1jb">Figure 2</a>. The reference for the
+    frequency (wg) is set in the model initialization panel. The reference for the active power
+    (Pref) is set in HIL SCADA by adjusting the slider to the desired value. The active power loop
+    uses a mechanical friction coefficient (D) as a feedback gain. Further, this loop regulates the
+    speed of the VSG and generates the phase angle theta. The reference for the reactive power
+    (Qref) is set in HIL SCADA by adjusting the slider to the desired value. This loop generates the
+    phase angle phi, which is further used in the torque calculation and in the generation of the
+    converter reference signals.</p><figure class="- topic/fig fig fignone" id="doc__fig_iqc_dw3_1jb" data-ofbid="doc__fig_iqc_dw3_1jb"><figcaption class="- topic/title title figcapcenter"><span class="figtitleprefix fig--title-label">Figure<span class="fig--title-label-number"> 2</span><span class="fig--title-label-punctuation">. </span></span><span class="fig--title">Active and reactive power regulation loops</span></figcaption>
+     
+     <div class="imagecenter break"><img class="- topic/image image imagecenter break" id="doc__image_jqc_dw3_1jb" src="../Images/virtual_sync_machine_inverter_02.jpg"/></div>
+    </figure>
+   <p class="- topic/p p">The electromagnetic torque calculation and reference signals for the inverter are shown in
+     <a class="- topic/xref xref" href="#doc__fig_kvc_ry3_1jb">Figure 3</a>. The electromagnetic torque
+    (left of <a class="- topic/xref xref" href="#doc__fig_kvc_ry3_1jb">Figure 3</a>) is calculated using the Swing Equations described in the
+    <a class="- topic/xref xref" href="#doc__section_bl1_clx_mz">VSG model</a>
+    section. The PWM reference signals are generated and routed to the inverter via the voltage of
+    the DC link (VDC, shown in Inverter Voltage References at the right of <a class="- topic/xref xref" href="#doc__fig_kvc_ry3_1jb">Figure 3</a>), the phi
+    angle from the reactive power regulation loop (previously calculated in Reactive Power
+    Regulation at the bottom right of <a class="- topic/xref xref" href="#doc__fig_iqc_dw3_1jb">Figure 2</a>), and sine transformations (calculated in
+    Trigometric Functions in the middle of <a class="- topic/xref xref" href="#doc__fig_kvc_ry3_1jb">Figure 3</a>).</p>
+    <figure class="- topic/fig fig fignone" id="doc__fig_kvc_ry3_1jb" data-ofbid="doc__fig_kvc_ry3_1jb"><figcaption class="- topic/title title figcapcenter"><span class="figtitleprefix fig--title-label">Figure<span class="fig--title-label-number"> 3</span><span class="fig--title-label-punctuation">. </span></span><span class="fig--title">Electromagnetic torque calculation and voltage reference signals</span></figcaption>
+     
+     <div class="imagecenter break"><img class="- topic/image image imagecenter break" id="doc__image_lvc_ry3_1jb" src="../Images/virtual_sync_machine_inverter_03.jpg"/></div>
+    </figure>
+  </section>
+  <section class="- topic/section section" id="doc__section_wxt_wlx_mz" data-ofbid="doc__section_wxt_wlx_mz"><h2 class="- topic/title title sectiontitle"><span class="- topic/ph ph" id="doc__an_title_simulation">Simulation</span></h2>
+   
+   <p class="- topic/p p">This application comes with a pre-built SCADA panel (<a class="- topic/xref xref" href="#doc__fig_lyc_1nj_1jb">Figure 4</a>). The panel offers most essential
+    user interface elements (widgets) to monitor and interact with the simulation in runtime. You
+    can customize it freely to fit your needs.</p><figure class="- topic/fig fig fignone" id="doc__fig_lyc_1nj_1jb" data-ofbid="doc__fig_lyc_1nj_1jb"><figcaption class="- topic/title title figcapcenter"><span class="figtitleprefix fig--title-label">Figure<span class="fig--title-label-number"> 4</span><span class="fig--title-label-punctuation">. </span></span><span class="fig--title">SCADA panel</span></figcaption>
+     
+     <div class="imagecenter break"><img class="- topic/image image imagecenter break" id="doc__image_myc_1nj_1jb" src="../Images/virtual_sync_machine_inverter_04.jpg"/></div>
+    </figure>
+   <p class="- topic/p p">The purpose of this model is to show that the inverter can mimic the dynamic effects
+    associated with electrical machine inertia. The transient of the active power injection into the
+    grid depends on the mechanical friction coefficient (D) and the moment of inertia of the VSG
+    rotor. The transient of the reactive power injection into the grid depends primarily on the
+    reactive power factor droop (Kv). Three cases for active power transient response are analyzed.
+    In all cases, the reference active power is set to 5000 W.</p>
+   <ol class="- topic/ol ol" id="doc__ol_td2_h4j_1jb" data-ofbid="doc__ol_td2_h4j_1jb">
+     <li class="- topic/li li">Transient of the active power response in the variation of the mechanical friction
+      coefficient (D) while the moment inertia is set to the value of J = 0.3.<figure class="- topic/fig fig fignone" id="doc__fig_pqk_rqj_1jb" data-ofbid="doc__fig_pqk_rqj_1jb"><figcaption class="- topic/title title figcapcenter"><span class="figtitleprefix fig--title-label">Figure<span class="fig--title-label-number"> 5</span><span class="fig--title-label-punctuation">. </span></span><span class="fig--title">Transient response for J = 0.3</span></figcaption>
+       
+       <div class="imagecenter break"><img class="- topic/image image imagecenter break" id="doc__image_qqk_rqj_1jb" src="../Images/virtual_sync_machine_inverter_05.jpg"/></div>
+      </figure>
+      <p class="- topic/p p">Higher values of D give a transient response that achieves the steady-state without
+       overshoot (<a class="- topic/xref xref" href="#doc__fig_pqk_rqj_1jb">Figure 5</a>, left). Lower
+       values of D give an oscillatory response (<a class="- topic/xref xref" href="#doc__fig_pqk_rqj_1jb">Figure 5</a>, center), where the steady-state is reached after 1 s. With an optimal value
+       of D, (<a class="- topic/xref xref" href="#doc__fig_pqk_rqj_1jb">Figure 5</a>, right) the active
+       power reaches the steady-state in 0.2 s.</p></li>
+     <li class="- topic/li li">Transient of the active power response in the variation of D while the moment inertia is
+      increased to the value of J = 0.8. This is the case for VSGs with a higher power rating.<figure class="- topic/fig fig fignone" id="doc__fig_tbz_grj_1jb" data-ofbid="doc__fig_tbz_grj_1jb"><figcaption class="- topic/title title figcapcenter"><span class="figtitleprefix fig--title-label">Figure<span class="fig--title-label-number"> 6</span><span class="fig--title-label-punctuation">. </span></span><span class="fig--title">Transient response for J = 0.8</span></figcaption>
+       
+       <div class="imagecenter break"><img class="- topic/image image imagecenter break" id="doc__image_ubz_grj_1jb" src="../Images/virtual_sync_machine_inverter_06.jpg"/></div>
+       <p class="- topic/p p">Compared to the previous case, as the value of the moment inertia now has a higher value,
+        the transient period of the active power response has increased oscillations and time taken
+        for reaching the steady-state is also increased.</p>
+      </figure></li>
+     <li class="- topic/li li">Transient of the active power response in the variation of the mechanical friction
+      coefficient (D) while the moment inertia is decreased to the value of J = 0.1. This is the case
+      for VSGs with a lower power rating.<figure class="- topic/fig fig fignone" id="doc__fig_znk_vrj_1jb" data-ofbid="doc__fig_znk_vrj_1jb"><figcaption class="- topic/title title figcapcenter"><span class="figtitleprefix fig--title-label">Figure<span class="fig--title-label-number"> 7</span><span class="fig--title-label-punctuation">. </span></span><span class="fig--title">Transient response for J = 0.1</span></figcaption>
+       
+       <div class="imagecenter break"><img class="- topic/image image imagecenter break" id="doc__image_a4k_vrj_1jb" src="../Images/virtual_sync_machine_inverter_07.jpg"/></div></figure>
+       <p class="- topic/p p">Smaller VSGs have a small moment of inertia. The transient of the active power response
+        can, thus, be smoother and can reach the referent value in a shorter period of time.</p>
+       <p class="- topic/p p">These examples show that within its given power rating, a converter-based DER can emulate
+        the presence of various-sized SGs. Anyone interested in modelling and testing DER grid
+        support by providing virtual inertia is welcome to use this model and send us their
+        feedback. </p>
+       <p class="- topic/p p">This application example is included in the free Virtual HIL Device license and can be
+        simulated on your PC. The <a class="- topic/xref xref" href="#doc__example_requirements">Example requirements</a>
+        lists the file names and minimum hardware requirements needed to simulate the model.</p>
+      </li>
+    </ol>
+  </section>
+  <section class="- topic/section section" id="doc__section_pils_s3" data-ofbid="doc__section_pils_s3"><h2 class="- topic/title title sectiontitle"><span class="- topic/ph ph" id="doc__an_title_test-automation">Test automation</span></h2>
+   
+   <p class="- topic/p p">The provided test automation script validates transient response to active power in the
+    inverter, considering variations in the mechanical friction coefficient and the moment of
+    inertia. In this test, active power inputs of 8, 9, 12, 15, and 20 kW are tested considering
+    overshoot tolerances of 0.3 and 2 kW. An example of a test case with a slow transient response
+    and a low overshoot tolerance can be seen in <a class="- topic/xref xref" href="#doc__test_ov300">Figure 8</a>.</p>
+   <figure class="- topic/fig fig fignone" id="doc__test_ov300" data-ofbid="doc__test_ov300"><figcaption class="- topic/title title figcapcenter"><span class="figtitleprefix fig--title-label">Figure<span class="fig--title-label-number"> 8</span><span class="fig--title-label-punctuation">. </span></span><span class="fig--title">Transient Response example of the Virtual Synchronous Machine inverter</span></figcaption>
+    
+    <div class="imagecenter break"><img class="- topic/image image imagecenter break" src="../Images/virtual_sync_machine_inverter_08.png"/></div>
+   </figure>
+  </section>
+  <section class="- topic/section section" id="doc__example_requirements" data-ofbid="doc__example_requirements"><h2 class="- topic/title title sectiontitle">Example requirements</h2>
+   
+   <p class="- topic/p p"><a class="- topic/xref xref" href="#doc__min_req">Table 1</a> provides detailed information about the file locations and hardware requirements 
+    for running the model in real-time, followed by the HIL device resource utilization when running the model using 
+    this minimal hardware configuration. This information is provided to help you with running and 
+    customizing the model as you see fit.</p>
+   <table class="- topic/table table frame-all" id="doc__min_req" data-ofbid="doc__min_req" data-cols="2"><caption class="- topic/title title tablecap" data-caption-side="top" data-is-repeated="true"><span class="table--title-label">Table<span class="table--title-label-number"> 1</span><span class="table--title-label-punctuation">. </span></span><span class="table--title"><span class="- topic/ph ph" id="doc__an_min-req">Minimum requirements</span></span></caption><colgroup><col style="width:50%"/><col style="width:50%"/></colgroup><thead class="- topic/thead thead">
+      <tr class="- topic/row">
+       <th class="- topic/entry entry align-center colsep-0 rowsep-1" id="doc__min_req__entry__1" colspan="2">Files</th>
+      </tr>
+     </thead><tbody class="- topic/tbody tbody">
+      <tr class="- topic/row">
+       <td class="- topic/entry entry align-center colsep-1 rowsep-1" headers="doc__min_req__entry__1"><span class="- topic/ph ph" id="doc__an_min-req_TH-files">Typhoon HIL files</span></td>
+       <td class="- topic/entry entry align-center colsep-0 rowsep-1" headers="doc__min_req__entry__1"><p class="- topic/p p"><em class="+ topic/ph hi-d/i ph i">examples\models\grid-connected converters\virtual sync machine inverter</em></p>
+        <p class="- topic/p p">virtual sync machine inverter.tse</p>
+        <p class="- topic/p p">virtual sync machine inverter.cus</p>
+        <p class="- topic/p p"><em class="+ topic/ph hi-d/i ph i">examples\tests\102_virtual_sync_machine_inverter</em></p>
+        <p class="- topic/p p">test_virtual_sync_machine_inverter.py</p></td>
+      </tr>
+      <tr class="- topic/row">
+       <td class="- topic/entry entry align-center colsep-0 rowsep-1" headers="doc__min_req__entry__1" colspan="2"><strong class="+ topic/ph hi-d/b ph b">Minimum hardware requirements</strong></td>
+      </tr>
+      <tr class="- topic/row">
+       <td class="- topic/entry entry align-center colsep-1 rowsep-1" headers="doc__min_req__entry__1"><span class="- topic/ph ph" id="doc__an_min-req_num-devices">No. of HIL devices</span></td>
+       <td class="- topic/entry entry align-center colsep-0 rowsep-1" headers="doc__min_req__entry__1"><span class="- topic/ph ph" id="doc__num_devices">1</span></td>
+      </tr>
+      <tr class="- topic/row">
+       <td class="- topic/entry entry align-center colsep-1 rowsep-1" headers="doc__min_req__entry__1"><span class="- topic/ph ph" id="doc__an_min-req_model-num">HIL device model</span></td>
+       <td class="- topic/entry entry align-center colsep-0 rowsep-1" headers="doc__min_req__entry__1"><span class="- topic/ph ph" id="doc__type_devices">HIL101</span></td>
+      </tr>
+      <tr class="- topic/row">
+       <td class="- topic/entry entry align-center colsep-1 rowsep-1" headers="doc__min_req__entry__1"><u class="+ topic/ph hi-d/u ph u"><a class="- topic/xref xref" href="../../t-ug002/concepts/device_manager.html" title="Device Manager is used to create, manipulate, and activate HIL device setups.">Device configuration</a></u></td>
+       <td class="- topic/entry entry align-center colsep-0 rowsep-1" headers="doc__min_req__entry__1"><span class="- topic/ph ph" id="doc__num_config">1</span></td>
+      </tr>
+      <tr class="- topic/row">
+       <td class="- topic/entry entry align-center colsep-0 rowsep-1" headers="doc__min_req__entry__1" colspan="2"><strong class="+ topic/ph hi-d/b ph b">HIL device resource utilization</strong></td>
+      </tr>
+      <tr class="- topic/row">
+       <td class="- topic/entry entry align-center colsep-1 rowsep-1" headers="doc__min_req__entry__1"><span class="- topic/ph ph" id="doc__an_res-util_num-cores">No. of processing cores</span></td>
+       <td class="- topic/entry entry align-center colsep-0 rowsep-1" headers="doc__min_req__entry__1"><span class="- topic/ph ph" id="doc__num_cores">1</span></td>
+      </tr>
+      <tr class="- topic/row">
+       <td class="- topic/entry entry align-center colsep-1 rowsep-1" headers="doc__min_req__entry__1"><span class="- topic/ph ph" id="doc__an_res-util_max-memory">Max. matrix memory utilization</span></td>
+       <td class="- topic/entry entry align-center colsep-0 rowsep-1" headers="doc__min_req__entry__1"><p class="- topic/p p">28.59% (core0)</p></td>
+      </tr>
+      <tr class="- topic/row">
+       <td class="- topic/entry entry align-center colsep-1 rowsep-1" headers="doc__min_req__entry__1"><span class="- topic/ph ph" id="doc__an_res-util_max-time">Max. time slot utilization</span></td>
+       <td class="- topic/entry entry align-center colsep-0 rowsep-1" headers="doc__min_req__entry__1"><p class="- topic/p p">45.91% (core0)</p></td>
+      </tr>
+      <tr class="- topic/row">
+       <td class="- topic/entry entry align-center colsep-1 rowsep-1" headers="doc__min_req__entry__1"><span class="- topic/ph ph" id="doc__an_res-util_sim-step">Simulation step, electrical</span></td>
+       <td class="- topic/entry entry align-center colsep-0 rowsep-1" headers="doc__min_req__entry__1">1 µs</td>
+      </tr>
+      <tr class="- topic/row">
+       <td class="- topic/entry entry align-center colsep-1 rowsep-0" headers="doc__min_req__entry__1"><span class="- topic/ph ph" id="doc__an_res-util_exec-rate">Execution rate, signal processing</span></td>
+       <td class="- topic/entry entry align-center colsep-0 rowsep-0" headers="doc__min_req__entry__1">250 µs</td>
+      </tr>
+     </tbody></table>
+  </section>
+  <section class="- topic/section section" id="doc__fwUb3UNcX" data-ofbid="doc__fwUb3UNcX"><h2 class="- topic/title title sectiontitle"><span class="- topic/ph ph" id="doc__an_title_author">Authors</span></h2>
+   
+   <p class="- topic/p p">The model featured in this application note was originally created by our academic partners.
+    For domain-specific questions, the original authors of the application can be contacted
+    directly:</p>
+    <p class="- topic/p p">[1] Prof. Felipe Bovolini Grigoletto (<a class="- topic/xref xref" href="mailto:grigoletto@gmail.com" target="_blank" rel="external noopener">grigoletto@gmail.com</a>)</p>
+     <p class="- topic/p p">[2] Prof. Marcio Stefanello, (<a class="- topic/xref xref" href="mailto:marciostefa@gmail.com" target="_blank" rel="external noopener">marciostefa@gmail.com</a>), Federal University of Pampa, Brazil (UNIPAMPA).</p>
+  </section>
+ </div>
+</article></main></div>
+                        
+                        
+                        
+                        
+                        
+                        
+                    </div>
+                    
+                        <nav role="navigation" id="wh_topic_toc" aria-label="On this page" class="col-lg-2 d-none d-lg-block navbar d-print-none"> 
+                            <div id="wh_topic_toc_content">
+		                        
+	                            <div class=" wh_topic_toc "><div class="wh_topic_label">On this page</div><ul><li class="section-item"><div class="section-title"><a href="#doc__section_hqr_1zb_rz" data-tocid="doc__section_hqr_1zb_rz"><span class="- topic/ph ph" id="doc__an_title_intro">Introduction</span></a></div></li><li class="section-item"><div class="section-title"><a href="#doc__section_bl1_clx_mz" data-tocid="doc__section_bl1_clx_mz">VSG model</a></div></li><li class="section-item"><div class="section-title"><a href="#doc__section_lqh_zpl_y3b" data-tocid="doc__section_lqh_zpl_y3b"><span class="- topic/ph ph" id="doc__an_title_model">Model description</span></a></div></li><li class="section-item"><div class="section-title"><a href="#doc__section_wxt_wlx_mz" data-tocid="doc__section_wxt_wlx_mz"><span class="- topic/ph ph" id="doc__an_title_simulation">Simulation</span></a></div></li><li class="section-item"><div class="section-title"><a href="#doc__section_pils_s3" data-tocid="doc__section_pils_s3"><span class="- topic/ph ph" id="doc__an_title_test-automation">Test automation</span></a></div></li><li class="section-item"><div class="section-title"><a href="#doc__example_requirements" data-tocid="doc__example_requirements">Example requirements</a></div></li><li class="section-item"><div class="section-title"><a href="#doc__fwUb3UNcX" data-tocid="doc__fwUb3UNcX"><span class="- topic/ph ph" id="doc__an_title_author">Authors</span></a></div></li></ul></div>
+	                        	
+                        	</div>
+                        </nav>
+                    
+                </div>
+            </div>
+            
+            
+            
+        </div> 
+        <footer class="navbar navbar-default wh_footer">
+  <div class=" footer-container mx-auto ">
+    <div style="text-align:center">Typhoon HIL Inc.<span id="year"> <a href="https://www.typhoon-hil.com">www.typhoon-hil.com</a></span></div>
+  </div>
+</footer>
+        
+        <div id="go2top" class="d-print-none">
+            <span class="oxy-icon oxy-icon-up"></span>
+        </div>
+        
+        <div id="modal_img_large" class="modal">
+            <span class="close oxy-icon oxy-icon-remove"></span>
+            <div id="modal_img_container"></div>
+            <div id="caption"></div>
+        </div>
+        
+        
+<script type="text/javascript" src="../../assets/script.js"> 
+</script>
+
+        
+    </body>
+</html>

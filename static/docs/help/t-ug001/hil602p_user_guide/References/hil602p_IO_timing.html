@@ -1,0 +1,233 @@
+<!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en" data-whc_version="24.1">
+    <head><link rel="shortcut icon" href="../../../favicon.ico"/><link rel="icon" href="../../../favicon.ico"/><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><meta name="DC.rights.owner" content="(C) Copyright 2026"/><meta name="copyright" content="(C) Copyright 2026"/><meta name="generator" content="DITA-OT"/><meta name="DC.type" content="reference"/><meta name="description" content="Sample rates and timing details for HIL602+ devices"/><meta name="DC.relation" content="../../../t-ug001/hil602p_user_guide/topics/hil602p_abstract.html"/><meta name="DC.format" content="HTML5"/><meta name="DC.identifier" content="doc"/>        
+      <title>IO Timing</title><!--  Generated with Oxygen version 24.1, build number 2022030800.  --><meta name="wh-path2root" content="../../../"/><meta name="wh-toc-id" content="doc-d16877e8467"/><meta name="wh-source-relpath" content="t-ug001/hil602p_user_guide/References/hil602p_IO_timing.dita"/><meta name="wh-out-relpath" content="t-ug001/hil602p_user_guide/References/hil602p_IO_timing.html"/>
+    <!-- Latest compiled and minified Bootstrap CSS -->
+    <link rel="stylesheet" type="text/css" href="../../../oxygen-webhelp/lib/bootstrap/css/bootstrap.min.css"/>
+    
+    <link rel="stylesheet" href="../../../oxygen-webhelp/lib/jquery-ui/jquery-ui.min.css"/>
+    
+    <!-- Template default styles  -->
+    <link rel="stylesheet" type="text/css" href="../../../oxygen-webhelp/app/topic-page.css?buildId=2022030800"/>
+    
+    
+    <script src="../../../oxygen-webhelp/lib/jquery/jquery-3.5.1.min.js"></script>
+    
+    <script data-main="../../../oxygen-webhelp/app/topic-page.js" src="../../../oxygen-webhelp/lib/requirejs/require.js"></script>
+<link rel="stylesheet" type="text/css" href="../../../oxygen-webhelp/template/oxygen.css?buildId=2022030800"/><link rel="stylesheet" type="text/css" href="../../../oxygen-webhelp/template/notes.css?buildId=2022030800"/><script type="text/javascript" src="../../Scripts/mml-svg.js"> 
+</script><link rel="stylesheet" type="text/css" href="../../../assets/typhoon.css"/></head>
+
+    <body id="doc" class="wh_topic_page frmBody">
+        <a href="#wh_topic_body" class="sr-only sr-only-focusable">
+            Jump to main content
+        </a>
+        
+        
+        
+        
+        <header class="navbar navbar-default wh_header">
+    <div class="container-fluid">
+        <div class="wh_header_flex_container navbar-nav navbar-expand-md navbar-dark">
+            <div class="wh_logo_and_publication_title_container">
+                <div class="wh_logo_and_publication_title">
+                    
+                    <a href="https://www.typhoon-hil.com" class=" wh_logo d-none d-sm-block "><img src="../../../logo.svg" alt="  Typhoon HIL Documentation  Version: 2026.1  "/></a>
+                    <div class=" wh_publication_title "><a href="../../../index.html"><span class="booktitle">  <span class="ph mainbooktitle">Typhoon HIL Documentation</span>  <span class="ph booktitlealt">Version: 2026.1</span>  </span></a></div>
+                    
+                </div>
+                
+                <button type="button" data-target="#wh_top_menu_and_indexterms_link" id="wh_menu_mobile_button" data-toggle="collapse" class="navbar-toggler collapsed wh_toggle_button" aria-expanded="false" aria-label="Toggle menu" aria-controls="wh_top_menu_and_indexterms_link">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+            </div>
+
+            <div class="wh_top_menu_and_indexterms_link collapse navbar-collapse" id="wh_top_menu_and_indexterms_link">
+                
+                <nav class=" wh_top_menu " aria-label="Menu Container"><ul role="menubar" aria-label="Menu"><li role="menuitem" aria-haspopup="true" aria-expanded="false" class="has-children"><span id="tocId-d16877e21-mi" data-tocid="tocId-d16877e21" data-state="not-ready" class=" topicref application-notes"><span class="title"><a href="../../../t-an001/concepts/application_notes_introduction.html">Typhoon HIL Application Notes</a></span></span></li><li role="menuitem" aria-haspopup="true" aria-expanded="false" class="has-children"><span id="tocId-d16877e737-mi" data-tocid="tocId-d16877e737" data-state="not-ready" class=" topicref software-manual"><span class="title"><a href="../../../t-ug002/topics/software_manual_introduction.html">Typhoon HIL Software Manual</a></span></span></li><li role="menuitem" aria-haspopup="true" aria-expanded="false" class="has-children"><span id="tocId-d16877e7901-mi" data-tocid="tocId-d16877e7901" data-state="not-ready" class=" topicref hardware-manual"><span class="title"><a href="../../../t-ug001/abstract/hardware_manual_introduction.html">Typhoon HIL Hardware Manual</a></span></span></li></ul></nav>
+                
+                
+            </div>
+        </div>
+    </div>
+</header>
+        
+        
+         
+        
+        <div class=" wh_search_input navbar-form wh_topic_page_search search " role="form">
+            
+            
+            
+            <form id="searchForm" method="get" role="search" action="../../../search.html"><div><input type="search" placeholder="Search " class="wh_search_textfield" id="textToSearch" name="searchQuery" aria-label="Search query" required="required"/><button type="submit" class="wh_search_button" aria-label="Search"><span class="search_input_text">Search</span></button></div></form>
+            
+            
+            
+        </div>
+        
+        <div class="container-fluid" id="wh_topic_container">
+            <div class="row">
+
+                <nav class="wh_tools d-print-none navbar-expand-md" aria-label="Tools">
+                    
+                    <div data-tooltip-position="bottom" class=" wh_breadcrumb "><ol class="d-print-none"><li><span class="home"><a href="../../../index.html"><span>Home</span></a></span></li><li><div class="topicref hardware-manual"><div class="title"><a href="../../../t-ug001/abstract/hardware_manual_introduction.html">Typhoon HIL Hardware Manual</a></div></div></li><li><div class="topicref" data-id="doc"><div class="title"><a href="../../../t-ug001/abstract/HIL_simulators.html">Typhoon HIL simulator devices</a><div class="wh-tooltip"><p class="shortdesc">Overview of the currently supported Typhoon HIL simulator devices.</p></div></div></div></li><li><div class="topicref" data-id="doc"><div class="title"><a href="../../../t-ug001/hil602p_user_guide/topics/hil602p_abstract.html">HIL602+ Hardware User Guide</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">Official documentation of the HIL602+ simulator hardware device.</span></p></div></div></div></li><li class="active"><div class="topicref page-break-after" data-id="doc"><div class="title"><a href="../../../t-ug001/hil602p_user_guide/References/hil602p_IO_timing.html">IO Timing</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">Sample rates and timing details for HIL602+         devices</span></p></div></div></div></li></ol></div>
+                    
+                    
+                    
+                    <div class="wh_right_tools">
+                        <button class="wh_hide_highlight" aria-label="Toggle search highlights" title="Toggle search highlights"></button>
+                        <button class="webhelp_expand_collapse_sections" data-next-state="collapsed" aria-label="Collapse sections" title="Collapse sections"></button>
+                        
+                        
+                        
+                        
+                        <div class=" wh_print_link print d-none d-md-inline-block "><button onClick="window.print()" title="Print this page" aria-label="Print this page"></button></div>
+                        
+                        <button type="button" id="wh_toc_button" class="custom-toggler navbar-toggler collapsed wh_toggle_button navbar-light" aria-expanded="false" aria-label="Toggle publishing table of content" aria-controls="wh_publication_toc">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+                    </div>
+                    
+                </nav>
+            </div>
+            
+            
+            
+            
+            <div class="wh_content_area">
+                <div class="row">
+                    
+                        <nav id="wh_publication_toc" class="col-lg-3 col-md-3 col-sm-12 d-md-block d-none d-print-none" aria-label="Table of Contents Container">
+                            <div id="wh_publication_toc_content">
+		                        
+                            	<div class=" wh_publication_toc " data-tooltip-position="right"><span class="expand-button-action-labels"><span id="button-expand-action" role="button" aria-label="Expand"></span><span id="button-collapse-action" role="button" aria-label="Collapse"></span><span id="button-pending-action" role="button" aria-label="Pending"></span></span><ul role="tree" aria-label="Table of Contents"><li role="treeitem" aria-expanded="true"><div data-tocid="tocId-d16877e7901" class="topicref hardware-manual" data-state="expanded"><span role="button" tabindex="0" aria-labelledby="button-collapse-action tocId-d16877e7901-link" class="wh-expand-btn"></span><div class="title"><a href="../../../t-ug001/abstract/hardware_manual_introduction.html" id="tocId-d16877e7901-link">Typhoon HIL Hardware Manual</a></div></div><ul role="group" class="navbar-nav nav-list"><li role="treeitem"><div data-tocid="doc-d16877e7905" class="topicref" data-id="doc" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../../../t-ug001/abstract/hardware_manual_introduction.html" id="doc-d16877e7905-link">Hardware Manual Introduction</a><div class="wh-tooltip"><p class="shortdesc">Collection of some of the guides on the deployment, use, and management of Typhoon HIL hardware devices.</p></div></div></div></li><li role="treeitem" aria-expanded="true"><div data-tocid="doc-d16877e7916" class="topicref" data-id="doc" data-state="expanded"><span role="button" tabindex="0" aria-labelledby="button-collapse-action doc-d16877e7916-link" class="wh-expand-btn"></span><div class="title"><a href="../../../t-ug001/abstract/HIL_simulators.html" id="doc-d16877e7916-link">Typhoon HIL simulator devices</a><div class="wh-tooltip"><p class="shortdesc">Overview of the currently supported Typhoon HIL simulator devices.</p></div></div></div><ul role="group" class="navbar-nav nav-list"><li role="treeitem" aria-expanded="false"><div data-tocid="doc-d16877e7930" class="topicref" data-id="doc" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action doc-d16877e7930-link" class="wh-expand-btn"></span><div class="title"><a href="../../../t-ug001/hil101_user_guide/topics/hil101_abstract.html" id="doc-d16877e7930-link">HIL101 Hardware User Guide</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">Official documentation of the HIL101 simulator hardware device.</span></p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="doc-d16877e8043" class="topicref" data-id="doc" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action doc-d16877e8043-link" class="wh-expand-btn"></span><div class="title"><a href="../../../t-ug001/hil402_user_guide/topics/hil402_abstract.html" id="doc-d16877e8043-link">HIL402 Hardware User Guide</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">Official documentation of the HIL402 simulator hardware device.</span></p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="doc-d16877e8168" class="topicref" data-id="doc" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action doc-d16877e8168-link" class="wh-expand-btn"></span><div class="title"><a href="../../../t-ug001/hil404_user_guide/topics/hil404_abstract.html" id="doc-d16877e8168-link">HIL404 Hardware User Guide</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">Official documentation of the HIL404 simulator hardware device.</span></p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="doc-d16877e8282" class="topicref" data-id="doc" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action doc-d16877e8282-link" class="wh-expand-btn"></span><div class="title"><a href="../../../t-ug001/hil506_user_guide/topics/hil506_abstract.html" id="doc-d16877e8282-link">HIL506 Hardware User Guide</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">Official documentation of the HIL506 simulator hardware device.</span></p></div></div></div></li><li role="treeitem" aria-expanded="true"><div data-tocid="doc-d16877e8407" class="topicref" data-id="doc" data-state="expanded"><span role="button" tabindex="0" aria-labelledby="button-collapse-action doc-d16877e8407-link" class="wh-expand-btn"></span><div class="title"><a href="../../../t-ug001/hil602p_user_guide/topics/hil602p_abstract.html" id="doc-d16877e8407-link">HIL602+ Hardware User Guide</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">Official documentation of the HIL602+ simulator hardware device.</span></p></div></div></div><ul role="group" class="navbar-nav nav-list"><li role="treeitem"><div data-tocid="doc-d16877e8419" class="topicref page-break-after" data-id="doc" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../../../t-ug001/resources/references/safety_guidelines_5.html" id="doc-d16877e8419-link">Safety Guidelines</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">Overview of the safety guidelines for Typhoon HIL simulator             hardware</span></p></div></div></div></li><li role="treeitem"><div data-tocid="doc-d16877e8431" class="topicref page-break-after" data-id="doc" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../../../t-ug001/hil602p_user_guide/References/hil602p_general_specifications.html" id="doc-d16877e8431-link">General Specification</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">General specification of the HIL602+ simulator         hardware</span></p></div></div></div></li><li role="treeitem"><div data-tocid="doc-d16877e8443" class="topicref page-break-after" data-id="doc" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../../../t-ug001/hil602p_user_guide/References/hil602p_pinout.html" id="doc-d16877e8443-link">Pinout</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">Pinout tables for HIL602+ devices</span></p></div></div></div></li><li role="treeitem"><div data-tocid="doc-d16877e8455" class="topicref page-break-after" data-id="doc" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../../../t-ug001/hil602p_user_guide/References/hil602p_IO_voltage_levels.html" id="doc-d16877e8455-link">IO Voltage Levels</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">Overview of the voltage limits and protection measures for the             analog and digital IOs on HIL602+ hardware devices</span></p></div></div></div></li><li role="treeitem" class="active"><div data-tocid="doc-d16877e8467" class="topicref page-break-after" data-id="doc" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../../../t-ug001/hil602p_user_guide/References/hil602p_IO_timing.html" id="doc-d16877e8467-link">IO Timing</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">Sample rates and timing details for HIL602+         devices</span></p></div></div></div></li><li role="treeitem"><div data-tocid="doc-d16877e8479" class="topicref page-break-after" data-id="doc" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../../../t-ug001/hil602p_user_guide/References/hil602p_user_power_supply.html" id="doc-d16877e8479-link">User Power Supply</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">Power limits for HIL602+ devices</span></p></div></div></div></li><li role="treeitem"><div data-tocid="doc-d16877e8491" class="topicref page-break-after" data-id="doc" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../../../t-ug001/hil602p_user_guide/References/hil602p_mechanical.html" id="doc-d16877e8491-link">Mechanical</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">Overview of the physical aspects and interfacing cables of             HIL602+ devices</span></p></div></div></div></li><li role="treeitem"><div data-tocid="doc-d16877e8503" class="topicref page-break-after" data-id="doc" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../../../t-ug001/hil602p_user_guide/References/hil602p_feet_removal.html" id="doc-d16877e8503-link">Feet Removal Procedure</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">Guide to removing feet from HIL602+ devices</span></p></div></div></div></li></ul></li><li role="treeitem" aria-expanded="false"><div data-tocid="doc-d16877e8533" class="topicref" data-id="doc" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action doc-d16877e8533-link" class="wh-expand-btn"></span><div class="title"><a href="../../../t-ug001/hil604_user_guide/topics/hil604_abstract.html" id="doc-d16877e8533-link">HIL604 Hardware User Guide</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">Official documentation of the HIL604 simulator hardware device.</span></p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="doc-d16877e8670" class="topicref" data-id="doc" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action doc-d16877e8670-link" class="wh-expand-btn"></span><div class="title"><a href="../../../t-ug001/hil606_user_guide/topics/hil606_abstract.html" id="doc-d16877e8670-link">HIL606 Hardware User Guide</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">Official documentation of the HIL606 simulator hardware device.</span></p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="doc-d16877e8795" class="topicref" data-id="doc" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action doc-d16877e8795-link" class="wh-expand-btn"></span><div class="title"><a href="../../../t-ug001/hil_paralleling_guide/topics/abstract.html" id="doc-d16877e8795-link">HIL Paralleling Guide</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">This document introduces the HIL paralleling concept, defines modeling of relevant link parameters, and explains how to properly connect multiple Typhoon HIL devices.</span></p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="doc-d16877e8862" class="topicref" data-id="doc" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action doc-d16877e8862-link" class="wh-expand-btn"></span><div class="title"><a href="../../../t-ug001/hil_interfacing_guide/topics/abstract.html" id="doc-d16877e8862-link">Hardware Interfacing Guide</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">Tips and examples on how to connect any controller to the HIL.</span></p></div></div></div></li></ul></li><li role="treeitem" aria-expanded="false"><div data-tocid="doc-d16877e8927" class="topicref" data-id="doc" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action doc-d16877e8927-link" class="wh-expand-btn"></span><div class="title"><a href="../../../t-ug001/hil_connect/topics/abstract.html" id="doc-d16877e8927-link">HIL Connect</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">Information about the HIL Connect, a 19" 6U interface device,             designed to adapt HIL IO signal levels to those most commonly used in the         industry.</span></p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="doc-d16877e9278" class="topicref" data-id="doc" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action doc-d16877e9278-link" class="wh-expand-btn"></span><div class="title"><a href="../../../t-ug001/abstract/HIL_interfaces.html" id="doc-d16877e9278-link">HIL Interfaces</a><div class="wh-tooltip"><p class="shortdesc">Collection of some of the guides on the deployment, use, and management of HIL Interfaces available from Typhoon HIL.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="doc-d16877e10605" class="topicref" data-id="doc" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action doc-d16877e10605-link" class="wh-expand-btn"></span><div class="title"><a href="../../../t-ug001/abstract/HIL_accessories.html" id="doc-d16877e10605-link">HIL Accessories</a><div class="wh-tooltip"><p class="shortdesc">Collection of some of the guides on the deployment, use, and management of Typhoon HIL accessories.</p></div></div></div></li></ul></li></ul></div>
+		                        
+                            </div>
+                        </nav>
+                    
+                    
+                    <div class="col-lg-9 col-md-9 col-sm-12" id="wh_topic_body">
+                        <button id="wh_close_publication_toc_button" class="close-toc-button d-none" aria-label="Toggle publishing table of content" aria-controls="wh_publication_toc" aria-expanded="true">
+                            <span class="close-toc-icon-container">
+                                <span class="close-toc-icon"></span>     
+                            </span>
+                        </button>
+                        
+                        
+                        <div class=" wh_topic_content body "><main role="main"><article role="article" aria-labelledby="ariaid-title1">
+    <h1 class="- topic/title title topictitle1" id="ariaid-title1">IO Timing</h1>
+    
+    <div class="- topic/body reference/refbody body refbody"><p class="- topic/shortdesc shortdesc"><span class="- topic/ph ph" id="doc__description">Sample rates and timing details for HIL602+
+        devices</span></p>
+        <section class="- topic/section section" id="doc__IO_timing" data-ofbid="doc__IO_timing"><h2 class="- topic/title title sectiontitle">IO Timing Details</h2>
+            
+            <p class="- topic/p p">All analog IOs are updated/sampled at the beginning of each simulation time step
+                    (t<sub class="+ topic/ph hi-d/sub ph sub">1</sub>), which is software defined. To improve the PWM sampling
+                resolution, digital inputs actually are sampled at a higher rate (t<sub class="+ topic/ph hi-d/sub ph sub">2</sub>),
+                independent of the simulation time step value. Similarly, digital outputs are
+                updated at a higher t<sub class="+ topic/ph hi-d/sub ph sub">2</sub> rate. For overall expected loop-back latency,
+                please consult <a class="- topic/xref xref" href="https://www.typhoon-hil.com/documentation/typhoon-hil-software-manual/concepts/loopback_latency.html" target="_blank" rel="external noopener">Loopback Latency</a>.</p>
+            <figure class="- topic/fig fig fignone" id="doc__IO_timestep_diagram" data-ofbid="doc__IO_timestep_diagram"><figcaption class="- topic/title title figcap"><span class="figtitleprefix fig--title-label">Figure<span class="fig--title-label-number"> 1</span><span class="fig--title-label-punctuation">. </span></span><span class="fig--title">IO timing diagram</span></figcaption>
+                
+                <img class="- topic/image image" src="../../resources/images/hil4_6_series_user_guide_02.png" width="710"/>
+            </figure>
+            <table class="- topic/table table frame-all" id="doc__HIL_timing_parameters" data-ofbid="doc__HIL_timing_parameters" data-cols="3"><caption class="- topic/title title tablecap" data-caption-side="top" data-is-repeated="true"><span class="table--title-label">Table<span class="table--title-label-number"> 1</span><span class="table--title-label-punctuation">. </span></span><span class="table--title">Key Timing Parameters</span></caption><colgroup><col style="width:14.285714285714285%"/><col style="width:57.14285714285714%"/><col style="width:28.57142857142857%"/></colgroup><thead class="- topic/thead thead">
+                        <tr class="- topic/row">
+                            <th class="- topic/entry entry align-center colsep-1 rowsep-1" id="doc__HIL_timing_parameters__entry__1"><strong class="+ topic/ph hi-d/b ph b">Symbol</strong></th>
+                            <th class="- topic/entry entry align-center colsep-1 rowsep-1" id="doc__HIL_timing_parameters__entry__2"><strong class="+ topic/ph hi-d/b ph b">Parameter</strong></th>
+                            <th class="- topic/entry entry align-center colsep-0 rowsep-1" id="doc__HIL_timing_parameters__entry__3"><strong class="+ topic/ph hi-d/b ph b">Value</strong></th>
+                        </tr>
+                    </thead><tbody class="- topic/tbody tbody">
+                        <tr class="- topic/row">
+                            <td class="- topic/entry entry align-center colsep-1 rowsep-1" headers="doc__HIL_timing_parameters__entry__1">t<sub class="+ topic/ph hi-d/sub ph sub">1</sub></td>
+                            <td class="- topic/entry entry align-center colsep-1 rowsep-1" headers="doc__HIL_timing_parameters__entry__2">Simulation step</td>
+                            <td class="- topic/entry entry align-center colsep-0 rowsep-1" headers="doc__HIL_timing_parameters__entry__3">Software defined</td>
+                        </tr>
+                        <tr class="- topic/row">
+                            <td class="- topic/entry entry align-center colsep-1 rowsep-0" headers="doc__HIL_timing_parameters__entry__1">t<sub class="+ topic/ph hi-d/sub ph sub">2</sub></td>
+                            <td class="- topic/entry entry align-center colsep-1 rowsep-0" headers="doc__HIL_timing_parameters__entry__2">Digital input sampling time</td>
+                            <td class="- topic/entry entry align-center colsep-0 rowsep-0" headers="doc__HIL_timing_parameters__entry__3"><span class="- topic/ph ph">160 MSPS</span></td>
+                        </tr>
+                    </tbody></table>
+            <table class="- topic/table table frame-all" id="doc__HIL402_602_4_IOsamplerate" data-ofbid="doc__HIL402_602_4_IOsamplerate" data-cols="3"><caption class="- topic/title title tablecap" data-caption-side="top" data-is-repeated="true"><span class="table--title-label">Table<span class="table--title-label-number"> 2</span><span class="table--title-label-punctuation">. </span></span><span class="table--title">HIL602+ IO sample/update rates</span></caption><colgroup><col style="width:20%"/><col style="width:40%"/><col style="width:40%"/></colgroup><thead class="- topic/thead thead">
+                        <tr class="- topic/row">
+                            <th class="- topic/entry entry align-center colsep-1 rowsep-1" id="doc__HIL402_602_4_IOsamplerate__entry__1"><strong class="+ topic/ph hi-d/b ph b">IO class</strong></th>
+                            <th class="- topic/entry entry align-center colsep-1 rowsep-1" id="doc__HIL402_602_4_IOsamplerate__entry__2"><strong class="+ topic/ph hi-d/b ph b">Sample/Update rate</strong></th>
+                            <th class="- topic/entry entry align-center colsep-0 rowsep-1" id="doc__HIL402_602_4_IOsamplerate__entry__3"><strong class="+ topic/ph hi-d/b ph b">Comment</strong></th>
+                        </tr>
+                    </thead><tbody class="- topic/tbody tbody">
+                        <tr class="- topic/row">
+                            <td class="- topic/entry entry align-center colsep-1 rowsep-1" headers="doc__HIL402_602_4_IOsamplerate__entry__1">Digital input</td>
+                            <td class="- topic/entry entry align-center colsep-1 rowsep-1" headers="doc__HIL402_602_4_IOsamplerate__entry__2"><span class="- topic/ph ph" id="doc__DI_602p">160 MSPS</span></td>
+                            <td class="- topic/entry entry align-center colsep-0 rowsep-1" headers="doc__HIL402_602_4_IOsamplerate__entry__3">All digital inputs are sampled simultaneously.</td>
+                        </tr>
+                        <tr class="- topic/row">
+                            <td class="- topic/entry entry align-center colsep-1 rowsep-1" headers="doc__HIL402_602_4_IOsamplerate__entry__1">Digital output</td>
+                            <td class="- topic/entry entry align-center colsep-1 rowsep-1" headers="doc__HIL402_602_4_IOsamplerate__entry__2"><span class="- topic/ph ph" id="doc__DO_602p">Up to 160 MSPS</span></td>
+                            <td class="- topic/entry entry align-center colsep-0 rowsep-1" headers="doc__HIL402_602_4_IOsamplerate__entry__3">All digital outputs are updated simultaneously.</td>
+                        </tr>
+                        <tr class="- topic/row">
+                            <td class="- topic/entry entry align-center colsep-1 rowsep-1" headers="doc__HIL402_602_4_IOsamplerate__entry__1">Analog input</td>
+                            <td class="- topic/entry entry align-center colsep-1 rowsep-1" headers="doc__HIL402_602_4_IOsamplerate__entry__2"><span class="- topic/ph ph" id="doc__AI_602p">1/t<sub class="+ topic/ph hi-d/sub ph sub">1</sub></span></td>
+                            <td class="- topic/entry entry align-center colsep-0 rowsep-1" headers="doc__HIL402_602_4_IOsamplerate__entry__3">All analog inputs are sampled simultaneously. Minimum sample time
+                                is 1μs</td>
+                        </tr>
+                        <tr class="- topic/row">
+                            <td class="- topic/entry entry align-center colsep-1 rowsep-0" headers="doc__HIL402_602_4_IOsamplerate__entry__1">Analog output</td>
+                            <td class="- topic/entry entry align-center colsep-1 rowsep-0" headers="doc__HIL402_602_4_IOsamplerate__entry__2"><span class="- topic/ph ph" id="doc__AO_602p">1/t<sub class="+ topic/ph hi-d/sub ph sub">1</sub></span></td>
+                            <td class="- topic/entry entry align-center colsep-0 rowsep-0" headers="doc__HIL402_602_4_IOsamplerate__entry__3">All analog outputs are updated simultaneously.</td>
+                        </tr>
+                    </tbody></table>
+            <table class="- topic/table table frame-all" id="doc__HIL_input_timing" data-ofbid="doc__HIL_input_timing" data-cols="2"><caption class="- topic/title title tablecap" data-caption-side="top" data-is-repeated="true"><span class="table--title-label">Table<span class="table--title-label-number"> 3</span><span class="table--title-label-punctuation">. </span></span><span class="table--title">Output delays</span></caption><colgroup><col style="width:40%"/><col style="width:60%"/></colgroup><thead class="- topic/thead thead">
+                        <tr class="- topic/row">
+                            <th class="- topic/entry entry align-center colsep-1 rowsep-1" id="doc__HIL_input_timing__entry__1"><strong class="+ topic/ph hi-d/b ph b">IO class</strong></th>
+                            <th class="- topic/entry entry align-center colsep-0 rowsep-1" id="doc__HIL_input_timing__entry__2"><strong class="+ topic/ph hi-d/b ph b">HIL602+</strong></th>
+                        </tr>
+                    </thead><tbody class="- topic/tbody tbody">
+                        <tr class="- topic/row">
+                            <td class="- topic/entry entry align-center colsep-1 rowsep-1" headers="doc__HIL_input_timing__entry__1">Digital output (T<sub class="+ topic/ph hi-d/sub ph sub">do</sub>)</td>
+                            <td class="- topic/entry entry align-center colsep-0 rowsep-1" headers="doc__HIL_input_timing__entry__2"><span class="- topic/ph ph" id="doc__Tdo_602p">250 ns</span></td>
+                        </tr>
+                        <tr class="- topic/row">
+                            <td class="- topic/entry entry align-center colsep-1 rowsep-0" headers="doc__HIL_input_timing__entry__1">Analog output (T<sub class="+ topic/ph hi-d/sub ph sub">ao</sub>)</td>
+                            <td class="- topic/entry entry align-center colsep-0 rowsep-0" headers="doc__HIL_input_timing__entry__2"><span class="- topic/ph ph" id="doc__Tao_602p">640 ns</span></td>
+                        </tr>
+                    </tbody></table>
+        </section>
+    </div>
+</article></main></div>
+                        
+                        
+                        
+                        
+                        
+                        
+                    </div>
+                    
+                </div>
+            </div>
+            
+            
+            
+        </div> 
+        <footer class="navbar navbar-default wh_footer">
+  <div class=" footer-container mx-auto ">
+    <div style="text-align:center">Typhoon HIL Inc.<span id="year"> <a href="https://www.typhoon-hil.com">www.typhoon-hil.com</a></span></div>
+  </div>
+</footer>
+        
+        <div id="go2top" class="d-print-none">
+            <span class="oxy-icon oxy-icon-up"></span>
+        </div>
+        
+        <div id="modal_img_large" class="modal">
+            <span class="close oxy-icon oxy-icon-remove"></span>
+            <div id="modal_img_container"></div>
+            <div id="caption"></div>
+        </div>
+        
+        
+<script type="text/javascript" src="../../assets/script.js"> 
+</script>
+
+        
+    </body>
+</html>

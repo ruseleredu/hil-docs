@@ -1,0 +1,1 @@
+define({"topics":[{"title":"Importing data from HIL SCADA ","shortdesc":"<p class=\"shortdesc\"> This section describes importing data from HIL SCADA<\/p>","href":"t-ug002\/concepts\/importing_data_from_hil_scada.html","attributes":{"data-id":"doc"},"menu":{"hasChildren":false},"tocID":"doc-d16877e7599","topics":[]}]});

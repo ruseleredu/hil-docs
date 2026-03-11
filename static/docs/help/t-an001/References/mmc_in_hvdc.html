@@ -1,0 +1,381 @@
+<!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en" data-whc_version="24.1">
+    <head><link rel="shortcut icon" href="../../favicon.ico"/><link rel="icon" href="../../favicon.ico"/><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><meta name="DC.rights.owner" content="(C) Copyright 2026"/><meta name="copyright" content="(C) Copyright 2026"/><meta name="generator" content="DITA-OT"/><meta name="DC.type" content="reference"/><meta name="description" content="Demonstration on the use of an MMC in one of its main applications: High-voltage DC electric power transmission."/><meta name="DC.relation" content="../../t-an001/concepts/grid_connected_converters.html"/><meta name="DC.format" content="HTML5"/><meta name="DC.identifier" content="doc"/>        
+      <title>Modular Multi-level Converter (MMC) in High-voltage direct current (HVDC) transmission</title><!--  Generated with Oxygen version 24.1, build number 2022030800.  --><meta name="wh-path2root" content="../../"/><meta name="wh-toc-id" content="doc-d16877e84"/><meta name="wh-source-relpath" content="t-an001/References/mmc_in_hvdc.dita"/><meta name="wh-out-relpath" content="t-an001/References/mmc_in_hvdc.html"/>
+    <!-- Latest compiled and minified Bootstrap CSS -->
+    <link rel="stylesheet" type="text/css" href="../../oxygen-webhelp/lib/bootstrap/css/bootstrap.min.css"/>
+    
+    <link rel="stylesheet" href="../../oxygen-webhelp/lib/jquery-ui/jquery-ui.min.css"/>
+    
+    <!-- Template default styles  -->
+    <link rel="stylesheet" type="text/css" href="../../oxygen-webhelp/app/topic-page.css?buildId=2022030800"/>
+    
+    
+    <script src="../../oxygen-webhelp/lib/jquery/jquery-3.5.1.min.js"></script>
+    
+    <script data-main="../../oxygen-webhelp/app/topic-page.js" src="../../oxygen-webhelp/lib/requirejs/require.js"></script>
+<link rel="stylesheet" type="text/css" href="../../oxygen-webhelp/template/oxygen.css?buildId=2022030800"/><link rel="stylesheet" type="text/css" href="../../oxygen-webhelp/template/notes.css?buildId=2022030800"/><script type="text/javascript" src="../../Scripts/mml-svg.js"> 
+</script><link rel="stylesheet" type="text/css" href="../../assets/typhoon.css"/></head>
+
+    <body id="doc" class="wh_topic_page frmBody">
+        <a href="#wh_topic_body" class="sr-only sr-only-focusable">
+            Jump to main content
+        </a>
+        
+        
+        
+        
+        <header class="navbar navbar-default wh_header">
+    <div class="container-fluid">
+        <div class="wh_header_flex_container navbar-nav navbar-expand-md navbar-dark">
+            <div class="wh_logo_and_publication_title_container">
+                <div class="wh_logo_and_publication_title">
+                    
+                    <a href="https://www.typhoon-hil.com" class=" wh_logo d-none d-sm-block "><img src="../../logo.svg" alt="  Typhoon HIL Documentation  Version: 2026.1  "/></a>
+                    <div class=" wh_publication_title "><a href="../../index.html"><span class="booktitle">  <span class="ph mainbooktitle">Typhoon HIL Documentation</span>  <span class="ph booktitlealt">Version: 2026.1</span>  </span></a></div>
+                    
+                </div>
+                
+                <button type="button" data-target="#wh_top_menu_and_indexterms_link" id="wh_menu_mobile_button" data-toggle="collapse" class="navbar-toggler collapsed wh_toggle_button" aria-expanded="false" aria-label="Toggle menu" aria-controls="wh_top_menu_and_indexterms_link">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+            </div>
+
+            <div class="wh_top_menu_and_indexterms_link collapse navbar-collapse" id="wh_top_menu_and_indexterms_link">
+                
+                <nav class=" wh_top_menu " aria-label="Menu Container"><ul role="menubar" aria-label="Menu"><li role="menuitem" aria-haspopup="true" aria-expanded="false" class="has-children"><span id="tocId-d16877e21-mi" data-tocid="tocId-d16877e21" data-state="not-ready" class=" topicref application-notes"><span class="title"><a href="../../t-an001/concepts/application_notes_introduction.html">Typhoon HIL Application Notes</a></span></span></li><li role="menuitem" aria-haspopup="true" aria-expanded="false" class="has-children"><span id="tocId-d16877e737-mi" data-tocid="tocId-d16877e737" data-state="not-ready" class=" topicref software-manual"><span class="title"><a href="../../t-ug002/topics/software_manual_introduction.html">Typhoon HIL Software Manual</a></span></span></li><li role="menuitem" aria-haspopup="true" aria-expanded="false" class="has-children"><span id="tocId-d16877e7901-mi" data-tocid="tocId-d16877e7901" data-state="not-ready" class=" topicref hardware-manual"><span class="title"><a href="../../t-ug001/abstract/hardware_manual_introduction.html">Typhoon HIL Hardware Manual</a></span></span></li></ul></nav>
+                
+                
+            </div>
+        </div>
+    </div>
+</header>
+        
+        
+         
+        
+        <div class=" wh_search_input navbar-form wh_topic_page_search search " role="form">
+            
+            
+            
+            <form id="searchForm" method="get" role="search" action="../../search.html"><div><input type="search" placeholder="Search " class="wh_search_textfield" id="textToSearch" name="searchQuery" aria-label="Search query" required="required"/><button type="submit" class="wh_search_button" aria-label="Search"><span class="search_input_text">Search</span></button></div></form>
+            
+            
+            
+        </div>
+        
+        <div class="container-fluid" id="wh_topic_container">
+            <div class="row">
+
+                <nav class="wh_tools d-print-none navbar-expand-md" aria-label="Tools">
+                    
+                    <div data-tooltip-position="bottom" class=" wh_breadcrumb "><ol class="d-print-none"><li><span class="home"><a href="../../index.html"><span>Home</span></a></span></li><li><div class="topicref application-notes"><div class="title"><a href="../../t-an001/concepts/application_notes_introduction.html">Typhoon HIL Application Notes</a></div></div></li><li><div class="topicref" data-id="doc"><div class="title"><a href="../../t-an001/concepts/grid_connected_converters.html">Grid-connected converters</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">Grid-connected converter applications featuring various grid support    functionalities.</span></p></div></div></div></li><li class="active"><div class="topicref" data-id="doc"><div class="title"><a href="../../t-an001/References/mmc_in_hvdc.html">Modular Multi-level Converter (MMC) in High-voltage direct current (HVDC) transmission</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">Demonstration on the use of an MMC in one of its main applications: High-voltage DC   electric power transmission.</span></p></div></div></div></li></ol></div>
+                    
+                    
+                    
+                    <div class="wh_right_tools">
+                        <button class="wh_hide_highlight" aria-label="Toggle search highlights" title="Toggle search highlights"></button>
+                        <button class="webhelp_expand_collapse_sections" data-next-state="collapsed" aria-label="Collapse sections" title="Collapse sections"></button>
+                        
+                        
+                        
+                        
+                        <div class=" wh_print_link print d-none d-md-inline-block "><button onClick="window.print()" title="Print this page" aria-label="Print this page"></button></div>
+                        
+                        <button type="button" id="wh_toc_button" class="custom-toggler navbar-toggler collapsed wh_toggle_button navbar-light" aria-expanded="false" aria-label="Toggle publishing table of content" aria-controls="wh_publication_toc">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+                    </div>
+                    
+                </nav>
+            </div>
+            
+            
+            
+            
+            <div class="wh_content_area">
+                <div class="row">
+                    
+                        <nav id="wh_publication_toc" class="col-lg-3 col-md-3 col-sm-12 d-md-block d-none d-print-none" aria-label="Table of Contents Container">
+                            <div id="wh_publication_toc_content">
+		                        
+                            	<div class=" wh_publication_toc " data-tooltip-position="right"><span class="expand-button-action-labels"><span id="button-expand-action" role="button" aria-label="Expand"></span><span id="button-collapse-action" role="button" aria-label="Collapse"></span><span id="button-pending-action" role="button" aria-label="Pending"></span></span><ul role="tree" aria-label="Table of Contents"><li role="treeitem" aria-expanded="true"><div data-tocid="tocId-d16877e21" class="topicref application-notes" data-state="expanded"><span role="button" tabindex="0" aria-labelledby="button-collapse-action tocId-d16877e21-link" class="wh-expand-btn"></span><div class="title"><a href="../../t-an001/concepts/application_notes_introduction.html" id="tocId-d16877e21-link">Typhoon HIL Application Notes</a></div></div><ul role="group" class="navbar-nav nav-list"><li role="treeitem"><div data-tocid="doc-d16877e25" class="topicref" data-id="doc" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../../t-an001/concepts/application_notes_introduction.html" id="doc-d16877e25-link">Application Notes Introduction</a><div class="wh-tooltip"><p class="shortdesc">Brief overview of the different categories of Application Notes</p></div></div></div></li><li role="treeitem" aria-expanded="true"><div data-tocid="doc-d16877e36" class="topicref" data-id="doc" data-state="expanded"><span role="button" tabindex="0" aria-labelledby="button-collapse-action doc-d16877e36-link" class="wh-expand-btn"></span><div class="title"><a href="../../t-an001/concepts/grid_connected_converters.html" id="doc-d16877e36-link">Grid-connected converters</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">Grid-connected converter applications featuring various grid support    functionalities.</span></p></div></div></div><ul role="group" class="navbar-nav nav-list"><li role="treeitem"><div data-tocid="doc-d16877e48" class="topicref" data-id="doc" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../../t-an001/References/virtual_sync_machine_inverter.html" id="doc-d16877e48-link">Grid-connected inverter with virtual synchronous machine</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">Control demonstration of grid-connected converters to help maintain grid   stability</span></p></div></div></div></li><li role="treeitem"><div data-tocid="doc-d16877e60" class="topicref" data-id="doc" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../../t-an001/References/back_to_back_dfig_wind.html" id="doc-d16877e60-link">Wind Turbine with Doubly-fed Induction Generator</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">Demonstration of the functionality and normal operation of a Type-3    wind turbine, using a doubly-fed induction generator (DFIG) with the rotor connected to the    stator via a back-to-back frequency converter.</span></p></div></div></div></li><li role="treeitem"><div data-tocid="doc-d16877e72" class="topicref" data-id="doc" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../../t-an001/References/multifunctional_grid_connected_converter.html" id="doc-d16877e72-link">Multifunctional grid connected converter</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">Demonstration of a simple converter leg with advanced non-linear load compensation. Seven different operation modes are supported.</span></p></div></div></div></li><li role="treeitem" class="active"><div data-tocid="doc-d16877e84" class="topicref" data-id="doc" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../../t-an001/References/mmc_in_hvdc.html" id="doc-d16877e84-link">Modular Multi-level Converter (MMC) in High-voltage direct current (HVDC) transmission</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">Demonstration on the use of an MMC in one of its main applications: High-voltage DC   electric power transmission.</span></p></div></div></div></li></ul></li><li role="treeitem" aria-expanded="false"><div data-tocid="doc-d16877e96" class="topicref" data-id="doc" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action doc-d16877e96-link" class="wh-expand-btn"></span><div class="title"><a href="../../t-an001/concepts/automotive.html" id="doc-d16877e96-link">Automotive</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">Electric cars and other automotive applications.</span></p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="doc-d16877e132" class="topicref" data-id="doc" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action doc-d16877e132-link" class="wh-expand-btn"></span><div class="title"><a href="../../t-an001/concepts/aerospace.html" id="doc-d16877e132-link">Aerospace</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">System-level and component-level aircraft applications.</span></p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="doc-d16877e168" class="topicref" data-id="doc" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action doc-d16877e168-link" class="wh-expand-btn"></span><div class="title"><a href="../../t-an001/concepts/battery_management_systems.html" id="doc-d16877e168-link">Battery management systems</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">Battery management system (BMS) examples</span></p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="doc-d16877e216" class="topicref" data-id="doc" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action doc-d16877e216-link" class="wh-expand-btn"></span><div class="title"><a href="../../t-an001/concepts/how-to_guides.html" id="doc-d16877e216-link">How-to Guides</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">Guides, tips, and tricks on various aspects of Typhoon HIL toolchain usage.</span></p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="doc-d16877e312" class="topicref" data-id="doc" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action doc-d16877e312-link" class="wh-expand-btn"></span><div class="title"><a href="../../t-an001/concepts/communication_protocols.html" id="doc-d16877e312-link">Communication Protocols</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">Interoperability. Cybersecurity. Modbus, Sunspec, IEC61850, IEEE    C37.118, DNP3, CAN, OPC UA, and more.</span></p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="doc-d16877e384" class="topicref" data-id="doc" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action doc-d16877e384-link" class="wh-expand-btn"></span><div class="title"><a href="../../t-an001/concepts/power_systems.html" id="doc-d16877e384-link">Power Systems</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">Power system simulation. Relay protection testing. Power flow tool integration and   co-simulation.</span></p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="doc-d16877e468" class="topicref" data-id="doc" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action doc-d16877e468-link" class="wh-expand-btn"></span><div class="title"><a href="../../t-an001/concepts/microgrids.html" id="doc-d16877e468-link">Microgrids</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">Rapid microgrid pre-commissioning and system integration. Microgrid controller RCP and   testing.</span></p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="doc-d16877e552" class="topicref" data-id="doc" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action doc-d16877e552-link" class="wh-expand-btn"></span><div class="title"><a href="../../t-an001/concepts/electrical_drives.html" id="doc-d16877e552-link">Electrical Drives</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">Converters coupled with high-fidelity electrical machine models for high performance   motor drive applications.</span></p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="doc-d16877e601" class="topicref" data-id="doc" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action doc-d16877e601-link" class="wh-expand-btn"></span><div class="title"><a href="../../t-an001/concepts/power_supplies.html" id="doc-d16877e601-link">Power Supplies</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">Linear and switching power supplies for industrial and laboratory   applications.</span></p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="doc-d16877e625" class="topicref" data-id="doc" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action doc-d16877e625-link" class="wh-expand-btn"></span><div class="title"><a href="../../t-an001/concepts/marine_power_systems.html" id="doc-d16877e625-link">Marine Power Systems</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">Hybrid propulsion, shipboard power management, offshore renewables, offshore oil and   gas platform power supplies. </span></p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="doc-d16877e649" class="topicref" data-id="doc" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action doc-d16877e649-link" class="wh-expand-btn"></span><div class="title"><a href="../../t-an001/concepts/power_quality.html" id="doc-d16877e649-link">Power Quality</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">Real-time power quality/harmonic analysis. Incorporate active filters and FACTS devices (STATCOM, DVR,   SVC).</span></p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="doc-d16877e685" class="topicref" data-id="doc" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action doc-d16877e685-link" class="wh-expand-btn"></span><div class="title"><a href="../../t-an001/concepts/railway.html" id="doc-d16877e685-link">Railway</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">System-level and component-level application examples for railway    (traction) equipment.</span></p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="doc-d16877e709" class="topicref" data-id="doc" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action doc-d16877e709-link" class="wh-expand-btn"></span><div class="title"><a href="../../t-an001/concepts/medical_devices.html" id="doc-d16877e709-link">Medical Devices</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">X-ray, MRI, ICD, pacemakers, defibrillators, emergency ventilators, ECG, EMG,   bioelectronics.</span></p></div></div></div></li></ul></li></ul></div>
+		                        
+                            </div>
+                        </nav>
+                    
+                    
+                    <div class="col-lg-7 col-md-9 col-sm-12" id="wh_topic_body">
+                        <button id="wh_close_publication_toc_button" class="close-toc-button d-none" aria-label="Toggle publishing table of content" aria-controls="wh_publication_toc" aria-expanded="true">
+                            <span class="close-toc-icon-container">
+                                <span class="close-toc-icon"></span>     
+                            </span>
+                        </button>
+                        <button id="wh_close_topic_toc_button" class="close-toc-button d-none" aria-label="Toggle topic table of content" aria-controls="wh_topic_toc" aria-expanded="true">
+                            <span class="close-toc-icon-container">
+                                <span class="close-toc-icon"></span>     
+                            </span>
+                        </button>
+                        
+                        <div class=" wh_topic_content body "><main role="main"><article role="article" aria-labelledby="ariaid-title1">
+ <h1 class="- topic/title title topictitle1" id="ariaid-title1">Modular Multi-level Converter (MMC) in High-voltage direct current (HVDC)
+  transmission</h1>
+ 
+ <div class="- topic/body reference/refbody body refbody"><p class="- topic/shortdesc shortdesc"><span class="- topic/ph ph" id="doc__description">Demonstration on the use of an MMC in one of its main applications: High-voltage DC
+  electric power transmission.</span></p>
+  <section class="- topic/section section" id="doc__section_hqr_1zb_rz" data-ofbid="doc__section_hqr_1zb_rz"><h2 class="- topic/title title sectiontitle">Introduction</h2>
+   
+   <p class="- topic/p p">This application note presents a possible use of
+    Modular Multilevel Converters (MMCs) in the Typhoon HIL environment. To demonstrate this, 
+    MMC model performance is shown in an HVDC (High-voltage direct current) transmission application,
+    one of the main application areas for MMCs.</p>
+  </section>
+  <section class="- topic/section section" id="doc__section_bnk_str_1kb" data-ofbid="doc__section_bnk_str_1kb"><h2 class="- topic/title title sectiontitle">Model description</h2>
+   
+   <p class="- topic/p p">The model contains six <a class="- topic/xref xref" href="../../t-ug002/References/mmc_leg_switching_function.html" title="Description of the MMC Leg - Switching Function component in Schematic Editor">Modular Multilevel Converter (MMC) legs</a>. You can find more information about the MMC
+    structure and topology in the <a class="- topic/xref xref" href="modular_multi_level_converter_mmc_with_induction_machine.html#doc__section_hqr_1zb_rz">Introduction</a> section of the <a class="- topic/xref xref" href="modular_multi_level_converter_mmc_with_induction_machine.html" title="Demonstration of real-time testing of an MMC in one of its main applications: electrical drive systems.">Modular Multi-level Converter (MMC) with Induction Machine</a> application note. The three MMC legs on the left side of the model operate as rectifiers and
+    are connected to each of the three phases of the Three Phase Voltage Source which emulates a
+    grid. The rated voltage of the grid is 230 kV, and its frequency is 50 Hz. This side of the model
+    is referred to as the Rectifier side. The three MMC legs on the right side of the model are
+    operating as inverters and are connected to the three phases of the <a class="- topic/xref xref" href="../../t-ug002/References/constant_impedance_load.html" title="Description of the Constant Impedance Load component, for representing a three-phase balanced or unbalanced constant impedance load.">Constant Impedance Load</a>.
+    The rated voltage of the load is 230 kV, its frequency is 60 Hz, and its rated power is 1000 MVA.
+    This side of the model is referred to as the Inverter side. The two sides are connected in a
+    back-to-back configuration.</p>
+   <p class="- topic/p p">The DC outputs of the MMC on the Rectifier side are connected to the DC inputs of the MMC on
+    the Inverter side via an HVDC <a class="- topic/xref xref" href="../../t-ug002/References/transmission_line.html" title="Description of the Transmission Line component in Schematic Editor">Transmission Line</a>. The length of the line is 1000 km, and the nominal DC voltage across
+    the line is 640 kV. The rectifier side of the electrical model is shown in <a class="- topic/xref xref" href="#doc__fig_q52_44f_vsb">Figure 1</a>. The inverter side of the electrical
+    model is shown in <a class="- topic/xref xref" href="#doc__fig_pdt_t4f_vsb">Figure 2</a>.</p>
+   <figure class="- topic/fig fig fignone" id="doc__fig_q52_44f_vsb" data-ofbid="doc__fig_q52_44f_vsb"><figcaption class="- topic/title title figcapcenter"><span class="figtitleprefix fig--title-label">Figure<span class="fig--title-label-number"> 1</span><span class="fig--title-label-punctuation">. </span></span><span class="fig--title">Rectifier side of the model</span></figcaption>
+     
+     <div class="imagecenter break"><img class="- topic/image image imagecenter break" id="doc__image_r52_44f_vsb" src="../Images/mmc_in_hvdc_01.png"/></div>
+    </figure>
+   <figure class="- topic/fig fig fignone" id="doc__fig_pdt_t4f_vsb" data-ofbid="doc__fig_pdt_t4f_vsb"><figcaption class="- topic/title title figcapcenter"><span class="figtitleprefix fig--title-label">Figure<span class="fig--title-label-number"> 2</span><span class="fig--title-label-punctuation">. </span></span><span class="fig--title">Inverter side of the model</span></figcaption>
+    
+    <div class="imagecenter break"><img class="- topic/image image imagecenter break" id="doc__image_qdt_t4f_vsb" src="../Images/mmc_in_hvdc_02.png"/></div>
+   </figure>
+   <p class="- topic/p p">The phase-locked loop (<a class="- topic/xref xref" href="../../t-ug002/References/three_phase_pll.html" title="Description of the Three Phase PLL component in Schematic Editor, which generates output signals whose phase is related to the phase of an input three phase signal.">Three phase PLL</a>) 
+    and the control of the converters are implemented using <a class="- topic/xref xref" href="../../t-ug002/topics/signal_processing_components.html" title="This section describes the general properties of all signal processing components in the Typhoon HIL Schematic Editor core library.">Signal Processing Components</a>. 
+    The control of the MMCs is managed using Nearest Level Control (NLC), which
+    is implemented in the <a class="- topic/xref xref" href="../../t-ug002/References/control_for_mmc-nlc.html" title="Description of the Control for MMC Leg- NLC component in Schematic Editor which can be used for controlling the MMC Leg Switching Function.">Control for MMC Leg - NLC</a> component,
+    which can be found in the MMC Control – Rectifier, and MMC
+    Control – Inverter subsystems, respectively. The number of levels in this model is 17. By
+    changing the appropriate parameter in the NLC block, the number of levels can be changed.</p>
+   <div class="- topic/note note note note_note" id="doc__max_mmc_levels" data-ofbid="doc__max_mmc_levels"><span class="note__title">Note:</span> For more information on the maximum number of MMC levels supported by 
+    a HIL device, please refer to <a class="- topic/xref xref" href="https://ticket.typhoon-hil.com/kb/faq.php?id=154" target="_blank" rel="external noopener">
+    this Knowledgebase article</a>.</div>
+   <p class="- topic/p p">The Signal Processing part of the model consists of the Rectifier and Inverter control
+    algorithms. The control algorithms for the Rectifier and Inverter sides are implemented as a
+    closed-loop and located in the Rectifier Controller and Inverter Controller subsystems,
+    respectively. A PLL component is used to provide reference values for the control. The two parts
+    of the Signal Processing are shown in <a class="- topic/xref xref" href="#doc__fig_kvk_h4f_vsb">Figure 3</a> and <a class="- topic/xref xref" href="#doc__fig_n4z_qnf_vsb">Figure 4</a>.</p>
+   <figure class="- topic/fig fig fignone" id="doc__fig_kvk_h4f_vsb" data-ofbid="doc__fig_kvk_h4f_vsb"><figcaption class="- topic/title title figcapcenter"><span class="figtitleprefix fig--title-label">Figure<span class="fig--title-label-number"> 3</span><span class="fig--title-label-punctuation">. </span></span><span class="fig--title">Rectifier controller and PLL implementation using the Signal
+      Processing Library </span></figcaption>
+     
+     <div class="imagecenter break"><img class="- topic/image image imagecenter break" id="doc__image_lvk_h4f_vsb" src="../Images/mmc_in_hvdc_03.png"/></div>
+    </figure>
+     <figure class="- topic/fig fig fignone" id="doc__fig_n4z_qnf_vsb" data-ofbid="doc__fig_n4z_qnf_vsb"><figcaption class="- topic/title title figcapcenter"><span class="figtitleprefix fig--title-label">Figure<span class="fig--title-label-number"> 4</span><span class="fig--title-label-punctuation">. </span></span><span class="fig--title">Inverter controller implementation using the Signal Processing Library</span></figcaption>
+      
+      <div class="imagecenter break"><img class="- topic/image image imagecenter break" id="doc__image_o4z_qnf_vsb" src="../Images/mmc_in_hvdc_04.png"/></div> </figure>
+      <p class="- topic/p p">In order to save FPGA resources, the electrical model of the MMC is replaced with a
+       switching function model. The switching function model is implemented using Signal
+       Processing. That means that an increase in MMC levels results in higher CPU utilization,
+       which in turn could lead to a <a class="- topic/xref xref" href="../../t-ug002/concepts/status_bar.html#doc__ul_gd3_ftw_q1b">Computing
+        Interval Overrun</a>. In order to effectively utilize the CPU of the HIL, CPU core
+       partitioning is used in the model. CPU markers are used to map a portion of the signal
+       processing model to a specified CPU core. Using CPU markers, the signal processing parts
+       (such as control and the switching functions) of the rectifier and inverter sides were
+       partitioned onto separate cores of the User CPU.</p>
+  </section>
+  <section class="- topic/section section" id="doc__section_urt_fvw_2jb" data-ofbid="doc__section_urt_fvw_2jb"><h2 class="- topic/title title sectiontitle">Simulation</h2><p class="- topic/p p">This application comes with a
+    pre-built SCADA panel, shown in <a class="- topic/xref xref" href="#doc__fig_fs4_4mf_vsb">Figure 5</a>. The panel offers most essential user interface elements (widgets) to monitor and interact
+    with the simulation in runtime. You can customize it freely to fit your needs.</p><figure class="- topic/fig fig fignone" id="doc__fig_fs4_4mf_vsb" data-ofbid="doc__fig_fs4_4mf_vsb"><figcaption class="- topic/title title figcapcenter"><span class="figtitleprefix fig--title-label">Figure<span class="fig--title-label-number"> 5</span><span class="fig--title-label-punctuation">. </span></span><span class="fig--title">SCADA panel for the MMC in HVDC example</span></figcaption>
+    
+    <div class="imagecenter break"><img class="- topic/image image imagecenter break" id="doc__image_gs4_4mf_vsb" src="../Images/mmc_in_hvdc_05.png"/></div>
+   </figure><p class="- topic/p p">After starting the simulation, we can check the CPU utilization using the <a class="- topic/xref xref" href="../../t-ug002/concepts/status_bar.html#doc__ul_y5f_4sw_q1b">Time Slot
+     Monitor</a>. In <a class="- topic/xref xref" href="#doc__fig_cfs_pmf_vsb">Figure 6</a>, you can
+    see the CPU utilization when the model is running on a single CPU core; the utilization here is
+    over 100%, which will raise the CIO flag, indicating Computing Interval Overrun. The simulation
+    results will be inaccurate.</p>
+   <figure class="- topic/fig fig fignone" id="doc__fig_cfs_pmf_vsb" data-ofbid="doc__fig_cfs_pmf_vsb"><figcaption class="- topic/title title figcapcenter"><span class="figtitleprefix fig--title-label">Figure<span class="fig--title-label-number"> 6</span><span class="fig--title-label-punctuation">. </span></span><span class="fig--title">Time Slot Monitor in case one CPU core is used</span></figcaption>
+    
+    <div class="imagecenter break"><img class="- topic/image image imagecenter break" id="doc__image_dfs_pmf_vsb" src="../Images/mmc_in_hvdc_06.png"/></div>
+   </figure>
+   <p class="- topic/p p">In <a class="- topic/xref xref" href="#doc__fig_hxt_qmf_vsb">Figure 7</a>, you can see the CPU
+    utilization when the same model is running on two cores, where the utilization of both cores is
+    at about 57%, and the CIO flag is not raised. This explains why the use of CPU Markers is
+    necessary in this case.<span class="- topic/ph ph"> For more background on why this is needed, please refer to our <a class="- topic/xref xref" href="../../t-ug002/concepts/circuit_partitioning.html" title="This section describes the general motivation for electrical circuit partitioning and gives some practical guidelines for using it in your model.">Electric circuit partitioning</a> documentation.</span></p><figure class="- topic/fig fig fignone" id="doc__fig_hxt_qmf_vsb" data-ofbid="doc__fig_hxt_qmf_vsb"><figcaption class="- topic/title title figcapcenter"><span class="figtitleprefix fig--title-label">Figure<span class="fig--title-label-number"> 7</span><span class="fig--title-label-punctuation">. </span></span><span class="fig--title">Time Slot Monitor in case two CPU cores are used</span></figcaption>
+    
+    <div class="imagecenter break"><img class="- topic/image image imagecenter break" id="doc__image_ixt_qmf_vsb" src="../Images/mmc_in_hvdc_07.png"/></div>
+   </figure>
+   <p class="- topic/p p">The <a class="- topic/xref xref" href="#doc__fig_fs4_4mf_vsb">SCADA panel</a>
+    allows you to have insight into the operation of these converters through various widgets and
+    scopes. On the Rectifier side, you can observe and change the voltage on the DC link using the
+    appropriate slider and observe RMS values of the phase voltage and current for phase A on the
+    Rectifier side, here named Grid 1. By double clicking on the MMC – Rectifier sub-panel, you can
+    observe voltages across the capacitors of the first five submodules, for both upper and lower
+    arms, for all three phases. Their values are provided using the Digital Display widgets, while
+    they are graphically represented using Trace Graphs. In <a class="- topic/xref xref" href="#doc__fig_ndx_rmf_vsb">Figure 8</a>, the MMC – Rectifier sub – panel is
+    shown. </p></section>
+  <section class="- topic/section section" id="doc__section_ahd_gcy_5sb" data-ofbid="doc__section_ahd_gcy_5sb"><figure class="- topic/fig fig fignone" id="doc__fig_ndx_rmf_vsb" data-ofbid="doc__fig_ndx_rmf_vsb"><figcaption class="- topic/title title figcapcenter"><span class="figtitleprefix fig--title-label">Figure<span class="fig--title-label-number"> 8</span><span class="fig--title-label-punctuation">. </span></span><span class="fig--title">MMC – Rectifier sub-panel</span></figcaption>
+    
+    <div class="imagecenter break"><img class="- topic/image image imagecenter break" id="doc__image_odx_rmf_vsb" src="../Images/mmc_in_hvdc_08.png"/></div>
+   </figure>
+   <p class="- topic/p p">On the Inverter side, you can observe the voltage on the DC link and observe RMS values of
+   the phase voltage and current for phase A. Using the appropriate sliders, located on the left
+   side of the <a class="- topic/xref xref" href="#doc__fig_fs4_4mf_vsb">SCADA panel</a>,
+   you can change the phase voltage and frequency on the Inverter side, here named Grid 2. The MMC –
+   Inverter side sub-panel provides relevant information in the same way as the MMC – Rectifier side
+   sub-panel.</p><p class="- topic/p p">The SCADA panel also includes a Capture/Scope widget. In Capture you can see the
+    phase voltages and currents for both the Rectifier and Inverter sides. The third viewport shows
+    the voltages on the DC link, measured from both the Rectifier and Inverter side. The fourth
+    viewport shows the voltages across the first capacitor, as well as how the controller balances
+    these voltages across the capacitors, for both sides. This is shown in <a class="- topic/xref xref" href="#doc__fig_hqw_5mf_vsb">Figure 9</a>.</p>
+   <figure class="- topic/fig fig fignone" id="doc__fig_hqw_5mf_vsb" data-ofbid="doc__fig_hqw_5mf_vsb"><figcaption class="- topic/title title figcapcenter"><span class="figtitleprefix fig--title-label">Figure<span class="fig--title-label-number"> 9</span><span class="fig--title-label-punctuation">. </span></span><span class="fig--title">MMC using 17 levels</span></figcaption>
+    
+    <div class="imagecenter break"><img class="- topic/image image imagecenter break" id="doc__image_iqw_5mf_vsb" src="../Images/mmc_in_hvdc_09.png"/></div>
+   </figure></section>
+  <section class="- topic/section section" id="doc__section_bdn_cfl_1nb" data-ofbid="doc__section_bdn_cfl_1nb"><h2 class="- topic/title title sectiontitle">Test Automation</h2>
+   
+   <p class="- topic/p p">The provided test automation script validates if the voltage on each of the first 10
+    capacitors in the submodules are within an expected tolerance. Two tests are performed: one for
+    the Rectifier and one for the Inverter side. The test captures the first five seconds of the
+    simulation. When the voltages of the sub-module capacitors are in a steady state, the test
+    measures and compares these values with the expected value <span class="+ topic/foreign mathml-d/mathml foreign mathml">
+     <math xmlns="http://www.w3.org/1998/Math/MathML">
+      <mfrac>
+       <mrow>
+        <msub>
+         <mrow>
+          <mi>V</mi>
+         </mrow>
+         <mrow>
+          <mi>d</mi>
+          <mi>c</mi>
+         </mrow>
+        </msub>
+       </mrow>
+       <mrow>
+        <mi>N</mi>
+        <mo>-</mo>
+        <mn>1</mn>
+       </mrow>
+      </mfrac>
+     </math>
+    </span>. This value is approximately 44 kV. The tolerance is 5%, which is approximately 2200
+    V. In <a class="- topic/xref xref" href="#doc__fig_pkf_wmf_vsb">Figure 10</a>, an
+    example of a test result is shown.</p>
+   <figure class="- topic/fig fig fignone" id="doc__fig_pkf_wmf_vsb" data-ofbid="doc__fig_pkf_wmf_vsb"><figcaption class="- topic/title title figcapcenter"><span class="figtitleprefix fig--title-label">Figure<span class="fig--title-label-number"> 10</span><span class="fig--title-label-punctuation">. </span></span><span class="fig--title">Test results</span></figcaption>
+    
+    <div class="imagecenter break"><img class="- topic/image image imagecenter break" id="doc__image_qkf_wmf_vsb" src="../Images/mmc_in_hvdc_10.png"/></div>
+   </figure>
+  </section>
+  <section class="- topic/section section" id="doc__example_requirements" data-ofbid="doc__example_requirements"><h2 class="- topic/title title sectiontitle">Example requirements</h2>
+   
+   <p class="- topic/p p"><a class="- topic/xref xref" href="#doc__min_req">Table 1</a> provides detailed information about the file locations and hardware requirements 
+    for running the model in real-time, followed by the HIL device resource utilization when running the model using 
+    this minimal hardware configuration. This information is provided to help you with running and 
+    customizing the model as you see fit.</p>
+   <table class="- topic/table table frame-all" id="doc__min_req" data-ofbid="doc__min_req" data-cols="2"><caption class="- topic/title title tablecap" data-caption-side="top" data-is-repeated="true"><span class="table--title-label">Table<span class="table--title-label-number"> 1</span><span class="table--title-label-punctuation">. </span></span><span class="table--title"><span class="- topic/ph ph" id="doc__an_min-req">Minimum requirements</span></span></caption><colgroup><col style="width:50%"/><col style="width:50%"/></colgroup><thead class="- topic/thead thead">
+      <tr class="- topic/row">
+       <th class="- topic/entry entry align-center colsep-0 rowsep-1" id="doc__min_req__entry__1" colspan="2">Files</th>
+      </tr>
+     </thead><tbody class="- topic/tbody tbody">
+      <tr class="- topic/row">
+       <td class="- topic/entry entry align-center colsep-1 rowsep-1" headers="doc__min_req__entry__1"><span class="- topic/ph ph" id="doc__an_min-req_TH-files">Typhoon HIL files</span></td>
+       <td class="- topic/entry entry align-center colsep-0 rowsep-1" headers="doc__min_req__entry__1"><p class="- topic/p p"><em class="+ topic/ph hi-d/i ph i">examples\models\grid-connected converters\mmc in hvdc\</em></p>
+        <p class="- topic/p p">mmc in hvdc.tse</p>
+        <p class="- topic/p p">mmc in hvdc.cus</p>
+        <p class="- topic/p p"><em class="+ topic/ph hi-d/i ph i">examples\tests\111_mmc_in_hvdc\</em></p>
+        <p class="- topic/p p">test_mmc_in_hvdc.py</p></td>
+      </tr>
+      <tr class="- topic/row">
+       <td class="- topic/entry entry align-center colsep-0 rowsep-1" headers="doc__min_req__entry__1" colspan="2"><strong class="+ topic/ph hi-d/b ph b">Minimum hardware requirements</strong></td>
+      </tr>
+      <tr class="- topic/row">
+       <td class="- topic/entry entry align-center colsep-1 rowsep-1" headers="doc__min_req__entry__1"><span class="- topic/ph ph" id="doc__an_min-req_num-devices">No. of HIL devices</span></td>
+       <td class="- topic/entry entry align-center colsep-0 rowsep-1" headers="doc__min_req__entry__1"><span class="- topic/ph ph" id="doc__num_devices">1</span></td>
+      </tr>
+      <tr class="- topic/row">
+       <td class="- topic/entry entry align-center colsep-1 rowsep-1" headers="doc__min_req__entry__1"><span class="- topic/ph ph" id="doc__an_min-req_model-num">HIL device model</span></td>
+       <td class="- topic/entry entry align-center colsep-0 rowsep-1" headers="doc__min_req__entry__1"><span class="- topic/ph ph" id="doc__type_devices">HIL101</span></td>
+      </tr>
+      <tr class="- topic/row">
+       <td class="- topic/entry entry align-center colsep-1 rowsep-1" headers="doc__min_req__entry__1"><u class="+ topic/ph hi-d/u ph u"><a class="- topic/xref xref" href="../../t-ug002/concepts/device_manager.html" title="Device Manager is used to create, manipulate, and activate HIL device setups.">Device configuration</a></u></td>
+       <td class="- topic/entry entry align-center colsep-0 rowsep-1" headers="doc__min_req__entry__1"><span class="- topic/ph ph" id="doc__num_config">1</span></td>
+      </tr>
+      <tr class="- topic/row">
+       <td class="- topic/entry entry align-center colsep-0 rowsep-1" headers="doc__min_req__entry__1" colspan="2"><strong class="+ topic/ph hi-d/b ph b">HIL device resource utilization</strong></td>
+      </tr>
+      <tr class="- topic/row">
+       <td class="- topic/entry entry align-center colsep-1 rowsep-1" headers="doc__min_req__entry__1"><span class="- topic/ph ph" id="doc__an_res-util_num-cores">No. of processing cores</span></td>
+       <td class="- topic/entry entry align-center colsep-0 rowsep-1" headers="doc__min_req__entry__1"><span class="- topic/ph ph" id="doc__num_cores">1</span></td>
+      </tr>
+      <tr class="- topic/row">
+       <td class="- topic/entry entry align-center colsep-1 rowsep-1" headers="doc__min_req__entry__1"><span class="- topic/ph ph" id="doc__an_res-util_max-memory">Max. matrix memory utilization</span></td>
+       <td class="- topic/entry entry align-center colsep-0 rowsep-1" headers="doc__min_req__entry__1"><p class="- topic/p p">2.86% (core0)</p></td>
+      </tr>
+      <tr class="- topic/row">
+       <td class="- topic/entry entry align-center colsep-1 rowsep-1" headers="doc__min_req__entry__1"><span class="- topic/ph ph" id="doc__an_res-util_max-time">Max. time slot utilization</span></td>
+       <td class="- topic/entry entry align-center colsep-0 rowsep-1" headers="doc__min_req__entry__1"><p class="- topic/p p">63.64% (core0)</p></td>
+      </tr>
+      <tr class="- topic/row">
+       <td class="- topic/entry entry align-center colsep-1 rowsep-1" headers="doc__min_req__entry__1"><span class="- topic/ph ph" id="doc__an_res-util_sim-step">Simulation step, electrical</span></td>
+       <td class="- topic/entry entry align-center colsep-0 rowsep-1" headers="doc__min_req__entry__1">1 µs</td>
+      </tr>
+      <tr class="- topic/row">
+       <td class="- topic/entry entry align-center colsep-1 rowsep-0" headers="doc__min_req__entry__1"><span class="- topic/ph ph" id="doc__an_res-util_exec-rate">Execution rate, signal processing</span></td>
+       <td class="- topic/entry entry align-center colsep-0 rowsep-0" headers="doc__min_req__entry__1">80 µs</td>
+      </tr>
+     </tbody></table>
+  </section>
+  <section class="- topic/section section" id="doc__section_udx_dgl_1nb" data-ofbid="doc__section_udx_dgl_1nb"><h2 class="- topic/title title sectiontitle">Authors</h2>
+   
+   <p class="- topic/p p">[1] Nikola Lucic</p>
+   <p class="- topic/p p">[2] Simisa Simic</p>
+  </section>
+ </div>
+</article></main></div>
+                        
+                        
+                        
+                        
+                        
+                        
+                    </div>
+                    
+                        <nav role="navigation" id="wh_topic_toc" aria-label="On this page" class="col-lg-2 d-none d-lg-block navbar d-print-none"> 
+                            <div id="wh_topic_toc_content">
+		                        
+	                            <div class=" wh_topic_toc "><div class="wh_topic_label">On this page</div><ul><li class="section-item"><div class="section-title"><a href="#doc__section_hqr_1zb_rz" data-tocid="doc__section_hqr_1zb_rz">Introduction</a></div></li><li class="section-item"><div class="section-title"><a href="#doc__section_bnk_str_1kb" data-tocid="doc__section_bnk_str_1kb">Model description</a></div></li><li class="section-item"><div class="section-title"><a href="#doc__section_urt_fvw_2jb" data-tocid="doc__section_urt_fvw_2jb">Simulation</a></div></li><li class="section-item"><div class="section-title"><a href="#doc__section_bdn_cfl_1nb" data-tocid="doc__section_bdn_cfl_1nb">Test Automation</a></div></li><li class="section-item"><div class="section-title"><a href="#doc__example_requirements" data-tocid="doc__example_requirements">Example requirements</a></div></li><li class="section-item"><div class="section-title"><a href="#doc__section_udx_dgl_1nb" data-tocid="doc__section_udx_dgl_1nb">Authors</a></div></li></ul></div>
+	                        	
+                        	</div>
+                        </nav>
+                    
+                </div>
+            </div>
+            
+            
+            
+        </div> 
+        <footer class="navbar navbar-default wh_footer">
+  <div class=" footer-container mx-auto ">
+    <div style="text-align:center">Typhoon HIL Inc.<span id="year"> <a href="https://www.typhoon-hil.com">www.typhoon-hil.com</a></span></div>
+  </div>
+</footer>
+        
+        <div id="go2top" class="d-print-none">
+            <span class="oxy-icon oxy-icon-up"></span>
+        </div>
+        
+        <div id="modal_img_large" class="modal">
+            <span class="close oxy-icon oxy-icon-remove"></span>
+            <div id="modal_img_container"></div>
+            <div id="caption"></div>
+        </div>
+        
+        
+<script type="text/javascript" src="../../assets/script.js"> 
+</script>
+
+        
+    </body>
+</html>

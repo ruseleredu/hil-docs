@@ -32,4 +32,5 @@ Accelerate and enrich your students’ power electronics learning experience wit
 - [Typhoon modeling language (TML)](pathname:///docs/tml_doc/index.html)
 - [TyphoonTest Library](pathname:///docs/typhoontest_html/index.html)
 - [Typhoon APIs](pathname:///docs/api/index.html)
+- [Typhoon Help](pathname:///docs/help/index.html)
 

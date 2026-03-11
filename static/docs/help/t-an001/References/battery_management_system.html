@@ -1,0 +1,442 @@
+<!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en" data-whc_version="24.1">
+    <head><link rel="shortcut icon" href="../../favicon.ico"/><link rel="icon" href="../../favicon.ico"/><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><meta name="DC.rights.owner" content="(C) Copyright 2026"/><meta name="copyright" content="(C) Copyright 2026"/><meta name="generator" content="DITA-OT"/><meta name="DC.type" content="reference"/><meta name="description" content="This application note presents an implementation of a Battery Management System (BMS) in the Typhoon HIL environment. In the model described in this application note, the BMS logic is implemented within the simulation using signal processing components such as the C function component."/><meta name="DC.relation" content="../../t-an001/concepts/battery_management_systems.html"/><meta name="DC.format" content="HTML5"/><meta name="DC.identifier" content="doc"/>        
+      <title>Battery Management System</title><!--  Generated with Oxygen version 24.1, build number 2022030800.  --><meta name="wh-path2root" content="../../"/><meta name="wh-toc-id" content="doc-d16877e180"/><meta name="wh-source-relpath" content="t-an001/References/battery_management_system.dita"/><meta name="wh-out-relpath" content="t-an001/References/battery_management_system.html"/>
+    <!-- Latest compiled and minified Bootstrap CSS -->
+    <link rel="stylesheet" type="text/css" href="../../oxygen-webhelp/lib/bootstrap/css/bootstrap.min.css"/>
+    
+    <link rel="stylesheet" href="../../oxygen-webhelp/lib/jquery-ui/jquery-ui.min.css"/>
+    
+    <!-- Template default styles  -->
+    <link rel="stylesheet" type="text/css" href="../../oxygen-webhelp/app/topic-page.css?buildId=2022030800"/>
+    
+    
+    <script src="../../oxygen-webhelp/lib/jquery/jquery-3.5.1.min.js"></script>
+    
+    <script data-main="../../oxygen-webhelp/app/topic-page.js" src="../../oxygen-webhelp/lib/requirejs/require.js"></script>
+<link rel="stylesheet" type="text/css" href="../../oxygen-webhelp/template/oxygen.css?buildId=2022030800"/><link rel="stylesheet" type="text/css" href="../../oxygen-webhelp/template/notes.css?buildId=2022030800"/><script type="text/javascript" src="../../Scripts/mml-svg.js"> 
+</script><link rel="stylesheet" type="text/css" href="../../assets/typhoon.css"/></head>
+
+    <body id="doc" class="wh_topic_page frmBody">
+        <a href="#wh_topic_body" class="sr-only sr-only-focusable">
+            Jump to main content
+        </a>
+        
+        
+        
+        
+        <header class="navbar navbar-default wh_header">
+    <div class="container-fluid">
+        <div class="wh_header_flex_container navbar-nav navbar-expand-md navbar-dark">
+            <div class="wh_logo_and_publication_title_container">
+                <div class="wh_logo_and_publication_title">
+                    
+                    <a href="https://www.typhoon-hil.com" class=" wh_logo d-none d-sm-block "><img src="../../logo.svg" alt="  Typhoon HIL Documentation  Version: 2026.1  "/></a>
+                    <div class=" wh_publication_title "><a href="../../index.html"><span class="booktitle">  <span class="ph mainbooktitle">Typhoon HIL Documentation</span>  <span class="ph booktitlealt">Version: 2026.1</span>  </span></a></div>
+                    
+                </div>
+                
+                <button type="button" data-target="#wh_top_menu_and_indexterms_link" id="wh_menu_mobile_button" data-toggle="collapse" class="navbar-toggler collapsed wh_toggle_button" aria-expanded="false" aria-label="Toggle menu" aria-controls="wh_top_menu_and_indexterms_link">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+            </div>
+
+            <div class="wh_top_menu_and_indexterms_link collapse navbar-collapse" id="wh_top_menu_and_indexterms_link">
+                
+                <nav class=" wh_top_menu " aria-label="Menu Container"><ul role="menubar" aria-label="Menu"><li role="menuitem" aria-haspopup="true" aria-expanded="false" class="has-children"><span id="tocId-d16877e21-mi" data-tocid="tocId-d16877e21" data-state="not-ready" class=" topicref application-notes"><span class="title"><a href="../../t-an001/concepts/application_notes_introduction.html">Typhoon HIL Application Notes</a></span></span></li><li role="menuitem" aria-haspopup="true" aria-expanded="false" class="has-children"><span id="tocId-d16877e737-mi" data-tocid="tocId-d16877e737" data-state="not-ready" class=" topicref software-manual"><span class="title"><a href="../../t-ug002/topics/software_manual_introduction.html">Typhoon HIL Software Manual</a></span></span></li><li role="menuitem" aria-haspopup="true" aria-expanded="false" class="has-children"><span id="tocId-d16877e7901-mi" data-tocid="tocId-d16877e7901" data-state="not-ready" class=" topicref hardware-manual"><span class="title"><a href="../../t-ug001/abstract/hardware_manual_introduction.html">Typhoon HIL Hardware Manual</a></span></span></li></ul></nav>
+                
+                
+            </div>
+        </div>
+    </div>
+</header>
+        
+        
+         
+        
+        <div class=" wh_search_input navbar-form wh_topic_page_search search " role="form">
+            
+            
+            
+            <form id="searchForm" method="get" role="search" action="../../search.html"><div><input type="search" placeholder="Search " class="wh_search_textfield" id="textToSearch" name="searchQuery" aria-label="Search query" required="required"/><button type="submit" class="wh_search_button" aria-label="Search"><span class="search_input_text">Search</span></button></div></form>
+            
+            
+            
+        </div>
+        
+        <div class="container-fluid" id="wh_topic_container">
+            <div class="row">
+
+                <nav class="wh_tools d-print-none navbar-expand-md" aria-label="Tools">
+                    
+                    <div data-tooltip-position="bottom" class=" wh_breadcrumb "><ol class="d-print-none"><li><span class="home"><a href="../../index.html"><span>Home</span></a></span></li><li><div class="topicref application-notes"><div class="title"><a href="../../t-an001/concepts/application_notes_introduction.html">Typhoon HIL Application Notes</a></div></div></li><li><div class="topicref" data-id="doc"><div class="title"><a href="../../t-an001/concepts/battery_management_systems.html">Battery management systems</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">Battery management system (BMS) examples</span></p></div></div></div></li><li class="active"><div class="topicref" data-id="doc"><div class="title"><a href="../../t-an001/References/battery_management_system.html">Battery Management System</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">This application note presents an implementation of a Battery Management System (BMS) in   the Typhoon HIL environment. In the model described in this application note, the BMS logic is   implemented within the simulation using signal processing components such as the C function   component.</span></p></div></div></div></li></ol></div>
+                    
+                    
+                    
+                    <div class="wh_right_tools">
+                        <button class="wh_hide_highlight" aria-label="Toggle search highlights" title="Toggle search highlights"></button>
+                        <button class="webhelp_expand_collapse_sections" data-next-state="collapsed" aria-label="Collapse sections" title="Collapse sections"></button>
+                        
+                        
+                        
+                        
+                        <div class=" wh_print_link print d-none d-md-inline-block "><button onClick="window.print()" title="Print this page" aria-label="Print this page"></button></div>
+                        
+                        <button type="button" id="wh_toc_button" class="custom-toggler navbar-toggler collapsed wh_toggle_button navbar-light" aria-expanded="false" aria-label="Toggle publishing table of content" aria-controls="wh_publication_toc">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+                    </div>
+                    
+                </nav>
+            </div>
+            
+            
+            
+            
+            <div class="wh_content_area">
+                <div class="row">
+                    
+                        <nav id="wh_publication_toc" class="col-lg-3 col-md-3 col-sm-12 d-md-block d-none d-print-none" aria-label="Table of Contents Container">
+                            <div id="wh_publication_toc_content">
+		                        
+                            	<div class=" wh_publication_toc " data-tooltip-position="right"><span class="expand-button-action-labels"><span id="button-expand-action" role="button" aria-label="Expand"></span><span id="button-collapse-action" role="button" aria-label="Collapse"></span><span id="button-pending-action" role="button" aria-label="Pending"></span></span><ul role="tree" aria-label="Table of Contents"><li role="treeitem" aria-expanded="true"><div data-tocid="tocId-d16877e21" class="topicref application-notes" data-state="expanded"><span role="button" tabindex="0" aria-labelledby="button-collapse-action tocId-d16877e21-link" class="wh-expand-btn"></span><div class="title"><a href="../../t-an001/concepts/application_notes_introduction.html" id="tocId-d16877e21-link">Typhoon HIL Application Notes</a></div></div><ul role="group" class="navbar-nav nav-list"><li role="treeitem"><div data-tocid="doc-d16877e25" class="topicref" data-id="doc" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../../t-an001/concepts/application_notes_introduction.html" id="doc-d16877e25-link">Application Notes Introduction</a><div class="wh-tooltip"><p class="shortdesc">Brief overview of the different categories of Application Notes</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="doc-d16877e36" class="topicref" data-id="doc" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action doc-d16877e36-link" class="wh-expand-btn"></span><div class="title"><a href="../../t-an001/concepts/grid_connected_converters.html" id="doc-d16877e36-link">Grid-connected converters</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">Grid-connected converter applications featuring various grid support    functionalities.</span></p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="doc-d16877e96" class="topicref" data-id="doc" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action doc-d16877e96-link" class="wh-expand-btn"></span><div class="title"><a href="../../t-an001/concepts/automotive.html" id="doc-d16877e96-link">Automotive</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">Electric cars and other automotive applications.</span></p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="doc-d16877e132" class="topicref" data-id="doc" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action doc-d16877e132-link" class="wh-expand-btn"></span><div class="title"><a href="../../t-an001/concepts/aerospace.html" id="doc-d16877e132-link">Aerospace</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">System-level and component-level aircraft applications.</span></p></div></div></div></li><li role="treeitem" aria-expanded="true"><div data-tocid="doc-d16877e168" class="topicref" data-id="doc" data-state="expanded"><span role="button" tabindex="0" aria-labelledby="button-collapse-action doc-d16877e168-link" class="wh-expand-btn"></span><div class="title"><a href="../../t-an001/concepts/battery_management_systems.html" id="doc-d16877e168-link">Battery management systems</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">Battery management system (BMS) examples</span></p></div></div></div><ul role="group" class="navbar-nav nav-list"><li role="treeitem" class="active"><div data-tocid="doc-d16877e180" class="topicref" data-id="doc" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../../t-an001/References/battery_management_system.html" id="doc-d16877e180-link">Battery Management System</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">This application note presents an implementation of a Battery Management System (BMS) in   the Typhoon HIL environment. In the model described in this application note, the BMS logic is   implemented within the simulation using signal processing components such as the C function   component.</span></p></div></div></div></li><li role="treeitem"><div data-tocid="doc-d16877e192" class="topicref" data-id="doc" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../../t-an001/References/orion_bms_hil.html" id="doc-d16877e192-link">C-HIL example-Orion Jr 2 Battery Management</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">This application note presents how an off-the-shelf Battery Management System (BMS) can be     tested in the Typhoon HIL environment. In the model described here, battery management is     implemented using the Orion Jr 2 BMS.</span></p></div></div></div></li><li role="treeitem"><div data-tocid="doc-d16877e204" class="topicref" data-id="doc" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../../t-an001/References/foxbms_inspired_architecture.html" id="doc-d16877e204-link">BMS with FoxBMS inspired architecture</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">Detailed overview of the implementation of a battery management system (BMS) with an overall architecture inspired by the foxBMS® Open-Source Platform.</span></p></div></div></div></li></ul></li><li role="treeitem" aria-expanded="false"><div data-tocid="doc-d16877e216" class="topicref" data-id="doc" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action doc-d16877e216-link" class="wh-expand-btn"></span><div class="title"><a href="../../t-an001/concepts/how-to_guides.html" id="doc-d16877e216-link">How-to Guides</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">Guides, tips, and tricks on various aspects of Typhoon HIL toolchain usage.</span></p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="doc-d16877e312" class="topicref" data-id="doc" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action doc-d16877e312-link" class="wh-expand-btn"></span><div class="title"><a href="../../t-an001/concepts/communication_protocols.html" id="doc-d16877e312-link">Communication Protocols</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">Interoperability. Cybersecurity. Modbus, Sunspec, IEC61850, IEEE    C37.118, DNP3, CAN, OPC UA, and more.</span></p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="doc-d16877e384" class="topicref" data-id="doc" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action doc-d16877e384-link" class="wh-expand-btn"></span><div class="title"><a href="../../t-an001/concepts/power_systems.html" id="doc-d16877e384-link">Power Systems</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">Power system simulation. Relay protection testing. Power flow tool integration and   co-simulation.</span></p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="doc-d16877e468" class="topicref" data-id="doc" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action doc-d16877e468-link" class="wh-expand-btn"></span><div class="title"><a href="../../t-an001/concepts/microgrids.html" id="doc-d16877e468-link">Microgrids</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">Rapid microgrid pre-commissioning and system integration. Microgrid controller RCP and   testing.</span></p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="doc-d16877e552" class="topicref" data-id="doc" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action doc-d16877e552-link" class="wh-expand-btn"></span><div class="title"><a href="../../t-an001/concepts/electrical_drives.html" id="doc-d16877e552-link">Electrical Drives</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">Converters coupled with high-fidelity electrical machine models for high performance   motor drive applications.</span></p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="doc-d16877e601" class="topicref" data-id="doc" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action doc-d16877e601-link" class="wh-expand-btn"></span><div class="title"><a href="../../t-an001/concepts/power_supplies.html" id="doc-d16877e601-link">Power Supplies</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">Linear and switching power supplies for industrial and laboratory   applications.</span></p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="doc-d16877e625" class="topicref" data-id="doc" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action doc-d16877e625-link" class="wh-expand-btn"></span><div class="title"><a href="../../t-an001/concepts/marine_power_systems.html" id="doc-d16877e625-link">Marine Power Systems</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">Hybrid propulsion, shipboard power management, offshore renewables, offshore oil and   gas platform power supplies. </span></p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="doc-d16877e649" class="topicref" data-id="doc" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action doc-d16877e649-link" class="wh-expand-btn"></span><div class="title"><a href="../../t-an001/concepts/power_quality.html" id="doc-d16877e649-link">Power Quality</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">Real-time power quality/harmonic analysis. Incorporate active filters and FACTS devices (STATCOM, DVR,   SVC).</span></p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="doc-d16877e685" class="topicref" data-id="doc" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action doc-d16877e685-link" class="wh-expand-btn"></span><div class="title"><a href="../../t-an001/concepts/railway.html" id="doc-d16877e685-link">Railway</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">System-level and component-level application examples for railway    (traction) equipment.</span></p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="doc-d16877e709" class="topicref" data-id="doc" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action doc-d16877e709-link" class="wh-expand-btn"></span><div class="title"><a href="../../t-an001/concepts/medical_devices.html" id="doc-d16877e709-link">Medical Devices</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">X-ray, MRI, ICD, pacemakers, defibrillators, emergency ventilators, ECG, EMG,   bioelectronics.</span></p></div></div></div></li></ul></li></ul></div>
+		                        
+                            </div>
+                        </nav>
+                    
+                    
+                    <div class="col-lg-7 col-md-9 col-sm-12" id="wh_topic_body">
+                        <button id="wh_close_publication_toc_button" class="close-toc-button d-none" aria-label="Toggle publishing table of content" aria-controls="wh_publication_toc" aria-expanded="true">
+                            <span class="close-toc-icon-container">
+                                <span class="close-toc-icon"></span>     
+                            </span>
+                        </button>
+                        <button id="wh_close_topic_toc_button" class="close-toc-button d-none" aria-label="Toggle topic table of content" aria-controls="wh_topic_toc" aria-expanded="true">
+                            <span class="close-toc-icon-container">
+                                <span class="close-toc-icon"></span>     
+                            </span>
+                        </button>
+                        
+                        <div class=" wh_topic_content body "><main role="main"><article role="article" aria-labelledby="ariaid-title1">
+ <h1 class="- topic/title title topictitle1" id="ariaid-title1">Battery Management System</h1>
+ 
+ <div class="- topic/body reference/refbody body refbody"><p class="- topic/shortdesc shortdesc"><span class="- topic/ph ph" id="doc__description">This application note presents an implementation of a Battery Management System (BMS) in
+  the Typhoon HIL environment. In the model described in this application note, the BMS logic is
+  implemented within the simulation using signal processing components such as the C function
+  component.</span></p>
+  <section class="- topic/section section" id="doc__section_hqr_1zb_rz" data-ofbid="doc__section_hqr_1zb_rz"><h2 class="- topic/title title sectiontitle">Introduction</h2>
+   
+   <p class="- topic/p p">A Battery Management System (BMS) is a system in charge of oversight and management of a
+    battery or a battery pack. The purpose of the BMS is to protect the battery from operating
+    outside of its safe operating region (i.e., to avoid overvoltage, undervoltage, overtemperature,
+    undertemperature etc.). Another important function of the BMS is balancing batteries to increase
+    the longevity of each cell and to improve the overall capacity of the battery pack. It is
+    important to note that control and monitoring functions are applied to individual battery cells
+    in the battery pack.</p>
+   <p class="- topic/p p">A tutorial video featuring this model can be found in the <a class="- topic/xref xref" href="#doc__tutorial">Video Tutorial</a> section.</p>
+  </section>
+  <section class="- topic/section section" id="doc__section_bnk_str_1kb" data-ofbid="doc__section_bnk_str_1kb"><h2 class="- topic/title title sectiontitle">Model description</h2>
+   
+   <p class="- topic/p p">The model consists of three main parts: the power stage (comprised of the Battery Pack
+    connected to a charger), the Battery Management System, and the Charger voltage control. The
+    power stage of the model is shown in <a class="- topic/xref xref" href="#doc__fig_o4m_1gr_z5b">Figure 1</a>.</p>
+    <figure class="- topic/fig fig fignone" id="doc__fig_o4m_1gr_z5b" data-ofbid="doc__fig_o4m_1gr_z5b"><figcaption class="- topic/title title figcapcenter"><span class="figtitleprefix fig--title-label">Figure<span class="fig--title-label-number"> 1</span><span class="fig--title-label-punctuation">. </span></span><span class="fig--title">Battery Pack connected to the charger.</span></figcaption>
+     
+     <div class="imagecenter break"><img class="- topic/image image imagecenter break" id="doc__image_p4m_1gr_z5b" src="../Images/battery_management_system_01.png"/></div>
+    </figure>
+   
+   <p class="- topic/p p">The Battery pack contains 8 Battery Cell components connected in series. Each of these
+    components is comprised of 2 cells in parallel, which is a parameter configurable in the
+    component properties. All batteries are lithium-ion and have the same parametrization. In
+    addition, the temperature of all batteries (input of the battery cells) is the same and can be
+    changed in the simulation using a dedicated SCADA input. The initial state of charge (SOC) for
+    each cell is set to 50%. The state of health vector is set to 0, meaning that the effects of
+    battery health are not considered in this model. The nominal value of the battery pack voltage
+    is 33.2 V. The execution rate of the battery cell components is set to 100 µs, which defines
+    the computation cycle time for calculating the cell terminal voltage based on the previous
+    states and the current input. More information on the Battery Cell can be found in <a class="- topic/xref xref" href="../../t-ug002/References/battery_cell.html" title="Description of the Battery Cell component in Schematic Editor">its documentation</a>.</p>
+   <p class="- topic/p p">The BMS is modeled using the <a class="- topic/xref xref" href="../../t-ug002/References/c_function.html" title="Description of the C function component in Schematic Editor, which enables importing functions from the C programing language.">C function</a>
+    component. The main inputs of the BMS subsystem are the terminal voltages measured on each cell
+    and the temperature. In addition, it comes with some predefined SCADA inputs such as the
+    balancing threshold, the intended balancing period, minimum and maximum balancing voltages,
+    overvoltage, undervoltage, overtemperature, and undertemperature thresholds. Commands for
+    resetting flags and connecting the main contactor can also be issued to the BMS through SCADA
+    inputs. </p>
+   
+    <p class="- topic/p p">The charger is modeled as a signal-controlled voltage source connected in series with a
+    resistor. It can both charge and discharge the battery pack. The charger voltage is defined in
+    the respective subsystem, based on a closed-loop current control. Both the BMS and the charger
+    control logic are fully implemented using <a class="- topic/xref xref" href="../../t-ug002/topics/signal_processing_components.html" title="This section describes the general properties of all signal processing components in the Typhoon HIL Schematic Editor core library.">Signal Processing Components</a>. Their subsystems are shown in
+     <a class="- topic/xref xref" href="#doc__fig_glq_xfr_z5b">Figure 2</a>.</p>
+     <figure class="- topic/fig fig fignone" id="doc__fig_glq_xfr_z5b" data-ofbid="doc__fig_glq_xfr_z5b"><figcaption class="- topic/title title figcapcenter"><span class="figtitleprefix fig--title-label">Figure<span class="fig--title-label-number"> 2</span><span class="fig--title-label-punctuation">. </span></span><span class="fig--title">The BMS and the Charger voltage control</span></figcaption>
+      
+      <div class="imagecenter break"><img class="- topic/image image imagecenter break" id="doc__image_hlq_xfr_z5b" src="../Images/battery_management_system_02.png"/></div>
+     </figure>
+    
+   
+  </section>
+  <section class="- topic/section section" id="doc__bms_operation" data-ofbid="doc__bms_operation"><h2 class="- topic/title title sectiontitle">BMS operation</h2>
+   
+   <p class="- topic/p p">The BMS implemented in this model provides measurement, protection, and passive balancing
+    functionalities for all cells. It also controls the main contactor, disconnecting the battery
+    pack from the load if needed.</p>
+   <p class="- topic/p p">Based on the measured voltages at each battery cell and the set temperature, the BMS protects
+    the battery pack by opening the main contactor and raising flags which indicate various faulty
+    states, such as overvoltage, undervoltage, overtemperature, and undertemperature. In addition,
+    the BMS oversees the balancing of the battery cells, and regulates the voltage of the entire
+    battery pack.</p>
+   <p class="- topic/p p">The BMS performs protection functions by comparing the measured voltage and temperature values
+    of each cell with the defined thresholds. If a measured value is out of its predefined range,
+    the appropriate flag will be raised, and the main contactor which connects the charger and the
+    battery pack will be opened. To close the contactor again, the operation of the battery pack
+    should return to a condition with acceptable voltage and temperature values, and the faults need
+    to be reset. If the voltages and temperatures are within their normal operating ranges, the main contactor can also be manually opened or closed.</p>
+   <p class="- topic/p p">The BMS starts/stops the balancing procedure for each battery cell by sending an appropriate
+    signal to the Battery cell input. Passive cell balancing is started/stopped by
+    connecting/disconnecting the balancing resistor through a contactor, embedded in the Battery
+    Cell model. The contactor control signal is provided by the BMS and sent to the input of each
+    Battery Cell component. A Battery Cell model with passive balancing is shown in <a class="- topic/xref xref" href="#doc__fig_z4t_kgr_z5b">Figure 3</a>. </p>
+    <figure class="- topic/fig fig fignone" id="doc__fig_z4t_kgr_z5b" data-ofbid="doc__fig_z4t_kgr_z5b"><figcaption class="- topic/title title figcapcenter"><span class="figtitleprefix fig--title-label">Figure<span class="fig--title-label-number"> 3</span><span class="fig--title-label-punctuation">. </span></span><span class="fig--title">Battery Cell model with passive balancing</span></figcaption>
+     
+     <div class="imagecenter break"><img class="- topic/image image imagecenter break" id="doc__image_apt_kgr_z5b" src="../Images/battery_management_system_03.png"/></div>
+    </figure>
+     <p class="- topic/p p">The BMS receives the voltage measurement of each cell and calculates the minimum and maximum
+      cell voltage at the defined execution rate. If the voltage of a particular cell is larger than
+      the sum of the minimum cell voltage and the balancing threshold (its default value is 20 mV)
+      or is larger than the defined maximum balancing voltage, the balancing procedure for that cell
+      will be activated and the balancing counter for that cell is started. The balancing counter is
+      defined by the balancing period input of the BMS, and it determines the turn-off delay for the
+      balancing of a cell. If the measured cell voltage is smaller than the defined minimum
+      balancing voltage or the balancing counter has run down to zero, cell balancing for that cell
+      will be stopped. After the time defined by the balancing period has elapsed, the balancing
+      will stop if no other balancing conditions are present.</p>
+   <p class="- topic/p p">In this model, the cell voltages are measured only when balancing is not active, similar to how some commercial BMSs function. Additionally, during the balancing process, the balancing
+      resistor is periodically switched on and off.</p>
+     <div class="- topic/note note note note_note"><span class="note__title">Note:</span> Due to the non-linear nature of highly detailed battery components used in this model,
+      instances of spontaneous turning on of balancing can occur during charging and discharging of
+      the battery pack. During charging and discharging, the differences between cell voltages can
+      eventually rise above the balancing threshold and activate the balancing process. The
+      relationship between the state of charge and the open circuit voltage (for a temperature of
+      25°C), is shown in <a class="- topic/xref xref" href="#doc__fig_q2w_tgr_z5b">Figure 4</a>. Here, we
+      can see this non-linear dependence between state-of-charge and open circuit voltage.
+       <figure class="- topic/fig fig fignone" id="doc__fig_q2w_tgr_z5b" data-ofbid="doc__fig_q2w_tgr_z5b"><figcaption class="- topic/title title figcapcenter"><span class="figtitleprefix fig--title-label">Figure<span class="fig--title-label-number"> 4</span><span class="fig--title-label-punctuation">. </span></span><span class="fig--title">The State-of-charge/Open circuit voltage curve (for a single value of
+         temperature)</span></figcaption>
+        
+        <div class="imagecenter break"><img class="- topic/image image imagecenter break" id="doc__image_r2w_tgr_z5b" src="../Images/battery_management_system_04.png"/></div>
+       </figure>
+     </div>  
+  </section>
+  
+  <section class="- topic/section section" id="doc__section_urt_fvw_2jb" data-ofbid="doc__section_urt_fvw_2jb"><h2 class="- topic/title title sectiontitle">Simulation</h2>
+   
+   <p class="- topic/p p">The example model detailed in this application note comes with a pre-built SCADA panel, shown
+    in <a class="- topic/xref xref" href="#doc__fig_izm_wgr_z5b">Figure 5</a>. This panel includes
+    different widgets to monitor and interact with the simulation in runtime. You can customize it
+    freely to fit your needs.</p>
+   
+    
+     <figure class="- topic/fig fig fignone" id="doc__fig_izm_wgr_z5b" data-ofbid="doc__fig_izm_wgr_z5b"><figcaption class="- topic/title title figcapcenter"><span class="figtitleprefix fig--title-label">Figure<span class="fig--title-label-number"> 5</span><span class="fig--title-label-punctuation">. </span></span><span class="fig--title">BMS Example SCADA panel</span></figcaption>
+      
+      <div class="imagecenter break"><img class="- topic/image image imagecenter break" id="doc__image_jzm_wgr_z5b" src="../Images/battery_management_system_05.png"/></div>
+     </figure>
+    
+   
+   <p class="- topic/p p">On simulation start, the battery pack is connected to the charger. The state of the main
+    contactor is indicated by the <em class="+ topic/ph hi-d/i ph i">Main Switch </em>display, while the state of the Battery pack is
+    indicated by the <em class="+ topic/ph hi-d/i ph i">Battery Pack State</em> display. The Battery pack has three possible states:
+     <em class="+ topic/ph hi-d/i ph i">Charging</em> (positive charger current), <em class="+ topic/ph hi-d/i ph i">Discharging</em> (negative charger
+     current)<em class="+ topic/ph hi-d/i ph i">,</em> and <em class="+ topic/ph hi-d/i ph i">Idle</em> (no power exchanged between the charger and the battery pack).
+    The Protection sub-panel allows you to change different protection thresholds and contains flags
+    which indicate the faulty states.</p>
+   <p class="- topic/p p">The charger current and temperature can be changed using the appropriate sliders. The total
+    battery pack voltage measured by the BMS can be observed on the <em class="+ topic/ph hi-d/i ph i">Vbattpack</em> gauge. The cell
+    voltages off all cells can be observed on the <em class="+ topic/ph hi-d/i ph i">Cell voltages</em> trace graph. Each Battery
+    Cell comes with its own sub-panel, which contains graphs for the SOC and Cell Voltage graphs, as
+    shown in <a class="- topic/xref xref" href="#doc__fig_sx2_1hr_z5b">Figure 6</a>.</p>
+  
+    
+     <figure class="- topic/fig fig fignone" id="doc__fig_sx2_1hr_z5b" data-ofbid="doc__fig_sx2_1hr_z5b"><figcaption class="- topic/title title figcapcenter"><span class="figtitleprefix fig--title-label">Figure<span class="fig--title-label-number"> 6</span><span class="fig--title-label-punctuation">. </span></span><span class="fig--title">Battery Cell 1 sub-panel</span></figcaption>
+      
+      <div class="imagecenter break"><img class="- topic/image image imagecenter break" id="doc__image_tx2_1hr_z5b" src="../Images/battery_management_system_06.png"/></div>
+     </figure>
+  
+  
+    <p class="- topic/p p">In addition, the balancing of each cell is indicated by its corresponding LED, in the panel
+     root.</p>
+    <p class="- topic/p p">The SCADA panel contains several sub-panels used for emulating different protection and
+     balancing functionalities of the BMS.</p>
+   <p class="- topic/p p">In the <em class="+ topic/ph hi-d/i ph i">Increased and Decreased Voltage of a Single Cell (Cell 5)</em> sub-panel, one of the two balancing scenarios can be started. Starting each of these scenarios triggers the
+    capture process with an appropriate time interval. Therefore, it is recommended that
+    Capture/Scope is open before running functions in this sub-panel. The Balance capture preset,
+    which is shown when running either of these two scenarios, contains the measured cell voltages
+    on its first window and balancing flags for each cell on its second window. In the third window,
+     <em class="+ topic/ph hi-d/i ph i">delta V</em> (the difference between the cell with the maximum measured voltage and the cell
+    with the minimum measured voltage) is compared to the balancing threshold.</p>
+    <p class="- topic/p p">In the first scenario, the voltage of Cell 5 is increased above the balancing threshold. The
+    BMS detects this, and balancing is turned on for that cell. This is shown in <a class="- topic/xref xref" href="#doc__fig_os3_chr_z5b">Figure 7</a>.</p>
+   
+   <figure class="- topic/fig fig fignone" id="doc__fig_os3_chr_z5b" data-ofbid="doc__fig_os3_chr_z5b"><figcaption class="- topic/title title figcapcenter"><span class="figtitleprefix fig--title-label">Figure<span class="fig--title-label-number"> 7</span><span class="fig--title-label-punctuation">. </span></span><span class="fig--title">Captured results in case the voltage of a single cell is increased</span></figcaption>
+    
+    <div class="imagecenter break"><img class="- topic/image image imagecenter break" id="doc__image_ps3_chr_z5b" src="../Images/battery_management_system_07.png"/></div>
+   </figure>
+   
+   <p class="- topic/p p">To reproduce results shown in <a class="- topic/xref xref" href="#doc__fig_os3_chr_z5b">Figure 7</a>, the <em class="+ topic/ph hi-d/i ph i">Increase</em> command should be issued while the battery pack is in the <em class="+ topic/ph hi-d/i ph i">Idle</em> state.
+    By clicking on the Increase button, the Capture procedure is started for a set time interval of
+    20 seconds.</p>
+   <p class="- topic/p p">As can be seen on the first window of <a class="- topic/xref xref" href="#doc__fig_os3_chr_z5b">Figure 7</a>, the voltage of Cell 5 is increased above the balancing threshold. The BMS
+    detects this condition, and the corresponding balancing flag is raised, as can be seen on the
+    second window. In the third window, which is zoomed in, we can see a sudden increase in <em class="+ topic/ph hi-d/i ph i">delta
+     V</em>. Once the balancing process has started, we can observe a decrease in the voltage of Cell
+    5, as well as a decrease of <em class="+ topic/ph hi-d/i ph i">delta V</em>. Eventually, <em class="+ topic/ph hi-d/i ph i">delta V</em> falls below the set
+    threshold. We can see that the turn-off delay of the balancing process (the turn-off condition
+    is satisfied once <em class="+ topic/ph hi-d/i ph i">delta V</em> is below the balancing threshold) is 5 seconds, as was defined
+    in the simulation.</p>
+   <p class="- topic/p p">In the second scenario, the voltage of Cell 5 is decreased below the balancing threshold. The
+    BMS detects this condition, and balancing is turned on for all other cells in the pack. This is
+    shown in <a class="- topic/xref xref" href="#doc__fig_cfj_2hr_z5b">Figure 8</a>.</p>
+   <figure class="- topic/fig fig fignone" id="doc__fig_cfj_2hr_z5b" data-ofbid="doc__fig_cfj_2hr_z5b"><figcaption class="- topic/title title figcapcenter"><span class="figtitleprefix fig--title-label">Figure<span class="fig--title-label-number"> 8</span><span class="fig--title-label-punctuation">. </span></span><span class="fig--title">Captured results in case the voltage of a single cell is decreased</span></figcaption>
+    
+    <div class="imagecenter break"><img class="- topic/image image imagecenter break" id="doc__image_dfj_2hr_z5b" src="../Images/battery_management_system_08.png"/></div>
+   </figure>
+   <p class="- topic/p p">To reproduce results shown in <a class="- topic/xref xref" href="#doc__fig_cfj_2hr_z5b">Figure 8</a>, the Decrease command should be issued while the battery pack is in the <em class="+ topic/ph hi-d/i ph i">Idle</em> state. By
+    clicking on the Decrease button, the Capture procedure is started for a set time interval of 40
+    seconds.</p>
+   <p class="- topic/p p">As can be seen on the first window <a class="- topic/xref xref" href="#doc__fig_cfj_2hr_z5b">Figure 8</a>, the voltage of Cell 5 is decreased below the balancing
+    threshold. The BMS detects this condition, and the corresponding balancing flags are raised for
+    all cells except cell 5, as can be seen on the second window. In the third window, which is
+    zoomed in, we can see a sudden increase in <em class="+ topic/ph hi-d/i ph i">delta V</em>. Once the balancing process has
+    started, we can observe a decrease in the voltages of all cells except cell 5, as well as a
+    decrease of <em class="+ topic/ph hi-d/i ph i">delta V</em>. Eventually, <em class="+ topic/ph hi-d/i ph i">delta V</em> falls below the set threshold. Once
+    again, we can see that the turn-off delay of the balancing process (the turn-off condition is
+    satisfied once<em class="+ topic/ph hi-d/i ph i"> delta V</em> is below the balancing threshold) is 5 seconds, as was defined in
+    the model.</p>
+   <p class="- topic/p p"><em class="+ topic/ph hi-d/i ph i">Delta V</em> is also displayed on the <em class="+ topic/ph hi-d/i ph i">ΔVcell</em> display widget.</p>
+   <p class="- topic/p p">By clicking on the <em class="+ topic/ph hi-d/i ph i">Undervoltage</em> button in the <em class="+ topic/ph hi-d/i ph i">Undervoltage</em> sub-panel, you can
+    introduce a state of undervoltage. The BMS reacts to this by raising the appropriate flag and
+    opening the main contactor. You can also introduce a state of either overtemperature or
+    undertemperature using options in the <em class="+ topic/ph hi-d/i ph i">Over &amp; Undertemperature</em> protection sub-panel.
+    The BMS reacts to this by raising the appropriate flag and opening the main contactor.</p>
+   <p class="- topic/p p">The Normal button in the Normal state sub-panel disables any ongoing fault scenario. The BMS
+    will apply the necessary actions to return the system to its initial state and all raised flags
+    will be reset. The charger current is set to 0 and the SOC for all batteries is returned to its
+    nominal value of 50%. Finally, the main contactor will be closed.</p> 
+   </section>
+  
+  <section class="- topic/section section" id="doc__test_automation" data-ofbid="doc__test_automation"><h2 class="- topic/title title sectiontitle">Test Automation</h2>
+   
+   <p class="- topic/p p">We don’t have a test automation for this example yet. <a class="- topic/xref xref" href="https://subscription.typhoon-hil.com/" target="_blank" rel="external noopener">Let us know</a> if you wish to contribute
+    and we will gladly have you signed on the application note!</p>
+   </section>
+  <section class="- topic/section section" id="doc__tutorial" data-ofbid="doc__tutorial"><h2 class="- topic/title title sectiontitle">Video Tutorial</h2>
+   
+   <p class="- topic/p p">A demonstration of this example model can be found here (internet connection is required):</p>
+   <p class="- topic/p p"><div class="non-responsive"><iframe class="iframe embed-responsive-item" controls="controls" width="710" height="399" src="https://www.youtube.com/embed/0TLqm8Abws4" allowfullscreen="" referrerpolicy="strict-origin-when-cross-origin"></iframe></div></p>
+  </section>
+  
+  <section class="- topic/section section" id="doc__example_requirements" data-ofbid="doc__example_requirements"><h2 class="- topic/title title sectiontitle">Example requirements</h2>
+   
+   <p class="- topic/p p"><a class="- topic/xref xref" href="#doc__min_req">Table 1</a> provides detailed information about the file locations and hardware requirements 
+    for running the model in real-time, followed by the HIL device resource utilization when running the model using 
+    this minimal hardware configuration. This information is provided to help you with running and 
+    customizing the model as you see fit.</p>
+   <table class="- topic/table table frame-all" id="doc__min_req" data-ofbid="doc__min_req" data-cols="2"><caption class="- topic/title title tablecap" data-caption-side="top" data-is-repeated="true"><span class="table--title-label">Table<span class="table--title-label-number"> 1</span><span class="table--title-label-punctuation">. </span></span><span class="table--title"><span class="- topic/ph ph" id="doc__an_min-req">Minimum requirements</span></span></caption><colgroup><col style="width:50%"/><col style="width:50%"/></colgroup><thead class="- topic/thead thead">
+      <tr class="- topic/row">
+       <th class="- topic/entry entry align-center colsep-0 rowsep-1" id="doc__min_req__entry__1" colspan="2">Files</th>
+      </tr>
+     </thead><tbody class="- topic/tbody tbody">
+      <tr class="- topic/row">
+       <td class="- topic/entry entry align-center colsep-1 rowsep-1" headers="doc__min_req__entry__1"><span class="- topic/ph ph" id="doc__an_min-req_TH-files">Typhoon HIL files</span></td>
+       <td class="- topic/entry entry align-center colsep-0 rowsep-1" headers="doc__min_req__entry__1"><p class="- topic/p p"><em class="+ topic/ph hi-d/i ph i">examples\models\battery management systems\battery management system\</em></p><p class="- topic/p p">battery management
+        system.tse</p><p class="- topic/p p">battery management
+         system.cus</p></td>
+      </tr>
+      <tr class="- topic/row">
+       <td class="- topic/entry entry align-center colsep-0 rowsep-1" headers="doc__min_req__entry__1" colspan="2"><strong class="+ topic/ph hi-d/b ph b">Minimum hardware requirements</strong></td>
+      </tr>
+      <tr class="- topic/row">
+       <td class="- topic/entry entry align-center colsep-1 rowsep-1" headers="doc__min_req__entry__1"><span class="- topic/ph ph" id="doc__an_min-req_num-devices">No. of HIL devices</span></td>
+       <td class="- topic/entry entry align-center colsep-0 rowsep-1" headers="doc__min_req__entry__1"><span class="- topic/ph ph" id="doc__num_devices">1</span></td>
+      </tr>
+      <tr class="- topic/row">
+       <td class="- topic/entry entry align-center colsep-1 rowsep-1" headers="doc__min_req__entry__1"><span class="- topic/ph ph" id="doc__an_min-req_model-num">HIL device model</span></td>
+       <td class="- topic/entry entry align-center colsep-0 rowsep-1" headers="doc__min_req__entry__1"><span class="- topic/ph ph" id="doc__type_devices">HIL101</span></td>
+      </tr>
+      <tr class="- topic/row">
+       <td class="- topic/entry entry align-center colsep-1 rowsep-1" headers="doc__min_req__entry__1"><u class="+ topic/ph hi-d/u ph u"><a class="- topic/xref xref" href="../../t-ug002/concepts/device_manager.html" title="Device Manager is used to create, manipulate, and activate HIL device setups.">Device configuration</a></u></td>
+       <td class="- topic/entry entry align-center colsep-0 rowsep-1" headers="doc__min_req__entry__1"><span class="- topic/ph ph" id="doc__num_config">1</span></td>
+      </tr>
+      <tr class="- topic/row">
+       <td class="- topic/entry entry align-center colsep-0 rowsep-1" headers="doc__min_req__entry__1" colspan="2"><strong class="+ topic/ph hi-d/b ph b">HIL device resource utilization</strong></td>
+      </tr>
+      <tr class="- topic/row">
+       <td class="- topic/entry entry align-center colsep-1 rowsep-1" headers="doc__min_req__entry__1"><span class="- topic/ph ph" id="doc__an_res-util_num-cores">No. of processing cores</span></td>
+       <td class="- topic/entry entry align-center colsep-0 rowsep-1" headers="doc__min_req__entry__1"><span class="- topic/ph ph" id="doc__num_cores">1</span></td>
+      </tr>
+      <tr class="- topic/row">
+       <td class="- topic/entry entry align-center colsep-1 rowsep-1" headers="doc__min_req__entry__1"><span class="- topic/ph ph" id="doc__an_res-util_max-memory">Max. matrix memory utilization</span></td>
+       <td class="- topic/entry entry align-center colsep-0 rowsep-1" headers="doc__min_req__entry__1"><p class="- topic/p p">1.15% (core0)</p></td>
+      </tr>
+      <tr class="- topic/row">
+       <td class="- topic/entry entry align-center colsep-1 rowsep-1" headers="doc__min_req__entry__1"><span class="- topic/ph ph" id="doc__an_res-util_max-time">Max. time slot utilization</span></td>
+       <td class="- topic/entry entry align-center colsep-0 rowsep-1" headers="doc__min_req__entry__1"><p class="- topic/p p">47.27% (core0)</p></td>
+      </tr>
+      <tr class="- topic/row">
+       <td class="- topic/entry entry align-center colsep-1 rowsep-1" headers="doc__min_req__entry__1"><span class="- topic/ph ph" id="doc__an_res-util_sim-step">Simulation step, electrical</span></td>
+       <td class="- topic/entry entry align-center colsep-0 rowsep-1" headers="doc__min_req__entry__1">0.5 µs</td>
+      </tr>
+      <tr class="- topic/row">
+       <td class="- topic/entry entry align-center colsep-1 rowsep-0" headers="doc__min_req__entry__1"><span class="- topic/ph ph" id="doc__an_res-util_exec-rate">Execution rate, signal processing</span></td>
+       <td class="- topic/entry entry align-center colsep-0 rowsep-0" headers="doc__min_req__entry__1">100 µs</td>
+      </tr>
+     </tbody></table>
+  </section>
+  <section class="- topic/section section" id="doc__dW681tbur" data-ofbid="doc__dW681tbur"><h2 class="- topic/title title sectiontitle">Authors</h2>
+   
+   <p class="- topic/p p">[1] Nikola Lucic</p>
+  </section>
+ </div>
+</article></main></div>
+                        
+                        
+                        
+                        
+                        
+                        
+                    </div>
+                    
+                        <nav role="navigation" id="wh_topic_toc" aria-label="On this page" class="col-lg-2 d-none d-lg-block navbar d-print-none"> 
+                            <div id="wh_topic_toc_content">
+		                        
+	                            <div class=" wh_topic_toc "><div class="wh_topic_label">On this page</div><ul><li class="section-item"><div class="section-title"><a href="#doc__section_hqr_1zb_rz" data-tocid="doc__section_hqr_1zb_rz">Introduction</a></div></li><li class="section-item"><div class="section-title"><a href="#doc__section_bnk_str_1kb" data-tocid="doc__section_bnk_str_1kb">Model description</a></div></li><li class="section-item"><div class="section-title"><a href="#doc__bms_operation" data-tocid="doc__bms_operation">BMS operation</a></div></li><li class="section-item"><div class="section-title"><a href="#doc__section_urt_fvw_2jb" data-tocid="doc__section_urt_fvw_2jb">Simulation</a></div></li><li class="section-item"><div class="section-title"><a href="#doc__test_automation" data-tocid="doc__test_automation">Test Automation</a></div></li><li class="section-item"><div class="section-title"><a href="#doc__tutorial" data-tocid="doc__tutorial">Video Tutorial</a></div></li><li class="section-item"><div class="section-title"><a href="#doc__example_requirements" data-tocid="doc__example_requirements">Example requirements</a></div></li><li class="section-item"><div class="section-title"><a href="#doc__dW681tbur" data-tocid="doc__dW681tbur">Authors</a></div></li></ul></div>
+	                        	
+                        	</div>
+                        </nav>
+                    
+                </div>
+            </div>
+            
+            
+            
+        </div> 
+        <footer class="navbar navbar-default wh_footer">
+  <div class=" footer-container mx-auto ">
+    <div style="text-align:center">Typhoon HIL Inc.<span id="year"> <a href="https://www.typhoon-hil.com">www.typhoon-hil.com</a></span></div>
+  </div>
+</footer>
+        
+        <div id="go2top" class="d-print-none">
+            <span class="oxy-icon oxy-icon-up"></span>
+        </div>
+        
+        <div id="modal_img_large" class="modal">
+            <span class="close oxy-icon oxy-icon-remove"></span>
+            <div id="modal_img_container"></div>
+            <div id="caption"></div>
+        </div>
+        
+        
+<script type="text/javascript" src="../../assets/script.js"> 
+</script>
+
+        
+    </body>
+</html>

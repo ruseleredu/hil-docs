@@ -1,0 +1,1050 @@
+<!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en" data-whc_version="24.1">
+    <head><link rel="shortcut icon" href="../../../favicon.ico"/><link rel="icon" href="../../../favicon.ico"/><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><meta name="DC.rights.owner" content="(C) Copyright 2026"/><meta name="copyright" content="(C) Copyright 2026"/><meta name="generator" content="DITA-OT"/><meta name="DC.type" content="reference"/><meta name="description" content="Detailed description of the HIL Nucleo-64 Interface board"/><meta name="DC.relation" content="../../../t-ug001/hil_nucleo-64_interface/topics/abstract.html"/><meta name="DC.format" content="HTML5"/><meta name="DC.identifier" content="doc"/>        
+      <title>Detailed description</title><!--  Generated with Oxygen version 24.1, build number 2022030800.  --><meta name="wh-path2root" content="../../../"/><meta name="wh-toc-id" content="doc-d16877e10233"/><meta name="wh-source-relpath" content="t-ug001/hil_nucleo-64_interface/References/detailed_description.dita"/><meta name="wh-out-relpath" content="t-ug001/hil_nucleo-64_interface/References/detailed_description.html"/>
+    <!-- Latest compiled and minified Bootstrap CSS -->
+    <link rel="stylesheet" type="text/css" href="../../../oxygen-webhelp/lib/bootstrap/css/bootstrap.min.css"/>
+    
+    <link rel="stylesheet" href="../../../oxygen-webhelp/lib/jquery-ui/jquery-ui.min.css"/>
+    
+    <!-- Template default styles  -->
+    <link rel="stylesheet" type="text/css" href="../../../oxygen-webhelp/app/topic-page.css?buildId=2022030800"/>
+    
+    
+    <script src="../../../oxygen-webhelp/lib/jquery/jquery-3.5.1.min.js"></script>
+    
+    <script data-main="../../../oxygen-webhelp/app/topic-page.js" src="../../../oxygen-webhelp/lib/requirejs/require.js"></script>
+<link rel="stylesheet" type="text/css" href="../../../oxygen-webhelp/template/oxygen.css?buildId=2022030800"/><link rel="stylesheet" type="text/css" href="../../../oxygen-webhelp/template/notes.css?buildId=2022030800"/><script type="text/javascript" src="../../Scripts/mml-svg.js"> 
+</script><link rel="stylesheet" type="text/css" href="../../../assets/typhoon.css"/></head>
+
+    <body id="doc" class="wh_topic_page frmBody">
+        <a href="#wh_topic_body" class="sr-only sr-only-focusable">
+            Jump to main content
+        </a>
+        
+        
+        
+        
+        <header class="navbar navbar-default wh_header">
+    <div class="container-fluid">
+        <div class="wh_header_flex_container navbar-nav navbar-expand-md navbar-dark">
+            <div class="wh_logo_and_publication_title_container">
+                <div class="wh_logo_and_publication_title">
+                    
+                    <a href="https://www.typhoon-hil.com" class=" wh_logo d-none d-sm-block "><img src="../../../logo.svg" alt="  Typhoon HIL Documentation  Version: 2026.1  "/></a>
+                    <div class=" wh_publication_title "><a href="../../../index.html"><span class="booktitle">  <span class="ph mainbooktitle">Typhoon HIL Documentation</span>  <span class="ph booktitlealt">Version: 2026.1</span>  </span></a></div>
+                    
+                </div>
+                
+                <button type="button" data-target="#wh_top_menu_and_indexterms_link" id="wh_menu_mobile_button" data-toggle="collapse" class="navbar-toggler collapsed wh_toggle_button" aria-expanded="false" aria-label="Toggle menu" aria-controls="wh_top_menu_and_indexterms_link">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+            </div>
+
+            <div class="wh_top_menu_and_indexterms_link collapse navbar-collapse" id="wh_top_menu_and_indexterms_link">
+                
+                <nav class=" wh_top_menu " aria-label="Menu Container"><ul role="menubar" aria-label="Menu"><li role="menuitem" aria-haspopup="true" aria-expanded="false" class="has-children"><span id="tocId-d16877e21-mi" data-tocid="tocId-d16877e21" data-state="not-ready" class=" topicref application-notes"><span class="title"><a href="../../../t-an001/concepts/application_notes_introduction.html">Typhoon HIL Application Notes</a></span></span></li><li role="menuitem" aria-haspopup="true" aria-expanded="false" class="has-children"><span id="tocId-d16877e737-mi" data-tocid="tocId-d16877e737" data-state="not-ready" class=" topicref software-manual"><span class="title"><a href="../../../t-ug002/topics/software_manual_introduction.html">Typhoon HIL Software Manual</a></span></span></li><li role="menuitem" aria-haspopup="true" aria-expanded="false" class="has-children"><span id="tocId-d16877e7901-mi" data-tocid="tocId-d16877e7901" data-state="not-ready" class=" topicref hardware-manual"><span class="title"><a href="../../../t-ug001/abstract/hardware_manual_introduction.html">Typhoon HIL Hardware Manual</a></span></span></li></ul></nav>
+                
+                
+            </div>
+        </div>
+    </div>
+</header>
+        
+        
+         
+        
+        <div class=" wh_search_input navbar-form wh_topic_page_search search " role="form">
+            
+            
+            
+            <form id="searchForm" method="get" role="search" action="../../../search.html"><div><input type="search" placeholder="Search " class="wh_search_textfield" id="textToSearch" name="searchQuery" aria-label="Search query" required="required"/><button type="submit" class="wh_search_button" aria-label="Search"><span class="search_input_text">Search</span></button></div></form>
+            
+            
+            
+        </div>
+        
+        <div class="container-fluid" id="wh_topic_container">
+            <div class="row">
+
+                <nav class="wh_tools d-print-none navbar-expand-md" aria-label="Tools">
+                    
+                    <div data-tooltip-position="bottom" class=" wh_breadcrumb "><ol class="d-print-none"><li><span class="home"><a href="../../../index.html"><span>Home</span></a></span></li><li><div class="topicref hardware-manual"><div class="title"><a href="../../../t-ug001/abstract/hardware_manual_introduction.html">Typhoon HIL Hardware Manual</a></div></div></li><li><div class="topicref" data-id="doc"><div class="title"><a href="../../../t-ug001/abstract/HIL_interfaces.html">HIL Interfaces</a><div class="wh-tooltip"><p class="shortdesc">Collection of some of the guides on the deployment, use, and management of HIL Interfaces available from Typhoon HIL.</p></div></div></div></li><li><div class="topicref" data-id="doc"><div class="title"><a href="../../../t-ug001/hil_nucleo-64_interface/topics/abstract.html">HIL Nucleo-64 Interface</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">Information about the HIL Nucleo-64 Interface, an interface board             which allows for seamlessly connecting STM Nucleo-64™ development kits to Typhoon HIL             simulators.</span></p></div></div></div></li><li class="active"><div class="topicref page-break-after" data-id="doc"><div class="title"><a href="../../../t-ug001/hil_nucleo-64_interface/References/detailed_description.html">Detailed description</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">Detailed description of the HIL Nucleo-64 Interface board</span></p></div></div></div></li></ol></div>
+                    
+                    
+                    
+                    <div class="wh_right_tools">
+                        <button class="wh_hide_highlight" aria-label="Toggle search highlights" title="Toggle search highlights"></button>
+                        <button class="webhelp_expand_collapse_sections" data-next-state="collapsed" aria-label="Collapse sections" title="Collapse sections"></button>
+                        
+                        
+                        
+                        
+                        <div class=" wh_print_link print d-none d-md-inline-block "><button onClick="window.print()" title="Print this page" aria-label="Print this page"></button></div>
+                        
+                        <button type="button" id="wh_toc_button" class="custom-toggler navbar-toggler collapsed wh_toggle_button navbar-light" aria-expanded="false" aria-label="Toggle publishing table of content" aria-controls="wh_publication_toc">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+                    </div>
+                    
+                </nav>
+            </div>
+            
+            
+            
+            
+            <div class="wh_content_area">
+                <div class="row">
+                    
+                        <nav id="wh_publication_toc" class="col-lg-3 col-md-3 col-sm-12 d-md-block d-none d-print-none" aria-label="Table of Contents Container">
+                            <div id="wh_publication_toc_content">
+		                        
+                            	<div class=" wh_publication_toc " data-tooltip-position="right"><span class="expand-button-action-labels"><span id="button-expand-action" role="button" aria-label="Expand"></span><span id="button-collapse-action" role="button" aria-label="Collapse"></span><span id="button-pending-action" role="button" aria-label="Pending"></span></span><ul role="tree" aria-label="Table of Contents"><li role="treeitem" aria-expanded="true"><div data-tocid="tocId-d16877e7901" class="topicref hardware-manual" data-state="expanded"><span role="button" tabindex="0" aria-labelledby="button-collapse-action tocId-d16877e7901-link" class="wh-expand-btn"></span><div class="title"><a href="../../../t-ug001/abstract/hardware_manual_introduction.html" id="tocId-d16877e7901-link">Typhoon HIL Hardware Manual</a></div></div><ul role="group" class="navbar-nav nav-list"><li role="treeitem"><div data-tocid="doc-d16877e7905" class="topicref" data-id="doc" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../../../t-ug001/abstract/hardware_manual_introduction.html" id="doc-d16877e7905-link">Hardware Manual Introduction</a><div class="wh-tooltip"><p class="shortdesc">Collection of some of the guides on the deployment, use, and management of Typhoon HIL hardware devices.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="doc-d16877e7916" class="topicref" data-id="doc" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action doc-d16877e7916-link" class="wh-expand-btn"></span><div class="title"><a href="../../../t-ug001/abstract/HIL_simulators.html" id="doc-d16877e7916-link">Typhoon HIL simulator devices</a><div class="wh-tooltip"><p class="shortdesc">Overview of the currently supported Typhoon HIL simulator devices.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="doc-d16877e8927" class="topicref" data-id="doc" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action doc-d16877e8927-link" class="wh-expand-btn"></span><div class="title"><a href="../../../t-ug001/hil_connect/topics/abstract.html" id="doc-d16877e8927-link">HIL Connect</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">Information about the HIL Connect, a 19" 6U interface device,             designed to adapt HIL IO signal levels to those most commonly used in the         industry.</span></p></div></div></div></li><li role="treeitem" aria-expanded="true"><div data-tocid="doc-d16877e9278" class="topicref" data-id="doc" data-state="expanded"><span role="button" tabindex="0" aria-labelledby="button-collapse-action doc-d16877e9278-link" class="wh-expand-btn"></span><div class="title"><a href="../../../t-ug001/abstract/HIL_interfaces.html" id="doc-d16877e9278-link">HIL Interfaces</a><div class="wh-tooltip"><p class="shortdesc">Collection of some of the guides on the deployment, use, and management of HIL Interfaces available from Typhoon HIL.</p></div></div></div><ul role="group" class="navbar-nav nav-list"><li role="treeitem" aria-expanded="false"><div data-tocid="doc-d16877e9292" class="topicref" data-id="doc" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action doc-d16877e9292-link" class="wh-expand-btn"></span><div class="title"><a href="../../../t-ug001/hil_dS_Interface_Type-A/topics/abstract.html" id="doc-d16877e9292-link">HIL dS Interface Type-A</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">Information about the HIL dS Interface Type-A, an interface             board which allows for connecting dSPACE hardware to Typhoon HIL         simulators.</span></p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="doc-d16877e9381" class="topicref" data-id="doc" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action doc-d16877e9381-link" class="wh-expand-btn"></span><div class="title"><a href="../../../t-ug001/hil_dS_Interface_Type-B/topics/abstract.html" id="doc-d16877e9381-link">HIL dS Interface Type-B</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">Information about the HIL dS Interface Type-B, an interface             board which allows for connecting dSPACE hardware to Typhoon HIL         simulators.</span></p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="doc-d16877e9482" class="topicref" data-id="doc" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action doc-d16877e9482-link" class="wh-expand-btn"></span><div class="title"><a href="../../../t-ug001/hil_dS_Interface_Type-C/topics/abstract.html" id="doc-d16877e9482-link">HIL dS Interface Type-C</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">Information about the HIL dS Interface Type-C, an interface             board which allows for connecting dSPACE hardware to Typhoon HIL         simulators.</span></p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="doc-d16877e9584" class="topicref" data-id="doc" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action doc-d16877e9584-link" class="wh-expand-btn"></span><div class="title"><a href="../../../t-ug001/hil_breakout_board/topics/abstract.html" id="doc-d16877e9584-link">HIL Breakout Board</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">Information about the HIL Breakout Board, a passive breakout board which provides easy access to individual HIL signals.</span></p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="doc-d16877e9685" class="topicref" data-id="doc" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action doc-d16877e9685-link" class="wh-expand-btn"></span><div class="title"><a href="../../../t-ug001/hil_remote_io/topics/abstract.html" id="doc-d16877e9685-link">HIL Remote IO Interface</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">Information about the HIL Remote IO Interface, a device for IO             expansion in HIL test setups.</span></p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="doc-d16877e9811" class="topicref" data-id="doc" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action doc-d16877e9811-link" class="wh-expand-btn"></span><div class="title"><a href="../../../t-ug001/hil_power_link_interface/topics/abstract.html" id="doc-d16877e9811-link">HIL Power Link Interface</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">Information about the HIL Power Link Interface designed for             converting electrical signals to optical signals, and vice versa.</span></p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="doc-d16877e9888" class="topicref" data-id="doc" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action doc-d16877e9888-link" class="wh-expand-btn"></span><div class="title"><a href="../../../t-ug001/hil_dsp_180_interface/topics/abstract.html" id="doc-d16877e9888-link">HIL DSP 180 Interface</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">Information about the HIL DSP 180 Interface, an interface board             which allows for connecting Texas Instruments Control Card boards to Typhoon HIL             simulators.</span></p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="doc-d16877e9965" class="topicref" data-id="doc" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action doc-d16877e9965-link" class="wh-expand-btn"></span><div class="title"><a href="../../../t-ug001/hil_ti_launchpad_interface/topics/abstract.html" id="doc-d16877e9965-link">HIL TI Launchpad Interface</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">Information about the HIL TI Launchpad Interface, an interface             board which allows for connecting TI's LaunchPad™ boards to Typhoon HIL         simulators.</span></p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="doc-d16877e10055" class="topicref" data-id="doc" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action doc-d16877e10055-link" class="wh-expand-btn"></span><div class="title"><a href="../../../t-ug001/hil_ti_ugrid_launchpad_interface/topics/abstract.html" id="doc-d16877e10055-link">HIL TI uGrid Launchpad Interface</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">Information about the HIL TI uGrid Launchpad Interface, an             interface board which allows for connecting up to three TI LaunchPad™ boards to Typhoon             HIL simulators.</span></p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="doc-d16877e10132" class="topicref" data-id="doc" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action doc-d16877e10132-link" class="wh-expand-btn"></span><div class="title"><a href="../../../t-ug001/hil_infineon_triboard_interface/topics/abstract.html" id="doc-d16877e10132-link">HIL Infineon TriBoard Interface </a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">Information about the HIL Infineon TriBoard Interface, an             interface board which allows for connecting Infineon TriBoard evaluation boards to             Typhoon HIL simulators.</span></p></div></div></div></li><li role="treeitem" aria-expanded="true"><div data-tocid="doc-d16877e10209" class="topicref" data-id="doc" data-state="expanded"><span role="button" tabindex="0" aria-labelledby="button-collapse-action doc-d16877e10209-link" class="wh-expand-btn"></span><div class="title"><a href="../../../t-ug001/hil_nucleo-64_interface/topics/abstract.html" id="doc-d16877e10209-link">HIL Nucleo-64 Interface</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">Information about the HIL Nucleo-64 Interface, an interface board             which allows for seamlessly connecting STM Nucleo-64™ development kits to Typhoon HIL             simulators.</span></p></div></div></div><ul role="group" class="navbar-nav nav-list"><li role="treeitem"><div data-tocid="doc-d16877e10221" class="topicref page-break-after" data-id="doc" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../../../t-ug001/hil_nucleo-64_interface/concepts/overview.html" id="doc-d16877e10221-link">Overview</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">Overview of the purpose and connectivity of the HIL Nucleo-64 Interface board</span></p></div></div></div></li><li role="treeitem" class="active"><div data-tocid="doc-d16877e10233" class="topicref page-break-after" data-id="doc" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../../../t-ug001/hil_nucleo-64_interface/References/detailed_description.html" id="doc-d16877e10233-link">Detailed description</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">Detailed description of the HIL Nucleo-64 Interface board</span></p></div></div></div></li><li role="treeitem"><div data-tocid="doc-d16877e10245" class="topicref page-break-after" data-id="doc" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../../../t-ug001/hil_nucleo-64_interface/References/compatibility.html" id="doc-d16877e10245-link">Compatibility</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">Descriptions of the compatibility limitations for the HIL Nucleo-64             Interface board, with some examples.</span></p></div></div></div></li><li role="treeitem"><div data-tocid="doc-d16877e10257" class="topicref page-break-after" data-id="doc" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../../../t-ug001/hil_nucleo-64_interface/References/scope_of_delivery.html" id="doc-d16877e10257-link">Scope of delivery</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">Scope of delivery of the HIL Nucleo-64 Interface         board.</span></p></div></div></div></li></ul></li><li role="treeitem" aria-expanded="false"><div data-tocid="doc-d16877e10287" class="topicref" data-id="doc" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action doc-d16877e10287-link" class="wh-expand-btn"></span><div class="title"><a href="../../../t-ug001/hil_pof_interface_board/topics/abstract.html" id="doc-d16877e10287-link">HIL POF Interface Board</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">Information about the HIL POF Interface Board, an interface         board which allows for converting HIL voltage digital signals to Optical signals, and vice versa.</span></p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="doc-d16877e10364" class="topicref" data-id="doc" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action doc-d16877e10364-link" class="wh-expand-btn"></span><div class="title"><a href="../../../t-ug001/hil_ccs_interface/topics/abstract.html" id="doc-d16877e10364-link">HIL CCS Interface</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">Information about the HIL CCS Interface, a dedicated module for testing smart     charge communication of electric vehicles and electric vehicle supply equipment.</span></p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="doc-d16877e10441" class="topicref" data-id="doc" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action doc-d16877e10441-link" class="wh-expand-btn"></span><div class="title"><a href="../../../t-ug001/hil_ev_charging_interface/topics/abstract.html" id="doc-d16877e10441-link">HIL Electric Vehicle Charging Interface</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">Information about the HIL Electric Vehicle Charging Interface             solution, a dedicated module for testing and validating Electric Vehicle Supply             Equipment (EVSE). This interface requires a connected power amplifier to         function.</span></p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="doc-d16877e10543" class="topicref" data-id="doc" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action doc-d16877e10543-link" class="wh-expand-btn"></span><div class="title"><a href="../../../t-ug001/hil_regatron_interface/topics/abstract.html" id="doc-d16877e10543-link">HIL Regatron Interface Device</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">Information about the HIL Regatron Interface Device, an interface             which allows for seamless communication between Regatron Power Source devices and             Typhoon HIL simulators.</span></p></div></div></div></li></ul></li><li role="treeitem" aria-expanded="false"><div data-tocid="doc-d16877e10605" class="topicref" data-id="doc" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action doc-d16877e10605-link" class="wh-expand-btn"></span><div class="title"><a href="../../../t-ug001/abstract/HIL_accessories.html" id="doc-d16877e10605-link">HIL Accessories</a><div class="wh-tooltip"><p class="shortdesc">Collection of some of the guides on the deployment, use, and management of Typhoon HIL accessories.</p></div></div></div></li></ul></li></ul></div>
+		                        
+                            </div>
+                        </nav>
+                    
+                    
+                    <div class="col-lg-7 col-md-9 col-sm-12" id="wh_topic_body">
+                        <button id="wh_close_publication_toc_button" class="close-toc-button d-none" aria-label="Toggle publishing table of content" aria-controls="wh_publication_toc" aria-expanded="true">
+                            <span class="close-toc-icon-container">
+                                <span class="close-toc-icon"></span>     
+                            </span>
+                        </button>
+                        <button id="wh_close_topic_toc_button" class="close-toc-button d-none" aria-label="Toggle topic table of content" aria-controls="wh_topic_toc" aria-expanded="true">
+                            <span class="close-toc-icon-container">
+                                <span class="close-toc-icon"></span>     
+                            </span>
+                        </button>
+                        
+                        <div class=" wh_topic_content body "><main role="main"><article role="article" aria-labelledby="ariaid-title1">
+    <h1 class="- topic/title title topictitle1" id="ariaid-title1">Detailed description</h1>
+    
+    <div class="- topic/body reference/refbody body refbody"><p class="- topic/shortdesc shortdesc"><span class="- topic/ph ph" id="doc__description">Detailed description of the HIL Nucleo-64 Interface board</span></p>
+        <section class="- topic/section section" id="doc__block_diagram" data-ofbid="doc__block_diagram">
+            <p class="- topic/p p">The board features the following key sections, as shown in <a class="- topic/xref xref" href="#doc__layout_diagram">Figure 1</a>.</p>
+            <ol class="- topic/ol ol" id="doc__ol_pfg_rtp_5pb" data-ofbid="doc__ol_pfg_rtp_5pb">
+                <li class="- topic/li li"><a class="- topic/xref xref" href="#doc__analog_io">HIL Analog connector</a></li>
+                <li class="- topic/li li"><a class="- topic/xref xref" href="#doc__digital_io">HIL Digital connector</a></li>
+                <li class="- topic/li li">Measurement terminals</li>
+                <li class="- topic/li li">Analog IO stage</li>
+                <li class="- topic/li li">Digital Output stage</li>
+                <li class="- topic/li li">UART stage</li>
+                <li class="- topic/li li"><a class="- topic/xref xref" href="#doc__nucleo-64_io">Nucleo-64™ Connectors</a></li>
+            </ol>
+            <figure class="- topic/fig fig fignone" id="doc__layout_diagram" data-ofbid="doc__layout_diagram"><figcaption class="- topic/title title figcap"><span class="figtitleprefix fig--title-label">Figure<span class="fig--title-label-number"> 1</span><span class="fig--title-label-punctuation">. </span></span><span class="fig--title">HIL Nucleo-64 Interface layout</span></figcaption>
+                
+                <img class="- topic/image image" id="doc__image_qfg_rtp_5pb" src="../Images/nucleo-64_interface_02.png" width="700"/>
+            </figure>
+        </section>
+        
+        <section class="- topic/section section" id="doc__analog_io" data-ofbid="doc__analog_io"><h2 class="- topic/title title sectiontitle">HIL Analog Connector</h2>
+            
+            <p class="- topic/p p">The HIL Analog connector is a 96 pin DIN 41612/IEC receptacle connector that is
+                directly pluggable into the Analog I/O connector, found on all Typhoon HIL simulator
+                devices, followed by three rows of measurement terminals. <a class="- topic/xref xref" href="#doc__table_im2_sfv_kpb">Table 1</a> shows how HIL analog outputs and analog inputs
+                are connected to Nucleo-64™ sockets, for STM32F334 and STM32G474.</p>
+            <div class="- topic/p p">
+                <table class="- topic/table table frame-all" id="doc__table_im2_sfv_kpb" data-ofbid="doc__table_im2_sfv_kpb" data-cols="4"><caption class="- topic/title title tablecap" data-caption-side="top" data-is-repeated="true"><span class="table--title-label">Table<span class="table--title-label-number"> 1</span><span class="table--title-label-punctuation">. </span></span><span class="table--title">Analog signal routing for STM32F334 and STM32G474 Nucleo-64™
+                        boards</span></caption><colgroup><col style="width:20%"/><col style="width:13.333333333333334%"/><col style="width:26.666666666666668%"/><col style="width:40%"/></colgroup><thead class="- topic/thead thead">
+                            <tr class="- topic/row">
+                                <th class="- topic/entry entry colsep-1 rowsep-1" id="doc__table_im2_sfv_kpb__entry__1">HIL Analog IO</th>
+                                <th class="- topic/entry entry colsep-1 rowsep-1" id="doc__table_im2_sfv_kpb__entry__2">Option</th>
+                                <th class="- topic/entry entry colsep-1 rowsep-1" id="doc__table_im2_sfv_kpb__entry__3">STM32F334</th>
+                                <th class="- topic/entry entry colsep-0 rowsep-1" id="doc__table_im2_sfv_kpb__entry__4">STM32G474</th>
+                            </tr>
+                        </thead><tbody class="- topic/tbody tbody">
+                            <tr class="- topic/row">
+                                <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__table_im2_sfv_kpb__entry__1">AO1</td>
+                                <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__table_im2_sfv_kpb__entry__2">PC0</td>
+                                <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__table_im2_sfv_kpb__entry__3">ADC12_IN6</td>
+                                <td class="- topic/entry entry colsep-0 rowsep-1" headers="doc__table_im2_sfv_kpb__entry__4">ADC12_IN6</td>
+                            </tr>
+                            <tr class="- topic/row">
+                                <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__table_im2_sfv_kpb__entry__1">AO2</td>
+                                <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__table_im2_sfv_kpb__entry__2">PC3</td>
+                                <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__table_im2_sfv_kpb__entry__3">ADC12_IN9</td>
+                                <td class="- topic/entry entry colsep-0 rowsep-1" headers="doc__table_im2_sfv_kpb__entry__4">ADC12_IN9</td>
+                            </tr>
+                            <tr class="- topic/row">
+                                <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__table_im2_sfv_kpb__entry__1">AO3</td>
+                                <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__table_im2_sfv_kpb__entry__2">PC2</td>
+                                <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__table_im2_sfv_kpb__entry__3">ADC12_IN8</td>
+                                <td class="- topic/entry entry colsep-0 rowsep-1" headers="doc__table_im2_sfv_kpb__entry__4">ADC12_IN8</td>
+                            </tr>
+                            <tr class="- topic/row">
+                                <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__table_im2_sfv_kpb__entry__1">AO4</td>
+                                <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__table_im2_sfv_kpb__entry__2">PC1</td>
+                                <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__table_im2_sfv_kpb__entry__3">ADC12_IN7</td>
+                                <td class="- topic/entry entry colsep-0 rowsep-1" headers="doc__table_im2_sfv_kpb__entry__4">ADC12_IN7</td>
+                            </tr>
+                            <tr class="- topic/row">
+                                <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__table_im2_sfv_kpb__entry__1">AO5</td>
+                                <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__table_im2_sfv_kpb__entry__2">PA1</td>
+                                <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__table_im2_sfv_kpb__entry__3">ADC1_IN2</td>
+                                <td class="- topic/entry entry colsep-0 rowsep-1" headers="doc__table_im2_sfv_kpb__entry__4">ADC1_IN2</td>
+                            </tr>
+                            <tr class="- topic/row">
+                                <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__table_im2_sfv_kpb__entry__1">AO6 / AI3</td>
+                                <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__table_im2_sfv_kpb__entry__2">PA4</td>
+                                <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__table_im2_sfv_kpb__entry__3">ADC2_IN1 / DAC1_OUT1</td>
+                                <td class="- topic/entry entry colsep-0 rowsep-1" headers="doc__table_im2_sfv_kpb__entry__4">ADC2_IN17 / DAC1_OUT1</td>
+                            </tr>
+                            <tr class="- topic/row">
+                                <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__table_im2_sfv_kpb__entry__1">AO7</td>
+                                <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__table_im2_sfv_kpb__entry__2">PB0</td>
+                                <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__table_im2_sfv_kpb__entry__3">ADC1_IN11</td>
+                                <td class="- topic/entry entry colsep-0 rowsep-1" headers="doc__table_im2_sfv_kpb__entry__4">ADC1_IN15, ADC3_IN12</td>
+                            </tr>
+                            <tr class="- topic/row">
+                                <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__table_im2_sfv_kpb__entry__1">AO8</td>
+                                <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__table_im2_sfv_kpb__entry__2">PA0</td>
+                                <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__table_im2_sfv_kpb__entry__3">ADC1_IN1</td>
+                                <td class="- topic/entry entry colsep-0 rowsep-1" headers="doc__table_im2_sfv_kpb__entry__4">ADC12_IN1, COMP1</td>
+                            </tr>
+                            <tr class="- topic/row">
+                                <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__table_im2_sfv_kpb__entry__1">AO9</td>
+                                <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__table_im2_sfv_kpb__entry__2">PB2</td>
+                                <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__table_im2_sfv_kpb__entry__3">ADC2_IN12</td>
+                                <td class="- topic/entry entry colsep-0 rowsep-1" headers="doc__table_im2_sfv_kpb__entry__4">ADC2_IN12</td>
+                            </tr>
+                            <tr class="- topic/row">
+                                <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__table_im2_sfv_kpb__entry__1">AO10</td>
+                                <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__table_im2_sfv_kpb__entry__2">PB1</td>
+                                <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__table_im2_sfv_kpb__entry__3">ADC1_IN12</td>
+                                <td class="- topic/entry entry colsep-0 rowsep-1" headers="doc__table_im2_sfv_kpb__entry__4">ADC1_IN12, ADC3_IN1</td>
+                            </tr>
+                            <tr class="- topic/row">
+                                <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__table_im2_sfv_kpb__entry__1">AO11</td>
+                                <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__table_im2_sfv_kpb__entry__2">PC4</td>
+                                <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__table_im2_sfv_kpb__entry__3">ADC2_IN5</td>
+                                <td class="- topic/entry entry colsep-0 rowsep-1" headers="doc__table_im2_sfv_kpb__entry__4">ADC2_IN5</td>
+                            </tr>
+                            <tr class="- topic/row">
+                                <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__table_im2_sfv_kpb__entry__1">AO12</td>
+                                <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__table_im2_sfv_kpb__entry__2">PB11</td>
+                                <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__table_im2_sfv_kpb__entry__3">ADC1_IN12</td>
+                                <td class="- topic/entry entry colsep-0 rowsep-1" headers="doc__table_im2_sfv_kpb__entry__4">ADC1_IN14</td>
+                            </tr>
+                            <tr class="- topic/row">
+                                <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__table_im2_sfv_kpb__entry__1">AO13 / AI2 / DI7</td>
+                                <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__table_im2_sfv_kpb__entry__2">PA5</td>
+                                <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__table_im2_sfv_kpb__entry__3">ADC2_IN2 / DAC1_OUT2</td>
+                                <td class="- topic/entry entry colsep-0 rowsep-1" headers="doc__table_im2_sfv_kpb__entry__4">ADC2_IN13 / DAC1_OUT2</td>
+                            </tr>
+                            <tr class="- topic/row">
+                                <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__table_im2_sfv_kpb__entry__1">AO14 / AI1 / DO4</td>
+                                <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__table_im2_sfv_kpb__entry__2">PA6</td>
+                                <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__table_im2_sfv_kpb__entry__3">ADC2_IN3 / DAC2_OUT1</td>
+                                <td class="- topic/entry entry colsep-0 rowsep-1" headers="doc__table_im2_sfv_kpb__entry__4">ADC2_IN3 / DAC2_OUT1</td>
+                            </tr>
+                            <tr class="- topic/row">
+                                <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__table_im2_sfv_kpb__entry__1">AO15 / DI8</td>
+                                <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__table_im2_sfv_kpb__entry__2">PA7</td>
+                                <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__table_im2_sfv_kpb__entry__3">ADC2_IN4</td>
+                                <td class="- topic/entry entry colsep-0 rowsep-1" headers="doc__table_im2_sfv_kpb__entry__4">ADC2_IN4</td>
+                            </tr>
+                            <tr class="- topic/row">
+                                <td class="- topic/entry entry colsep-1 rowsep-0" headers="doc__table_im2_sfv_kpb__entry__1">AO16</td>
+                                <td class="- topic/entry entry colsep-1 rowsep-0" headers="doc__table_im2_sfv_kpb__entry__2">PC5</td>
+                                <td class="- topic/entry entry colsep-1 rowsep-0" headers="doc__table_im2_sfv_kpb__entry__3">ADC2_IN11</td>
+                                <td class="- topic/entry entry colsep-0 rowsep-0" headers="doc__table_im2_sfv_kpb__entry__4">ADC2_IN11</td>
+                            </tr>
+                        </tbody></table>
+            </div>
+            <p class="- topic/p p">HIL Analog Outputs are scaled from +/-10 V to 0-3.3 V as shown in <a class="- topic/xref xref" href="#doc__ao_stage">Figure 2</a>. 
+                Reference voltage REF/2 is derived as one half of the voltage present on Nucleo-64™ connector 
+                CN10 pin 7 (VREF+). VREF+ can have various values depending on the inserted Nucleo-64™ board 
+                (1.8V, 2.5V, 3.25V, and 3.3V). In most cases VREF+ is 3.3V (Nucleo-64™ VDD) producing a REF/2 voltage equal to 1.65 V. 
+                The equation for scaling HIL AO output voltage to ADC input voltage is:</p>
+            <div class="- topic/p p"><ul class="- topic/ul ul" id="doc__ul_h1b_jvb_jpb" data-ofbid="doc__ul_h1b_jvb_jpb">
+                    <li class="- topic/li li"><span class="+ topic/foreign mathml-d/mathml foreign mathml">
+                                <math xmlns="http://www.w3.org/1998/Math/MathML">
+                                    <mi>A</mi>
+                                    <mi>D</mi>
+                                    <mi>C</mi>
+                                    <mi> </mi>
+                                    <mi>i</mi>
+                                    <mi>n</mi>
+                                    <mi>p</mi>
+                                    <mi>u</mi>
+                                    <mi>t</mi>
+                                    <mi> </mi>
+                                    <mo>[</mo>
+                                    <mi>V</mi>
+                                    <mo>]</mo>
+                                    <mo>=</mo>
+                                    <mfrac>
+                                        <mrow>
+                                            <mi mathvariant="normal">H</mi>
+                                            <mi mathvariant="normal">I</mi>
+                                            <mi mathvariant="normal">L</mi>
+                                            <mi mathvariant="normal"> </mi>
+                                            <mi mathvariant="normal">A</mi>
+                                            <mi mathvariant="normal">O</mi>
+                                            <mi mathvariant="normal">*</mi>
+                                            <mn>3.3</mn>
+                                        </mrow>
+                                        <mrow>
+                                            <mn>20</mn>
+                                        </mrow>
+                                    </mfrac>
+                                    <mo>+</mo>
+                                    <mi>R</mi>
+                                    <mi>E</mi>
+                                    <mi>F</mi>
+                                    <mo>/</mo>
+                                    <mn>2</mn>
+                                </math>
+                            </span></li>
+                </ul>
+            </div>
+            <p class="- topic/p p">HIL AI1, AI2, and AI3 are connected by default (with 0R0 solder bridges SB11, SB12,
+                and SB21) to Nucleo-64™ pins PA4, PA5, and PA6. Solder bridges SB9 and SB10 are not
+                mounted by default.</p>
+            <p class="- topic/p p">To protect against overvoltage conditions, HIL Analog Outputs feature series 120 Ω
+                series resistors that, together with protection diodes, form a 3.3 V clamping
+                circuit.</p>
+            
+            <figure class="- topic/fig fig fignone" id="doc__ao_stage" data-ofbid="doc__ao_stage"><figcaption class="- topic/title title figcap"><span class="figtitleprefix fig--title-label">Figure<span class="fig--title-label-number"> 2</span><span class="fig--title-label-punctuation">. </span></span><span class="fig--title">HIL Analog Output stage</span></figcaption>
+                
+                <img class="- topic/image image" src="../Images/nucleo-64_interface_03.png" width="700"/>
+            </figure>
+        </section>
+        
+        <section class="- topic/section section" id="doc__digital_io" data-ofbid="doc__digital_io"><h2 class="- topic/title title sectiontitle">HIL Digital Connector</h2>
+            
+            <p class="- topic/p p">The HIL Digital Connector is a 96 pin DIN 41612/IEC receptacle connector that is
+                directly pluggable into the Digital I/O connector, found on all Typhoon HIL
+                simulator devices, followed by three rows of measurement terminals. <a class="- topic/xref xref" href="#doc__table_im3_sfv_kpb">Table 2</a> shows how HIL digital outputs and digital inputs
+                are connected to Nucleo-64™ sockets, for STM32F334 and STM32G474.</p>
+            <div class="- topic/p p">
+                <table class="- topic/table table frame-all" id="doc__table_im3_sfv_kpb" data-ofbid="doc__table_im3_sfv_kpb" data-cols="4"><caption class="- topic/title title tablecap" data-caption-side="top" data-is-repeated="true"><span class="table--title-label">Table<span class="table--title-label-number"> 2</span><span class="table--title-label-punctuation">. </span></span><span class="table--title">Digital signal routing for STM32F334 and STM32G474 Nucleo-64™ boards</span></caption><colgroup><col style="width:20%"/><col style="width:13.333333333333334%"/><col style="width:26.666666666666668%"/><col style="width:40%"/></colgroup><thead class="- topic/thead thead">
+                            <tr class="- topic/row">
+                                <th class="- topic/entry entry colsep-1 rowsep-1" id="doc__table_im3_sfv_kpb__entry__1">HIL Digital IO</th>
+                                <th class="- topic/entry entry colsep-1 rowsep-1" id="doc__table_im3_sfv_kpb__entry__2">Option</th>
+                                <th class="- topic/entry entry colsep-1 rowsep-1" id="doc__table_im3_sfv_kpb__entry__3">STM32F334</th>
+                                <th class="- topic/entry entry colsep-0 rowsep-1" id="doc__table_im3_sfv_kpb__entry__4">STM32G474</th>
+                            </tr>
+                        </thead><tbody class="- topic/tbody tbody">
+                            <tr class="- topic/row">
+                                <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__table_im3_sfv_kpb__entry__1">DI7 / AO13 / AI2</td>
+                                <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__table_im3_sfv_kpb__entry__2">PA5</td>
+                                <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__table_im3_sfv_kpb__entry__3">-</td>
+                                <td class="- topic/entry entry colsep-0 rowsep-1" headers="doc__table_im3_sfv_kpb__entry__4">-</td>
+                            </tr>
+                            <tr class="- topic/row">
+                                <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__table_im3_sfv_kpb__entry__1">DI8 / AO15</td>
+                                <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__table_im3_sfv_kpb__entry__2">PA7</td>
+                                <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__table_im3_sfv_kpb__entry__3">-</td>
+                                <td class="- topic/entry entry colsep-0 rowsep-1" headers="doc__table_im3_sfv_kpb__entry__4">-</td>
+                            </tr>
+                            <tr class="- topic/row">
+                                <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__table_im3_sfv_kpb__entry__1">DI9</td>
+                                <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__table_im3_sfv_kpb__entry__2">PC8</td>
+                                <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__table_im3_sfv_kpb__entry__3">-</td>
+                                <td class="- topic/entry entry colsep-0 rowsep-1" headers="doc__table_im3_sfv_kpb__entry__4">TIM8_CH3, HRTIM1_CHE1</td>
+                            </tr>
+                            <tr class="- topic/row">
+                                <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__table_im3_sfv_kpb__entry__1">DI10</td>
+                                <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__table_im3_sfv_kpb__entry__2">PC9</td>
+                                <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__table_im3_sfv_kpb__entry__3">-</td>
+                                <td class="- topic/entry entry colsep-0 rowsep-1" headers="doc__table_im3_sfv_kpb__entry__4">TIM8_CH4, HRTIM1_CHE2</td>
+                            </tr>
+                            <tr class="- topic/row">
+                                <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__table_im3_sfv_kpb__entry__1">DI11</td>
+                                <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__table_im3_sfv_kpb__entry__2">PC6</td>
+                                <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__table_im3_sfv_kpb__entry__3">-</td>
+                                <td class="- topic/entry entry colsep-0 rowsep-1" headers="doc__table_im3_sfv_kpb__entry__4">TIM8_CH1, HRTIM1_CHF1</td>
+                            </tr>
+                            <tr class="- topic/row">
+                                <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__table_im3_sfv_kpb__entry__1">DI12</td>
+                                <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__table_im3_sfv_kpb__entry__2">PB9</td>
+                                <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__table_im3_sfv_kpb__entry__3">-</td>
+                                <td class="- topic/entry entry colsep-0 rowsep-1" headers="doc__table_im3_sfv_kpb__entry__4">TIM8_CH3, TIM1_CH3N</td>
+                            </tr>
+                            <tr class="- topic/row">
+                                <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__table_im3_sfv_kpb__entry__1">DI13</td>
+                                <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__table_im3_sfv_kpb__entry__2">PA11</td>
+                                <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__table_im3_sfv_kpb__entry__3">TIM1_CH1N</td>
+                                <td class="- topic/entry entry colsep-0 rowsep-1" headers="doc__table_im3_sfv_kpb__entry__4">TIM1_CH1N, HRTIM1_CHB2</td>
+                            </tr>
+                            <tr class="- topic/row">
+                                <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__table_im3_sfv_kpb__entry__1">DI14</td>
+                                <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__table_im3_sfv_kpb__entry__2">PB12</td>
+                                <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__table_im3_sfv_kpb__entry__3">-</td>
+                                <td class="- topic/entry entry colsep-0 rowsep-1" headers="doc__table_im3_sfv_kpb__entry__4">HRTIM1_CHC1, TIM8_CH3N, TIM1_CH3N</td>
+                            </tr>
+                            <tr class="- topic/row">
+                                <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__table_im3_sfv_kpb__entry__1">DI15</td>
+                                <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__table_im3_sfv_kpb__entry__2">PC7</td>
+                                <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__table_im3_sfv_kpb__entry__3">-</td>
+                                <td class="- topic/entry entry colsep-0 rowsep-1" headers="doc__table_im3_sfv_kpb__entry__4">TIM8_CH2, HRTIM1_CHF2</td>
+                            </tr>
+                            <tr class="- topic/row">
+                                <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__table_im3_sfv_kpb__entry__1">DI16</td>
+                                <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__table_im3_sfv_kpb__entry__2">PA9</td>
+                                <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__table_im3_sfv_kpb__entry__3">TIM1_CH2</td>
+                                <td class="- topic/entry entry colsep-0 rowsep-1" headers="doc__table_im3_sfv_kpb__entry__4">TIM1_CH2, HRTIM1_CHA2</td>
+                            </tr>
+                            <tr class="- topic/row">
+                                <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__table_im3_sfv_kpb__entry__1">DI17</td>
+                                <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__table_im3_sfv_kpb__entry__2">PA8</td>
+                                <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__table_im3_sfv_kpb__entry__3">TIM1_CH1</td>
+                                <td class="- topic/entry entry colsep-0 rowsep-1" headers="doc__table_im3_sfv_kpb__entry__4">TIM1_CH1, HRTIM1_CHA1</td>
+                            </tr>
+                            <tr class="- topic/row">
+                                <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__table_im3_sfv_kpb__entry__1">DI18</td>
+                                <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__table_im3_sfv_kpb__entry__2">PB15</td>
+                                <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__table_im3_sfv_kpb__entry__3">TIM1_CH3N</td>
+                                <td class="- topic/entry entry colsep-0 rowsep-1" headers="doc__table_im3_sfv_kpb__entry__4">TIM1_CH3N, HRTIM1_CHD2</td>
+                            </tr>
+                            <tr class="- topic/row">
+                                <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__table_im3_sfv_kpb__entry__1">DI19</td>
+                                <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__table_im3_sfv_kpb__entry__2">PB14</td>
+                                <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__table_im3_sfv_kpb__entry__3">TIM1_CH2N</td>
+                                <td class="- topic/entry entry colsep-0 rowsep-1" headers="doc__table_im3_sfv_kpb__entry__4">TIM1_CH2N, HRTIM1_CHD1</td>
+                            </tr>
+                            <tr class="- topic/row">
+                                <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__table_im3_sfv_kpb__entry__1">DI20</td>
+                                <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__table_im3_sfv_kpb__entry__2">PB13</td>
+                                <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__table_im3_sfv_kpb__entry__3">TIM1_CH1N</td>
+                                <td class="- topic/entry entry colsep-0 rowsep-1" headers="doc__table_im3_sfv_kpb__entry__4">TIM1_CH1N, HRTIM1_CHC2</td>
+                            </tr>
+                            <tr class="- topic/row">
+                                <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__table_im3_sfv_kpb__entry__1">DI21</td>
+                                <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__table_im3_sfv_kpb__entry__2">PB5</td>
+                                <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__table_im3_sfv_kpb__entry__3">-</td>
+                                <td class="- topic/entry entry colsep-0 rowsep-1" headers="doc__table_im3_sfv_kpb__entry__4">TIM8_CH3N</td>
+                            </tr>
+                            <tr class="- topic/row">
+                                <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__table_im3_sfv_kpb__entry__1">DI22</td>
+                                <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__table_im3_sfv_kpb__entry__2">PA10</td>
+                                <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__table_im3_sfv_kpb__entry__3">TIM1_CH3</td>
+                                <td class="- topic/entry entry colsep-0 rowsep-1" headers="doc__table_im3_sfv_kpb__entry__4">TIM1_CH3, HRTIM1_CHB1</td>
+                            </tr>
+                            <tr class="- topic/row">
+                                <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__table_im3_sfv_kpb__entry__1">DI23</td>
+                                <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__table_im3_sfv_kpb__entry__2">PC11</td>
+                                <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__table_im3_sfv_kpb__entry__3">-</td>
+                                <td class="- topic/entry entry colsep-0 rowsep-1" headers="doc__table_im3_sfv_kpb__entry__4">TIM8_CH2N</td>
+                            </tr>
+                            <tr class="- topic/row">
+                                <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__table_im3_sfv_kpb__entry__1">DI24</td>
+                                <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__table_im3_sfv_kpb__entry__2">PC13</td>
+                                <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__table_im3_sfv_kpb__entry__3">USER BUTTON</td>
+                                <td class="- topic/entry entry colsep-0 rowsep-1" headers="doc__table_im3_sfv_kpb__entry__4">USER BUTTON</td>
+                            </tr>
+                            <tr class="- topic/row">
+                                <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__table_im3_sfv_kpb__entry__1">DO1</td>
+                                <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__table_im3_sfv_kpb__entry__2">PB8</td>
+                                <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__table_im3_sfv_kpb__entry__3">-</td>
+                                <td class="- topic/entry entry colsep-0 rowsep-1" headers="doc__table_im3_sfv_kpb__entry__4">HRTIM1_EEV8</td>
+                            </tr>
+                            <tr class="- topic/row">
+                                <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__table_im3_sfv_kpb__entry__1">DO2</td>
+                                <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__table_im3_sfv_kpb__entry__2">PA12</td>
+                                <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__table_im3_sfv_kpb__entry__3">TIM1_ETR</td>
+                                <td class="- topic/entry entry colsep-0 rowsep-1" headers="doc__table_im3_sfv_kpb__entry__4">TIM1_ETR, HRTIM1_FLT1</td>
+                            </tr>
+                            <tr class="- topic/row">
+                                <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__table_im3_sfv_kpb__entry__1">DO3 / AO14 / AI1</td>
+                                <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__table_im3_sfv_kpb__entry__2">PA6</td>
+                                <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__table_im3_sfv_kpb__entry__3">-</td>
+                                <td class="- topic/entry entry colsep-0 rowsep-1" headers="doc__table_im3_sfv_kpb__entry__4">-</td>
+                            </tr>
+                            <tr class="- topic/row">
+                                <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__table_im3_sfv_kpb__entry__1">DO4</td>
+                                <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__table_im3_sfv_kpb__entry__2">PB6</td>
+                                <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__table_im3_sfv_kpb__entry__3">-</td>
+                                <td class="- topic/entry entry colsep-0 rowsep-1" headers="doc__table_im3_sfv_kpb__entry__4">TIM8_BKIN2, HRTIM1_EEV4, TIM8_ETR</td>
+                            </tr>
+                            <tr class="- topic/row">
+                                <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__table_im3_sfv_kpb__entry__1">DO5</td>
+                                <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__table_im3_sfv_kpb__entry__2">PB10</td>
+                                <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__table_im3_sfv_kpb__entry__3">TIM1_BKIN</td>
+                                <td class="- topic/entry entry colsep-0 rowsep-1" headers="doc__table_im3_sfv_kpb__entry__4">TIM1_BKIN, HRTIM1_FLT3</td>
+                            </tr>
+                            <tr class="- topic/row">
+                                <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__table_im3_sfv_kpb__entry__1">DO6</td>
+                                <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__table_im3_sfv_kpb__entry__2">PC10</td>
+                                <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__table_im3_sfv_kpb__entry__3">-</td>
+                                <td class="- topic/entry entry colsep-0 rowsep-1" headers="doc__table_im3_sfv_kpb__entry__4">HRTIM1_FLT6</td>
+                            </tr>
+                            <tr class="- topic/row">
+                                <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__table_im3_sfv_kpb__entry__1">DO7</td>
+                                <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__table_im3_sfv_kpb__entry__2">PC12</td>
+                                <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__table_im3_sfv_kpb__entry__3">-</td>
+                                <td class="- topic/entry entry colsep-0 rowsep-1" headers="doc__table_im3_sfv_kpb__entry__4">HRTIM1_EEV1</td>
+                            </tr>
+                            <tr class="- topic/row">
+                                <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__table_im3_sfv_kpb__entry__1">DO8</td>
+                                <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__table_im3_sfv_kpb__entry__2">PD2</td>
+                                <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__table_im3_sfv_kpb__entry__3">-</td>
+                                <td class="- topic/entry entry colsep-0 rowsep-1" headers="doc__table_im3_sfv_kpb__entry__4">TIM8_BKIN</td>
+                            </tr>
+                            <tr class="- topic/row">
+                                <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__table_im3_sfv_kpb__entry__1">DO9</td>
+                                <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__table_im3_sfv_kpb__entry__2">RESET</td>
+                                <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__table_im3_sfv_kpb__entry__3">CN7, pin 14</td>
+                                <td class="- topic/entry entry colsep-0 rowsep-1" headers="doc__table_im3_sfv_kpb__entry__4">CN7, pin 14</td>
+                            </tr>
+                            <tr class="- topic/row">
+                                <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__table_im3_sfv_kpb__entry__1">DI32</td>
+                                <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__table_im3_sfv_kpb__entry__2">UART-TX</td>
+                                <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__table_im3_sfv_kpb__entry__3">CN10, pin 36 (N.C.)</td>
+                                <td class="- topic/entry entry colsep-0 rowsep-1" headers="doc__table_im3_sfv_kpb__entry__4">CN10, pin 36 (N.C.)</td>
+                            </tr>
+                            <tr class="- topic/row">
+                                <td class="- topic/entry entry colsep-1 rowsep-0" headers="doc__table_im3_sfv_kpb__entry__1">DO32</td>
+                                <td class="- topic/entry entry colsep-1 rowsep-0" headers="doc__table_im3_sfv_kpb__entry__2">UART-RX</td>
+                                <td class="- topic/entry entry colsep-1 rowsep-0" headers="doc__table_im3_sfv_kpb__entry__3">CN10, pin 38 (N.C.)</td>
+                                <td class="- topic/entry entry colsep-0 rowsep-0" headers="doc__table_im3_sfv_kpb__entry__4">CN10, pin 38 (N.C.)</td>
+                            </tr>
+                        </tbody></table>
+            </div>
+            <p class="- topic/p p">HIL Digital outputs DO1-DO8 are scaled from 5 V to 3.3 V (VDD) as shown in <a class="- topic/xref xref" href="#doc__do_stage">Figure 3</a>. 
+                Level shifter is enabled by default (DO-EN jumper header in Open position). Inserting a jumper socket 
+                into the DO-EN jumper header will disable all outputs of the level shifter. Each level shifter output 
+                can be disconnected by removing the corresponding SB1-SB8 0R0 solder bridge. Solder bridge SB3 0R0 is not mounted by default.</p>
+            <p class="- topic/p p">DO9 is inverted into an Open-Drain and a logic high on DO9 will hold the Nucleo-64™ MCU in reset.</p>
+            <p class="- topic/p p">DO32 and DI32 (HIL DIO functioning as UART RX and TX) logic level is 3.3V.</p>
+            <figure class="- topic/fig fig fignone" id="doc__do_stage" data-ofbid="doc__do_stage"><figcaption class="- topic/title title figcap"><span class="figtitleprefix fig--title-label">Figure<span class="fig--title-label-number"> 3</span><span class="fig--title-label-punctuation">. </span></span><span class="fig--title">HIL Digital Output stage</span></figcaption>
+                
+                <img class="- topic/image image" src="../Images/nucleo-64_interface_04.png" width="700"/>
+            </figure>
+        </section>
+        
+        <section class="- topic/section section" id="doc__nucleo-64_io" data-ofbid="doc__nucleo-64_io"><h2 class="- topic/title title sectiontitle">Nucleo-64™ connectors</h2>
+            
+            <p class="- topic/p p">Pinouts for Nucleo-64™ sockets are shown in <a class="- topic/xref xref" href="#doc__CN7_pinout">Table 3</a> and <a class="- topic/xref xref" href="#doc__CN10_pinout">Table 4</a>. Nucleo-144™ boards can also be used with limited IO count functionality.</p>
+            
+            <table class="- topic/table table frame-all" id="doc__CN7_pinout" data-ofbid="doc__CN7_pinout" data-cols="10"><caption class="- topic/title title tablecap" data-caption-side="top" data-is-repeated="true"><span class="table--title-label">Table<span class="table--title-label-number"> 3</span><span class="table--title-label-punctuation">. </span></span><span class="table--title">CN7 connector pinout</span></caption><colgroup><col style="width:14.598540145985403%"/><col style="width:14.598540145985403%"/><col style="width:9.124087591240876%"/><col style="width:8.029197080291972%"/><col style="width:3.649635036496351%"/><col style="width:3.649635036496351%"/><col style="width:8.029197080291972%"/><col style="width:9.124087591240876%"/><col style="width:14.598540145985403%"/><col style="width:14.598540145985403%"/></colgroup><thead class="- topic/thead thead">
+                        <tr class="- topic/row">
+                            <th class="- topic/entry entry colsep-1 rowsep-1" id="doc__CN7_pinout__entry__1">STM32G4xx</th>
+                            <th class="- topic/entry entry colsep-1 rowsep-1" id="doc__CN7_pinout__entry__2">STM32F3xx</th>
+                            <th class="- topic/entry entry colsep-1 rowsep-1" id="doc__CN7_pinout__entry__3">HIL IO</th>
+                            <th class="- topic/entry entry colsep-1 rowsep-1" id="doc__CN7_pinout__entry__4" colspan="4">CN7 connector pins</th>
+                            <th class="- topic/entry entry colsep-1 rowsep-1" id="doc__CN7_pinout__entry__5">HIL IO</th>
+                            <th class="- topic/entry entry colsep-1 rowsep-1" id="doc__CN7_pinout__entry__6">STM32F334</th>
+                            <th class="- topic/entry entry colsep-0 rowsep-1" id="doc__CN7_pinout__entry__7">STM32G474</th>
+                        </tr>
+                    </thead><tbody class="- topic/tbody tbody">
+                        <tr class="- topic/row">
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__CN7_pinout__entry__1">HRTIM1_FLT6</td>
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__CN7_pinout__entry__2">-</td>
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__CN7_pinout__entry__3">DO6</td>
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__CN7_pinout__entry__4">PC10</td>
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__CN7_pinout__entry__4">1</td>
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__CN7_pinout__entry__4">2</td>
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__CN7_pinout__entry__4">PC11</td>
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__CN7_pinout__entry__5">DI23</td>
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__CN7_pinout__entry__6">-</td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="doc__CN7_pinout__entry__7">TIM8_CH2N</td>
+                        </tr>
+                        <tr class="- topic/row">
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__CN7_pinout__entry__1">HRTIM1_EEV1</td>
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__CN7_pinout__entry__2">-</td>
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__CN7_pinout__entry__3">DO7</td>
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__CN7_pinout__entry__4">PC12</td>
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__CN7_pinout__entry__4">3</td>
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__CN7_pinout__entry__4">4</td>
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__CN7_pinout__entry__4">PD2</td>
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__CN7_pinout__entry__5">DO8</td>
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__CN7_pinout__entry__6">-</td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="doc__CN7_pinout__entry__7">TIM8_BKIN</td>
+                        </tr>
+                        <tr class="- topic/row">
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__CN7_pinout__entry__1">-</td>
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__CN7_pinout__entry__2">-</td>
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__CN7_pinout__entry__3">-</td>
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__CN7_pinout__entry__4">VDD</td>
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__CN7_pinout__entry__4">5</td>
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__CN7_pinout__entry__4">6</td>
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__CN7_pinout__entry__4">E5V</td>
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__CN7_pinout__entry__5">-</td>
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__CN7_pinout__entry__6">-</td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="doc__CN7_pinout__entry__7">-</td>
+                        </tr>
+                        <tr class="- topic/row">
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__CN7_pinout__entry__1">-</td>
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__CN7_pinout__entry__2">-</td>
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__CN7_pinout__entry__3">-</td>
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__CN7_pinout__entry__4">BOOT0</td>
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__CN7_pinout__entry__4">7</td>
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__CN7_pinout__entry__4">8</td>
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__CN7_pinout__entry__4">GND</td>
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__CN7_pinout__entry__5">GND</td>
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__CN7_pinout__entry__6">-</td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="doc__CN7_pinout__entry__7">-</td>
+                        </tr>
+                        <tr class="- topic/row">
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__CN7_pinout__entry__1">-</td>
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__CN7_pinout__entry__2">-</td>
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__CN7_pinout__entry__3">-</td>
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__CN7_pinout__entry__4">N.C.</td>
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__CN7_pinout__entry__4">9</td>
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__CN7_pinout__entry__4">10</td>
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__CN7_pinout__entry__4">N.C.</td>
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__CN7_pinout__entry__5">-</td>
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__CN7_pinout__entry__6">-</td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="doc__CN7_pinout__entry__7">-</td>
+                        </tr>
+                        <tr class="- topic/row">
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__CN7_pinout__entry__1">-</td>
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__CN7_pinout__entry__2">-</td>
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__CN7_pinout__entry__3">-</td>
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__CN7_pinout__entry__4">N.C.</td>
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__CN7_pinout__entry__4">11</td>
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__CN7_pinout__entry__4">12</td>
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__CN7_pinout__entry__4">IOREF</td>
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__CN7_pinout__entry__5">-</td>
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__CN7_pinout__entry__6">-</td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="doc__CN7_pinout__entry__7">-</td>
+                        </tr>
+                        <tr class="- topic/row">
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__CN7_pinout__entry__1">-</td>
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__CN7_pinout__entry__2">-</td>
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__CN7_pinout__entry__3">-</td>
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__CN7_pinout__entry__4">PA13</td>
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__CN7_pinout__entry__4">13</td>
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__CN7_pinout__entry__4">14</td>
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__CN7_pinout__entry__4">RESET</td>
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__CN7_pinout__entry__5">DO9</td>
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__CN7_pinout__entry__6">RESET</td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="doc__CN7_pinout__entry__7">RESET</td>
+                        </tr>
+                        <tr class="- topic/row">
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__CN7_pinout__entry__1">-</td>
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__CN7_pinout__entry__2">-</td>
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__CN7_pinout__entry__3">-</td>
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__CN7_pinout__entry__4">PA14</td>
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__CN7_pinout__entry__4">15</td>
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__CN7_pinout__entry__4">16</td>
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__CN7_pinout__entry__4">+3.3V</td>
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__CN7_pinout__entry__5">-</td>
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__CN7_pinout__entry__6">-</td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="doc__CN7_pinout__entry__7">-</td>
+                        </tr>
+                        <tr class="- topic/row">
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__CN7_pinout__entry__1">-</td>
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__CN7_pinout__entry__2">-</td>
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__CN7_pinout__entry__3">-</td>
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__CN7_pinout__entry__4">PA15</td>
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__CN7_pinout__entry__4">17</td>
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__CN7_pinout__entry__4">18</td>
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__CN7_pinout__entry__4">+5V</td>
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__CN7_pinout__entry__5">-</td>
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__CN7_pinout__entry__6">-</td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="doc__CN7_pinout__entry__7">-</td>
+                        </tr>
+                        <tr class="- topic/row">
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__CN7_pinout__entry__1">-</td>
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__CN7_pinout__entry__2">-</td>
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__CN7_pinout__entry__3">GND</td>
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__CN7_pinout__entry__4">GND</td>
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__CN7_pinout__entry__4">19</td>
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__CN7_pinout__entry__4">20</td>
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__CN7_pinout__entry__4">GND</td>
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__CN7_pinout__entry__5">GND</td>
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__CN7_pinout__entry__6">-</td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="doc__CN7_pinout__entry__7">-</td>
+                        </tr>
+                        <tr class="- topic/row">
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__CN7_pinout__entry__1">-</td>
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__CN7_pinout__entry__2">-</td>
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__CN7_pinout__entry__3">-</td>
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__CN7_pinout__entry__4">PB7</td>
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__CN7_pinout__entry__4">21</td>
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__CN7_pinout__entry__4">22</td>
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__CN7_pinout__entry__4">GND</td>
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__CN7_pinout__entry__5">GND</td>
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__CN7_pinout__entry__6">-</td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="doc__CN7_pinout__entry__7">-</td>
+                        </tr>
+                        <tr class="- topic/row">
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__CN7_pinout__entry__1">USER BUTTON</td>
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__CN7_pinout__entry__2">USER BUTTON</td>
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__CN7_pinout__entry__3">DI24</td>
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__CN7_pinout__entry__4">PC13</td>
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__CN7_pinout__entry__4">23</td>
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__CN7_pinout__entry__4">24</td>
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__CN7_pinout__entry__4">VIN</td>
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__CN7_pinout__entry__5">+12V</td>
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__CN7_pinout__entry__6">JP5 in E5V position</td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="doc__CN7_pinout__entry__7">JP5 in E5V position</td>
+                        </tr>
+                        <tr class="- topic/row">
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__CN7_pinout__entry__1">-</td>
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__CN7_pinout__entry__2">-</td>
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__CN7_pinout__entry__3">-</td>
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__CN7_pinout__entry__4">PC14</td>
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__CN7_pinout__entry__4">25</td>
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__CN7_pinout__entry__4">26</td>
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__CN7_pinout__entry__4">N.C.</td>
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__CN7_pinout__entry__5">-</td>
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__CN7_pinout__entry__6">-</td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="doc__CN7_pinout__entry__7">-</td>
+                        </tr>
+                        <tr class="- topic/row">
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__CN7_pinout__entry__1">-</td>
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__CN7_pinout__entry__2">-</td>
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__CN7_pinout__entry__3">-</td>
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__CN7_pinout__entry__4">PC15</td>
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__CN7_pinout__entry__4">27</td>
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__CN7_pinout__entry__4">28</td>
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__CN7_pinout__entry__4">PA0</td>
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__CN7_pinout__entry__5">AO8</td>
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__CN7_pinout__entry__6">ADC1_IN1</td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="doc__CN7_pinout__entry__7">ADC12_IN1, COMP1</td>
+                        </tr>
+                        <tr class="- topic/row">
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__CN7_pinout__entry__1">-</td>
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__CN7_pinout__entry__2">-</td>
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__CN7_pinout__entry__3">-</td>
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__CN7_pinout__entry__4">PF0</td>
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__CN7_pinout__entry__4">29</td>
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__CN7_pinout__entry__4">30</td>
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__CN7_pinout__entry__4">PA1</td>
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__CN7_pinout__entry__5">AO5</td>
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__CN7_pinout__entry__6">ADC1_IN2</td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="doc__CN7_pinout__entry__7">ADC12_IN2</td>
+                        </tr>
+                        <tr class="- topic/row">
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__CN7_pinout__entry__1">-</td>
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__CN7_pinout__entry__2">-</td>
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__CN7_pinout__entry__3">-</td>
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__CN7_pinout__entry__4">PF1</td>
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__CN7_pinout__entry__4">31</td>
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__CN7_pinout__entry__4">32</td>
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__CN7_pinout__entry__4">PA4</td>
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__CN7_pinout__entry__5">AO6 / AIN3</td>
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__CN7_pinout__entry__6">ADC2_IN1 / DAC1_OUT1</td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="doc__CN7_pinout__entry__7">ADC2_IN17 / DAC1_OUT1</td>
+                        </tr>
+                        <tr class="- topic/row">
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__CN7_pinout__entry__1">-</td>
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__CN7_pinout__entry__2">-</td>
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__CN7_pinout__entry__3">-</td>
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__CN7_pinout__entry__4">VBAT</td>
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__CN7_pinout__entry__4">33</td>
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__CN7_pinout__entry__4">34</td>
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__CN7_pinout__entry__4">PB0</td>
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__CN7_pinout__entry__5">AO7</td>
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__CN7_pinout__entry__6">ADC1_IN11</td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="doc__CN7_pinout__entry__7">ADC1_IN15</td>
+                        </tr>
+                        <tr class="- topic/row">
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__CN7_pinout__entry__1">ADC12_IN8</td>
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__CN7_pinout__entry__2">ADC12_IN8</td>
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__CN7_pinout__entry__3">AO3</td>
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__CN7_pinout__entry__4">PC2</td>
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__CN7_pinout__entry__4">35</td>
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__CN7_pinout__entry__4">36</td>
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__CN7_pinout__entry__4">PC1</td>
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__CN7_pinout__entry__5">AO4</td>
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__CN7_pinout__entry__6">ADC12_IN7</td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="doc__CN7_pinout__entry__7">ADC12_IN7</td>
+                        </tr>
+                        <tr class="- topic/row">
+                            <td class="- topic/entry entry colsep-1 rowsep-0" headers="doc__CN7_pinout__entry__1">ADC12_IN9</td>
+                            <td class="- topic/entry entry colsep-1 rowsep-0" headers="doc__CN7_pinout__entry__2">ADC12_IN9</td>
+                            <td class="- topic/entry entry colsep-1 rowsep-0" headers="doc__CN7_pinout__entry__3">AO2</td>
+                            <td class="- topic/entry entry colsep-1 rowsep-0" headers="doc__CN7_pinout__entry__4">PC3</td>
+                            <td class="- topic/entry entry colsep-1 rowsep-0" headers="doc__CN7_pinout__entry__4">37</td>
+                            <td class="- topic/entry entry colsep-1 rowsep-0" headers="doc__CN7_pinout__entry__4">38</td>
+                            <td class="- topic/entry entry colsep-1 rowsep-0" headers="doc__CN7_pinout__entry__4">PC0</td>
+                            <td class="- topic/entry entry colsep-1 rowsep-0" headers="doc__CN7_pinout__entry__5">AO1</td>
+                            <td class="- topic/entry entry colsep-1 rowsep-0" headers="doc__CN7_pinout__entry__6">ADC12_IN6</td>
+                            <td class="- topic/entry entry colsep-0 rowsep-0" headers="doc__CN7_pinout__entry__7">ADC12_IN6</td>
+                        </tr>
+                    </tbody></table>
+            <table class="- topic/table table frame-all" id="doc__CN10_pinout" data-ofbid="doc__CN10_pinout" data-cols="10"><caption class="- topic/title title tablecap" data-caption-side="top" data-is-repeated="true"><span class="table--title-label">Table<span class="table--title-label-number"> 4</span><span class="table--title-label-punctuation">. </span></span><span class="table--title">CN10 connector pinout</span></caption><colgroup><col style="width:14.598540145985403%"/><col style="width:14.598540145985403%"/><col style="width:9.124087591240876%"/><col style="width:8.029197080291972%"/><col style="width:3.649635036496351%"/><col style="width:3.649635036496351%"/><col style="width:8.029197080291972%"/><col style="width:9.124087591240876%"/><col style="width:14.598540145985403%"/><col style="width:14.598540145985403%"/></colgroup><thead class="- topic/thead thead">
+                        <tr class="- topic/row">
+                            <th class="- topic/entry entry colsep-1 rowsep-1" id="doc__CN10_pinout__entry__1">STM32G4xx</th>
+                            <th class="- topic/entry entry colsep-1 rowsep-1" id="doc__CN10_pinout__entry__2">STM32F3xx</th>
+                            <th class="- topic/entry entry colsep-1 rowsep-1" id="doc__CN10_pinout__entry__3">HIL IO</th>
+                            <th class="- topic/entry entry colsep-1 rowsep-1" id="doc__CN10_pinout__entry__4" colspan="4">CN10 connector pins</th>
+                            <th class="- topic/entry entry colsep-1 rowsep-1" id="doc__CN10_pinout__entry__5">HIL IO</th>
+                            <th class="- topic/entry entry colsep-1 rowsep-1" id="doc__CN10_pinout__entry__6">STM32F334</th>
+                            <th class="- topic/entry entry colsep-0 rowsep-1" id="doc__CN10_pinout__entry__7">STM32G474</th>
+                        </tr>
+                    </thead><tbody class="- topic/tbody tbody">
+                        <tr class="- topic/row">
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__CN10_pinout__entry__1">HRTIM1_CHE2, TIM8_CH4</td>
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__CN10_pinout__entry__2">-</td>
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__CN10_pinout__entry__3">DI10</td>
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__CN10_pinout__entry__4">PC9</td>
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__CN10_pinout__entry__4">1</td>
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__CN10_pinout__entry__4">2</td>
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__CN10_pinout__entry__4">PC8</td>
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__CN10_pinout__entry__5">DI9</td>
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__CN10_pinout__entry__6">-</td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="doc__CN10_pinout__entry__7">TIM8_CH3, HRTIM1_CHE1</td>
+                        </tr>
+                        <tr class="- topic/row">
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__CN10_pinout__entry__1">HRTIM1_EEV8</td>
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__CN10_pinout__entry__2">-</td>
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__CN10_pinout__entry__3">DO1</td>
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__CN10_pinout__entry__4">PB8</td>
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__CN10_pinout__entry__4">3</td>
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__CN10_pinout__entry__4">4</td>
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__CN10_pinout__entry__4">PC6</td>
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__CN10_pinout__entry__5">DO11</td>
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__CN10_pinout__entry__6">-</td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="doc__CN10_pinout__entry__7">TIM8_CH1, HRTIM1_CHF1</td>
+                        </tr>
+                        <tr class="- topic/row">
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__CN10_pinout__entry__1">TIM8_CH3, TIM1_CH3N</td>
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__CN10_pinout__entry__2">-</td>
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__CN10_pinout__entry__3">DI12</td>
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__CN10_pinout__entry__4">PB9</td>
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__CN10_pinout__entry__4">5</td>
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__CN10_pinout__entry__4">6</td>
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__CN10_pinout__entry__4">PC5</td>
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__CN10_pinout__entry__5">AO16</td>
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__CN10_pinout__entry__6">ADC2_IN11</td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="doc__CN10_pinout__entry__7">ADC2_IN11</td>
+                        </tr>
+                        <tr class="- topic/row">
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__CN10_pinout__entry__1">-</td>
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__CN10_pinout__entry__2">-</td>
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__CN10_pinout__entry__3">VREF+</td>
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__CN10_pinout__entry__4">VREF+</td>
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__CN10_pinout__entry__4">7</td>
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__CN10_pinout__entry__4">8</td>
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__CN10_pinout__entry__4">U5V</td>
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__CN10_pinout__entry__5">-</td>
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__CN10_pinout__entry__6">JP5 default position</td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="doc__CN10_pinout__entry__7">JP5 default position</td>
+                        </tr>
+                        <tr class="- topic/row">
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__CN10_pinout__entry__1">-</td>
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__CN10_pinout__entry__2">-</td>
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__CN10_pinout__entry__3">GND</td>
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__CN10_pinout__entry__4">GND</td>
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__CN10_pinout__entry__4">9</td>
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__CN10_pinout__entry__4">10</td>
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__CN10_pinout__entry__4">N.C.</td>
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__CN10_pinout__entry__5">-</td>
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__CN10_pinout__entry__6">-</td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="doc__CN10_pinout__entry__7">-</td>
+                        </tr>
+                        <tr class="- topic/row">
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__CN10_pinout__entry__1">ADC2_IN13, DAC1_OUT2</td>
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__CN10_pinout__entry__2">ADC2_IN2</td>
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__CN10_pinout__entry__3">AO13 / AI2 / DI7</td>
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__CN10_pinout__entry__4">PA5</td>
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__CN10_pinout__entry__4">11</td>
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__CN10_pinout__entry__4">12</td>
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__CN10_pinout__entry__4">PA12</td>
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__CN10_pinout__entry__5">DO2</td>
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__CN10_pinout__entry__6">TIM1_ETR</td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="doc__CN10_pinout__entry__7">TIM1_ETR, HRTIM1_FLT1</td>
+                        </tr>
+                        <tr class="- topic/row">
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__CN10_pinout__entry__1">ADC2_IN3, DAC2_OUT1</td>
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__CN10_pinout__entry__2">ADC2_IN3</td>
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__CN10_pinout__entry__3">AO14 / AI1 / DO3</td>
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__CN10_pinout__entry__4">PA6</td>
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__CN10_pinout__entry__4">13</td>
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__CN10_pinout__entry__4">14</td>
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__CN10_pinout__entry__4">PA11</td>
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__CN10_pinout__entry__5">DI13</td>
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__CN10_pinout__entry__6">TIM1_CH1N</td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="doc__CN10_pinout__entry__7">HRTIM1_CHB2, TIM1_CH1N</td>
+                        </tr>
+                        <tr class="- topic/row">
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__CN10_pinout__entry__1">ADC2_IN4</td>
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__CN10_pinout__entry__2">ADC2_IN4</td>
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__CN10_pinout__entry__3">AO15 / DI8</td>
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__CN10_pinout__entry__4">PA7</td>
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__CN10_pinout__entry__4">15</td>
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__CN10_pinout__entry__4">16</td>
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__CN10_pinout__entry__4">PB12</td>
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__CN10_pinout__entry__5">DI14</td>
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__CN10_pinout__entry__6">-</td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="doc__CN10_pinout__entry__7">HRTIM1_CHC1, TIM8_CH3N</td>
+                        </tr>
+                        <tr class="- topic/row">
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__CN10_pinout__entry__1">HRTIM1_EEV4, TIM8_ETR</td>
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__CN10_pinout__entry__2">-</td>
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__CN10_pinout__entry__3">DO4</td>
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__CN10_pinout__entry__4">PB6</td>
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__CN10_pinout__entry__4">17</td>
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__CN10_pinout__entry__4">18</td>
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__CN10_pinout__entry__4">PB11</td>
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__CN10_pinout__entry__5">AO12</td>
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__CN10_pinout__entry__6">VCAP1 (1.2V)</td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="doc__CN10_pinout__entry__7">ADC12_IN14</td>
+                        </tr>
+                        <tr class="- topic/row">
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__CN10_pinout__entry__1">TIM8_CH2, HRTIM1_CHF2</td>
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__CN10_pinout__entry__2">-</td>
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__CN10_pinout__entry__3">DI15</td>
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__CN10_pinout__entry__4">PC7</td>
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__CN10_pinout__entry__4">19</td>
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__CN10_pinout__entry__4">20</td>
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__CN10_pinout__entry__4">GND</td>
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__CN10_pinout__entry__5">GND</td>
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__CN10_pinout__entry__6">-</td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="doc__CN10_pinout__entry__7">-</td>
+                        </tr>
+                        <tr class="- topic/row">
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__CN10_pinout__entry__1">TIM1_CH2, HRTIM1_CHA2</td>
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__CN10_pinout__entry__2">TIM1_CH2</td>
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__CN10_pinout__entry__3">DI16</td>
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__CN10_pinout__entry__4">PA9</td>
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__CN10_pinout__entry__4">21</td>
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__CN10_pinout__entry__4">22</td>
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__CN10_pinout__entry__4">PB2</td>
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__CN10_pinout__entry__5">AO9</td>
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__CN10_pinout__entry__6">ADC2_IN12</td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="doc__CN10_pinout__entry__7">ADC2_IN12</td>
+                        </tr>
+                        <tr class="- topic/row">
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__CN10_pinout__entry__1">TIM1_CH1, HRTIM1_CHA1</td>
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__CN10_pinout__entry__2">TIM1_CH1</td>
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__CN10_pinout__entry__3">DI17</td>
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__CN10_pinout__entry__4">PA8</td>
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__CN10_pinout__entry__4">23</td>
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__CN10_pinout__entry__4">24</td>
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__CN10_pinout__entry__4">PB1</td>
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__CN10_pinout__entry__5">AO10</td>
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__CN10_pinout__entry__6">ADC1_IN12</td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="doc__CN10_pinout__entry__7">ADC1_IN12, ADC3_IN1</td>
+                        </tr>
+                        <tr class="- topic/row">
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__CN10_pinout__entry__1">TIM1_BKIN, HRTIM1_FLT3</td>
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__CN10_pinout__entry__2">TIM1_BKIN</td>
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__CN10_pinout__entry__3">DO5</td>
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__CN10_pinout__entry__4">PB10</td>
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__CN10_pinout__entry__4">25</td>
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__CN10_pinout__entry__4">26</td>
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__CN10_pinout__entry__4">PB15</td>
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__CN10_pinout__entry__5">DI18</td>
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__CN10_pinout__entry__6">TIM1_CH3N</td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="doc__CN10_pinout__entry__7">TIM1_CH3N, HRTIM1_CHD2</td>
+                        </tr>
+                        <tr class="- topic/row">
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__CN10_pinout__entry__1">-</td>
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__CN10_pinout__entry__2">-</td>
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__CN10_pinout__entry__3">-</td>
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__CN10_pinout__entry__4">PB4</td>
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__CN10_pinout__entry__4">27</td>
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__CN10_pinout__entry__4">28</td>
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__CN10_pinout__entry__4">PB14</td>
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__CN10_pinout__entry__5">DI19</td>
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__CN10_pinout__entry__6">TIM1_CH2N</td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="doc__CN10_pinout__entry__7">TIM1_CH2N, HRTIM1_CHD1</td>
+                        </tr>
+                        <tr class="- topic/row">
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__CN10_pinout__entry__1">TIM8_CH3N</td>
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__CN10_pinout__entry__2">-</td>
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__CN10_pinout__entry__3">DI21</td>
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__CN10_pinout__entry__4">PB5</td>
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__CN10_pinout__entry__4">29</td>
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__CN10_pinout__entry__4">30</td>
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__CN10_pinout__entry__4">PB13</td>
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__CN10_pinout__entry__5">DI20</td>
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__CN10_pinout__entry__6">TIM1_CH1N</td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="doc__CN10_pinout__entry__7">TIM1_CH1N, HRTIM1_CHC2</td>
+                        </tr>
+                        <tr class="- topic/row">
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__CN10_pinout__entry__1">-</td>
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__CN10_pinout__entry__2">-</td>
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__CN10_pinout__entry__3">-</td>
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__CN10_pinout__entry__4">PB3</td>
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__CN10_pinout__entry__4">31</td>
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__CN10_pinout__entry__4">32</td>
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__CN10_pinout__entry__4">GND</td>
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__CN10_pinout__entry__5">GND</td>
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__CN10_pinout__entry__6">-</td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="doc__CN10_pinout__entry__7">-</td>
+                        </tr>
+                        <tr class="- topic/row">
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__CN10_pinout__entry__1">TIM1_CH3, HRTIM1_CHB1</td>
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__CN10_pinout__entry__2">TIM1_CH3</td>
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__CN10_pinout__entry__3">DI22</td>
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__CN10_pinout__entry__4">PA10</td>
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__CN10_pinout__entry__4">33</td>
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__CN10_pinout__entry__4">34</td>
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__CN10_pinout__entry__4">PC4</td>
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__CN10_pinout__entry__5">AO11</td>
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__CN10_pinout__entry__6">ADC2_IN5</td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="doc__CN10_pinout__entry__7">ADC2_IN5</td>
+                        </tr>
+                        <tr class="- topic/row">
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__CN10_pinout__entry__1">-</td>
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__CN10_pinout__entry__2">-</td>
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__CN10_pinout__entry__3">-</td>
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__CN10_pinout__entry__4">PA2</td>
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__CN10_pinout__entry__4">35</td>
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__CN10_pinout__entry__4">36</td>
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__CN10_pinout__entry__4">N.C.</td>
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__CN10_pinout__entry__5">DI32</td>
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="doc__CN10_pinout__entry__6">-</td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="doc__CN10_pinout__entry__7">-</td>
+                        </tr>
+                        <tr class="- topic/row">
+                            <td class="- topic/entry entry colsep-1 rowsep-0" headers="doc__CN10_pinout__entry__1">-</td>
+                            <td class="- topic/entry entry colsep-1 rowsep-0" headers="doc__CN10_pinout__entry__2">-</td>
+                            <td class="- topic/entry entry colsep-1 rowsep-0" headers="doc__CN10_pinout__entry__3">-</td>
+                            <td class="- topic/entry entry colsep-1 rowsep-0" headers="doc__CN10_pinout__entry__4">PA3</td>
+                            <td class="- topic/entry entry colsep-1 rowsep-0" headers="doc__CN10_pinout__entry__4">37</td>
+                            <td class="- topic/entry entry colsep-1 rowsep-0" headers="doc__CN10_pinout__entry__4">38</td>
+                            <td class="- topic/entry entry colsep-1 rowsep-0" headers="doc__CN10_pinout__entry__4">N.C.</td>
+                            <td class="- topic/entry entry colsep-1 rowsep-0" headers="doc__CN10_pinout__entry__5">DO32</td>
+                            <td class="- topic/entry entry colsep-1 rowsep-0" headers="doc__CN10_pinout__entry__6">-</td>
+                            <td class="- topic/entry entry colsep-0 rowsep-0" headers="doc__CN10_pinout__entry__7">-</td>
+                        </tr>
+                    </tbody></table>
+        </section>
+            <section class="- topic/section section" id="doc__disclaimer" data-ofbid="doc__disclaimer"><p class="- topic/p p"><span class="- topic/ph ph"><em class="+ topic/ph hi-d/i ph i">"Nucleo-64<sup class="+ topic/ph hi-d/sup ph sup">TM</sup>", "Nucleo-144<sup class="+ topic/ph hi-d/sup ph sup">TM</sup>", "STM32", and "STM32 Nucleo" are registered trademarks of STMicroelectronics International NV or its affiliates in the USA (US Patent and Trademark Office) and/or other countries.</em></span></p></section>
+        
+    </div>
+</article></main></div>
+                        
+                        
+                        
+                        
+                        
+                        
+                    </div>
+                    
+                        <nav role="navigation" id="wh_topic_toc" aria-label="On this page" class="col-lg-2 d-none d-lg-block navbar d-print-none"> 
+                            <div id="wh_topic_toc_content">
+		                        
+	                            <div class=" wh_topic_toc "><div class="wh_topic_label">On this page</div><ul><li class="section-item"><div class="section-title"><a href="#doc__analog_io" data-tocid="doc__analog_io">HIL Analog Connector</a></div></li><li class="section-item"><div class="section-title"><a href="#doc__digital_io" data-tocid="doc__digital_io">HIL Digital Connector</a></div></li><li class="section-item"><div class="section-title"><a href="#doc__nucleo-64_io" data-tocid="doc__nucleo-64_io">Nucleo-64™ connectors</a></div></li></ul></div>
+	                        	
+                        	</div>
+                        </nav>
+                    
+                </div>
+            </div>
+            
+            
+            
+        </div> 
+        <footer class="navbar navbar-default wh_footer">
+  <div class=" footer-container mx-auto ">
+    <div style="text-align:center">Typhoon HIL Inc.<span id="year"> <a href="https://www.typhoon-hil.com">www.typhoon-hil.com</a></span></div>
+  </div>
+</footer>
+        
+        <div id="go2top" class="d-print-none">
+            <span class="oxy-icon oxy-icon-up"></span>
+        </div>
+        
+        <div id="modal_img_large" class="modal">
+            <span class="close oxy-icon oxy-icon-remove"></span>
+            <div id="modal_img_container"></div>
+            <div id="caption"></div>
+        </div>
+        
+        
+<script type="text/javascript" src="../../assets/script.js"> 
+</script>
+
+        
+    </body>
+</html>

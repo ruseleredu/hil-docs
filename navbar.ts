@@ -92,6 +92,10 @@ const navbarItems: NavbarItem[] = [
                 to: "pathname:///docs/api/index.html",
                 label: "Typhoon APIs",
             },
+            {
+                to: "pathname:///docs/help/index.html",
+                label: "Typhoon Help Center",
+            },
         ],
     },
     //{ to: '/blog', label: 'Blog', position: 'left' },
