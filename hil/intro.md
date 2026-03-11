@@ -26,3 +26,10 @@ Accelerate and enrich your students’ power electronics learning experience wit
 ## Learn online
 
 - https://hil.academy/
+
+## Static Docs
+
+- [Typhoon modeling language (TML)](pathname:///docs/tml_doc/index.html)
+- [TyphoonTest Library](pathname:///docs/typhoontest_html/index.html)
+- [Typhoon APIs](pathname:///docs/api/index.html)
+
