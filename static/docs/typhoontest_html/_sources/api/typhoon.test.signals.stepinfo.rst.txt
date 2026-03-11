@@ -1,0 +1,6 @@
+stepinfo
+========
+
+.. currentmodule:: typhoon.test.signals
+
+.. autofunction:: stepinfo

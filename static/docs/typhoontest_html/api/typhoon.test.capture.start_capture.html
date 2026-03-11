@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+
+<html lang="en" data-content_root="../">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>start_capture &#8212;  1.35.3 documentation</title>
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinxdoc.css?v=34905f61" />
+    <link rel="stylesheet" type="text/css" href="../_static/graphviz.css?v=4ae1632d" />
+    <script src="../_static/documentation_options.js?v=62a126fb"></script>
+    <script src="../_static/doctools.js?v=9bcbadda"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="wait" href="typhoon.test.capture.wait.html" />
+    <link rel="prev" title="read_tdms" href="typhoon.test.capture.read_tdms.html" /> 
+  </head><body>
+    <div class="related" role="navigation" aria-label="Related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="typhoon.test.capture.wait.html" title="wait"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="typhoon.test.capture.read_tdms.html" title="read_tdms"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html"> 1.35.3 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">start_capture</a></li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <section id="start-capture">
+<h1>start_capture<a class="headerlink" href="#start-capture" title="Link to this heading">¶</a></h1>
+<dl class="py function">
+<dt class="sig sig-object py" id="typhoon.test.capture.start_capture">
+<span class="sig-prename descclassname"><span class="pre">typhoon.test.capture.</span></span><span class="sig-name descname"><span class="pre">start_capture</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">duration</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">offset_absolute</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">offset_relative</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">rate</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'Max'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">signals</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">()</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">trigger_source</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'Forced'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">trigger_threshold</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">trigger_edge</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">trigger_use_first_occurence</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">fileName</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">executeAt</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">timeout</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">absolute_time</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#typhoon.test.capture.start_capture" title="Link to this definition">¶</a></dt>
+<dd><p>Sets up capture settings and start capture.</p>
+<p>It is a simplified version of regular Typhoon HIL API <em>start_capture()</em> function, with all the settings in just one function. It also omits some arguments that could be derived automatically.</p>
+<p>For more details refer to HIL API documentation.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>duration</strong> – Total capture duration, in seconds, including offset</p></li>
+<li><p><strong>offset_absolute</strong> – Duration in seconds of the data captured before the trigger. Can’t be greater than <code class="docutils literal notranslate"><span class="pre">duration</span></code>.</p></li>
+<li><p><strong>offset_relative</strong> – <p>Relative duration, in percentage, of the data capture before the trigger. Can’t be greater than 100.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Users should only use either <code class="docutils literal notranslate"><span class="pre">offset_absolute</span></code> or <code class="docutils literal notranslate"><span class="pre">offset_relative</span></code>. If both are defined, offset_relative will be used.</p>
+</div>
+</p></li>
+<li><p><strong>rate</strong> – <p>Sampling rate in samples per second</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The sampling rate and duration can be arbitrarily defined, however they might not be valid depending on HIL constraints. When this is the case, the closest possible settings will be used, showed as a warning and returned from the function call.</p>
+</div>
+</p></li>
+<li><p><strong>signals</strong> – <p>List of signals to be captured. No distinction is made between analog or digital as there cannot exist two signals with the same name</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>At least one signal must be defined in <code class="docutils literal notranslate"><span class="pre">signals</span></code> list.</p>
+</div>
+</p></li>
+<li><p><strong>trigger_source</strong> – <p>Signal to be used to trigger the capture</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p><code class="docutils literal notranslate"><span class="pre">trigger_source</span></code> defaults to “Forced” if not defined. If defined with a value other than that, <code class="docutils literal notranslate"><span class="pre">trigger_threshold</span></code> and <code class="docutils literal notranslate"><span class="pre">trigger_edge</span></code> should be defined too.</p>
+</div>
+</p></li>
+<li><p><strong>trigger_threshold</strong> – Level the trigger_source signal should attain to start capture</p></li>
+<li><p><strong>trigger_edge</strong> – Direction of the trigger_source signal should have, when attaining trigger_threshold, to start capture. Can be
+“rising” or “falling”.</p></li>
+<li><p><strong>trigger_use_first_occurence</strong> – <p>If offset duration is larger than available before trigger, to consider only the amount available (setting to True) or ignore trigger and look for another one later on (setting to False).</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p><code class="docutils literal notranslate"><span class="pre">trigger_use_first_occurence</span></code> should only be used as False when dealing with pure periodic signals and when offset should be strictly respected.</p>
+</div>
+</p></li>
+<li><p><strong>fileName</strong> – <p>File name to save captured data</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Supported file formats are defined in hil api and can be seen here: <a class="reference external" href="https://www.typhoon-hil.com/documentation/typhoon-hil-api-documentation/hil_api.html?highlight=start_capture#typhoon.api.hil.start_capture">https://www.typhoon-hil.com/documentation/typhoon-hil-api-documentation/hil_api.html?highlight=start_capture#typhoon.api.hil.start_capture</a></p>
+</div>
+</p></li>
+<li><p><strong>executeAt</strong> – If set, simulation time when this start_capture will take effect</p></li>
+<li><p><strong>timeout</strong> – Maximum allowed time to wait before a trigger</p></li>
+<li><p><strong>absolute_time</strong> (<em>bool</em>) – <p>Default is <code class="docutils literal notranslate"><span class="pre">False</span></code>. If <code class="docutils literal notranslate"><span class="pre">True</span></code>, the time index of capture time is the simulation time or the global time
+(See also <code class="docutils literal notranslate"><span class="pre">typhoon.test.capture.get_capture_results</span></code> documentation).
+If <code class="docutils literal notranslate"><span class="pre">False</span></code>, the time index of capture time is relative.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>For the future releases this parameter will be <strong>deprecated</strong>.</p>
+</div>
+</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><p><strong>namedtuple(t, duration, rate)</strong> – With the following attributes:</p>
+<ul class="simple">
+<li><p><strong>t</strong> (<em>NoneType</em>): The time of the capture start (Deprecated)</p></li>
+<li><p><strong>duration</strong> (<em>float</em>): Adjusted capture duration</p></li>
+<li><p><strong>rate</strong>: (<em>float</em>): Rate based on system constraints.</p></li>
+</ul>
+</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>tuple</p>
+</dd>
+</dl>
+<p class="rubric">Examples</p>
+<p>Forced capture start, printing returned values:</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span><span class="w"> </span><span class="nn">typhoon.test.capture</span><span class="w"> </span><span class="kn">import</span> <span class="n">start_capture</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">capture_info</span> <span class="o">=</span> <span class="n">start_capture</span><span class="p">(</span><span class="n">duration</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">rate</span><span class="o">=</span><span class="mi">10000</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">capture_info</span><span class="o">.</span><span class="n">t</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">capture_info</span><span class="o">.</span><span class="n">duration</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">capture_info</span><span class="o">.</span><span class="n">rate</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>No offset, using analog signal as trigger:</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">start_capture</span><span class="p">(</span><span class="n">duration</span><span class="o">=</span><span class="n">rtspec</span><span class="o">.</span><span class="n">duration</span><span class="o">+</span><span class="mi">2</span><span class="p">,</span>
+<span class="go">                  rate=500,</span>
+<span class="go">                  signals=[&quot;Probe val&quot;, &quot;enable inv&quot;, &quot;enable ref&quot;],</span>
+<span class="go">                  trigger_source=&quot;Probe val&quot;,</span>
+<span class="go">                  trigger_edge=&quot;Rising edge&quot;</span>
+<span class="go">                  trigger_threshold=277</span>
+<span class="go">                  timeout=10)</span>
+</pre></div>
+</div>
+<p>Using absolute offset and trigger on digital signal:</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">start_capture</span><span class="p">(</span><span class="n">duration</span><span class="o">=</span><span class="mi">4</span><span class="p">,</span>
+<span class="go">                  offset_absolute=2,</span>
+<span class="go">                  rate=500,</span>
+<span class="go">                  signals=[&quot;P&quot;, &quot;operating&quot;],</span>
+<span class="go">                  trigger_source=&quot;operating&quot;,</span>
+<span class="go">                  trigger_threshold=0.5,</span>
+<span class="go">                  trigger_edge=&quot;Rising edge&quot;,</span>
+<span class="go">                  timeout=10)</span>
+</pre></div>
+</div>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<p><a class="reference internal" href="typhoon.test.capture.get_capture_results.html#typhoon.test.capture.get_capture_results" title="typhoon.test.capture.get_capture_results"><code class="xref py py-obj docutils literal notranslate"><span class="pre">typhoon.test.capture.get_capture_results</span></code></a></p>
+</div>
+</dd></dl>
+
+</section>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="Main">
+        <div class="sphinxsidebarwrapper">
+            <p class="logo"><a href="../index.html">
+              <img class="logo" src="../_static/logo.png" alt="Logo of "/>
+            </a></p>
+  <div>
+    <h4>Previous topic</h4>
+    <p class="topless"><a href="typhoon.test.capture.read_tdms.html"
+                          title="previous chapter">read_tdms</a></p>
+  </div>
+  <div>
+    <h4>Next topic</h4>
+    <p class="topless"><a href="typhoon.test.capture.wait.html"
+                          title="next chapter">wait</a></p>
+  </div>
+<search id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</search>
+<script>document.getElementById('searchbox').style.display = "block"</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="Related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="typhoon.test.capture.wait.html" title="wait"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="typhoon.test.capture.read_tdms.html" title="read_tdms"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html"> 1.35.3 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">start_capture</a></li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+    &#169; Copyright .
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 8.2.1.
+    </div>
+  </body>
+</html>

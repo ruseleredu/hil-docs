@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+
+<html lang="en" data-content_root="../">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>thd &#8212;  1.35.3 documentation</title>
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinxdoc.css?v=34905f61" />
+    <link rel="stylesheet" type="text/css" href="../_static/graphviz.css?v=4ae1632d" />
+    <script src="../_static/documentation_options.js?v=62a126fb"></script>
+    <script src="../_static/doctools.js?v=9bcbadda"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="FFTResult" href="typhoon.test.harmonic.FFTResult.html" />
+    <link rel="prev" title="signal_frequency_zc" href="typhoon.test.harmonic.signal_frequency_zc.html" /> 
+  </head><body>
+    <div class="related" role="navigation" aria-label="Related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="typhoon.test.harmonic.FFTResult.html" title="FFTResult"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="typhoon.test.harmonic.signal_frequency_zc.html" title="signal_frequency_zc"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html"> 1.35.3 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">thd</a></li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <section id="thd">
+<h1>thd<a class="headerlink" href="#thd" title="Link to this heading">¶</a></h1>
+<dl class="py function">
+<dt class="sig sig-object py" id="typhoon.test.harmonic.thd">
+<span class="sig-prename descclassname"><span class="pre">typhoon.test.harmonic.</span></span><span class="sig-name descname"><span class="pre">thd</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">signal</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">fundamental</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">max_harmonic</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">during</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mode</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'multiple_harmonics_only'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">fundamental_tol</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.01</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#typhoon.test.harmonic.thd" title="Link to this definition">¶</a></dt>
+<dd><p>Calculates signal THD</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>signal</strong> (<em>Series</em>) – A Pandas Series with the signal the THD value is to be calculated.</p></li>
+<li><p><strong>fundamental</strong> (<em>int</em>) – Fundamental frequency of the signal</p></li>
+<li><p><strong>max_harmonic</strong> (<em>int</em>) – Maximum harmonic (with respect to fundamental) to be taken into consideration in the calculation.</p></li>
+<li><p><strong>during</strong> (<em>2-element tuple</em><em> of </em><em>float/int</em><em> or </em><a class="reference internal" href="typhoon.types.timedelta.Timedelta.html#typhoon.types.timedelta.Timedelta" title="typhoon.types.timedelta.Timedelta"><em>Timedelta</em></a>) – Period of signal to consider for the calculation.</p></li>
+<li><p><strong>mode</strong> (<em>string - default is 'multiple_harmonics_only'</em>) – Selects one of three possible modes of calculation:
+- ‘multiple_harmonics_only’ - only harmonics which are divisible with fundamental are taken into consideration
+- ‘with_interharmonics’ - all harmonics bigger than fundamental are taken into consideration
+- ‘all_frequencies’ - all frequencies, including subharmonics are included in the calculation</p></li>
+<li><p><strong>fundamental_tol</strong> (<em>float - default 0.01</em>) – Tolerance to replace provided ‘fundamental’ value by the one obtained from ‘frequency_content’ (FFT) of the signal.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><strong>thd</strong> – Calculated THD value.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>float</p>
+</dd>
+</dl>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>All three calculation modes are based on fast fourier transform; this means that length of the signal which is
+taken into calculation should be chosen carefully, because this is the parameter which defines step between
+detected frequencies. consequently, if needed frequency step is 10Hz, signal should be captured(or sliced
+with during argument) to have length of 0.1s(1/10).</p>
+</div>
+<p class="rubric">Examples</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span><span class="w"> </span><span class="nn">typhoon.test.signals</span><span class="w"> </span><span class="kn">import</span> <span class="n">pandas_sine</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span><span class="w"> </span><span class="nn">typhoon.test.harmonic</span><span class="w"> </span><span class="kn">import</span> <span class="n">thd</span>
+</pre></div>
+</div>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="c1"># create 50 Hz sinusoidal signal - fundamental and add third harmonic</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">serie</span> <span class="o">=</span> <span class="n">signals</span><span class="o">.</span><span class="n">pandas_sine</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">50</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mf">1e-6</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">serie</span> <span class="o">+=</span> <span class="n">signals</span><span class="o">.</span><span class="n">pandas_sine</span><span class="p">(</span><span class="mf">0.5</span><span class="p">,</span> <span class="mi">150</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mf">1e-6</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="c1"># add interharmonic</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">serie</span> <span class="o">+=</span> <span class="n">signals</span><span class="o">.</span><span class="n">pandas_sine</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">125</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mf">1e-6</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="c1"># add two subharmonics</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">serie</span> <span class="o">+=</span> <span class="n">signals</span><span class="o">.</span><span class="n">pandas_sine</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mf">1e-6</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">serie</span> <span class="o">+=</span> <span class="n">signals</span><span class="o">.</span><span class="n">pandas_sine</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">30</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mf">1e-6</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="c1"># calculate thd with multiple harmonics only</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">result</span> <span class="o">=</span> <span class="n">thd</span><span class="p">(</span><span class="n">serie</span><span class="p">,</span> <span class="n">fundamental</span><span class="o">=</span><span class="mi">50</span><span class="p">,</span> <span class="n">max_harmonic</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">result</span><span class="p">)</span> <span class="c1"># prints 0.5</span>
+</pre></div>
+</div>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="c1"># calculate thd with interharmonics included</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">result</span> <span class="o">=</span> <span class="n">thd</span><span class="p">(</span><span class="n">serie</span><span class="p">,</span> <span class="n">fundamental</span><span class="o">=</span><span class="mi">50</span><span class="p">,</span> <span class="n">max_harmonic</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">mode</span><span class="o">=</span><span class="s2">&quot;with_interharmonics&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">result</span><span class="p">)</span> <span class="c1"># 1 over sqrt(2)</span>
+</pre></div>
+</div>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="c1"># calculate thd with all frequencies included</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">result</span> <span class="o">=</span> <span class="n">thd</span><span class="p">(</span><span class="n">serie</span><span class="p">,</span> <span class="n">fundamental</span><span class="o">=</span><span class="mi">50</span><span class="p">,</span> <span class="n">max_harmonic</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">mode</span><span class="o">=</span><span class="s2">&quot;all_frequencies&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">result</span><span class="p">)</span> <span class="c1"># prints 1</span>
+</pre></div>
+</div>
+</dd></dl>
+
+</section>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="Main">
+        <div class="sphinxsidebarwrapper">
+            <p class="logo"><a href="../index.html">
+              <img class="logo" src="../_static/logo.png" alt="Logo of "/>
+            </a></p>
+  <div>
+    <h4>Previous topic</h4>
+    <p class="topless"><a href="typhoon.test.harmonic.signal_frequency_zc.html"
+                          title="previous chapter">signal_frequency_zc</a></p>
+  </div>
+  <div>
+    <h4>Next topic</h4>
+    <p class="topless"><a href="typhoon.test.harmonic.FFTResult.html"
+                          title="next chapter">FFTResult</a></p>
+  </div>
+<search id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</search>
+<script>document.getElementById('searchbox').style.display = "block"</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="Related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="typhoon.test.harmonic.FFTResult.html" title="FFTResult"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="typhoon.test.harmonic.signal_frequency_zc.html" title="signal_frequency_zc"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html"> 1.35.3 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">thd</a></li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+    &#169; Copyright .
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 8.2.1.
+    </div>
+  </body>
+</html>

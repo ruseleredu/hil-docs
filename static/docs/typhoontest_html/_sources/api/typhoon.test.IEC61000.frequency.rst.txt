@@ -1,0 +1,6 @@
+frequency
+=========
+
+.. currentmodule:: typhoon.test.IEC61000
+
+.. autofunction:: frequency

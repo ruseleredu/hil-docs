@@ -1,0 +1,1106 @@
+<!DOCTYPE html>
+
+<html lang="en" data-content_root="./">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Release Notes &#8212;  1.35.3 documentation</title>
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinxdoc.css?v=34905f61" />
+    <link rel="stylesheet" type="text/css" href="_static/graphviz.css?v=4ae1632d" />
+    <script src="_static/documentation_options.js?v=62a126fb"></script>
+    <script src="_static/doctools.js?v=9bcbadda"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" /> 
+  </head><body>
+    <div class="related" role="navigation" aria-label="Related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html"> 1.35.3 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">Release Notes</a></li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <section id="release-notes">
+<span id="id1"></span><h1>Release Notes<a class="headerlink" href="#release-notes" title="Link to this heading">¶</a></h1>
+<section id="version-1-35-3">
+<h2>Version 1.35.3<a class="headerlink" href="#version-1-35-3" title="Link to this heading">¶</a></h2>
+<section id="deprecation">
+<h3>Deprecation<a class="headerlink" href="#deprecation" title="Link to this heading">¶</a></h3>
+<ul class="simple">
+<li><p>Python 3.9 version support</p></li>
+</ul>
+</section>
+</section>
+<hr class="docutils" />
+<section id="version-1-35-2">
+<h2>Version 1.35.2<a class="headerlink" href="#version-1-35-2" title="Link to this heading">¶</a></h2>
+<section id="bugs-fixed">
+<h3>Bugs Fixed<a class="headerlink" href="#bugs-fixed" title="Link to this heading">¶</a></h3>
+<ul class="simple">
+<li><p>Reverted changes to <a class="reference internal" href="api/typhoon.test.reporting.figures.attach_figure.html#typhoon.test.reporting.figures.attach_figure" title="typhoon.test.reporting.figures.attach_figure"><code class="xref py py-func docutils literal notranslate"><span class="pre">typhoon.test.reporting.figures.attach_figure()</span></code></a> to re-enable the “attach_as_step” option for Allure reports.</p></li>
+</ul>
+</section>
+</section>
+<hr class="docutils" />
+<section id="version-1-35-1">
+<h2>Version 1.35.1<a class="headerlink" href="#version-1-35-1" title="Link to this heading">¶</a></h2>
+<section id="features-added">
+<h3>Features Added<a class="headerlink" href="#features-added" title="Link to this heading">¶</a></h3>
+<ul class="simple">
+<li><p>Added XY plotting utilities: New <cite>XY_graph</cite> class in <a class="reference internal" href="api/typhoon.test.reporting.figures.XY_graph.html#typhoon.test.reporting.figures.XY_graph" title="typhoon.test.reporting.figures.XY_graph"><code class="xref py py-class docutils literal notranslate"><span class="pre">typhoon.test.reporting.figures.XY_graph</span></code></a> for building/attaching XY plots.</p></li>
+</ul>
+</section>
+</section>
+<hr class="docutils" />
+<section id="version-1-35-0">
+<h2>Version 1.35.0<a class="headerlink" href="#version-1-35-0" title="Link to this heading">¶</a></h2>
+<section id="id2">
+<h3>Features Added<a class="headerlink" href="#id2" title="Link to this heading">¶</a></h3>
+<ul class="simple">
+<li><p>Added Python 3.12 support</p></li>
+</ul>
+</section>
+<section id="changes">
+<h3>Changes<a class="headerlink" href="#changes" title="Link to this heading">¶</a></h3>
+<ul class="simple">
+<li><p>Updated Allure table and plot utilities to use new pandas styling API (<cite>.map</cite> instead of <cite>.applymap</cite>).</p></li>
+<li><p>API updates to avoid warnings and ensure compatibility with future pandas and numpy updates.</p></li>
+</ul>
+</section>
+</section>
+<hr class="docutils" />
+<section id="version-1-34-0">
+<h2>Version 1.34.0<a class="headerlink" href="#version-1-34-0" title="Link to this heading">¶</a></h2>
+<section id="id3">
+<h3>Bugs Fixed<a class="headerlink" href="#id3" title="Link to this heading">¶</a></h3>
+<ul class="simple">
+<li><p>Automatic PDF report updates to improve visual aspect of Allure Tables</p></li>
+<li><p>Type checking with numeric operation improved due to numpy updates.</p></li>
+</ul>
+</section>
+<section id="id4">
+<h3>Changes<a class="headerlink" href="#id4" title="Link to this heading">¶</a></h3>
+<ul class="simple">
+<li><p>Updates on requirements for Scipy, pandas, numpy and matplotlib.</p></li>
+<li><p>Changed <cite>.values</cite> to <cite>.to_numpy()</cite> for better pandas compatibility</p></li>
+<li><p>Updated pandas operations for improved performance</p></li>
+</ul>
+</section>
+<section id="id5">
+<h3>Deprecation<a class="headerlink" href="#id5" title="Link to this heading">¶</a></h3>
+<ul class="simple">
+<li><p>Licensing System:</p>
+<ul>
+<li><p>Removed <code class="docutils literal notranslate"><span class="pre">typhoon/license_typhoontest/</span></code> directory</p></li>
+<li><p>Removed <code class="docutils literal notranslate"><span class="pre">kernel.py</span></code> and license validation</p></li>
+<li><p>Removed test license files</p></li>
+<li><p>Removed licensing dependencies from <code class="docutils literal notranslate"><span class="pre">pyproject.toml</span></code></p></li>
+<li><p>Removed licensing from <code class="docutils literal notranslate"><span class="pre">tox.ini</span></code> and <code class="docutils literal notranslate"><span class="pre">tox_linux.ini</span></code></p></li>
+</ul>
+</li>
+</ul>
+</section>
+</section>
+<hr class="docutils" />
+<section id="id6">
+<h2>Version 1.34.0<a class="headerlink" href="#id6" title="Link to this heading">¶</a></h2>
+<section id="id7">
+<h3>Features Added<a class="headerlink" href="#id7" title="Link to this heading">¶</a></h3>
+<ul class="simple">
+<li></li>
+</ul>
+</section>
+<section id="id8">
+<h3>Changes<a class="headerlink" href="#id8" title="Link to this heading">¶</a></h3>
+<ul class="simple">
+<li><dl class="simple">
+<dt>Following functions now raise TypeError when selected arguments are not of correct type:</dt><dd><ul>
+<li><p>get_capture_results</p></li>
+<li><p>thd</p></li>
+<li><p>find_all_slow</p></li>
+<li><p>find_all</p></li>
+<li><p>find_edges</p></li>
+<li><p>is_constant</p></li>
+<li><p>is_first_order</p></li>
+<li><p>is_step</p></li>
+<li><p>is_ramp</p></li>
+<li><p>follows_reference</p></li>
+<li><p>step_into</p></li>
+<li><p>abc_to_alphabetagamma</p></li>
+<li><p>alphabetagamma_to_abc</p></li>
+<li><p>alpha_betagamma_to_dq0</p></li>
+<li><p>dq0_to_alphabetagamma</p></li>
+<li><p>abc_to_dq0</p></li>
+<li><p>dq0_to_abc</p></li>
+<li><p>abc_to_symmetrical_components</p></li>
+<li><p>symmetrical_compoenents_to_abc</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+</section>
+</section>
+<hr class="docutils" />
+<section id="version-1-33-0">
+<h2>Version 1.33.0<a class="headerlink" href="#version-1-33-0" title="Link to this heading">¶</a></h2>
+<section id="id9">
+<h3>Features Added<a class="headerlink" href="#id9" title="Link to this heading">¶</a></h3>
+<ul class="simple">
+<li><p>Upgrade to Pytest 8 for Python 3.10 (<code class="docutils literal notranslate"><span class="pre">&gt;=.6</span></code>) and Python 3.11 (all versions).</p></li>
+</ul>
+</section>
+<section id="id10">
+<h3>Deprecation<a class="headerlink" href="#id10" title="Link to this heading">¶</a></h3>
+<ul class="simple">
+<li><p>Python 3.8 support.</p></li>
+</ul>
+</section>
+</section>
+<hr class="docutils" />
+<section id="version-1-32-0">
+<h2>Version 1.32.0<a class="headerlink" href="#version-1-32-0" title="Link to this heading">¶</a></h2>
+<section id="id11">
+<h3>Bugs Fixed<a class="headerlink" href="#id11" title="Link to this heading">¶</a></h3>
+<ul class="simple">
+<li><p>Updated the Environment parameters on Allure report option</p></li>
+<li><p>Fixed simple CSV report generation</p></li>
+</ul>
+</section>
+<section id="id12">
+<h3>Deprecation<a class="headerlink" href="#id12" title="Link to this heading">¶</a></h3>
+<ul class="simple">
+<li><p>Last Typhoontest API wheel support for Python 3.8.</p></li>
+</ul>
+</section>
+</section>
+<hr class="docutils" />
+<section id="version-1-31-0">
+<h2>Version 1.31.0<a class="headerlink" href="#version-1-31-0" title="Link to this heading">¶</a></h2>
+<section id="deprecated">
+<h3>Deprecated<a class="headerlink" href="#deprecated" title="Link to this heading">¶</a></h3>
+<ul class="simple">
+<li><p>The embedded plugin <code class="docutils literal notranslate"><span class="pre">typhoon-docx</span></code>, but still available as a third-party package on <a class="reference external" href="https://github.com/typhoon-hil/allure-docx.git">Typhoon HIL Github Page</a>.</p></li>
+</ul>
+</section>
+</section>
+<hr class="docutils" />
+<section id="version-1-30-0">
+<h2>Version 1.30.0<a class="headerlink" href="#version-1-30-0" title="Link to this heading">¶</a></h2>
+<section id="id13">
+<h3>Features Added<a class="headerlink" href="#id13" title="Link to this heading">¶</a></h3>
+<ul class="simple">
+<li><p>Option to disable the automatic Allure steps generated by the Typhoon APIs.</p></li>
+</ul>
+</section>
+<section id="id14">
+<h3>Changes<a class="headerlink" href="#id14" title="Link to this heading">¶</a></h3>
+<ul class="simple">
+<li><p>Packing of Typhoontest API had changed, to be compatible with new versions of Setuptools and pip.</p></li>
+<li><p>Link for HIL API Documentation added on Typhoontest Documentation.</p></li>
+<li><p>Existent options documented (<code class="docutils literal notranslate"><span class="pre">--alluredir=DIR</span></code>, <code class="docutils literal notranslate"><span class="pre">--clean-alluredir</span></code>, <code class="docutils literal notranslate"><span class="pre">--open-allure</span></code>,
+<code class="docutils literal notranslate"><span class="pre">log_cli</span></code>, <code class="docutils literal notranslate"><span class="pre">--log-cli-level</span></code>, <code class="docutils literal notranslate"><span class="pre">--collect-only</span></code>, <code class="docutils literal notranslate"><span class="pre">--markers</span></code>, <code class="docutils literal notranslate"><span class="pre">-k</span></code>, <code class="docutils literal notranslate"><span class="pre">--keep-history</span></code>).</p></li>
+</ul>
+</section>
+</section>
+<hr class="docutils" />
+<section id="version-1-29-0">
+<h2>Version 1.29.0<a class="headerlink" href="#version-1-29-0" title="Link to this heading">¶</a></h2>
+<section id="id15">
+<h3>Bugs Fixed<a class="headerlink" href="#id15" title="Link to this heading">¶</a></h3>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">typhoon.types.timedelta.Timdelta</span></code> casting fixed to return <code class="docutils literal notranslate"><span class="pre">typhoon.types.timedelta.Timdelta</span></code> when a <code class="docutils literal notranslate"><span class="pre">pandas.Timedelta</span></code> is provided (indirectly fixing <code class="docutils literal notranslate"><span class="pre">typhoon.test.signals.find</span></code> function)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">typhoon.test.signals.control</span></code> package was reinserted on documentation</p></li>
+</ul>
+</section>
+</section>
+<hr class="docutils" />
+<section id="version-1-28-0">
+<h2>Version 1.28.0<a class="headerlink" href="#version-1-28-0" title="Link to this heading">¶</a></h2>
+<section id="id16">
+<h3>Features Added<a class="headerlink" href="#id16" title="Link to this heading">¶</a></h3>
+<ul class="simple">
+<li><p>Python 3.11 support</p></li>
+<li><p>Version number available through the Typhoontest modules (E.g. <cite>typhoon.test.__version__</cite>)</p></li>
+<li><p>Allure environment info attached to PDF report</p></li>
+</ul>
+</section>
+<section id="id17">
+<h3>Changes<a class="headerlink" href="#id17" title="Link to this heading">¶</a></h3>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">typhoon.test.IEC61000</span></code> package is released</p>
+<ul class="simple">
+<li><p>The function are decorated, showing the usage on the Allure Report</p></li>
+<li><p>Flicker is now called <code class="docutils literal notranslate"><span class="pre">flickermeter</span></code> and had code optimized</p></li>
+<li><p>Power Quantities (Single and Three-Phase) modules reduced, now they returns a <code class="docutils literal notranslate"><span class="pre">pandas.DataFrame</span></code> instead of a tuple of <code class="docutils literal notranslate"><span class="pre">pandas.DataFrames</span></code>.</p></li>
+</ul>
+<blockquote>
+<div></div></blockquote>
+</li>
+<li><p>Docstring review with new examples</p></li>
+<li><p>Requirements updated for Python 3.11 (Jinja, tables, pandas, bokeh, and more)</p></li>
+<li><p>API fixes to support <cite>pandas==2.0.3</cite></p></li>
+</ul>
+</section>
+<section id="id18">
+<h3>Bugs Fixed<a class="headerlink" href="#id18" title="Link to this heading">¶</a></h3>
+<ul class="simple">
+<li><p>Grid Fault function (<cite>typhoon.test.sources.grid_fault</cite> function) documentation</p></li>
+<li><p>Absolute time (<cite>absolute_time</cite>) parameter for <cite>typhoon.test.capture.get_capture_results</cite> function fixed to consider <cite>executeAt</cite> waiting time.</p></li>
+</ul>
+</section>
+</section>
+<hr class="docutils" />
+<section id="version-1-27-0">
+<h2>Version 1.27.0<a class="headerlink" href="#version-1-27-0" title="Link to this heading">¶</a></h2>
+<section id="id19">
+<h3>Features Added<a class="headerlink" href="#id19" title="Link to this heading">¶</a></h3>
+<ul class="simple">
+<li><p>ABC to Zero, Positive and Negative sequence (Symmetrical Components) function</p></li>
+<li><p>Inverse ABC to Zero, Positive and Negative sequence function</p></li>
+</ul>
+</section>
+<section id="id20">
+<h3>Changes<a class="headerlink" href="#id20" title="Link to this heading">¶</a></h3>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">typhoon.types.timedelta.Timedelta</span></code> floating point error fixed.</p></li>
+</ul>
+</section>
+<section id="id21">
+<h3>Bugs Fixed<a class="headerlink" href="#id21" title="Link to this heading">¶</a></h3>
+<ul class="simple">
+<li><p>Automatic PDF Report issue fixed: Unable in some test cases to find the figures to add in the report.</p></li>
+</ul>
+</section>
+</section>
+<hr class="docutils" />
+<section id="version-1-26-0">
+<h2>Version 1.26.0<a class="headerlink" href="#version-1-26-0" title="Link to this heading">¶</a></h2>
+<section id="id22">
+<h3>Features Added<a class="headerlink" href="#id22" title="Link to this heading">¶</a></h3>
+<ul class="simple">
+<li><p>Adding <strong>beta</strong> version of IEC 61000 standard function on Typhoontest API (<a class="reference internal" href="index.html#iec-61000"><span class="std std-ref">typhoon.test.IEC61000</span></a>).</p></li>
+</ul>
+</section>
+<section id="id23">
+<h3>Changes<a class="headerlink" href="#id23" title="Link to this heading">¶</a></h3>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">pluggy=&gt;1.0.0</span></code> temporally not compatible with Typhoontest, version used <code class="docutils literal notranslate"><span class="pre">==0.13.1</span></code>.</p></li>
+<li><p>Pytest version upgraded, currently using the version <code class="docutils literal notranslate"><span class="pre">==7.2.0</span></code>.</p></li>
+</ul>
+</section>
+<section id="id24">
+<h3>Bugs Fixed<a class="headerlink" href="#id24" title="Link to this heading">¶</a></h3>
+<ul class="simple">
+<li><p>Fixing the DC component of <code class="docutils literal notranslate"><span class="pre">typhoon.test.harmonic.frequency_content</span></code> function.</p></li>
+<li><p>Fixed new matplotlib versions compatibility with Typhoontest.</p></li>
+</ul>
+</section>
+<section id="id25">
+<h3>Deprecated<a class="headerlink" href="#id25" title="Link to this heading">¶</a></h3>
+<ul class="simple">
+<li><p>Aliases from the listed classes and functions was removed:</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">typhoon.test.capture</span></code> module</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">read</span></code> function</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">wait_until</span></code> function</p></li>
+</ul>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">typhoon.test.ranges</span></code> module</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">around</span></code> function</p></li>
+</ul>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">typhoon.test.signals</span></code> module</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">find</span></code> function</p></li>
+</ul>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">typhoon.test.sources</span></code> module</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">get_phasor_3ph</span></code> function</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">change_grid</span></code> function</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">get_pv_mpp</span></code> function</p></li>
+</ul>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">typhoon.types.phasors</span></code> module</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">Phasor</span></code> class</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Phasors3ph</span></code> class</p></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</section>
+</section>
+<hr class="docutils" />
+<section id="version-1-25-0">
+<h2>Version 1.25.0<a class="headerlink" href="#version-1-25-0" title="Link to this heading">¶</a></h2>
+<section id="id26">
+<h3>Features Added<a class="headerlink" href="#id26" title="Link to this heading">¶</a></h3>
+<ul class="simple">
+<li><p>Parameters on Automatic PDF report</p></li>
+</ul>
+</section>
+<section id="id27">
+<h3>Changes<a class="headerlink" href="#id27" title="Link to this heading">¶</a></h3>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">matplotlib&gt;=3.6.x</span></code> temporally not compatible with Typhoontest</p></li>
+</ul>
+</section>
+<section id="id28">
+<h3>Bugs Fixed<a class="headerlink" href="#id28" title="Link to this heading">¶</a></h3>
+<ul class="simple">
+<li><p>Automatic PDF report generation for some test session cases</p></li>
+</ul>
+</section>
+</section>
+<hr class="docutils" />
+<section id="version-1-24-0">
+<h2>Version 1.24.0<a class="headerlink" href="#version-1-24-0" title="Link to this heading">¶</a></h2>
+<section id="id29">
+<h3>Bugs Fixed<a class="headerlink" href="#id29" title="Link to this heading">¶</a></h3>
+<ul class="simple">
+<li><p>Some dependencies for machines with no Microsoft C++ Tools installed</p></li>
+<li><p>Issue with small timestamp captures on dataframes</p></li>
+</ul>
+</section>
+</section>
+<hr class="docutils" />
+<section id="version-1-23-0">
+<h2>Version 1.23.0<a class="headerlink" href="#version-1-23-0" title="Link to this heading">¶</a></h2>
+<section id="id30">
+<h3>Features Added<a class="headerlink" href="#id30" title="Link to this heading">¶</a></h3>
+<ul class="simple">
+<li><p>Allure tables into Automatic PDF report generated</p></li>
+<li><p>New options added to pytest (<code class="docutils literal notranslate"><span class="pre">vdev,</span> <span class="pre">vcfg,</span> <span class="pre">ethdev,</span> <span class="pre">discovery_ip,</span> <span class="pre">fw,</span> <span class="pre">simple-report</span></code>)</p></li>
+<li><p>Single-Phase SOGI PLL added for frequency measurement</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">typhoon.test.signals.control</span></code> Package documentation</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">typhoon.types.timedelta.Timedelta</span></code> documentation</p></li>
+<li><p>Sub-step Allure plots into Automatic PDF report generated</p></li>
+<li><p>Automatic PDF report generated test</p></li>
+</ul>
+</section>
+<section id="id31">
+<h3>Changes<a class="headerlink" href="#id31" title="Link to this heading">¶</a></h3>
+<ul class="simple">
+<li><p>Pytest custom option documented</p></li>
+</ul>
+</section>
+<section id="id32">
+<h3>Bugs Fixed<a class="headerlink" href="#id32" title="Link to this heading">¶</a></h3>
+<ul class="simple">
+<li><p>function <code class="docutils literal notranslate"><span class="pre">signal_frequency_zc</span></code> - Average value offset issue</p></li>
+</ul>
+</section>
+</section>
+<hr class="docutils" />
+<section id="version-1-22-0">
+<h2>Version 1.22.0<a class="headerlink" href="#version-1-22-0" title="Link to this heading">¶</a></h2>
+<section id="id33">
+<h3>Changes<a class="headerlink" href="#id33" title="Link to this heading">¶</a></h3>
+<ul class="simple">
+<li><p>Requirements updated</p></li>
+</ul>
+</section>
+<section id="id34">
+<h3>Bugs Fixed<a class="headerlink" href="#id34" title="Link to this heading">¶</a></h3>
+<ul class="simple">
+<li><p>AnalysisResult class</p></li>
+<li><p>Files for wheels generation</p></li>
+</ul>
+</section>
+</section>
+<hr class="docutils" />
+<section id="version-1-21-0">
+<h2>Version 1.21.0<a class="headerlink" href="#version-1-21-0" title="Link to this heading">¶</a></h2>
+<section id="id35">
+<h3>Features Added<a class="headerlink" href="#id35" title="Link to this heading">¶</a></h3>
+<ul class="simple">
+<li><p>Support for Python 3.10 in both platforms (Windows and Linux)</p></li>
+<li><p>PDF Automatic Generation options and documentation</p></li>
+<li><p>COMTRADE <code class="docutils literal notranslate"><span class="pre">read_cff</span></code> function</p></li>
+</ul>
+</section>
+<section id="id36">
+<h3>Bugs Fixed<a class="headerlink" href="#id36" title="Link to this heading">¶</a></h3>
+<ul class="simple">
+<li><p>Documentation and long description upgraded</p></li>
+<li><p>Patch for <code class="docutils literal notranslate"><span class="pre">datetime.total_seconds</span></code> and <code class="docutils literal notranslate"><span class="pre">pandas.DataFrame</span></code> slicing</p></li>
+</ul>
+</section>
+<section id="id37">
+<h3>Changes<a class="headerlink" href="#id37" title="Link to this heading">¶</a></h3>
+<ul class="simple">
+<li><p>Dependencies, API and tests to fit Python 3.10 requirements</p></li>
+<li><p>Tables package from extra to permanent requirement</p></li>
+</ul>
+</section>
+<section id="id38">
+<h3>Deprecated<a class="headerlink" href="#id38" title="Link to this heading">¶</a></h3>
+<ul class="simple">
+<li><p>Support for Python 3.6 and 3.7</p></li>
+</ul>
+</section>
+</section>
+<hr class="docutils" />
+<section id="version-1-20-1">
+<h2>Version 1.20.1<a class="headerlink" href="#version-1-20-1" title="Link to this heading">¶</a></h2>
+<section id="id39">
+<h3>Features Added<a class="headerlink" href="#id39" title="Link to this heading">¶</a></h3>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">lz4==3.1.3</span></code> third-part dependency</p></li>
+</ul>
+</section>
+<section id="id40">
+<h3>Bugs Fixed<a class="headerlink" href="#id40" title="Link to this heading">¶</a></h3>
+<ul class="simple">
+<li><p>Fixed the issue of plots containing signals from previous plots.</p></li>
+<li><p>Further improvements on matplotlib memory leakage.</p></li>
+<li><p>Documentation for <code class="docutils literal notranslate"><span class="pre">stepinfo</span></code> function</p></li>
+</ul>
+</section>
+</section>
+<hr class="docutils" />
+<section id="version-1-20-0">
+<h2>Version 1.20.0<a class="headerlink" href="#version-1-20-0" title="Link to this heading">¶</a></h2>
+<section id="id41">
+<h3>Bugs Fixed<a class="headerlink" href="#id41" title="Link to this heading">¶</a></h3>
+</section>
+</section>
+<hr class="docutils" />
+<section id="version-1-19-0">
+<h2>Version 1.19.0<a class="headerlink" href="#version-1-19-0" title="Link to this heading">¶</a></h2>
+<section id="id42">
+<h3>Deprecated<a class="headerlink" href="#id42" title="Link to this heading">¶</a></h3>
+<ul class="simple">
+<li><p>Test executor from Typhoontest API</p></li>
+</ul>
+</section>
+</section>
+<hr class="docutils" />
+<section id="version-1-18-1">
+<h2>Version 1.18.1<a class="headerlink" href="#version-1-18-1" title="Link to this heading">¶</a></h2>
+<section id="id43">
+<h3>Bugs Fixed<a class="headerlink" href="#id43" title="Link to this heading">¶</a></h3>
+<ul class="simple">
+<li><p>Pytest dependency issues</p></li>
+<li><p>THD calculation considering fundamental float values</p></li>
+</ul>
+</section>
+<section id="id44">
+<h3>Features Added<a class="headerlink" href="#id44" title="Link to this heading">¶</a></h3>
+<ul class="simple">
+<li><p>Decorators for Analysis plot with new interactive plots option</p></li>
+<li><p>Integrator Component using Cython</p></li>
+</ul>
+</section>
+</section>
+<hr class="docutils" />
+<section id="version-1-18-0">
+<h2>Version 1.18.0<a class="headerlink" href="#version-1-18-0" title="Link to this heading">¶</a></h2>
+<section id="id45">
+<h3>Features Added<a class="headerlink" href="#id45" title="Link to this heading">¶</a></h3>
+<ul class="simple">
+<li><p>new command-line arguments:</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">--analysis-plot-type</span></code> to control report plot attachment type over test run</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">--analysis-plot-on-fail-only</span></code> to control if plot attachment will be added only on test failure</p></li>
+</ul>
+</li>
+<li><p>report_plot dictionary argument to override behaviour specified by <code class="docutils literal notranslate"><span class="pre">--analysis-plot-type</span></code> and <code class="docutils literal notranslate"><span class="pre">--analysis-plot-on-fail-only</span></code></p></li>
+</ul>
+</section>
+<section id="id46">
+<h3>Bugs Fixed<a class="headerlink" href="#id46" title="Link to this heading">¶</a></h3>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">typhoon.test.harmonic.thd</span></code> added new argument <code class="docutils literal notranslate"><span class="pre">frequency_tol</span></code>. Solves frequency precision issue.</p></li>
+</ul>
+</section>
+</section>
+<hr class="docutils" />
+<section id="version-1-17-0">
+<h2>Version 1.17.0<a class="headerlink" href="#version-1-17-0" title="Link to this heading">¶</a></h2>
+<section id="id47">
+<h3>Features Added<a class="headerlink" href="#id47" title="Link to this heading">¶</a></h3>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">typhoon.test.capture.read_mdf</span></code> function to import exported mdf capture files as typhoontest DataFrame</p></li>
+</ul>
+</section>
+<section id="id48">
+<h3>Bugs Fixed<a class="headerlink" href="#id48" title="Link to this heading">¶</a></h3>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">typhoon.test.capture.read</span></code> function issue for getting signals in multihil models</p></li>
+</ul>
+</section>
+</section>
+<hr class="docutils" />
+<section id="version-1-16-0">
+<h2>Version 1.16.0<a class="headerlink" href="#version-1-16-0" title="Link to this heading">¶</a></h2>
+<section id="id49">
+<h3>Features Added<a class="headerlink" href="#id49" title="Link to this heading">¶</a></h3>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">initial_value</span></code> argument in <code class="docutils literal notranslate"><span class="pre">is_ramp</span></code> and <code class="docutils literal notranslate"><span class="pre">assert_is_ramp</span></code> functions</p></li>
+<li><p>butterworth filters functions in <code class="docutils literal notranslate"><span class="pre">typhoon.test.signals.filtering</span></code></p>
+<ul>
+<li><p>low_pass_filter</p></li>
+<li><p>high_pass_filter</p></li>
+<li><p>band_pass_filter</p></li>
+<li><p>band_Stop_filter</p></li>
+</ul>
+</li>
+</ul>
+</section>
+<section id="id50">
+<h3>Bugs Fixed<a class="headerlink" href="#id50" title="Link to this heading">¶</a></h3>
+<ul class="simple">
+<li><p>add hash method to <code class="docutils literal notranslate"><span class="pre">typhoon.types.timedelta.Timedelta</span></code> class to fix its hashability</p></li>
+<li><p>fix timedelta rounding imprecision which was creating asynchronous sample steps</p></li>
+<li><p>fix <code class="docutils literal notranslate"><span class="pre">wait_until</span></code> which measured interval between signal reads with real time, instead of simulation time</p></li>
+<li><p>fix <code class="docutils literal notranslate"><span class="pre">typhoon.test.signals.is_step</span></code> issue with plotting reference_signal when from_value is not</p></li>
+</ul>
+</section>
+</section>
+<hr class="docutils" />
+<section id="version-1-15-0">
+<h2>Version 1.15.0<a class="headerlink" href="#version-1-15-0" title="Link to this heading">¶</a></h2>
+<section id="id51">
+<h3>Bugs Fixed<a class="headerlink" href="#id51" title="Link to this heading">¶</a></h3>
+<ul class="simple">
+<li><p>compatibility with <code class="docutils literal notranslate"><span class="pre">pandas&gt;=1.0.5</span></code></p></li>
+<li><p>allure tables: fixed an error to apply one of the available colormaps.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">typhoon.test.sources.get_pv_mpp</span></code> - issue with inverted current and voltage value</p></li>
+</ul>
+</section>
+<section id="id52">
+<h3>Features Added<a class="headerlink" href="#id52" title="Link to this heading">¶</a></h3>
+<ul class="simple">
+<li><p>allure tables: added a new color scheme based on a center value.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">typhoon.types.timedelta.Timedelta</span></code> - possibility to use relational with castable numbers/strings</p></li>
+</ul>
+</section>
+</section>
+<hr class="docutils" />
+<section id="version-1-14-1">
+<h2>Version 1.14.1<a class="headerlink" href="#version-1-14-1" title="Link to this heading">¶</a></h2>
+<section id="id53">
+<h3>Bugs Fixed<a class="headerlink" href="#id53" title="Link to this heading">¶</a></h3>
+<ul class="simple">
+<li><p>fixed issue with importing tables package</p></li>
+</ul>
+</section>
+</section>
+<section id="version-1-14-0">
+<h2>Version 1.14.0<a class="headerlink" href="#version-1-14-0" title="Link to this heading">¶</a></h2>
+<section id="id54">
+<h3>Features Added<a class="headerlink" href="#id54" title="Link to this heading">¶</a></h3>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">three_phase_power</span></code> function in <code class="docutils literal notranslate"><span class="pre">typhoon.test.power</span></code> package</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">moving_average</span></code> function in <code class="docutils literal notranslate"><span class="pre">typhoon.test.signals.filtering</span></code> package</p></li>
+<li><p>typhoon.test.reporting.tables package with functions for attaching html tables to allure report:</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">attach_table</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">attach_table_custom_colormap</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">attach_table_custom_colormap_by_column</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">text_style</span></code></p></li>
+</ul>
+</li>
+<li><p>typhoon.test.reporting.messages package for adding messages to allure report:</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">report_message</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">report_step</span></code></p></li>
+</ul>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">typhoon.test.reporting.figures.attach_figure</span></code> function for adding matplotlib figure to allure report</p></li>
+<li><p>‘mode’ argument to <code class="docutils literal notranslate"><span class="pre">typhoon.test.harmonic.thd</span></code> function to select one of three modes of calculation:</p>
+<ul>
+<li><p>with multiple harmonics only</p></li>
+<li><p>with interharmonics in addition to multiples</p></li>
+<li><p>with all available frequencies</p></li>
+</ul>
+</li>
+</ul>
+</section>
+</section>
+<hr class="docutils" />
+<section id="version-1-13-0">
+<h2>Version 1.13.0<a class="headerlink" href="#version-1-13-0" title="Link to this heading">¶</a></h2>
+<section id="id55">
+<h3>Bugs Fixed<a class="headerlink" href="#id55" title="Link to this heading">¶</a></h3>
+<ul class="simple">
+<li><p>StepInfo: If the signal never leaves the settling time region, it returns 0s</p></li>
+</ul>
+</section>
+<section id="id56">
+<h3>Features Added<a class="headerlink" href="#id56" title="Link to this heading">¶</a></h3>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">typhoon.test.capture.merge_dataframes</span></code> function for merging two dataframes</p></li>
+</ul>
+</section>
+</section>
+<hr class="docutils" />
+<section id="version-1-12-1">
+<h2>Version 1.12.1<a class="headerlink" href="#version-1-12-1" title="Link to this heading">¶</a></h2>
+<section id="id57">
+<h3>Bugs Fixed<a class="headerlink" href="#id57" title="Link to this heading">¶</a></h3>
+<ul class="simple">
+<li><p>StepInfo:</p>
+<ul>
+<li><p>Absolute threshold for settling time was swapping values</p></li>
+<li><p>‘settling_time_threshold’ is set to None when ‘settling_time_threshold_abs’ is defined</p></li>
+<li><p>Stretched plots after using <code class="docutils literal notranslate"><span class="pre">df-plot</span></code> are now fixed</p></li>
+</ul>
+</li>
+</ul>
+</section>
+</section>
+<hr class="docutils" />
+<section id="version-1-12-0">
+<h2>Version 1.12.0<a class="headerlink" href="#version-1-12-0" title="Link to this heading">¶</a></h2>
+<section id="id58">
+<h3>Features Added<a class="headerlink" href="#id58" title="Link to this heading">¶</a></h3>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">--report-plots</span></code> pytest command line argument to control level of allure report plot attachments</p></li>
+</ul>
+</section>
+<section id="id59">
+<h3>Bugs Fixed<a class="headerlink" href="#id59" title="Link to this heading">¶</a></h3>
+<ul class="simple">
+<li><p>fixed all functions behaviour with <code class="docutils literal notranslate"><span class="pre">time_tol</span></code> argument</p></li>
+<li><p>fixed couple bug and code refactoring</p></li>
+<li><p>fixed plot attachments not to include user plots from test</p></li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Typhoontest version 1.12.0 cannot work with Typhoon HIL Control Center versions older then 2020.2</p>
+</div>
+</section>
+</section>
+<hr class="docutils" />
+<section id="version-1-11-1">
+<h2>Version 1.11.1<a class="headerlink" href="#version-1-11-1" title="Link to this heading">¶</a></h2>
+<section id="feature-added">
+<h3>Feature Added<a class="headerlink" href="#feature-added" title="Link to this heading">¶</a></h3>
+<ul class="simple">
+<li><p>Support for global license folder definition</p></li>
+</ul>
+</section>
+</section>
+<hr class="docutils" />
+<section id="version-1-11-0">
+<h2>Version 1.11.0<a class="headerlink" href="#version-1-11-0" title="Link to this heading">¶</a></h2>
+<section id="id60">
+<h3>Features Added<a class="headerlink" href="#id60" title="Link to this heading">¶</a></h3>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">--keep-history</span></code> command-line option which adds previous results trend graph in allure report</p></li>
+<li><p>functions for reading exported data from typhoon capture:</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">read_hdf</span></code> - for reading data exported in .h5 files;</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">read_csv</span></code> - for reading data exported in .csv files;</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">read_mat</span></code> - for reading data exported in .mat files;</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">read_tdms</span></code> - for reading data exported in .tdms files;</p></li>
+</ul>
+</li>
+</ul>
+</section>
+<section id="id61">
+<h3>Bugs Fixed<a class="headerlink" href="#id61" title="Link to this heading">¶</a></h3>
+<ul class="simple">
+<li><p>find_edges function fix - it was detecting edges one step before edge really occurs</p></li>
+</ul>
+</section>
+<section id="id62">
+<h3>Changes<a class="headerlink" href="#id62" title="Link to this heading">¶</a></h3>
+<ul class="simple">
+<li><p>step_info</p>
+<ul>
+<li><p>parameter <code class="docutils literal notranslate"><span class="pre">settling_time_threshold</span></code> was set as a gain, now it is %.</p></li>
+<li><p>now it is possible to define the starting time for evaluating a signal</p></li>
+<li><p>now it is also possible to define the settling time threshold as absolute value</p></li>
+</ul>
+</li>
+<li><p>window_rms: <code class="docutils literal notranslate"><span class="pre">assume_previous_data</span></code> argument is added, which eliminates starting transient in result</p></li>
+</ul>
+</section>
+</section>
+<hr class="docutils" />
+<section id="version-1-10-2">
+<h2>Version 1.10.2<a class="headerlink" href="#version-1-10-2" title="Link to this heading">¶</a></h2>
+<section id="id63">
+<h3>Features Added<a class="headerlink" href="#id63" title="Link to this heading">¶</a></h3>
+<ul class="simple">
+<li><p>shell script is created for opening allure reports on linux platforms</p></li>
+<li><p>typhoontest became compatible with new typhoon software licencing frame</p></li>
+</ul>
+</section>
+</section>
+<hr class="docutils" />
+<section id="version-1-10-1">
+<h2>Version 1.10.1<a class="headerlink" href="#version-1-10-1" title="Link to this heading">¶</a></h2>
+<section id="id64">
+<h3>Bugs Fixed<a class="headerlink" href="#id64" title="Link to this heading">¶</a></h3>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">allure-pytest</span></code> version downgraded to 2.6.2 because of the report opening issue</p></li>
+</ul>
+</section>
+</section>
+<hr class="docutils" />
+<section id="version-1-10-0">
+<h2>Version 1.10.0<a class="headerlink" href="#version-1-10-0" title="Link to this heading">¶</a></h2>
+<section id="id65">
+<h3>Bugs Fixed<a class="headerlink" href="#id65" title="Link to this heading">¶</a></h3>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">allure-html</span></code> directory with standalone html report is automatically generated if <code class="docutils literal notranslate"><span class="pre">--alluredir</span></code> command line argument is specified</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">window_rms</span></code> now computes the exact frequencies if possible for a given signal.</p></li>
+</ul>
+</section>
+</section>
+<hr class="docutils" />
+<section id="version-1-9-0">
+<h2>Version 1.9.0<a class="headerlink" href="#version-1-9-0" title="Link to this heading">¶</a></h2>
+<section id="id66">
+<h3>Bugs Fixed<a class="headerlink" href="#id66" title="Link to this heading">¶</a></h3>
+<ul class="simple">
+<li><p>Updated pandas monkey patching code to avoid exceptions with <code class="docutils literal notranslate"><span class="pre">pandas.compat</span></code></p></li>
+</ul>
+</section>
+<section id="id67">
+<h3>Features Added<a class="headerlink" href="#id67" title="Link to this heading">¶</a></h3>
+<ul class="simple">
+<li><p>Typhoontest library became linux compatible</p></li>
+<li><p>Showing assertion results in allure report using <code class="docutils literal notranslate"><span class="pre">pytest_assertion_pass</span></code> (requires pytest &gt; 5).</p></li>
+<li><p>Step info function.</p></li>
+<li><p>Function <code class="docutils literal notranslate"><span class="pre">grid_fault</span></code> for creating any type of grid faults on voltage sources.</p></li>
+</ul>
+</section>
+<section id="id68">
+<h3>Changes<a class="headerlink" href="#id68" title="Link to this heading">¶</a></h3>
+<ul class="simple">
+<li><p>Significantly improved performance of <code class="docutils literal notranslate"><span class="pre">window_rms</span></code> and <code class="docutils literal notranslate"><span class="pre">is_step</span></code> functions.</p></li>
+</ul>
+</section>
+</section>
+<hr class="docutils" />
+<section id="version-1-8-0">
+<h2>Version 1.8.0<a class="headerlink" href="#version-1-8-0" title="Link to this heading">¶</a></h2>
+<section id="id69">
+<h3>Changes<a class="headerlink" href="#id69" title="Link to this heading">¶</a></h3>
+<ul class="simple">
+<li><p>TYPHOON environment variable is not used anymore for license and opening allure report.</p></li>
+</ul>
+</section>
+</section>
+<hr class="docutils" />
+<section id="version-1-7-1">
+<h2>Version 1.7.1<a class="headerlink" href="#version-1-7-1" title="Link to this heading">¶</a></h2>
+<section id="id70">
+<h3>Bugs Fixed<a class="headerlink" href="#id70" title="Link to this heading">¶</a></h3>
+<ul class="simple">
+<li><p>Issue with time follows_reference function when sinusoidal signals are tested.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">during</span></code> arguments for TyphoonTest functions are now working with plain time strings.</p></li>
+<li><p>TyphoonTest IDE collects items only at the end of test collection phase to avoid reporting wrong test order.</p></li>
+</ul>
+</section>
+</section>
+<hr class="docutils" />
+<section id="version-1-7-0">
+<h2>Version 1.7.0<a class="headerlink" href="#version-1-7-0" title="Link to this heading">¶</a></h2>
+<section id="id71">
+<h3>Bugs Fixed<a class="headerlink" href="#id71" title="Link to this heading">¶</a></h3>
+<ul class="simple">
+<li><p>Fixed path for license (new filesystem convection).</p></li>
+<li><p>TyphoonTest will not send any data to TyphoonTest IDE if <code class="docutils literal notranslate"><span class="pre">--msg_proxy_path</span></code> arg is not sent.</p></li>
+</ul>
+</section>
+</section>
+<hr class="docutils" />
+<section id="version-1-6-0">
+<h2>Version 1.6.0<a class="headerlink" href="#version-1-6-0" title="Link to this heading">¶</a></h2>
+<section id="id72">
+<h3>Features Added<a class="headerlink" href="#id72" title="Link to this heading">¶</a></h3>
+<ul class="simple">
+<li><p>Time tolerance added to analysis functions.</p></li>
+</ul>
+</section>
+</section>
+<hr class="docutils" />
+<section id="version-1-5-0">
+<h2>Version 1.5.0<a class="headerlink" href="#version-1-5-0" title="Link to this heading">¶</a></h2>
+<section id="id73">
+<h3>Bugs Fixed<a class="headerlink" href="#id73" title="Link to this heading">¶</a></h3>
+<ul class="simple">
+<li><p>Error with <code class="docutils literal notranslate"><span class="pre">max_frequency</span></code> in <code class="docutils literal notranslate"><span class="pre">frequency_content</span></code> function.</p></li>
+<li><p>Error in <code class="docutils literal notranslate"><span class="pre">follows_reference</span></code> function if during argument is used.</p></li>
+</ul>
+</section>
+<section id="id74">
+<h3>Features Added<a class="headerlink" href="#id74" title="Link to this heading">¶</a></h3>
+<ul class="simple">
+<li><p>Shorthand names for pytest testing concepts.</p></li>
+<li><p>Parameters accept ASCII tables.</p></li>
+<li><p>full-cycle mode in <code class="docutils literal notranslate"><span class="pre">signal_frequency_zc</span></code> function - mode in which every second zero-crossing is detected.</p></li>
+</ul>
+</section>
+<section id="id75">
+<h3>Changes<a class="headerlink" href="#id75" title="Link to this heading">¶</a></h3>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">abc_to_alphabetagamaa</span></code> and <code class="docutils literal notranslate"><span class="pre">alphabetagamma_to_abc</span></code> functions have argument alignment for choosing which axis is aligned with a-axis from abc frame</p></li>
+</ul>
+</section>
+</section>
+<hr class="docutils" />
+<section id="version-1-4-1">
+<h2>Version 1.4.1<a class="headerlink" href="#version-1-4-1" title="Link to this heading">¶</a></h2>
+<section id="id76">
+<h3>Bugs Fixed<a class="headerlink" href="#id76" title="Link to this heading">¶</a></h3>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">capture</span></code> variable in <code class="docutils literal notranslate"><span class="pre">typhoon.test</span></code> would shadow <code class="docutils literal notranslate"><span class="pre">typhoon.test.capture</span></code> submodule</p></li>
+<li><p>fixed exception in TyphoonTest IDE Test Explorer related to test classes</p></li>
+</ul>
+</section>
+</section>
+<hr class="docutils" />
+<section id="version-1-4-0">
+<h2>Version 1.4.0<a class="headerlink" href="#version-1-4-0" title="Link to this heading">¶</a></h2>
+<section id="id77">
+<h3>Changes<a class="headerlink" href="#id77" title="Link to this heading">¶</a></h3>
+<ul class="simple">
+<li><p>All functions with during argument refactored to significantly decrease their execution time</p></li>
+</ul>
+</section>
+<section id="id78">
+<h3>Bugs Fixed<a class="headerlink" href="#id78" title="Link to this heading">¶</a></h3>
+<ul class="simple">
+<li><p>Fixed parsing for pytest Instance and Class nodes while collecting tests.</p></li>
+<li><p>Fixed communication bug with TyphoonTest IDE that would make pytest hang at the end of test run.</p></li>
+<li><p>Fixed <code class="docutils literal notranslate"><span class="pre">find_edges</span></code> function bug - now it detects bug if it happens at first sample.</p></li>
+<li><p>Fixed <code class="docutils literal notranslate"><span class="pre">signal_frequency_zc</span></code> function - nan values removed before the first zero-crossing moment</p></li>
+</ul>
+</section>
+<section id="id79">
+<h3>Features Added<a class="headerlink" href="#id79" title="Link to this heading">¶</a></h3>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">is_first_order</span></code> function</p></li>
+</ul>
+</section>
+</section>
+<hr class="docutils" />
+<section id="version-1-3-0">
+<h2>Version 1.3.0<a class="headerlink" href="#version-1-3-0" title="Link to this heading">¶</a></h2>
+<section id="id80">
+<h3>Features Added<a class="headerlink" href="#id80" title="Link to this heading">¶</a></h3>
+<ul class="simple">
+<li><p>TyphoonTest IDE now separates between selected and deselected tests.</p></li>
+</ul>
+</section>
+</section>
+<hr class="docutils" />
+<section id="version-1-2-1">
+<h2>Version 1.2.1<a class="headerlink" href="#version-1-2-1" title="Link to this heading">¶</a></h2>
+<section id="id81">
+<h3>Bugs Fixed<a class="headerlink" href="#id81" title="Link to this heading">¶</a></h3>
+<ul class="simple">
+<li><p>Compatibility with Python 2.7 and TyphoonTest IDE.</p></li>
+<li><p>Fixed communication bug with TyphoonTest IDE that would make pytest hang at the end of test run.</p></li>
+</ul>
+</section>
+</section>
+<hr class="docutils" />
+<section id="version-1-2-0">
+<h2>Version 1.2.0<a class="headerlink" href="#version-1-2-0" title="Link to this heading">¶</a></h2>
+<section id="id82">
+<h3>Features Added<a class="headerlink" href="#id82" title="Link to this heading">¶</a></h3>
+<ul class="simple">
+<li><p>reference frame transformation functions:</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">abc_to_alphabetagamma</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">alphabetagamma_to_abc</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">alphabetagamma_to_dq0</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">dq0_to_alphabetagamma</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">abc_to_dq0</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">dq0_to_abc</span></code></p></li>
+</ul>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">harmonic.signal_frequency_zc</span></code> function</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">signals.find_all</span></code> function.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">signals.find_edges</span></code> function.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">rms.window_rms</span></code> is refactored to run faster.</p></li>
+<li><p>Function to execute old Test Executor tests.</p></li>
+<li><p>Integration with TyphoonTest IDE</p></li>
+</ul>
+</section>
+<section id="id83">
+<h3>Changes<a class="headerlink" href="#id83" title="Link to this heading">¶</a></h3>
+<ul class="simple">
+<li><p>Refactored <code class="docutils literal notranslate"><span class="pre">follows_reference</span></code> function so it works faster</p></li>
+<li><p>Open <code class="docutils literal notranslate"><span class="pre">report.cmd</span></code> file is now created at the beginning of tests, allowing to see results if test run is interrupted.</p></li>
+</ul>
+</section>
+<section id="id84">
+<h3>Bugs Fixed<a class="headerlink" href="#id84" title="Link to this heading">¶</a></h3>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">capture.wait</span></code> now also works with anything that can be convertible to timedelta.</p></li>
+</ul>
+</section>
+</section>
+<hr class="docutils" />
+<section id="version-1-1-1">
+<h2>Version 1.1.1<a class="headerlink" href="#version-1-1-1" title="Link to this heading">¶</a></h2>
+<section id="id85">
+<h3>Bugs Fixed<a class="headerlink" href="#id85" title="Link to this heading">¶</a></h3>
+<ul class="simple">
+<li><p>Problem with opening Allure reports.</p></li>
+</ul>
+</section>
+</section>
+<hr class="docutils" />
+<section id="version-1-1-0">
+<h2>Version 1.1.0<a class="headerlink" href="#version-1-1-0" title="Link to this heading">¶</a></h2>
+<section id="id86">
+<h3>Changes<a class="headerlink" href="#id86" title="Link to this heading">¶</a></h3>
+<ul class="simple">
+<li><p>Library now depends on Typhoon Control Center with proper TyphoonTest license activated.</p></li>
+<li><p>Allure binaries are now packed with Typhoon Control Center instead of inside the wheel file.</p></li>
+<li><p>Using Typhoon portable JRE for Allure reports.</p></li>
+<li><p>Not using <code class="docutils literal notranslate"><span class="pre">typhoon_report</span></code> path script anymore. Using <code class="docutils literal notranslate"><span class="pre">python</span> <span class="pre">-m</span> <span class="pre">typhoon.allure_report</span></code> instead.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">open_report.cmd</span></code> files might have to be changed to take this into account.</p></li>
+</ul>
+</section>
+</section>
+<hr class="docutils" />
+<section id="version-1-0-2">
+<h2>Version 1.0.2<a class="headerlink" href="#version-1-0-2" title="Link to this heading">¶</a></h2>
+<section id="id87">
+<h3>Bugs Fixed<a class="headerlink" href="#id87" title="Link to this heading">¶</a></h3>
+<ul class="simple">
+<li><p>Regression with <code class="docutils literal notranslate"><span class="pre">typhoon.test.utils.capture_plot</span></code> function, saving all files in the root folder.</p></li>
+</ul>
+</section>
+</section>
+<hr class="docutils" />
+<section id="version-1-0-1">
+<h2>Version 1.0.1<a class="headerlink" href="#version-1-0-1" title="Link to this heading">¶</a></h2>
+<section id="id88">
+<h3>Bugs Fixed<a class="headerlink" href="#id88" title="Link to this heading">¶</a></h3>
+<ul class="simple">
+<li><p>Bug with <code class="docutils literal notranslate"><span class="pre">typhoon.test.utils.capture_plot</span></code> function, saving all signals with the same file name</p></li>
+</ul>
+</section>
+</section>
+<hr class="docutils" />
+<section id="version-1-0-0">
+<h2>Version 1.0.0<a class="headerlink" href="#version-1-0-0" title="Link to this heading">¶</a></h2>
+<section id="id89">
+<h3>Features Added<a class="headerlink" href="#id89" title="Link to this heading">¶</a></h3>
+<ul class="simple">
+<li><p>Full compatibility for Python 2.7</p></li>
+</ul>
+</section>
+<section id="id90">
+<h3>Changes<a class="headerlink" href="#id90" title="Link to this heading">¶</a></h3>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">typhoon.simple</span></code> is now <code class="docutils literal notranslate"><span class="pre">typhoon.test.capture</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">typhoon.grid</span></code> is now <code class="docutils literal notranslate"><span class="pre">typhoon.test.sources</span></code></p></li>
+</ul>
+</section>
+<section id="id91">
+<h3>Bugs Fixed<a class="headerlink" href="#id91" title="Link to this heading">¶</a></h3>
+<ul class="simple">
+<li><p>Bug when saving Analysis plots to file</p></li>
+<li><p>Bugs with slicing using timedeltas</p></li>
+<li><p>Representation for percentages smaller than 1% in <code class="docutils literal notranslate"><span class="pre">ranges.around</span></code> function.</p></li>
+<li><p>Steps don’t show too much information anymore.</p></li>
+<li><p>AttributeError with <code class="docutils literal notranslate"><span class="pre">allure.log</span></code> function.</p></li>
+<li><p>Bug with tolerances for negative values.</p></li>
+<li><p>Bug with analysis functions if during argument is single value</p></li>
+</ul>
+</section>
+</section>
+<hr class="docutils" />
+<section id="version-0-3-1">
+<h2>Version 0.3.1<a class="headerlink" href="#version-0-3-1" title="Link to this heading">¶</a></h2>
+<section id="id92">
+<h3>Bugs Fixed<a class="headerlink" href="#id92" title="Link to this heading">¶</a></h3>
+<ul class="simple">
+<li><p>Internal error fixed</p></li>
+</ul>
+</section>
+</section>
+<hr class="docutils" />
+<section id="version-0-3-0">
+<h2>Version 0.3.0<a class="headerlink" href="#version-0-3-0" title="Link to this heading">¶</a></h2>
+<section id="id93">
+<h3>Changes<a class="headerlink" href="#id93" title="Link to this heading">¶</a></h3>
+<ul class="simple">
+<li><p>Wait functions all return time.</p></li>
+</ul>
+</section>
+</section>
+<hr class="docutils" />
+<section id="version-0-2-0">
+<h2>Version 0.2.0<a class="headerlink" href="#version-0-2-0" title="Link to this heading">¶</a></h2>
+<ul class="simple">
+<li><p>Last backwards-compatible version.</p></li>
+</ul>
+</section>
+</section>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="Main">
+        <div class="sphinxsidebarwrapper">
+            <p class="logo"><a href="index.html">
+              <img class="logo" src="_static/logo.png" alt="Logo of "/>
+            </a></p>
+<search id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</search>
+<script>document.getElementById('searchbox').style.display = "block"</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="Related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html"> 1.35.3 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">Release Notes</a></li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+    &#169; Copyright .
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 8.2.1.
+    </div>
+  </body>
+</html>

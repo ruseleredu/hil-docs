@@ -1,0 +1,6 @@
+thd
+===
+
+.. currentmodule:: typhoon.test.harmonic
+
+.. autofunction:: thd

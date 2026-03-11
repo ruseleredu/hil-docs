@@ -1,0 +1,6 @@
+read_csv
+========
+
+.. currentmodule:: typhoon.test.capture
+
+.. autofunction:: read_csv

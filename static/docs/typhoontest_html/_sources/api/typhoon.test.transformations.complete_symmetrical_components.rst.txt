@@ -1,0 +1,6 @@
+complete_symmetrical_components
+===============================
+
+.. currentmodule:: typhoon.test.transformations
+
+.. autofunction:: complete_symmetrical_components

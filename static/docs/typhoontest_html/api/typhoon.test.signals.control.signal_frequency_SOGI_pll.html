@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+
+<html lang="en" data-content_root="../">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>signal_frequency_SOGI_pll &#8212;  1.35.3 documentation</title>
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinxdoc.css?v=34905f61" />
+    <link rel="stylesheet" type="text/css" href="../_static/graphviz.css?v=4ae1632d" />
+    <script src="../_static/documentation_options.js?v=62a126fb"></script>
+    <script src="../_static/doctools.js?v=9bcbadda"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="after" href="typhoon.test.ranges.after.html" />
+    <link rel="prev" title="integrator" href="typhoon.test.signals.control.integrator.html" /> 
+  </head><body>
+    <div class="related" role="navigation" aria-label="Related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="typhoon.test.ranges.after.html" title="after"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="typhoon.test.signals.control.integrator.html" title="integrator"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html"> 1.35.3 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">signal_frequency_SOGI_pll</a></li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <section id="signal-frequency-sogi-pll">
+<h1>signal_frequency_SOGI_pll<a class="headerlink" href="#signal-frequency-sogi-pll" title="Link to this heading">¶</a></h1>
+<dl class="py function">
+<dt class="sig sig-object py" id="typhoon.test.signals.control.signal_frequency_SOGI_pll">
+<span class="sig-prename descclassname"><span class="pre">typhoon.test.signals.control.</span></span><span class="sig-name descname"><span class="pre">signal_frequency_SOGI_pll</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">input</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">initial_amp</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">frequency</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">initial_angle</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">max_freq_var</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">10</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pll_filter_params</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#typhoon.test.signals.control.signal_frequency_SOGI_pll" title="Link to this definition">¶</a></dt>
+<dd><p>Measures the frequency of the signal using a SOGI PLL algorithm.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>input</strong> (<em>pandas.Series with timedelta index values</em>) – Input signal to be measured.</p></li>
+<li><p><strong>initial_amp</strong> (<em>int</em><em>, </em><em>float</em>) – Initial value of the signal amplitude</p></li>
+<li><p><strong>frequency</strong> (<em>int</em><em>, </em><em>float</em>) – Value of frequency to be achieved</p></li>
+<li><p><strong>initial_angle</strong> (<em>int</em><em>, </em><em>float</em>) – Initial value of the signal phase</p></li>
+<li><p><strong>max_freq_var</strong> (<em>int</em><em>, </em><em>float</em>) – Frequency (in <code class="docutils literal notranslate"><span class="pre">Hz</span></code>) used to saturate the PI Controller</p></li>
+<li><p><strong>pll_filter_params</strong> (<em>Nonetype</em><em>, </em><em>dict</em>) – <p>This dictionary contains the projected gain of the PLL and the cutoff frequency of the filters.
+If those values are not defined, the <code class="docutils literal notranslate"><span class="pre">Default</span></code> values will be used
+The dict keys that can be set are:</p>
+<ul>
+<li><p><strong>”sogi_gain”</strong> (int, float. Default: <code class="docutils literal notranslate"><span class="pre">0.4</span></code>) - SOGI Algorithm Gain</p></li>
+<li><p><strong>”kp_pll”</strong> (int, float. Default: <code class="docutils literal notranslate"><span class="pre">4.81e3</span></code>) - PLL controller proportional gain</p></li>
+<li><p><strong>”ki_pll”</strong> (int, float. Default: <code class="docutils literal notranslate"><span class="pre">1.84e4</span></code>) - PLL controller integral gain</p></li>
+<li><p><strong>”kd_pll”</strong> (int, float. Default: <code class="docutils literal notranslate"><span class="pre">-5.19</span></code>) - PLL controller derivative gain</p></li>
+<li><p><strong>”lp_cut_off_filter_d”</strong> (int, float. Default: <code class="docutils literal notranslate"><span class="pre">20</span></code>) - Cut-off frequency (in <code class="docutils literal notranslate"><span class="pre">Hz</span></code>) of the output filters of <code class="docutils literal notranslate"><span class="pre">d</span></code> coordinate</p></li>
+<li><p><strong>”lp_cut_off_filter_w”</strong> (int, float. Default: <code class="docutils literal notranslate"><span class="pre">100</span></code>) - Cut-off frequency (in <code class="docutils literal notranslate"><span class="pre">Hz</span></code>) of the output filters of angular frequency (<code class="docutils literal notranslate"><span class="pre">w</span></code>)</p></li>
+<li><p><strong>”lp_cut_off_filter_f”</strong> (int, float. Default: <code class="docutils literal notranslate"><span class="pre">10</span></code>) - Cut-off frequency (in <code class="docutils literal notranslate"><span class="pre">Hz</span></code>) of the output filters of frequency</p></li>
+</ul>
+</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><strong>result</strong> – The Dataframe contains dq coordinates (<code class="docutils literal notranslate"><span class="pre">d</span></code> and <code class="docutils literal notranslate"><span class="pre">q</span></code>), the frequency measured (<code class="docutils literal notranslate"><span class="pre">f</span></code>), the angle (<code class="docutils literal notranslate"><span class="pre">wt</span></code>),
+and the sinusoidal output (<code class="docutils literal notranslate"><span class="pre">sin_wt</span></code>).</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>pandas.Dataframe</p>
+</dd>
+</dl>
+<p class="rubric">Examples</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span><span class="w"> </span><span class="nn">typhoon.test.signals.control</span><span class="w"> </span><span class="kn">import</span> <span class="n">signal_frequency_SOGI_pll</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span><span class="w"> </span><span class="nn">typhoon.test.signals</span><span class="w"> </span><span class="kn">import</span> <span class="n">pandas_sine</span><span class="p">,</span> <span class="n">assert_is_constant</span>
+<span class="gp">&gt;&gt;&gt;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">amp</span> <span class="o">=</span> <span class="mi">311</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">freq_initial</span> <span class="o">=</span> <span class="mi">55</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">freq</span> <span class="o">=</span> <span class="mi">60</span>
+<span class="gp">&gt;&gt;&gt;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">signal</span> <span class="o">=</span> <span class="n">pandas_sine</span><span class="p">(</span><span class="n">amp</span><span class="p">,</span> <span class="n">freq</span><span class="p">,</span> <span class="mi">100</span><span class="o">/</span><span class="n">freq</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">df</span> <span class="o">=</span> <span class="n">signal_frequency_SOGI_pll</span><span class="p">(</span><span class="n">signal</span><span class="p">,</span> <span class="n">amp</span><span class="p">,</span> <span class="n">freq_initial</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>You can set <code class="docutils literal notranslate"><span class="pre">None</span></code>, one, or all parameters of the PLL project:</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">df</span> <span class="o">=</span> <span class="n">signal_frequency_SOGI_pll</span><span class="p">(</span><span class="n">signal</span><span class="p">,</span> <span class="n">amp</span><span class="p">,</span> <span class="n">freq_initial</span><span class="p">,</span> <span class="n">pll_filter_params</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;lp_cut_off_filter_f&quot;</span><span class="p">:</span> <span class="mi">15</span><span class="p">})</span>
+</pre></div>
+</div>
+<p>The data are available in each column of the dataframe <code class="docutils literal notranslate"><span class="pre">df</span></code>:</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">frequency</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s2">&quot;f&quot;</span><span class="p">]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">d_coordinate</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s2">&quot;d&quot;</span><span class="p">]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">q_coordinate</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s2">&quot;q&quot;</span><span class="p">]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">wt</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s2">&quot;wt&quot;</span><span class="p">]</span>  <span class="c1"># Angle</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">sin_wt</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s2">&quot;sin_wt&quot;</span><span class="p">]</span>  <span class="c1"># sine of angle (sin(angle))</span>
+</pre></div>
+</div>
+<p>If desired, <code class="docutils literal notranslate"><span class="pre">assert_is_constant</span></code> can be included in the test procedure as follows:</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="k">def</span><span class="w"> </span><span class="nf">test_pll</span><span class="p">():</span>
+<span class="gp">&gt;&gt;&gt; </span>    <span class="c1"># ...</span>
+<span class="gp">&gt;&gt;&gt;</span>
+<span class="gp">&gt;&gt;&gt; </span>    <span class="n">ref_value</span> <span class="o">=</span> <span class="n">freq</span>
+<span class="gp">&gt;&gt;&gt;</span>
+<span class="gp">&gt;&gt;&gt; </span>    <span class="n">tol</span> <span class="o">=</span> <span class="mf">.5</span>
+<span class="gp">&gt;&gt;&gt; </span>    <span class="n">tol_t</span> <span class="o">=</span> <span class="mf">250e-3</span>
+<span class="gp">&gt;&gt;&gt;</span>
+<span class="gp">&gt;&gt;&gt; </span>    <span class="n">assert_is_constant</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s2">&quot;f&quot;</span><span class="p">],</span> <span class="p">(</span><span class="n">ref_value</span> <span class="o">-</span> <span class="n">tol</span><span class="p">,</span> <span class="n">ref_value</span> <span class="o">+</span> <span class="n">tol</span><span class="p">),</span> <span class="n">during</span><span class="o">=</span><span class="p">(</span><span class="n">tol_t</span><span class="p">,</span> <span class="n">df</span><span class="o">.</span><span class="n">index</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]),</span> <span class="n">strictness</span><span class="o">=</span><span class="n">tol</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<p><a class="reference internal" href="typhoon.test.signals.control.integrator.html#typhoon.test.signals.control.integrator" title="typhoon.test.signals.control.integrator"><code class="xref py py-obj docutils literal notranslate"><span class="pre">typhoon.test.signals.control.integrator</span></code></a></p>
+</div>
+</dd></dl>
+
+</section>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="Main">
+        <div class="sphinxsidebarwrapper">
+            <p class="logo"><a href="../index.html">
+              <img class="logo" src="../_static/logo.png" alt="Logo of "/>
+            </a></p>
+  <div>
+    <h4>Previous topic</h4>
+    <p class="topless"><a href="typhoon.test.signals.control.integrator.html"
+                          title="previous chapter">integrator</a></p>
+  </div>
+  <div>
+    <h4>Next topic</h4>
+    <p class="topless"><a href="typhoon.test.ranges.after.html"
+                          title="next chapter">after</a></p>
+  </div>
+<search id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</search>
+<script>document.getElementById('searchbox').style.display = "block"</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="Related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="typhoon.test.ranges.after.html" title="after"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="typhoon.test.signals.control.integrator.html" title="integrator"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html"> 1.35.3 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">signal_frequency_SOGI_pll</a></li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+    &#169; Copyright .
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 8.2.1.
+    </div>
+  </body>
+</html>

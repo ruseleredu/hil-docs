@@ -1,0 +1,6 @@
+pandas_first_order
+==================
+
+.. currentmodule:: typhoon.test.signals
+
+.. autofunction:: pandas_first_order

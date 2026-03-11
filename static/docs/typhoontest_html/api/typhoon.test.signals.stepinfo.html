@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+
+<html lang="en" data-content_root="../">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>stepinfo &#8212;  1.35.3 documentation</title>
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinxdoc.css?v=34905f61" />
+    <link rel="stylesheet" type="text/css" href="../_static/graphviz.css?v=4ae1632d" />
+    <script src="../_static/documentation_options.js?v=62a126fb"></script>
+    <script src="../_static/doctools.js?v=9bcbadda"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="band_pass_filter" href="typhoon.test.signals.filtering.band_pass_filter.html" />
+    <link rel="prev" title="pandas_sine" href="typhoon.test.signals.pandas_sine.html" /> 
+  </head><body>
+    <div class="related" role="navigation" aria-label="Related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="typhoon.test.signals.filtering.band_pass_filter.html" title="band_pass_filter"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="typhoon.test.signals.pandas_sine.html" title="pandas_sine"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html"> 1.35.3 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">stepinfo</a></li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <section id="stepinfo">
+<h1>stepinfo<a class="headerlink" href="#stepinfo" title="Link to this heading">¶</a></h1>
+<dl class="py function">
+<dt class="sig sig-object py" id="typhoon.test.signals.stepinfo">
+<span class="sig-prename descclassname"><span class="pre">typhoon.test.signals.</span></span><span class="sig-name descname"><span class="pre">stepinfo</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">signal</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">settling_time_threshold</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">2</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">settling_time_threshold_abs</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">rise_time_thresholds</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">(0.1,</span> <span class="pre">0.9)</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ss_during</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">initial_value_override</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">final_value_override</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">evaluate_from_time</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#typhoon.test.signals.stepinfo" title="Link to this definition">¶</a></dt>
+<dd><p>Calculates important step characteristics of a given signal: rise time, settling time, overshoot, and others.</p>
+<p>This function works also for signals which does not start at zero (e.g. step change from x0 to x1, both
+different than 0).</p>
+<p>User can override initial values and final values. Overriding initial values are useful in the case of a response already starting at 0,
+and specifying final values is useful for noisy signals or responses with still oscillatory behaviour at the end of the signal.</p>
+<p>If the step does not start at 0 seconds of the capture, the initial time can be specified at ‘evaluate_from_time’</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>signal</strong> (<em>Pandas Series</em>) – Signal to analyze</p></li>
+<li><p><strong>settling_time_threshold</strong> (<em>float</em>) – Threshold/band, in percentage of the total step, around final value for computing the settling time. Default: 2%</p></li>
+<li><p><strong>settling_time_threshold_abs</strong> (<em>float</em>) – Absolute threshold/band around final value for computing the settling time. If defined, overwrites ‘settling_time_threshold’</p></li>
+<li><p><strong>rise_time_thresholds</strong> (<em>tuple</em><em> of </em><em>float</em>) – Thresholds from which to compute the start and end of the rise time. Default: (0.1, 0.9)</p></li>
+<li><p><strong>ss_during</strong> (<em>tuple</em><em> of </em><em>float</em>) – Defines the time interval, in seconds, to compute the average and ripple of the signal.
+If it is not defined, it will consider the time interval from the settling time until the end of the capture.</p></li>
+<li><p><strong>initial_value_override</strong> (<em>float</em>) – Manually specifies initial value to consider (instead of the first signal value)</p></li>
+<li><p><strong>final_value_override</strong> (<em>float</em>) – Manually specifies final value to consider (instead of the last signal value)</p></li>
+<li><p><strong>evaluate_from_time</strong> (<em>float</em>) – Defines the starting time to evaluate the step in seconds</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Contains the characteristics of the signal.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>StepInfo</p>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="Main">
+        <div class="sphinxsidebarwrapper">
+            <p class="logo"><a href="../index.html">
+              <img class="logo" src="../_static/logo.png" alt="Logo of "/>
+            </a></p>
+  <div>
+    <h4>Previous topic</h4>
+    <p class="topless"><a href="typhoon.test.signals.pandas_sine.html"
+                          title="previous chapter">pandas_sine</a></p>
+  </div>
+  <div>
+    <h4>Next topic</h4>
+    <p class="topless"><a href="typhoon.test.signals.filtering.band_pass_filter.html"
+                          title="next chapter">band_pass_filter</a></p>
+  </div>
+<search id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</search>
+<script>document.getElementById('searchbox').style.display = "block"</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="Related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="typhoon.test.signals.filtering.band_pass_filter.html" title="band_pass_filter"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="typhoon.test.signals.pandas_sine.html" title="pandas_sine"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html"> 1.35.3 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">stepinfo</a></li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+    &#169; Copyright .
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 8.2.1.
+    </div>
+  </body>
+</html>

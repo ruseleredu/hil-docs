@@ -1,0 +1,6 @@
+integrator
+==========
+
+.. currentmodule:: typhoon.test.signals.control
+
+.. autofunction:: integrator

@@ -84,6 +84,10 @@ const navbarItems: NavbarItem[] = [
                 to: "pathname:///docs/tml_doc/index.html",
                 label: "Typhoon modeling language (TML)",
             },
+            {
+                to: "pathname:///docs/typhoontest_html/index.html",
+                label: "TyphoonTest Library",
+            },
         ],
     },
     //{ to: '/blog', label: 'Blog', position: 'left' },

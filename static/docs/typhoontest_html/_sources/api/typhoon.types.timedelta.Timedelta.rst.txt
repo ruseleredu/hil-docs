@@ -1,0 +1,7 @@
+Timedelta
+=========
+
+.. currentmodule:: typhoon.types.timedelta
+
+.. autoclass:: Timedelta
+   :show-inheritance:

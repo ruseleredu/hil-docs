@@ -1,0 +1,6 @@
+attach_figure
+=============
+
+.. currentmodule:: typhoon.test.reporting.figures
+
+.. autofunction:: attach_figure

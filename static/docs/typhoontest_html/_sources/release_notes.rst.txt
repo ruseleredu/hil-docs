@@ -1,0 +1,8 @@
+.. _Release Notes:
+
+=============
+Release Notes
+=============
+
+.. changelog::
+    :changelog_file: ../CHANGELOG.rst

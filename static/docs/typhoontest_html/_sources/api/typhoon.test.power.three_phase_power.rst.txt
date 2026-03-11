@@ -1,0 +1,6 @@
+three_phase_power
+=================
+
+.. currentmodule:: typhoon.test.power
+
+.. autofunction:: three_phase_power

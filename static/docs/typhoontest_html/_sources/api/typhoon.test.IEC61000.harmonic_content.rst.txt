@@ -1,0 +1,6 @@
+harmonic_content
+================
+
+.. currentmodule:: typhoon.test.IEC61000
+
+.. autofunction:: harmonic_content

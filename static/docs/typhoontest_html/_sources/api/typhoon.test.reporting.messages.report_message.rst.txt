@@ -1,0 +1,6 @@
+report_message
+==============
+
+.. currentmodule:: typhoon.test.reporting.messages
+
+.. autofunction:: report_message

@@ -1,0 +1,6 @@
+power_quantities_three_phase
+============================
+
+.. currentmodule:: typhoon.test.IEC61000
+
+.. autofunction:: power_quantities_three_phase

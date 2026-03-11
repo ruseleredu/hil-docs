@@ -1,0 +1,6 @@
+read_cff
+========
+
+.. currentmodule:: typhoon.test.capture
+
+.. autofunction:: read_cff

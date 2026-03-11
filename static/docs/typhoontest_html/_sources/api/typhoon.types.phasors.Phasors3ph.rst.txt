@@ -1,0 +1,7 @@
+Phasors3ph
+==========
+
+.. currentmodule:: typhoon.types.phasors
+
+.. autoclass:: Phasors3ph
+   :show-inheritance:

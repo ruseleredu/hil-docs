@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+
+<html lang="en" data-content_root="../">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Phasors3ph &#8212;  1.35.3 documentation</title>
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinxdoc.css?v=34905f61" />
+    <link rel="stylesheet" type="text/css" href="../_static/graphviz.css?v=4ae1632d" />
+    <script src="../_static/documentation_options.js?v=62a126fb"></script>
+    <script src="../_static/doctools.js?v=9bcbadda"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="attach_table" href="typhoon.test.reporting.tables.attach_table.html" />
+    <link rel="prev" title="Phasor" href="typhoon.types.phasors.Phasor.html" /> 
+  </head><body>
+    <div class="related" role="navigation" aria-label="Related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="typhoon.test.reporting.tables.attach_table.html" title="attach_table"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="typhoon.types.phasors.Phasor.html" title="Phasor"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html"> 1.35.3 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">Phasors3ph</a></li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <section id="phasors3ph">
+<h1>Phasors3ph<a class="headerlink" href="#phasors3ph" title="Link to this heading">¶</a></h1>
+<dl class="py class">
+<dt class="sig sig-object py" id="typhoon.types.phasors.Phasors3ph">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">typhoon.types.phasors.</span></span><span class="sig-name descname"><span class="pre">Phasors3ph</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">phasor1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">phasor2</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">phasor3</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">symmetrical_components</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#typhoon.types.phasors.Phasors3ph" title="Link to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">AliasTuple</span></code></p>
+<p>Creates a Phasors3ph tuple.</p>
+<p>Implements a set of three phasors representing a three-phase quantity. Is essentially a Tuple, subclassing <code class="docutils literal notranslate"><span class="pre">AliasTuple</span></code>.</p>
+<p>This can be created from abc Phasors and the symmetrical components will automatically be calculated and accessible from the Phasor3ph object.</p>
+<p>It can also be created from v012 symmetrical components phasores, in which case abc components will be automatically calculated an accessible as well.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>phasor1</strong> (<a class="reference internal" href="typhoon.types.phasors.Phasor.html#typhoon.types.phasors.Phasor" title="typhoon.types.phasors.Phasor"><em>Phasor</em></a>) – First phasor</p></li>
+<li><p><strong>phasor2</strong> (<a class="reference internal" href="typhoon.types.phasors.Phasor.html#typhoon.types.phasors.Phasor" title="typhoon.types.phasors.Phasor"><em>Phasor</em></a>) – Second phasor</p></li>
+<li><p><strong>phasor3</strong> (<a class="reference internal" href="typhoon.types.phasors.Phasor.html#typhoon.types.phasors.Phasor" title="typhoon.types.phasors.Phasor"><em>Phasor</em></a>) – Third phasor</p></li>
+<li><p><strong>symmetrical_components</strong> – If True, consider phasor1/2/3 as v012 symmetrical components. If false, consider phasor1/2/3 as abc components.</p></li>
+</ul>
+</dd>
+</dl>
+<p class="rubric">Examples</p>
+<p>Importing functions:</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span><span class="w"> </span><span class="nn">typhoon.types.phasors</span><span class="w"> </span><span class="kn">import</span> <span class="n">Phasor</span><span class="p">,</span> <span class="n">Phasors3ph</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span><span class="w"> </span><span class="nn">typhoon.test.transformations</span><span class="w"> </span><span class="kn">import</span> <span class="n">symmetrical_components</span>
+</pre></div>
+</div>
+<p>Creating single phasors</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">Va</span> <span class="o">=</span> <span class="n">Phasor</span><span class="p">(</span><span class="n">mag</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">angle</span><span class="o">=</span><span class="mi">53</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">Vb</span> <span class="o">=</span> <span class="n">Phasor</span><span class="p">(</span><span class="n">mag</span><span class="o">=</span><span class="mi">7</span><span class="p">,</span> <span class="n">angle</span><span class="o">=-</span><span class="mi">164</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">Vc</span> <span class="o">=</span> <span class="n">Phasor</span><span class="p">(</span><span class="n">mag</span><span class="o">=</span><span class="mi">7</span><span class="p">,</span> <span class="n">angle</span><span class="o">=</span><span class="mi">105</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Creating a <code class="docutils literal notranslate"><span class="pre">Phasors3ph</span></code></p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="nb">set</span> <span class="o">=</span> <span class="n">Phasors3ph</span><span class="p">(</span><span class="n">Va</span><span class="p">,</span> <span class="n">Vb</span><span class="p">,</span> <span class="n">Vc</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Accessing individual components</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="nb">set</span><span class="o">.</span><span class="n">s0</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="nb">set</span><span class="o">.</span><span class="n">s1</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="nb">set</span><span class="o">.</span><span class="n">s2</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Printing the set</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="nb">set</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="nb">set</span><span class="o">.</span><span class="n">s012</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Creating set from symmetrical components</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">V0</span><span class="p">,</span> <span class="n">V1</span><span class="p">,</span> <span class="n">V2</span> <span class="o">=</span> <span class="n">symmetrical_components</span><span class="p">(</span><span class="n">Va</span><span class="p">,</span> <span class="n">Vb</span><span class="p">,</span> <span class="n">Vc</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">set2</span> <span class="o">=</span> <span class="n">Phasors3ph</span><span class="p">(</span><span class="n">V0</span><span class="p">,</span> <span class="n">V1</span><span class="p">,</span> <span class="n">V2</span><span class="p">,</span> <span class="n">symmetrical_components</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Getting the automatically generated a, b and c components:</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">set2</span><span class="o">.</span><span class="n">a</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">set2</span><span class="o">.</span><span class="n">b</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">set2</span><span class="o">.</span><span class="n">c</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Getting symmetrical components from set defined in abc:</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="nb">set</span> <span class="o">=</span> <span class="n">Phasors3ph</span><span class="p">(</span><span class="n">Phasor</span><span class="p">(</span><span class="n">mag</span><span class="o">=</span><span class="mi">277</span><span class="p">,</span><span class="n">angle</span><span class="o">=</span><span class="mi">0</span><span class="p">),</span> <span class="n">Phasor</span><span class="p">(</span><span class="n">mag</span><span class="o">=</span><span class="mi">177</span><span class="p">,</span> <span class="n">angle</span><span class="o">=</span><span class="mi">100</span><span class="p">),</span> <span class="n">Phasor</span><span class="p">(</span><span class="n">mag</span><span class="o">=</span><span class="mi">200</span><span class="p">,</span> <span class="n">angle</span><span class="o">=-</span><span class="mi">140</span><span class="p">))</span>
+</pre></div>
+</div>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="nb">set</span><span class="o">.</span><span class="n">pos_seq</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="nb">set</span><span class="o">.</span><span class="n">neg_seq</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="nb">set</span><span class="o">.</span><span class="n">zero_seq</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+</section>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="Main">
+        <div class="sphinxsidebarwrapper">
+            <p class="logo"><a href="../index.html">
+              <img class="logo" src="../_static/logo.png" alt="Logo of "/>
+            </a></p>
+  <div>
+    <h4>Previous topic</h4>
+    <p class="topless"><a href="typhoon.types.phasors.Phasor.html"
+                          title="previous chapter">Phasor</a></p>
+  </div>
+  <div>
+    <h4>Next topic</h4>
+    <p class="topless"><a href="typhoon.test.reporting.tables.attach_table.html"
+                          title="next chapter">attach_table</a></p>
+  </div>
+<search id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</search>
+<script>document.getElementById('searchbox').style.display = "block"</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="Related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="typhoon.test.reporting.tables.attach_table.html" title="attach_table"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="typhoon.types.phasors.Phasor.html" title="Phasor"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html"> 1.35.3 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">Phasors3ph</a></li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+    &#169; Copyright .
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 8.2.1.
+    </div>
+  </body>
+</html>

@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+
+<html lang="en" data-content_root="../">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>abc_to_alphabetagamma &#8212;  1.35.3 documentation</title>
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinxdoc.css?v=34905f61" />
+    <link rel="stylesheet" type="text/css" href="../_static/graphviz.css?v=4ae1632d" />
+    <script src="../_static/documentation_options.js?v=62a126fb"></script>
+    <script src="../_static/doctools.js?v=9bcbadda"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="abc_to_dq0" href="typhoon.test.transformations.abc_to_dq0.html" />
+    <link rel="prev" title="three_phase_power" href="typhoon.test.power.three_phase_power.html" /> 
+  </head><body>
+    <div class="related" role="navigation" aria-label="Related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="typhoon.test.transformations.abc_to_dq0.html" title="abc_to_dq0"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="typhoon.test.power.three_phase_power.html" title="three_phase_power"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html"> 1.35.3 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">abc_to_alphabetagamma</a></li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <section id="abc-to-alphabetagamma">
+<h1>abc_to_alphabetagamma<a class="headerlink" href="#abc-to-alphabetagamma" title="Link to this heading">¶</a></h1>
+<dl class="py function">
+<dt class="sig sig-object py" id="typhoon.test.transformations.abc_to_alphabetagamma">
+<span class="sig-prename descclassname"><span class="pre">typhoon.test.transformations.</span></span><span class="sig-name descname"><span class="pre">abc_to_alphabetagamma</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">signals</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">method</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'Amplitude</span> <span class="pre">invariant'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">alignment</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'alpha'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#typhoon.test.transformations.abc_to_alphabetagamma" title="Link to this definition">¶</a></dt>
+<dd><p>Calculates abc to alpha-beta-gamma transformation, also known as Clarke’s transformation.</p>
+<p>If the input signals are symmetrical, the result represents its projection in alpha-beta stationary reference
+frame, while the gamma component equals to zero. There are three methods of this transformation, which can be chosen
+by setting the ‘method’ argument to appropriate value:</p>
+<ul>
+<li><div class="line-block">
+<div class="line">Amplitude invariant - with this method, amplitudes of the input signals are preserved. It is implemented by following equations:</div>
+<div class="line"><code class="docutils literal notranslate"><span class="pre">alpha</span> <span class="pre">=</span> <span class="pre">2/3</span> <span class="pre">*</span> <span class="pre">(a</span> <span class="pre">*</span> <span class="pre">cos(-theta)</span> <span class="pre">+</span> <span class="pre">b</span> <span class="pre">*</span> <span class="pre">cos(2*pi/3</span> <span class="pre">-</span> <span class="pre">theta)</span>&#160; <span class="pre">+</span> <span class="pre">c</span> <span class="pre">*</span> <span class="pre">cos(4*pi/3</span> <span class="pre">-</span> <span class="pre">theta))</span></code></div>
+<div class="line"><code class="docutils literal notranslate"><span class="pre">beta</span> <span class="pre">=</span> <span class="pre">2/3</span> <span class="pre">*</span> <span class="pre">(a</span> <span class="pre">*</span> <span class="pre">sin(-theta)</span> <span class="pre">+</span> <span class="pre">b</span> <span class="pre">*</span> <span class="pre">sin(2*pi/3</span> <span class="pre">-</span> <span class="pre">theta)</span> <span class="pre">+</span> <span class="pre">c</span> <span class="pre">*</span> <span class="pre">sin(4*pi/3</span> <span class="pre">-</span> <span class="pre">theta))</span></code></div>
+<div class="line"><code class="docutils literal notranslate"><span class="pre">gamma</span> <span class="pre">=</span> <span class="pre">1/3</span> <span class="pre">*</span> <span class="pre">(</span> <span class="pre">a</span> <span class="pre">+</span> <span class="pre">b</span> <span class="pre">+</span> <span class="pre">c)</span></code></div>
+</div>
+</li>
+<li><div class="line-block">
+<div class="line">Uniform - Clarke’s original. The calculation of alpha and beta is the same as before, but gamma axis is not</div>
+<div class="line">squashed, so its output is the same as the zero sequence obtained from the symmetrical components trasformation:</div>
+<div class="line-block">
+<div class="line"><code class="docutils literal notranslate"><span class="pre">alpha</span> <span class="pre">=</span> <span class="pre">2/3</span> <span class="pre">*</span> <span class="pre">(a</span> <span class="pre">*</span> <span class="pre">cos(-theta)</span> <span class="pre">+</span> <span class="pre">b</span> <span class="pre">*</span> <span class="pre">cos(2*pi/3</span> <span class="pre">-</span> <span class="pre">theta)</span>&#160; <span class="pre">+</span> <span class="pre">c</span> <span class="pre">*</span> <span class="pre">cos(4*pi/3</span> <span class="pre">-</span> <span class="pre">theta))</span></code></div>
+<div class="line"><code class="docutils literal notranslate"><span class="pre">beta</span> <span class="pre">=</span> <span class="pre">2/3</span> <span class="pre">*</span> <span class="pre">(a</span> <span class="pre">*</span> <span class="pre">sin(-theta)</span> <span class="pre">+</span> <span class="pre">b</span> <span class="pre">*</span> <span class="pre">sin(2*pi/3</span> <span class="pre">-</span> <span class="pre">theta)</span> <span class="pre">+</span> <span class="pre">c</span> <span class="pre">*</span> <span class="pre">sin(4*pi/3</span> <span class="pre">-</span> <span class="pre">theta))</span></code></div>
+<div class="line"><code class="docutils literal notranslate"><span class="pre">gamma</span> <span class="pre">=</span> <span class="pre">sqrt(2)/3</span> <span class="pre">*</span> <span class="pre">(a</span> <span class="pre">+</span> <span class="pre">b</span> <span class="pre">+</span> <span class="pre">c)</span></code></div>
+</div>
+</div>
+</li>
+<li><div class="line-block">
+<div class="line">Power invariant - this transformation preserves the power of the new equivalent, two phase system. Because of that, amplitudes of the signals are sqrt(3/2) times bigger then the original signals a,b,c. The equations for this method are:</div>
+<div class="line"><code class="docutils literal notranslate"><span class="pre">alpha</span> <span class="pre">=</span> <span class="pre">sqrt(2/3)</span> <span class="pre">*</span> <span class="pre">(a</span> <span class="pre">*</span> <span class="pre">cos(-theta)</span> <span class="pre">+</span> <span class="pre">b</span> <span class="pre">*</span> <span class="pre">cos(2*pi/3</span> <span class="pre">-</span> <span class="pre">theta)</span>&#160; <span class="pre">+</span> <span class="pre">c</span> <span class="pre">*</span> <span class="pre">cos(4*pi/3</span> <span class="pre">-</span> <span class="pre">theta))</span></code></div>
+<div class="line"><code class="docutils literal notranslate"><span class="pre">beta</span> <span class="pre">=</span> <span class="pre">sqrt(2/3)</span> <span class="pre">*</span> <span class="pre">(a</span> <span class="pre">*</span> <span class="pre">sin(-theta)</span> <span class="pre">+</span> <span class="pre">b</span> <span class="pre">*</span> <span class="pre">sin(2*pi/3</span> <span class="pre">-</span> <span class="pre">theta)</span> <span class="pre">+</span> <span class="pre">c</span> <span class="pre">*</span> <span class="pre">sin(4*pi/3</span> <span class="pre">-</span> <span class="pre">theta))</span></code></div>
+<div class="line"><code class="docutils literal notranslate"><span class="pre">gamma</span> <span class="pre">=</span> <span class="pre">1/sqrt(3)</span> <span class="pre">*</span> <span class="pre">(</span> <span class="pre">a</span> <span class="pre">+</span> <span class="pre">b</span> <span class="pre">+</span> <span class="pre">c)</span></code></div>
+</div>
+<blockquote>
+<div><p>parameter theta is defined by function argument alignment: if it is set to alpha, theta angle is zero;
+otherwise, it is -pi/2</p>
+</div></blockquote>
+</li>
+</ul>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>signals</strong> (<em>pandas.DataFrame</em>) – Dataframe with three columns, one for every signal of the three-phase abc input.</p></li>
+<li><p><strong>method</strong> (<em>string</em>) – The chosen method of the transformation. It can have one of the following values: “Amplitude invariant’,
+‘Uniform’ or ‘Power invariant’.</p></li>
+<li><p><strong>alignment</strong> (<em>string</em>) – Defines axis of the alpha-beta reference frame which is aligned with a-axis of the original reference frame.
+Valid values are “alpha” and “beta”.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>DataFrame containing three output signals. Labels for output signals are alpha, beta and gamma, respectively.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>pandas.DataFrame</p>
+</dd>
+</dl>
+<p class="rubric">Examples</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span><span class="w"> </span><span class="nn">typhoon.test.signals</span><span class="w"> </span><span class="kn">import</span> <span class="n">pandas_3ph_sine</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span><span class="w"> </span><span class="nn">typhoon.test.transformations</span><span class="w"> </span><span class="kn">import</span> <span class="n">abc_to_alphabetagamma</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">abc_frame</span> <span class="o">=</span> <span class="n">pandas_3ph_sine</span><span class="p">(</span><span class="n">frequency</span><span class="o">=</span><span class="mi">50</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">alpha_beta_frame</span> <span class="o">=</span> <span class="n">abc_to_alphabetagamma</span><span class="p">(</span><span class="n">abc_frame</span><span class="p">,</span> <span class="n">method</span><span class="o">=</span><span class="s2">&quot;Amplitude invariant&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">alpha</span> <span class="o">=</span> <span class="n">alpha_beta_frame</span><span class="p">[</span><span class="s2">&quot;alpha&quot;</span><span class="p">]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">beta</span> <span class="o">=</span> <span class="n">alpha_beta_frame</span><span class="p">[</span><span class="s2">&quot;beta&quot;</span><span class="p">]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">gamma</span> <span class="o">=</span> <span class="n">alpha_beta_frame</span><span class="p">[</span><span class="s2">&quot;gamma&quot;</span><span class="p">]</span>
+</pre></div>
+</div>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<p><a class="reference internal" href="typhoon.test.transformations.alphabetagamma_to_abc.html#typhoon.test.transformations.alphabetagamma_to_abc" title="typhoon.test.transformations.alphabetagamma_to_abc"><code class="xref py py-obj docutils literal notranslate"><span class="pre">typhoon.test.transformations.alphabetagamma_to_abc</span></code></a>, <a class="reference internal" href="typhoon.test.transformations.abc_to_dq0.html#typhoon.test.transformations.abc_to_dq0" title="typhoon.test.transformations.abc_to_dq0"><code class="xref py py-obj docutils literal notranslate"><span class="pre">typhoon.test.transformations.abc_to_dq0</span></code></a>, <a class="reference internal" href="typhoon.test.transformations.abc_to_symmetrical_components.html#typhoon.test.transformations.abc_to_symmetrical_components" title="typhoon.test.transformations.abc_to_symmetrical_components"><code class="xref py py-obj docutils literal notranslate"><span class="pre">typhoon.test.transformations.abc_to_symmetrical_components</span></code></a></p>
+</div>
+</dd></dl>
+
+</section>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="Main">
+        <div class="sphinxsidebarwrapper">
+            <p class="logo"><a href="../index.html">
+              <img class="logo" src="../_static/logo.png" alt="Logo of "/>
+            </a></p>
+  <div>
+    <h4>Previous topic</h4>
+    <p class="topless"><a href="typhoon.test.power.three_phase_power.html"
+                          title="previous chapter">three_phase_power</a></p>
+  </div>
+  <div>
+    <h4>Next topic</h4>
+    <p class="topless"><a href="typhoon.test.transformations.abc_to_dq0.html"
+                          title="next chapter">abc_to_dq0</a></p>
+  </div>
+<search id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</search>
+<script>document.getElementById('searchbox').style.display = "block"</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="Related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="typhoon.test.transformations.abc_to_dq0.html" title="abc_to_dq0"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="typhoon.test.power.three_phase_power.html" title="three_phase_power"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html"> 1.35.3 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">abc_to_alphabetagamma</a></li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+    &#169; Copyright .
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 8.2.1.
+    </div>
+  </body>
+</html>

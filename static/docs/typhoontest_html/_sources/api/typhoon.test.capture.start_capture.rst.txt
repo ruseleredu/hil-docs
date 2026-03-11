@@ -1,0 +1,6 @@
+start_capture
+=============
+
+.. currentmodule:: typhoon.test.capture
+
+.. autofunction:: start_capture

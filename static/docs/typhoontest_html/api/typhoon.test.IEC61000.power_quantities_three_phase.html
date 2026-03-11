@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+
+<html lang="en" data-content_root="../">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>power_quantities_three_phase &#8212;  1.35.3 documentation</title>
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinxdoc.css?v=34905f61" />
+    <link rel="stylesheet" type="text/css" href="../_static/graphviz.css?v=4ae1632d" />
+    <script src="../_static/documentation_options.js?v=62a126fb"></script>
+    <script src="../_static/doctools.js?v=9bcbadda"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="rms" href="typhoon.test.IEC61000.rms.html" />
+    <link rel="prev" title="power_quantities" href="typhoon.test.IEC61000.power_quantities.html" /> 
+  </head><body>
+    <div class="related" role="navigation" aria-label="Related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="typhoon.test.IEC61000.rms.html" title="rms"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="typhoon.test.IEC61000.power_quantities.html" title="power_quantities"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html"> 1.35.3 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">power_quantities_three_phase</a></li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <section id="power-quantities-three-phase">
+<h1>power_quantities_three_phase<a class="headerlink" href="#power-quantities-three-phase" title="Link to this heading">¶</a></h1>
+<dl class="py function">
+<dt class="sig sig-object py" id="typhoon.test.IEC61000.power_quantities_three_phase">
+<span class="sig-prename descclassname"><span class="pre">typhoon.test.IEC61000.</span></span><span class="sig-name descname"><span class="pre">power_quantities_three_phase</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">voltages_samples</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">DataFrame</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">currents_samples</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">DataFrame</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">nominal_grid_freq</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">line_voltage</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">reference_split</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#typhoon.test.IEC61000.power_quantities_three_phase" title="Link to this definition">¶</a></dt>
+<dd><p>This method measures power quantities in Three-phase systems under non-sinusoidal conditions (general case)
+according to IEEE Std 1459-2010. This method is applied only in grids with a nominal frequency of 50.0 Hz or
+60.0 Hz.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>voltages_samples</strong> (<em>pandas.DataFrame</em>) – Voltage points vector.</p></li>
+<li><p><strong>currents_samples</strong> (<em>pandas.DataFrame</em>) – Current points vector.</p></li>
+<li><p><strong>nominal_grid_freq</strong> (<em>float</em>) – Nominal frequency of the voltage signal; 50 Hz or 60 Hz.</p></li>
+<li><p><strong>line_voltage</strong> (<em>bool</em>) – Type of voltage; line-to-line or line-to-neutral voltage.</p></li>
+<li><p><strong>reference_split</strong> (<em>list</em><em>, </em><em>optional</em>) – List of indices to split the sample in windows. If None, the samples will be split according to the zero-crossings
+of the voltage signal.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><p><strong>df_measurements</strong> – With the follow columns:</p>
+<ul class="simple">
+<li><p><strong>Active power</strong>: The measured active power of the input data in W.</p></li>
+<li><p><strong>Fundamental active power</strong>: The measured active power in W only considering the fundamental component of the input data.</p></li>
+<li><p><strong>Non-fundamental active power</strong>: The measured active power in W subtracting the fundamental component of the input data.</p></li>
+<li><p><strong>Effective voltage</strong>: The measured effective voltage of the input data in V.</p></li>
+<li><p><strong>Fundamental effective voltage</strong>: The measured effective voltage in V considering the fundamental component of the input data.</p></li>
+<li><p><strong>Non-fundamental effective voltage</strong>: The measured effective voltage in V subtracting the fundamental component of the input data.</p></li>
+<li><p><strong>Effective current</strong>: The measured effective current of the input data in A.</p></li>
+<li><p><strong>Fundamental effective current</strong>: The measured effective current in A considering the fundamental component of the input data.</p></li>
+<li><p><strong>Non-fundamental effective current</strong>: The measured effective current in A subtracting the fundamental component of the input data.</p></li>
+<li><p><strong>Effective apparent power</strong>: The measured apparent power of the input data in VA.</p></li>
+<li><p><strong>Fundamental effective apparent power</strong>: The measured apparent power in VA only considering the fundamental component of the input data.</p></li>
+<li><p><strong>Non-fundamental effective apparent power</strong>: The measured apparent power in VA subtracting the fundamental component of the input data.</p></li>
+<li><p><strong>Harmonic apparent power</strong>: Evaluates the amount of VA caused by harmonic distortion.</p></li>
+<li><p><strong>Non-active power</strong>: The measured non active power of the input data in VAr.</p></li>
+<li><p><strong>Current distortion power</strong>: The apparent power caused by current distortion in relation to the fundamental voltage component.</p></li>
+<li><p><strong>Voltage distortion power</strong>: The apparent power caused by voltage distortion in relation to the fundamental current component.</p></li>
+<li><p><strong>Power factor</strong>: The measured power factor of the input data.</p></li>
+<li><p><strong>Harmonic pollution factor</strong>: This power factor quantifies the overall amount of harmonic pollution delivered or absorbed by a load.</p></li>
+<li><p><strong>Fundamental positive active power</strong>: The measured active power in W considering only the fundamental component of the positive-sequence of the input data.</p></li>
+<li><p><strong>Fundamental positive reactive power</strong>: The measured reactive power in VAr only considering the fundamental component of the positive-sequence of the input data.</p></li>
+<li><p><strong>Fundamental positive apparent power</strong>: The measured apparent power in VA only considering the fundamental component of the positive-sequence of the input data.</p></li>
+<li><p><strong>Fundamental unbalanced power</strong>: Evaluates the amount of VA caused by an unbalanced system.</p></li>
+<li><p><strong>Fundamental positive power factor</strong>: The measured power factor only considering the fundamental component of the positive-sequence of the input data.</p></li>
+<li><p><strong>Load unbalance</strong>: The estimated load unbalance between the phases, considering the fundamental active and reactive power and the THD measured on the system.</p></li>
+<li><p><strong>Harmonic distortion power</strong>: The measured non active power in VAr considering the harmonic components of the input data.</p></li>
+</ul>
+</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>pandas.DataFrame</p>
+</dd>
+</dl>
+<p class="rubric">Examples</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span><span class="w"> </span><span class="nn">typhoon.test.signals</span><span class="w"> </span><span class="kn">import</span> <span class="n">pandas_3ph_sine</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span><span class="w"> </span><span class="nn">typhoon.test.IEC61000</span><span class="w"> </span><span class="kn">import</span> <span class="n">power_quantities_three_phase</span>
+<span class="gp">&gt;&gt;&gt;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">frequency</span> <span class="o">=</span> <span class="mf">60.0</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">line_to_line_voltage</span> <span class="o">=</span> <span class="kc">True</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">voltage_samples</span> <span class="o">=</span> <span class="n">pandas_3ph_sine</span><span class="p">(</span><span class="n">phase</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">frequency</span><span class="o">=</span><span class="n">frequency</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">current_samples</span> <span class="o">=</span> <span class="n">pandas_3ph_sine</span><span class="p">(</span><span class="n">phase</span><span class="o">=</span><span class="mi">90</span><span class="p">,</span> <span class="n">frequency</span><span class="o">=</span><span class="n">frequency</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">df_measurements</span> <span class="o">=</span> <span class="n">power_quantities_three_phase</span><span class="p">(</span><span class="n">voltage_samples</span><span class="p">,</span> <span class="n">current_samples</span><span class="p">,</span> <span class="n">frequency</span><span class="p">,</span> <span class="n">line_to_line_voltage</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>You can type <code class="docutils literal notranslate"><span class="pre">df_measurements.columns</span></code> to check the name of each one.
+Or you can use <code class="docutils literal notranslate"><span class="pre">df_measurements.iloc[:,</span> <span class="pre">i]</span></code> where <code class="docutils literal notranslate"><span class="pre">i</span></code> is the column number desired.
+To select each one of the columns in a <strong>pandas.Series</strong>:</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">active_power</span> <span class="o">=</span> <span class="n">df_measurements</span><span class="p">[</span><span class="s1">&#39;Active power&#39;</span><span class="p">]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">fundamental_active_power</span> <span class="o">=</span> <span class="n">df_measurements</span><span class="p">[</span><span class="s1">&#39;Fundamental active power&#39;</span><span class="p">]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">nonfundamental_active_power</span> <span class="o">=</span> <span class="n">df_measurements</span><span class="p">[</span><span class="s1">&#39;Non-fundamental active power&#39;</span><span class="p">]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">effective_voltage</span> <span class="o">=</span> <span class="n">df_measurements</span><span class="p">[</span><span class="s1">&#39;Effective voltage&#39;</span><span class="p">]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">fundamental_effective_voltage</span> <span class="o">=</span> <span class="n">df_measurements</span><span class="p">[</span><span class="s1">&#39;Fundamental effective voltage&#39;</span><span class="p">]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">nonfundamental_effective_voltage</span> <span class="o">=</span> <span class="n">df_measurements</span><span class="p">[</span><span class="s1">&#39;Non-fundamental effective voltage&#39;</span><span class="p">]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">effective_current</span> <span class="o">=</span> <span class="n">df_measurements</span><span class="p">[</span><span class="s1">&#39;Effective current&#39;</span><span class="p">]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">fundamental_effective_current</span> <span class="o">=</span> <span class="n">df_measurements</span><span class="p">[</span><span class="s1">&#39;Fundamental effective current&#39;</span><span class="p">]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">nonfundamental_effective_current</span> <span class="o">=</span> <span class="n">df_measurements</span><span class="p">[</span><span class="s1">&#39;Non-fundamental effective current&#39;</span><span class="p">]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">effective_apparent_power</span> <span class="o">=</span> <span class="n">df_measurements</span><span class="p">[</span><span class="s1">&#39;Effective apparent power&#39;</span><span class="p">]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">fundamental_effective_apparent_power</span> <span class="o">=</span> <span class="n">df_measurements</span><span class="p">[</span><span class="s1">&#39;Fundamental effective apparent power&#39;</span><span class="p">]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">nonfundamental_effective_apparent_power</span> <span class="o">=</span> <span class="n">df_measurements</span><span class="p">[</span><span class="s1">&#39;Non-fundamental effective apparent power&#39;</span><span class="p">]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">harmonic_apparent_power</span> <span class="o">=</span> <span class="n">df_measurements</span><span class="p">[</span><span class="s1">&#39;Harmonic apparent power&#39;</span><span class="p">]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">non_active_power</span> <span class="o">=</span> <span class="n">df_measurements</span><span class="p">[</span><span class="s1">&#39;Non-active power&#39;</span><span class="p">]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">current_distortion_power</span> <span class="o">=</span> <span class="n">df_measurements</span><span class="p">[</span><span class="s1">&#39;Current distortion power&#39;</span><span class="p">]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">voltage_distortion_power</span> <span class="o">=</span> <span class="n">df_measurements</span><span class="p">[</span><span class="s1">&#39;Voltage distortion power&#39;</span><span class="p">]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">power_factor</span> <span class="o">=</span> <span class="n">df_measurements</span><span class="p">[</span><span class="s1">&#39;Power factor&#39;</span><span class="p">]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">harmonic_pollution_factor</span> <span class="o">=</span> <span class="n">df_measurements</span><span class="p">[</span><span class="s1">&#39;Harmonic pollution factor&#39;</span><span class="p">]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">fundamental_positive_active_power</span> <span class="o">=</span> <span class="n">df_measurements</span><span class="p">[</span><span class="s1">&#39;Fundamental positive active power&#39;</span><span class="p">]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">fundamental_positive_reactive_power</span> <span class="o">=</span> <span class="n">df_measurements</span><span class="p">[</span><span class="s1">&#39;Fundamental positive reactive power&#39;</span><span class="p">]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">fundamental_positive_apparent_power</span> <span class="o">=</span> <span class="n">df_measurements</span><span class="p">[</span><span class="s1">&#39;Fundamental positive apparent power&#39;</span><span class="p">]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">fundamental_unbalanced_power</span> <span class="o">=</span> <span class="n">df_measurements</span><span class="p">[</span><span class="s1">&#39;Fundamental unbalanced power&#39;</span><span class="p">]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">fundamental_positive_power_factor</span> <span class="o">=</span> <span class="n">df_measurements</span><span class="p">[</span><span class="s1">&#39;Fundamental positive power factor&#39;</span><span class="p">]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">load_unbalance</span> <span class="o">=</span> <span class="n">df_measurements</span><span class="p">[</span><span class="s1">&#39;Load unbalance&#39;</span><span class="p">]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">harmonic_distortion_power</span> <span class="o">=</span> <span class="n">df_measurements</span><span class="p">[</span><span class="s1">&#39;Harmonic distortion power&#39;</span><span class="p">]</span>
+</pre></div>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Raises<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>ValueError</strong> – When the <code class="docutils literal notranslate"><span class="pre">nominal_grid_freq</span></code> is different from 50 Hz or 60 Hz:</p>
+</dd>
+</dl>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<p><a class="reference internal" href="typhoon.test.IEC61000.power_quantities.html#typhoon.test.IEC61000.power_quantities" title="typhoon.test.IEC61000.power_quantities"><code class="xref py py-obj docutils literal notranslate"><span class="pre">typhoon.test.IEC61000.power_quantities</span></code></a></p>
+</div>
+</dd></dl>
+
+</section>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="Main">
+        <div class="sphinxsidebarwrapper">
+            <p class="logo"><a href="../index.html">
+              <img class="logo" src="../_static/logo.png" alt="Logo of "/>
+            </a></p>
+  <div>
+    <h4>Previous topic</h4>
+    <p class="topless"><a href="typhoon.test.IEC61000.power_quantities.html"
+                          title="previous chapter">power_quantities</a></p>
+  </div>
+  <div>
+    <h4>Next topic</h4>
+    <p class="topless"><a href="typhoon.test.IEC61000.rms.html"
+                          title="next chapter">rms</a></p>
+  </div>
+<search id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</search>
+<script>document.getElementById('searchbox').style.display = "block"</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="Related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="typhoon.test.IEC61000.rms.html" title="rms"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="typhoon.test.IEC61000.power_quantities.html" title="power_quantities"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html"> 1.35.3 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">power_quantities_three_phase</a></li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+    &#169; Copyright .
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 8.2.1.
+    </div>
+  </body>
+</html>

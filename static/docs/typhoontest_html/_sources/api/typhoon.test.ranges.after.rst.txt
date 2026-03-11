@@ -1,0 +1,6 @@
+after
+=====
+
+.. currentmodule:: typhoon.test.ranges
+
+.. autofunction:: after

@@ -1,0 +1,6 @@
+is_ramp
+=======
+
+.. currentmodule:: typhoon.test.signals
+
+.. autofunction:: is_ramp

@@ -1,0 +1,6 @@
+is_constant
+===========
+
+.. currentmodule:: typhoon.test.signals
+
+.. autofunction:: is_constant

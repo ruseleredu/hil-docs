@@ -1,0 +1,6 @@
+get_capture_results
+===================
+
+.. currentmodule:: typhoon.test.capture
+
+.. autofunction:: get_capture_results

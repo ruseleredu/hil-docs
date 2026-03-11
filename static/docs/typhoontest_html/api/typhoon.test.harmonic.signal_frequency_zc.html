@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+
+<html lang="en" data-content_root="../">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>signal_frequency_zc &#8212;  1.35.3 documentation</title>
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinxdoc.css?v=34905f61" />
+    <link rel="stylesheet" type="text/css" href="../_static/graphviz.css?v=4ae1632d" />
+    <script src="../_static/documentation_options.js?v=62a126fb"></script>
+    <script src="../_static/doctools.js?v=9bcbadda"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="thd" href="typhoon.test.harmonic.thd.html" />
+    <link rel="prev" title="frequency_content" href="typhoon.test.harmonic.frequency_content.html" /> 
+  </head><body>
+    <div class="related" role="navigation" aria-label="Related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="typhoon.test.harmonic.thd.html" title="thd"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="typhoon.test.harmonic.frequency_content.html" title="frequency_content"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html"> 1.35.3 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">signal_frequency_zc</a></li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <section id="signal-frequency-zc">
+<h1>signal_frequency_zc<a class="headerlink" href="#signal-frequency-zc" title="Link to this heading">¶</a></h1>
+<dl class="py function">
+<dt class="sig sig-object py" id="typhoon.test.harmonic.signal_frequency_zc">
+<span class="sig-prename descclassname"><span class="pre">typhoon.test.harmonic.</span></span><span class="sig-name descname"><span class="pre">signal_frequency_zc</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">signal</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">during</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mode</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'half-cycle'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#typhoon.test.harmonic.signal_frequency_zc" title="Link to this definition">¶</a></dt>
+<dd><p>Calculates frequency of the signal.</p>
+<p>Measures time between neighboring zero-crossing moments. This method is suitable for sine, square or triangle
+signals. Returns pandas Series with the same length as signal. Frequency in the non-zero crossing moments is
+obtained by zero-order hold.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>signal</strong> (<em>Series</em>) – A Pandas Series containing signal which frequency need to be calculated</p></li>
+<li><p><strong>during</strong> (<em>2-element tuple</em><em> of </em><em>float/int</em><em> or </em><a class="reference internal" href="typhoon.types.timedelta.Timedelta.html#typhoon.types.timedelta.Timedelta" title="typhoon.types.timedelta.Timedelta"><em>Timedelta</em></a>) – Period of signal to consider for the calculation.</p></li>
+<li><p><strong>mode</strong> (<em>string</em>) – String that activates one of two possible modes: for “half-cycle” every zero-crossing is detected, while for
+“full-cycle” every second zero-crossing is detected</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><strong>result</strong> – Returns a pandas Series with calculated frequency at the same length as the input signal.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>pandas.Series</p>
+</dd>
+</dl>
+<p class="rubric">Examples</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span><span class="w"> </span><span class="nn">typhoon.test.signals</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">signals</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span><span class="w"> </span><span class="nn">typhoon.test.harmonic</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">harmonic</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="c1"># sine signal which lasts for one second, sampled 10000 times</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">series</span> <span class="o">=</span> <span class="n">signals</span><span class="o">.</span><span class="n">pandas_sine</span><span class="p">(</span><span class="n">amplitude</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">frequency</span><span class="o">=</span><span class="mi">50</span><span class="p">,</span> <span class="n">Ts</span><span class="o">=</span><span class="mf">1e-4</span><span class="p">,</span> <span class="n">duration</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">frequency</span> <span class="o">=</span> <span class="n">harmonic</span><span class="o">.</span><span class="n">signal_frequency_zc</span><span class="p">(</span><span class="n">serie</span><span class="p">)</span>
+<span class="go">returns the Series of the measured frequency(50). The length of the Series is 10000.</span>
+</pre></div>
+</div>
+</dd></dl>
+
+</section>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="Main">
+        <div class="sphinxsidebarwrapper">
+            <p class="logo"><a href="../index.html">
+              <img class="logo" src="../_static/logo.png" alt="Logo of "/>
+            </a></p>
+  <div>
+    <h4>Previous topic</h4>
+    <p class="topless"><a href="typhoon.test.harmonic.frequency_content.html"
+                          title="previous chapter">frequency_content</a></p>
+  </div>
+  <div>
+    <h4>Next topic</h4>
+    <p class="topless"><a href="typhoon.test.harmonic.thd.html"
+                          title="next chapter">thd</a></p>
+  </div>
+<search id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</search>
+<script>document.getElementById('searchbox').style.display = "block"</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="Related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="typhoon.test.harmonic.thd.html" title="thd"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="typhoon.test.harmonic.frequency_content.html" title="frequency_content"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html"> 1.35.3 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">signal_frequency_zc</a></li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+    &#169; Copyright .
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 8.2.1.
+    </div>
+  </body>
+</html>

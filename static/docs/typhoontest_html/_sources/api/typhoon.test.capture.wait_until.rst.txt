@@ -1,0 +1,6 @@
+wait_until
+==========
+
+.. currentmodule:: typhoon.test.capture
+
+.. autofunction:: wait_until

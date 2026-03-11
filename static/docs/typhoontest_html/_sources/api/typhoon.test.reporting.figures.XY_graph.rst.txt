@@ -1,0 +1,21 @@
+XY_graph
+========
+
+.. currentmodule:: typhoon.test.reporting.figures
+
+.. autoclass:: XY_graph
+   :show-inheritance:
+
+   .. rubric:: Methods Summary
+
+   .. autosummary::
+
+      ~XY_graph.add_xy_datapoint
+      ~XY_graph.plot
+      ~XY_graph.set_xy_dataframe
+
+   .. rubric:: Methods Documentation
+
+   .. automethod:: add_xy_datapoint
+   .. automethod:: plot
+   .. automethod:: set_xy_dataframe

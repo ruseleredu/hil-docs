@@ -1,0 +1,6 @@
+flickermeter
+============
+
+.. currentmodule:: typhoon.test.IEC61000
+
+.. autofunction:: flickermeter
