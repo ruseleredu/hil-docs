@@ -22,3 +22,18 @@ HIL TI DSP 180 provides a pin-to-pin compatible interface between Typhoon HIL em
 - TMDSCNCD2800157 ControlCARD™
 - TMDSCNCD28P55X ControlCARD™
 - TMDSCNCD28P65X ControlCARD™
+
+## Overview
+
+The HIL DSP 180 Interface is an interface board, designed to enable a seamless interface between 180-pin Texas Instruments Control Card platforms and any HIL device.
+Features:
+
+- All HIL and DSP signals available through measurement terminals
+- One HSEC 180 pin socket for one of the supported Texas Instruments Control Cards
+- Power supply selector switch (HIL or external) with LED indication
+- RJ45 CAN bus connector (3.3V)
+- JTAG connector for external emulator (voltage level 3.3V)
+- 24 HIL Digital Inputs (including 16 DSP PWM signals)
+- 16 HIL Digital Outputs (including DSP 3 encoder signals)
+- 24 HIL Analog Outputs (clamped to 3.3V on the Control Card)
+
