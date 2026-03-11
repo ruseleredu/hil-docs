@@ -1,5 +1,5 @@
 ---
-id: docker
+id: ga-z170xp-sli
 title: GA-Z170XP-SLI 
 description: GA-Z170XP-SLI 
 ---
