@@ -1,0 +1,1200 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+      
+      
+        
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.1">
+    
+    
+      
+        <title>Pseudo-codes - TML Documentation</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="custom" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#pseudo-codes" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="TML Documentation" class="md-header__button md-logo" aria-label="TML Documentation" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            TML Documentation
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Pseudo-codes
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="TML Documentation" class="md-nav__button md-logo" aria-label="TML Documentation" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    TML Documentation
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../variables.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Variables
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../type_system.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Type system
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../broadcasting.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Broadcasting
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reduction.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Reduction
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../terminals.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Terminals
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../guards.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Guards
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../functions.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Functions
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../statements.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Statements
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../expressions.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Expressions
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../macro_system.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Macro system
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../comments.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Comments
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../builtins.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Built-ins
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#preparation-phase" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Preparation phase
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#building-cfg-matching-the-program-execution" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Building CFG Matching The Program Execution
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#reaching-definition-analysis" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Reaching Definition Analysis
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#static-value-calculation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Static Value Calculation
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="pseudo-codes">Pseudo-codes</h1>
+<h2 id="preparation-phase">Preparation phase</h2>
+<p>The following section assumes the symbol table contains sets of definitions only.
+The preparation phase is responsible to determine places where
+every variable is modified. The following pseudo-code provides
+more information about how the preparation phase works starting from the <code>preparation_phase</code>.</p>
+<div class="admonition note">
+<p class="admonition-title">Is one iteration for preparation phase elegant enough</p>
+<p>When encountering a call to an unprocessed function, we could
+try to process it first before continuing processing the caller.
+An alternative would be to process function definitions during the first iteration,
+and introducing a second iteration responsible to process function calls only.</p>
+</div>
+<div class="highlight"><pre><span></span><code>ST = symbol_table()
+
+def process_scope(AST_nodes):
+  scope = ST.create_scope(ST)
+  # processing AST nodes corresponding the scope
+  for node in AST_nodes.iterate()
+    if node.is_var_def():
+      process_var_def()
+    else if node.is_selection():
+      process_selection()
+    else if node.is_for_loop():
+      process_for()
+    else if node.is_while_loop():
+      process_while()
+    else if node.is_function_call():
+      # Could be shifted to the second iteration
+      process_function_call()
+
+  ST.exit_scope()
+
+
+# Create an entry in the current scope for the `var` if the entry
+# does not already exist. One can consider an entry as the 
+# Python set containing ids of nodes that (re)defines variables.
+# TODO: Storing pseudo-generated ids seems as a more bullet-proof
+# solution than storing plain references,
+# since a node can be copied while resolving
+# function calls
+# Generating ids could take place while doing AST walk of preparation phase. 
+def ST.find_entry(var):
+  # ST might have an internal state aware of current scope we are processing.
+  if var in ST:
+    # This is true if ST contains the var in any of the active scopes
+    # (the scope currently being processed and all enclosing ancestors)
+    return ST[var]
+  else:
+    return ST.create_entry(var)
+
+
+# Process statements of a function definition as a separate scope
+def process_func_def(func_def_node):
+  # Note, this function scope should not be nested withing the caller&#39;s scope.
+  # Thus, we explicitly position below the global scope.
+  caller_scope = position_below_global_scope()
+  process_scope(func_def_node)
+  # Return to the caller scope and continue processing it.
+  ST.set_scope(caller)
+
+# Processing an AST node matching declarations and assignments
+def process_var_def(definition_node):
+  variable = definition_node.LHS
+  entry = ST.find_entry(variable)
+  # Add a new defintion in the set of defitions
+  entry.add_def(definition.id)
+
+
+# When processing a selection statement, we need to process
+# all if-else-if-else branches and create corresponding
+# scope for each of them.
+def process_selection(selection_node):
+  for branch in selection_branches():
+    process_scopes(branch.statements)
+
+
+# Before processing body as a separate scope,
+# introduce a scope containing iteration variable only
+def process_for_loop(for_node):
+  # introduce a scope containing iteration variable only
+  scope = ST.create_scope()
+  # Find the iteration variable
+  iter_var = for_node.iteration_variable
+  entry = ST.find_entry(iter_var)    
+  entry.add_def()
+  # Process body as a separate scope
+  process_scopes(for_node.body.statements)
+  # Exit the scope containing the iteration variable
+  ST.exit_scope()
+
+
+# Processing statements of a while node as a separate scope.
+def process_while_loop(while_node):
+  process_scopes(while_node.statements)
+
+
+def process_function_call(func_call_node):
+  func_id = func_call_node.id
+  # find the node representing the function definition
+  func_def = AST.find_func_def()
+  if not func_def.is_processed():
+    # Process the function definition if not processed already.
+    process_function(func_def)
+
+  mappings = {}
+  # Iterate over (arg, param) pairs
+  for (arg, param) in func_node.args, func_def.params:
+    if arg.is_LHS():                        # in the caller scope
+      arg_entry = ST.find_entry(arg)
+      param_entry = ST.find_entry(param)
+      # Extend the set of arg with all definitions of the param,
+      # thus introducing side effects of the call.
+      # The `extend` method is actually union.
+      arg_entry.extend(param_entry)
+    else if arg.is_function_call():
+      process_function_call()
+
+    # Create arg:param mappings
+    # For convenience keep reference to the symbol table entries
+    # corresponding arguments and parameters. 
+    # If the arg is not LHS object (e.g. expression or constant), arg_entry
+    # is None.
+    mappings.add(arg, param, arg_entry, param_entry) 
+
+def preparation_phase():
+  global_scope = ST.create_scope()
+  for node in AST.iterate_nodes:
+    if node.is_var_def():
+      process_var_def()
+    else is node.is_func_def()
+      process_func_def()
+  ST.exit_scope()
+</code></pre></div>
+<p>Consider the following example and the enumeration of nodes. For brevity,
+enter and exits nodes are omitted.</p>
+<div class="highlight"><pre><span></span><code>a = 5                 # N1
+
+fn main():
+  foo(a)              # N2
+  foo(a)              # N3
+end
+
+
+fn foo(arg):
+  arg += 1            # N4
+  b = 3               # N5
+  bar(arg, b)         # N6
+end
+
+
+fn bar(arg1, arg2):
+  arg1 += 1           # N7
+  arg2 *= 2           # N8
+end
+</code></pre></div>
+<p>Preparation phase starts by processing the global scope, 
+determining the <code>a</code> has been changed by the node <code>N1</code>.
+Next, we start processing the <code>main</code> that calls <code>foo</code> inside node <code>N2</code>.
+Since the <code>foo</code> is not present in the symbol table, the process
+moves to reason about that function. We determine the <code>foo</code>'s scope
+with all variables modified by the <code>foo</code> (<code>arg1</code>, and <code>b</code> respectively).
+We then encounter on the node <code>N6</code> representing the function call to the
+unprocessed function <code>bar</code>, so we switch to processing it. 
+As one may notice after observing the corresponding scope, the <code>bar</code> modifies the <code>arg1</code> and
+<code>arg2</code>, respectively.</p>
+<p>After finishing with <code>bar</code>, we continue processing the call to <code>bar</code> inside
+the node <code>N6</code>. As we may notice, <code>arg</code> is actually changed in the nodes
+changing <code>arg1</code> parameter. Thus, we add elements of sets corresponding to 
+<code>arg1</code> (<code>{N7}</code>) to the set corresponding the <code>arg</code> (currently <code>{N4}</code> only) by applying
+union between these two sets (the result set <code>{N4, N7}</code>).
+Similarly, <code>b</code> is modified in the nodes modifying <code>arg2</code>.</p>
+<p>The next step is to finish processing the call to <code>foo</code> at the <code>N2</code> node. 
+As one may notice, the nodes changing <code>arg</code> also changing the <code>a</code>, 
+thus we use the elements of the set corresponding to <code>arg</code> and appends (union)
+to the <code>a</code>'s <code>set</code>. </p>
+<p>Finally, we process the second call to <code>foo</code> in the node <code>N3</code>.
+Since the <code>foo</code> has already been processed, it remains to check 
+the redefinitions of <code>a</code> through param <code>arg</code>. Thus, we apply the union 
+on the set corresponding the <code>a</code> and <code>arg</code>. As we may notice, there is not
+any changes in the result set of <code>a</code>, concluding the preparation
+phase which outputs the table shown below.</p>
+<div class="highlight"><pre><span></span><code>{
+  a: {N1, N4, N7};
+  main: {};
+  foo: {
+    arg: {N4, N7},
+    b: {N5, N8}
+  }
+  bar: {
+    arg1: {N7},
+    arg2: {N8}
+  }
+}
+</code></pre></div>
+<div class="admonition todo">
+<p class="admonition-title">Todo</p>
+<p>I suppose we do not need to create distiction between original nodes
+of the function and copies of nodes that replace the call to the function. </p>
+</div>
+<h2 id="building-cfg-matching-the-program-execution">Building CFG Matching The Program Execution</h2>
+<p>Before analysing the program behavior, we should determine the CFG
+matching the program execution. For this purpose, we use a knowledge
+about how the component is executed on HIL. The first step is to determine 
+(execute/interpret)
+global definitions of the component. Next, the <code>init</code> function of the component
+is called to properly set up the component. 
+Afterwards, <code>output</code> and <code>update</code>
+functions are interchangeably called for the duration of the simulation.
+From the perspective of the TML compiler, currently able to reason about
+only one component, the execution of the component is abstracted in
+the snippet below:</p>
+<div class="highlight"><pre><span></span><code>global_scope_definitions
+
+init()
+
+while true
+  output()
+  update()
+</code></pre></div>
+<p>To build the graph manifested in the previous snippet,
+the TML compiler connects the last declaration of the global scope
+with the entry node of the <code>init</code> function's CFG. Afterwards, the compiler
+generates a while loop with <code>true</code> condition, whose body starts
+with the entry node belonging to the <code>output</code> function. 
+To ensure the <code>update</code> function is executed after the <code>output</code>,
+we connect the <code>output</code>'s exit node to the <code>update</code>'s entry node.
+We choose to inline functions <code>init</code>, <code>output</code>, and <code>updated</code>
+instead to introduce calls to them that will be replaced
+during the process described below.
+The implementation of connecting global scope with functions <code>init</code>, <code>output</code>,
+and <code>update</code>, respectively, is present inside the method
+<code>inter_function_ast_threading</code> of the <code>ASTThreading</code> class.</p>
+<p>Since calls to custom-defined functions (including <code>init</code>, <code>output</code>, and <code>update</code>)
+behave as macro substitutions, the TML compiler traverses the previously determined
+CFG and replaces each call with the copy of called function's CFG.
+Consider the following pseudo-code starting from the <code>inline_function_calls</code>.</p>
+<p>The <code>callstack</code> represents the stack of function calls matching the 
+one present during single-threaded execution of a program.</p>
+<div class="highlight"><pre><span></span><code># NOTE: While doing CFG traversal, we should mark visited nodes to avoid cycling.
+# The following code is not burden with marking statements like:
+# `node.is_visited = true`
+# They reside explicitly in places where that takes car of of jumps/cycles. 
+
+CALL_STACK = init_stack()
+
+# The start node of CFG is the first declaration of global scope if any.
+# Otherwise, the first node is the `init` funciton.
+
+def inline_function_calls(CFG):
+  for node in CFG.nodes.iterate():
+    if node.is_call_to_custom_function():
+      # If the node represents a call to the custom-defined function,
+      # inline the call by copying the CFG of the function
+      inline_call(node)
+    else:
+      # Otherwise, do nothing for the node.
+
+
+def inline_func_call(function_call_node):
+  # add function call to the stack
+  push_call(function_call_node)
+
+  # The function call has exactly one predecessor
+  pred = call_node.predecessor
+
+  # The function call has exactly one successor node.
+  succ = fc.successor
+
+  # Copy the CFG of the function between the function call&#39;s predecessor (`pred`)
+  # and (`next`)  
+  copy_exit_node = copy_path(pred, fc.entry)
+
+  # connect the copy of the exit_node with the successor of the function call
+  connect_nodes(copy_exit_node, succ)
+
+  # pop the function call from the stack 
+  pop_call()
+
+
+# This funciton copies the path starting with the `start_node` and 
+# place it immediately after the `pred` node.
+# The path usually ends with a node taking one of the foollowing types:
+# function exit node, join_if node, for_node, while_node, end_while, and end_for node)
+def copy_path(pred, pred2?, start_node):
+  curr_node = start_node
+  while curr and not cur.is_path_end():         # While node is not the end of a path, process it in the following way
+    if curr_node.is_func_call():
+      inline_func_call(pred, pred2, curr_node)
+    else if curr_node.is_selection(curr_node)
+      pred, curr = copy_selection(pred, pred2, curr_node)
+    else if curr_node.can_be_jumped():
+      # Check if the node has already been visited. If so, stop cycling.
+      if curr_node.is_visited:
+        reuturn pred
+      # The current node belongs to this path and once more that intersects it.
+      # One can consider this node as the destination of the jump belonging to the loop. 
+      pred, curr, already_processed = copy_jump(pred, pred2, curr_node)
+    else:
+      # This function copies the `curr`, connects the copy to the `pred`
+      # and returns the copy and `curr`&#39;s sucessor as new (pred, curr_node) pair.
+      pred, curr = copy_regular_node(pred, curr_node)
+
+  if curr:
+    if curr.is_function_exit():
+      # copy the function exit node that is considered as the end of path
+      curr_copy = COPY_NODE(curr)
+      return curr_copy
+    else if curr.is_join_if_node():
+      # Returning a node preceeding the join node.
+      # Check `copy_selection` for more information
+      return pred
+    else if curr.is_loop_node():
+      # The `copy_jump` is reponsible to process this node
+      return curr
+  else
+    return pred
+
+
+def copy_selection(pred, if_node)
+  # The condition preceeding the `if_node` has been already copied
+  # as part of the path (done by the `copy_path` function).
+  copy_if_node = COPY_NODE(pred, if_node)
+
+  # Nodes at the beginning of the if-branch and else-branch, respectively
+  left_succ = if_node.successors[0]
+  right_succ = if_node.successors[1]
+
+  # Copy paths matching if and else branches.
+  # Note that COPY_PATH returns a node preceeding the join_if_node
+  before_join_left = copy_path(copy_if_node, left_succ)
+  before_join_right = copy_path(copy_if_node, right_succ)
+
+  # copy the end node and connect with both last nodes of 
+  # if and else branches, respectively
+  join_if_node = before_join_left.sucessor
+  copy_join_if_node = COPY_NODE(join_if_node)
+  connect_nodes(before_join_left, copy_join_if_node)
+  connect_nodes(before_join_right, copy_join_if_node)
+
+  return copy_join_if_node, join_if_node.successor
+
+
+def copy_jump(pred, jump_node):
+  # Check if the `jump_node` has already been visited.
+  if jump_node.is_visited:
+    return pred, jump_node
+
+  jump_node.is_visited = true
+
+  # The `pred` comes from the path preceeding the loop.
+  # The `jump_node` represents either the first node of 
+  # while loop condition, or a node initilizing iteration variable
+  # of a for loop.
+
+  # copy the jump node and connect it with predecessor
+  copy_jump_node = COPY_NODE(jump_node)
+  connect_nodes(pred, copy_jump_node)
+  succ = jump_node.successor
+
+  # copy the path (contains condition or a initialization of the iteration variable)
+  # until reaching the for_node or a while_node (referred to as loop_node)
+  loop_node = copy_path(succ)
+  copy_loop_node = COPY_NODE(loop_node)
+
+  # the `loop_node` has two successor, the first successor is at the beginning of the body,
+  # while the second represents the end_loop node.
+  start_body_node = loop_node.successors[0]
+  end_loop = loop_node.successors[1]
+
+  # Calling `copy_path` results in reaching the jump_node again.
+  # Since it has already been processed, do not process it twice.
+  # Instead, return the last node of the body that jumps to (preceeds) the `jump_node`,
+  copy_last_body_node = copy_path(start_body_node, start_body_node)
+
+  # connect the copy_last_body_node with copy_jump_node
+  connect_nodes(copy_last_body_node, copy_jump_node)
+
+  copy_end_loop = COPY_NODE(end_loop)
+  # connect the `loop_node` with the `copy_end_loop`
+  connect_nodes(copy_loop_node, copy_end_loop)
+
+  return copy_end_node, end_node.successor
+
+
+def copy_regular_node(pred, node):
+   # actual copying
+   copy_node = COPY_NODE(node)
+
+   connect_nodes(pred, copy_node)
+
+   # Substitute params with args 
+   substitute_params_with_args(node)
+
+   return copy_node
+
+
+# TODO: Need to find a good way to do this kind of replacement
+# Is it enough just to replace references to entries matching
+# params to entries matching args?
+def substitute_params_with_args(node):
+  params_args_mapping = STACK.top.mapping
+  if LHS.is_param():
+    LHS.replace_params_with_args()
+  else:
+    RHS.replace_params_with_args()
+
+
+def COPY_NODE(node):
+  # DEEP copy of a node..
+</code></pre></div>
+<h2 id="reaching-definition-analysis">Reaching Definition Analysis</h2>
+<p>Reaching definition analysis represents the algorithm responsible to 
+determine In/Out sets for every node in the CFG
+calculated by previous step (check the previous section).
+The algorithm iteratively solves equations described in <em>Data-Flow Equations</em> section
+until fixpoint is reached.
+The following snippet shows the pseudo-code that elaborates about the algorithm</p>
+<div class="highlight"><pre><span></span><code>def RDA(CFG):
+    converged = false
+    while not converged:
+        # Assume the algorithm converges in this iteration.
+        converged = true
+        for node in CFG.nodes.iterator():
+            unchanged = process_node(node)
+            # If all nodes remain unchanged, the outer while loop breaks.
+            converged = converged AND unchanged
+
+
+# Solve equations for the `node`
+# The return value indicates 
+def process_node(node):
+    old_in = node.In
+    new_in = calc_new_in(node)
+
+    # If the In set remains unchanged, the Out will remain unchanged too
+    if old_in == new_in:
+        return true
+
+    # store new In set
+    node.In = new_in
+
+    kill = node.find_kill_set()
+    gen = node.find_gen_set()
+
+    # Calculate the out set of the node
+    node.Out = (node.In \ kill) U gen
+
+    return false
+
+
+def node.find_kill_set(node):
+    if node.is_var_def():
+        # The node representing a variable definition (declaration or assignment)
+        # has a reference to the corresponding symbol table entry representing
+        # the KILL set.
+        return node.symbol_table_entry
+    # ...
+    # For the majority of other types of nodes the KILL set is EMPTY.
+    # TODO: think about this during the implementation phase.
+
+def node.find_gen_set(node):
+    if node.is_var_def():
+        # GEN set for the variable definition is the set containing node&#39;s id.
+        return {node.id}
+    # ...
+    # For the majority of other types of nodes the KILL set is EMPTY.
+    # TODO: think about this during the implementation phase.
+
+
+# Calculate In set of the `node` by applying union on Out sets of `node`&#39;s
+# dynamic predecessors.
+def calc_new_in(node):
+    In = set()
+    for pred in node.predecessors:
+        In = In U pred.Out
+</code></pre></div>
+<h2 id="static-value-calculation">Static Value Calculation</h2>
+<p>The Static Value Calculation (SVC) process is responsible to determine
+whether variables used by a node <code>N</code> are static, dynamic, or undefined,
+respectively, in this node. 
+The sections <em>Static Values Calculation</em> provides the overview about this process.
+The following snippet provides an idea how this might be implemented in the TML compiler.</p>
+<div class="highlight"><pre><span></span><code>def static_value_calculation(CFG):
+    for node in CFG.nodes.iterator():
+        process_node(node)
+
+def process_node(node):
+    if node.is_var_def():
+        process_var_def():
+    # ...
+    # Processing other nodes should be similar.
+    # TODO: discuss more about this while implementing SVC
+
+
+# We need to determine the property of the RHS to be able
+# to say if the LHS is static, dynamic, or undefined. 
+def process_var_def(node):
+    propety = STATIC
+    for subexpr_node in node.RHS.expression.subexpressions_nodes():
+        subexpr_prop = expr_property(subexpr_node, node.In)
+        if subexpr_prop == DYNAMIC:
+            property = DYNAMIC
+        else if subexpr_prop == UNDEFINED:
+            RAISE AN ERROR
+
+    node.LHS.property = propety
+
+# The function checks whether the `expr_node` being part of the expressions
+# is static, dynamic, or undefined.
+# The `influence_set` represents a set of definition influencing the `expr_node.
+def expr_property(expr_node, influence_set):
+    if expr_node.is_var():
+        # The node is variable that reference the corresponding symbol table entry.
+        entry_set = expr_node.symbol_table_entry
+        # We apply the intersection of `entry_set` and the `influence_set`.
+        intersection = entry_set INTERSECTION influence_set
+        # If the `intersection` has no elements, the variable is undefined.
+        # If the `intersetion has exactly one element, then variable is static at this point.
+        # Otherwise, the variable is dynamic.
+        if intersection.len == 0:
+            return UNDEFINED
+        else if intersection.len == 1:
+            return STATIC
+        else:
+            return DYNAMIC.
+
+    # For other types of subexpression it should be realavely straightforward
+    # to determine their static property.
+    # TODO: Think more about this while implementing SVC
+</code></pre></div>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": [], "search": "../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+        <script src="../javascripts/mathjax.js"></script>
+      
+        <script src="https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+    
+  </body>
+</html>

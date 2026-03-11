@@ -1,0 +1,946 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+      
+      
+        
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.1">
+    
+    
+      
+        <title>Effect analysis - TML Documentation</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="custom" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#effect-analysis" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="TML Documentation" class="md-header__button md-logo" aria-label="TML Documentation" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            TML Documentation
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Effect analysis
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="TML Documentation" class="md-nav__button md-logo" aria-label="TML Documentation" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    TML Documentation
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../variables.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Variables
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../type_system.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Type system
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../broadcasting.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Broadcasting
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reduction.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Reduction
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../terminals.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Terminals
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../guards.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Guards
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../functions.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Functions
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../statements.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Statements
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../expressions.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Expressions
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../macro_system.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Macro system
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../comments.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Comments
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../builtins.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Built-ins
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#overview" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Overview
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#local-scope" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Local scope
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Local scope">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#guard-context" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Guard context
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#total-function-effects" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Total function effects
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#function-effect-inheritance" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Function effect inheritance
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ast-traversal" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        AST traversal
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#top-level-function-effects" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Top-level function effects
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#global-scope" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Global scope
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="effect-analysis">Effect analysis</h1>
+<p>Effect system represents a way of complementing type system with information on what
+effects expression evaluation can cause. In TML, effects are used to determine which
+expressions can be statically evaluated, which functions are allowed to access
+terminals and which functions potentially do not terminate. </p>
+<p>Supported effects are listed in the table below.</p>
+<table>
+<thead>
+<tr>
+<th>Effect</th>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>READ_GLOBAL</code></td>
+<td>Variable</td>
+<td>A global variable was read</td>
+</tr>
+<tr>
+<td><code>WRITE_GLOBAL</code></td>
+<td>Variable</td>
+<td>A global variable was written</td>
+</tr>
+<tr>
+<td><code>READ_OUTPUT</code></td>
+<td>Terminal,<br/>flag that denotes access in feedthrough guarded context</td>
+<td>A terminal was read</td>
+</tr>
+<tr>
+<td><code>WRITE_OUTPUT</code></td>
+<td>Terminal,<br/>flag that denotes access in feedthrough guarded context</td>
+<td>A terminal was written to</td>
+</tr>
+<tr>
+<td><code>READ_FEEDTHROUGH_OUTPUT</code></td>
+<td>Terminal,<br/>flag that denotes access in feedthrough guarded context</td>
+<td>A feedthrough output terminal was read</td>
+</tr>
+<tr>
+<td><code>WRITE_FEEDTHROUGH_OUTPUT</code></td>
+<td>Terminal,<br/>flag that denotes access in feedthrough guarded context</td>
+<td>A feedthrough output terminal was written to</td>
+</tr>
+<tr>
+<td><code>READ_INPUT</code></td>
+<td>Terminal,<br/>flag that denotes access in feedthrough guarded context</td>
+<td>An input terminal was read</td>
+</tr>
+<tr>
+<td><code>READ_FEEDTHROUGH_INPUT</code></td>
+<td>Terminal,<br/>flag that denotes access in feedthrough guarded context</td>
+<td>An input terminal was written to</td>
+</tr>
+<tr>
+<td><code>READ_TUNABLE_PROPERTY</code></td>
+<td>Tunable property</td>
+<td>A tunable property was read</td>
+</tr>
+<tr>
+<td><code>GUARD_EXISTS</code></td>
+<td>Variable</td>
+<td>A variable was guarded using <code>exists</code> statement</td>
+</tr>
+<tr>
+<td><code>GUARD_NOT_EXISTS</code></td>
+<td>Variable</td>
+<td>A variable was guarded using <code>not exists</code> statement</td>
+</tr>
+<tr>
+<td><code>GUARD_FEEDTHROUGH</code></td>
+<td>Variable</td>
+<td>A variable was guarded using <code>feedthrough</code> statement</td>
+</tr>
+<tr>
+<td><code>GUARD_NOT_FEEDTHROUGH</code></td>
+<td>Variable</td>
+<td>A variable was guarded using <code>not feedthrough</code> statement</td>
+</tr>
+<tr>
+<td><code>NON_TERMINATING</code></td>
+<td>none</td>
+<td>A function cannot be proven to terminate</td>
+</tr>
+<tr>
+<td><code>ACCESS_UNGUARDED_OPTIONAL</code></td>
+<td>Variable</td>
+<td>An optional variable was accessed outside <code>exists</code> statement</td>
+</tr>
+<tr>
+<td><code>DERIVE_UNGUARDED_OPTIONAL</code></td>
+<td>Variable</td>
+<td>Type of an optional variable was derived outside <code>exists</code> statement</td>
+</tr>
+</tbody>
+</table>
+<p>Effects can be stored at the expression level in the AST, ranging from the simplest forms
+(literals and variable references) to complex expressions. Current implementation stores
+effects at function level in a separate structure called effect scope.</p>
+<p>Effects are not present in TML syntax and effect inference is performed automatically.
+Users are aware of effects only in the form of error messages such for actions such as
+forbidden terminal access.</p>
+<h2 id="overview">Overview</h2>
+<p>Effect analysis is performed as an AST traversal, with separate passes for
+local and global scope.</p>
+<p>Local scope analysis is performed before global scope analysis. Effects of functions
+are determined as the union of all effects caused directly by the function and
+by the callee functions.</p>
+<p>Besides effect type and parameter variable, every effect holds guard context in which
+it was created. This enables detecting whether an effect is reachable in the context
+in which it is inherited. If it is reachable, it is inherited. Otherwise, it is not
+inherited and a warning is raised. Note that an effect might be reachable (and
+inherited) in one context, and unreachable (and discarded) in another.</p>
+<p>Expressions in global scope must be statically evaluated, so only pure terminating
+functions can be called in global scope. A function is considered pure if it doesn't
+have any effects. A function is considered terminating if it is not recursive and
+does not have a <code>while</code> statement (either directly or in called code).</p>
+<h2 id="local-scope">Local scope</h2>
+<h3 id="guard-context">Guard context</h3>
+<p>Guard context is defined either using guard blocks or inline guards.
+Guard context contains assumptions about variable properties that are valid in a
+certain portion of code. Properties of concern are presence of optional variables and
+feedthrough property value of dynamic feedthrough terminals. Guard context consists
+of 6 separate sets of assumptions, described in the table below. While behavior
+is same for both guard blocks and inline guards, sets are separate for easier
+readability of test and debug output.</p>
+<table>
+<thead>
+<tr>
+<th>Set</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>guarded_exists</code></td>
+<td>Set of terminals guarded using <code>exists</code> statement</td>
+</tr>
+<tr>
+<td><code>guarded_not_exists</code></td>
+<td>Set of terminals guarded using <code>not exists</code> statement</td>
+</tr>
+<tr>
+<td><code>guarded_feedthrough</code></td>
+<td>Set of terminals guarded using <code>feedthrough</code> statement</td>
+</tr>
+<tr>
+<td><code>guarded_not_feedthrough</code></td>
+<td>Set of terminals guarded using <code>not feedthrough</code> statement</td>
+</tr>
+<tr>
+<td><code>inline_guarded_exists</code></td>
+<td>Set of terminals guarded using inline guard operator <code>?</code></td>
+</tr>
+<tr>
+<td><code>inline_guarded_not_exists</code></td>
+<td>Set of terminals guarded using inline guard operator <code>?</code> in left elvis operator branch that are assumed not to be present in the right elvis operator branch</td>
+</tr>
+</tbody>
+</table>
+<h3 id="total-function-effects">Total function effects</h3>
+<p>Function definition is represented as a subtree of AST, beginning with
+<code>function_definition</code> node. Functions are analyzed in the topological order.
+Functions that call no functions have no inherited effects and can be
+analyzed first. Dependencies are then analyzed before the dependent functions.</p>
+<p>If a simple expression with a certain known effect is encountered during AST traversal,
+the effect is added to the effect scope belonging to the functions. For example,
+a statement such as <code>t.in = 1</code> would add <code>WRITE_TERMINAL&lt;t.in&gt;</code> effect.</p>
+<p>If a function call is encountered, all <strong>reachable</strong> callee effects are inherited.
+An effect is considered reachable if it was created in a guard context that is
+not opposite to the guard context in which the function call is placed.
+Terminal effects are mapped to their guarded counterparts, if necessary.</p>
+<p>Guard context is considered opposite if intersection of sets that hold opposite
+assumptions is not empty. For such guard contexts, it can be statically proved that
+nested context will not be reachable under any possible configuration.
+There are two pairs of opposite assumptions:
+<code>exists</code>/<code>not exists</code> and <code>feedthrough</code>/<code>not feedthrough</code>.</p>
+<h3 id="function-effect-inheritance">Function effect inheritance</h3>
+<p>Inheritance of reachable effects is performed using following rules:</p>
+<ol>
+<li>If the effect is related to terminal access:</li>
+<li>If the terminal is guarded using <code>feedthrough</code> or <code>not feedthrough</code>
+      in the context in which the function is called, it is mapped to the guarded
+      equivalent of the effect and inherited</li>
+<li>Otherwise, the effect is directly inherited</li>
+<li>If the effect is <code>ACCESS_UNGUARDED_OPTIONAL</code> or <code>DERIVE_UNGUARDED_OPTIONAL</code>:</li>
+<li>If parameter variable is guarded using <code>not exists</code> in current context,
+      an error is raised </li>
+<li>If parameter variable is guarded using <code>exists</code> in current context,
+      the effect is discarded </li>
+<li>Otherwise, the effect is directly inherited</li>
+<li>Otherwise, the effect is directly inherited</li>
+<li>Guard context of inherited effect is union of original effect's guard
+   context and the current guard context </li>
+</ol>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Only reachable effects are considered for inheritance, so it is sufficient to
+check if parameter variables of terminal effects are guarded in the current context
+using <code>feedthrough</code> or <code>not feedthrough</code>. As unreachable effects are discarded,
+only terminal effects for unguarded feedthrough access remain.</p>
+</div>
+<h3 id="ast-traversal">AST traversal</h3>
+<p>Effect analysis is performed as <strong>mostly</strong> left-to-right depth-first AST traversal.
+Guard context originating from guard blocks is stored in symbol table and is easy to
+track. Current type analysis supports only storing scopes per statement block, and
+does not support scopes per single statement or per single expression. Because of this,
+separate structure is needed to store inline guarded context. Ordinary order of AST
+traversal is broken when traversing elvis expressions. Right branch is traversed
+before left branch, because inline guarded <code>not exists</code> context can only be registered
+in preorder traversal of elvis expression, due to language grammar not having separate
+rules nodes for elvis expression branches. To prevent double traversal (as tree gets
+revisited in regualar traversal), sets of visited variables and function calls are
+maintained.</p>
+<h3 id="top-level-function-effects">Top-level function effects</h3>
+<p>After analyzing function effects, a check is performed for top-level effects.</p>
+<p>Top-level functions are functions that are not called by other functions.
+TML defines special built-in functions (such as <code>output_fnc</code>). Only special built-in
+functions are allowed to have effects related to terminal access.</p>
+<p>As top-level functions are dead code, and allowed terminal effects of custom functions
+cen be determined only in call context, determining allowed effects <strong>is not</strong> possible.
+A warning is raised that errors related to terminal access are ignored.</p>
+<h2 id="global-scope">Global scope</h2>
+<p>Subset of the AST that consists of nodes that are not function definitions represents
+the global scope. Simple expressions with forbidden effects immediately raise an error.
+Function calls with forbidden effects raise an error.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": [], "search": "../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+        <script src="../javascripts/mathjax.js"></script>
+      
+        <script src="https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+    
+  </body>
+</html>

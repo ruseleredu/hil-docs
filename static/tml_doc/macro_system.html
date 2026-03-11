@@ -1,0 +1,969 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="expressions.html">
+      
+      
+        <link rel="next" href="comments.html">
+      
+      
+        
+      
+      
+      <link rel="icon" href="assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.1">
+    
+    
+      
+        <title>Macro system - TML Documentation</title>
+      
+    
+    
+      <link rel="stylesheet" href="assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="stylesheets/extra.css">
+    
+    <script>__md_scope=new URL(".",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="custom" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#macro-system" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="." title="TML Documentation" class="md-header__button md-logo" aria-label="TML Documentation" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            TML Documentation
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Macro system
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="." title="TML Documentation" class="md-nav__button md-logo" aria-label="TML Documentation" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    TML Documentation
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="variables.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Variables
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="type_system.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Type system
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="broadcasting.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Broadcasting
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="reduction.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Reduction
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="terminals.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Terminals
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="guards.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Guards
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="functions.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Functions
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="statements.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Statements
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="expressions.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Expressions
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Macro system
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="macro_system.html" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Macro system
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#macro-indexing" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Macro indexing
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Macro indexing">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#terminal-indexing" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Terminal indexing
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#user-variable-indexing" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        User variable indexing
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#macro-for" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        macro for
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#macro-if" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        macro if
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="comments.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Comments
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="builtins.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Built-ins
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#macro-indexing" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Macro indexing
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Macro indexing">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#terminal-indexing" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Terminal indexing
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#user-variable-indexing" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        User variable indexing
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#macro-for" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        macro for
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#macro-if" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        macro if
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="macro-system">Macro system</h1>
+<p>Macro system enables TML programs to write themselves using existing language
+constructs and simple parametrization. Unlike C, TML macros work on AST level
+(instead of the level of pure source code text). This makes them safe to use,
+as TML macros are fully analyzed syntactically and semantically before expansion.
+Using guard blocks is preferred, if possible, as they support combinatorial branch
+analysis. Macro system does not analyze discarded branches.
+Macro statements are inlined after expansion and new lexical scope is not created.
+Users must pay special attention to variable naming and shadowing after macro
+expansion.</p>
+<p>Order of TML parsing and macro analysis and expansion is:</p>
+<ol>
+<li>TML source code is parsed (syntax analysis). Syntax errors are reported for both macro
+   and non-macro code.</li>
+<li>Macro blocks are analyzed. Semantic errors related to macro blocks are reported.</li>
+<li>Macro blocks are expanded. Portions of code are either duplicated or discarded.</li>
+<li>Ordinary TML analyses are performed over new AST. Analyses do not care whether
+   code was manually written or generated using macro system.</li>
+</ol>
+<p>Macro statements can be arbitrarily nested and combined. Macro statements can be placed
+in both local and global scope. Ordinary rules for statements are applied
+(e.g. only declarations are allowed in global scope). Macro system does not allow
+arbitrary placement of statements in places in which they are forbidden by the rules
+of the language. Macro system does not currently support parametric generation of
+functions.</p>
+<p>Macro system enables TML components to:</p>
+<ul>
+<li>support dynamic terminal groups of non-uniform type, by expanding logic for each
+  terminal, regardless of their number</li>
+<li>support for components with vastly different logic depending on a property in a single
+  source code file</li>
+<li>support for manual loop unrolling and branch pruning
+  (not advised as it can slow down compilation and worsen performance)</li>
+</ul>
+<h2 id="macro-indexing">Macro indexing</h2>
+<p>Terminal indexing is the simplest type of macro expression. In contrast to dynamic
+indexing of arbitrary TML expressions, macro terminal indexing uses curly braces (<code>{}</code>).
+Macro indices can be arbitrary expressions of type <code>int</code> that can be statically evaluated.
+Macro indexing supports terminals and user variables, but treats them differently.</p>
+<div class="admonition note">
+<p class="admonition-title">Static evaluator limitations</p>
+<p>Static evaluator currently supports only simple arithmetic, relational and logical
+expressions. Errors will be reported if expression cannot be evaluated statically.
+Support for expressions will be expaded as needed, but the general rule for writing
+maintainable code is that static indexing expressions should be as simple as possible.
+Static expressions are not allowed to have side effects, so arbitrary usage of static
+expressions does not alter execution semantics of the program.</p>
+</div>
+<h3 id="terminal-indexing">Terminal indexing</h3>
+<p>Macro indexing enables accessing group terminals by their index. While each group
+terminal has its unique name, it is considered irrelevant by TML. Terminals are
+differentiated by their unique index. Accessing terminals that belong to a group via
+their name, instead of using macro indexing, is not allowed.</p>
+<p>Following example shows macro indexing of terminals:</p>
+<div class="highlight"><pre><span></span><code>t.out{0}.type a = 0
+t.out{1}.type b = 0
+
+fn output_fnc():
+    t.out{0} = 0
+    t.out{1} = 0
+end
+</code></pre></div>
+<p>Following example shows manually writen code equal to code after expansion:</p>
+<div class="highlight"><pre><span></span><code># Terminal names were replaced by the names of
+# concrete terminals with appropriate indices
+t.out.type a = 0
+t.out1.type b = 0
+
+fn output_fnc():
+    # This code is only metaphorically equivalent!
+    # Users must always use macro indexing for terminal groups
+    t.out = 0
+    t.out1 = 0
+end
+</code></pre></div>
+<h3 id="user-variable-indexing">User variable indexing</h3>
+<p>Macro indexing allows declaring and referencing (either in expressions or statements)
+of user variables declared either manually or via macro expansion.
+Index suffix is appended to the base name of the variable. Currently, no analysis is
+performed on the way of accessing macro expanded user variables, as long as the names
+do not clash inside a lexical scope.</p>
+<p>Following example shows macro indexing of user variables:</p>
+<div class="highlight"><pre><span></span><code>a{0} = 0
+int a{0, 1} = 0
+
+fn test():
+    a{0} = 0
+    a{0, 1} = 0
+end
+</code></pre></div>
+<p>Following example shows manually writen code equal to code after expansion:</p>
+<div class="highlight"><pre><span></span><code># Variable names were prefixed with indices
+a_0 = 0
+int a_0_1 = 0
+
+fn test():
+    # Expanded code is equal to manually written code!
+    # Users must take care of variable name clashing and shadowing
+    # after macro expansion
+    a_0 = 0
+    a_0_1 = 0
+end
+</code></pre></div>
+<h2 id="macro-for"><code>macro for</code></h2>
+<p><code>macro for</code> enables copying a portion of the code, parametrized with macro index variable
+from the loop header. In contrast to ordinary <code>for</code>, range expression must be statically
+evaluated, and unrolled code is generate. While contents of the statement block can be
+arbitrary statements, this is usually needed for iterating over group terminals.
+Macro block is discarded if the range for iteration is empty, or copied as many times as
+the range demands. Syntax analysis is performed for every <code>macro for</code>
+(in the initial parsing, before any macro expansion). Semantic analysis is performed for
+every instance of expanded <code>macro for</code> block. If the range is empty, no semantic analysis
+is performed. Every expanded instance has different value of macro index variable,
+according to the current macro expansion iteration.</p>
+<p>If multiple iterations over same terminals are needed, multiple <code>macro for</code> blocks can
+be used through the code. Macro index variable can be arbitrarily used in all statements
+and expressions inside the <code>macro for</code>. Macro index variables use a simplified version
+of lexical scoping. Macro variable is visible only in the inner blocks, but is not
+allowed to have the same name as other nested macro or user variable.</p>
+<p>Following example shows <code>macro for</code>:</p>
+<div class="highlight"><pre><span></span><code>macro for i=0:2:
+    a{0} = 0 + i
+end
+
+fn test():
+    macro for i=0:2:
+        a{0} += i
+    end
+end
+</code></pre></div>
+<p>Following example shows manually writen code equal to code after expansion:</p>
+<div class="highlight"><pre><span></span><code>a_0 = 0 + 0
+a_1 = 0 + 1
+
+fn test():
+    a_0 += 0
+    a_1 += 1
+end
+</code></pre></div>
+<h2 id="macro-if"><code>macro if</code></h2>
+<p><code>macro if</code> enables selecting a branch to be generated based on the condition.
+In contrast to ordinary <code>if</code>, expressions must be evaluated statically. Even if <code>macro if</code>
+has multiple conditions, expression evaluation is always performed to check whether
+all expressions can be evaluated statically, to prevent later combinatorial errors.</p>
+<p>Either one or no branches are selected after expanding <code>macro if</code>. Syntax analysis is
+performed for all branches (in the initial parsing, before any macro expansion).
+Semantic analysis is performed only for the selected branch (if exists).</p>
+<p>Following example shows <code>macro if</code>:</p>
+<div class="highlight"><pre><span></span><code>macro if n.flag1:
+    a = 0
+else:
+    b = 0
+end
+
+fn test():
+    macro if n.flag2:
+        x = 0
+    elseif n.flag3 or n.flag4:
+        y = 0
+    else:
+        z = 0
+    end
+end
+</code></pre></div>
+<p>Following example shows manually writen code equal to code after expansion:</p>
+<div class="highlight"><pre><span></span><code>b = 0
+
+fn test():
+    y = 0
+end
+</code></pre></div>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": ".", "features": [], "search": "assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+        <script src="javascripts/mathjax.js"></script>
+      
+        <script src="https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+    
+  </body>
+</html>

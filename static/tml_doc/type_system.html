@@ -1,0 +1,1429 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="variables.html">
+      
+      
+        <link rel="next" href="broadcasting.html">
+      
+      
+        
+      
+      
+      <link rel="icon" href="assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.1">
+    
+    
+      
+        <title>Type system - TML Documentation</title>
+      
+    
+    
+      <link rel="stylesheet" href="assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="stylesheets/extra.css">
+    
+    <script>__md_scope=new URL(".",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="custom" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#type-system" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="." title="TML Documentation" class="md-header__button md-logo" aria-label="TML Documentation" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            TML Documentation
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Type system
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="." title="TML Documentation" class="md-nav__button md-logo" aria-label="TML Documentation" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    TML Documentation
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="variables.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Variables
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Type system
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="type_system.html" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Type system
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#basic-types" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Basic types
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Basic types">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#literals" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Literals
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Literals">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#integer" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Integer
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#real" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Real
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tensor-types" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Tensor types
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Tensor types">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#literals_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Literals
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#type-declaration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Type declaration
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Type declaration">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#basic-type" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Basic type
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tensor-type" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Tensor type
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#derived-type" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Derived type
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#type-inference" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Type inference
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#type-casting" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Type casting
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Type casting">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#implicit-casting" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Implicit casting
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#explicit-casting" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Explicit casting
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Explicit casting">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#casting-to-a-basic-type" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Casting to a basic type
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#casting-to-a-tensor-type" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Casting to a tensor type
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#casting-to-a-derived-type" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Casting to a derived type
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#assignments" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Assignments
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="broadcasting.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Broadcasting
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="reduction.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Reduction
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="terminals.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Terminals
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="guards.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Guards
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="functions.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Functions
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="statements.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Statements
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="expressions.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Expressions
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="macro_system.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Macro system
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="comments.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Comments
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="builtins.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Built-ins
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#basic-types" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Basic types
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Basic types">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#literals" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Literals
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Literals">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#integer" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Integer
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#real" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Real
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tensor-types" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Tensor types
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Tensor types">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#literals_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Literals
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#type-declaration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Type declaration
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Type declaration">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#basic-type" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Basic type
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tensor-type" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Tensor type
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#derived-type" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Derived type
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#type-inference" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Type inference
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#type-casting" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Type casting
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Type casting">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#implicit-casting" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Implicit casting
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#explicit-casting" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Explicit casting
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Explicit casting">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#casting-to-a-basic-type" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Casting to a basic type
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#casting-to-a-tensor-type" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Casting to a tensor type
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#casting-to-a-derived-type" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Casting to a derived type
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#assignments" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Assignments
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="type-system">Type system</h1>
+<p>TML has support for <strong>basic</strong> and <strong>tensor</strong> types.
+Basic types represent scalar values (numbers and booleans) and strings.
+Tensor types represent multidimensional objects holding values of basic or tensor type.</p>
+<h2 id="basic-types">Basic types</h2>
+<ul>
+<li>Numeric data types:<ul>
+<li><code>int</code> - Signed integer numbers</li>
+<li><code>uint</code> - Unsigned integer numbers</li>
+<li><code>real</code> - Real numbers</li>
+</ul>
+</li>
+<li><code>bool</code> - Logical values <code>true</code> and <code>false</code></li>
+<li><code>str</code> - A string of characters</li>
+<li><code>char</code> - Single character string</li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Relation between <code>str</code> and <code>char</code> types is similar to relation between tensor and scalar
+types, with infinite indexing of <code>char</code> possible. For more details, see section
+<a href="broadcasting.html#index-access-broadcasting-iab">Index Access Broadcasting</a></p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Using <code>str</code> and <code>char</code> as variable, parameter, function return or tensor base type
+in user code is not allowed. <code>str</code> and <code>char</code> are special types reserved for
+receiving configuration data from model scope.</p>
+</div>
+<!--
+!!! note
+
+    Values of `string` type can be used in statically evaluated expressions only.
+-->
+
+<h3 id="literals">Literals</h3>
+<h4 id="integer">Integer</h4>
+<p>Integers can be defined in a binary, decimal or hexadecimal notation. For better
+readability, digits may be partitioned by the underscore separator <code>_</code>, which is
+ignored by the TML compiler.</p>
+<p>Example:</p>
+<div class="highlight"><pre><span></span><code>a = 0b11    # binary notation
+a = 42      # decimal notation
+a = 0x2A    # hexadecimal notation
+
+
+a = 100_000         # same as 100000
+a = 100_000.134     # same as 100000.134
+</code></pre></div>
+<h4 id="real">Real</h4>
+<p>Real literals may be given in a <code>x.y</code> or scientific (exponential) notation.</p>
+<p>Example:</p>
+<div class="highlight"><pre><span></span><code>real a = 2.5
+real a = 1.05e-1
+</code></pre></div>
+<p>Shorthand notation where zeroes are left out (e.g. <code>.3</code> or <code>2.</code>) is not
+allowed.</p>
+<h2 id="tensor-types">Tensor types</h2>
+<p>Tensor types are used to represent arrays, matrices, and general multidimensional objects.
+Tensor types allow for arbitrary composition of basic and tensor types.</p>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>Tensors are statically allocated and their size
+cannot be changed during the runtime.</p>
+</div>
+<h3 id="literals_1">Literals</h3>
+<p>TML supports literals for arrays, matrices and cubes.
+Row vectors are regarded as a special case of matrices.
+Literals can be nested to form objects consisting of other tensors,
+but the limitation is that dimension of one object cannot be larger than 3.
+For creating objects with dimension higher than 3, other mechanisms should be used.</p>
+<p>Following code sample shows basic usage of tensor literals.</p>
+<div class="highlight"><pre><span></span><code># 1D tensor (array)
+a = [1, 2, 3]
+
+# 2D tensor (matrix)
+b = [1, 2, 3;
+     1, 2, 3]
+
+# 3D tensor (cube)
+c = [1, 2, 3;
+     1, 2, 3 |
+     1, 2, 3;
+     1, 2, 3]
+</code></pre></div>
+<p>Following code sample shows usage of nested tensor literals.</p>
+<div class="highlight"><pre><span></span><code>arr_of_arrays = [
+    [1, 2],
+    [1, 2],
+    [1, 2]
+]
+
+cube_of_arrays = [
+    [1], [2];
+    [1], [2] |
+    [1], [2];
+    [1], [2]
+]
+</code></pre></div>
+<p>Following code sample shows usage of arbitrary expressions in tensor literals.</p>
+<div class="highlight"><pre><span></span><code>arr = [1, 2, 3]
+
+arr_of_arrays = [
+    arr + 1,
+    arr + 2,
+    arr + 3
+]
+</code></pre></div>
+<h2 id="type-declaration">Type declaration</h2>
+<p>Type declaration enables explicit assignment of type to a variable that is not dependent
+on the result of type inference.</p>
+<h3 id="basic-type">Basic type</h3>
+<p>Variables of a basic type are declared using type keywords in declaration statements.</p>
+<div class="highlight"><pre><span></span><code>int a = 1
+uint b = 2
+real c = 1.5
+bool d = true
+</code></pre></div>
+<h3 id="tensor-type">Tensor type</h3>
+<p>Variables of tensor types are declared using tensor type constructor in declaration statements.
+General form of tensor type constructor is <code>tensor&lt;type, len_per_dimension&gt;</code>.</p>
+<p>Following example shows usage of tensor type constructor:</p>
+<div class="highlight"><pre><span></span><code># int array of length 3
+tensor&lt;int, 3&gt; a = [1, 2, 3]
+
+# int array of length 3, with broadcasting applied
+tensor&lt;int, 3&gt; a = 1
+
+# int cube of 2x2x2 elements
+tensor&lt;int, 2, 2, 2&gt; a = [
+    1, 2;
+    3, 4 |
+    1, 2;
+    3, 4
+]
+
+# array of two arrays
+tensor&lt;tensor&lt;int, 2&gt;, 2&gt; a = [
+    [1, 2],
+    [3, 4]
+]
+</code></pre></div>
+<h3 id="derived-type">Derived type</h3>
+<p>Sometimes, a variable type depends on a terminal, or a property of the
+component. Derived type declaration enables declaring a variable of the same type as
+another one, with type changing according to terminal or property configuration.</p>
+<p>Operator <code>&lt;variable&gt;.type</code> is used for derived type declaration.
+Types used in declaration statements can be derived only from variables from
+model scope.</p>
+<p>Following example shows usages of derived type declaration:</p>
+<div class="highlight"><pre><span></span><code># a is of input terminal&#39;s type
+t.in.type a = 1
+
+# b is of a&#39;s type
+a.type b = 2
+
+# c is of in_operand single element&#39;s type
+t.in_operand[].type c = 3
+</code></pre></div>
+<h2 id="type-inference">Type inference</h2>
+<p>TML is a statically typed language, but with support for type inference. If the
+variable type is omitted, the TML compiler will statically infer the type based
+on the initializer expression operands' types.</p>
+<p>For basic arithmetic operations, scalar part of type is inferred as the more general
+type of operand scalar types.</p>
+<p>For exponentiation, base scalar type is always <code>real</code>, as. Explicit casting is
+needed if <code>int</code> type is the desired result type.</p>
+<p>Tensor type is inferred per <a href="broadcasting.html">Broadcasting</a> rules.</p>
+<p>If both operands are optional, inferred type is optional. If one operand is optional,
+and the other one is not, inferred type is not optional. Concrete types contained
+in optional expressions are inferred using ordinary type inference rules.</p>
+<p>Example:</p>
+<div class="highlight"><pre><span></span><code>a = 10              # type is int
+b = (a * 10) / 2    # type is int
+a = 5u - 6u         # type is uint and overflow is present
+b = 3 ** -2         # special case of type inference, type is real
+</code></pre></div>
+<p>TML compiler prefers inference to a more general type.</p>
+<div class="highlight"><pre><span></span><code>a = true + 1u       # type is uint
+b = a + 1           # type is int
+c = b * 2.0         # type is real
+</code></pre></div>
+<h2 id="type-casting">Type casting</h2>
+<p>Type casting is necessary for evaluating expression with subexpressions of
+different types. Type casting can cause data loss when a source value cannot
+be represented in the target type (i.e. casting a <code>real</code> to an <code>int</code>).</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Usage of <code>.type</code> or any of the builtin cast operators
+results in creating a copy of the argument of the corresponding type.
+For example, <code>int(arg)</code> results in creating a copy of the <code>arg</code>
+of type <code>int</code>. Consider this while casting tensors.</p>
+</div>
+<h3 id="implicit-casting">Implicit casting</h3>
+<p>In expressions, implicit type casting is automatically performed when casting from a smaller
+to a greater type (i.e. casting an <code>int</code> to a <code>real</code>), since <strong>no data loss can occur</strong>.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>We say that the type is <em>smaller</em> if all of its values can be represented in the bigger type.</p>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Data loss <strong>can</strong> occur even when converting from <code>int</code> to <code>real</code> depending on
+the size of the target platform types. E.g., if for the target architecture both
+integer and real/double are 8 bytes there will be integer values that cannot be
+represented in the double type.</p>
+<p>See warning section <a href="https://www.learncpp.com/cpp-tutorial/numeric-conversions/">on this page</a>.</p>
+<p>We should be aware of this when developing code generators for various platforms. For now, we
+assume that TML int is smaller than TML real type for all current targets.</p>
+</div>
+<p>In assignments, implicit type casting is performed if storing a value to a variable
+would not cause data loss (i.e. storing an <code>int</code> value in a <code>real</code> variable).</p>
+<p>Implicit type casting is related to type inference, as the type of the expression is
+inferred from operand and subexpression types. When the type of the expression is inferred,
+operands that are not of the inferred type are implicitly cast to the result type.</p>
+<h3 id="explicit-casting">Explicit casting</h3>
+<p>In expressions, explicit type casting is required when casting greater type to a smaller
+type (i.e. casting a <code>real</code> to an <code>int</code>), since <strong>data loss can occur</strong>.
+This makes programmer aware of potentially unwanted effects when writing and reading
+TML code.</p>
+<p>Values can be cast using either type constructors (for both basic and tensor types)
+and using types derived from other variables. Derived type used in cast expression
+can be derived from any variable visible at the enclosing scope at that point.</p>
+<h4 id="casting-to-a-basic-type">Casting to a basic type</h4>
+<p>The TML language supports the following operators for casting
+numeric values:</p>
+<ul>
+<li><code>bool(&lt;expr&gt;)</code> - returns the <code>bool</code> representation of <code>&lt;expr&gt;</code></li>
+<li><code>uint(&lt;expr&gt;)</code> - returns the <code>uint</code> value constructed from <code>&lt;expr&gt;</code></li>
+<li><code>int(&lt;expr&gt;)</code> - returns the <code>int</code> value constructed from <code>&lt;expr&gt;</code></li>
+<li><code>real(&lt;expr&gt;)</code> - returns the <code>real</code> value constructed from <code>&lt;expr&gt;</code></li>
+</ul>
+<div class="highlight"><pre><span></span><code>a = bool(123)        # a is 1u
+b = bool(-123)       # b is 1u
+c = bool(0.0)        # c is 0u
+
+d = uint(true)       # d is 1u
+e = uint(false)      # e is 0
+f = uint(-123)       # f is 4294967173u because of overflow
+g = uint(-123.13)    # g is 4294967173u because of overflow
+h = uint(123.13)     # h is 123u
+
+i = int(4294967173)  # i is -123 because of be overflow
+j = int(-123.78)     # j is -123
+k = int(123.78)      # k is 123
+
+l = real(true)       # l is 1.0
+r = real(-12344)     # m is -12344.0
+</code></pre></div>
+<div class="admonition danger">
+<p class="admonition-title">Danger</p>
+<p>The following expressions <code>i = int(4294967173)  # i is -123 becaue of overflow</code>
+is unsupported at the moment. The advice is to take care of overflows.</p>
+</div>
+<h4 id="casting-to-a-tensor-type">Casting to a tensor type</h4>
+<p>Casting to a tensor type is performed similarly to casting to a basic type.
+General form is <code>&lt;tensor_constructor&gt;(&lt;expr&gt;)</code>.</p>
+<div class="highlight"><pre><span></span><code>a = tensor&lt;int, 3, 3&gt;(5)
+b = tensor&lt;tensor&lt;int, 3, 3&gt;, 3, 3&gt;(5)
+</code></pre></div>
+<h4 id="casting-to-a-derived-type">Casting to a derived type</h4>
+<p>Operator <code>&lt;variable&gt;.type(&lt;expr&gt;)</code> can be used for converting <code>&lt;expr&gt;</code> to the type
+of the <code>&lt;variable&gt;</code>. If <code>&lt;variable&gt;</code> is of tensor type,
+operator <code>&lt;variable&gt;&lt;[]&gt;+.type(&lt;expr&gt;)</code> allows declaring a variable
+of a single tensor element type.</p>
+<p>Example:</p>
+<div class="highlight"><pre><span></span><code>a = 5
+b = a.type(8.2)                 # 8.2 is casted to the type of `a` (`int`)
+                                # and assigned to the `b` variable
+
+c = t.in1.type(23)              # 23 is casted to the type of the `in1` terminal array
+                                # and assigned to the `c` variable
+
+d = t.in1[].type(25)             # 25 is casted to the type of the terminal array elements
+</code></pre></div>
+<h2 id="assignments">Assignments</h2>
+<p><strong>Important:</strong> All assignments are done by value (implicit mem-copy).</p>
+<div class="highlight"><pre><span></span><code>a = [1, 2, 3]
+b = a
+a[1] = 0
+c = b[1] == a[1]        # false
+</code></pre></div>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Assignments that use slicing (e.g. <code>vec[1:5] = 3</code>) are not supported at the moment.</p>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": ".", "features": [], "search": "assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+        <script src="javascripts/mathjax.js"></script>
+      
+        <script src="https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+    
+  </body>
+</html>
