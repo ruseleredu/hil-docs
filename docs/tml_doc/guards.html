@@ -1,0 +1,1126 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="terminals.html">
+      
+      
+        <link rel="next" href="functions.html">
+      
+      
+        
+      
+      
+      <link rel="icon" href="assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.1">
+    
+    
+      
+        <title>Guards - TML Documentation</title>
+      
+    
+    
+      <link rel="stylesheet" href="assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="stylesheets/extra.css">
+    
+    <script>__md_scope=new URL(".",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="custom" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#guards" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="." title="TML Documentation" class="md-header__button md-logo" aria-label="TML Documentation" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            TML Documentation
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Guards
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="." title="TML Documentation" class="md-nav__button md-logo" aria-label="TML Documentation" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    TML Documentation
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="variables.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Variables
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="type_system.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Type system
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="broadcasting.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Broadcasting
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="reduction.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Reduction
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="terminals.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Terminals
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Guards
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="guards.html" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Guards
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#guard-blocks" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Guard blocks
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Guard blocks">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#exists-guard" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Exists guard
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#feedthrough-guard" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Feedthrough guard
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#inline-guards" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Inline guards
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Inline guards">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#variables" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Variables
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#elvis-operator" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Elvis operator
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#assignments" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Assignments
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#declarations" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Declarations
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="functions.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Functions
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="statements.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Statements
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="expressions.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Expressions
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="macro_system.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Macro system
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="comments.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Comments
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="builtins.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Built-ins
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#guard-blocks" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Guard blocks
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Guard blocks">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#exists-guard" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Exists guard
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#feedthrough-guard" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Feedthrough guard
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#inline-guards" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Inline guards
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Inline guards">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#variables" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Variables
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#elvis-operator" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Elvis operator
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#assignments" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Assignments
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#declarations" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Declarations
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="guards">Guards</h1>
+<p>Guards are a construct that enables asserting properties of variables in a
+given context. Code is conditionally pruned based on the guard condition being
+satisfied or not.</p>
+<h2 id="guard-blocks">Guard blocks</h2>
+<p>Guarded blocks have a <strong>main</strong> and an <strong>else</strong> branch. All guarded variables must be used
+inside the main branch. No restrictions are applied to the else branch.
+For the <strong>main</strong> branch to be selected, all guarded variables must satisfy guard clause.
+Otherwise, <strong>else</strong> branch is selected. No assertions about variable properties
+are made inside <strong>else</strong> branch.</p>
+<p>All type and access right checks are applied for all branches of guard blocks.
+This prevents unexpected errors that depend on the context of component usage.</p>
+<p>Arbitrary nesting of guard blocks is allowed.
+Inner blocks inherit assertions from outer blocks.
+Nesting of opposite guard blocks can cause dead code, and a warning is raised in such
+cases. Errors for terminal access are not reported for unreachable guard blocks.</p>
+<p>Guard context is inherited on function calls. This means that calling the same
+function can be allowed in one guard context, but not in the other.</p>
+<h3 id="exists-guard">Exists guard</h3>
+<p>While writing generic components using <code>?</code> and <code>?:</code> operators is advised, there are cases
+in which specific logic is required depending on the concrete terminal configuration.</p>
+<p>Exists guard comes in two opposite flavors: <code>exists</code> and <code>not exists</code>.
+General form of exists guard is:</p>
+<div class="highlight"><pre><span></span><code>&lt;not&gt;? exists a, b, c:
+    &lt;statements&gt;
+end
+</code></pre></div>
+<div class="highlight"><pre><span></span><code>&lt;not&gt;? exists a, b, c:
+    &lt;statements&gt;
+else:
+    &lt;statements&gt;
+end
+</code></pre></div>
+<p>Following examples show usage of <code>exists</code> guard with and without <code>else</code> block:</p>
+<div class="highlight"><pre><span></span><code>fn test():
+    exists t.in:
+        t.out = t.in + 5
+    end
+end
+</code></pre></div>
+<div class="highlight"><pre><span></span><code>fn test():
+    exists t.in:
+        t.out = t.in + 5
+    else:
+        t.out1 = 10
+        t.out2 = 15
+    end
+end
+</code></pre></div>
+<div class="highlight"><pre><span></span><code>fn output_fnc():
+    exists t.opt_in:
+        test() # valid: &#39;exists&#39; guard context is inherited
+    end
+
+    test() # error: unguarded access to optional
+end
+
+fn test():
+    x = t.opt_in + 1 # no error: errors are raised on calls from
+                     # entry functions and global scope
+end
+</code></pre></div>
+<p>Following examples show usage of <code>not exists</code> guard with and without <code>else</code> block:</p>
+<div class="highlight"><pre><span></span><code>fn test():
+    not exists t.in:
+        t.out1 = 10
+        t.out2 = 15
+    end
+end
+</code></pre></div>
+<div class="highlight"><pre><span></span><code>fn test():
+    not exists t.in:
+        t.out1 = 10
+        t.out2 = 15
+    else:
+        t.out = t.in + 5
+    end
+end
+</code></pre></div>
+<div class="highlight"><pre><span></span><code>fn output_fnc():
+    not exists t.opt_in:
+        test() # error: &#39;not exists&#39; guard context is inherited
+               # and function is accessing t.opt_in without &#39;exists&#39; guard
+    end
+
+    test() # error: unguarded access to optional
+end
+
+fn test():
+    x = t.opt_in + 1 # no error: errors are raised on calls from
+                     # entry functions and global scope
+end
+</code></pre></div>
+<h3 id="feedthrough-guard">Feedthrough guard</h3>
+<p>Depending on dynamically configurable feethrough property of terminals, code might need
+to either be pruned or placed dynamically inside <code>output_fnc</code> or <code>update_fnc</code>.
+To support this, TML has a guard block similar to <code>exists</code> which is called
+<strong>feedthrough guard</strong>.</p>
+<p>Feedthrough guard comes in two opposite flavors: <code>feedthrough</code> and <code>not feedthrough</code>.
+Unlike exists guard which supports guarding all variables, only terminals can be guarded
+using feedthrough guard, as only terminals have feedthrough property.
+General form of feedthrough guard is:</p>
+<div class="highlight"><pre><span></span><code>&lt;not&gt;? feedthrough t.in1, t.in2:
+    &lt;statements&gt;
+end
+</code></pre></div>
+<div class="highlight"><pre><span></span><code>&lt;not&gt;? feedthrough t.in1, t.in2:
+    &lt;statements&gt;
+else:
+    &lt;statements&gt;
+end
+</code></pre></div>
+<p>Following examples show usage of <code>feedthrough</code> guard with and without <code>else</code> block:</p>
+<div class="highlight"><pre><span></span><code>fn test():
+    feedthrough t.in:
+        t.out = t.in + 5
+    end
+end
+</code></pre></div>
+<div class="highlight"><pre><span></span><code>fn test():
+    feedthrough t.in:
+        t.out = t.in + 5
+    else:
+        t.out1 = 10
+        t.out2 = 15
+    end
+end
+</code></pre></div>
+<p>Following examples show usage of <code>not feedthrough</code> guard with and without <code>else</code> block:</p>
+<div class="highlight"><pre><span></span><code>fn test():
+    not feedthrough t.in:
+        t.out = t.in + 5
+    end
+end
+</code></pre></div>
+<div class="highlight"><pre><span></span><code>fn test():
+    not feedthrough t.in:
+        t.out = t.in + 5
+    else:
+        t.out1 = 10
+        t.out2 = 15
+    end
+end
+</code></pre></div>
+<p>If same piece of code should be moved dynamically between <code>output_fnc</code> or <code>update_fnc</code>,
+it is advised to separate common logic to a different function and call it from
+corresponding feedthrough guard blocks.</p>
+<div class="highlight"><pre><span></span><code>x = 0
+
+fn output_fnc():
+    feedthrough t.in:
+        move()
+    end
+end
+
+fn update_fnc():
+    not feedthrough t.in:
+        move()
+    end
+end
+
+fn move():
+    x = t.in + 5
+end
+</code></pre></div>
+<h2 id="inline-guards">Inline guards</h2>
+<p>Inline guards are a more concise way to guard specific simple, but common use patterns.
+All inline guards have equivalent guard blocks. Note that the opposite does not hold,
+as guard blocks are a more general mechanism. While guard blocks allow for pruning
+arbitrary statements, inline guards are restricted to simple variable expressions and
+assignment statements.</p>
+<p>As with guard blocks, inline guards allow arbitrary nesting. Nesting inline guards inside
+guards blocks, and vice versa (possible only via function calls) is allowed.
+Warnings are raised for redundant inline guards and unreachable code.</p>
+<h3 id="variables">Variables</h3>
+<p>Optionally present variables can be guarded using inline guard operator <code>?</code>.
+This is equivalent to using <code>exists</code>/<code>else</code>, but more flexible when possibly different
+combinations of terminals are not present. Only optional variables can be guarded using
+inline guard operator <code>?</code>. If not present, value of variable subexpression
+is treated as neutral element for the outer expression.</p>
+<p>If outer expressions support both left and right neutral elements, and both subexpressions
+are missing, value of outer expression is treated as neutral element in it's enclosing
+outer expression.</p>
+<p>Only certain binary expressions support neutral elements. Optionally present expressions
+are not assignable in any context (i.e. cannot be assigned to variables, used as arugment
+value of in <code>return</code> statement, etc.).</p>
+<p>Following examples show usage of inline guard operator <code>?</code>.</p>
+<div class="highlight"><pre><span></span><code>x = a? + b?        # Incorrect, final value is optional
+y = (a? + b?) ?: c # Correct, final value is given through elvis operator
+z = a? + b? + c    # Correct, final value is given through c which
+                   # is always present, so expression is defined
+</code></pre></div>
+<h3 id="elvis-operator">Elvis operator</h3>
+<p>Sometimes, treating missing variables and expressions as neutral elements is not desirable
+or not possible. Examples would be needing a concrete fallback default value or using
+optional expressions in assignment contexts (which is not allowed without using other
+guard mechanisms, mainly elvis operator).</p>
+<p>Elvis operator is a special variant of binary operator. Left expression must be optional,
+while right expression must <strong>not</strong> be optional. If left expression is present, it is
+selected and right branch is pruned. Otherwise, right branch is selected and left branch
+is pruned. Elvis operator always returns value that is present in all contexts.</p>
+<p>Left expression can either be expression of optional values or a single variable.
+If left expression consist of only a single variable, using inline guard <code>?</code> on
+variable is redundant.</p>
+<p>Elvis operator is equivalent to inverted <code>not exists</code>/<code>else</code> guard block.
+Right branch is eqiuvalent to <code>not exists</code>, while left branch is equivalent to <code>else</code>.</p>
+<p>Following examples show usage of elvis operator <code>?:</code>.</p>
+<div class="highlight"><pre><span></span><code>x = a ?: b  # Note: a must be optional
+x = a? ?: b # Note: ? is redundant
+
+y = (a? + b?) ?: c # Correct
+
+z = (a? + b? + c) ?: 0 # Incorrect: left expression is not optional
+z = (a? + b?) ?: c?    # Incorrect: right expression is optional
+</code></pre></div>
+<h3 id="assignments">Assignments</h3>
+<p>Common use pattern of <code>exists</code> guard is assigning a value to an optionally present
+variable. For better code readability, it is advised to use inline guarded assignment
+statement, if only single assignment statement is guarded.</p>
+<p>Inline guarded assignment is equivalent to <code>exists</code>, but applied only to the
+assignment statement.</p>
+<p>Following examples show usage of inline guard operator <code>?</code> in assignments.</p>
+<div class="highlight"><pre><span></span><code>x? = 5 # Correct
+
+y? = a? + b? # Incorrect: value must be defined regardless
+             # of inline guard of assignment
+</code></pre></div>
+<h3 id="declarations">Declarations</h3>
+<p>Declaring variables with type derived from terminals is allowed. As terminals can be
+optionally present, derived variables can be optionally present as well. While derived
+type does not need be directly equal to type of the terminal (i.e. derived type can
+be nested inside custom tensor type or nested type can be unwrapped),
+optional presence of a variable is directly inherited.</p>
+<p>If source variable type is guarded using inline guard operator, it is assumed that
+derived variable is optional as well. Is source variable type is not inline guarded,
+it is assumed that it will be guarded in the outer context and that derived type is
+always present and defined.</p>
+<p>If variable type is derived from inline guarded variable, inline guarding declaration
+statement is required for clarity as well. Behavior is equivalent to inline
+guarded assignment statement.</p>
+<p>Following examples show usage of inline guard operator <code>?</code> in declarations.</p>
+<div class="highlight"><pre><span></span><code>t.in?.type a? = 1 # Correct
+t.in.type a = 2   # Correct
+
+t.in.type a? = 1 # Incorrect: variable name is inline guarded,
+                 # while type is not inline guarded
+
+t.in?.type a = 1 # Incorrect: type is inline guarded,
+                 # while variable name is not inline guarded
+</code></pre></div>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": ".", "features": [], "search": "assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+        <script src="javascripts/mathjax.js"></script>
+      
+        <script src="https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+    
+  </body>
+</html>

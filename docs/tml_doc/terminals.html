@@ -1,0 +1,1060 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="reduction.html">
+      
+      
+        <link rel="next" href="guards.html">
+      
+      
+        
+      
+      
+      <link rel="icon" href="assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.1">
+    
+    
+      
+        <title>Terminals - TML Documentation</title>
+      
+    
+    
+      <link rel="stylesheet" href="assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="stylesheets/extra.css">
+    
+    <script>__md_scope=new URL(".",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="custom" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#terminals" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="." title="TML Documentation" class="md-header__button md-logo" aria-label="TML Documentation" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            TML Documentation
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Terminals
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="." title="TML Documentation" class="md-nav__button md-logo" aria-label="TML Documentation" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    TML Documentation
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="variables.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Variables
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="type_system.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Type system
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="broadcasting.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Broadcasting
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="reduction.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Reduction
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Terminals
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="terminals.html" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Terminals
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#dynamic-terminals" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Dynamic terminals
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Dynamic terminals">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#optional-terminals" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Optional terminals
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#terminal-groups" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Terminal groups
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#terminal-initialization" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Terminal initialization
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="guards.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Guards
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="functions.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Functions
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="statements.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Statements
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="expressions.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Expressions
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="macro_system.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Macro system
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="comments.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Comments
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="builtins.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Built-ins
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#dynamic-terminals" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Dynamic terminals
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Dynamic terminals">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#optional-terminals" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Optional terminals
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#terminal-groups" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Terminal groups
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#terminal-initialization" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Terminal initialization
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="terminals">Terminals</h1>
+<p>Terminals provide a mechanism for a component to receive input and emit output.
+Input and output terminals of different components are linked together to form a model
+of a system.
+Terminals are represented as variables belonging to the built-in namespace <code>t</code>.
+As with variables, all typing rules described in <a href="type_system.html">Type system</a>
+and <a href="broadcasting.html">Broadcasting</a> sections are applied.</p>
+<p>Unlike user defined variables, terminals can be <strong>optionally present</strong>, depending on the
+context of component usage. Additional field that describes terminals is their
+<strong>feedthrough</strong>. Terminal access rules are defined in the following table.</p>
+<table>
+<thead>
+<tr>
+<th>variable<br/> type</th>
+<th style="text-align: center;">feedthrough</th>
+<th style="text-align: center;"><code>init_fnc</code><br/>read</th>
+<th style="text-align: center;"><code>init_fnc</code><br/>write</th>
+<th style="text-align: center;"><code>update_fnc</code><br/>read</th>
+<th style="text-align: center;"><code>update_fnc</code><br/>write</th>
+<th style="text-align: center;"><code>output_fnc</code><br/>read</th>
+<th style="text-align: center;"><code>output_fnc</code><br/>write</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>input</td>
+<td style="text-align: center;">✓</td>
+<td style="text-align: center;">✓</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">✓</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">✓</td>
+<td style="text-align: center;"></td>
+</tr>
+<tr>
+<td>input</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">✓</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">✓</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+</tr>
+<tr>
+<td>output</td>
+<td style="text-align: center;">✓</td>
+<td style="text-align: center;">✓</td>
+<td style="text-align: center;">✓</td>
+<td style="text-align: center;">✓</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">✓</td>
+<td style="text-align: center;">✓</td>
+</tr>
+<tr>
+<td>output</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">✓</td>
+<td style="text-align: center;">✓</td>
+<td style="text-align: center;">✓</td>
+<td style="text-align: center;">✓</td>
+<td style="text-align: center;">✓</td>
+<td style="text-align: center;"></td>
+</tr>
+</tbody>
+</table>
+<p>Callee functions inherit terminal access rules of the context in which they
+are called. This means that calling a function might be possible inside <code>output_fnc</code>,
+but not inside <code>update_fnc</code>. This also means that calling a function might be allowed
+inside one guard block, but not inside another one. Access right inheritance is
+shown in the following examples.</p>
+<div class="highlight"><pre><span></span><code>x = 0
+
+fn output_fnc():
+    test()     # unguarded call might raise an error if
+               # t.out is a non-feedthrough terminal
+
+    feedthrough t.out:
+        test() # this code cannot raise an error,
+               # as feedthrough property is assumed
+    end
+end
+
+fn update_fnc():
+    test()     # unguarded call might raise an error if
+               # t.out is a feedthrough terminal
+
+    not feedthrough t.out:
+        test() # this code cannot raise an error,
+               # as not-feedthrough property is assumed
+    end
+end
+
+fn test():
+    t.out = x + 1
+end
+</code></pre></div>
+<div class="highlight"><pre><span></span><code>x = 0
+
+fn output_fnc():
+    test() # this call is allowed!
+end
+
+fn update_fnc():
+    test() # this call is not allowed!
+end
+
+fn test():
+    t.feedthrough_out = x + 1
+end
+</code></pre></div>
+<h2 id="dynamic-terminals">Dynamic terminals</h2>
+<p>Configuration of terminals can depend on the context of component usage.
+Terminals can be allowed to be optionally present and number of their instances can vary,
+but TML has mechanisms for writing generic components and handling different configurations.</p>
+<h3 id="optional-terminals">Optional terminals</h3>
+<p>Optional terminals can be present depending on the context. Optional presence of terminals
+is explicitly specified in model configuration. Access to optional terminals must be
+guarded using <code>?</code> and <code>?:</code> operators or <code>exists</code> guard.</p>
+<p>Both single terminals and terminal groups can be optionally present.</p>
+<h3 id="terminal-groups">Terminal groups</h3>
+<p>Terminal groups represent a named array of elements of the same name.
+Terminal groups are used for implementing configurable components with variable
+width of input and output (ex. adder with variable number of operands).
+Length of the array represents the number of terminal instances. Terminal groups
+allow writing generic components independent of the total number of  single terminal
+instances. TML supports <strong>uniform</strong> and <strong>non-uniform</strong> terminal groups.</p>
+<p>Elements of a uniform terminal group must be of types that can be broadcast
+to a common type. Uniform group is an array of elements of a common type created by
+broadcasting. For more details, see section <a href="broadcasting.html">Broadcasting</a>.</p>
+<p>Not all components require or expect their terminal types to be altered by broadcasting.
+In such components, using non-uniform terminal groups is preferred. Non-uniform terminals
+are accessed using group name and a static index. Static index can either be a literal
+or an index from <code>macro for</code>. For more details, see section <a href="macro_system.html">Macro system</a>.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Currently, only internal library components can use terminal groups.
+TML function will support terminal groups in the future.</p>
+</div>
+<h2 id="terminal-initialization">Terminal initialization</h2>
+<p>Using a variable that is not initialized is a common source of bugs.
+To prevent this, TML does not allow declaration of variables without value.
+To further prevent bugs, TML analyses code to determine if a terminal was initialized
+<strong>in current simulation cycle</strong> prior to reading it, and to determine if <strong>all</strong> output
+terminals were initialized <strong>at the end</strong> of simulation cycle.</p>
+<p>This is achieved by analyzing program's control flow graph (CFG). This is a graph that
+represents all possible execution paths of a program. Guard blocks are selected and
+pruned based on current component configuration. Dynamic control flow statement
+(<code>if</code>, <code>for</code> and <code>while</code>) behavior is approximated by considering all theoretically
+possible paths, not regarding expression values.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Different terminal configurations
+can yield different errors and warnings due to static pruning of guard blocks.
+Special care and testing is needed if terminal initialization depends on guarded code.</p>
+</div>
+<p>General rule is that a terminal is considered initialized if it is initialized
+on <strong>all</strong> incoming paths to a point in code. Terminal initialization state can be
+<strong>none</strong>, <strong>partial</strong> or <strong>full</strong>.</p>
+<p>Variable assignment (<code>x = ...</code>) marks terminal as <strong>fully</strong> initialized.
+If a terminal is a tensor, tensor assignment(<code>x[index] = ...</code>) marks it as <strong>partially</strong>
+initialized, but <strong>only</strong> if it was previously uninitialized.
+If <a href="broadcasting.html#index-access-broadcasting-iab">index access broadcasting</a> is applied,
+tensor assignment markse terminal as <strong>fully</strong> initialized. Shorthand assignment
+(<code>x += ...</code>) does not alter initialization state, as it depends on the terminal itself.</p>
+<p>When joining separate paths, smaller value is chosen. If terminal is not initialized only
+on a single path, it is considered as not initialized. Also, if a terminal is
+partially initialized only on one path and fully on all other paths,
+it is considered as partially initialized. Once initialized, terminal stays initialized
+until a point in which multiple paths meet.</p>
+<p><strong>Errors</strong> are raised if a terminal is <strong>not</strong> initialized at the end of simulation
+cycle or if reading a terminal that is <strong>not</strong> initialized is attempted.</p>
+<p><strong>Warnings</strong> are raised if a terminal is <strong>partially</strong> initialized at the end of
+simulation cycle or if reading a terminal that is <strong>partially</strong> is attempted.</p>
+<p>Terminal initialization analysis behaves according to the following rules:</p>
+<ol>
+<li>All terminals are considered uninitialized at the beggining of a simulation cycle,
+   not regarding values from the previous cycle</li>
+<li>Once a terminal is initialized, it stays initialized until the end of the statement
+   block that it belongs to, or until the first jump statement</li>
+<li>After a jump statement, a terminal is initialized if it was initialized on all
+   paths from which the point is reachable </li>
+<li>After <code>if</code> statement, a terminal is initialized if it was initialized prior to the
+   statement or is initialized in all branches and <code>if</code> contains final <code>else</code> statement</li>
+<li>After <code>for</code> loop <strong>proven</strong> to be executed at least once, a terminal is initialized if it
+   was initialized prior to the statement or it is initialized on all possible loop exits</li>
+<li><code>for</code> loop is proven to be executed at least once if range expression contains
+     only number literals, namespace variables, constant properties or attributes
+     as <strong>direct</strong> subexpressions (i.e. <code>0:t.out.len</code>, not <code>(1 + 2):t.out.len</code>)
+     and range is properly formed (i.e. start value is smaller than end value)</li>
+<li><code>continue</code>, <code>break</code> and the last statement in loop's statement block
+     (if <code>continue</code> and <code>break</code> are omitted or if otherwise reachable)
+     are considered as possible loop exits</li>
+<li>After <code>for</code> loop <strong>not proven</strong> to be executed at least once, a terminal is
+   initialized only if was initialized before the statement</li>
+<li>After <code>while</code> loop, a terminal is initialized only if was initialized before the statement</li>
+<li>Every function call is a separate context that can both observe and alter
+   different terminal initialization state </li>
+<li>After a function call, a terminal is initialized if it was initialized prior to the
+   function call or if it is initialized on all possible function exits</li>
+<li>Explicit <code>return</code> statements and the last statement in function
+     (if <code>return</code> is optional and omitted or if otherwise reachable)
+     are considered as function exits</li>
+<li>In expressions, subexpressions that follow a function call in evaluation
+    order see terminal initialization state as a side-effect</li>
+</ol>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>A common pattern of usage is that all terminals in an array are initialized in a <code>for</code>
+loop. This was the reason for introducing partial initialization and loop execution
+check. Such permissiveness can cause bugs if used without special care.
+TML users must pay special attention or resort to using full initialization.</p>
+</div>
+<p>Following examples show how terminal initialization analysis works.</p>
+<div class="highlight"><pre><span></span><code>fn output_fnc():
+    e = t.out + 1 # t.out not initialized,
+                  # error is raised
+
+    t.out[1] = 1
+
+
+    a = t.out + 2 # t.out partially initialized,
+                  # only warning is raised
+
+    t.out = 2
+
+    b = t.out + 3 # t.out fully initialized
+end
+</code></pre></div>
+<div class="highlight"><pre><span></span><code>fn output_fnc():
+    if a &lt; b:
+        t.out = 1
+    end
+
+    e = t.out + 1 # t.out not initialized,
+                  # error is raised
+end
+</code></pre></div>
+<div class="highlight"><pre><span></span><code>fn output_fnc():
+    if a &lt; b:
+        t.out = 1
+    else:
+        t.out = 2
+    end
+
+    e = t.out + 1 # t.out fully initialized
+end
+</code></pre></div>
+<div class="highlight"><pre><span></span><code>fn output_fnc():
+    # static range
+    for i=0:10:
+        t.out[i] = 1
+    end
+
+    a = t.out + 1 # t.out partially initialized,
+                  # a warning is raised
+
+    # static range
+    for i=0:10:
+        t.out = 1
+    end
+
+    b = t.out + 1 # t.out fully initialized
+end
+</code></pre></div>
+<div class="highlight"><pre><span></span><code>fn output_fnc():
+    # dynamic range
+    for i=a:b:
+        t.out[i] = 1
+    end
+
+    b = t.out + 1 # t.out not initialized,
+                  # error is raised
+end
+</code></pre></div>
+<div class="highlight"><pre><span></span><code>fn output_fnc():
+    while a &lt; b:
+        t.out = 1
+    end
+
+    e = t.out + 1 # t.out not initialized,
+                  # error is raised
+end
+</code></pre></div>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": ".", "features": [], "search": "assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+        <script src="javascripts/mathjax.js"></script>
+      
+        <script src="https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+    
+  </body>
+</html>

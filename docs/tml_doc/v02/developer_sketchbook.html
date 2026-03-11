@@ -1,0 +1,788 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+      
+      
+        
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.1">
+    
+    
+      
+        <title>TML v0.2 SketchBook - TML Documentation</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="custom" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#tml-v02-sketchbook" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="TML Documentation" class="md-header__button md-logo" aria-label="TML Documentation" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            TML Documentation
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              TML v0.2 SketchBook
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="TML Documentation" class="md-nav__button md-logo" aria-label="TML Documentation" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    TML Documentation
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../variables.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Variables
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../type_system.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Type system
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../broadcasting.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Broadcasting
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reduction.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Reduction
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../terminals.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Terminals
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../guards.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Guards
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../functions.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Functions
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../statements.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Statements
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../expressions.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Expressions
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../macro_system.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Macro system
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../comments.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Comments
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../builtins.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Built-ins
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#introduction" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Introduction
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#v02" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        v0.2
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="tml-v02-sketchbook">TML v0.2 SketchBook</h1>
+<h2 id="introduction">Introduction</h2>
+<p>As @igord proposed, this file was created to serve as a sketchbook
+with initial thoughts about the development of the TML v0.2.
+Before any major coding, the TML developers should discuss
+about ideas through the sketchbook to avoid hacking in Python
+characteristic for so far TML development process.</p>
+<h2 id="v02">v0.2</h2>
+<p>The major novelty that TML v0.2 should bring is the comprehensive
+<em>Data Flow Analysis (DFA)</em>. The plan is to enrich the TML compiler
+with Control Flow Graph that serves as a foundation for better
+understanding the dynamic behavior of TML programs.
+The chapter 5 of the book: "Modern Compiler Design" [^grune2012]
+serves as a holy book for TML v0.2 developers.
+They obliged to carefully study it with the goal to develop
+the stable data flow analyzer.
+Beside optimal analyzer they all strive to,
+the code quality should be the one the most important property.</p>
+<p>The data flow analyzer consists of two major parts:
+- AST Threading
+- Data-flow Equations</p>
+<h1 id="multislicing">Multislicing</h1>
+<p>This section provides some ideas and explanations on the new multislicing
+operation.</p>
+<p>Multislicing is an extension to slicing. Where slicing a tensor returns a
+sub-tensor, multislicing returns a tensor of tensors.</p>
+<p>For example, let <code>x</code> be of type <code>tensor&lt;int, 3, 4&gt;</code> (i.e. a matrix).</p>
+<p>Multislice expression:</p>
+<p><code>x[:*, :]</code></p>
+<p>would be of type <code>tensor&lt;tensor&lt;int, 4&gt;, 3&gt;</code>. E.g. each element of the resulting
+tensor will be a row from <code>x</code> or to be more specific the result would be
+<code>[x[0, :], x[1, :], x[2, :]]</code>.</p>
+<p>While:</p>
+<p><code>x[:, :*]</code></p>
+<p>would be of type <code>tensor&lt;tensor&lt;int, 3&gt;, 4&gt;</code>. E.g. each element of the resulting
+tensor will be a column from <code>x</code> or <code>[x[:, 0], x[:, 1], x[:, 2], x[:, 3]]</code></p>
+<p>Multislice can operate over slices with given boundaries. For example, these are
+all valid expressions and the resulting types:</p>
+<ul>
+<li><code>x[:2*, :]</code> - <code>tensor&lt;tensor&lt;int, 4&gt;, 2&gt;</code> (<code>[x[0, :], x[1, :]]</code>)</li>
+<li><code>x[:, 1:3*]</code> - <code>tensor&lt;tensor&lt;int, 3&gt;, 2&gt;</code> (<code>[x[:, 1], x[:, 2]]</code>)</li>
+<li><code>x[1:, :2*]</code> - <code>tensor&lt;tensor&lt;int, 2&gt;, 2&gt;</code> (<code>[x[1:, 0], x[1:, 1]]</code>)</li>
+</ul>
+<p>We could generalize multislicing to produce higher dimension outer tensor. </p>
+<p>For example, let <code>x</code> be of type <code>tensor&lt;int, 3, 4, 5&gt;</code>. Then:</p>
+<div class="highlight"><pre><span></span><code>x[1:*, :, :*]
+</code></pre></div>
+<p>Would be of type <code>tensor&lt;tensor&lt;int, 4&gt;, 2, 5&gt;</code> or we get a matrix of vectors:</p>
+<div class="highlight"><pre><span></span><code>[
+    x[1, :, 0], x[1, :, 1], x[1, :, 2], x[1, :, 3], x[1, :, 3] ;
+    x[2, :, 0], x[2, :, 1], x[2, :, 2], x[2, :, 3], x[2, :, 3] ;
+]
+</code></pre></div>
+<h2 id="a-note-of-calling-functions-on-tensors">A note of calling functions on tensors</h2>
+<p>TML functions operate either element-wise or over all scalar elements. If the
+inner elements are of tensor type functions are applied recursivelly.</p>
+<p>For example:</p>
+<ul>
+<li><code>sin(x)</code> where <code>x</code> is of type <code>tensor&lt;float, 3, 4&gt;</code> would return the same type
+  where on each tensor element <code>sin</code> operation is performed.</li>
+<li><code>average(x)</code> is of scalar type if inner type of <code>x</code> tensor is scalar. If inner
+  type of <code>x</code> tensor is a tensor then the return will be a tensor of the same
+  dimension as the outer tensor. For example:</li>
+</ul>
+<div class="highlight"><pre><span></span><code>x: tensor&lt;float, 3, 4&gt;
+average(x) gives float
+
+x: tensor&lt;tensor&lt;float, 2, 2&gt;, 5&gt;
+average(x) gives tensor&lt;float, 5&gt; where average is applied to each inner tensor
+</code></pre></div>
+<h2 id="a-note-on-relational-operators">A note on relational operators</h2>
+<p>Relational operator is performed element-wise when applied to tensors. If the
+tensors are nested the operation is performed recursivelly. Thus, the return
+type would be the same dimension but with the <code>bool</code> final inner type.</p>
+<p>For example:</p>
+<p>Let <code>x</code> be of type <code>tensor&lt;float, 3, 4&gt;</code>:</p>
+<p>Then:</p>
+<div class="highlight"><pre><span></span><code>x &gt; 5
+</code></pre></div>
+<p>produces a value of type <code>tensor&lt;bool, 3, 4&gt;</code> where each element greater than
+<code>5</code> will produce <code>true</code> value.</p>
+<h2 id="all-and-any"><code>all</code> and <code>any</code></h2>
+<p>These are functions that operate over all elements of tensor and produce scalar
+if innter type is <code>bool</code>. If inner type is tensor it is applied recursively
+until reaching scalars of <code>bool</code> type. It is an error if these functions are
+applied to tensors whose final scalar type is not <code>bool</code>.</p>
+<p>For example:</p>
+<div class="highlight"><pre><span></span><code>x: tensor&lt;bool, 2, 3&gt;
+
+all(x) -&gt; returns true if all elements are true
+any(x) -&gt; returns true if any element is true
+
+x: tensor&lt;tensor&lt;bool, 2, 2&gt;, 3&gt;
+all(x) -&gt; returns tensor&lt;bool, 3&gt;
+</code></pre></div>
+<p>Some examples of condition tests:</p>
+<div class="highlight"><pre><span></span><code>if any(x &gt; 10)    # if any element of x is greater than 10
+    ...
+
+if all(x &lt; 0)    # if all elements of x are negative
+</code></pre></div>
+<h2 id="combining-multislicing-and-function-calls">Combining multislicing and function calls</h2>
+<p>Multislicing is a powerfull operator which provides great flexibility.</p>
+<p>Let <code>x</code> be of type <code>tensor&lt;float, 5, 4&gt;</code>.</p>
+<p>To ask "is there any row with <code>sin</code> value greater than <code>0.5</code> we can write:</p>
+<div class="highlight"><pre><span></span><code>if any(all((sin(x) &gt; 0.5)[:*, :])))
+</code></pre></div>
+<p>Lets break down this expression:</p>
+<p>First we calculate sin for each element of tensor x. The result is of the same type as x.
+<div class="highlight"><pre><span></span><code>sin(x)
+</code></pre></div></p>
+<p>Then we compare the result to <code>0.5</code> and get <code>tensor&lt;bool, 5, 4&gt;</code> with <code>true</code>
+value for each element whose <code>sin</code> is greater than <code>0.5</code>:</p>
+<div class="highlight"><pre><span></span><code>sin(x) &gt; 0.5
+</code></pre></div>
+<p>Then we are apply multislice over rows (first dimension) thus getting
+<code>tensor&lt;tensor&lt;float, 4&gt;, 5&gt;</code> or a tensor of all rows:</p>
+<div class="highlight"><pre><span></span><code>(sin(x) &gt; 0.5)[:*, :]
+</code></pre></div>
+<p>Now, we are applying <code>all</code> recursively (because we have tensor of tensors) to
+all inner tensors (rows) and we get a tensor of booleans - <code>tensor&lt;bool, 5&gt;</code>:</p>
+<div class="highlight"><pre><span></span><code>all((sin(x) &gt; 0.5)[:*, :]))
+</code></pre></div>
+<p>At the and we apply <code>any</code> to tensor of booleans. This time <code>any</code> won't recurse
+as we have a tensor of scalars and we get a single boolean value:</p>
+<div class="highlight"><pre><span></span><code>any(all((sin(x) &gt; 0.5)[:*, :])))
+</code></pre></div>
+<p>To ask the same question for columns we would just do a multislice over columns:</p>
+<div class="highlight"><pre><span></span><code>if any(all((sin(x) &gt; 0.5)[:, :*])))
+</code></pre></div>
+<p>We can see that using slicing/multislicing, function call and relational
+operators rules provide a great flexibility and consistency. The rules work the
+same accross all functions and relational operators thus once learned can be
+applied in a consistent manner.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p><code>any</code> can be optimized to return early as soon as the first element which
+satisfied condition is found. But, this should not influence the language usage
+and should be left to compiler optimization.</p>
+</div>
+<p>[^grune2012]: Dick Grune, Kees Van Reeuwijk, Henri E Bal, Ceriel JH Jacobs, and Koen Langendoen. <em>Modern compiler design</em>. Springer Science &amp; Business Media, 2012.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": [], "search": "../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+        <script src="../javascripts/mathjax.js"></script>
+      
+        <script src="https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+    
+  </body>
+</html>

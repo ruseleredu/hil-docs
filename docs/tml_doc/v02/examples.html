@@ -1,0 +1,1685 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+      
+      
+        
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.1">
+    
+    
+      
+        <title>Intraprocedural analysis (RDA only) - TML Documentation</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="custom" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#intraprocedural-analysis-rda-only" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="TML Documentation" class="md-header__button md-logo" aria-label="TML Documentation" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            TML Documentation
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Intraprocedural analysis (RDA only)
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="TML Documentation" class="md-nav__button md-logo" aria-label="TML Documentation" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    TML Documentation
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../variables.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Variables
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../type_system.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Type system
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../broadcasting.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Broadcasting
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reduction.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Reduction
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../terminals.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Terminals
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../guards.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Guards
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../functions.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Functions
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../statements.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Statements
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../expressions.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Expressions
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../macro_system.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Macro system
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../comments.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Comments
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../builtins.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Built-ins
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#simple-linear-cfg" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Simple linear CFG
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Simple linear CFG">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#preparation-phase" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Preparation phase
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#reaching-definition-analysis" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Reaching Definition Analysis
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#static-values-calculation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Static Values Calculation
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-cfg-with-an-if-statement" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The CFG with an if-statement
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="The CFG with an if-statement">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#preparation-phase_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Preparation phase
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#reaching-definition-analysis_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Reaching Definition Analysis
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#static-values-calculation_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Static Values Calculation
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-cfg-with-an-if-else-statement" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The CFG with an if-else-statement
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="The CFG with an if-else-statement">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#preparation-phase_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Preparation phase
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#reaching-definition-analysis_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Reaching Definition Analysis
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#static-values-calculation_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Static Values Calculation
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-cfg-with-a-while-statement" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The CFG with a while-statement
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="The CFG with a while-statement">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#preparation-phase_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Preparation phase
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#reaching-definition-analysis_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Reaching Definition Analysis
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#static-values-calculation_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Static Values Calculation
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-cfg-with-a-for-statement" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The CFG with a for-statement
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="The CFG with a for-statement">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#preparation-phase_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Preparation phase
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#reaching-definition-analysis_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Reaching Definition Analysis
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#static-values-calculation_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Static Values Calculation
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="intraprocedural-analysis-rda-only">Intraprocedural analysis (RDA only)</h1>
+<h2 id="simple-linear-cfg">Simple linear CFG</h2>
+<p>The following snippet shows a simple function with three nodes (marked as N1-N3)
+forming linear CFG.</p>
+<div class="highlight"><pre><span></span><code>fn foo():
+    int x = 5  # N1
+    int y = 3  # N2
+    x = y + 2  # N3
+end
+</code></pre></div>
+<h4 id="preparation-phase">Preparation phase</h4>
+<p>The first step is to walk the AST to build a one-level symbol table
+containing metadata about variables <code>x</code> and <code>y</code>. In this example,
+we consider only set of definitions of the variables and ignore set of read locations.
+The sets of definitions contain references to the nodes that define or assign to
+the corresponding variables.
+The symbol table content is the following</p>
+<div class="highlight"><pre><span></span><code>{
+  x: {N1, N3};
+  y: {N2};
+}
+</code></pre></div>
+<p>In this step, we determine the KILL sets of all nodes. 
+As described above, the GEN set of a node contains the reference to that node.</p>
+<h4 id="reaching-definition-analysis">Reaching Definition Analysis</h4>
+<p>For each node, we calculate <code>In</code> and <code>Out</code> sets iteratively until
+reaching the fixed point.</p>
+<div class="highlight"><pre><span></span><code>## The first and only iteration
+# N1
+In(N1) = EMPTY
+Out(N1) = {N1}
+
+# N2
+In(N2) = OUT(N1) = {N1}
+Out(N2) = {N1, N2}
+
+# N3
+In(N3) = OUT(N2) = {N1, N2}
+Out(N3) = {N2, N3}
+</code></pre></div>
+<h4 id="static-values-calculation">Static Values Calculation</h4>
+<p>For each node (program point), we determine whether the variable
+modified by the node is static, undefined or dynamic.
+The node <code>N1</code> defines variable <code>x</code>. Since its <code>In</code> is empty and
+the RHS of the definition uses only literals, <code>x</code> is marked as static.
+Similarly, the <code>y</code> is static too.
+The node <code>N3</code> redefines the value of <code>x</code> by using <code>y</code> and literal.
+Using the <code>In</code> set of <code>N3</code>, we determine that only one definition of <code>y</code>
+(inside the node <code>N2</code>) influences the value of <code>x</code>, meaning the both <code>y</code>
+and <code>x</code> are static.</p>
+<h2 id="the-cfg-with-an-if-statement">The CFG with an if-statement</h2>
+<p>Consider the following snippet with if statement.
+Note that N4 points both to the N5 and N9.</p>
+<div class="highlight"><pre><span></span><code>fn foo():
+    int x = 0       # N1
+    int y = x + 1   # N2
+    if x &gt; y:       # N3 is condition, N4 is if_statement node
+        x = x + 1   # N5
+        int x = 2   # N6
+        x = x + 5   # N7
+        y = x + 2   # N8
+    end             # N9 is join_if
+    z = x + y       # N10
+end
+</code></pre></div>
+<h4 id="preparation-phase_1">Preparation phase</h4>
+<p>The symbol table has two nested scopes. The outer scope corresponds the <code>foo</code> function,
+while the nested scope matches the if branch.
+The first assignment to <code>x</code> inside the branch modifies the <code>x</code> of the outer scope, 
+while the later definitions/assignment modifies the <code>x</code> of the inner scope.
+Finally, the symbol table has the following shape:</p>
+<div class="highlight"><pre><span></span><code>{
+  x: {N1, N5};
+  y: {N2, N8};
+  z: {N10};
+  {
+    # The scope corresponds to the if-branch.
+    x: {N6, N7}
+  }
+}
+</code></pre></div>
+<h4 id="reaching-definition-analysis_1">Reaching Definition Analysis</h4>
+<p>The <code>N4</code> nas two successors: <code>N5</code> and <code>N9</code>, so the process of calculating 
+<code>In</code> and <code>Out</code> looks like this:</p>
+<div class="highlight"><pre><span></span><code># N1
+In(N1) = EMPTY
+Out(N1) = {N1}
+
+# N2
+In(N2) = Out(N1) = {N1}
+Out(N2) = {N1, N2}
+
+# KILL(N3) = GEN(N3) = EMPTY
+In(N3) = Out(N2) = {N1, N2}
+Out(N3) = In(N3) = {N1, N2}
+
+# KILL(N4) = GEN(N4) = EMPTY
+In(N4) = Out(N3) = {N1, N2}
+Out(N4) = In(N4) = {N1, N2}
+
+# N5
+In(N5) = Out(N4) = {N1, N2}
+Out(N5) = {N2, N5}
+
+# N6 
+In(N6) = Out(N5) = {N2, N5}
+Out(N6) = {N2, N5, N6}
+
+# N7
+In(N7) = Out(N6) = {N2, N5, N6}
+Out(N7) = {N2, N5, N7}
+
+# N8 
+In(N8) = Out(N7) = {N2, N5, N7}
+Out(N8) = {N5, N7, N8}
+
+# KILL(N9) = {N6, N7}, GEN(N9) = EMPTY
+In(N9) = Out(N8) U Out(N4) = {N5, N7, N8} U {N1, N2} = {N1, N2, N5, N7, N8}
+Out(N9) = {N1, N2, N5, N8}
+
+# N10
+In(N10) = Out(N9) = {N1, N2, N5, N8}
+Out(N10) = {N1, N2, N5, N8, N10}
+</code></pre></div>
+<p>The join_if node is responsible to KILL all variables local for the 
+if branch scope.</p>
+<h4 id="static-values-calculation_1">Static Values Calculation</h4>
+<p>Considering the RHS of the first node, one concludes the <code>x</code> is static in <code>N1</code>.
+The same node influences the definition of <code>y</code> inside <code>N2</code>, so both variables
+are static at this program point.
+The static property of both variables are transferred to node <code>N3</code> and <code>N4</code>.
+The assignment to <code>x</code> in node <code>N5</code> depends on the value of <code>x</code> inside <code>N1</code>,
+meaning the <code>x</code> is static in <code>N5</code>.
+Trivially, one can notice that the <code>x</code> belonging to the inner scope is static
+in both nodes <code>N6</code> and <code>N7</code>. 
+Assignment to <code>y</code> inside the node <code>N8</code> is influenced by the assignment to <code>x</code> 
+of the inner scope in <code>N7</code>, meaning both variables are static inside this node.</p>
+<p>Two assignments to the <code>x</code> of the outer corresponding the <code>N1</code> and <code>N5</code> nodes respectively
+influences join_if node <code>N9</code>, meaning the <code>x</code> is dynamic. The same stands for the <code>y</code>.
+Node <code>N10</code> defines <code>x</code> by using the dynamic variable <code>x</code> and <code>y</code>, causing the <code>z</code> to become dynamic.</p>
+<p>If the node <code>N</code> has exactly one predecessor and the <code>N</code> does not modify the variable <code>var</code>,
+then the <code>var</code> has the same property (undefined, static, or dynamic) as in the <code>N</code>'s predecessor.
+This property was implicitly assumed while describing the Static Values Calculation
+for all examples.</p>
+<h2 id="the-cfg-with-an-if-else-statement">The CFG with an if-else-statement</h2>
+<p>The following code snippets shows a function containing if-else statement.</p>
+<div class="highlight"><pre><span></span><code>fn foo():
+    int x = 0       # N1
+    int y = x + 1   # N2
+    if x &gt; y:       # N3 is condition, N4 is if_statement node
+        x += 1      # N5 is equivalent to `x = x + 1`
+    else:
+        x += 2      # N6 is equivalent to `x = x + 2`
+        y = x + 2   # N7
+    end             # N8 is join_if
+    z = x + y       # N9
+end
+</code></pre></div>
+<h4 id="preparation-phase_2">Preparation phase</h4>
+<p>The preparation phase produces the following symbol table:
+<div class="highlight"><pre><span></span><code>{
+  x: {N1, N5, N6};
+  y: {N2, N7};
+  z: {N9};
+  {
+    # No local variables in the if-branch scope.
+  };
+  {
+    # No local variables in the else-branch scope.
+  }
+}
+</code></pre></div></p>
+<h4 id="reaching-definition-analysis_2">Reaching Definition Analysis</h4>
+<p>Reaching definitions analysis behaves as follows:</p>
+<div class="highlight"><pre><span></span><code># N1
+In(N1) = EMPTY
+Out(N1) = {N1}
+
+# N2
+In(N2) = Out(N1) = {N1}
+Out(N2) = {N1, N2}
+
+# KILL(N3) = GEN(N3) = EMPTY
+In(N3) = Out(N2) = {N1, N2}
+Out(N3) = {N1, N2}
+
+# KILL(N4) = GEN(N4) = EMPTY
+In(N4) = Out(N3) = {N1, N2}
+Out(N4) = {N1, N2}
+
+# N5
+In(N5) = Out(N4) = {N1, N2}
+Out(N5) = {N2, N5}
+
+# N6
+In(N6) = Out(N4) = {N1, N2}
+Out(N6) = {N2, N6}
+
+# N7
+In(N7) = Out(N6) = {N2, N6}
+Out(N7) = {N6, N7}
+
+# KILL(N8) = {local variables for if-else statement} = EMPTY
+# GEN(N8) = EMPTY
+In(N8) = Out(N5) U Out(N7) = {N2, N5} U {N6, N7} = { N2, N5, N6, N7}
+Out(N8) = { N2, N5, N6, N7}
+
+# In(N9) = Out(N8) = { N2, N5, N6, N7}
+# Out(N9) = { N2, N5, N6, N7, N9}
+</code></pre></div>
+<p>The node <code>N8</code> should have killed all variables local for both if-branch and else-branch
+scopes. Since there is 0 variable local for these scopes, the node kills 0 variables.</p>
+<h4 id="static-values-calculation_2">Static Values Calculation</h4>
+<p>The RHS of the <code>N1</code> uses literals only, so the <code>x</code> is static.
+One assignment to <code>x</code> influences <code>y</code> definition in <code>N1</code>, so both <code>x</code> and <code>y</code>
+are static at this point. Since <code>N3</code> and <code>N4</code> do not modify any state,
+the static properties of the two variables are transferred.
+The value of <code>x</code> in the node <code>N5</code> is influenced by the assignment to this
+variable in the node N1, so the <code>x</code> is static at this point.
+Similarly, the <code>x</code> and <code>y</code> hold the static property in nodes <code>N6</code> and <code>N7</code> respectively.</p>
+<p>Finally, two assignment to <code>x</code> (from nodes <code>N5</code> and <code>N6</code>) and two assignments to
+<code>y</code> (from nodes <code>N2</code> and <code>N7</code>) influences the value of <code>z</code>. Thus, at this point
+of analysis we cannot determine single values of <code>x</code> and <code>y</code> in the node <code>N9</code> so
+we shall treat them as dynamic and mark <code>z</code> variable as dynamic at this point.
+However, as we shall see bellow, by <code>if</code> statement pruning, as the condition is
+static, we can calculate and prove that only a single assignment to <code>x</code> and <code>y</code>
+influence <code>N9</code> and thus we can prove that <code>z</code> is static.</p>
+<h2 id="the-cfg-with-a-while-statement">The CFG with a while-statement</h2>
+<p>Consider the following snippet with a while statement.
+The <code>N4</code> node has two successors: <code>N5</code> and <code>N8</code>. The latter
+node has only one predecessor <code>N4</code>.</p>
+<div class="highlight"><pre><span></span><code>fn foo():
+    int x = 0           # N1
+    int cnt = 0         # N2
+    while cnt &lt; 10:     # N3 is the condition, N4 is the while_statement node
+        x = x + cnt     # N5
+        cnt += 1        # N6 is equivalent to cnt = cnt + 1
+        int y = x       # N7 points back to the N3
+    end                 # N8 is the end_while node
+   int z = x * cnt      # N9
+end
+</code></pre></div>
+<h4 id="preparation-phase_3">Preparation phase</h4>
+<p>The preparation phase outputs the following symbol table:</p>
+<div class="highlight"><pre><span></span><code>{
+  x: {N1, N5};
+  cnt: {N2, N6};
+  z: {N9};
+  {
+    # The scope of the while-statement body
+    y: {N7};  
+  }
+}
+</code></pre></div>
+<h4 id="reaching-definition-analysis_3">Reaching Definition Analysis</h4>
+<p>During the first iteration, the data-flow equation solver is aware only
+about the <code>Out</code> set of the <code>N2</code> node, but not of the <code>N7</code>'s <code>Out</code> set.
+Thus, the iteration takes two iterations to converges.</p>
+<p>The first iteration of the RDA behaves as follows:</p>
+<div class="highlight"><pre><span></span><code># N1
+In(N1) = EMPTY
+Out(N1) = {N1}
+
+# N2
+In(N2) = Out(N1) = {N1}
+Out(N2) = {N1, N2}
+
+# KILL(N3) = GEN(N3) = EMPTY since the N3 is the condition node
+# As stated abode, the Out(N7) is not evaluated at the moment,
+# so use the EMPTY as the appropriate value.
+In(N3) = Out(N2) U Out(N7) = {N1, N2} U EMPTY = {N1, N2}
+Out(N3) = In(N3) = {N1, N2}
+
+# The while statement node does not kill nor generate any variables,
+# thus the KILL(N4) = GEN(N4) = EMPTY
+In(N4) = Out(N3) = {N1, N2}
+Out(N4) = In(N3) = {N1, N2}
+
+# N5
+In(N5) = Out(N4) = {N1, N2}
+Out(N5) = {N2, N5}
+
+# N6
+In(N6) = Out(N5) = {N2, N5}
+Out(N6) = {N5, N6}
+
+# N7
+In(N7) = Out(N6) = {N5, N6}
+Out(N7) = {N5, N6, N7}
+
+# N8 kills variables local for the while-statement scope
+# KILL(N8) = {N7}
+In(N8) = Out(N4) = {N1, N2}
+Out(N8) = {N1, N2}
+
+# N9
+In(N9) = Out(N8) = {N1, N2}
+Out(N9) = {N1, N2, N9}
+</code></pre></div>
+<p>The second iteration proceeds as follows:</p>
+<div class="highlight"><pre><span></span><code># The input sets of the N1 and N2 remains the same across iterations,
+# so their outputs are unchanged.
+
+# In this iteration, the solver uses the Out(N7) evaluated 
+# by the previous iteration.
+In(N3) = Out(N2) U Out(N7) = {N1, N2} U {N5, N6, N7} = {N1, N2, N5, N6, N7}
+Out(N3) = In(N3) = {N1, N2, N5, N6, N7}
+
+# N4
+In(N4) = Out(N3) = {N1, N2, N5, N6, N7}
+Out(N4) = In(N4) = {N1, N2, N5, N6, N7}
+
+# N5
+In(N5) = Out(N4) = {N1, N2, N5, N6, N7}
+Out(N5) = {N2, N5, N6, N7}
+
+# N6
+In(N6) = Out(N5) = {N2, N5, N6, N7}
+Out(N6) = {N5, N6, N7}
+
+# N7
+In(N7) = Out(N6) = {N5, N6, N7}
+Out(N7) = {N5, N6, N7}
+
+# N8: Consider that KILL(N8) = {N7}
+In(N8) = Out(N4) = {N1, N2, N5, N6, N7}
+Out(N8) = {N1, N2, N5, N6}
+
+# N9
+In(N9) = Out(N8) = {N1, N2, N5, N6}
+Out(N9) = {N1, N2, N5, N6, N9}
+</code></pre></div>
+<h4 id="static-values-calculation_3">Static Values Calculation</h4>
+<p>Obviously, <code>x</code> and <code>cnt</code> are static in <code>N1</code> and <code>N2</code> points.
+<code>In</code> sets of <code>N3</code> and <code>N4</code> indicates the <code>x</code> and <code>cnt</code> are 
+dynamic in these two points. 
+Two assignments to <code>cnt</code> (<code>N2</code> and <code>N6</code>) and two previous
+assignment to <code>x</code> (<code>N1</code> and <code>N5</code>) influence the value
+of <code>x</code> in <code>N5</code>, meaning the <code>x</code> and <code>cnt</code> remain dynamic
+in this node. Similarly, the <code>cnt</code> is dynamic in <code>N6</code>.
+The value of <code>y</code> at <code>N7</code> program point depends on only
+assignment to <code>x</code> in <code>N5</code>. Recursively, we visit the node <code>N5</code>
+to determine the dynamic nature of <code>x</code> at <code>N5</code>, 
+so we conclude the <code>y</code> is dynamic in <code>N7</code>.
+From the <code>In</code> set of the node <code>N8</code>, one concludes that both
+<code>x</code> and <code>cnt</code> are dynamic.
+At the end, two assignments to <code>x</code> (and <code>cnt</code> respectively)
+influence the value of <code>z</code>, meaning it is dynamic at this program point.</p>
+<h2 id="the-cfg-with-a-for-statement">The CFG with a for-statement</h2>
+<p>Consider the following snippet with a for statement.
+The <code>N4</code> node has two successors: <code>N5</code> and <code>N8</code>. The latter
+node has only one predecessor <code>N4</code>.</p>
+<div class="highlight"><pre><span></span><code>fn foo():
+    int x = 1           # N1
+    for i = 1:10:        # N2 is the range, N3 is the node that initialize the i,
+                        # N4 is the for_statement node
+        x = x + i       # N5
+        i = 2           # N6
+        int y = i + 1   # N7 points back to the N3
+    end                 # N8 is the end_for node
+    int z = x * 3       # N9
+end
+</code></pre></div>
+<h4 id="preparation-phase_4">Preparation phase</h4>
+<p>For the purpose of the for-statements, the TML compiler produces a so-called middle scope
+nested within the function <code>foo</code> scope, that at the same time encloses the scope
+of the loop body. Thus, the preparation phase assemble the following symbol table:</p>
+<div class="highlight"><pre><span></span><code>{
+  x: {N1, N5};
+  z: {N9};
+  {
+    # The for-statement scope that defines the iteration variable.
+    i: {N2, N6};
+    {
+      # The lexical scope belonging to the loop body
+      y: {N7};
+    }
+  }
+}
+</code></pre></div>
+<h4 id="reaching-definition-analysis_4">Reaching Definition Analysis</h4>
+<p>Similarly to the example with the while-statement, the equation
+solver is not aware of all <code>Out</code> sets corresponding to the <code>N3</code>'s dynamic
+successors, meaning the solution process needs two iterations to stabilize.</p>
+<p>The following calculation is done as part of the first iteration.</p>
+<div class="highlight"><pre><span></span><code># N1
+In(N1) = EMPTY
+Out(N1) = {N1}
+
+# N2 does not kill, nor generate any variables, so KILL(N3) = GEN(N3) = EMPTY
+In(N2) = Out(N1) = {N1}
+Out(N2) = {N1}
+
+# At this moment, the Out(N7) is uknown, so we use the EMPTY as
+# an appropriate value.
+# N3
+In(N3) = Out(N2) U Out(N7) = {N1} U EMPTY = {N1}
+Out(N3) = In(N3) = {N1, N2}
+
+# The for_statement not does not produce, nor kills any variables,
+# so KILL(N4) = GEN(N4) = EMPTY
+In(N4) = Out(N3) = {N1, N2}
+Out(N4) = In(N4) = {N1, N2}
+
+# N5
+In(N5) = Out(N4) = {N1, N2}
+Out(N5) = {N2, N5}
+
+# N6
+In(N6) = Out(N5) = {N2, N5}
+Out(N6) = {N5, N6}
+
+# N7
+In(N7) = Out(N6) = {N5, N6}
+Out(N7) = {N5, N6, N7}
+
+# N8 kills variables local for the for statement loop 
+# (iteration variable + loop body scope)
+# KILL(N8) = {N2, N6, N7}
+In(N8) = Out(N4) = {N1, N2}
+Out(N8) = {N1}
+
+In(N9) = Out(N8) = {N1}
+Out(N9) = {N1, N9}
+</code></pre></div>
+<p>The second iteration proceeds as follows:</p>
+<div class="highlight"><pre><span></span><code># The In sets of N1 and N2remain unchaged, so as theirs Out set.
+
+# Use the Out(N7) calculated in the previous iteration.
+In(N3) = Out(N2) U Out(N7) = {N1} U {N5, N6, N7} = {N1, N5, N6, N7}
+Out(N3) = {N1, N2, N5, N7}
+
+# N4
+In(N4) = Out(N3) = {N1, N2, N5, N7}
+Out(N4) = In(N4) = {N1, N2, N5, N7}
+
+# N5
+In(N5) = Out(N4) = {N1, N2, N5, N7}
+Out(N5) = {N2, N5, N7}
+
+# N6
+In(N6) = Out(N5) = {N2, N5, N7}
+Out(N6) = {N5, N6, N7}
+
+# N7
+In(N7) = Out(N6) = {N5, N6, N7}
+Out(N7) = {N5, N6, N7}
+
+# N8: KILL(N8) = {N2, N6, N7}
+In(N8) = Out(N4) = {N1, N2, N5, N7}
+Out(N8) = {N1, N5}
+
+# N9
+In(N9) = Out(N8) = {N1, N5}
+Out(N9) = {N1, N5, N9}
+</code></pre></div>
+<h4 id="static-values-calculation_4">Static Values Calculation</h4>
+<p>It is obvious that <code>x</code> is static in both <code>N1</code> and <code>N2</code>. 
+Since the RHS of the <code>N3</code> uses literals only,
+one concludes the <code>i</code> variable is static.</p>
+<p><code>``admonish todo
+An alternative way is to proclaim</code>i<code>as dynamic whenever encountering a
+node representing initialization of the for-loop iteration variable.
+Thus, we refer</code>i` to be in ITER-VAR-STATE later in the section. 
+<div class="highlight"><pre><span></span><code>The `In` set of the node `N4` 
+contains two references to the assignments to `x`, meaning `x` is dynamic
+at this program point. The `ITER-VAR-STATE` of variable `i` is transferred to the `N4`.
+
+Considering the node `N5`, one notices that two earlier assignments to `x` (`N1` and `N5`)
+influence the value of the `x` inside node `N5`, meaning the `x` holds the dynamic property.
+Since the `i`&#39;s value is updated inside `N6` with the literal value, the `i` changes its
+nature from `ITER-VAR-STATE` to static. 
+Furthermore, we conclude that only one assignment to `i` (at the `N6` program
+point) influences the `y`, so the `y` share the same property the `i` has in the node `N6`,
+which is static.
+Trivially, the `x` holds the dynamic property in the node (`N8`).
+
+```admonish question
+Do we need to consider the properties of `y`, and `i` that are killed by this node?
+</code></pre></div></p>
+<p>Lastly, the RHS of the node <code>N9</code> references the <code>x</code> whose values depends on two
+assignments (<code>N1</code> and <code>N5</code>), meaning the <code>z</code> is dynamic in the <code>N9</code>.</p>
+<h1 id="interprocedural-analysis-rda-only">Interprocedural analysis (RDA only)</h1>
+<p>The following few examples covers typical cases that should bring more insights
+about interprocedural dataflow analysis.</p>
+<h2 id="interprocedural-analysis-of-pure-functions">Interprocedural analysis of pure functions</h2>
+<h3 id="preparation-phase_5">Preparation phase</h3>
+<p>Consider the following example with pure functions only.</p>
+<div class="highlight"><pre><span></span><code>fn foo():
+    a = 3      # N1
+    bar()      # replaced by the N2
+    b = a + 1  # N5
+end
+
+fn bar():
+    # N2 is the entry node
+    a = 4  # N3
+    # N4 is the exit node
+end
+</code></pre></div>
+<p>TML compilers copies the CFG of <code>bar</code> at the place of the corresponding call. 
+Nodes are enumerated respecting the previous concatenation of <code>for</code> and <code>bar</code> CFGs.
+Nodes <code>N2-N4</code> are actually copies of the original nodes created by the AST threading process.
+For the brevity, enter and exits nodes of <code>foo</code> are omitted.</p>
+<p>The symbol table contains scopes of both <code>foo</code> and <code>bar</code> functions</p>
+<div class="highlight"><pre><span></span><code>{
+  foo : {
+    a: {N1};
+    b: {N5};
+  }
+  bar : {
+    a: {N3}; 
+  }
+}
+</code></pre></div>
+<h3 id="reaching-definition-analysis_5">Reaching Definition Analysis</h3>
+<p>Assuming that the program execution starts from the <code>foo</code>, 
+the RDA behaves as follows:</p>
+<div class="highlight"><pre><span></span><code># N1
+In(N1) = EMPTY
+Out(N1) = {N1}
+
+# N2
+In(N2) = Out(N1) = {N1}
+Out(N2) = {N1}
+
+# N3
+In(N3) = Out(N2) = {N1}
+Out(N3) = {N1, N3}
+
+# KILL(N4) = {N3}
+In(N4) = Out(N3) = {N1, N3}
+Out(N4) = {N1}
+
+# N5
+In(N5) = Out(N4) = {N1}
+Out(N5) = {N1, N5}
+</code></pre></div>
+<h3 id="static-value-analysis">Static Value Analysis</h3>
+<p>The <code>N1</code> assigns the scalar value to <code>a</code>, meaning the <code>a</code> is static at this point.
+Since the <code>bar</code> does not see nor change the <code>a</code> belonging to the <code>foo</code>, 
+and <code>N5</code> defines <code>b</code>, the <code>a</code> remains static until <code>foo</code> finishes.
+The node <code>N3</code> defines its own <code>a</code> variable, and the RHS of the definitions indicates
+the static nature of the variable. 
+At the end, the static value of <code>a</code> influences the definition of <code>b</code> 
+inside <code>N5</code>, so the <code>b</code> is static at this point.</p>
+<h3 id="preparation-phase_6">Preparation phase</h3>
+<p>While executing the preparation phase, the TML compiler uses the information
+about aliasing explained above to produce the following symbol table:</p>
+<div class="highlight"><pre><span></span><code>{
+  a: {N1, N7};
+  main: {
+    b: {N3};
+    c: {N11};
+    tmp: {N4, N8}
+  };
+  bar: {
+    var: {N6};
+  };
+}
+</code></pre></div>
+<p>As one may notice, the temporary variable <code>tmp</code> aliasing <code>bar</code>'s second parameter
+is introduced for display purposes. We still need to decide whether to explicitly
+introduce the variable, or to hide it somewhere behind the scene.</p>
+<p>```admonish todo
+Should we introduce temporary variables in the symbol table?</p>
+<p>igord: We should probably treat them as any other subexpression temporaries.
+<div class="highlight"><pre><span></span><code>### Reaching Definition Analysis (RDA)
+
+The RDA converges in the first iteration shown below:
+</code></pre></div></p>
+<h1 id="n1">N1</h1>
+<p>In(N1) = EMPTY
+Out(N2) = {N1}</p>
+<h1 id="since-the-n2-does-not-receive-any-arguments-the-entry-does-not-introduce">Since the N2 does not receive any arguments, the entry does not introduce</h1>
+<h1 id="nor-kill-any-nodes">nor kill any nodes.</h1>
+<p>In(N2) = Out(N2) = {N1}
+Out(N2) = In(N2) = {N1}</p>
+<h1 id="n3">N3</h1>
+<p>In(N3) = Out(N2) = {N1}
+Out(N3) = {N1, N3}</p>
+<h1 id="n4-introduce-a-temporary-variable-to-hold-a-constant-passes-as-an-argument">N4 introduce a temporary variable to hold a constant passes as an argument.</h1>
+<h1 id="we-still-need-to-decide-if-the-introduction-of-temporary-variables-shoudl-be-explicit">We still need to decide if the introduction of temporary variables shoudl be explicit.</h1>
+<p>In(N4) = Out(N3) = {N1, N3}
+Out(N4) = {N1, N3, N4}</p>
+<h1 id="n5-is-the-entry-node-of-bar-so-killn4-genn4-empty">N5 is the entry node of <code>bar</code>, so KILL(N4) = GEN(N4) = EMPTY</h1>
+<p>In(N5) = Out(N4) = {N1, N3, N4}
+Out(N5) = {N1, N3, N4}</p>
+<h1 id="n6">N6</h1>
+<p>In(N6) = Out(N5) = {N1, N3, N4}
+Out(N6) = {N1, N3, N4, N6}</p>
+<h1 id="n7-this-node-is-changing-the-actual-argument-a-belonging-to-the-main">N7 - this node is changing the actual argument <code>a</code> belonging to the <code>main</code></h1>
+<p>In(N7) = Out(N6) = {N1, N3, N4, N6}
+Out(N7) = {N3, N4, N6, N7}</p>
+<h1 id="similarly-to-the-previous-node-n8-changes-the-temporary-variable-tmp-representing-constant-3">Similarly to the previous node, N8 changes the temporary variable <code>tmp</code> representing constant 3</h1>
+<p>In(N8) = Out(N7) = {N3, N4, N6, N7}
+Out(N8) = {N3, N6, N7, N8}</p>
+<h1 id="n9-is-just-a-return-node-not-killing-nor-generating-anything">N9 is just a return node not killing nor generating anything.</h1>
+<p>In(N9) = Out(N8) = {N3, N6, N7, N8}
+Out(N9) = In(N9) = {N3, N6, N7, N8}</p>
+<h1 id="as-the-exit-node-n10-kills-variables-local-to-bar-function">As the exit node, N10 kills variables local to <code>bar</code> function,</h1>
+<h1 N6="N6" id="so-killn10">so KILL(N10) =</h1>
+<p>In(N10) = Out(N9) = {N3, N6, N7, N8}
+Out(N10) = {N3, N7, N8}</p>
+<h1 id="n11">N11</h1>
+<p>In(N11) = Out(N10) = {N3, N7, N8}
+Out(N11) = {N3, N7, N8, N11}</p>
+<h1 N11="N11" N3_="N3," N4_="N4," N8_="N8," id="n12-kills-local-variables-of-main-so-killn14">N12 kills local variables of <code>main</code>, so KILL(N14) =</h1>
+<p>In(N12) = Out(N11) = {N3, N7, N8, N11}
+Out(N12) = {N7}
+<div class="highlight"><pre><span></span><code>### Static Value Calculation
+
+It is obviously that `a`, `b`, and `tmp` are static at `N1-N6`, `N3-N12`, and `N4-N7` 
+intervals respectively. 
+The node `N6` defines the `var` by using aliases `arg1` and `arg2` to the arguments
+`a` and `tmp`, respectively, that are both static, meaning the `var` is static too.
+The value of `a` (aliased by `arg1`) depends on its previous value assigned in the node `N1`
+and scalar `1`, meaning the `a` remains the same at the point `N7`.
+Similarly, one concludes the `tmp` is static at the point `N8`.
+All variables hold the determined properties until they are killed by the corresponding
+exit nodes.
+
+### Preparation phase
+
+Considering that `arg1` and `arg2` are aliases for `a` and `b` respectively,
+the preparation phase outputs the following symbol table.
+</code></pre></div>
+{
+  a: {N1, N7, N16};
+  b: {N2, N8, N17};
+  main: {
+    res: {N24};
+    tmp1: {N11, N12};
+    tmp2: {N20, N21}
+  };
+}
+<div class="highlight"><pre><span></span><code>Since a function call behaves as a macro substitution,
+a return statement of a callee write to a temporary variable of a caller
+allocated at the moment of the actual call (macro substitution).
+Thus, we consider that the return statements of the first call to the `sub_abs`
+can assign to the `tmp1`. Similarly, the return statements of the second
+call can write to the`tmp2`. 
+To make this possible, we should store a reference to the temporary variable
+of the callers inside the copy of each return statement of a callee.
+
+
+~~Since the `sub_abs` must return a value, we introduce a pseudo
+variable `ret_sub_abs` in the scope of `sub_abs` to ease
+the process of analysing static property of the return value.
+Additionally, we consider each return statement as the assignment
+to the `ret_sub_abs`. If there is more than one definition
+of this variable influencing the exit_node of a function,
+we conclude that the return value is dynamic.
+Furthermore, we assume that this variable is 
+assigned to the temporary variables `tmp1` and
+`tmp2` of the caller `main` to influence the definition of the `res`.~~
+
+```admonish todo
+Check if it is ok to consider a return statement as an assignment 
+to the temporary variable of the caller. 
+It is a little bit counterintuitive that a store to the 
+temporary variable preceeds the exit node.
+</code></pre></div></p>
+<h3 id="reaching-definition-analysis_6">Reaching Definition Analysis</h3>
+<p>The RDA converges after the first iteration determining the following In/Out:</p>
+<div class="highlight"><pre><span></span><code># N1
+In(N1) = EMPTY
+Out(N1) = {N1}
+
+# N2
+In(N2) = Out(N1) = {N1}
+Out(N2) = {N1, N2}
+
+# N3 is the entry node, so KILL(N3) = GEN(N3) = EMPTY
+In(N3) = Out(N2) = {N1, N2}
+Out(N3) = In(N3) = {N1, N2}
+
+# N4 and N5 are introduced to point out that the `a + b`
+# uses values of `a` and `b` before the first call to `sub_abs` is executed.
+# These nodes nor KILL, or GEN anything.
+Out(N3) = In(N4) = Out(N4) = In(N5) = Out(N5) = {N1, N2}
+
+# As the entry node of the `sub_abs`, the N6 does not KILL or GEN any variable.
+In(N6) = Out(N5) = {N1, N2}
+Out(N6) = In(N6) = {N1, N2}
+
+# N7 modifies the `arg1` which is the alias for `a`.
+In(N7) = Out(N6) = In(N6) = {N1, N2}
+Out(N7) = {N2, N7}
+
+# Similarly to the previous node, the N8 modifies `b` though its alias `arg2`
+In(N8) = Out(N7) = {N2, N7}
+Out(N8) = {N7, N8}
+
+# The condition node N9 and the if_node N10 does not KILL, nor GEN any variables.
+Out(N8) = In(N9) = Out(N9) = In(N10) = Out(N10) = {N7, N8}
+
+# The node N11 represents the return statement that updates the `tmp1` belonging
+# to the caller.
+In(N11) = Out(N10) = {N7, N8}
+Out(N11) = {N7, N8, N11}
+
+# Similarly to the N11, the N12 assigns to the `tmp1`.
+In(N12) = Out(N10) = {N7, N8}
+Out(N12) = {N7, N8, N12}
+
+# Since the N13 is dead, we avoid processing it. 
+# If however we still think it is important to process this node,
+# then the equations looks like this.
+# The join_if node is reponsible to KILL all variables locally
+# defined within if-else statement.
+# However, the if-else statement of the `sub_abs` does not defines any local
+# variables, so the KILL(N13) = EMPTY.
+In(N13) = Out(N11) U Out(N12) = {N7, N8, N11} U {N7, N8, N12} = {N7, N8, N11, N12}
+Out(N13) = {N7, N8, N11, N12}
+
+# The exit node N14 KILLs variables local for the `sub_abs` function.
+# As one may observed, there is no variables locally defined within
+# the function, so the KILL(N14) = EMPTY
+# Since the `sub_abs` contains two return statements,
+# the exit node N14 has the same number of predecessor (N11 and N12)
+In(N14) = Out(N11) U (N12) = {N7, N8, N11} U {N7, N8, N12} = {N7, N8, N11, N12}
+
+
+# Similarly, we process nodes N15-N23
+# N15 is the entry node
+In(N15) = Out(N14) = {N7, N8, N11, N12}
+Out(N15) = In(N15) = {N7, N8, N11, N12}
+
+# N16 updates the `a`
+In(N16) = Out(N15) = {N7, N8, N11, N12}
+Out(N16) = {N8, N11, N12, N16}
+
+# N17 updates the `b`
+In(N17) = Out(N16) = {N8, N11, N12, N16}
+Out(N17) = {N11, N12, N16, N17}
+
+# N18 is condition, while N19 is the if_node
+Out(N17) = In(N18) = Out(N18) = In(N19) = Out(N19) = {N11, N12, N16, N17}
+
+# N20 stores to the `tmp2`
+In(N20) = Out(N19) = {N11, N12, N16, N17}
+Out(N20) = {N11, N12, N16, N17, N20}
+
+# N21 updates the `tmp2`
+In(N21) = Out(N19) = {N11, N12, N16, N17}
+Out(N21) = {N11, N12, N16, N17, N21}
+
+# The N22 is dead, so we ignore it. If we still think analysing this node
+# is important, then check the equations of N13.
+
+# N23 is the exit node with two predecessors.
+# Since there is no local variables defined within `sub_abs`,
+# KILL(23) = EMPTY
+In(N23) = Out(N20) U Out(N21} = {N11, N12, N16, N17, N20} U {N11, N12, N16, N17, N21}
+Out(23) = {N11, N12, N16, N17, N20, N21}
+
+# N24 introdcues the `res` variable
+In(N24) = Out(23) = {N11, N12, N16, N17, N20, N21}
+Out(N24) = {N11, N12, N16, N17, N20, N21, N24}
+
+# The N25 KILLs local variable of `main`, so KILL(N25) = {N11, N12, N20, N21, N24}
+In(N25) = Out(N24) = {N11, N12, N16, N17, N20, N21, N24}
+Out(N25) = {N16, N17}
+</code></pre></div>
+<p><code>admonish todo
+Considering the In(N24), one concludes the definitions of `a` and `b`
+at the points `N16` and `N17`, respectively, influence the value of `res`.
+However, the subexpression `a + b` depends on the values assigned
+in `N1` and `N2`, instead. 
+This fact is pointed out, because we should think about the
+case where this might be problematic.</code></p>
+<h3 id="static-value-analysis_1">Static value analysis</h3>
+<p>It is obvious that both <code>a</code> and <code>b</code> variables are static in the 
+interval containing points <code>N1-N6</code>.
+By using the information about aliases, we noticed that <code>N7</code> modifies
+the <code>a</code>. The new value of <code>a</code> at the point <code>N7</code> depends on the 
+definition of <code>a</code> at the <code>N1</code> point and scalar, meaning the <code>a</code> remains
+static at the <code>N7</code> point. Similarly, the <code>b</code> is static in the <code>N8</code> node. 
+Furthermore, <code>a</code> and <code>b</code> remain static until the <code>N16</code> and <code>N17</code>, respectively,
+that redefines those variables.
+Nodes <code>N9</code> and <code>N10</code> does not change the nature of the variables. 
+The node <code>N11</code> might assign the return values to the <code>tmp1</code> belonging
+to the caller. If during pruning step
+we notice that this node executes indeed, then the <code>tmp1</code> os be static.
+The previous is true for the node <code>N12</code> too.
+Since we do not know whether the if or else branch executes
+until the pruning step starts, we conclude that two definitions 
+of the return value (and <code>tmp1</code>) at <code>N11</code> and <code>N12</code>, respectively,
+influence the return value at the node <code>N14</code>. 
+Thus, the value returned by the <code>sub_abs</code> is dynamic at the <code>N14</code> point.</p>
+<p>Similar reasoning applies to nodes <code>N15-N23</code>. Although, <code>N16</code> and <code>N17</code>
+redefines the <code>a</code> and <code>b</code>, respectively, their static nature remains unchanged.
+Again, two definitions of the return value (at <code>N20</code> and <code>N21</code>) influence
+the exit node <code>N23</code>, so the <code>sub_abs</code> returns the value of dynamic nature.</p>
+<p>When considering the definition of <code>res</code> inside the <code>N24</code>,
+we notice the influence of the following definition:
+- the definition of the temporary variable <code>tmp1</code> influenced by the assignments:
+  - the potential return value of the first function call to <code>sub_abs</code> inside <code>N11</code>
+  - the potential return value of the first function call to <code>sub_abs</code> inside <code>N12</code>
+- the definition of the temporary variable <code>tmp2</code> influenced by the assignments:
+  - the potential return value of the second function call to <code>sub_abs</code> inside <code>N20</code>
+  - the potential return value of the second function call to <code>sub_abs</code> inside <code>N21</code>
+- the definition of <code>a</code> at <code>N16</code>. However, the definition of <code>N1</code> really influence
+  the definition of <code>res</code>. Check the last todo from the previous subsection.
+- the definition of <code>b</code> at <code>N17</code>. However, the definition of <code>N2</code> really influence
+  the definition of <code>res</code>. Check the last todo from the previous subsection.</p>
+<p>We can conclude that both temporary variable <code>tmp1</code> and <code>tmp2</code>
+are dynamic, making the <code>res</code> to be dynamic too.
+We conclude static value analysis by stating that nothing changes in the node <code>N25</code>. </p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": [], "search": "../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+        <script src="../javascripts/mathjax.js"></script>
+      
+        <script src="https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+    
+  </body>
+</html>
