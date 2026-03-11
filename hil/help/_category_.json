@@ -1,11 +1,11 @@
 {
   "position": 5,
-  "label": "TyphoonTest Library",
+  "label": "Typhoon Help",
   "className": "category-highlight",
   "link": {
     "type": "generated-index",
-    "title": "TyphoonTest Library",
-    "description": "TyphoonTest Library related documentation and resources.",
-    "slug": "/typhoontest"
+    "title": "Typhoon Help",
+    "description": "Typhoon Help related documentation and resources.",
+    "slug": "/help"
   }
 }
