@@ -1,0 +1,13 @@
+####################
+Configuration API
+####################
+
+**Module:** ``typhoon.api.configuration``
+
+Configuration API is a set of methods used to read and update the predefined configuration of Typhoon HIL Control Center.
+
+`API references`_
+-----------------
+
+.. autoclass:: typhoon.api.configuration.ConfigurationAPI
+   :members:
