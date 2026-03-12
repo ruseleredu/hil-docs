@@ -76,14 +76,10 @@ const navbarItems: NavbarItem[] = [
     },
     {
         to: 'pathname:///docs/index.html', // Link to a page in your API docs
-        label: 'HIL Docs',
+        label: 'Docs',
         position: 'left',
         type: "dropdown",
         items: [
-            {
-                to: "pathname:///docs/tml_doc/index.html",
-                label: "Typhoon modeling language (TML)",
-            },
             {
                 to: "pathname:///docs/typhoontest_html/index.html",
                 label: "TyphoonTest Library",
@@ -93,8 +89,20 @@ const navbarItems: NavbarItem[] = [
                 label: "Typhoon APIs",
             },
             {
-                to: "pathname:///docs/help/index.html",
-                label: "Typhoon Help Center",
+                to: "pathname:///docs/tml_doc/index.html",
+                label: "Typhoon modeling language (TML)",
+            },
+            {
+                to: "pathname:///docs/help/t-an001/concepts/application_notes_introduction.html",
+                label: "Typhoon HIL Application Notes",
+            },
+            {
+                to: "pathname:///docs/help/t-ug002/topics/software_manual_introduction.html",
+                label: "Typhoon HIL Software Manual",
+            },
+            {
+                to: "pathname:///docs/help/t-ug001/abstract/hardware_manual_introduction.html",
+                label: "Typhoon HIL Hardware Manual",
             },
         ],
     },
