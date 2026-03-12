@@ -1,47 +1,40 @@
 <!DOCTYPE html>
 
-<html lang="en" data-content_root="./">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
-
-    <title>Typhoon HIL RPC API &#8212; Typhoon API 2026.1 sp1 documentation</title>
-    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=03e43079" />
-    <link rel="stylesheet" type="text/css" href="_static/sphinxdoc.css?v=34905f61" />
-    <script src="_static/documentation_options.js?v=6122843d"></script>
-    <script src="_static/doctools.js?v=9bcbadda"></script>
-    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
-    <link rel="index" title="Index" href="genindex.html" />
-    <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Device Manager API" href="device_manager_api.html" />
-    <link rel="prev" title="HIL SCADA" href="serial_conn_widget.html" /> 
-  </head><body>
-    <div class="related" role="navigation" aria-label="Related">
-      <h3>Navigation</h3>
-      <ul>
-        <li class="right" style="margin-right: 10px">
-          <a href="genindex.html" title="General Index"
-             accesskey="I">index</a></li>
-        <li class="right" >
-          <a href="py-modindex.html" title="Python Module Index"
-             >modules</a> |</li>
-        <li class="right" >
-          <a href="device_manager_api.html" title="Device Manager API"
-             accesskey="N">next</a> |</li>
-        <li class="right" >
-          <a href="serial_conn_widget.html" title="HIL SCADA"
-             accesskey="P">previous</a> |</li>
-        <li class="nav-item nav-item-0"><a href="typhoon_api.html">Typhoon API 2026.1 sp1 documentation</a> &#187;</li>
-        <li class="nav-item nav-item-this"><a href="">Typhoon HIL RPC API</a></li> 
-      </ul>
-    </div>  
-
-    <div class="document">
-      <div class="documentwrapper">
-        <div class="bodywrapper">
-          <div class="body" role="main">
-            
-  <section id="typhoon-hil-rpc-api">
+<html data-content_root="./" lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="width=device-width, initial-scale=1" name="viewport"/>
+<title>Typhoon HIL RPC API — Typhoon API 2026.1 sp1 documentation</title>
+<link href="_static/pygments.css?v=03e43079" rel="stylesheet" type="text/css"/>
+<link href="_static/sphinxdoc.css?v=34905f61" rel="stylesheet" type="text/css"/>
+<script src="_static/documentation_options.js?v=6122843d"></script>
+<script src="_static/doctools.js?v=9bcbadda"></script>
+<script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+<link href="genindex.html" rel="index" title="Index"/>
+<link href="search.html" rel="search" title="Search"/>
+<link href="device_manager_api.html" rel="next" title="Device Manager API"/>
+<link href="serial_conn_widget.html" rel="prev" title="HIL SCADA"/>
+</head><body>
+<div aria-label="Related" class="related" role="navigation">
+<h3>Navigation</h3>
+<ul>
+<li class="right" style="margin-right: 10px">
+<a accesskey="I" href="genindex.html" title="General Index">index</a></li>
+<li class="right">
+<a href="py-modindex.html" title="Python Module Index">modules</a> |</li>
+<li class="right">
+<a accesskey="N" href="device_manager_api.html" title="Device Manager API">next</a> |</li>
+<li class="right">
+<a accesskey="P" href="serial_conn_widget.html" title="HIL SCADA">previous</a> |</li>
+<li class="nav-item"><a href="../index.html"> Docs </a> » </li><li class="nav-item nav-item-0"><a href="typhoon_api.html">Typhoon API 2026.1 sp1 documentation</a> »</li>
+<li class="nav-item nav-item-this"><a href="">Typhoon HIL RPC API</a></li>
+</ul>
+</div>
+<div class="document">
+<div class="documentwrapper">
+<div class="bodywrapper">
+<div class="body" role="main">
+<section id="typhoon-hil-rpc-api">
 <h1>Typhoon HIL RPC API<a class="headerlink" href="#typhoon-hil-rpc-api" title="Link to this heading">¶</a></h1>
 <p>RPC (<em>Remote Procedure Call</em>) is an interprocess communication technique that
 allows two independent processes to communicate. RPC is most commonly used to
@@ -96,11 +89,11 @@ settings.conf file, which is located at the API version-specific folder at
 <h3>Example 1<a class="headerlink" href="#example-1" title="Link to this heading">¶</a></h3>
 <p>This example shows how you can obtain port numbers of Typhoon APIs.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">zmq</span>
-<span class="n">SERVICE_REGISTRY_HEADER</span> <span class="o">=</span> <span class="s2">&quot;typhoon-service-registry&quot;</span>
+<span class="n">SERVICE_REGISTRY_HEADER</span> <span class="o">=</span> <span class="s2">"typhoon-service-registry"</span>
 
 
 <span class="k">def</span><span class="w"> </span><span class="nf">discover</span><span class="p">(</span><span class="n">start_port</span><span class="o">=</span><span class="mi">50000</span><span class="p">,</span> <span class="n">end_port</span><span class="o">=</span><span class="mi">50100</span><span class="p">,</span> <span class="n">req_retries</span><span class="o">=</span><span class="mi">30</span><span class="p">,</span> <span class="n">timeout</span><span class="o">=</span><span class="mi">1000</span><span class="p">):</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;Discovers port numbers for each of Typhoon APIs, in a given range:</span>
+<span class="w">    </span><span class="sd">"""Discovers port numbers for each of Typhoon APIs, in a given range:</span>
 <span class="sd">    (start_port, end_port).</span>
 
 <span class="sd">    Note: Check if the default param values match values in your settings.conf.</span>
@@ -115,7 +108,7 @@ settings.conf file, which is located at the API version-specific folder at
 
 <span class="sd">    Returns:</span>
 <span class="sd">        dict</span>
-<span class="sd">    &quot;&quot;&quot;</span>
+<span class="sd">    """</span>
     <span class="n">context</span> <span class="o">=</span> <span class="n">zmq</span><span class="o">.</span><span class="n">Context</span><span class="p">()</span>
     <span class="n">socket</span> <span class="o">=</span> <span class="n">context</span><span class="o">.</span><span class="n">socket</span><span class="p">(</span><span class="n">zmq</span><span class="o">.</span><span class="n">SUB</span><span class="p">)</span>
 
@@ -123,9 +116,9 @@ settings.conf file, which is located at the API version-specific folder at
 
     <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">offset</span><span class="p">):</span>
         <span class="n">port</span> <span class="o">=</span> <span class="n">start_port</span> <span class="o">+</span> <span class="n">i</span>
-        <span class="n">socket</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;tcp://localhost:</span><span class="si">{</span><span class="n">port</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+        <span class="n">socket</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="sa">f</span><span class="s2">"tcp://localhost:</span><span class="si">{</span><span class="n">port</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
 
-    <span class="n">socket</span><span class="o">.</span><span class="n">setsockopt_string</span><span class="p">(</span><span class="n">zmq</span><span class="o">.</span><span class="n">SUBSCRIBE</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">)</span>
+    <span class="n">socket</span><span class="o">.</span><span class="n">setsockopt_string</span><span class="p">(</span><span class="n">zmq</span><span class="o">.</span><span class="n">SUBSCRIBE</span><span class="p">,</span> <span class="s2">""</span><span class="p">)</span>
     <span class="n">socket</span><span class="o">.</span><span class="n">setsockopt</span><span class="p">(</span><span class="n">zmq</span><span class="o">.</span><span class="n">LINGER</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
 
     <span class="n">poller</span> <span class="o">=</span> <span class="n">zmq</span><span class="o">.</span><span class="n">Poller</span><span class="p">()</span>
@@ -140,7 +133,7 @@ settings.conf file, which is located at the API version-specific folder at
             <span class="k">if</span> <span class="ow">not</span> <span class="n">response</span><span class="p">:</span>
                 <span class="k">break</span>
 
-            <span class="n">result</span> <span class="o">=</span> <span class="n">response</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;result&quot;</span><span class="p">)</span>
+            <span class="n">result</span> <span class="o">=</span> <span class="n">response</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">"result"</span><span class="p">)</span>
 
             <span class="c1"># Continue discovery if a received message is not from Typhoon</span>
             <span class="c1"># HIL Control Center.</span>
@@ -154,7 +147,7 @@ settings.conf file, which is located at the API version-specific folder at
             <span class="k">if</span> <span class="n">req_retries</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
                 <span class="k">break</span>
 
-    <span class="k">raise</span> <span class="ne">RuntimeError</span><span class="p">(</span><span class="s2">&quot;Server not found.&quot;</span><span class="p">)</span>
+    <span class="k">raise</span> <span class="ne">RuntimeError</span><span class="p">(</span><span class="s2">"Server not found."</span><span class="p">)</span>
 </pre></div>
 </div>
 </section>
@@ -168,15 +161,15 @@ settings.conf file, which is located at the API version-specific folder at
 <span class="c1"># Connect with the server</span>
 <span class="c1"># In this example we assume that the server listens on the port 51357.</span>
 <span class="c1"># Example 1 shows how to always get correct port number.</span>
-<span class="n">req_socket</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="s2">&quot;tcp://localhost:51357&quot;</span><span class="p">)</span>
+<span class="n">req_socket</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="s2">"tcp://localhost:51357"</span><span class="p">)</span>
 
 <span class="c1"># Request message</span>
 <span class="n">message</span> <span class="o">=</span> <span class="p">{</span>
-    <span class="s2">&quot;api&quot;</span><span class="p">:</span> <span class="s2">&quot;1.0&quot;</span><span class="p">,</span>
-    <span class="s2">&quot;jsonrpc&quot;</span><span class="p">:</span> <span class="s2">&quot;2.0&quot;</span><span class="p">,</span>
-    <span class="s2">&quot;method&quot;</span><span class="p">:</span> <span class="s2">&quot;load&quot;</span><span class="p">,</span>
-    <span class="s2">&quot;params&quot;</span><span class="p">:</span> <span class="p">{</span><span class="s2">&quot;filename&quot;</span><span class="p">:</span> <span class="s2">&quot;abs_path_to_the_model&quot;</span><span class="p">},</span>
-    <span class="s2">&quot;id&quot;</span><span class="p">:</span> <span class="mi">1</span>
+    <span class="s2">"api"</span><span class="p">:</span> <span class="s2">"1.0"</span><span class="p">,</span>
+    <span class="s2">"jsonrpc"</span><span class="p">:</span> <span class="s2">"2.0"</span><span class="p">,</span>
+    <span class="s2">"method"</span><span class="p">:</span> <span class="s2">"load"</span><span class="p">,</span>
+    <span class="s2">"params"</span><span class="p">:</span> <span class="p">{</span><span class="s2">"filename"</span><span class="p">:</span> <span class="s2">"abs_path_to_the_model"</span><span class="p">},</span>
+    <span class="s2">"id"</span><span class="p">:</span> <span class="mi">1</span>
 <span class="p">}</span>
 
 <span class="n">req_socket</span><span class="o">.</span><span class="n">send_json</span><span class="p">(</span><span class="n">message</span><span class="p">)</span>
@@ -194,15 +187,15 @@ settings.conf file, which is located at the API version-specific folder at
 <span class="c1"># Connect with the server</span>
 <span class="c1"># In this example we assume that the server listens on the port 51357.</span>
 <span class="c1"># Example 1 shows how to always get correct port number.</span>
-<span class="n">req_socket</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="s2">&quot;tcp://localhost:51357&quot;</span><span class="p">)</span>
+<span class="n">req_socket</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="s2">"tcp://localhost:51357"</span><span class="p">)</span>
 
 <span class="c1"># Request message</span>
 <span class="n">message</span> <span class="o">=</span> <span class="p">{</span>
-    <span class="s2">&quot;api&quot;</span><span class="p">:</span> <span class="s2">&quot;1.0&quot;</span><span class="p">,</span>
-    <span class="s2">&quot;jsonrpc&quot;</span><span class="p">:</span> <span class="s2">&quot;2.0&quot;</span><span class="p">,</span>
-    <span class="s2">&quot;method&quot;</span><span class="p">:</span> <span class="s2">&quot;compile&quot;</span><span class="p">,</span>
-    <span class="s2">&quot;params&quot;</span><span class="p">:</span> <span class="p">{},</span>
-    <span class="s2">&quot;id&quot;</span><span class="p">:</span> <span class="mi">1</span>
+    <span class="s2">"api"</span><span class="p">:</span> <span class="s2">"1.0"</span><span class="p">,</span>
+    <span class="s2">"jsonrpc"</span><span class="p">:</span> <span class="s2">"2.0"</span><span class="p">,</span>
+    <span class="s2">"method"</span><span class="p">:</span> <span class="s2">"compile"</span><span class="p">,</span>
+    <span class="s2">"params"</span><span class="p">:</span> <span class="p">{},</span>
+    <span class="s2">"id"</span><span class="p">:</span> <span class="mi">1</span>
 <span class="p">}</span>
 
 <span class="n">req_socket</span><span class="o">.</span><span class="n">send_json</span><span class="p">(</span><span class="n">message</span><span class="p">)</span>
@@ -220,62 +213,60 @@ settings.conf file, which is located at the API version-specific folder at
 <span class="c1"># Connect with the server</span>
 <span class="c1"># In this example we assume that the server listens on the port 51357.</span>
 <span class="c1"># Example 1 shows how to always get correct port number.</span>
-<span class="n">req_socket</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="s2">&quot;tcp://localhost:51357&quot;</span><span class="p">)</span>
+<span class="n">req_socket</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="s2">"tcp://localhost:51357"</span><span class="p">)</span>
 
 <span class="c1"># Request message</span>
 <span class="n">message</span> <span class="o">=</span> <span class="p">[</span>
     <span class="p">{</span>
-        <span class="s2">&quot;api&quot;</span><span class="p">:</span> <span class="s2">&quot;1.0&quot;</span><span class="p">,</span>
-        <span class="s2">&quot;jsonrpc&quot;</span><span class="p">:</span> <span class="s2">&quot;2.0&quot;</span><span class="p">,</span>
-        <span class="s2">&quot;method&quot;</span><span class="p">:</span> <span class="s2">&quot;load&quot;</span><span class="p">,</span>
-        <span class="s2">&quot;params&quot;</span><span class="p">:</span> <span class="p">{</span><span class="s2">&quot;filename&quot;</span><span class="p">:</span> <span class="s2">&quot;abs_path_to_the_model&quot;</span><span class="p">},</span>
-        <span class="s2">&quot;id&quot;</span><span class="p">:</span> <span class="mi">1</span>
+        <span class="s2">"api"</span><span class="p">:</span> <span class="s2">"1.0"</span><span class="p">,</span>
+        <span class="s2">"jsonrpc"</span><span class="p">:</span> <span class="s2">"2.0"</span><span class="p">,</span>
+        <span class="s2">"method"</span><span class="p">:</span> <span class="s2">"load"</span><span class="p">,</span>
+        <span class="s2">"params"</span><span class="p">:</span> <span class="p">{</span><span class="s2">"filename"</span><span class="p">:</span> <span class="s2">"abs_path_to_the_model"</span><span class="p">},</span>
+        <span class="s2">"id"</span><span class="p">:</span> <span class="mi">1</span>
     <span class="p">},</span>
     <span class="p">{</span>
-        <span class="s2">&quot;api&quot;</span><span class="p">:</span> <span class="s2">&quot;1.0&quot;</span><span class="p">,</span>
-        <span class="s2">&quot;jsonrpc&quot;</span><span class="p">:</span> <span class="s2">&quot;2.0&quot;</span><span class="p">,</span>
-        <span class="s2">&quot;method&quot;</span><span class="p">:</span> <span class="s2">&quot;compile&quot;</span><span class="p">,</span>
-        <span class="s2">&quot;params&quot;</span><span class="p">:</span> <span class="p">{},</span>
-        <span class="s2">&quot;id&quot;</span><span class="p">:</span> <span class="mi">1</span>
+        <span class="s2">"api"</span><span class="p">:</span> <span class="s2">"1.0"</span><span class="p">,</span>
+        <span class="s2">"jsonrpc"</span><span class="p">:</span> <span class="s2">"2.0"</span><span class="p">,</span>
+        <span class="s2">"method"</span><span class="p">:</span> <span class="s2">"compile"</span><span class="p">,</span>
+        <span class="s2">"params"</span><span class="p">:</span> <span class="p">{},</span>
+        <span class="s2">"id"</span><span class="p">:</span> <span class="mi">1</span>
     <span class="p">}</span>
 <span class="p">]</span>
 
 <span class="n">req_socket</span><span class="o">.</span><span class="n">send_json</span><span class="p">(</span><span class="n">message</span><span class="p">)</span>
 <span class="n">response</span> <span class="o">=</span> <span class="n">req_socket</span><span class="o">.</span><span class="n">recv_json</span><span class="p">()</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Great success!&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"Great success!"</span><span class="p">)</span>
 </pre></div>
 </div>
 <aside class="footnote-list brackets">
 <aside class="footnote brackets" id="id4" role="doc-footnote">
-<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id1">1</a><span class="fn-bracket">]</span></span>
+<span class="label"><span class="fn-bracket">[</span><a href="#id1" role="doc-backlink">1</a><span class="fn-bracket">]</span></span>
 <p>ZMQ: <a class="reference external" href="http://zeromq.org/">http://zeromq.org/</a></p>
 </aside>
 <aside class="footnote brackets" id="id5" role="doc-footnote">
-<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id2">2</a><span class="fn-bracket">]</span></span>
+<span class="label"><span class="fn-bracket">[</span><a href="#id2" role="doc-backlink">2</a><span class="fn-bracket">]</span></span>
 <p>JSON RPC: <a class="reference external" href="http://www.jsonrpc.org/">http://www.jsonrpc.org/</a></p>
 </aside>
 <aside class="footnote brackets" id="id6" role="doc-footnote">
-<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id3">3</a><span class="fn-bracket">]</span></span>
+<span class="label"><span class="fn-bracket">[</span><a href="#id3" role="doc-backlink">3</a><span class="fn-bracket">]</span></span>
 <p>JSON RPC: <a class="reference external" href="http://www.jsonrpc.org/specification">http://www.jsonrpc.org/specification</a></p>
 </aside>
 </aside>
 </section>
 </section>
 </section>
-
-
-            <div class="clearer"></div>
-          </div>
-        </div>
-      </div>
-      <div class="sphinxsidebar" role="navigation" aria-label="Main">
-        <div class="sphinxsidebarwrapper">
-            <p class="logo"><a href="typhoon_api.html">
-              <img class="logo" src="_static/logo.png" alt="Logo of Typhoon API"/>
-            </a></p>
-  <div>
-    <h3><a href="typhoon_api.html">Table of Contents</a></h3>
-    <ul>
+<div class="clearer"></div>
+</div>
+</div>
+</div>
+<div aria-label="Main" class="sphinxsidebar" role="navigation">
+<div class="sphinxsidebarwrapper">
+<p class="logo"><a href="typhoon_api.html">
+<img alt="Logo of Typhoon API" class="logo" src="_static/logo.png"/>
+</a></p>
+<div>
+<h3><a href="typhoon_api.html">Table of Contents</a></h3>
+<ul>
 <li><a class="reference internal" href="#">Typhoon HIL RPC API</a><ul>
 <li><a class="reference internal" href="#message-format">Message format</a></li>
 <li><a class="reference internal" href="#usage">Usage</a></li>
@@ -289,61 +280,53 @@ settings.conf file, which is located at the API version-specific folder at
 </ul>
 </li>
 </ul>
-
-  </div>
-  <div>
-    <h4>Previous topic</h4>
-    <p class="topless"><a href="serial_conn_widget.html"
-                          title="previous chapter">HIL SCADA</a></p>
-  </div>
-  <div>
-    <h4>Next topic</h4>
-    <p class="topless"><a href="device_manager_api.html"
-                          title="next chapter">Device Manager API</a></p>
-  </div>
-  <div role="note" aria-label="source link">
-    <h3>This Page</h3>
-    <ul class="this-page-menu">
-      <li><a href="_sources/rpc_api.rst.txt"
-            rel="nofollow">Show Source</a></li>
-    </ul>
-   </div>
-<search id="searchbox" style="display: none" role="search">
-  <h3 id="searchlabel">Quick search</h3>
-    <div class="searchformwrapper">
-    <form class="search" action="search.html" method="get">
-      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
-      <input type="submit" value="Go" />
-    </form>
-    </div>
+</div>
+<div>
+<h4>Previous topic</h4>
+<p class="topless"><a href="serial_conn_widget.html" title="previous chapter">HIL SCADA</a></p>
+</div>
+<div>
+<h4>Next topic</h4>
+<p class="topless"><a href="device_manager_api.html" title="next chapter">Device Manager API</a></p>
+</div>
+<div aria-label="source link" role="note">
+<h3>This Page</h3>
+<ul class="this-page-menu">
+<li><a href="_sources/rpc_api.rst.txt" rel="nofollow">Show Source</a></li>
+</ul>
+</div>
+<search id="searchbox" role="search" style="display: none">
+<h3 id="searchlabel">Quick search</h3>
+<div class="searchformwrapper">
+<form action="search.html" class="search" method="get">
+<input aria-labelledby="searchlabel" autocapitalize="off" autocomplete="off" autocorrect="off" name="q" spellcheck="false" type="text"/>
+<input type="submit" value="Go"/>
+</form>
+</div>
 </search>
 <script>document.getElementById('searchbox').style.display = "block"</script>
-        </div>
-      </div>
-      <div class="clearer"></div>
-    </div>
-    <div class="related" role="navigation" aria-label="Related">
-      <h3>Navigation</h3>
-      <ul>
-        <li class="right" style="margin-right: 10px">
-          <a href="genindex.html" title="General Index"
-             >index</a></li>
-        <li class="right" >
-          <a href="py-modindex.html" title="Python Module Index"
-             >modules</a> |</li>
-        <li class="right" >
-          <a href="device_manager_api.html" title="Device Manager API"
-             >next</a> |</li>
-        <li class="right" >
-          <a href="serial_conn_widget.html" title="HIL SCADA"
-             >previous</a> |</li>
-        <li class="nav-item nav-item-0"><a href="typhoon_api.html">Typhoon API 2026.1 sp1 documentation</a> &#187;</li>
-        <li class="nav-item nav-item-this"><a href="">Typhoon HIL RPC API</a></li> 
-      </ul>
-    </div>
-    <div class="footer" role="contentinfo">
-    &#169; Copyright 2026, Typhoon HIL.
+</div>
+</div>
+<div class="clearer"></div>
+</div>
+<div aria-label="Related" class="related" role="navigation">
+<h3>Navigation</h3>
+<ul>
+<li class="right" style="margin-right: 10px">
+<a href="genindex.html" title="General Index">index</a></li>
+<li class="right">
+<a href="py-modindex.html" title="Python Module Index">modules</a> |</li>
+<li class="right">
+<a href="device_manager_api.html" title="Device Manager API">next</a> |</li>
+<li class="right">
+<a href="serial_conn_widget.html" title="HIL SCADA">previous</a> |</li>
+<li class="nav-item"><a href="../index.html"> Docs </a> » </li><li class="nav-item nav-item-0"><a href="typhoon_api.html">Typhoon API 2026.1 sp1 documentation</a> »</li>
+<li class="nav-item nav-item-this"><a href="">Typhoon HIL RPC API</a></li>
+</ul>
+</div>
+<div class="footer" role="contentinfo">
+    © Copyright 2026, Typhoon HIL.
       Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 8.2.1.
     </div>
-  </body>
+</body>
 </html>
