@@ -1,48 +1,41 @@
 <!DOCTYPE html>
 
-<html lang="en" data-content_root="../">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
-
-    <title>attach_table_custom_colormap_by_column &#8212;  1.35.3 documentation</title>
-    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=03e43079" />
-    <link rel="stylesheet" type="text/css" href="../_static/sphinxdoc.css?v=34905f61" />
-    <link rel="stylesheet" type="text/css" href="../_static/graphviz.css?v=4ae1632d" />
-    <script src="../_static/documentation_options.js?v=62a126fb"></script>
-    <script src="../_static/doctools.js?v=9bcbadda"></script>
-    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
-    <link rel="index" title="Index" href="../genindex.html" />
-    <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="text_style" href="typhoon.test.reporting.tables.text_style.html" />
-    <link rel="prev" title="attach_table_custom_colormap" href="typhoon.test.reporting.tables.attach_table_custom_colormap.html" /> 
-  </head><body>
-    <div class="related" role="navigation" aria-label="Related">
-      <h3>Navigation</h3>
-      <ul>
-        <li class="right" style="margin-right: 10px">
-          <a href="../genindex.html" title="General Index"
-             accesskey="I">index</a></li>
-        <li class="right" >
-          <a href="../py-modindex.html" title="Python Module Index"
-             >modules</a> |</li>
-        <li class="right" >
-          <a href="typhoon.test.reporting.tables.text_style.html" title="text_style"
-             accesskey="N">next</a> |</li>
-        <li class="right" >
-          <a href="typhoon.test.reporting.tables.attach_table_custom_colormap.html" title="attach_table_custom_colormap"
-             accesskey="P">previous</a> |</li>
-        <li class="nav-item nav-item-0"><a href="../index.html"> 1.35.3 documentation</a> &#187;</li>
-        <li class="nav-item nav-item-this"><a href="">attach_table_custom_colormap_by_column</a></li> 
-      </ul>
-    </div>  
-
-    <div class="document">
-      <div class="documentwrapper">
-        <div class="bodywrapper">
-          <div class="body" role="main">
-            
-  <section id="attach-table-custom-colormap-by-column">
+<html data-content_root="../" lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="width=device-width, initial-scale=1" name="viewport"/>
+<title>attach_table_custom_colormap_by_column —  1.35.3 documentation</title>
+<link href="../_static/pygments.css?v=03e43079" rel="stylesheet" type="text/css"/>
+<link href="../_static/sphinxdoc.css?v=34905f61" rel="stylesheet" type="text/css"/>
+<link href="../_static/graphviz.css?v=4ae1632d" rel="stylesheet" type="text/css"/>
+<script src="../_static/documentation_options.js?v=62a126fb"></script>
+<script src="../_static/doctools.js?v=9bcbadda"></script>
+<script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+<link href="../genindex.html" rel="index" title="Index"/>
+<link href="../search.html" rel="search" title="Search"/>
+<link href="typhoon.test.reporting.tables.text_style.html" rel="next" title="text_style"/>
+<link href="typhoon.test.reporting.tables.attach_table_custom_colormap.html" rel="prev" title="attach_table_custom_colormap"/>
+</head><body>
+<div aria-label="Related" class="related" role="navigation">
+<h3>Navigation</h3>
+<ul>
+<li class="right" style="margin-right: 10px">
+<a accesskey="I" href="../genindex.html" title="General Index">index</a></li>
+<li class="right">
+<a href="../py-modindex.html" title="Python Module Index">modules</a> |</li>
+<li class="right">
+<a accesskey="N" href="typhoon.test.reporting.tables.text_style.html" title="text_style">next</a> |</li>
+<li class="right">
+<a accesskey="P" href="typhoon.test.reporting.tables.attach_table_custom_colormap.html" title="attach_table_custom_colormap">previous</a> |</li>
+<li class="nav-item"><a href="../../index.html"> Docs </a> » </li><li class="nav-item nav-item-0"><a href="../index.html"> 1.35.3 documentation</a> »</li>
+<li class="nav-item nav-item-this"><a href="">attach_table_custom_colormap_by_column</a></li>
+</ul>
+</div>
+<div class="document">
+<div class="documentwrapper">
+<div class="bodywrapper">
+<div class="body" role="main">
+<section id="attach-table-custom-colormap-by-column">
 <h1>attach_table_custom_colormap_by_column<a class="headerlink" href="#attach-table-custom-colormap-by-column" title="Link to this heading">¶</a></h1>
 <dl class="py function">
 <dt class="sig sig-object py" id="typhoon.test.reporting.tables.attach_table_custom_colormap_by_column">
@@ -103,82 +96,73 @@ added in the separate report step. This is achieved by setting this argument to 
 <span class="gp">&gt;&gt;&gt; </span><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">random</span><span class="p">(</span><span class="n">size</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">10</span><span class="p">)),</span> <span class="n">columns</span><span class="o">=</span><span class="n">columns</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">html_code</span> <span class="o">=</span> <span class="n">attach_table_custom_colormap_by_column</span><span class="p">(</span>
 <span class="gp">&gt;&gt;&gt; </span>    <span class="n">df</span><span class="p">,</span> <span class="n">thresholds</span><span class="p">,</span>
-<span class="gp">&gt;&gt;&gt; </span>    <span class="n">allure_title</span><span class="o">=</span><span class="s1">&#39;Random Integer Values&#39;</span><span class="p">,</span>
-<span class="gp">&gt;&gt;&gt; </span>    <span class="n">caption</span><span class="o">=</span><span class="s1">&#39;Harmonic table with Random Integer Values&#39;</span><span class="p">)</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">html_file</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="n">Path</span><span class="p">(</span><span class="vm">__file__</span><span class="p">)</span><span class="o">.</span><span class="n">parent</span> <span class="o">/</span> <span class="s2">&quot;harmonics_table.html&quot;</span><span class="p">)</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">html_file</span><span class="p">,</span> <span class="s1">&#39;w&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">fhtml</span><span class="p">:</span>
+<span class="gp">&gt;&gt;&gt; </span>    <span class="n">allure_title</span><span class="o">=</span><span class="s1">'Random Integer Values'</span><span class="p">,</span>
+<span class="gp">&gt;&gt;&gt; </span>    <span class="n">caption</span><span class="o">=</span><span class="s1">'Harmonic table with Random Integer Values'</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">html_file</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="n">Path</span><span class="p">(</span><span class="vm">__file__</span><span class="p">)</span><span class="o">.</span><span class="n">parent</span> <span class="o">/</span> <span class="s2">"harmonics_table.html"</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">html_file</span><span class="p">,</span> <span class="s1">'w'</span><span class="p">)</span> <span class="k">as</span> <span class="n">fhtml</span><span class="p">:</span>
 <span class="gp">&gt;&gt;&gt; </span>    <span class="n">fhtml</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">html_code</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="c1"># create same  table with blue color for passed and orange color for failed cases</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">html_code</span> <span class="o">=</span> <span class="n">attach_table_custom_colormap_by_column</span><span class="p">(</span>
 <span class="gp">&gt;&gt;&gt; </span>    <span class="n">df</span><span class="p">,</span> <span class="n">thresholds</span><span class="p">,</span>
-<span class="gp">&gt;&gt;&gt; </span>    <span class="n">allure_title</span><span class="o">=</span><span class="s1">&#39;Random Integer Values&#39;</span><span class="p">,</span>
-<span class="gp">&gt;&gt;&gt; </span>    <span class="n">caption</span><span class="o">=</span><span class="s1">&#39;Harmonic table with Random Integer Values&#39;</span><span class="p">,</span>
-<span class="gp">&gt;&gt;&gt; </span>    <span class="n">colormaps</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;pass&#39;</span><span class="p">:</span> <span class="s1">&#39;Blues&#39;</span><span class="p">,</span> <span class="s1">&#39;fail&#39;</span><span class="p">:</span> <span class="s1">&#39;Oranges&#39;</span><span class="p">})</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">html_file</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="n">Path</span><span class="p">(</span><span class="vm">__file__</span><span class="p">)</span><span class="o">.</span><span class="n">parent</span> <span class="o">/</span> <span class="s2">&quot;harmonics_table_new_colors.html&quot;</span><span class="p">)</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">html_file</span><span class="p">,</span> <span class="s1">&#39;w&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">fhtml</span><span class="p">:</span>
+<span class="gp">&gt;&gt;&gt; </span>    <span class="n">allure_title</span><span class="o">=</span><span class="s1">'Random Integer Values'</span><span class="p">,</span>
+<span class="gp">&gt;&gt;&gt; </span>    <span class="n">caption</span><span class="o">=</span><span class="s1">'Harmonic table with Random Integer Values'</span><span class="p">,</span>
+<span class="gp">&gt;&gt;&gt; </span>    <span class="n">colormaps</span><span class="o">=</span><span class="p">{</span><span class="s1">'pass'</span><span class="p">:</span> <span class="s1">'Blues'</span><span class="p">,</span> <span class="s1">'fail'</span><span class="p">:</span> <span class="s1">'Oranges'</span><span class="p">})</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">html_file</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="n">Path</span><span class="p">(</span><span class="vm">__file__</span><span class="p">)</span><span class="o">.</span><span class="n">parent</span> <span class="o">/</span> <span class="s2">"harmonics_table_new_colors.html"</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">html_file</span><span class="p">,</span> <span class="s1">'w'</span><span class="p">)</span> <span class="k">as</span> <span class="n">fhtml</span><span class="p">:</span>
 <span class="gp">&gt;&gt;&gt; </span>    <span class="n">fhtml</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">html_code</span><span class="p">)</span>
 </pre></div>
 </div>
 </dd></dl>
-
 </section>
-
-
-            <div class="clearer"></div>
-          </div>
-        </div>
-      </div>
-      <div class="sphinxsidebar" role="navigation" aria-label="Main">
-        <div class="sphinxsidebarwrapper">
-            <p class="logo"><a href="../index.html">
-              <img class="logo" src="../_static/logo.png" alt="Logo of "/>
-            </a></p>
-  <div>
-    <h4>Previous topic</h4>
-    <p class="topless"><a href="typhoon.test.reporting.tables.attach_table_custom_colormap.html"
-                          title="previous chapter">attach_table_custom_colormap</a></p>
-  </div>
-  <div>
-    <h4>Next topic</h4>
-    <p class="topless"><a href="typhoon.test.reporting.tables.text_style.html"
-                          title="next chapter">text_style</a></p>
-  </div>
-<search id="searchbox" style="display: none" role="search">
-  <h3 id="searchlabel">Quick search</h3>
-    <div class="searchformwrapper">
-    <form class="search" action="../search.html" method="get">
-      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
-      <input type="submit" value="Go" />
-    </form>
-    </div>
+<div class="clearer"></div>
+</div>
+</div>
+</div>
+<div aria-label="Main" class="sphinxsidebar" role="navigation">
+<div class="sphinxsidebarwrapper">
+<p class="logo"><a href="../index.html">
+<img alt="Logo of " class="logo" src="../_static/logo.png"/>
+</a></p>
+<div>
+<h4>Previous topic</h4>
+<p class="topless"><a href="typhoon.test.reporting.tables.attach_table_custom_colormap.html" title="previous chapter">attach_table_custom_colormap</a></p>
+</div>
+<div>
+<h4>Next topic</h4>
+<p class="topless"><a href="typhoon.test.reporting.tables.text_style.html" title="next chapter">text_style</a></p>
+</div>
+<search id="searchbox" role="search" style="display: none">
+<h3 id="searchlabel">Quick search</h3>
+<div class="searchformwrapper">
+<form action="../search.html" class="search" method="get">
+<input aria-labelledby="searchlabel" autocapitalize="off" autocomplete="off" autocorrect="off" name="q" spellcheck="false" type="text"/>
+<input type="submit" value="Go"/>
+</form>
+</div>
 </search>
 <script>document.getElementById('searchbox').style.display = "block"</script>
-        </div>
-      </div>
-      <div class="clearer"></div>
-    </div>
-    <div class="related" role="navigation" aria-label="Related">
-      <h3>Navigation</h3>
-      <ul>
-        <li class="right" style="margin-right: 10px">
-          <a href="../genindex.html" title="General Index"
-             >index</a></li>
-        <li class="right" >
-          <a href="../py-modindex.html" title="Python Module Index"
-             >modules</a> |</li>
-        <li class="right" >
-          <a href="typhoon.test.reporting.tables.text_style.html" title="text_style"
-             >next</a> |</li>
-        <li class="right" >
-          <a href="typhoon.test.reporting.tables.attach_table_custom_colormap.html" title="attach_table_custom_colormap"
-             >previous</a> |</li>
-        <li class="nav-item nav-item-0"><a href="../index.html"> 1.35.3 documentation</a> &#187;</li>
-        <li class="nav-item nav-item-this"><a href="">attach_table_custom_colormap_by_column</a></li> 
-      </ul>
-    </div>
-    <div class="footer" role="contentinfo">
-    &#169; Copyright .
+</div>
+</div>
+<div class="clearer"></div>
+</div>
+<div aria-label="Related" class="related" role="navigation">
+<h3>Navigation</h3>
+<ul>
+<li class="right" style="margin-right: 10px">
+<a href="../genindex.html" title="General Index">index</a></li>
+<li class="right">
+<a href="../py-modindex.html" title="Python Module Index">modules</a> |</li>
+<li class="right">
+<a href="typhoon.test.reporting.tables.text_style.html" title="text_style">next</a> |</li>
+<li class="right">
+<a href="typhoon.test.reporting.tables.attach_table_custom_colormap.html" title="attach_table_custom_colormap">previous</a> |</li>
+<li class="nav-item"><a href="../../index.html"> Docs </a> » </li><li class="nav-item nav-item-0"><a href="../index.html"> 1.35.3 documentation</a> »</li>
+<li class="nav-item nav-item-this"><a href="">attach_table_custom_colormap_by_column</a></li>
+</ul>
+</div>
+<div class="footer" role="contentinfo">
+    © Copyright .
       Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 8.2.1.
     </div>
-  </body>
+</body>
 </html>
