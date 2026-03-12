@@ -1,48 +1,41 @@
 <!DOCTYPE html>
 
-<html lang="en" data-content_root="../">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
-
-    <title>signal_frequency_SOGI_pll &#8212;  1.35.3 documentation</title>
-    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=03e43079" />
-    <link rel="stylesheet" type="text/css" href="../_static/sphinxdoc.css?v=34905f61" />
-    <link rel="stylesheet" type="text/css" href="../_static/graphviz.css?v=4ae1632d" />
-    <script src="../_static/documentation_options.js?v=62a126fb"></script>
-    <script src="../_static/doctools.js?v=9bcbadda"></script>
-    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
-    <link rel="index" title="Index" href="../genindex.html" />
-    <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="after" href="typhoon.test.ranges.after.html" />
-    <link rel="prev" title="integrator" href="typhoon.test.signals.control.integrator.html" /> 
-  </head><body>
-    <div class="related" role="navigation" aria-label="Related">
-      <h3>Navigation</h3>
-      <ul>
-        <li class="right" style="margin-right: 10px">
-          <a href="../genindex.html" title="General Index"
-             accesskey="I">index</a></li>
-        <li class="right" >
-          <a href="../py-modindex.html" title="Python Module Index"
-             >modules</a> |</li>
-        <li class="right" >
-          <a href="typhoon.test.ranges.after.html" title="after"
-             accesskey="N">next</a> |</li>
-        <li class="right" >
-          <a href="typhoon.test.signals.control.integrator.html" title="integrator"
-             accesskey="P">previous</a> |</li>
-        <li class="nav-item nav-item-0"><a href="../index.html"> 1.35.3 documentation</a> &#187;</li>
-        <li class="nav-item nav-item-this"><a href="">signal_frequency_SOGI_pll</a></li> 
-      </ul>
-    </div>  
-
-    <div class="document">
-      <div class="documentwrapper">
-        <div class="bodywrapper">
-          <div class="body" role="main">
-            
-  <section id="signal-frequency-sogi-pll">
+<html data-content_root="../" lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="width=device-width, initial-scale=1" name="viewport"/>
+<title>signal_frequency_SOGI_pll —  1.35.3 documentation</title>
+<link href="../_static/pygments.css?v=03e43079" rel="stylesheet" type="text/css"/>
+<link href="../_static/sphinxdoc.css?v=34905f61" rel="stylesheet" type="text/css"/>
+<link href="../_static/graphviz.css?v=4ae1632d" rel="stylesheet" type="text/css"/>
+<script src="../_static/documentation_options.js?v=62a126fb"></script>
+<script src="../_static/doctools.js?v=9bcbadda"></script>
+<script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+<link href="../genindex.html" rel="index" title="Index"/>
+<link href="../search.html" rel="search" title="Search"/>
+<link href="typhoon.test.ranges.after.html" rel="next" title="after"/>
+<link href="typhoon.test.signals.control.integrator.html" rel="prev" title="integrator"/>
+</head><body>
+<div aria-label="Related" class="related" role="navigation">
+<h3>Navigation</h3>
+<ul>
+<li class="right" style="margin-right: 10px">
+<a accesskey="I" href="../genindex.html" title="General Index">index</a></li>
+<li class="right">
+<a href="../py-modindex.html" title="Python Module Index">modules</a> |</li>
+<li class="right">
+<a accesskey="N" href="typhoon.test.ranges.after.html" title="after">next</a> |</li>
+<li class="right">
+<a accesskey="P" href="typhoon.test.signals.control.integrator.html" title="integrator">previous</a> |</li>
+<li class="nav-item"><a href="../../index.html"> Docs </a> » </li><li class="nav-item nav-item-0"><a href="../index.html"> 1.35.3 documentation</a> »</li>
+<li class="nav-item nav-item-this"><a href="">signal_frequency_SOGI_pll</a></li>
+</ul>
+</div>
+<div class="document">
+<div class="documentwrapper">
+<div class="bodywrapper">
+<div class="body" role="main">
+<section id="signal-frequency-sogi-pll">
 <h1>signal_frequency_SOGI_pll<a class="headerlink" href="#signal-frequency-sogi-pll" title="Link to this heading">¶</a></h1>
 <dl class="py function">
 <dt class="sig sig-object py" id="typhoon.test.signals.control.signal_frequency_SOGI_pll">
@@ -93,15 +86,15 @@ and the sinusoidal output (<code class="docutils literal notranslate"><span clas
 </pre></div>
 </div>
 <p>You can set <code class="docutils literal notranslate"><span class="pre">None</span></code>, one, or all parameters of the PLL project:</p>
-<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">df</span> <span class="o">=</span> <span class="n">signal_frequency_SOGI_pll</span><span class="p">(</span><span class="n">signal</span><span class="p">,</span> <span class="n">amp</span><span class="p">,</span> <span class="n">freq_initial</span><span class="p">,</span> <span class="n">pll_filter_params</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;lp_cut_off_filter_f&quot;</span><span class="p">:</span> <span class="mi">15</span><span class="p">})</span>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">df</span> <span class="o">=</span> <span class="n">signal_frequency_SOGI_pll</span><span class="p">(</span><span class="n">signal</span><span class="p">,</span> <span class="n">amp</span><span class="p">,</span> <span class="n">freq_initial</span><span class="p">,</span> <span class="n">pll_filter_params</span><span class="o">=</span><span class="p">{</span><span class="s2">"lp_cut_off_filter_f"</span><span class="p">:</span> <span class="mi">15</span><span class="p">})</span>
 </pre></div>
 </div>
 <p>The data are available in each column of the dataframe <code class="docutils literal notranslate"><span class="pre">df</span></code>:</p>
-<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">frequency</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s2">&quot;f&quot;</span><span class="p">]</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">d_coordinate</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s2">&quot;d&quot;</span><span class="p">]</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">q_coordinate</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s2">&quot;q&quot;</span><span class="p">]</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">wt</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s2">&quot;wt&quot;</span><span class="p">]</span>  <span class="c1"># Angle</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">sin_wt</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s2">&quot;sin_wt&quot;</span><span class="p">]</span>  <span class="c1"># sine of angle (sin(angle))</span>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">frequency</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s2">"f"</span><span class="p">]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">d_coordinate</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s2">"d"</span><span class="p">]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">q_coordinate</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s2">"q"</span><span class="p">]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">wt</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s2">"wt"</span><span class="p">]</span>  <span class="c1"># Angle</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">sin_wt</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s2">"sin_wt"</span><span class="p">]</span>  <span class="c1"># sine of angle (sin(angle))</span>
 </pre></div>
 </div>
 <p>If desired, <code class="docutils literal notranslate"><span class="pre">assert_is_constant</span></code> can be included in the test procedure as follows:</p>
@@ -113,7 +106,7 @@ and the sinusoidal output (<code class="docutils literal notranslate"><span clas
 <span class="gp">&gt;&gt;&gt; </span>    <span class="n">tol</span> <span class="o">=</span> <span class="mf">.5</span>
 <span class="gp">&gt;&gt;&gt; </span>    <span class="n">tol_t</span> <span class="o">=</span> <span class="mf">250e-3</span>
 <span class="gp">&gt;&gt;&gt;</span>
-<span class="gp">&gt;&gt;&gt; </span>    <span class="n">assert_is_constant</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s2">&quot;f&quot;</span><span class="p">],</span> <span class="p">(</span><span class="n">ref_value</span> <span class="o">-</span> <span class="n">tol</span><span class="p">,</span> <span class="n">ref_value</span> <span class="o">+</span> <span class="n">tol</span><span class="p">),</span> <span class="n">during</span><span class="o">=</span><span class="p">(</span><span class="n">tol_t</span><span class="p">,</span> <span class="n">df</span><span class="o">.</span><span class="n">index</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]),</span> <span class="n">strictness</span><span class="o">=</span><span class="n">tol</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span>    <span class="n">assert_is_constant</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s2">"f"</span><span class="p">],</span> <span class="p">(</span><span class="n">ref_value</span> <span class="o">-</span> <span class="n">tol</span><span class="p">,</span> <span class="n">ref_value</span> <span class="o">+</span> <span class="n">tol</span><span class="p">),</span> <span class="n">during</span><span class="o">=</span><span class="p">(</span><span class="n">tol_t</span><span class="p">,</span> <span class="n">df</span><span class="o">.</span><span class="n">index</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]),</span> <span class="n">strictness</span><span class="o">=</span><span class="n">tol</span><span class="p">)</span>
 </pre></div>
 </div>
 <div class="admonition seealso">
@@ -121,65 +114,56 @@ and the sinusoidal output (<code class="docutils literal notranslate"><span clas
 <p><a class="reference internal" href="typhoon.test.signals.control.integrator.html#typhoon.test.signals.control.integrator" title="typhoon.test.signals.control.integrator"><code class="xref py py-obj docutils literal notranslate"><span class="pre">typhoon.test.signals.control.integrator</span></code></a></p>
 </div>
 </dd></dl>
-
 </section>
-
-
-            <div class="clearer"></div>
-          </div>
-        </div>
-      </div>
-      <div class="sphinxsidebar" role="navigation" aria-label="Main">
-        <div class="sphinxsidebarwrapper">
-            <p class="logo"><a href="../index.html">
-              <img class="logo" src="../_static/logo.png" alt="Logo of "/>
-            </a></p>
-  <div>
-    <h4>Previous topic</h4>
-    <p class="topless"><a href="typhoon.test.signals.control.integrator.html"
-                          title="previous chapter">integrator</a></p>
-  </div>
-  <div>
-    <h4>Next topic</h4>
-    <p class="topless"><a href="typhoon.test.ranges.after.html"
-                          title="next chapter">after</a></p>
-  </div>
-<search id="searchbox" style="display: none" role="search">
-  <h3 id="searchlabel">Quick search</h3>
-    <div class="searchformwrapper">
-    <form class="search" action="../search.html" method="get">
-      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
-      <input type="submit" value="Go" />
-    </form>
-    </div>
+<div class="clearer"></div>
+</div>
+</div>
+</div>
+<div aria-label="Main" class="sphinxsidebar" role="navigation">
+<div class="sphinxsidebarwrapper">
+<p class="logo"><a href="../index.html">
+<img alt="Logo of " class="logo" src="../_static/logo.png"/>
+</a></p>
+<div>
+<h4>Previous topic</h4>
+<p class="topless"><a href="typhoon.test.signals.control.integrator.html" title="previous chapter">integrator</a></p>
+</div>
+<div>
+<h4>Next topic</h4>
+<p class="topless"><a href="typhoon.test.ranges.after.html" title="next chapter">after</a></p>
+</div>
+<search id="searchbox" role="search" style="display: none">
+<h3 id="searchlabel">Quick search</h3>
+<div class="searchformwrapper">
+<form action="../search.html" class="search" method="get">
+<input aria-labelledby="searchlabel" autocapitalize="off" autocomplete="off" autocorrect="off" name="q" spellcheck="false" type="text"/>
+<input type="submit" value="Go"/>
+</form>
+</div>
 </search>
 <script>document.getElementById('searchbox').style.display = "block"</script>
-        </div>
-      </div>
-      <div class="clearer"></div>
-    </div>
-    <div class="related" role="navigation" aria-label="Related">
-      <h3>Navigation</h3>
-      <ul>
-        <li class="right" style="margin-right: 10px">
-          <a href="../genindex.html" title="General Index"
-             >index</a></li>
-        <li class="right" >
-          <a href="../py-modindex.html" title="Python Module Index"
-             >modules</a> |</li>
-        <li class="right" >
-          <a href="typhoon.test.ranges.after.html" title="after"
-             >next</a> |</li>
-        <li class="right" >
-          <a href="typhoon.test.signals.control.integrator.html" title="integrator"
-             >previous</a> |</li>
-        <li class="nav-item nav-item-0"><a href="../index.html"> 1.35.3 documentation</a> &#187;</li>
-        <li class="nav-item nav-item-this"><a href="">signal_frequency_SOGI_pll</a></li> 
-      </ul>
-    </div>
-    <div class="footer" role="contentinfo">
-    &#169; Copyright .
+</div>
+</div>
+<div class="clearer"></div>
+</div>
+<div aria-label="Related" class="related" role="navigation">
+<h3>Navigation</h3>
+<ul>
+<li class="right" style="margin-right: 10px">
+<a href="../genindex.html" title="General Index">index</a></li>
+<li class="right">
+<a href="../py-modindex.html" title="Python Module Index">modules</a> |</li>
+<li class="right">
+<a href="typhoon.test.ranges.after.html" title="after">next</a> |</li>
+<li class="right">
+<a href="typhoon.test.signals.control.integrator.html" title="integrator">previous</a> |</li>
+<li class="nav-item"><a href="../../index.html"> Docs </a> » </li><li class="nav-item nav-item-0"><a href="../index.html"> 1.35.3 documentation</a> »</li>
+<li class="nav-item nav-item-this"><a href="">signal_frequency_SOGI_pll</a></li>
+</ul>
+</div>
+<div class="footer" role="contentinfo">
+    © Copyright .
       Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 8.2.1.
     </div>
-  </body>
+</body>
 </html>

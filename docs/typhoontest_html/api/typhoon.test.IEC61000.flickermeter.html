@@ -1,48 +1,41 @@
 <!DOCTYPE html>
 
-<html lang="en" data-content_root="../">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
-
-    <title>flickermeter &#8212;  1.35.3 documentation</title>
-    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=03e43079" />
-    <link rel="stylesheet" type="text/css" href="../_static/sphinxdoc.css?v=34905f61" />
-    <link rel="stylesheet" type="text/css" href="../_static/graphviz.css?v=4ae1632d" />
-    <script src="../_static/documentation_options.js?v=62a126fb"></script>
-    <script src="../_static/doctools.js?v=9bcbadda"></script>
-    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
-    <link rel="index" title="Index" href="../genindex.html" />
-    <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="frequency" href="typhoon.test.IEC61000.frequency.html" />
-    <link rel="prev" title="FFTResult" href="typhoon.test.harmonic.FFTResult.html" /> 
-  </head><body>
-    <div class="related" role="navigation" aria-label="Related">
-      <h3>Navigation</h3>
-      <ul>
-        <li class="right" style="margin-right: 10px">
-          <a href="../genindex.html" title="General Index"
-             accesskey="I">index</a></li>
-        <li class="right" >
-          <a href="../py-modindex.html" title="Python Module Index"
-             >modules</a> |</li>
-        <li class="right" >
-          <a href="typhoon.test.IEC61000.frequency.html" title="frequency"
-             accesskey="N">next</a> |</li>
-        <li class="right" >
-          <a href="typhoon.test.harmonic.FFTResult.html" title="FFTResult"
-             accesskey="P">previous</a> |</li>
-        <li class="nav-item nav-item-0"><a href="../index.html"> 1.35.3 documentation</a> &#187;</li>
-        <li class="nav-item nav-item-this"><a href="">flickermeter</a></li> 
-      </ul>
-    </div>  
-
-    <div class="document">
-      <div class="documentwrapper">
-        <div class="bodywrapper">
-          <div class="body" role="main">
-            
-  <section id="flickermeter">
+<html data-content_root="../" lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="width=device-width, initial-scale=1" name="viewport"/>
+<title>flickermeter —  1.35.3 documentation</title>
+<link href="../_static/pygments.css?v=03e43079" rel="stylesheet" type="text/css"/>
+<link href="../_static/sphinxdoc.css?v=34905f61" rel="stylesheet" type="text/css"/>
+<link href="../_static/graphviz.css?v=4ae1632d" rel="stylesheet" type="text/css"/>
+<script src="../_static/documentation_options.js?v=62a126fb"></script>
+<script src="../_static/doctools.js?v=9bcbadda"></script>
+<script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+<link href="../genindex.html" rel="index" title="Index"/>
+<link href="../search.html" rel="search" title="Search"/>
+<link href="typhoon.test.IEC61000.frequency.html" rel="next" title="frequency"/>
+<link href="typhoon.test.harmonic.FFTResult.html" rel="prev" title="FFTResult"/>
+</head><body>
+<div aria-label="Related" class="related" role="navigation">
+<h3>Navigation</h3>
+<ul>
+<li class="right" style="margin-right: 10px">
+<a accesskey="I" href="../genindex.html" title="General Index">index</a></li>
+<li class="right">
+<a href="../py-modindex.html" title="Python Module Index">modules</a> |</li>
+<li class="right">
+<a accesskey="N" href="typhoon.test.IEC61000.frequency.html" title="frequency">next</a> |</li>
+<li class="right">
+<a accesskey="P" href="typhoon.test.harmonic.FFTResult.html" title="FFTResult">previous</a> |</li>
+<li class="nav-item"><a href="../../index.html"> Docs </a> » </li><li class="nav-item nav-item-0"><a href="../index.html"> 1.35.3 documentation</a> »</li>
+<li class="nav-item nav-item-this"><a href="">flickermeter</a></li>
+</ul>
+</div>
+<div class="document">
+<div class="documentwrapper">
+<div class="bodywrapper">
+<div class="body" role="main">
+<section id="flickermeter">
 <h1>flickermeter<a class="headerlink" href="#flickermeter" title="Link to this heading">¶</a></h1>
 <dl class="py function">
 <dt class="sig sig-object py" id="typhoon.test.IEC61000.flickermeter">
@@ -66,11 +59,11 @@ This value can be 60.0 Hz or 50.0 Hz.</p></li>
 flickermeter project (IEC 61000-4-15). This parameter accepts the following arguments:</p>
 <blockquote>
 <div><ul>
-<li><p><code class="docutils literal notranslate"><span class="pre">&quot;d_parameters&quot;</span></code> - Return the values <code class="docutils literal notranslate"><span class="pre">(dc,</span> <span class="pre">d_max,</span> <span class="pre">t_max)</span></code>.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">&quot;Pinst&quot;</span></code> - Return the <code class="docutils literal notranslate"><span class="pre">Pinst</span></code> values.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">&quot;Pst&quot;</span></code> - Return the <code class="docutils literal notranslate"><span class="pre">Pst</span></code> values.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">&quot;Plt&quot;</span></code> - Return the <code class="docutils literal notranslate"><span class="pre">Plt</span></code> values.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">&quot;all_parameters&quot;</span></code> - Return the <code class="docutils literal notranslate"><span class="pre">(Pst,</span> <span class="pre">Plt,</span> <span class="pre">dc,</span> <span class="pre">d_max,</span> <span class="pre">t_max)</span></code> values.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">"d_parameters"</span></code> - Return the values <code class="docutils literal notranslate"><span class="pre">(dc,</span> <span class="pre">d_max,</span> <span class="pre">t_max)</span></code>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">"Pinst"</span></code> - Return the <code class="docutils literal notranslate"><span class="pre">Pinst</span></code> values.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">"Pst"</span></code> - Return the <code class="docutils literal notranslate"><span class="pre">Pst</span></code> values.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">"Plt"</span></code> - Return the <code class="docutils literal notranslate"><span class="pre">Plt</span></code> values.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">"all_parameters"</span></code> - Return the <code class="docutils literal notranslate"><span class="pre">(Pst,</span> <span class="pre">Plt,</span> <span class="pre">dc,</span> <span class="pre">d_max,</span> <span class="pre">t_max)</span></code> values.</p></li>
 </ul>
 </div></blockquote>
 </p></li>
@@ -95,15 +88,15 @@ observation period.</p></li>
 <dt class="field-odd">Raises<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>ValueError</strong> – When the parameters passed for the function are different from what is specified in the documentation.:</p></li>
-<li><p><strong>ValueError</strong> – When the capture time calculated from the timedelta index is smaller than 7800 seconds (2h10min) using: <code class="docutils literal notranslate"><span class="pre">returns=&quot;all_parameters&quot;</span></code> or <code class="docutils literal notranslate"><span class="pre">returns=&quot;Plt&quot;</span></code>.</p></li>
-<li><p><strong>ValueError</strong> – When the capture time calculated from the timedelta index is smaller than 1200 seconds (20min) using: <code class="docutils literal notranslate"><span class="pre">returns=&quot;Pst&quot;</span></code>.</p></li>
-<li><p><strong>ValueError</strong> – When the capture time calculated from the timedelta index is smaller than 10 seconds using: <code class="docutils literal notranslate"><span class="pre">returns=&quot;d_parameters&quot;</span></code>.</p></li>
+<li><p><strong>ValueError</strong> – When the capture time calculated from the timedelta index is smaller than 7800 seconds (2h10min) using: <code class="docutils literal notranslate"><span class="pre">returns="all_parameters"</span></code> or <code class="docutils literal notranslate"><span class="pre">returns="Plt"</span></code>.</p></li>
+<li><p><strong>ValueError</strong> – When the capture time calculated from the timedelta index is smaller than 1200 seconds (20min) using: <code class="docutils literal notranslate"><span class="pre">returns="Pst"</span></code>.</p></li>
+<li><p><strong>ValueError</strong> – When the capture time calculated from the timedelta index is smaller than 10 seconds using: <code class="docutils literal notranslate"><span class="pre">returns="d_parameters"</span></code>.</p></li>
 </ul>
 </dd>
 </dl>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>The initial 2 seconds of the analyzed signal are not considered when using <code class="docutils literal notranslate"><span class="pre">returns=&quot;d_parameters&quot;</span></code>.</p>
+<p>The initial 2 seconds of the analyzed signal are not considered when using <code class="docutils literal notranslate"><span class="pre">returns="d_parameters"</span></code>.</p>
 </div>
 <p class="rubric">Examples</p>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
@@ -125,9 +118,9 @@ observation period.</p></li>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">modulation</span> <span class="o">=</span> <span class="p">(</span><span class="n">amplitude_modulation</span> <span class="o">/</span> <span class="mi">2</span> <span class="o">/</span> <span class="mi">100</span><span class="p">)</span> <span class="o">*</span> <span class="n">sig</span><span class="o">.</span><span class="n">square</span><span class="p">(</span><span class="mi">2</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span> <span class="o">*</span> <span class="n">frequency_modulation</span> <span class="o">*</span> <span class="n">time</span><span class="p">)</span> <span class="o">+</span> <span class="mi">1</span>
 <span class="gp">&gt;&gt;&gt;</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="c1"># pandas.Series of the ``voltages_sample = fundamental_voltage * modulation`` signals</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">time_index</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">to_timedelta</span><span class="p">(</span><span class="n">time</span><span class="p">,</span> <span class="s2">&quot;s&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">time_index</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">to_timedelta</span><span class="p">(</span><span class="n">time</span><span class="p">,</span> <span class="s2">"s"</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">voltage_samples</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">(</span><span class="n">fundamental_voltage</span> <span class="o">*</span> <span class="n">modulation</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="n">time_index</span><span class="p">)</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">dc</span><span class="p">,</span> <span class="n">d_max</span><span class="p">,</span> <span class="n">Tmax</span> <span class="o">=</span> <span class="n">flickermeter</span><span class="p">(</span><span class="n">voltage_samples</span><span class="p">,</span> <span class="n">rms_voltage</span><span class="p">,</span> <span class="n">frequency</span><span class="p">,</span> <span class="n">rms_voltage</span><span class="p">,</span> <span class="n">frequency</span><span class="p">,</span> <span class="s1">&#39;d_parameters&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">dc</span><span class="p">,</span> <span class="n">d_max</span><span class="p">,</span> <span class="n">Tmax</span> <span class="o">=</span> <span class="n">flickermeter</span><span class="p">(</span><span class="n">voltage_samples</span><span class="p">,</span> <span class="n">rms_voltage</span><span class="p">,</span> <span class="n">frequency</span><span class="p">,</span> <span class="n">rms_voltage</span><span class="p">,</span> <span class="n">frequency</span><span class="p">,</span> <span class="s1">'d_parameters'</span><span class="p">)</span>
 </pre></div>
 </div>
 <div class="admonition seealso">
@@ -135,65 +128,56 @@ observation period.</p></li>
 <p><a class="reference internal" href="typhoon.test.IEC61000.rms.html#typhoon.test.IEC61000.rms" title="typhoon.test.IEC61000.rms"><code class="xref py py-obj docutils literal notranslate"><span class="pre">typhoon.test.IEC61000.rms</span></code></a></p>
 </div>
 </dd></dl>
-
 </section>
-
-
-            <div class="clearer"></div>
-          </div>
-        </div>
-      </div>
-      <div class="sphinxsidebar" role="navigation" aria-label="Main">
-        <div class="sphinxsidebarwrapper">
-            <p class="logo"><a href="../index.html">
-              <img class="logo" src="../_static/logo.png" alt="Logo of "/>
-            </a></p>
-  <div>
-    <h4>Previous topic</h4>
-    <p class="topless"><a href="typhoon.test.harmonic.FFTResult.html"
-                          title="previous chapter">FFTResult</a></p>
-  </div>
-  <div>
-    <h4>Next topic</h4>
-    <p class="topless"><a href="typhoon.test.IEC61000.frequency.html"
-                          title="next chapter">frequency</a></p>
-  </div>
-<search id="searchbox" style="display: none" role="search">
-  <h3 id="searchlabel">Quick search</h3>
-    <div class="searchformwrapper">
-    <form class="search" action="../search.html" method="get">
-      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
-      <input type="submit" value="Go" />
-    </form>
-    </div>
+<div class="clearer"></div>
+</div>
+</div>
+</div>
+<div aria-label="Main" class="sphinxsidebar" role="navigation">
+<div class="sphinxsidebarwrapper">
+<p class="logo"><a href="../index.html">
+<img alt="Logo of " class="logo" src="../_static/logo.png"/>
+</a></p>
+<div>
+<h4>Previous topic</h4>
+<p class="topless"><a href="typhoon.test.harmonic.FFTResult.html" title="previous chapter">FFTResult</a></p>
+</div>
+<div>
+<h4>Next topic</h4>
+<p class="topless"><a href="typhoon.test.IEC61000.frequency.html" title="next chapter">frequency</a></p>
+</div>
+<search id="searchbox" role="search" style="display: none">
+<h3 id="searchlabel">Quick search</h3>
+<div class="searchformwrapper">
+<form action="../search.html" class="search" method="get">
+<input aria-labelledby="searchlabel" autocapitalize="off" autocomplete="off" autocorrect="off" name="q" spellcheck="false" type="text"/>
+<input type="submit" value="Go"/>
+</form>
+</div>
 </search>
 <script>document.getElementById('searchbox').style.display = "block"</script>
-        </div>
-      </div>
-      <div class="clearer"></div>
-    </div>
-    <div class="related" role="navigation" aria-label="Related">
-      <h3>Navigation</h3>
-      <ul>
-        <li class="right" style="margin-right: 10px">
-          <a href="../genindex.html" title="General Index"
-             >index</a></li>
-        <li class="right" >
-          <a href="../py-modindex.html" title="Python Module Index"
-             >modules</a> |</li>
-        <li class="right" >
-          <a href="typhoon.test.IEC61000.frequency.html" title="frequency"
-             >next</a> |</li>
-        <li class="right" >
-          <a href="typhoon.test.harmonic.FFTResult.html" title="FFTResult"
-             >previous</a> |</li>
-        <li class="nav-item nav-item-0"><a href="../index.html"> 1.35.3 documentation</a> &#187;</li>
-        <li class="nav-item nav-item-this"><a href="">flickermeter</a></li> 
-      </ul>
-    </div>
-    <div class="footer" role="contentinfo">
-    &#169; Copyright .
+</div>
+</div>
+<div class="clearer"></div>
+</div>
+<div aria-label="Related" class="related" role="navigation">
+<h3>Navigation</h3>
+<ul>
+<li class="right" style="margin-right: 10px">
+<a href="../genindex.html" title="General Index">index</a></li>
+<li class="right">
+<a href="../py-modindex.html" title="Python Module Index">modules</a> |</li>
+<li class="right">
+<a href="typhoon.test.IEC61000.frequency.html" title="frequency">next</a> |</li>
+<li class="right">
+<a href="typhoon.test.harmonic.FFTResult.html" title="FFTResult">previous</a> |</li>
+<li class="nav-item"><a href="../../index.html"> Docs </a> » </li><li class="nav-item nav-item-0"><a href="../index.html"> 1.35.3 documentation</a> »</li>
+<li class="nav-item nav-item-this"><a href="">flickermeter</a></li>
+</ul>
+</div>
+<div class="footer" role="contentinfo">
+    © Copyright .
       Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 8.2.1.
     </div>
-  </body>
+</body>
 </html>
