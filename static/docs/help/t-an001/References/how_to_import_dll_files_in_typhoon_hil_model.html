@@ -1,174 +1,121 @@
-<!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en" data-whc_version="24.1">
-    <head><link rel="shortcut icon" href="../../favicon.ico"/><link rel="icon" href="../../favicon.ico"/><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><meta name="DC.rights.owner" content="(C) Copyright 2026"/><meta name="copyright" content="(C) Copyright 2026"/><meta name="generator" content="DITA-OT"/><meta name="DC.type" content="reference"/><meta name="description" content="Walkthrough on how to import and include Dynamic Link Library (DLL) files into your model using the C function component."/><meta name="DC.relation" content="../../t-an001/concepts/how-to_guides.html"/><meta name="DC.format" content="HTML5"/><meta name="DC.identifier" content="doc"/>        
-      <title>How to import DLL file for C function</title><!--  Generated with Oxygen version 24.1, build number 2022030800.  --><meta name="wh-path2root" content="../../"/><meta name="wh-toc-id" content="doc-d16877e240"/><meta name="wh-source-relpath" content="t-an001/References/how_to_import_dll_files_in_typhoon_hil_model.dita"/><meta name="wh-out-relpath" content="t-an001/References/how_to_import_dll_files_in_typhoon_hil_model.html"/>
-    <!-- Latest compiled and minified Bootstrap CSS -->
-    <link rel="stylesheet" type="text/css" href="../../oxygen-webhelp/lib/bootstrap/css/bootstrap.min.css"/>
-    
-    <link rel="stylesheet" href="../../oxygen-webhelp/lib/jquery-ui/jquery-ui.min.css"/>
-    
-    <!-- Template default styles  -->
-    <link rel="stylesheet" type="text/css" href="../../oxygen-webhelp/app/topic-page.css?buildId=2022030800"/>
-    
-    
-    <script src="../../oxygen-webhelp/lib/jquery/jquery-3.5.1.min.js"></script>
-    
-    <script data-main="../../oxygen-webhelp/app/topic-page.js" src="../../oxygen-webhelp/lib/requirejs/require.js"></script>
-<link rel="stylesheet" type="text/css" href="../../oxygen-webhelp/template/oxygen.css?buildId=2022030800"/><link rel="stylesheet" type="text/css" href="../../oxygen-webhelp/template/notes.css?buildId=2022030800"/><script type="text/javascript" src="../../Scripts/mml-svg.js"> 
-</script><link rel="stylesheet" type="text/css" href="../../assets/typhoon.css"/></head>
-
-    <body id="doc" class="wh_topic_page frmBody">
-        <a href="#wh_topic_body" class="sr-only sr-only-focusable">
+<!DOCTYPE html>
+<html data-whc_version="24.1" lang="en" xml:lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head><link href="../../favicon.ico" rel="shortcut icon"/><link href="../../favicon.ico" rel="icon"/><meta content="text/html; charset=utf-8" http-equiv="Content-Type"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="IE=edge" http-equiv="X-UA-Compatible"/><meta content="(C) Copyright 2026" name="DC.rights.owner"/><meta content="(C) Copyright 2026" name="copyright"/><meta content="DITA-OT" name="generator"/><meta content="reference" name="DC.type"/><meta content="Walkthrough on how to import and include Dynamic Link Library (DLL) files into your model using the C function component." name="description"/><meta content="../../t-an001/concepts/how-to_guides.html" name="DC.relation"/><meta content="HTML5" name="DC.format"/><meta content="doc" name="DC.identifier"/>
+<title>How to import DLL file for C function</title><!--  Generated with Oxygen version 24.1, build number 2022030800.  --><meta content="../../" name="wh-path2root"/><meta content="doc-d16877e240" name="wh-toc-id"/><meta content="t-an001/References/how_to_import_dll_files_in_typhoon_hil_model.dita" name="wh-source-relpath"/><meta content="t-an001/References/how_to_import_dll_files_in_typhoon_hil_model.html" name="wh-out-relpath"/>
+<!-- Latest compiled and minified Bootstrap CSS -->
+<link href="../../oxygen-webhelp/lib/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
+<link href="../../oxygen-webhelp/lib/jquery-ui/jquery-ui.min.css" rel="stylesheet"/>
+<!-- Template default styles  -->
+<link href="../../oxygen-webhelp/app/topic-page.css?buildId=2022030800" rel="stylesheet" type="text/css"/>
+<script src="../../oxygen-webhelp/lib/jquery/jquery-3.5.1.min.js"></script>
+<script data-main="../../oxygen-webhelp/app/topic-page.js" src="../../oxygen-webhelp/lib/requirejs/require.js"></script>
+<link href="../../oxygen-webhelp/template/oxygen.css?buildId=2022030800" rel="stylesheet" type="text/css"/><link href="../../oxygen-webhelp/template/notes.css?buildId=2022030800" rel="stylesheet" type="text/css"/><script src="../../Scripts/mml-svg.js" type="text/javascript">
+</script><link href="../../assets/typhoon.css" rel="stylesheet" type="text/css"/></head>
+<body class="wh_topic_page frmBody" id="doc">
+<a class="sr-only sr-only-focusable" href="#wh_topic_body">
             Jump to main content
         </a>
-        
-        
-        
-        
-        <header class="navbar navbar-default wh_header">
-    <div class="container-fluid">
-        <div class="wh_header_flex_container navbar-nav navbar-expand-md navbar-dark">
-            <div class="wh_logo_and_publication_title_container">
-                <div class="wh_logo_and_publication_title">
-                    
-                    <a href="https://www.typhoon-hil.com" class=" wh_logo d-none d-sm-block "><img src="../../logo.svg" alt="  Typhoon HIL Documentation  Version: 2026.1  "/></a>
-                    <div class=" wh_publication_title "><a href="../../index.html"><span class="booktitle">  <span class="ph mainbooktitle">Typhoon HIL Documentation</span>  <span class="ph booktitlealt">Version: 2026.1</span>  </span></a></div>
-                    
-                </div>
-                
-                <button type="button" data-target="#wh_top_menu_and_indexterms_link" id="wh_menu_mobile_button" data-toggle="collapse" class="navbar-toggler collapsed wh_toggle_button" aria-expanded="false" aria-label="Toggle menu" aria-controls="wh_top_menu_and_indexterms_link">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-            </div>
-
-            <div class="wh_top_menu_and_indexterms_link collapse navbar-collapse" id="wh_top_menu_and_indexterms_link">
-                
-                <nav class=" wh_top_menu " aria-label="Menu Container"><ul role="menubar" aria-label="Menu"><li role="menuitem" aria-haspopup="true" aria-expanded="false" class="has-children"><span id="tocId-d16877e21-mi" data-tocid="tocId-d16877e21" data-state="not-ready" class=" topicref application-notes"><span class="title"><a href="../../t-an001/concepts/application_notes_introduction.html">Typhoon HIL Application Notes</a></span></span></li><li role="menuitem" aria-haspopup="true" aria-expanded="false" class="has-children"><span id="tocId-d16877e737-mi" data-tocid="tocId-d16877e737" data-state="not-ready" class=" topicref software-manual"><span class="title"><a href="../../t-ug002/topics/software_manual_introduction.html">Typhoon HIL Software Manual</a></span></span></li><li role="menuitem" aria-haspopup="true" aria-expanded="false" class="has-children"><span id="tocId-d16877e7901-mi" data-tocid="tocId-d16877e7901" data-state="not-ready" class=" topicref hardware-manual"><span class="title"><a href="../../t-ug001/abstract/hardware_manual_introduction.html">Typhoon HIL Hardware Manual</a></span></span></li></ul></nav>
-                
-                
-            </div>
-        </div>
-    </div>
+<header class="navbar navbar-default wh_header">
+<div class="container-fluid">
+<div class="wh_header_flex_container navbar-nav navbar-expand-md navbar-dark">
+<div class="wh_logo_and_publication_title_container">
+<div class="wh_logo_and_publication_title">
+<a class="wh_logo d-none d-sm-block" href="../../../index.html"><img alt="  Typhoon HIL Documentation  Version: 2026.1  " src="../../logo.svg"/></a>
+<div class="wh_publication_title"><a href="../../index.html"><span class="booktitle"> <span class="ph mainbooktitle">Typhoon HIL Documentation</span> <span class="ph booktitlealt">Version: 2026.1</span> </span></a></div>
+</div>
+<button aria-controls="wh_top_menu_and_indexterms_link" aria-expanded="false" aria-label="Toggle menu" class="navbar-toggler collapsed wh_toggle_button" data-target="#wh_top_menu_and_indexterms_link" data-toggle="collapse" id="wh_menu_mobile_button" type="button">
+<span class="navbar-toggler-icon"></span>
+</button>
+</div>
+<div class="wh_top_menu_and_indexterms_link collapse navbar-collapse" id="wh_top_menu_and_indexterms_link">
+<nav aria-label="Menu Container" class="wh_top_menu"><ul aria-label="Menu" role="menubar"><li aria-expanded="false" aria-haspopup="true" class="has-children" role="menuitem"><span class="topicref application-notes" data-state="not-ready" data-tocid="tocId-d16877e21" id="tocId-d16877e21-mi"><span class="title"><a href="../../t-an001/concepts/application_notes_introduction.html">Typhoon HIL Application Notes</a></span></span></li><li aria-expanded="false" aria-haspopup="true" class="has-children" role="menuitem"><span class="topicref software-manual" data-state="not-ready" data-tocid="tocId-d16877e737" id="tocId-d16877e737-mi"><span class="title"><a href="../../t-ug002/topics/software_manual_introduction.html">Typhoon HIL Software Manual</a></span></span></li><li aria-expanded="false" aria-haspopup="true" class="has-children" role="menuitem"><span class="topicref hardware-manual" data-state="not-ready" data-tocid="tocId-d16877e7901" id="tocId-d16877e7901-mi"><span class="title"><a href="../../t-ug001/abstract/hardware_manual_introduction.html">Typhoon HIL Hardware Manual</a></span></span></li></ul></nav>
+</div>
+</div>
+</div>
 </header>
-        
-        
-         
-        
-        <div class=" wh_search_input navbar-form wh_topic_page_search search " role="form">
-            
-            
-            
-            <form id="searchForm" method="get" role="search" action="../../search.html"><div><input type="search" placeholder="Search " class="wh_search_textfield" id="textToSearch" name="searchQuery" aria-label="Search query" required="required"/><button type="submit" class="wh_search_button" aria-label="Search"><span class="search_input_text">Search</span></button></div></form>
-            
-            
-            
-        </div>
-        
-        <div class="container-fluid" id="wh_topic_container">
-            <div class="row">
-
-                <nav class="wh_tools d-print-none navbar-expand-md" aria-label="Tools">
-                    
-                    <div data-tooltip-position="bottom" class=" wh_breadcrumb "><ol class="d-print-none"><li><span class="home"><a href="../../index.html"><span>Home</span></a></span></li><li><div class="topicref application-notes"><div class="title"><a href="../../t-an001/concepts/application_notes_introduction.html">Typhoon HIL Application Notes</a></div></div></li><li><div class="topicref" data-id="doc"><div class="title"><a href="../../t-an001/concepts/how-to_guides.html">How-to Guides</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">Guides, tips, and tricks on various aspects of Typhoon HIL toolchain usage.</span></p></div></div></div></li><li class="active"><div class="topicref" data-id="doc"><div class="title"><a href="../../t-an001/References/how_to_import_dll_files_in_typhoon_hil_model.html">How to import DLL file for C function</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">Walkthrough on how to import and include Dynamic Link Library       (DLL) files into your model using the C function component.</span></p></div></div></div></li></ol></div>
-                    
-                    
-                    
-                    <div class="wh_right_tools">
-                        <button class="wh_hide_highlight" aria-label="Toggle search highlights" title="Toggle search highlights"></button>
-                        <button class="webhelp_expand_collapse_sections" data-next-state="collapsed" aria-label="Collapse sections" title="Collapse sections"></button>
-                        
-                        
-                        
-                        
-                        <div class=" wh_print_link print d-none d-md-inline-block "><button onClick="window.print()" title="Print this page" aria-label="Print this page"></button></div>
-                        
-                        <button type="button" id="wh_toc_button" class="custom-toggler navbar-toggler collapsed wh_toggle_button navbar-light" aria-expanded="false" aria-label="Toggle publishing table of content" aria-controls="wh_publication_toc">
-                            <span class="navbar-toggler-icon"></span>
-                        </button>
-                    </div>
-                    
-                </nav>
-            </div>
-            
-            
-            
-            
-            <div class="wh_content_area">
-                <div class="row">
-                    
-                        <nav id="wh_publication_toc" class="col-lg-3 col-md-3 col-sm-12 d-md-block d-none d-print-none" aria-label="Table of Contents Container">
-                            <div id="wh_publication_toc_content">
-		                        
-                            	<div class=" wh_publication_toc " data-tooltip-position="right"><span class="expand-button-action-labels"><span id="button-expand-action" role="button" aria-label="Expand"></span><span id="button-collapse-action" role="button" aria-label="Collapse"></span><span id="button-pending-action" role="button" aria-label="Pending"></span></span><ul role="tree" aria-label="Table of Contents"><li role="treeitem" aria-expanded="true"><div data-tocid="tocId-d16877e21" class="topicref application-notes" data-state="expanded"><span role="button" tabindex="0" aria-labelledby="button-collapse-action tocId-d16877e21-link" class="wh-expand-btn"></span><div class="title"><a href="../../t-an001/concepts/application_notes_introduction.html" id="tocId-d16877e21-link">Typhoon HIL Application Notes</a></div></div><ul role="group" class="navbar-nav nav-list"><li role="treeitem"><div data-tocid="doc-d16877e25" class="topicref" data-id="doc" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../../t-an001/concepts/application_notes_introduction.html" id="doc-d16877e25-link">Application Notes Introduction</a><div class="wh-tooltip"><p class="shortdesc">Brief overview of the different categories of Application Notes</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="doc-d16877e36" class="topicref" data-id="doc" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action doc-d16877e36-link" class="wh-expand-btn"></span><div class="title"><a href="../../t-an001/concepts/grid_connected_converters.html" id="doc-d16877e36-link">Grid-connected converters</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">Grid-connected converter applications featuring various grid support    functionalities.</span></p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="doc-d16877e96" class="topicref" data-id="doc" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action doc-d16877e96-link" class="wh-expand-btn"></span><div class="title"><a href="../../t-an001/concepts/automotive.html" id="doc-d16877e96-link">Automotive</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">Electric cars and other automotive applications.</span></p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="doc-d16877e132" class="topicref" data-id="doc" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action doc-d16877e132-link" class="wh-expand-btn"></span><div class="title"><a href="../../t-an001/concepts/aerospace.html" id="doc-d16877e132-link">Aerospace</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">System-level and component-level aircraft applications.</span></p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="doc-d16877e168" class="topicref" data-id="doc" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action doc-d16877e168-link" class="wh-expand-btn"></span><div class="title"><a href="../../t-an001/concepts/battery_management_systems.html" id="doc-d16877e168-link">Battery management systems</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">Battery management system (BMS) examples</span></p></div></div></div></li><li role="treeitem" aria-expanded="true"><div data-tocid="doc-d16877e216" class="topicref" data-id="doc" data-state="expanded"><span role="button" tabindex="0" aria-labelledby="button-collapse-action doc-d16877e216-link" class="wh-expand-btn"></span><div class="title"><a href="../../t-an001/concepts/how-to_guides.html" id="doc-d16877e216-link">How-to Guides</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">Guides, tips, and tricks on various aspects of Typhoon HIL toolchain usage.</span></p></div></div></div><ul role="group" class="navbar-nav nav-list"><li role="treeitem"><div data-tocid="doc-d16877e228" class="topicref" data-id="doc" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../../t-an001/References/how_to_electrical_thermal_coupling.html" id="doc-d16877e228-link">How to couple electrical and thermal models</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">How to guide for coupling electrical and thermal models in Typhoon HIL Schematic   Editor.</span></p></div></div></div></li><li role="treeitem" class="active"><div data-tocid="doc-d16877e240" class="topicref" data-id="doc" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../../t-an001/References/how_to_import_dll_files_in_typhoon_hil_model.html" id="doc-d16877e240-link">How to import DLL file for C function</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">Walkthrough on how to import and include Dynamic Link Library       (DLL) files into your model using the C function component.</span></p></div></div></div></li><li role="treeitem"><div data-tocid="doc-d16877e252" class="topicref" data-id="doc" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../../t-an001/References/software_in_the_loop_approach_in_rapid_prototyping.html" id="doc-d16877e252-link">Software-in-the-loop approach in rapid control prototyping</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">Demonstration of two RCP implementations of a PI Controller using Schematic Editor   libraries and C code import from Simulink</span></p></div></div></div></li><li role="treeitem"><div data-tocid="doc-d16877e264" class="topicref" data-id="doc" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../../t-an001/References/frequency_response_example.html" id="doc-d16877e264-link">How-to use the Frequency response widget</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">Demonstration on how to use the Frequency Response widget in HIL SCADA</span></p></div></div></div></li><li role="treeitem"><div data-tocid="doc-d16877e276" class="topicref" data-id="doc" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../../t-an001/References/using_scipy_functions_converter_design_issues.html" id="doc-d16877e276-link">Using Bode plots in Schematic Editor to troubleshoot converter design issues</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">Demonstration on how to use Python-specific libraries (such as       scipy) to resolve issues with designing power converter controls.</span></p></div></div></div></li><li role="treeitem"><div data-tocid="doc-d16877e288" class="topicref" data-id="doc" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../../t-an001/References/how_to_microgrid_der.html" id="doc-d16877e288-link">Microgrid Toolbox DER components guide</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">Comprehensive guide on Microgrid Toolbox DER component types and when to use   them.</span></p></div></div></div></li><li role="treeitem"><div data-tocid="doc-d16877e300" class="topicref" data-id="doc" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../../t-an001/References/how_to_signal_scaling.html" id="doc-d16877e300-link">How to scale simulated signals for a C-HIL interface</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">This how to guide explains scaling, which is a crucial step in interfacing a HIL device   with an external device under test (DUT), such as a controller, relay, PLC, etc.</span></p></div></div></div></li></ul></li><li role="treeitem" aria-expanded="false"><div data-tocid="doc-d16877e312" class="topicref" data-id="doc" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action doc-d16877e312-link" class="wh-expand-btn"></span><div class="title"><a href="../../t-an001/concepts/communication_protocols.html" id="doc-d16877e312-link">Communication Protocols</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">Interoperability. Cybersecurity. Modbus, Sunspec, IEC61850, IEEE    C37.118, DNP3, CAN, OPC UA, and more.</span></p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="doc-d16877e384" class="topicref" data-id="doc" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action doc-d16877e384-link" class="wh-expand-btn"></span><div class="title"><a href="../../t-an001/concepts/power_systems.html" id="doc-d16877e384-link">Power Systems</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">Power system simulation. Relay protection testing. Power flow tool integration and   co-simulation.</span></p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="doc-d16877e468" class="topicref" data-id="doc" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action doc-d16877e468-link" class="wh-expand-btn"></span><div class="title"><a href="../../t-an001/concepts/microgrids.html" id="doc-d16877e468-link">Microgrids</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">Rapid microgrid pre-commissioning and system integration. Microgrid controller RCP and   testing.</span></p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="doc-d16877e552" class="topicref" data-id="doc" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action doc-d16877e552-link" class="wh-expand-btn"></span><div class="title"><a href="../../t-an001/concepts/electrical_drives.html" id="doc-d16877e552-link">Electrical Drives</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">Converters coupled with high-fidelity electrical machine models for high performance   motor drive applications.</span></p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="doc-d16877e601" class="topicref" data-id="doc" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action doc-d16877e601-link" class="wh-expand-btn"></span><div class="title"><a href="../../t-an001/concepts/power_supplies.html" id="doc-d16877e601-link">Power Supplies</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">Linear and switching power supplies for industrial and laboratory   applications.</span></p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="doc-d16877e625" class="topicref" data-id="doc" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action doc-d16877e625-link" class="wh-expand-btn"></span><div class="title"><a href="../../t-an001/concepts/marine_power_systems.html" id="doc-d16877e625-link">Marine Power Systems</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">Hybrid propulsion, shipboard power management, offshore renewables, offshore oil and   gas platform power supplies. </span></p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="doc-d16877e649" class="topicref" data-id="doc" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action doc-d16877e649-link" class="wh-expand-btn"></span><div class="title"><a href="../../t-an001/concepts/power_quality.html" id="doc-d16877e649-link">Power Quality</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">Real-time power quality/harmonic analysis. Incorporate active filters and FACTS devices (STATCOM, DVR,   SVC).</span></p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="doc-d16877e685" class="topicref" data-id="doc" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action doc-d16877e685-link" class="wh-expand-btn"></span><div class="title"><a href="../../t-an001/concepts/railway.html" id="doc-d16877e685-link">Railway</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">System-level and component-level application examples for railway    (traction) equipment.</span></p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="doc-d16877e709" class="topicref" data-id="doc" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action doc-d16877e709-link" class="wh-expand-btn"></span><div class="title"><a href="../../t-an001/concepts/medical_devices.html" id="doc-d16877e709-link">Medical Devices</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">X-ray, MRI, ICD, pacemakers, defibrillators, emergency ventilators, ECG, EMG,   bioelectronics.</span></p></div></div></div></li></ul></li></ul></div>
-		                        
-                            </div>
-                        </nav>
-                    
-                    
-                    <div class="col-lg-7 col-md-9 col-sm-12" id="wh_topic_body">
-                        <button id="wh_close_publication_toc_button" class="close-toc-button d-none" aria-label="Toggle publishing table of content" aria-controls="wh_publication_toc" aria-expanded="true">
-                            <span class="close-toc-icon-container">
-                                <span class="close-toc-icon"></span>     
-                            </span>
-                        </button>
-                        <button id="wh_close_topic_toc_button" class="close-toc-button d-none" aria-label="Toggle topic table of content" aria-controls="wh_topic_toc" aria-expanded="true">
-                            <span class="close-toc-icon-container">
-                                <span class="close-toc-icon"></span>     
-                            </span>
-                        </button>
-                        
-                        <div class=" wh_topic_content body "><main role="main"><article role="article" aria-labelledby="ariaid-title1">
- <h1 class="- topic/title title topictitle1" id="ariaid-title1">How to import DLL file for C function</h1>
-  
- <div class="- topic/body reference/refbody body refbody"><p class="- topic/shortdesc shortdesc"><span class="- topic/ph ph" id="doc__description">Walkthrough on how to import and include Dynamic Link Library
+<div class="wh_search_input navbar-form wh_topic_page_search search" role="form">
+<form action="../../search.html" id="searchForm" method="get" role="search"><div><input aria-label="Search query" class="wh_search_textfield" id="textToSearch" name="searchQuery" placeholder="Search " required="required" type="search"/><button aria-label="Search" class="wh_search_button" type="submit"><span class="search_input_text">Search</span></button></div></form>
+</div>
+<div class="container-fluid" id="wh_topic_container">
+<div class="row">
+<nav aria-label="Tools" class="wh_tools d-print-none navbar-expand-md">
+<div class="wh_breadcrumb" data-tooltip-position="bottom"><ol class="d-print-none"><li><span class="home"><a href="../../index.html"><span>Home</span></a></span></li><li><div class="topicref application-notes"><div class="title"><a href="../../t-an001/concepts/application_notes_introduction.html">Typhoon HIL Application Notes</a></div></div></li><li><div class="topicref" data-id="doc"><div class="title"><a href="../../t-an001/concepts/how-to_guides.html">How-to Guides</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">Guides, tips, and tricks on various aspects of Typhoon HIL toolchain usage.</span></p></div></div></div></li><li class="active"><div class="topicref" data-id="doc"><div class="title"><a href="../../t-an001/References/how_to_import_dll_files_in_typhoon_hil_model.html">How to import DLL file for C function</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">Walkthrough on how to import and include Dynamic Link Library       (DLL) files into your model using the C function component.</span></p></div></div></div></li></ol></div>
+<div class="wh_right_tools">
+<button aria-label="Toggle search highlights" class="wh_hide_highlight" title="Toggle search highlights"></button>
+<button aria-label="Collapse sections" class="webhelp_expand_collapse_sections" data-next-state="collapsed" title="Collapse sections"></button>
+<div class="wh_print_link print d-none d-md-inline-block"><button aria-label="Print this page" onclick="window.print()" title="Print this page"></button></div>
+<button aria-controls="wh_publication_toc" aria-expanded="false" aria-label="Toggle publishing table of content" class="custom-toggler navbar-toggler collapsed wh_toggle_button navbar-light" id="wh_toc_button" type="button">
+<span class="navbar-toggler-icon"></span>
+</button>
+</div>
+</nav>
+</div>
+<div class="wh_content_area">
+<div class="row">
+<nav aria-label="Table of Contents Container" class="col-lg-3 col-md-3 col-sm-12 d-md-block d-none d-print-none" id="wh_publication_toc">
+<div id="wh_publication_toc_content">
+<div class="wh_publication_toc" data-tooltip-position="right"><span class="expand-button-action-labels"><span aria-label="Expand" id="button-expand-action" role="button"></span><span aria-label="Collapse" id="button-collapse-action" role="button"></span><span aria-label="Pending" id="button-pending-action" role="button"></span></span><ul aria-label="Table of Contents" role="tree"><li aria-expanded="true" role="treeitem"><div class="topicref application-notes" data-state="expanded" data-tocid="tocId-d16877e21"><span aria-labelledby="button-collapse-action tocId-d16877e21-link" class="wh-expand-btn" role="button" tabindex="0"></span><div class="title"><a href="../../t-an001/concepts/application_notes_introduction.html" id="tocId-d16877e21-link">Typhoon HIL Application Notes</a></div></div><ul class="navbar-nav nav-list" role="group"><li role="treeitem"><div class="topicref" data-id="doc" data-state="leaf" data-tocid="doc-d16877e25"><span class="wh-expand-btn" role="button"></span><div class="title"><a href="../../t-an001/concepts/application_notes_introduction.html" id="doc-d16877e25-link">Application Notes Introduction</a><div class="wh-tooltip"><p class="shortdesc">Brief overview of the different categories of Application Notes</p></div></div></div></li><li aria-expanded="false" role="treeitem"><div class="topicref" data-id="doc" data-state="not-ready" data-tocid="doc-d16877e36"><span aria-labelledby="button-expand-action doc-d16877e36-link" class="wh-expand-btn" role="button" tabindex="0"></span><div class="title"><a href="../../t-an001/concepts/grid_connected_converters.html" id="doc-d16877e36-link">Grid-connected converters</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">Grid-connected converter applications featuring various grid support    functionalities.</span></p></div></div></div></li><li aria-expanded="false" role="treeitem"><div class="topicref" data-id="doc" data-state="not-ready" data-tocid="doc-d16877e96"><span aria-labelledby="button-expand-action doc-d16877e96-link" class="wh-expand-btn" role="button" tabindex="0"></span><div class="title"><a href="../../t-an001/concepts/automotive.html" id="doc-d16877e96-link">Automotive</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">Electric cars and other automotive applications.</span></p></div></div></div></li><li aria-expanded="false" role="treeitem"><div class="topicref" data-id="doc" data-state="not-ready" data-tocid="doc-d16877e132"><span aria-labelledby="button-expand-action doc-d16877e132-link" class="wh-expand-btn" role="button" tabindex="0"></span><div class="title"><a href="../../t-an001/concepts/aerospace.html" id="doc-d16877e132-link">Aerospace</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">System-level and component-level aircraft applications.</span></p></div></div></div></li><li aria-expanded="false" role="treeitem"><div class="topicref" data-id="doc" data-state="not-ready" data-tocid="doc-d16877e168"><span aria-labelledby="button-expand-action doc-d16877e168-link" class="wh-expand-btn" role="button" tabindex="0"></span><div class="title"><a href="../../t-an001/concepts/battery_management_systems.html" id="doc-d16877e168-link">Battery management systems</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">Battery management system (BMS) examples</span></p></div></div></div></li><li aria-expanded="true" role="treeitem"><div class="topicref" data-id="doc" data-state="expanded" data-tocid="doc-d16877e216"><span aria-labelledby="button-collapse-action doc-d16877e216-link" class="wh-expand-btn" role="button" tabindex="0"></span><div class="title"><a href="../../t-an001/concepts/how-to_guides.html" id="doc-d16877e216-link">How-to Guides</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">Guides, tips, and tricks on various aspects of Typhoon HIL toolchain usage.</span></p></div></div></div><ul class="navbar-nav nav-list" role="group"><li role="treeitem"><div class="topicref" data-id="doc" data-state="leaf" data-tocid="doc-d16877e228"><span class="wh-expand-btn" role="button"></span><div class="title"><a href="../../t-an001/References/how_to_electrical_thermal_coupling.html" id="doc-d16877e228-link">How to couple electrical and thermal models</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">How to guide for coupling electrical and thermal models in Typhoon HIL Schematic   Editor.</span></p></div></div></div></li><li class="active" role="treeitem"><div class="topicref" data-id="doc" data-state="leaf" data-tocid="doc-d16877e240"><span class="wh-expand-btn" role="button"></span><div class="title"><a href="../../t-an001/References/how_to_import_dll_files_in_typhoon_hil_model.html" id="doc-d16877e240-link">How to import DLL file for C function</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">Walkthrough on how to import and include Dynamic Link Library       (DLL) files into your model using the C function component.</span></p></div></div></div></li><li role="treeitem"><div class="topicref" data-id="doc" data-state="leaf" data-tocid="doc-d16877e252"><span class="wh-expand-btn" role="button"></span><div class="title"><a href="../../t-an001/References/software_in_the_loop_approach_in_rapid_prototyping.html" id="doc-d16877e252-link">Software-in-the-loop approach in rapid control prototyping</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">Demonstration of two RCP implementations of a PI Controller using Schematic Editor   libraries and C code import from Simulink</span></p></div></div></div></li><li role="treeitem"><div class="topicref" data-id="doc" data-state="leaf" data-tocid="doc-d16877e264"><span class="wh-expand-btn" role="button"></span><div class="title"><a href="../../t-an001/References/frequency_response_example.html" id="doc-d16877e264-link">How-to use the Frequency response widget</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">Demonstration on how to use the Frequency Response widget in HIL SCADA</span></p></div></div></div></li><li role="treeitem"><div class="topicref" data-id="doc" data-state="leaf" data-tocid="doc-d16877e276"><span class="wh-expand-btn" role="button"></span><div class="title"><a href="../../t-an001/References/using_scipy_functions_converter_design_issues.html" id="doc-d16877e276-link">Using Bode plots in Schematic Editor to troubleshoot converter design issues</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">Demonstration on how to use Python-specific libraries (such as       scipy) to resolve issues with designing power converter controls.</span></p></div></div></div></li><li role="treeitem"><div class="topicref" data-id="doc" data-state="leaf" data-tocid="doc-d16877e288"><span class="wh-expand-btn" role="button"></span><div class="title"><a href="../../t-an001/References/how_to_microgrid_der.html" id="doc-d16877e288-link">Microgrid Toolbox DER components guide</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">Comprehensive guide on Microgrid Toolbox DER component types and when to use   them.</span></p></div></div></div></li><li role="treeitem"><div class="topicref" data-id="doc" data-state="leaf" data-tocid="doc-d16877e300"><span class="wh-expand-btn" role="button"></span><div class="title"><a href="../../t-an001/References/how_to_signal_scaling.html" id="doc-d16877e300-link">How to scale simulated signals for a C-HIL interface</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">This how to guide explains scaling, which is a crucial step in interfacing a HIL device   with an external device under test (DUT), such as a controller, relay, PLC, etc.</span></p></div></div></div></li></ul></li><li aria-expanded="false" role="treeitem"><div class="topicref" data-id="doc" data-state="not-ready" data-tocid="doc-d16877e312"><span aria-labelledby="button-expand-action doc-d16877e312-link" class="wh-expand-btn" role="button" tabindex="0"></span><div class="title"><a href="../../t-an001/concepts/communication_protocols.html" id="doc-d16877e312-link">Communication Protocols</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">Interoperability. Cybersecurity. Modbus, Sunspec, IEC61850, IEEE    C37.118, DNP3, CAN, OPC UA, and more.</span></p></div></div></div></li><li aria-expanded="false" role="treeitem"><div class="topicref" data-id="doc" data-state="not-ready" data-tocid="doc-d16877e384"><span aria-labelledby="button-expand-action doc-d16877e384-link" class="wh-expand-btn" role="button" tabindex="0"></span><div class="title"><a href="../../t-an001/concepts/power_systems.html" id="doc-d16877e384-link">Power Systems</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">Power system simulation. Relay protection testing. Power flow tool integration and   co-simulation.</span></p></div></div></div></li><li aria-expanded="false" role="treeitem"><div class="topicref" data-id="doc" data-state="not-ready" data-tocid="doc-d16877e468"><span aria-labelledby="button-expand-action doc-d16877e468-link" class="wh-expand-btn" role="button" tabindex="0"></span><div class="title"><a href="../../t-an001/concepts/microgrids.html" id="doc-d16877e468-link">Microgrids</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">Rapid microgrid pre-commissioning and system integration. Microgrid controller RCP and   testing.</span></p></div></div></div></li><li aria-expanded="false" role="treeitem"><div class="topicref" data-id="doc" data-state="not-ready" data-tocid="doc-d16877e552"><span aria-labelledby="button-expand-action doc-d16877e552-link" class="wh-expand-btn" role="button" tabindex="0"></span><div class="title"><a href="../../t-an001/concepts/electrical_drives.html" id="doc-d16877e552-link">Electrical Drives</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">Converters coupled with high-fidelity electrical machine models for high performance   motor drive applications.</span></p></div></div></div></li><li aria-expanded="false" role="treeitem"><div class="topicref" data-id="doc" data-state="not-ready" data-tocid="doc-d16877e601"><span aria-labelledby="button-expand-action doc-d16877e601-link" class="wh-expand-btn" role="button" tabindex="0"></span><div class="title"><a href="../../t-an001/concepts/power_supplies.html" id="doc-d16877e601-link">Power Supplies</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">Linear and switching power supplies for industrial and laboratory   applications.</span></p></div></div></div></li><li aria-expanded="false" role="treeitem"><div class="topicref" data-id="doc" data-state="not-ready" data-tocid="doc-d16877e625"><span aria-labelledby="button-expand-action doc-d16877e625-link" class="wh-expand-btn" role="button" tabindex="0"></span><div class="title"><a href="../../t-an001/concepts/marine_power_systems.html" id="doc-d16877e625-link">Marine Power Systems</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">Hybrid propulsion, shipboard power management, offshore renewables, offshore oil and   gas platform power supplies. </span></p></div></div></div></li><li aria-expanded="false" role="treeitem"><div class="topicref" data-id="doc" data-state="not-ready" data-tocid="doc-d16877e649"><span aria-labelledby="button-expand-action doc-d16877e649-link" class="wh-expand-btn" role="button" tabindex="0"></span><div class="title"><a href="../../t-an001/concepts/power_quality.html" id="doc-d16877e649-link">Power Quality</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">Real-time power quality/harmonic analysis. Incorporate active filters and FACTS devices (STATCOM, DVR,   SVC).</span></p></div></div></div></li><li aria-expanded="false" role="treeitem"><div class="topicref" data-id="doc" data-state="not-ready" data-tocid="doc-d16877e685"><span aria-labelledby="button-expand-action doc-d16877e685-link" class="wh-expand-btn" role="button" tabindex="0"></span><div class="title"><a href="../../t-an001/concepts/railway.html" id="doc-d16877e685-link">Railway</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">System-level and component-level application examples for railway    (traction) equipment.</span></p></div></div></div></li><li aria-expanded="false" role="treeitem"><div class="topicref" data-id="doc" data-state="not-ready" data-tocid="doc-d16877e709"><span aria-labelledby="button-expand-action doc-d16877e709-link" class="wh-expand-btn" role="button" tabindex="0"></span><div class="title"><a href="../../t-an001/concepts/medical_devices.html" id="doc-d16877e709-link">Medical Devices</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">X-ray, MRI, ICD, pacemakers, defibrillators, emergency ventilators, ECG, EMG,   bioelectronics.</span></p></div></div></div></li></ul></li></ul></div>
+</div>
+</nav>
+<div class="col-lg-7 col-md-9 col-sm-12" id="wh_topic_body">
+<button aria-controls="wh_publication_toc" aria-expanded="true" aria-label="Toggle publishing table of content" class="close-toc-button d-none" id="wh_close_publication_toc_button">
+<span class="close-toc-icon-container">
+<span class="close-toc-icon"></span>
+</span>
+</button>
+<button aria-controls="wh_topic_toc" aria-expanded="true" aria-label="Toggle topic table of content" class="close-toc-button d-none" id="wh_close_topic_toc_button">
+<span class="close-toc-icon-container">
+<span class="close-toc-icon"></span>
+</span>
+</button>
+<div class="wh_topic_content body"><main role="main"><article aria-labelledby="ariaid-title1" role="article">
+<h1 class="- topic/title title topictitle1" id="ariaid-title1">How to import DLL file for C function</h1>
+<div class="- topic/body reference/refbody body refbody"><p class="- topic/shortdesc shortdesc"><span class="- topic/ph ph" id="doc__description">Walkthrough on how to import and include Dynamic Link Library
       (DLL) files into your model using the C function component.</span></p>
-  <section class="- topic/section section" id="doc__section_hqr_1zb_rz" data-ofbid="doc__section_hqr_1zb_rz">
-      <p class="- topic/p p">The <a class="- topic/xref xref" href="../../t-ug002/References/c_function.html" title="Description of the C function component in Schematic Editor, which enables importing functions from the C programing language.">C function</a>
+<section class="- topic/section section" data-ofbid="doc__section_hqr_1zb_rz" id="doc__section_hqr_1zb_rz">
+<p class="- topic/p p">The <a class="- topic/xref xref" href="../../t-ug002/References/c_function.html" title="Description of the C function component in Schematic Editor, which enables importing functions from the C programing language.">C function</a>
         component allows you to include both pre-generated Dynamic Link Libraries (DLLs) and
         external C language source files. It is important to note that the implementation of
         functions is hidden, and you will only be able to see the function interface. This feature
         helps developers to build control applications in third-party software and import their DLL
         files into the Typhoon HIL toolchain.</p>
-      <p class="- topic/p p">This example demonstrates this by showing how a DLL file imported with the C function can
+<p class="- topic/p p">This example demonstrates this by showing how a DLL file imported with the C function can
         be used as the Controller block of a simple <a class="- topic/xref xref" href="../../t-ug002/References/boost_converter.html" title="Description of the Boost converter component in Schematic Editor">Boost
         Converter</a>.</p>
-  </section>
-  <section class="- topic/section section" id="doc__section_bnk_str_1kb" data-ofbid="doc__section_bnk_str_1kb"><h2 class="- topic/title title sectiontitle">Model description</h2>
-      
-    <div class="- topic/note note note note_note" id="doc__how_to_on_request" data-ofbid="doc__how_to_on_request"><span class="note__title">Note:</span> The model featured in this How To guide is available <a class="- topic/xref xref" href="https://www.typhoon-hil.com/contact/" target="_blank" rel="external noopener">on request</a>.</div>
-    <p class="- topic/p p">The electrical model of a Boost Convertor consists of a DC <a class="- topic/xref xref" href="../../t-ug002/References/independent_sources.html" title="Description of the Independent Sources components in Schematic Editor">Voltage Source</a>, an <a class="- topic/xref xref" href="../../t-ug002/References/linear_passive_components.html" title="Description of linear passive components in Schematic Editor">Inductor</a> with internal <a class="- topic/xref xref" href="../../t-ug002/References/linear_passive_components.html" title="Description of linear passive components in Schematic Editor">Resistance</a>, a <a class="- topic/xref xref" href="../../t-ug002/References/linear_passive_components.html" title="Description of linear passive components in Schematic Editor">Capacitor</a> with internal resistance, two types of
+</section>
+<section class="- topic/section section" data-ofbid="doc__section_bnk_str_1kb" id="doc__section_bnk_str_1kb"><h2 class="- topic/title title sectiontitle">Model description</h2>
+<div class="- topic/note note note note_note" data-ofbid="doc__how_to_on_request" id="doc__how_to_on_request"><span class="note__title">Note:</span> The model featured in this How To guide is available <a class="- topic/xref xref" href="https://www.typhoon-hil.com/contact/" rel="external noopener" target="_blank">on request</a>.</div>
+<p class="- topic/p p">The electrical model of a Boost Convertor consists of a DC <a class="- topic/xref xref" href="../../t-ug002/References/independent_sources.html" title="Description of the Independent Sources components in Schematic Editor">Voltage Source</a>, an <a class="- topic/xref xref" href="../../t-ug002/References/linear_passive_components.html" title="Description of linear passive components in Schematic Editor">Inductor</a> with internal <a class="- topic/xref xref" href="../../t-ug002/References/linear_passive_components.html" title="Description of linear passive components in Schematic Editor">Resistance</a>, a <a class="- topic/xref xref" href="../../t-ug002/References/linear_passive_components.html" title="Description of linear passive components in Schematic Editor">Capacitor</a> with internal resistance, two types of
         loads, and a switch. The initial input voltage is 30 V and the output voltage is 40 V.
         Carrier frequency is set to 10 kHz, and the modulation signal is generated from the
         C function component. The control part is tested using two different loads: 320 W and 480 W. The <a class="- topic/xref xref" href="#doc__section_urt_fvw_2jb">Simulation</a> section describes the
         transitions and behavior of the model.</p>
-        <figure class="- topic/fig fig fignone" id="doc__fig_usv_gwx_cnb" data-ofbid="doc__fig_usv_gwx_cnb"><figcaption class="- topic/title title figcap"><span class="figtitleprefix fig--title-label">Figure<span class="fig--title-label-number"> 1</span><span class="fig--title-label-punctuation">. </span></span><span class="fig--title">Model of boost converter with controller</span></figcaption>
-          
-          <img class="- topic/image image" id="doc__image_vsv_gwx_cnb" src="../Images/how_to_import_DLL_files_in_typhoon_hIl_model_1.jpg" height="277" width="732"/>
-        </figure>
-      <p class="- topic/p p">To include DLL files in the C function, you need to do the following steps:</p><ul class="- topic/ul ul" id="doc__ul_lld_mjl_ymb" data-ofbid="doc__ul_lld_mjl_ymb">
-        <li class="- topic/li li">In order to generate the modulation signal, a DLL file is needed. While you may use many
+<figure class="- topic/fig fig fignone" data-ofbid="doc__fig_usv_gwx_cnb" id="doc__fig_usv_gwx_cnb"><figcaption class="- topic/title title figcap"><span class="figtitleprefix fig--title-label">Figure<span class="fig--title-label-number"> 1</span><span class="fig--title-label-punctuation">. </span></span><span class="fig--title">Model of boost converter with controller</span></figcaption>
+<img class="- topic/image image" height="277" id="doc__image_vsv_gwx_cnb" src="../Images/how_to_import_DLL_files_in_typhoon_hIl_model_1.jpg" width="732"/>
+</figure>
+<p class="- topic/p p">To include DLL files in the C function, you need to do the following steps:</p><ul class="- topic/ul ul" data-ofbid="doc__ul_lld_mjl_ymb" id="doc__ul_lld_mjl_ymb">
+<li class="- topic/li li">In order to generate the modulation signal, a DLL file is needed. While you may use many
           ways to generate the DLL files, in this application we demonstrate the use of Typhoon HIL
           Control Center's internal C compiler. More details about generating DLL files using the
-          Typhoon HIL compiler is available in the <a class="- topic/xref xref" href="https://ticket.typhoon-hil.com/kb/faq.php?id=85" target="_blank" rel="external noopener">FAQ section</a>.</li>
-        <li class="- topic/li li">After generating a DLL file, you need to add the location of the file in the “Library
+          Typhoon HIL compiler is available in the <a class="- topic/xref xref" href="https://ticket.typhoon-hil.com/kb/faq.php?id=85" rel="external noopener" target="_blank">FAQ section</a>.</li>
+<li class="- topic/li li">After generating a DLL file, you need to add the location of the file in the “Library
           import” tab in the C function menu. Also, it is important to add the header file as in
             <a class="- topic/xref xref" href="#doc__fig_knm_kwx_cnb">Figure 2</a>. After configuring, you
           should find the interface of the function in the “Name” section.</li>
-      </ul>
-        <figure class="- topic/fig fig fignone" id="doc__fig_knm_kwx_cnb" data-ofbid="doc__fig_knm_kwx_cnb"><figcaption class="- topic/title title figcap"><span class="figtitleprefix fig--title-label">Figure<span class="fig--title-label-number"> 2</span><span class="fig--title-label-punctuation">. </span></span><span class="fig--title">C function component</span></figcaption>
-          
-          <img class="- topic/image image" id="doc__image_lnm_kwx_cnb" src="../Images/how_to_import_DLL_files_in_typhoon_hIl_model_2.PNG" height="549" width="601"/>
-        </figure>
-      <p class="- topic/p p">After generating DLL file you need to add location of the file in “Library import” tab.
+</ul>
+<figure class="- topic/fig fig fignone" data-ofbid="doc__fig_knm_kwx_cnb" id="doc__fig_knm_kwx_cnb"><figcaption class="- topic/title title figcap"><span class="figtitleprefix fig--title-label">Figure<span class="fig--title-label-number"> 2</span><span class="fig--title-label-punctuation">. </span></span><span class="fig--title">C function component</span></figcaption>
+<img class="- topic/image image" height="549" id="doc__image_lnm_kwx_cnb" src="../Images/how_to_import_DLL_files_in_typhoon_hIl_model_2.PNG" width="601"/>
+</figure>
+<p class="- topic/p p">After generating DLL file you need to add location of the file in “Library import” tab.
         Also, it is important to add the header (.h) file as in <a class="- topic/xref xref" href="#doc__fig_knm_kwx_cnb">Figure 2</a>. After this configuration you should find
         interface of function in “Name” section.</p>
-      <p class="- topic/p p">To include the “Controller” function in Schematic Editor, we use a simple output_fcn
+<p class="- topic/p p">To include the “Controller” function in Schematic Editor, we use a simple output_fcn
         function.</p>
-        <pre class="+ topic/pre pr-d/codeblock pre codeblock"><code>output_fnc(){
+<pre class="+ topic/pre pr-d/codeblock pre codeblock"><code>output_fnc(){
   Controller(Vo,&amp;duty,Vref);
 }</code></pre>
-      
-      <p class="- topic/p p">The implementation of the "Controller" function in C language is shown below:</p>
-        <pre class="+ topic/pre pr-d/codeblock pre codeblock"><code>/* Replace "dll.h" with the name of your header */
+<p class="- topic/p p">The implementation of the "Controller" function in C language is shown below:</p>
+<pre class="+ topic/pre pr-d/codeblock pre codeblock"><code>/* Replace "dll.h" with the name of your header */
 #include "dll.h"
 #include &lt;math.h&gt;
 
@@ -205,95 +152,70 @@ void Controller(double Vo,double* duty,double Vref)
 	*duty = Rsat;
 
 }</code></pre>
-      <p class="- topic/p p">The PI regulator is implemented in the void function “Controller”. The inputs for this
+<p class="- topic/p p">The PI regulator is implemented in the void function “Controller”. The inputs for this
       function are the reference voltage, which comes from the <a class="- topic/xref xref" href="../../t-ug002/References/scada_input.html" title="Description of the SCADA Input component functionality in Schematic Editor">SCADA Input</a> component,
       and the output voltage of the Boost Converter. We set the duty cycle for the PWM modulator as
       outputs for the function. The header file is as follows:</p>
-        <pre class="+ topic/pre pr-d/codeblock pre codeblock"><code>#ifndef _DLL_H_
+<pre class="+ topic/pre pr-d/codeblock pre codeblock"><code>#ifndef _DLL_H_
 #define _DLL_H_
 
 void Controller(double Vo,double* duty,double Vref);
 
 #endif</code></pre>
-      
-    <p class="- topic/p p">The function interface is implemented in the header file, which is required in this application.</p>
-  </section>
-  <section class="- topic/section section" id="doc__section_urt_fvw_2jb" data-ofbid="doc__section_urt_fvw_2jb"><h2 class="- topic/title title sectiontitle">Simulation</h2>
-   
-      <p class="- topic/p p">In this How-to example, we can see the behavior of a PI controller implemented by C
+<p class="- topic/p p">The function interface is implemented in the header file, which is required in this application.</p>
+</section>
+<section class="- topic/section section" data-ofbid="doc__section_urt_fvw_2jb" id="doc__section_urt_fvw_2jb"><h2 class="- topic/title title sectiontitle">Simulation</h2>
+<p class="- topic/p p">In this How-to example, we can see the behavior of a PI controller implemented by C
         function. By setting the state of the contactor "On" or "Off", you can easily see the
         behavior and validate the PI controller.</p>
-      <p class="- topic/p p">The <a class="- topic/xref xref" href="#doc__fig_rm5_gxx_cnb">Figure 3</a> shows how the
+<p class="- topic/p p">The <a class="- topic/xref xref" href="#doc__fig_rm5_gxx_cnb">Figure 3</a> shows how the
         controller reacts in a step change of load. In the first window, you can see the transition
         of the voltage of the converter output during the step change. In the second window, you can
         see how the inductor current decreases during a step change. In the third window, you can
         see the position of contactor S1.</p>
-        <figure class="- topic/fig fig fignone" id="doc__fig_rm5_gxx_cnb" data-ofbid="doc__fig_rm5_gxx_cnb"><figcaption class="- topic/title title figcap"><span class="figtitleprefix fig--title-label">Figure<span class="fig--title-label-number"> 3</span><span class="fig--title-label-punctuation">. </span></span><span class="fig--title">Step change of load from 480 W to 320 W</span></figcaption>
-          
-          <img class="- topic/image image" id="doc__image_sm5_gxx_cnb" src="../Images/how_to_import_DLL_files_in_typhoon_hIl_model_6.PNG" height="706" width="994"/>
-        </figure>
-      <p class="- topic/p p">In <a class="- topic/xref xref" href="#doc__fig_w5j_jxx_cnb">Figure 4</a>, we can see how the
+<figure class="- topic/fig fig fignone" data-ofbid="doc__fig_rm5_gxx_cnb" id="doc__fig_rm5_gxx_cnb"><figcaption class="- topic/title title figcap"><span class="figtitleprefix fig--title-label">Figure<span class="fig--title-label-number"> 3</span><span class="fig--title-label-punctuation">. </span></span><span class="fig--title">Step change of load from 480 W to 320 W</span></figcaption>
+<img class="- topic/image image" height="706" id="doc__image_sm5_gxx_cnb" src="../Images/how_to_import_DLL_files_in_typhoon_hIl_model_6.PNG" width="994"/>
+</figure>
+<p class="- topic/p p">In <a class="- topic/xref xref" href="#doc__fig_w5j_jxx_cnb">Figure 4</a>, we can see how the
         controller reacts to a step change of the inverter from 320 W to 480 W. Reference voltage is
         successfully regulated to the reference value of 40 V for this application. In the first
         window, you can see a similar transition to the previous scenario. In the second window, you
         can see how the inductor current increases during a step change. In the third window, you
         can see the position of contactor S1.</p>
-        <figure class="- topic/fig fig fignone" id="doc__fig_w5j_jxx_cnb" data-ofbid="doc__fig_w5j_jxx_cnb"><figcaption class="- topic/title title figcap"><span class="figtitleprefix fig--title-label">Figure<span class="fig--title-label-number"> 4</span><span class="fig--title-label-punctuation">. </span></span><span class="fig--title">Step change of load from 320 W to 480 W</span></figcaption>
-          
-          <img class="- topic/image image" id="doc__image_x5j_jxx_cnb" src="../Images/how_to_import_DLL_files_in_typhoon_hIl_model_7.PNG" height="686" width="948"/>
-        </figure>
-      
-    <div class="- topic/p p"><div class="- topic/note note note note_note"><span class="note__title">Note:</span> Importing of DLL files is only supported for Virtual HIL models.</div> </div>
-    <div class="- topic/p p"><div class="- topic/note note note note_note"><span class="note__title">Note:</span> The C function component supports only DLL compiled for win64 operative system.</div></div>
-  </section>
-    <section class="- topic/section section" id="doc__section_udx_dgl_1nb" data-ofbid="doc__section_udx_dgl_1nb"><h2 class="- topic/title title sectiontitle">Authors</h2>
-      
-      <p class="- topic/p p">[1] Simisa Simic</p>
-    </section>
- </div>
+<figure class="- topic/fig fig fignone" data-ofbid="doc__fig_w5j_jxx_cnb" id="doc__fig_w5j_jxx_cnb"><figcaption class="- topic/title title figcap"><span class="figtitleprefix fig--title-label">Figure<span class="fig--title-label-number"> 4</span><span class="fig--title-label-punctuation">. </span></span><span class="fig--title">Step change of load from 320 W to 480 W</span></figcaption>
+<img class="- topic/image image" height="686" id="doc__image_x5j_jxx_cnb" src="../Images/how_to_import_DLL_files_in_typhoon_hIl_model_7.PNG" width="948"/>
+</figure>
+<div class="- topic/p p"><div class="- topic/note note note note_note"><span class="note__title">Note:</span> Importing of DLL files is only supported for Virtual HIL models.</div> </div>
+<div class="- topic/p p"><div class="- topic/note note note note_note"><span class="note__title">Note:</span> The C function component supports only DLL compiled for win64 operative system.</div></div>
+</section>
+<section class="- topic/section section" data-ofbid="doc__section_udx_dgl_1nb" id="doc__section_udx_dgl_1nb"><h2 class="- topic/title title sectiontitle">Authors</h2>
+<p class="- topic/p p">[1] Simisa Simic</p>
+</section>
+</div>
 </article></main></div>
-                        
-                        
-                        
-                        
-                        
-                        
-                    </div>
-                    
-                        <nav role="navigation" id="wh_topic_toc" aria-label="On this page" class="col-lg-2 d-none d-lg-block navbar d-print-none"> 
-                            <div id="wh_topic_toc_content">
-		                        
-	                            <div class=" wh_topic_toc "><div class="wh_topic_label">On this page</div><ul><li class="section-item"><div class="section-title"><a href="#doc__section_bnk_str_1kb" data-tocid="doc__section_bnk_str_1kb">Model description</a></div></li><li class="section-item"><div class="section-title"><a href="#doc__section_urt_fvw_2jb" data-tocid="doc__section_urt_fvw_2jb">Simulation</a></div></li><li class="section-item"><div class="section-title"><a href="#doc__section_udx_dgl_1nb" data-tocid="doc__section_udx_dgl_1nb">Authors</a></div></li></ul></div>
-	                        	
-                        	</div>
-                        </nav>
-                    
-                </div>
-            </div>
-            
-            
-            
-        </div> 
-        <footer class="navbar navbar-default wh_footer">
-  <div class=" footer-container mx-auto ">
-    <div style="text-align:center">Typhoon HIL Inc.<span id="year"> <a href="https://www.typhoon-hil.com">www.typhoon-hil.com</a></span></div>
-  </div>
+</div>
+<nav aria-label="On this page" class="col-lg-2 d-none d-lg-block navbar d-print-none" id="wh_topic_toc" role="navigation">
+<div id="wh_topic_toc_content">
+<div class="wh_topic_toc"><div class="wh_topic_label">On this page</div><ul><li class="section-item"><div class="section-title"><a data-tocid="doc__section_bnk_str_1kb" href="#doc__section_bnk_str_1kb">Model description</a></div></li><li class="section-item"><div class="section-title"><a data-tocid="doc__section_urt_fvw_2jb" href="#doc__section_urt_fvw_2jb">Simulation</a></div></li><li class="section-item"><div class="section-title"><a data-tocid="doc__section_udx_dgl_1nb" href="#doc__section_udx_dgl_1nb">Authors</a></div></li></ul></div>
+</div>
+</nav>
+</div>
+</div>
+</div>
+<footer class="navbar navbar-default wh_footer">
+<div class="footer-container mx-auto">
+<div style="text-align:center">Typhoon HIL Inc.<span id="year"> <a href="https://www.typhoon-hil.com">www.typhoon-hil.com</a></span></div>
+</div>
 </footer>
-        
-        <div id="go2top" class="d-print-none">
-            <span class="oxy-icon oxy-icon-up"></span>
-        </div>
-        
-        <div id="modal_img_large" class="modal">
-            <span class="close oxy-icon oxy-icon-remove"></span>
-            <div id="modal_img_container"></div>
-            <div id="caption"></div>
-        </div>
-        
-        
-<script type="text/javascript" src="../../assets/script.js"> 
+<div class="d-print-none" id="go2top">
+<span class="oxy-icon oxy-icon-up"></span>
+</div>
+<div class="modal" id="modal_img_large">
+<span class="close oxy-icon oxy-icon-remove"></span>
+<div id="modal_img_container"></div>
+<div id="caption"></div>
+</div>
+<script src="../../assets/script.js" type="text/javascript">
 </script>
-
-        
-    </body>
+</body>
 </html>

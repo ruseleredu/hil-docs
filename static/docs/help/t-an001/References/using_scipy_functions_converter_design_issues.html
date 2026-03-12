@@ -1,158 +1,105 @@
-<!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en" data-whc_version="24.1">
-    <head><link rel="shortcut icon" href="../../favicon.ico"/><link rel="icon" href="../../favicon.ico"/><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><meta name="DC.rights.owner" content="(C) Copyright 2026"/><meta name="copyright" content="(C) Copyright 2026"/><meta name="generator" content="DITA-OT"/><meta name="DC.type" content="reference"/><meta name="description" content="Demonstration on how to use Python-specific libraries (such as scipy) to resolve issues with designing power converter controls."/><meta name="DC.relation" content="../../t-an001/concepts/how-to_guides.html"/><meta name="DC.format" content="HTML5"/><meta name="DC.identifier" content="doc"/>        
-      <title>Using Bode plots in Schematic Editor to troubleshoot converter design issues</title><!--  Generated with Oxygen version 24.1, build number 2022030800.  --><meta name="wh-path2root" content="../../"/><meta name="wh-toc-id" content="doc-d16877e276"/><meta name="wh-source-relpath" content="t-an001/References/using_scipy_functions_converter_design_issues.dita"/><meta name="wh-out-relpath" content="t-an001/References/using_scipy_functions_converter_design_issues.html"/>
-    <!-- Latest compiled and minified Bootstrap CSS -->
-    <link rel="stylesheet" type="text/css" href="../../oxygen-webhelp/lib/bootstrap/css/bootstrap.min.css"/>
-    
-    <link rel="stylesheet" href="../../oxygen-webhelp/lib/jquery-ui/jquery-ui.min.css"/>
-    
-    <!-- Template default styles  -->
-    <link rel="stylesheet" type="text/css" href="../../oxygen-webhelp/app/topic-page.css?buildId=2022030800"/>
-    
-    
-    <script src="../../oxygen-webhelp/lib/jquery/jquery-3.5.1.min.js"></script>
-    
-    <script data-main="../../oxygen-webhelp/app/topic-page.js" src="../../oxygen-webhelp/lib/requirejs/require.js"></script>
-<link rel="stylesheet" type="text/css" href="../../oxygen-webhelp/template/oxygen.css?buildId=2022030800"/><link rel="stylesheet" type="text/css" href="../../oxygen-webhelp/template/notes.css?buildId=2022030800"/><script type="text/javascript" src="../../Scripts/mml-svg.js"> 
-</script><link rel="stylesheet" type="text/css" href="../../assets/typhoon.css"/></head>
-
-    <body id="doc" class="wh_topic_page frmBody">
-        <a href="#wh_topic_body" class="sr-only sr-only-focusable">
+<!DOCTYPE html>
+<html data-whc_version="24.1" lang="en" xml:lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head><link href="../../favicon.ico" rel="shortcut icon"/><link href="../../favicon.ico" rel="icon"/><meta content="text/html; charset=utf-8" http-equiv="Content-Type"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="IE=edge" http-equiv="X-UA-Compatible"/><meta content="(C) Copyright 2026" name="DC.rights.owner"/><meta content="(C) Copyright 2026" name="copyright"/><meta content="DITA-OT" name="generator"/><meta content="reference" name="DC.type"/><meta content="Demonstration on how to use Python-specific libraries (such as scipy) to resolve issues with designing power converter controls." name="description"/><meta content="../../t-an001/concepts/how-to_guides.html" name="DC.relation"/><meta content="HTML5" name="DC.format"/><meta content="doc" name="DC.identifier"/>
+<title>Using Bode plots in Schematic Editor to troubleshoot converter design issues</title><!--  Generated with Oxygen version 24.1, build number 2022030800.  --><meta content="../../" name="wh-path2root"/><meta content="doc-d16877e276" name="wh-toc-id"/><meta content="t-an001/References/using_scipy_functions_converter_design_issues.dita" name="wh-source-relpath"/><meta content="t-an001/References/using_scipy_functions_converter_design_issues.html" name="wh-out-relpath"/>
+<!-- Latest compiled and minified Bootstrap CSS -->
+<link href="../../oxygen-webhelp/lib/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
+<link href="../../oxygen-webhelp/lib/jquery-ui/jquery-ui.min.css" rel="stylesheet"/>
+<!-- Template default styles  -->
+<link href="../../oxygen-webhelp/app/topic-page.css?buildId=2022030800" rel="stylesheet" type="text/css"/>
+<script src="../../oxygen-webhelp/lib/jquery/jquery-3.5.1.min.js"></script>
+<script data-main="../../oxygen-webhelp/app/topic-page.js" src="../../oxygen-webhelp/lib/requirejs/require.js"></script>
+<link href="../../oxygen-webhelp/template/oxygen.css?buildId=2022030800" rel="stylesheet" type="text/css"/><link href="../../oxygen-webhelp/template/notes.css?buildId=2022030800" rel="stylesheet" type="text/css"/><script src="../../Scripts/mml-svg.js" type="text/javascript">
+</script><link href="../../assets/typhoon.css" rel="stylesheet" type="text/css"/></head>
+<body class="wh_topic_page frmBody" id="doc">
+<a class="sr-only sr-only-focusable" href="#wh_topic_body">
             Jump to main content
         </a>
-        
-        
-        
-        
-        <header class="navbar navbar-default wh_header">
-    <div class="container-fluid">
-        <div class="wh_header_flex_container navbar-nav navbar-expand-md navbar-dark">
-            <div class="wh_logo_and_publication_title_container">
-                <div class="wh_logo_and_publication_title">
-                    
-                    <a href="https://www.typhoon-hil.com" class=" wh_logo d-none d-sm-block "><img src="../../logo.svg" alt="  Typhoon HIL Documentation  Version: 2026.1  "/></a>
-                    <div class=" wh_publication_title "><a href="../../index.html"><span class="booktitle">  <span class="ph mainbooktitle">Typhoon HIL Documentation</span>  <span class="ph booktitlealt">Version: 2026.1</span>  </span></a></div>
-                    
-                </div>
-                
-                <button type="button" data-target="#wh_top_menu_and_indexterms_link" id="wh_menu_mobile_button" data-toggle="collapse" class="navbar-toggler collapsed wh_toggle_button" aria-expanded="false" aria-label="Toggle menu" aria-controls="wh_top_menu_and_indexterms_link">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-            </div>
-
-            <div class="wh_top_menu_and_indexterms_link collapse navbar-collapse" id="wh_top_menu_and_indexterms_link">
-                
-                <nav class=" wh_top_menu " aria-label="Menu Container"><ul role="menubar" aria-label="Menu"><li role="menuitem" aria-haspopup="true" aria-expanded="false" class="has-children"><span id="tocId-d16877e21-mi" data-tocid="tocId-d16877e21" data-state="not-ready" class=" topicref application-notes"><span class="title"><a href="../../t-an001/concepts/application_notes_introduction.html">Typhoon HIL Application Notes</a></span></span></li><li role="menuitem" aria-haspopup="true" aria-expanded="false" class="has-children"><span id="tocId-d16877e737-mi" data-tocid="tocId-d16877e737" data-state="not-ready" class=" topicref software-manual"><span class="title"><a href="../../t-ug002/topics/software_manual_introduction.html">Typhoon HIL Software Manual</a></span></span></li><li role="menuitem" aria-haspopup="true" aria-expanded="false" class="has-children"><span id="tocId-d16877e7901-mi" data-tocid="tocId-d16877e7901" data-state="not-ready" class=" topicref hardware-manual"><span class="title"><a href="../../t-ug001/abstract/hardware_manual_introduction.html">Typhoon HIL Hardware Manual</a></span></span></li></ul></nav>
-                
-                
-            </div>
-        </div>
-    </div>
+<header class="navbar navbar-default wh_header">
+<div class="container-fluid">
+<div class="wh_header_flex_container navbar-nav navbar-expand-md navbar-dark">
+<div class="wh_logo_and_publication_title_container">
+<div class="wh_logo_and_publication_title">
+<a class="wh_logo d-none d-sm-block" href="../../../index.html"><img alt="  Typhoon HIL Documentation  Version: 2026.1  " src="../../logo.svg"/></a>
+<div class="wh_publication_title"><a href="../../index.html"><span class="booktitle"> <span class="ph mainbooktitle">Typhoon HIL Documentation</span> <span class="ph booktitlealt">Version: 2026.1</span> </span></a></div>
+</div>
+<button aria-controls="wh_top_menu_and_indexterms_link" aria-expanded="false" aria-label="Toggle menu" class="navbar-toggler collapsed wh_toggle_button" data-target="#wh_top_menu_and_indexterms_link" data-toggle="collapse" id="wh_menu_mobile_button" type="button">
+<span class="navbar-toggler-icon"></span>
+</button>
+</div>
+<div class="wh_top_menu_and_indexterms_link collapse navbar-collapse" id="wh_top_menu_and_indexterms_link">
+<nav aria-label="Menu Container" class="wh_top_menu"><ul aria-label="Menu" role="menubar"><li aria-expanded="false" aria-haspopup="true" class="has-children" role="menuitem"><span class="topicref application-notes" data-state="not-ready" data-tocid="tocId-d16877e21" id="tocId-d16877e21-mi"><span class="title"><a href="../../t-an001/concepts/application_notes_introduction.html">Typhoon HIL Application Notes</a></span></span></li><li aria-expanded="false" aria-haspopup="true" class="has-children" role="menuitem"><span class="topicref software-manual" data-state="not-ready" data-tocid="tocId-d16877e737" id="tocId-d16877e737-mi"><span class="title"><a href="../../t-ug002/topics/software_manual_introduction.html">Typhoon HIL Software Manual</a></span></span></li><li aria-expanded="false" aria-haspopup="true" class="has-children" role="menuitem"><span class="topicref hardware-manual" data-state="not-ready" data-tocid="tocId-d16877e7901" id="tocId-d16877e7901-mi"><span class="title"><a href="../../t-ug001/abstract/hardware_manual_introduction.html">Typhoon HIL Hardware Manual</a></span></span></li></ul></nav>
+</div>
+</div>
+</div>
 </header>
-        
-        
-         
-        
-        <div class=" wh_search_input navbar-form wh_topic_page_search search " role="form">
-            
-            
-            
-            <form id="searchForm" method="get" role="search" action="../../search.html"><div><input type="search" placeholder="Search " class="wh_search_textfield" id="textToSearch" name="searchQuery" aria-label="Search query" required="required"/><button type="submit" class="wh_search_button" aria-label="Search"><span class="search_input_text">Search</span></button></div></form>
-            
-            
-            
-        </div>
-        
-        <div class="container-fluid" id="wh_topic_container">
-            <div class="row">
-
-                <nav class="wh_tools d-print-none navbar-expand-md" aria-label="Tools">
-                    
-                    <div data-tooltip-position="bottom" class=" wh_breadcrumb "><ol class="d-print-none"><li><span class="home"><a href="../../index.html"><span>Home</span></a></span></li><li><div class="topicref application-notes"><div class="title"><a href="../../t-an001/concepts/application_notes_introduction.html">Typhoon HIL Application Notes</a></div></div></li><li><div class="topicref" data-id="doc"><div class="title"><a href="../../t-an001/concepts/how-to_guides.html">How-to Guides</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">Guides, tips, and tricks on various aspects of Typhoon HIL toolchain usage.</span></p></div></div></div></li><li class="active"><div class="topicref" data-id="doc"><div class="title"><a href="../../t-an001/References/using_scipy_functions_converter_design_issues.html">Using Bode plots in Schematic Editor to troubleshoot converter design issues</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">Demonstration on how to use Python-specific libraries (such as       scipy) to resolve issues with designing power converter controls.</span></p></div></div></div></li></ol></div>
-                    
-                    
-                    
-                    <div class="wh_right_tools">
-                        <button class="wh_hide_highlight" aria-label="Toggle search highlights" title="Toggle search highlights"></button>
-                        <button class="webhelp_expand_collapse_sections" data-next-state="collapsed" aria-label="Collapse sections" title="Collapse sections"></button>
-                        
-                        
-                        
-                        
-                        <div class=" wh_print_link print d-none d-md-inline-block "><button onClick="window.print()" title="Print this page" aria-label="Print this page"></button></div>
-                        
-                        <button type="button" id="wh_toc_button" class="custom-toggler navbar-toggler collapsed wh_toggle_button navbar-light" aria-expanded="false" aria-label="Toggle publishing table of content" aria-controls="wh_publication_toc">
-                            <span class="navbar-toggler-icon"></span>
-                        </button>
-                    </div>
-                    
-                </nav>
-            </div>
-            
-            
-            
-            
-            <div class="wh_content_area">
-                <div class="row">
-                    
-                        <nav id="wh_publication_toc" class="col-lg-3 col-md-3 col-sm-12 d-md-block d-none d-print-none" aria-label="Table of Contents Container">
-                            <div id="wh_publication_toc_content">
-		                        
-                            	<div class=" wh_publication_toc " data-tooltip-position="right"><span class="expand-button-action-labels"><span id="button-expand-action" role="button" aria-label="Expand"></span><span id="button-collapse-action" role="button" aria-label="Collapse"></span><span id="button-pending-action" role="button" aria-label="Pending"></span></span><ul role="tree" aria-label="Table of Contents"><li role="treeitem" aria-expanded="true"><div data-tocid="tocId-d16877e21" class="topicref application-notes" data-state="expanded"><span role="button" tabindex="0" aria-labelledby="button-collapse-action tocId-d16877e21-link" class="wh-expand-btn"></span><div class="title"><a href="../../t-an001/concepts/application_notes_introduction.html" id="tocId-d16877e21-link">Typhoon HIL Application Notes</a></div></div><ul role="group" class="navbar-nav nav-list"><li role="treeitem"><div data-tocid="doc-d16877e25" class="topicref" data-id="doc" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../../t-an001/concepts/application_notes_introduction.html" id="doc-d16877e25-link">Application Notes Introduction</a><div class="wh-tooltip"><p class="shortdesc">Brief overview of the different categories of Application Notes</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="doc-d16877e36" class="topicref" data-id="doc" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action doc-d16877e36-link" class="wh-expand-btn"></span><div class="title"><a href="../../t-an001/concepts/grid_connected_converters.html" id="doc-d16877e36-link">Grid-connected converters</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">Grid-connected converter applications featuring various grid support    functionalities.</span></p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="doc-d16877e96" class="topicref" data-id="doc" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action doc-d16877e96-link" class="wh-expand-btn"></span><div class="title"><a href="../../t-an001/concepts/automotive.html" id="doc-d16877e96-link">Automotive</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">Electric cars and other automotive applications.</span></p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="doc-d16877e132" class="topicref" data-id="doc" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action doc-d16877e132-link" class="wh-expand-btn"></span><div class="title"><a href="../../t-an001/concepts/aerospace.html" id="doc-d16877e132-link">Aerospace</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">System-level and component-level aircraft applications.</span></p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="doc-d16877e168" class="topicref" data-id="doc" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action doc-d16877e168-link" class="wh-expand-btn"></span><div class="title"><a href="../../t-an001/concepts/battery_management_systems.html" id="doc-d16877e168-link">Battery management systems</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">Battery management system (BMS) examples</span></p></div></div></div></li><li role="treeitem" aria-expanded="true"><div data-tocid="doc-d16877e216" class="topicref" data-id="doc" data-state="expanded"><span role="button" tabindex="0" aria-labelledby="button-collapse-action doc-d16877e216-link" class="wh-expand-btn"></span><div class="title"><a href="../../t-an001/concepts/how-to_guides.html" id="doc-d16877e216-link">How-to Guides</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">Guides, tips, and tricks on various aspects of Typhoon HIL toolchain usage.</span></p></div></div></div><ul role="group" class="navbar-nav nav-list"><li role="treeitem"><div data-tocid="doc-d16877e228" class="topicref" data-id="doc" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../../t-an001/References/how_to_electrical_thermal_coupling.html" id="doc-d16877e228-link">How to couple electrical and thermal models</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">How to guide for coupling electrical and thermal models in Typhoon HIL Schematic   Editor.</span></p></div></div></div></li><li role="treeitem"><div data-tocid="doc-d16877e240" class="topicref" data-id="doc" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../../t-an001/References/how_to_import_dll_files_in_typhoon_hil_model.html" id="doc-d16877e240-link">How to import DLL file for C function</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">Walkthrough on how to import and include Dynamic Link Library       (DLL) files into your model using the C function component.</span></p></div></div></div></li><li role="treeitem"><div data-tocid="doc-d16877e252" class="topicref" data-id="doc" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../../t-an001/References/software_in_the_loop_approach_in_rapid_prototyping.html" id="doc-d16877e252-link">Software-in-the-loop approach in rapid control prototyping</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">Demonstration of two RCP implementations of a PI Controller using Schematic Editor   libraries and C code import from Simulink</span></p></div></div></div></li><li role="treeitem"><div data-tocid="doc-d16877e264" class="topicref" data-id="doc" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../../t-an001/References/frequency_response_example.html" id="doc-d16877e264-link">How-to use the Frequency response widget</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">Demonstration on how to use the Frequency Response widget in HIL SCADA</span></p></div></div></div></li><li role="treeitem" class="active"><div data-tocid="doc-d16877e276" class="topicref" data-id="doc" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../../t-an001/References/using_scipy_functions_converter_design_issues.html" id="doc-d16877e276-link">Using Bode plots in Schematic Editor to troubleshoot converter design issues</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">Demonstration on how to use Python-specific libraries (such as       scipy) to resolve issues with designing power converter controls.</span></p></div></div></div></li><li role="treeitem"><div data-tocid="doc-d16877e288" class="topicref" data-id="doc" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../../t-an001/References/how_to_microgrid_der.html" id="doc-d16877e288-link">Microgrid Toolbox DER components guide</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">Comprehensive guide on Microgrid Toolbox DER component types and when to use   them.</span></p></div></div></div></li><li role="treeitem"><div data-tocid="doc-d16877e300" class="topicref" data-id="doc" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../../t-an001/References/how_to_signal_scaling.html" id="doc-d16877e300-link">How to scale simulated signals for a C-HIL interface</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">This how to guide explains scaling, which is a crucial step in interfacing a HIL device   with an external device under test (DUT), such as a controller, relay, PLC, etc.</span></p></div></div></div></li></ul></li><li role="treeitem" aria-expanded="false"><div data-tocid="doc-d16877e312" class="topicref" data-id="doc" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action doc-d16877e312-link" class="wh-expand-btn"></span><div class="title"><a href="../../t-an001/concepts/communication_protocols.html" id="doc-d16877e312-link">Communication Protocols</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">Interoperability. Cybersecurity. Modbus, Sunspec, IEC61850, IEEE    C37.118, DNP3, CAN, OPC UA, and more.</span></p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="doc-d16877e384" class="topicref" data-id="doc" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action doc-d16877e384-link" class="wh-expand-btn"></span><div class="title"><a href="../../t-an001/concepts/power_systems.html" id="doc-d16877e384-link">Power Systems</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">Power system simulation. Relay protection testing. Power flow tool integration and   co-simulation.</span></p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="doc-d16877e468" class="topicref" data-id="doc" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action doc-d16877e468-link" class="wh-expand-btn"></span><div class="title"><a href="../../t-an001/concepts/microgrids.html" id="doc-d16877e468-link">Microgrids</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">Rapid microgrid pre-commissioning and system integration. Microgrid controller RCP and   testing.</span></p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="doc-d16877e552" class="topicref" data-id="doc" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action doc-d16877e552-link" class="wh-expand-btn"></span><div class="title"><a href="../../t-an001/concepts/electrical_drives.html" id="doc-d16877e552-link">Electrical Drives</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">Converters coupled with high-fidelity electrical machine models for high performance   motor drive applications.</span></p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="doc-d16877e601" class="topicref" data-id="doc" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action doc-d16877e601-link" class="wh-expand-btn"></span><div class="title"><a href="../../t-an001/concepts/power_supplies.html" id="doc-d16877e601-link">Power Supplies</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">Linear and switching power supplies for industrial and laboratory   applications.</span></p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="doc-d16877e625" class="topicref" data-id="doc" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action doc-d16877e625-link" class="wh-expand-btn"></span><div class="title"><a href="../../t-an001/concepts/marine_power_systems.html" id="doc-d16877e625-link">Marine Power Systems</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">Hybrid propulsion, shipboard power management, offshore renewables, offshore oil and   gas platform power supplies. </span></p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="doc-d16877e649" class="topicref" data-id="doc" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action doc-d16877e649-link" class="wh-expand-btn"></span><div class="title"><a href="../../t-an001/concepts/power_quality.html" id="doc-d16877e649-link">Power Quality</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">Real-time power quality/harmonic analysis. Incorporate active filters and FACTS devices (STATCOM, DVR,   SVC).</span></p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="doc-d16877e685" class="topicref" data-id="doc" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action doc-d16877e685-link" class="wh-expand-btn"></span><div class="title"><a href="../../t-an001/concepts/railway.html" id="doc-d16877e685-link">Railway</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">System-level and component-level application examples for railway    (traction) equipment.</span></p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="doc-d16877e709" class="topicref" data-id="doc" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action doc-d16877e709-link" class="wh-expand-btn"></span><div class="title"><a href="../../t-an001/concepts/medical_devices.html" id="doc-d16877e709-link">Medical Devices</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">X-ray, MRI, ICD, pacemakers, defibrillators, emergency ventilators, ECG, EMG,   bioelectronics.</span></p></div></div></div></li></ul></li></ul></div>
-		                        
-                            </div>
-                        </nav>
-                    
-                    
-                    <div class="col-lg-7 col-md-9 col-sm-12" id="wh_topic_body">
-                        <button id="wh_close_publication_toc_button" class="close-toc-button d-none" aria-label="Toggle publishing table of content" aria-controls="wh_publication_toc" aria-expanded="true">
-                            <span class="close-toc-icon-container">
-                                <span class="close-toc-icon"></span>     
-                            </span>
-                        </button>
-                        <button id="wh_close_topic_toc_button" class="close-toc-button d-none" aria-label="Toggle topic table of content" aria-controls="wh_topic_toc" aria-expanded="true">
-                            <span class="close-toc-icon-container">
-                                <span class="close-toc-icon"></span>     
-                            </span>
-                        </button>
-                        
-                        <div class=" wh_topic_content body "><main role="main"><article role="article" aria-labelledby="ariaid-title1">
-  <h1 class="- topic/title title topictitle1" id="ariaid-title1">Using Bode plots in Schematic Editor to troubleshoot converter design issues</h1>
-  
- <div class="- topic/body reference/refbody body refbody"><p class="- topic/shortdesc shortdesc"><span class="- topic/ph ph" id="doc__description">Demonstration on how to use Python-specific libraries (such as
+<div class="wh_search_input navbar-form wh_topic_page_search search" role="form">
+<form action="../../search.html" id="searchForm" method="get" role="search"><div><input aria-label="Search query" class="wh_search_textfield" id="textToSearch" name="searchQuery" placeholder="Search " required="required" type="search"/><button aria-label="Search" class="wh_search_button" type="submit"><span class="search_input_text">Search</span></button></div></form>
+</div>
+<div class="container-fluid" id="wh_topic_container">
+<div class="row">
+<nav aria-label="Tools" class="wh_tools d-print-none navbar-expand-md">
+<div class="wh_breadcrumb" data-tooltip-position="bottom"><ol class="d-print-none"><li><span class="home"><a href="../../index.html"><span>Home</span></a></span></li><li><div class="topicref application-notes"><div class="title"><a href="../../t-an001/concepts/application_notes_introduction.html">Typhoon HIL Application Notes</a></div></div></li><li><div class="topicref" data-id="doc"><div class="title"><a href="../../t-an001/concepts/how-to_guides.html">How-to Guides</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">Guides, tips, and tricks on various aspects of Typhoon HIL toolchain usage.</span></p></div></div></div></li><li class="active"><div class="topicref" data-id="doc"><div class="title"><a href="../../t-an001/References/using_scipy_functions_converter_design_issues.html">Using Bode plots in Schematic Editor to troubleshoot converter design issues</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">Demonstration on how to use Python-specific libraries (such as       scipy) to resolve issues with designing power converter controls.</span></p></div></div></div></li></ol></div>
+<div class="wh_right_tools">
+<button aria-label="Toggle search highlights" class="wh_hide_highlight" title="Toggle search highlights"></button>
+<button aria-label="Collapse sections" class="webhelp_expand_collapse_sections" data-next-state="collapsed" title="Collapse sections"></button>
+<div class="wh_print_link print d-none d-md-inline-block"><button aria-label="Print this page" onclick="window.print()" title="Print this page"></button></div>
+<button aria-controls="wh_publication_toc" aria-expanded="false" aria-label="Toggle publishing table of content" class="custom-toggler navbar-toggler collapsed wh_toggle_button navbar-light" id="wh_toc_button" type="button">
+<span class="navbar-toggler-icon"></span>
+</button>
+</div>
+</nav>
+</div>
+<div class="wh_content_area">
+<div class="row">
+<nav aria-label="Table of Contents Container" class="col-lg-3 col-md-3 col-sm-12 d-md-block d-none d-print-none" id="wh_publication_toc">
+<div id="wh_publication_toc_content">
+<div class="wh_publication_toc" data-tooltip-position="right"><span class="expand-button-action-labels"><span aria-label="Expand" id="button-expand-action" role="button"></span><span aria-label="Collapse" id="button-collapse-action" role="button"></span><span aria-label="Pending" id="button-pending-action" role="button"></span></span><ul aria-label="Table of Contents" role="tree"><li aria-expanded="true" role="treeitem"><div class="topicref application-notes" data-state="expanded" data-tocid="tocId-d16877e21"><span aria-labelledby="button-collapse-action tocId-d16877e21-link" class="wh-expand-btn" role="button" tabindex="0"></span><div class="title"><a href="../../t-an001/concepts/application_notes_introduction.html" id="tocId-d16877e21-link">Typhoon HIL Application Notes</a></div></div><ul class="navbar-nav nav-list" role="group"><li role="treeitem"><div class="topicref" data-id="doc" data-state="leaf" data-tocid="doc-d16877e25"><span class="wh-expand-btn" role="button"></span><div class="title"><a href="../../t-an001/concepts/application_notes_introduction.html" id="doc-d16877e25-link">Application Notes Introduction</a><div class="wh-tooltip"><p class="shortdesc">Brief overview of the different categories of Application Notes</p></div></div></div></li><li aria-expanded="false" role="treeitem"><div class="topicref" data-id="doc" data-state="not-ready" data-tocid="doc-d16877e36"><span aria-labelledby="button-expand-action doc-d16877e36-link" class="wh-expand-btn" role="button" tabindex="0"></span><div class="title"><a href="../../t-an001/concepts/grid_connected_converters.html" id="doc-d16877e36-link">Grid-connected converters</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">Grid-connected converter applications featuring various grid support    functionalities.</span></p></div></div></div></li><li aria-expanded="false" role="treeitem"><div class="topicref" data-id="doc" data-state="not-ready" data-tocid="doc-d16877e96"><span aria-labelledby="button-expand-action doc-d16877e96-link" class="wh-expand-btn" role="button" tabindex="0"></span><div class="title"><a href="../../t-an001/concepts/automotive.html" id="doc-d16877e96-link">Automotive</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">Electric cars and other automotive applications.</span></p></div></div></div></li><li aria-expanded="false" role="treeitem"><div class="topicref" data-id="doc" data-state="not-ready" data-tocid="doc-d16877e132"><span aria-labelledby="button-expand-action doc-d16877e132-link" class="wh-expand-btn" role="button" tabindex="0"></span><div class="title"><a href="../../t-an001/concepts/aerospace.html" id="doc-d16877e132-link">Aerospace</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">System-level and component-level aircraft applications.</span></p></div></div></div></li><li aria-expanded="false" role="treeitem"><div class="topicref" data-id="doc" data-state="not-ready" data-tocid="doc-d16877e168"><span aria-labelledby="button-expand-action doc-d16877e168-link" class="wh-expand-btn" role="button" tabindex="0"></span><div class="title"><a href="../../t-an001/concepts/battery_management_systems.html" id="doc-d16877e168-link">Battery management systems</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">Battery management system (BMS) examples</span></p></div></div></div></li><li aria-expanded="true" role="treeitem"><div class="topicref" data-id="doc" data-state="expanded" data-tocid="doc-d16877e216"><span aria-labelledby="button-collapse-action doc-d16877e216-link" class="wh-expand-btn" role="button" tabindex="0"></span><div class="title"><a href="../../t-an001/concepts/how-to_guides.html" id="doc-d16877e216-link">How-to Guides</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">Guides, tips, and tricks on various aspects of Typhoon HIL toolchain usage.</span></p></div></div></div><ul class="navbar-nav nav-list" role="group"><li role="treeitem"><div class="topicref" data-id="doc" data-state="leaf" data-tocid="doc-d16877e228"><span class="wh-expand-btn" role="button"></span><div class="title"><a href="../../t-an001/References/how_to_electrical_thermal_coupling.html" id="doc-d16877e228-link">How to couple electrical and thermal models</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">How to guide for coupling electrical and thermal models in Typhoon HIL Schematic   Editor.</span></p></div></div></div></li><li role="treeitem"><div class="topicref" data-id="doc" data-state="leaf" data-tocid="doc-d16877e240"><span class="wh-expand-btn" role="button"></span><div class="title"><a href="../../t-an001/References/how_to_import_dll_files_in_typhoon_hil_model.html" id="doc-d16877e240-link">How to import DLL file for C function</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">Walkthrough on how to import and include Dynamic Link Library       (DLL) files into your model using the C function component.</span></p></div></div></div></li><li role="treeitem"><div class="topicref" data-id="doc" data-state="leaf" data-tocid="doc-d16877e252"><span class="wh-expand-btn" role="button"></span><div class="title"><a href="../../t-an001/References/software_in_the_loop_approach_in_rapid_prototyping.html" id="doc-d16877e252-link">Software-in-the-loop approach in rapid control prototyping</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">Demonstration of two RCP implementations of a PI Controller using Schematic Editor   libraries and C code import from Simulink</span></p></div></div></div></li><li role="treeitem"><div class="topicref" data-id="doc" data-state="leaf" data-tocid="doc-d16877e264"><span class="wh-expand-btn" role="button"></span><div class="title"><a href="../../t-an001/References/frequency_response_example.html" id="doc-d16877e264-link">How-to use the Frequency response widget</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">Demonstration on how to use the Frequency Response widget in HIL SCADA</span></p></div></div></div></li><li class="active" role="treeitem"><div class="topicref" data-id="doc" data-state="leaf" data-tocid="doc-d16877e276"><span class="wh-expand-btn" role="button"></span><div class="title"><a href="../../t-an001/References/using_scipy_functions_converter_design_issues.html" id="doc-d16877e276-link">Using Bode plots in Schematic Editor to troubleshoot converter design issues</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">Demonstration on how to use Python-specific libraries (such as       scipy) to resolve issues with designing power converter controls.</span></p></div></div></div></li><li role="treeitem"><div class="topicref" data-id="doc" data-state="leaf" data-tocid="doc-d16877e288"><span class="wh-expand-btn" role="button"></span><div class="title"><a href="../../t-an001/References/how_to_microgrid_der.html" id="doc-d16877e288-link">Microgrid Toolbox DER components guide</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">Comprehensive guide on Microgrid Toolbox DER component types and when to use   them.</span></p></div></div></div></li><li role="treeitem"><div class="topicref" data-id="doc" data-state="leaf" data-tocid="doc-d16877e300"><span class="wh-expand-btn" role="button"></span><div class="title"><a href="../../t-an001/References/how_to_signal_scaling.html" id="doc-d16877e300-link">How to scale simulated signals for a C-HIL interface</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">This how to guide explains scaling, which is a crucial step in interfacing a HIL device   with an external device under test (DUT), such as a controller, relay, PLC, etc.</span></p></div></div></div></li></ul></li><li aria-expanded="false" role="treeitem"><div class="topicref" data-id="doc" data-state="not-ready" data-tocid="doc-d16877e312"><span aria-labelledby="button-expand-action doc-d16877e312-link" class="wh-expand-btn" role="button" tabindex="0"></span><div class="title"><a href="../../t-an001/concepts/communication_protocols.html" id="doc-d16877e312-link">Communication Protocols</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">Interoperability. Cybersecurity. Modbus, Sunspec, IEC61850, IEEE    C37.118, DNP3, CAN, OPC UA, and more.</span></p></div></div></div></li><li aria-expanded="false" role="treeitem"><div class="topicref" data-id="doc" data-state="not-ready" data-tocid="doc-d16877e384"><span aria-labelledby="button-expand-action doc-d16877e384-link" class="wh-expand-btn" role="button" tabindex="0"></span><div class="title"><a href="../../t-an001/concepts/power_systems.html" id="doc-d16877e384-link">Power Systems</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">Power system simulation. Relay protection testing. Power flow tool integration and   co-simulation.</span></p></div></div></div></li><li aria-expanded="false" role="treeitem"><div class="topicref" data-id="doc" data-state="not-ready" data-tocid="doc-d16877e468"><span aria-labelledby="button-expand-action doc-d16877e468-link" class="wh-expand-btn" role="button" tabindex="0"></span><div class="title"><a href="../../t-an001/concepts/microgrids.html" id="doc-d16877e468-link">Microgrids</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">Rapid microgrid pre-commissioning and system integration. Microgrid controller RCP and   testing.</span></p></div></div></div></li><li aria-expanded="false" role="treeitem"><div class="topicref" data-id="doc" data-state="not-ready" data-tocid="doc-d16877e552"><span aria-labelledby="button-expand-action doc-d16877e552-link" class="wh-expand-btn" role="button" tabindex="0"></span><div class="title"><a href="../../t-an001/concepts/electrical_drives.html" id="doc-d16877e552-link">Electrical Drives</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">Converters coupled with high-fidelity electrical machine models for high performance   motor drive applications.</span></p></div></div></div></li><li aria-expanded="false" role="treeitem"><div class="topicref" data-id="doc" data-state="not-ready" data-tocid="doc-d16877e601"><span aria-labelledby="button-expand-action doc-d16877e601-link" class="wh-expand-btn" role="button" tabindex="0"></span><div class="title"><a href="../../t-an001/concepts/power_supplies.html" id="doc-d16877e601-link">Power Supplies</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">Linear and switching power supplies for industrial and laboratory   applications.</span></p></div></div></div></li><li aria-expanded="false" role="treeitem"><div class="topicref" data-id="doc" data-state="not-ready" data-tocid="doc-d16877e625"><span aria-labelledby="button-expand-action doc-d16877e625-link" class="wh-expand-btn" role="button" tabindex="0"></span><div class="title"><a href="../../t-an001/concepts/marine_power_systems.html" id="doc-d16877e625-link">Marine Power Systems</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">Hybrid propulsion, shipboard power management, offshore renewables, offshore oil and   gas platform power supplies. </span></p></div></div></div></li><li aria-expanded="false" role="treeitem"><div class="topicref" data-id="doc" data-state="not-ready" data-tocid="doc-d16877e649"><span aria-labelledby="button-expand-action doc-d16877e649-link" class="wh-expand-btn" role="button" tabindex="0"></span><div class="title"><a href="../../t-an001/concepts/power_quality.html" id="doc-d16877e649-link">Power Quality</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">Real-time power quality/harmonic analysis. Incorporate active filters and FACTS devices (STATCOM, DVR,   SVC).</span></p></div></div></div></li><li aria-expanded="false" role="treeitem"><div class="topicref" data-id="doc" data-state="not-ready" data-tocid="doc-d16877e685"><span aria-labelledby="button-expand-action doc-d16877e685-link" class="wh-expand-btn" role="button" tabindex="0"></span><div class="title"><a href="../../t-an001/concepts/railway.html" id="doc-d16877e685-link">Railway</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">System-level and component-level application examples for railway    (traction) equipment.</span></p></div></div></div></li><li aria-expanded="false" role="treeitem"><div class="topicref" data-id="doc" data-state="not-ready" data-tocid="doc-d16877e709"><span aria-labelledby="button-expand-action doc-d16877e709-link" class="wh-expand-btn" role="button" tabindex="0"></span><div class="title"><a href="../../t-an001/concepts/medical_devices.html" id="doc-d16877e709-link">Medical Devices</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">X-ray, MRI, ICD, pacemakers, defibrillators, emergency ventilators, ECG, EMG,   bioelectronics.</span></p></div></div></div></li></ul></li></ul></div>
+</div>
+</nav>
+<div class="col-lg-7 col-md-9 col-sm-12" id="wh_topic_body">
+<button aria-controls="wh_publication_toc" aria-expanded="true" aria-label="Toggle publishing table of content" class="close-toc-button d-none" id="wh_close_publication_toc_button">
+<span class="close-toc-icon-container">
+<span class="close-toc-icon"></span>
+</span>
+</button>
+<button aria-controls="wh_topic_toc" aria-expanded="true" aria-label="Toggle topic table of content" class="close-toc-button d-none" id="wh_close_topic_toc_button">
+<span class="close-toc-icon-container">
+<span class="close-toc-icon"></span>
+</span>
+</button>
+<div class="wh_topic_content body"><main role="main"><article aria-labelledby="ariaid-title1" role="article">
+<h1 class="- topic/title title topictitle1" id="ariaid-title1">Using Bode plots in Schematic Editor to troubleshoot converter design issues</h1>
+<div class="- topic/body reference/refbody body refbody"><p class="- topic/shortdesc shortdesc"><span class="- topic/ph ph" id="doc__description">Demonstration on how to use Python-specific libraries (such as
       scipy) to resolve issues with designing power converter controls.</span></p>
-  <section class="- topic/section section" id="doc__section_bnk_str_1kb" data-ofbid="doc__section_bnk_str_1kb"><h2 class="- topic/title title sectiontitle">Introduction</h2>
-      
-    <div class="- topic/note note note note_note"><span class="note__title">Note:</span> This user how-to guide is related to the <a class="- topic/xref xref" href="c_hil_pmsm_texas_instrument.html" title="Demonstration on how to use a Texas Instruments card for rapid control prototyping and real-time HIL testing of TMS320F2808 code.">C-HIL: Field-oriented control of PMSM using Texas Instruments TMS320F2808 card</a>. All tests in document are done without using the TI
+<section class="- topic/section section" data-ofbid="doc__section_bnk_str_1kb" id="doc__section_bnk_str_1kb"><h2 class="- topic/title title sectiontitle">Introduction</h2>
+<div class="- topic/note note note note_note"><span class="note__title">Note:</span> This user how-to guide is related to the <a class="- topic/xref xref" href="c_hil_pmsm_texas_instrument.html" title="Demonstration on how to use a Texas Instruments card for rapid control prototyping and real-time HIL testing of TMS320F2808 code.">C-HIL: Field-oriented control of PMSM using Texas Instruments TMS320F2808 card</a>. All tests in document are done without using the TI
       card.</div>
-    <div class="- topic/note note note note_note"><span class="note__title">Note:</span> The model described in this application note can be found on Typhoon HIL's Package
-      Manager service, which is accessible as a <a class="- topic/xref xref" href="https://www.typhoon-hil.com/documentation/typhoon-hil-software-manual/concepts/package_manager.html" target="_blank" rel="external noopener">tool in the Typhoon HIL Control Center toolchain</a> or
-      on the <a class="- topic/xref xref" href="https://marketplace.typhoon-hil.com/" target="_blank" rel="external noopener">
+<div class="- topic/note note note note_note"><span class="note__title">Note:</span> The model described in this application note can be found on Typhoon HIL's Package
+      Manager service, which is accessible as a <a class="- topic/xref xref" href="https://www.typhoon-hil.com/documentation/typhoon-hil-software-manual/concepts/package_manager.html" rel="external noopener" target="_blank">tool in the Typhoon HIL Control Center toolchain</a> or
+      on the <a class="- topic/xref xref" href="https://marketplace.typhoon-hil.com/" rel="external noopener" target="_blank">
        Package Manager Website</a>.</div>
-      <p class="- topic/p p">In electric drive applications, rectifiers are prone to DC voltage overshoot issues. In
+<p class="- topic/p p">In electric drive applications, rectifiers are prone to DC voltage overshoot issues. In
         this case, we will attempt to test the potential occurrence of these issues using an
         uncontrolled <a class="- topic/xref xref" href="../../t-ug002/References/three-phase_diode_rectifier.html" title="Description of the Three Phase Diode Rectifier component in Schematic Editor">Three Phase Diode Rectifier</a>, as shown in <a class="- topic/xref xref" href="#doc__fig_rvr_jsx_cnb">Figure 1</a>. The input impedance can be
         calculated and introduced in the model by a Bode diagram. This peak of the DC link voltage
         can lead to burning of the diodes in the three-phase diode rectifier and burning of the
         IGBTs in the <a class="- topic/xref xref" href="../../t-ug002/References/three-phase_two-level_inverter_rectifier.html" title="Description of the Three Phase (two level) Inverter component in Schematic Editor">Three Phase Inverter</a> if they are
         not rated for overshoot voltages.</p>
-    </section>
-    <section class="- topic/section section" id="doc__7s2pkWRry" data-ofbid="doc__7s2pkWRry"><h2 class="- topic/title title sectiontitle">Model description</h2>
-      
-      <p class="- topic/p p">The model of the rectifier part of the drive system is presented in <a class="- topic/xref xref" href="#doc__fig_rvr_jsx_cnb">Figure 1</a>.</p>
-        <figure class="- topic/fig fig fignone" id="doc__fig_rvr_jsx_cnb" data-ofbid="doc__fig_rvr_jsx_cnb"><figcaption class="- topic/title title figcap"><span class="figtitleprefix fig--title-label">Figure<span class="fig--title-label-number"> 1</span><span class="fig--title-label-punctuation">. </span></span><span class="fig--title">Rectifier part of the drive system</span></figcaption>
-          
-          <img class="- topic/image image" id="doc__image_svr_jsx_cnb" src="../Images/using_spicy_functions_converter_design_issues_01.PNG"/>
-        </figure>
-        <figure class="- topic/fig fig fignone" id="doc__fig_nby_gsx_cnb" data-ofbid="doc__fig_nby_gsx_cnb"><figcaption class="- topic/title title figcap"><span class="figtitleprefix fig--title-label">Figure<span class="fig--title-label-number"> 2</span><span class="fig--title-label-punctuation">. </span></span><span class="fig--title">Overshoot with default parameters</span></figcaption>
-          
-          <img class="- topic/image image" id="doc__image_oby_gsx_cnb" src="../Images/using_spicy_functions_converter_design_issues_02.PNG"/>
-        </figure>
-      <p class="- topic/p p">Using the <span class="+ topic/ph ui-d/uicontrol ph uicontrol">Model Initialization</span> function in the code block below, we can generate a Bode
+</section>
+<section class="- topic/section section" data-ofbid="doc__7s2pkWRry" id="doc__7s2pkWRry"><h2 class="- topic/title title sectiontitle">Model description</h2>
+<p class="- topic/p p">The model of the rectifier part of the drive system is presented in <a class="- topic/xref xref" href="#doc__fig_rvr_jsx_cnb">Figure 1</a>.</p>
+<figure class="- topic/fig fig fignone" data-ofbid="doc__fig_rvr_jsx_cnb" id="doc__fig_rvr_jsx_cnb"><figcaption class="- topic/title title figcap"><span class="figtitleprefix fig--title-label">Figure<span class="fig--title-label-number"> 1</span><span class="fig--title-label-punctuation">. </span></span><span class="fig--title">Rectifier part of the drive system</span></figcaption>
+<img class="- topic/image image" id="doc__image_svr_jsx_cnb" src="../Images/using_spicy_functions_converter_design_issues_01.PNG"/>
+</figure>
+<figure class="- topic/fig fig fignone" data-ofbid="doc__fig_nby_gsx_cnb" id="doc__fig_nby_gsx_cnb"><figcaption class="- topic/title title figcap"><span class="figtitleprefix fig--title-label">Figure<span class="fig--title-label-number"> 2</span><span class="fig--title-label-punctuation">. </span></span><span class="fig--title">Overshoot with default parameters</span></figcaption>
+<img class="- topic/image image" id="doc__image_oby_gsx_cnb" src="../Images/using_spicy_functions_converter_design_issues_02.PNG"/>
+</figure>
+<p class="- topic/p p">Using the <span class="+ topic/ph ui-d/uicontrol ph uicontrol">Model Initialization</span> function in the code block below, we can generate a Bode
         diagram using the <em class="+ topic/ph hi-d/i ph i">scipy</em> and <em class="+ topic/ph hi-d/i ph i">matplotlib</em> python libraries. The most important
-        functions from the <em class="+ topic/ph hi-d/i ph i">scipy</em> library are <a class="- topic/xref xref" href="https://docs.scipy.org/doc/scipy/reference/generated/scipy.signal.TransferFunction.html#scipy.signal.TransferFunction" target="_blank" rel="external noopener">scipy.signal.TransferFunction</a> and <a class="- topic/xref xref" href="https://docs.scipy.org/doc/scipy-0.14.0/reference/generated/scipy.signal.bode.html" target="_blank" rel="external noopener">scipy.signal.bode</a>.</p>
-      <p class="- topic/p p">The model initialization script is shown below:</p>
-        <pre class="+ topic/pre pr-d/codeblock pre codeblock"><code># Numpy module is imported as 'np'
+        functions from the <em class="+ topic/ph hi-d/i ph i">scipy</em> library are <a class="- topic/xref xref" href="https://docs.scipy.org/doc/scipy/reference/generated/scipy.signal.TransferFunction.html#scipy.signal.TransferFunction" rel="external noopener" target="_blank">scipy.signal.TransferFunction</a> and <a class="- topic/xref xref" href="https://docs.scipy.org/doc/scipy-0.14.0/reference/generated/scipy.signal.bode.html" rel="external noopener" target="_blank">scipy.signal.bode</a>.</p>
+<p class="- topic/p p">The model initialization script is shown below:</p>
+<pre class="+ topic/pre pr-d/codeblock pre codeblock"><code># Numpy module is imported as 'np'
 # Scipy module is imported as 'sp'
 import matplotlib.pyplot as plt
           
@@ -200,903 +147,866 @@ plt.semilogx(1/(2*np.pi)*w, mag)
 plt.figure(1,1)
 plt.semilogx(1/(2*np.pi)*w, phase)
 plt.show()        </code></pre>
-      
-        <figure class="- topic/fig fig fignone" id="doc__fig_zk4_msx_cnb" data-ofbid="doc__fig_zk4_msx_cnb"><figcaption class="- topic/title title figcap"><span class="figtitleprefix fig--title-label">Figure<span class="fig--title-label-number"> 3</span><span class="fig--title-label-punctuation">. </span></span><span class="fig--title">Bode diagram of input transfer parameters</span></figcaption>
-          
-          <img class="- topic/image image" id="doc__image_al4_msx_cnb" src="../Images/using_spicy_functions_converter_design_issues_04.PNG"/>
-        </figure>
-      
-      <p class="- topic/p p">From this Bode diagram and from calculation, we get <span class="+ topic/foreign mathml-d/mathml foreign mathml">
-          <math xmlns="http://www.w3.org/1998/Math/MathML">
-            <msub>
-              <mrow>
-                <mi>f</mi>
-              </mrow>
-              <mrow>
-                <mn>0</mn>
-              </mrow>
-            </msub>
-            <mo>=</mo>
-            <mfrac>
-              <mrow>
-                <mn>1</mn>
-              </mrow>
-              <mrow>
-                <mn>2</mn>
-                <mi>π</mi>
-                <msqrt>
-                  <mfenced separators="|">
-                    <mrow>
-                      <msub>
-                        <mrow>
-                          <mi>L</mi>
-                        </mrow>
-                        <mrow>
-                          <mi>a</mi>
-                        </mrow>
-                      </msub>
-                      <mi></mi>
-                      <msub>
-                        <mrow>
-                          <mi>C</mi>
-                        </mrow>
-                        <mrow>
-                          <mi>d</mi>
-                          <mi>c</mi>
-                        </mrow>
-                      </msub>
-                    </mrow>
-                  </mfenced>
-                </msqrt>
-              </mrow>
-            </mfrac>
-            <mo>=</mo>
-            <mn>102.3</mn>
-            <mi> </mi>
-            <mi>H</mi>
-            <mi>z</mi>
-          </math>
-        </span>. We can see that the switching resonant frequency and the switching frequency of
+<figure class="- topic/fig fig fignone" data-ofbid="doc__fig_zk4_msx_cnb" id="doc__fig_zk4_msx_cnb"><figcaption class="- topic/title title figcap"><span class="figtitleprefix fig--title-label">Figure<span class="fig--title-label-number"> 3</span><span class="fig--title-label-punctuation">. </span></span><span class="fig--title">Bode diagram of input transfer parameters</span></figcaption>
+<img class="- topic/image image" id="doc__image_al4_msx_cnb" src="../Images/using_spicy_functions_converter_design_issues_04.PNG"/>
+</figure>
+<p class="- topic/p p">From this Bode diagram and from calculation, we get <span class="+ topic/foreign mathml-d/mathml foreign mathml">
+<math xmlns="http://www.w3.org/1998/Math/MathML">
+<msub>
+<mrow>
+<mi>f</mi>
+</mrow>
+<mrow>
+<mn>0</mn>
+</mrow>
+</msub>
+<mo>=</mo>
+<mfrac>
+<mrow>
+<mn>1</mn>
+</mrow>
+<mrow>
+<mn>2</mn>
+<mi>π</mi>
+<msqrt>
+<mfenced separators="|">
+<mrow>
+<msub>
+<mrow>
+<mi>L</mi>
+</mrow>
+<mrow>
+<mi>a</mi>
+</mrow>
+</msub>
+<mi></mi>
+<msub>
+<mrow>
+<mi>C</mi>
+</mrow>
+<mrow>
+<mi>d</mi>
+<mi>c</mi>
+</mrow>
+</msub>
+</mrow>
+</mfenced>
+</msqrt>
+</mrow>
+</mfrac>
+<mo>=</mo>
+<mn>102.3</mn>
+<mi> </mi>
+<mi>H</mi>
+<mi>z</mi>
+</math>
+</span>. We can see that the switching resonant frequency and the switching frequency of
         the diode bridge (100 Hz) is almost the same. This implies there will be some resonance and
         overshoot in DC voltages. The switching frequency also cannot be changed because of the use
         of a diode rectifier. Instead, changing the parameters of input impedance is necessary.
         Since increasing model resistance (R) will lead to increased losses, it is better to focus
         on the inductor by decreasing the quality (Q) factor.</p>
-      </section>
-      <section class="- topic/section section" id="doc__simulation" data-ofbid="doc__simulation"><h2 class="- topic/title title sectiontitle">Simulation</h2>
-      
-      <p class="- topic/p p">In this section we explore two possible solutions for addressing the voltage overshoot on
+</section>
+<section class="- topic/section section" data-ofbid="doc__simulation" id="doc__simulation"><h2 class="- topic/title title sectiontitle">Simulation</h2>
+<p class="- topic/p p">In this section we explore two possible solutions for addressing the voltage overshoot on
         the DC link: decreasing the inductance and increasing the capacitance.</p>
-      <p class="- topic/p p"><strong class="+ topic/ph hi-d/b ph b">Solving the issue decreasing the inductance</strong></p>
-      <p class="- topic/p p">First let’s try to find the input transfer function. The transfer function is defined from the
+<p class="- topic/p p"><strong class="+ topic/ph hi-d/b ph b">Solving the issue decreasing the inductance</strong></p>
+<p class="- topic/p p">First let’s try to find the input transfer function. The transfer function is defined from the
         circuit in <a class="- topic/xref xref" href="#doc__fig_rvr_jsx_cnb">Figure 1</a>.</p>
-      <p class="- topic/p p">
-        <span class="+ topic/foreign mathml-d/mathml foreign mathml">
-          <math xmlns="http://www.w3.org/1998/Math/MathML">
-            <msub>
-              <mrow>
-                <mi>G</mi>
-              </mrow>
-              <mrow>
-                <mfenced separators="|">
-                  <mrow>
-                    <mi>s</mi>
-                  </mrow>
-                </mfenced>
-              </mrow>
-            </msub>
-            <mo>=</mo>
-            <mi> </mi>
-            <mfrac>
-              <mrow>
-                <mn>1</mn>
-              </mrow>
-              <mrow>
-                <mn>1</mn>
-                <mo>+</mo>
-                <mi>s</mi>
-                <msub>
-                  <mrow>
-                    <mi>R</mi>
-                  </mrow>
-                  <mrow>
-                    <mn>1</mn>
-                  </mrow>
-                </msub>
-                <msub>
-                  <mrow>
-                    <mi>C</mi>
-                  </mrow>
-                  <mrow>
-                    <mi>d</mi>
-                    <mi>c</mi>
-                  </mrow>
-                </msub>
-                <mo>+</mo>
-                <msup>
-                  <mrow>
-                    <mi>s</mi>
-                  </mrow>
-                  <mrow>
-                    <mn>2</mn>
-                  </mrow>
-                </msup>
-                <mi></mi>
-                <msub>
-                  <mrow>
-                    <mi>L</mi>
-                  </mrow>
-                  <mrow>
-                    <mi>a</mi>
-                  </mrow>
-                </msub>
-                <msub>
-                  <mrow>
-                    <mi>C</mi>
-                  </mrow>
-                  <mrow>
-                    <mi>d</mi>
-                    <mi>c</mi>
-                  </mrow>
-                </msub>
-              </mrow>
-            </mfrac>
-          </math>
-        </span></p>
-      <p class="- topic/p p">An alternative standard, normalized form of the transfer function is: </p>
-      <p class="- topic/p p"><span class="+ topic/foreign mathml-d/mathml foreign mathml">
-          <math xmlns="http://www.w3.org/1998/Math/MathML">
-            <msub>
-              <mrow>
-                <mi>G</mi>
-              </mrow>
-              <mrow>
-                <mo>(</mo>
-                <mi>s</mi>
-                <mo>)</mo>
-              </mrow>
-            </msub>
-            <mo>=</mo>
-            <mfrac>
-              <mrow>
-                <mn>1</mn>
-              </mrow>
-              <mrow>
-                <mn>1</mn>
-                <mo>+</mo>
-                <mfrac>
-                  <mrow>
-                    <mi>s</mi>
-                  </mrow>
-                  <mrow>
-                    <mi>Q</mi>
-                    <msub>
-                      <mrow>
-                        <mi>ω</mi>
-                      </mrow>
-                      <mrow>
-                        <mn>0</mn>
-                      </mrow>
-                    </msub>
-                  </mrow>
-                </mfrac>
-                <mo>+</mo>
-                <msup>
-                  <mrow>
-                    <mfenced separators="|">
-                      <mrow>
-                        <mfrac>
-                          <mrow>
-                            <mi>s</mi>
-                          </mrow>
-                          <mrow>
-                            <msub>
-                              <mrow>
-                                <mi>ω</mi>
-                              </mrow>
-                              <mrow>
-                                <mn>0</mn>
-                              </mrow>
-                            </msub>
-                          </mrow>
-                        </mfrac>
-                      </mrow>
-                    </mfenced>
-                  </mrow>
-                  <mrow>
-                    <mn>2</mn>
-                  </mrow>
-                </msup>
-              </mrow>
-            </mfrac>
-          </math>
-        </span>
-      </p>
-      <p class="- topic/p p">The parameter Q is called the quality factor of the circuit, and is a measure of the
+<p class="- topic/p p">
+<span class="+ topic/foreign mathml-d/mathml foreign mathml">
+<math xmlns="http://www.w3.org/1998/Math/MathML">
+<msub>
+<mrow>
+<mi>G</mi>
+</mrow>
+<mrow>
+<mfenced separators="|">
+<mrow>
+<mi>s</mi>
+</mrow>
+</mfenced>
+</mrow>
+</msub>
+<mo>=</mo>
+<mi> </mi>
+<mfrac>
+<mrow>
+<mn>1</mn>
+</mrow>
+<mrow>
+<mn>1</mn>
+<mo>+</mo>
+<mi>s</mi>
+<msub>
+<mrow>
+<mi>R</mi>
+</mrow>
+<mrow>
+<mn>1</mn>
+</mrow>
+</msub>
+<msub>
+<mrow>
+<mi>C</mi>
+</mrow>
+<mrow>
+<mi>d</mi>
+<mi>c</mi>
+</mrow>
+</msub>
+<mo>+</mo>
+<msup>
+<mrow>
+<mi>s</mi>
+</mrow>
+<mrow>
+<mn>2</mn>
+</mrow>
+</msup>
+<mi></mi>
+<msub>
+<mrow>
+<mi>L</mi>
+</mrow>
+<mrow>
+<mi>a</mi>
+</mrow>
+</msub>
+<msub>
+<mrow>
+<mi>C</mi>
+</mrow>
+<mrow>
+<mi>d</mi>
+<mi>c</mi>
+</mrow>
+</msub>
+</mrow>
+</mfrac>
+</math>
+</span></p>
+<p class="- topic/p p">An alternative standard, normalized form of the transfer function is: </p>
+<p class="- topic/p p"><span class="+ topic/foreign mathml-d/mathml foreign mathml">
+<math xmlns="http://www.w3.org/1998/Math/MathML">
+<msub>
+<mrow>
+<mi>G</mi>
+</mrow>
+<mrow>
+<mo>(</mo>
+<mi>s</mi>
+<mo>)</mo>
+</mrow>
+</msub>
+<mo>=</mo>
+<mfrac>
+<mrow>
+<mn>1</mn>
+</mrow>
+<mrow>
+<mn>1</mn>
+<mo>+</mo>
+<mfrac>
+<mrow>
+<mi>s</mi>
+</mrow>
+<mrow>
+<mi>Q</mi>
+<msub>
+<mrow>
+<mi>ω</mi>
+</mrow>
+<mrow>
+<mn>0</mn>
+</mrow>
+</msub>
+</mrow>
+</mfrac>
+<mo>+</mo>
+<msup>
+<mrow>
+<mfenced separators="|">
+<mrow>
+<mfrac>
+<mrow>
+<mi>s</mi>
+</mrow>
+<mrow>
+<msub>
+<mrow>
+<mi>ω</mi>
+</mrow>
+<mrow>
+<mn>0</mn>
+</mrow>
+</msub>
+</mrow>
+</mfrac>
+</mrow>
+</mfenced>
+</mrow>
+<mrow>
+<mn>2</mn>
+</mrow>
+</msup>
+</mrow>
+</mfrac>
+</math>
+</span>
+</p>
+<p class="- topic/p p">The parameter Q is called the quality factor of the circuit, and is a measure of the
         dissipation in the system. The parameter represents the resonant angular frequency.</p>
-      <p class="- topic/p p">From the input transfer function, we can find the resonant frequency which is:</p>
-      <p class="- topic/p p"><span class="+ topic/foreign mathml-d/mathml foreign mathml">
-          <math xmlns="http://www.w3.org/1998/Math/MathML">
-            <msub>
-              <mrow>
-                <mi>f</mi>
-              </mrow>
-              <mrow>
-                <mn>0</mn>
-              </mrow>
-            </msub>
-            <mo>=</mo>
-            <mfrac>
-              <mrow>
-                <mn>1</mn>
-              </mrow>
-              <mrow>
-                <mn>2</mn>
-                <mi>π</mi>
-                <msqrt>
-                  <mfenced separators="|">
-                    <mrow>
-                      <msub>
-                        <mrow>
-                          <mi>L</mi>
-                        </mrow>
-                        <mrow>
-                          <mi>a</mi>
-                        </mrow>
-                      </msub>
-                      <mi></mi>
-                      <msub>
-                        <mrow>
-                          <mi>C</mi>
-                        </mrow>
-                        <mrow>
-                          <mi>d</mi>
-                          <mi>c</mi>
-                        </mrow>
-                      </msub>
-                    </mrow>
-                  </mfenced>
-                </msqrt>
-              </mrow>
-            </mfrac>
-          </math>
-        </span></p>
-      <p class="- topic/p p">Now it is easy to find the Q factor with the following formula:</p>
-      <p class="- topic/p p"><span class="+ topic/foreign mathml-d/mathml foreign mathml">
-          <math xmlns="http://www.w3.org/1998/Math/MathML">
-            <mi>Q</mi>
-            <mo>=</mo>
-            <mfrac>
-              <mrow>
-                <mn>1</mn>
-              </mrow>
-              <mrow>
-                <msub>
-                  <mrow>
-                    <mi>R</mi>
-                  </mrow>
-                  <mrow>
-                    <mn>1</mn>
-                  </mrow>
-                </msub>
-              </mrow>
-            </mfrac>
-            <mi></mi>
-            <msqrt>
-              <mfrac>
-                <mrow>
-                  <msub>
-                    <mrow>
-                      <mi>L</mi>
-                    </mrow>
-                    <mrow>
-                      <mi>a</mi>
-                    </mrow>
-                  </msub>
-                </mrow>
-                <mrow>
-                  <msub>
-                    <mrow>
-                      <mi>C</mi>
-                    </mrow>
-                    <mrow>
-                      <mi>d</mi>
-                      <mi>c</mi>
-                    </mrow>
-                  </msub>
-                </mrow>
-              </mfrac>
-            </msqrt>
-          </math>
-        </span></p>
-      <p class="- topic/p p">The result of this analysis will give us the value of the inductor to reduce the Q factor.
+<p class="- topic/p p">From the input transfer function, we can find the resonant frequency which is:</p>
+<p class="- topic/p p"><span class="+ topic/foreign mathml-d/mathml foreign mathml">
+<math xmlns="http://www.w3.org/1998/Math/MathML">
+<msub>
+<mrow>
+<mi>f</mi>
+</mrow>
+<mrow>
+<mn>0</mn>
+</mrow>
+</msub>
+<mo>=</mo>
+<mfrac>
+<mrow>
+<mn>1</mn>
+</mrow>
+<mrow>
+<mn>2</mn>
+<mi>π</mi>
+<msqrt>
+<mfenced separators="|">
+<mrow>
+<msub>
+<mrow>
+<mi>L</mi>
+</mrow>
+<mrow>
+<mi>a</mi>
+</mrow>
+</msub>
+<mi></mi>
+<msub>
+<mrow>
+<mi>C</mi>
+</mrow>
+<mrow>
+<mi>d</mi>
+<mi>c</mi>
+</mrow>
+</msub>
+</mrow>
+</mfenced>
+</msqrt>
+</mrow>
+</mfrac>
+</math>
+</span></p>
+<p class="- topic/p p">Now it is easy to find the Q factor with the following formula:</p>
+<p class="- topic/p p"><span class="+ topic/foreign mathml-d/mathml foreign mathml">
+<math xmlns="http://www.w3.org/1998/Math/MathML">
+<mi>Q</mi>
+<mo>=</mo>
+<mfrac>
+<mrow>
+<mn>1</mn>
+</mrow>
+<mrow>
+<msub>
+<mrow>
+<mi>R</mi>
+</mrow>
+<mrow>
+<mn>1</mn>
+</mrow>
+</msub>
+</mrow>
+</mfrac>
+<mi></mi>
+<msqrt>
+<mfrac>
+<mrow>
+<msub>
+<mrow>
+<mi>L</mi>
+</mrow>
+<mrow>
+<mi>a</mi>
+</mrow>
+</msub>
+</mrow>
+<mrow>
+<msub>
+<mrow>
+<mi>C</mi>
+</mrow>
+<mrow>
+<mi>d</mi>
+<mi>c</mi>
+</mrow>
+</msub>
+</mrow>
+</mfrac>
+</msqrt>
+</math>
+</span></p>
+<p class="- topic/p p">The result of this analysis will give us the value of the inductor to reduce the Q factor.
         Let’s try to decrease value of the inductor by half. In <a class="- topic/xref xref" href="#doc__fig_zjp_4sx_cnb">Figure 4</a>, we can see that we manage to
         decrease the overshoot of the DC voltage.</p>
-      <div class="- topic/p p">
-        <figure class="- topic/fig fig fignone" id="doc__fig_zjp_4sx_cnb" data-ofbid="doc__fig_zjp_4sx_cnb"><figcaption class="- topic/title title figcap"><span class="figtitleprefix fig--title-label">Figure<span class="fig--title-label-number"> 4</span><span class="fig--title-label-punctuation">. </span></span><span class="fig--title">Overshoot with decreasing inductance by half</span></figcaption>
-          
-          <img class="- topic/image image" id="doc__image_akp_4sx_cnb" src="../Images/using_spicy_functions_converter_design_issues_05.png"/>
-        </figure>
-      </div>
-      <p class="- topic/p p">Now, let’s try to decrease inductance to one third. In <a class="- topic/xref xref" href="#doc__fig_b4p_m5x_cnb">Figure 5</a>, we can see that we manage to
+<div class="- topic/p p">
+<figure class="- topic/fig fig fignone" data-ofbid="doc__fig_zjp_4sx_cnb" id="doc__fig_zjp_4sx_cnb"><figcaption class="- topic/title title figcap"><span class="figtitleprefix fig--title-label">Figure<span class="fig--title-label-number"> 4</span><span class="fig--title-label-punctuation">. </span></span><span class="fig--title">Overshoot with decreasing inductance by half</span></figcaption>
+<img class="- topic/image image" id="doc__image_akp_4sx_cnb" src="../Images/using_spicy_functions_converter_design_issues_05.png"/>
+</figure>
+</div>
+<p class="- topic/p p">Now, let’s try to decrease inductance to one third. In <a class="- topic/xref xref" href="#doc__fig_b4p_m5x_cnb">Figure 5</a>, we can see that we manage to
         decrease the DC voltage (Cdc) below our 400 V target.</p>
-      <div class="- topic/p p">
-        <figure class="- topic/fig fig fignone" id="doc__fig_b4p_m5x_cnb" data-ofbid="doc__fig_b4p_m5x_cnb"><figcaption class="- topic/title title figcap"><span class="figtitleprefix fig--title-label">Figure<span class="fig--title-label-number"> 5</span><span class="fig--title-label-punctuation">. </span></span><span class="fig--title">Overshoot with decreasing inductance by triple</span></figcaption>
-          
-          <img class="- topic/image image" id="doc__image_c4p_m5x_cnb" src="../Images/using_spicy_functions_converter_design_issues_06.png"/>
-        </figure>
-      </div>
-      <p class="- topic/p p">A second-order <a class="- topic/xref xref" href="https://en.wikipedia.org/wiki/Butterworth_filter" target="_blank" rel="external noopener">Butterworth filter</a> (i.e., continuous-time filter with the flattest
+<div class="- topic/p p">
+<figure class="- topic/fig fig fignone" data-ofbid="doc__fig_b4p_m5x_cnb" id="doc__fig_b4p_m5x_cnb"><figcaption class="- topic/title title figcap"><span class="figtitleprefix fig--title-label">Figure<span class="fig--title-label-number"> 5</span><span class="fig--title-label-punctuation">. </span></span><span class="fig--title">Overshoot with decreasing inductance by triple</span></figcaption>
+<img class="- topic/image image" id="doc__image_c4p_m5x_cnb" src="../Images/using_spicy_functions_converter_design_issues_06.png"/>
+</figure>
+</div>
+<p class="- topic/p p">A second-order <a class="- topic/xref xref" href="https://en.wikipedia.org/wiki/Butterworth_filter" rel="external noopener" target="_blank">Butterworth filter</a> (i.e., continuous-time filter with the flattest
         passband frequency response) has an underdamped quality factor of 0.707. Therefore, to
         reduce overshoot in the voltage of the DC capacitor you need to <strong class="+ topic/ph hi-d/b ph b">set the Q factor to
           0.707</strong>. Now, let’s try to calculate the inductor. The equation is <span class="+ topic/foreign mathml-d/mathml foreign mathml">
-          <math xmlns="http://www.w3.org/1998/Math/MathML">
-            <msub>
-              <mrow>
-                <mi>L</mi>
-              </mrow>
-              <mrow>
-                <mi>a</mi>
-                <mi>c</mi>
-              </mrow>
-            </msub>
-            <mo>=</mo>
-            <msub>
-              <mrow>
-                <mi>C</mi>
-              </mrow>
-              <mrow>
-                <mi>d</mi>
-                <mi>c</mi>
-              </mrow>
-            </msub>
-            <mi></mi>
-            <msubsup>
-              <mrow>
-                <mi>R</mi>
-              </mrow>
-              <mrow>
-                <mn>1</mn>
-              </mrow>
-              <mrow>
-                <mn>2</mn>
-              </mrow>
-            </msubsup>
-            <mi></mi>
-            <msup>
-              <mrow>
-                <mi>Q</mi>
-              </mrow>
-              <mrow>
-                <mn>2</mn>
-              </mrow>
-            </msup>
-          </math>
-        </span> where we can calculate <span class="+ topic/foreign mathml-d/mathml foreign mathml">
-          <math xmlns="http://www.w3.org/1998/Math/MathML">
-            <msub>
-              <mrow>
-                <mi>L</mi>
-              </mrow>
-              <mrow>
-                <mi>a</mi>
-                <mi>c</mi>
-              </mrow>
-            </msub>
-            <mo>=</mo>
-            <mi> </mi>
-            <mn>1.782</mn>
-            <mi>e</mi>
-            <mo>-</mo>
-            <mn>05</mn>
-          </math>
-        </span>.</p>
-      <p class="- topic/p p"> In <a class="- topic/xref xref" href="#doc__fig_gww_tsx_cnb">Figure 6</a>, we can see that we
+<math xmlns="http://www.w3.org/1998/Math/MathML">
+<msub>
+<mrow>
+<mi>L</mi>
+</mrow>
+<mrow>
+<mi>a</mi>
+<mi>c</mi>
+</mrow>
+</msub>
+<mo>=</mo>
+<msub>
+<mrow>
+<mi>C</mi>
+</mrow>
+<mrow>
+<mi>d</mi>
+<mi>c</mi>
+</mrow>
+</msub>
+<mi></mi>
+<msubsup>
+<mrow>
+<mi>R</mi>
+</mrow>
+<mrow>
+<mn>1</mn>
+</mrow>
+<mrow>
+<mn>2</mn>
+</mrow>
+</msubsup>
+<mi></mi>
+<msup>
+<mrow>
+<mi>Q</mi>
+</mrow>
+<mrow>
+<mn>2</mn>
+</mrow>
+</msup>
+</math>
+</span> where we can calculate <span class="+ topic/foreign mathml-d/mathml foreign mathml">
+<math xmlns="http://www.w3.org/1998/Math/MathML">
+<msub>
+<mrow>
+<mi>L</mi>
+</mrow>
+<mrow>
+<mi>a</mi>
+<mi>c</mi>
+</mrow>
+</msub>
+<mo>=</mo>
+<mi> </mi>
+<mn>1.782</mn>
+<mi>e</mi>
+<mo>-</mo>
+<mn>05</mn>
+</math>
+</span>.</p>
+<p class="- topic/p p"> In <a class="- topic/xref xref" href="#doc__fig_gww_tsx_cnb">Figure 6</a>, we can see that we
         manage to fix this issue.</p>
-      <div class="- topic/p p">
-        <figure class="- topic/fig fig fignone" id="doc__fig_gww_tsx_cnb" data-ofbid="doc__fig_gww_tsx_cnb"><figcaption class="- topic/title title figcap"><span class="figtitleprefix fig--title-label">Figure<span class="fig--title-label-number"> 6</span><span class="fig--title-label-punctuation">. </span></span><span class="fig--title">Issue fixed with calculated inductance</span></figcaption>
-          
-          <img class="- topic/image image" id="doc__image_hww_tsx_cnb" src="../Images/using_spicy_functions_converter_design_issues_07.png"/>
-        </figure>
-      </div>
-      <p class="- topic/p p">In the Bode diagram in <a class="- topic/xref xref" href="#doc__fig_crv_vsx_cnb">Figure 7</a>, we
+<div class="- topic/p p">
+<figure class="- topic/fig fig fignone" data-ofbid="doc__fig_gww_tsx_cnb" id="doc__fig_gww_tsx_cnb"><figcaption class="- topic/title title figcap"><span class="figtitleprefix fig--title-label">Figure<span class="fig--title-label-number"> 6</span><span class="fig--title-label-punctuation">. </span></span><span class="fig--title">Issue fixed with calculated inductance</span></figcaption>
+<img class="- topic/image image" id="doc__image_hww_tsx_cnb" src="../Images/using_spicy_functions_converter_design_issues_07.png"/>
+</figure>
+</div>
+<p class="- topic/p p">In the Bode diagram in <a class="- topic/xref xref" href="#doc__fig_crv_vsx_cnb">Figure 7</a>, we
         can see that we manage to decrease the Q factor.</p>
-      <div class="- topic/p p">
-        <figure class="- topic/fig fig fignone" id="doc__fig_crv_vsx_cnb" data-ofbid="doc__fig_crv_vsx_cnb"><figcaption class="- topic/title title figcap"><span class="figtitleprefix fig--title-label">Figure<span class="fig--title-label-number"> 7</span><span class="fig--title-label-punctuation">. </span></span><span class="fig--title">Bode diagram of input transfer function with decreased inductance</span></figcaption>
-          
-          <img class="- topic/image image" id="doc__image_drv_vsx_cnb" src="../Images/using_spicy_functions_converter_design_issues_08.png"/>
-        </figure>
-      </div>
-      <p class="- topic/p p"><strong class="+ topic/ph hi-d/b ph b">Solving the issue with increasing the capacitor</strong></p>
-      <p class="- topic/p p">While in theory decreasing the inductance solves the problem, it is often not practical,
+<div class="- topic/p p">
+<figure class="- topic/fig fig fignone" data-ofbid="doc__fig_crv_vsx_cnb" id="doc__fig_crv_vsx_cnb"><figcaption class="- topic/title title figcap"><span class="figtitleprefix fig--title-label">Figure<span class="fig--title-label-number"> 7</span><span class="fig--title-label-punctuation">. </span></span><span class="fig--title">Bode diagram of input transfer function with decreased inductance</span></figcaption>
+<img class="- topic/image image" id="doc__image_drv_vsx_cnb" src="../Images/using_spicy_functions_converter_design_issues_08.png"/>
+</figure>
+</div>
+<p class="- topic/p p"><strong class="+ topic/ph hi-d/b ph b">Solving the issue with increasing the capacitor</strong></p>
+<p class="- topic/p p">While in theory decreasing the inductance solves the problem, it is often not practical,
         since inductors are much more expensive then capacitors. Additionally, if the inductance in
         the model is due to the source inductance (i.e. grid impedance), it is impossible to change
         it. In these cases, we can instead change the value of the capacitor. This is done by moving
         the resonant frequency far from the switching frequency. For example, by setting <span class="+ topic/foreign mathml-d/mathml foreign mathml">
-          <math xmlns="http://www.w3.org/1998/Math/MathML">
-            <msub>
-              <mrow>
-                <mi>f</mi>
-              </mrow>
-              <mrow>
-                <mn>0</mn>
-              </mrow>
-            </msub>
-            <mo>=</mo>
-            <msub>
-              <mrow>
-                <mn>0.3</mn>
-                <mi></mi>
-                <mi>f</mi>
-              </mrow>
-              <mrow>
-                <mi>s</mi>
-                <mi>w</mi>
-              </mrow>
-            </msub>
-          </math>
-        </span> :</p>
-      <p class="- topic/p p"><span class="+ topic/foreign mathml-d/mathml foreign mathml">
-          <math xmlns="http://www.w3.org/1998/Math/MathML">
-            <msub>
-              <mrow>
-                <mi>C</mi>
-              </mrow>
-              <mrow>
-                <mi>d</mi>
-                <mi>c</mi>
-              </mrow>
-            </msub>
-            <mo>=</mo>
-            <mfrac>
-              <mrow>
-                <mn>1</mn>
-              </mrow>
-              <mrow>
-                <msup>
-                  <mrow>
-                    <mfenced separators="|">
-                      <mrow>
-                        <mn>2</mn>
-                        <mi>π</mi>
-                        <mi></mi>
-                        <msub>
-                          <mrow>
-                            <mn>0.3</mn>
-                            <mi></mi>
-                            <mi>f</mi>
-                          </mrow>
-                          <mrow>
-                            <mi>s</mi>
-                            <mi>w</mi>
-                          </mrow>
-                        </msub>
-                      </mrow>
-                    </mfenced>
-                  </mrow>
-                  <mrow>
-                    <mn>2</mn>
-                  </mrow>
-                </msup>
-                <mi></mi>
-                <msub>
-                  <mrow>
-                    <mi>L</mi>
-                  </mrow>
-                  <mrow>
-                    <mi>a</mi>
-                  </mrow>
-                </msub>
-              </mrow>
-            </mfrac>
-            <mo>=</mo>
-            <mi> </mi>
-            <mn>0.0255</mn>
-            <mi> </mi>
-            <mi>F</mi>
-          </math>
-        </span></p>
-      <p class="- topic/p p">With this new capacitor, we get attenuation to the switching frequency. In <a class="- topic/xref xref" href="#doc__fig_spy_xsx_cnb">Figure 8</a>, you can find the new Bode
+<math xmlns="http://www.w3.org/1998/Math/MathML">
+<msub>
+<mrow>
+<mi>f</mi>
+</mrow>
+<mrow>
+<mn>0</mn>
+</mrow>
+</msub>
+<mo>=</mo>
+<msub>
+<mrow>
+<mn>0.3</mn>
+<mi></mi>
+<mi>f</mi>
+</mrow>
+<mrow>
+<mi>s</mi>
+<mi>w</mi>
+</mrow>
+</msub>
+</math>
+</span> :</p>
+<p class="- topic/p p"><span class="+ topic/foreign mathml-d/mathml foreign mathml">
+<math xmlns="http://www.w3.org/1998/Math/MathML">
+<msub>
+<mrow>
+<mi>C</mi>
+</mrow>
+<mrow>
+<mi>d</mi>
+<mi>c</mi>
+</mrow>
+</msub>
+<mo>=</mo>
+<mfrac>
+<mrow>
+<mn>1</mn>
+</mrow>
+<mrow>
+<msup>
+<mrow>
+<mfenced separators="|">
+<mrow>
+<mn>2</mn>
+<mi>π</mi>
+<mi></mi>
+<msub>
+<mrow>
+<mn>0.3</mn>
+<mi></mi>
+<mi>f</mi>
+</mrow>
+<mrow>
+<mi>s</mi>
+<mi>w</mi>
+</mrow>
+</msub>
+</mrow>
+</mfenced>
+</mrow>
+<mrow>
+<mn>2</mn>
+</mrow>
+</msup>
+<mi></mi>
+<msub>
+<mrow>
+<mi>L</mi>
+</mrow>
+<mrow>
+<mi>a</mi>
+</mrow>
+</msub>
+</mrow>
+</mfrac>
+<mo>=</mo>
+<mi> </mi>
+<mn>0.0255</mn>
+<mi> </mi>
+<mi>F</mi>
+</math>
+</span></p>
+<p class="- topic/p p">With this new capacitor, we get attenuation to the switching frequency. In <a class="- topic/xref xref" href="#doc__fig_spy_xsx_cnb">Figure 8</a>, you can find the new Bode
         diagram.</p>
-      <div class="- topic/p p">
-        <figure class="- topic/fig fig fignone" id="doc__fig_spy_xsx_cnb" data-ofbid="doc__fig_spy_xsx_cnb"><figcaption class="- topic/title title figcap"><span class="figtitleprefix fig--title-label">Figure<span class="fig--title-label-number"> 8</span><span class="fig--title-label-punctuation">. </span></span><span class="fig--title">Bode diagram with new value of capacitor</span></figcaption>
-          
-          <img class="- topic/image image" id="doc__image_tpy_xsx_cnb" src="../Images/using_spicy_functions_converter_design_issues_09.png"/>
-        </figure>
-      </div>
-      <p class="- topic/p p">In <a class="- topic/xref xref" href="#doc__fig_il1_1tx_cnb">Figure 9</a>, we can see the new
+<div class="- topic/p p">
+<figure class="- topic/fig fig fignone" data-ofbid="doc__fig_spy_xsx_cnb" id="doc__fig_spy_xsx_cnb"><figcaption class="- topic/title title figcap"><span class="figtitleprefix fig--title-label">Figure<span class="fig--title-label-number"> 8</span><span class="fig--title-label-punctuation">. </span></span><span class="fig--title">Bode diagram with new value of capacitor</span></figcaption>
+<img class="- topic/image image" id="doc__image_tpy_xsx_cnb" src="../Images/using_spicy_functions_converter_design_issues_09.png"/>
+</figure>
+</div>
+<p class="- topic/p p">In <a class="- topic/xref xref" href="#doc__fig_il1_1tx_cnb">Figure 9</a>, we can see the new
         response of voltage on the DC link. By increasing the DC capacitor, we can see that response
         is a little bit slower than when we changed the inductance.</p>
-      <div class="- topic/p p">
-        <figure class="- topic/fig fig fignone" id="doc__fig_il1_1tx_cnb" data-ofbid="doc__fig_il1_1tx_cnb"><figcaption class="- topic/title title figcap"><span class="figtitleprefix fig--title-label">Figure<span class="fig--title-label-number"> 9</span><span class="fig--title-label-punctuation">. </span></span><span class="fig--title">Response of voltage on the DC link</span></figcaption>
-          
-          <img class="- topic/image image" id="doc__image_jl1_1tx_cnb" src="../Images/using_spicy_functions_converter_design_issues_10.png"/>
-        </figure>
-      </div>
-      <p class="- topic/p p"><strong class="+ topic/ph hi-d/b ph b">Pre-charge circuit</strong></p>
-      <p class="- topic/p p">Overvoltage on DC-link can be resolved using pre-charge circuit. In <a class="- topic/xref xref" href="#doc__fig_c3y_dtx_cnb">Figure 10</a>, you can see implementation of
+<div class="- topic/p p">
+<figure class="- topic/fig fig fignone" data-ofbid="doc__fig_il1_1tx_cnb" id="doc__fig_il1_1tx_cnb"><figcaption class="- topic/title title figcap"><span class="figtitleprefix fig--title-label">Figure<span class="fig--title-label-number"> 9</span><span class="fig--title-label-punctuation">. </span></span><span class="fig--title">Response of voltage on the DC link</span></figcaption>
+<img class="- topic/image image" id="doc__image_jl1_1tx_cnb" src="../Images/using_spicy_functions_converter_design_issues_10.png"/>
+</figure>
+</div>
+<p class="- topic/p p"><strong class="+ topic/ph hi-d/b ph b">Pre-charge circuit</strong></p>
+<p class="- topic/p p">Overvoltage on DC-link can be resolved using pre-charge circuit. In <a class="- topic/xref xref" href="#doc__fig_c3y_dtx_cnb">Figure 10</a>, you can see implementation of
         pre-charge circuit.</p>
-      <div class="- topic/p p">
-        <figure class="- topic/fig fig fignone" id="doc__fig_c3y_dtx_cnb" data-ofbid="doc__fig_c3y_dtx_cnb"><figcaption class="- topic/title title figcap"><span class="figtitleprefix fig--title-label">Figure<span class="fig--title-label-number"> 10</span><span class="fig--title-label-punctuation">. </span></span><span class="fig--title">DC-link pre-charge circuit</span></figcaption>
-          
-          <img class="- topic/image image" id="doc__image_d3y_dtx_cnb" src="../Images/using_spicy_functions_converter_design_issues_11.png"/>
-        </figure>
-      </div>
-      <p class="- topic/p p">In this case, the pre-charge resistor can be calculated by setting the Q factor:</p>
-      <p class="- topic/p p"><span class="+ topic/foreign mathml-d/mathml foreign mathml">
-          <math xmlns="http://www.w3.org/1998/Math/MathML">
-            <mi>Q</mi>
-            <mo>=</mo>
-            <mfrac>
-              <mrow>
-                <mn>1</mn>
-              </mrow>
-              <mrow>
-                <msqrt>
-                  <mn>2</mn>
-                </msqrt>
-              </mrow>
-            </mfrac>
-          </math>
-        </span></p>
-      <p class="- topic/p p">The following is the calculation for <span class="+ topic/foreign mathml-d/mathml foreign mathml">
-          <math xmlns="http://www.w3.org/1998/Math/MathML">
-            <msub>
-              <mrow>
-                <mi>R</mi>
-              </mrow>
-              <mrow>
-                <mi>p</mi>
-                <mi>r</mi>
-                <mi>e</mi>
-                <mi>c</mi>
-                <mi>h</mi>
-              </mrow>
-            </msub>
-            <mo>:</mo>
-          </math>
-        </span>
-      </p>
-      <p class="- topic/p p"><span class="+ topic/foreign mathml-d/mathml foreign mathml">
-          <math xmlns="http://www.w3.org/1998/Math/MathML">
-            <mi>Q</mi>
-            <mo>=</mo>
-            <mfrac>
-              <mrow>
-                <mn>1</mn>
-              </mrow>
-              <mrow>
-                <msub>
-                  <mrow>
-                    <mi>R</mi>
-                  </mrow>
-                  <mrow>
-                    <mn>1</mn>
-                  </mrow>
-                </msub>
-                <mo>+</mo>
-                <msub>
-                  <mrow>
-                    <mi>R</mi>
-                  </mrow>
-                  <mrow>
-                    <mi>p</mi>
-                    <mi>r</mi>
-                    <mi>e</mi>
-                    <mi>c</mi>
-                    <mi>h</mi>
-                  </mrow>
-                </msub>
-              </mrow>
-            </mfrac>
-            <mi></mi>
-            <msqrt>
-              <mfrac>
-                <mrow>
-                  <msub>
-                    <mrow>
-                      <mi>L</mi>
-                    </mrow>
-                    <mrow>
-                      <mi>a</mi>
-                    </mrow>
-                  </msub>
-                </mrow>
-                <mrow>
-                  <msub>
-                    <mrow>
-                      <mi>C</mi>
-                    </mrow>
-                    <mrow>
-                      <mi>d</mi>
-                      <mi>c</mi>
-                    </mrow>
-                  </msub>
-                </mrow>
-              </mfrac>
-            </msqrt>
-            <mo>=</mo>
-            <mfrac>
-              <mrow>
-                <mn>1</mn>
-              </mrow>
-              <mrow>
-                <msqrt>
-                  <mn>2</mn>
-                </msqrt>
-              </mrow>
-            </mfrac>
-          </math>
-        </span></p>
-      <p class="- topic/p p"><span class="+ topic/foreign mathml-d/mathml foreign mathml">
-          <math xmlns="http://www.w3.org/1998/Math/MathML">
-            <msub>
-              <mrow>
-                <mi>R</mi>
-              </mrow>
-              <mrow>
-                <mi>p</mi>
-                <mi>r</mi>
-                <mi>e</mi>
-                <mi>c</mi>
-                <mi>h</mi>
-              </mrow>
-            </msub>
-            <mo>=</mo>
-            <mi> </mi>
-            <mi></mi>
-            <msqrt>
-              <mfrac>
-                <mrow>
-                  <msub>
-                    <mrow>
-                      <mi>2L</mi>
-                    </mrow>
-                    <mrow>
-                      <mi>a</mi>
-                    </mrow>
-                  </msub>
-                </mrow>
-                <mrow>
-                  <msub>
-                    <mrow>
-                      <mi>C</mi>
-                    </mrow>
-                    <mrow>
-                      <mi>d</mi>
-                      <mi>c</mi>
-                    </mrow>
-                  </msub>
-                </mrow>
-              </mfrac>
-            </msqrt>
-            <mo>-</mo>
-            <msub>
-              <mrow>
-                <mi>R</mi>
-              </mrow>
-              <mrow>
-                <mn>1</mn>
-              </mrow>
-            </msub>
-          </math>
-        </span></p>
-      <p class="- topic/p p"><a class="- topic/xref xref" href="#doc__fig_td2_jtx_cnb">Figure 11</a>shows the pre-charge
+<div class="- topic/p p">
+<figure class="- topic/fig fig fignone" data-ofbid="doc__fig_c3y_dtx_cnb" id="doc__fig_c3y_dtx_cnb"><figcaption class="- topic/title title figcap"><span class="figtitleprefix fig--title-label">Figure<span class="fig--title-label-number"> 10</span><span class="fig--title-label-punctuation">. </span></span><span class="fig--title">DC-link pre-charge circuit</span></figcaption>
+<img class="- topic/image image" id="doc__image_d3y_dtx_cnb" src="../Images/using_spicy_functions_converter_design_issues_11.png"/>
+</figure>
+</div>
+<p class="- topic/p p">In this case, the pre-charge resistor can be calculated by setting the Q factor:</p>
+<p class="- topic/p p"><span class="+ topic/foreign mathml-d/mathml foreign mathml">
+<math xmlns="http://www.w3.org/1998/Math/MathML">
+<mi>Q</mi>
+<mo>=</mo>
+<mfrac>
+<mrow>
+<mn>1</mn>
+</mrow>
+<mrow>
+<msqrt>
+<mn>2</mn>
+</msqrt>
+</mrow>
+</mfrac>
+</math>
+</span></p>
+<p class="- topic/p p">The following is the calculation for <span class="+ topic/foreign mathml-d/mathml foreign mathml">
+<math xmlns="http://www.w3.org/1998/Math/MathML">
+<msub>
+<mrow>
+<mi>R</mi>
+</mrow>
+<mrow>
+<mi>p</mi>
+<mi>r</mi>
+<mi>e</mi>
+<mi>c</mi>
+<mi>h</mi>
+</mrow>
+</msub>
+<mo>:</mo>
+</math>
+</span>
+</p>
+<p class="- topic/p p"><span class="+ topic/foreign mathml-d/mathml foreign mathml">
+<math xmlns="http://www.w3.org/1998/Math/MathML">
+<mi>Q</mi>
+<mo>=</mo>
+<mfrac>
+<mrow>
+<mn>1</mn>
+</mrow>
+<mrow>
+<msub>
+<mrow>
+<mi>R</mi>
+</mrow>
+<mrow>
+<mn>1</mn>
+</mrow>
+</msub>
+<mo>+</mo>
+<msub>
+<mrow>
+<mi>R</mi>
+</mrow>
+<mrow>
+<mi>p</mi>
+<mi>r</mi>
+<mi>e</mi>
+<mi>c</mi>
+<mi>h</mi>
+</mrow>
+</msub>
+</mrow>
+</mfrac>
+<mi></mi>
+<msqrt>
+<mfrac>
+<mrow>
+<msub>
+<mrow>
+<mi>L</mi>
+</mrow>
+<mrow>
+<mi>a</mi>
+</mrow>
+</msub>
+</mrow>
+<mrow>
+<msub>
+<mrow>
+<mi>C</mi>
+</mrow>
+<mrow>
+<mi>d</mi>
+<mi>c</mi>
+</mrow>
+</msub>
+</mrow>
+</mfrac>
+</msqrt>
+<mo>=</mo>
+<mfrac>
+<mrow>
+<mn>1</mn>
+</mrow>
+<mrow>
+<msqrt>
+<mn>2</mn>
+</msqrt>
+</mrow>
+</mfrac>
+</math>
+</span></p>
+<p class="- topic/p p"><span class="+ topic/foreign mathml-d/mathml foreign mathml">
+<math xmlns="http://www.w3.org/1998/Math/MathML">
+<msub>
+<mrow>
+<mi>R</mi>
+</mrow>
+<mrow>
+<mi>p</mi>
+<mi>r</mi>
+<mi>e</mi>
+<mi>c</mi>
+<mi>h</mi>
+</mrow>
+</msub>
+<mo>=</mo>
+<mi> </mi>
+<mi></mi>
+<msqrt>
+<mfrac>
+<mrow>
+<msub>
+<mrow>
+<mi>2L</mi>
+</mrow>
+<mrow>
+<mi>a</mi>
+</mrow>
+</msub>
+</mrow>
+<mrow>
+<msub>
+<mrow>
+<mi>C</mi>
+</mrow>
+<mrow>
+<mi>d</mi>
+<mi>c</mi>
+</mrow>
+</msub>
+</mrow>
+</mfrac>
+</msqrt>
+<mo>-</mo>
+<msub>
+<mrow>
+<mi>R</mi>
+</mrow>
+<mrow>
+<mn>1</mn>
+</mrow>
+</msub>
+</math>
+</span></p>
+<p class="- topic/p p"><a class="- topic/xref xref" href="#doc__fig_td2_jtx_cnb">Figure 11</a>shows the pre-charge
         resistor effects caused by reducing the Q factor. The <a class="- topic/xref xref" href="#doc__fig_glv_ltx_cnb">Figure 12</a> shows the response of voltage
         on DC-link. It is important to note that in this case there is a reduced peak of incoming
         current on the AC side of rectifier.</p>
-      <div class="- topic/p p">
-        <figure class="- topic/fig fig fignone" id="doc__fig_td2_jtx_cnb" data-ofbid="doc__fig_td2_jtx_cnb"><figcaption class="- topic/title title figcap"><span class="figtitleprefix fig--title-label">Figure<span class="fig--title-label-number"> 11</span><span class="fig--title-label-punctuation">. </span></span><span class="fig--title">Bodes diagram with pre-charge circuit</span></figcaption>
-          
-          <img class="- topic/image image" id="doc__image_ud2_jtx_cnb" src="../Images/using_spicy_functions_converter_design_issues_12.png"/>
-        </figure>
-      </div>
-      <div class="- topic/p p">
-        <figure class="- topic/fig fig fignone" id="doc__fig_glv_ltx_cnb" data-ofbid="doc__fig_glv_ltx_cnb"><figcaption class="- topic/title title figcap"><span class="figtitleprefix fig--title-label">Figure<span class="fig--title-label-number"> 12</span><span class="fig--title-label-punctuation">. </span></span><span class="fig--title">Voltage response with pre-charge circuit</span></figcaption>
-          
-          <img class="- topic/image image" id="doc__image_hlv_ltx_cnb" src="../Images/using_spicy_functions_converter_design_issues_13.PNG"/>
-        </figure>
-      </div>
-      <p class="- topic/p p">Using this approach, we manage to troubleshoot issues in the design of the various
+<div class="- topic/p p">
+<figure class="- topic/fig fig fignone" data-ofbid="doc__fig_td2_jtx_cnb" id="doc__fig_td2_jtx_cnb"><figcaption class="- topic/title title figcap"><span class="figtitleprefix fig--title-label">Figure<span class="fig--title-label-number"> 11</span><span class="fig--title-label-punctuation">. </span></span><span class="fig--title">Bodes diagram with pre-charge circuit</span></figcaption>
+<img class="- topic/image image" id="doc__image_ud2_jtx_cnb" src="../Images/using_spicy_functions_converter_design_issues_12.png"/>
+</figure>
+</div>
+<div class="- topic/p p">
+<figure class="- topic/fig fig fignone" data-ofbid="doc__fig_glv_ltx_cnb" id="doc__fig_glv_ltx_cnb"><figcaption class="- topic/title title figcap"><span class="figtitleprefix fig--title-label">Figure<span class="fig--title-label-number"> 12</span><span class="fig--title-label-punctuation">. </span></span><span class="fig--title">Voltage response with pre-charge circuit</span></figcaption>
+<img class="- topic/image image" id="doc__image_hlv_ltx_cnb" src="../Images/using_spicy_functions_converter_design_issues_13.PNG"/>
+</figure>
+</div>
+<p class="- topic/p p">Using this approach, we manage to troubleshoot issues in the design of the various
         converters and applications in power electronics, and specifically to avoid voltage
         overshoot on the DC link. In <a class="- topic/xref xref" href="#doc__fig_glv_ltx_cnb">Figure 12</a>, you can see a high peak of the inductor current. To reduce this current, we need to
         define a different value of the pre-charge resistor. The resistance of the pre-charge
         circuit is chosen based on the capacity of the load and the desired pre-charge time. The
         pre-charge surge current reaches 1/e of its initial value after a time of:</p>
-      <p class="- topic/p p"><span class="+ topic/foreign mathml-d/mathml foreign mathml">
-          <math xmlns="http://www.w3.org/1998/Math/MathML">
-            <mi>T</mi>
-            <mi> </mi>
-            <mo>=</mo>
-            <mi> </mi>
-            <msub>
-              <mrow>
-                <mi>R</mi>
-              </mrow>
-              <mrow>
-                <mi>p</mi>
-                <mi>r</mi>
-                <mi>e</mi>
-                <mi>c</mi>
-                <mi>h</mi>
-              </mrow>
-            </msub>
-            <mi> </mi>
-            <mi></mi>
-            <mi> </mi>
-            <mi>C</mi>
-          </math>
-        </span></p>
-      <p class="- topic/p p">The current is reduced to a manageable value after approximately a time of 5 * T.</p>
-      <p class="- topic/p p"><span class="+ topic/foreign mathml-d/mathml foreign mathml">
-          <math xmlns="http://www.w3.org/1998/Math/MathML">
-            <msub>
-              <mrow>
-                <mi>R</mi>
-              </mrow>
-              <mrow>
-                <mi>p</mi>
-                <mi>r</mi>
-                <mi>e</mi>
-                <mi>c</mi>
-                <mi>h</mi>
-              </mrow>
-            </msub>
-            <mo>=</mo>
-            <mfrac>
-              <mrow>
-                <mi>T</mi>
-              </mrow>
-              <mrow>
-                <mn>5</mn>
-                <mi></mi>
-                <mi>C</mi>
-              </mrow>
-            </mfrac>
-          </math>
-        </span></p>
-      <div class="- topic/p p">
-        <figure class="- topic/fig fig fignone" id="doc__fig_anb_4tx_cnb" data-ofbid="doc__fig_anb_4tx_cnb"><figcaption class="- topic/title title figcap"><span class="figtitleprefix fig--title-label">Figure<span class="fig--title-label-number"> 13</span><span class="fig--title-label-punctuation">. </span></span><span class="fig--title">Test of pre-charge circuit with new resistor.</span></figcaption>
-          
-          <img class="- topic/image image" id="doc__image_bnb_4tx_cnb" src="../Images/using_spicy_functions_converter_design_issues_14.png"/>
-        </figure>
-      </div>
-      <p class="- topic/p p">Here we can see how we manage to decrease inrush current.</p>
-      <div class="- topic/p p">
-        <figure class="- topic/fig fig fignone" id="doc__fig_hvd_qtx_cnb" data-ofbid="doc__fig_hvd_qtx_cnb"><figcaption class="- topic/title title figcap"><span class="figtitleprefix fig--title-label">Figure<span class="fig--title-label-number"> 14</span><span class="fig--title-label-punctuation">. </span></span><span class="fig--title">Bode plot with new resistor</span></figcaption>
-          
-          <img class="- topic/image image" id="doc__image_ivd_qtx_cnb" src="../Images/using_spicy_functions_converter_design_issues_15.png"/>
-        </figure>
-      </div>
-      <p class="- topic/p p">In practice, if the design allows, having the option to solve overvoltage by placing a
+<p class="- topic/p p"><span class="+ topic/foreign mathml-d/mathml foreign mathml">
+<math xmlns="http://www.w3.org/1998/Math/MathML">
+<mi>T</mi>
+<mi> </mi>
+<mo>=</mo>
+<mi> </mi>
+<msub>
+<mrow>
+<mi>R</mi>
+</mrow>
+<mrow>
+<mi>p</mi>
+<mi>r</mi>
+<mi>e</mi>
+<mi>c</mi>
+<mi>h</mi>
+</mrow>
+</msub>
+<mi> </mi>
+<mi></mi>
+<mi> </mi>
+<mi>C</mi>
+</math>
+</span></p>
+<p class="- topic/p p">The current is reduced to a manageable value after approximately a time of 5 * T.</p>
+<p class="- topic/p p"><span class="+ topic/foreign mathml-d/mathml foreign mathml">
+<math xmlns="http://www.w3.org/1998/Math/MathML">
+<msub>
+<mrow>
+<mi>R</mi>
+</mrow>
+<mrow>
+<mi>p</mi>
+<mi>r</mi>
+<mi>e</mi>
+<mi>c</mi>
+<mi>h</mi>
+</mrow>
+</msub>
+<mo>=</mo>
+<mfrac>
+<mrow>
+<mi>T</mi>
+</mrow>
+<mrow>
+<mn>5</mn>
+<mi></mi>
+<mi>C</mi>
+</mrow>
+</mfrac>
+</math>
+</span></p>
+<div class="- topic/p p">
+<figure class="- topic/fig fig fignone" data-ofbid="doc__fig_anb_4tx_cnb" id="doc__fig_anb_4tx_cnb"><figcaption class="- topic/title title figcap"><span class="figtitleprefix fig--title-label">Figure<span class="fig--title-label-number"> 13</span><span class="fig--title-label-punctuation">. </span></span><span class="fig--title">Test of pre-charge circuit with new resistor.</span></figcaption>
+<img class="- topic/image image" id="doc__image_bnb_4tx_cnb" src="../Images/using_spicy_functions_converter_design_issues_14.png"/>
+</figure>
+</div>
+<p class="- topic/p p">Here we can see how we manage to decrease inrush current.</p>
+<div class="- topic/p p">
+<figure class="- topic/fig fig fignone" data-ofbid="doc__fig_hvd_qtx_cnb" id="doc__fig_hvd_qtx_cnb"><figcaption class="- topic/title title figcap"><span class="figtitleprefix fig--title-label">Figure<span class="fig--title-label-number"> 14</span><span class="fig--title-label-punctuation">. </span></span><span class="fig--title">Bode plot with new resistor</span></figcaption>
+<img class="- topic/image image" id="doc__image_ivd_qtx_cnb" src="../Images/using_spicy_functions_converter_design_issues_15.png"/>
+</figure>
+</div>
+<p class="- topic/p p">In practice, if the design allows, having the option to solve overvoltage by placing a
         larger capacitor, would likely be a cheaper option than adding the pre-charge circuit. Based
         on these results, we can envision a way that this would be possible.</p>
-    </section>
-    <section class="- topic/section section" id="doc__section_bdn_cfl_1nb" data-ofbid="doc__section_bdn_cfl_1nb"><h2 class="- topic/title title sectiontitle">Test Automation</h2>
-      
-      <p class="- topic/p p">We don’t have a test automation for this example yet. <a class="- topic/xref xref" href="https://www.typhoon-hil.com/contact/" target="_blank" rel="external noopener">Let us
+</section>
+<section class="- topic/section section" data-ofbid="doc__section_bdn_cfl_1nb" id="doc__section_bdn_cfl_1nb"><h2 class="- topic/title title sectiontitle">Test Automation</h2>
+<p class="- topic/p p">We don’t have a test automation for this example yet. <a class="- topic/xref xref" href="https://www.typhoon-hil.com/contact/" rel="external noopener" target="_blank">Let us
           know</a> if you wish to contribute and we will gladly have you signed on the
         application note!</p>
-    </section>
-   <section class="- topic/section section" id="doc__OXhFSC7pG" data-ofbid="doc__OXhFSC7pG"><h2 class="- topic/title title sectiontitle">Example requirements</h2>
-     
-     <p class="- topic/p p"><a class="- topic/xref xref" href="#doc__min_req">Table 1</a> provides detailed information about the file locations and hardware requirements 
+</section>
+<section class="- topic/section section" data-ofbid="doc__OXhFSC7pG" id="doc__OXhFSC7pG"><h2 class="- topic/title title sectiontitle">Example requirements</h2>
+<p class="- topic/p p"><a class="- topic/xref xref" href="#doc__min_req">Table 1</a> provides detailed information about the file locations and hardware requirements 
        for running the model in real-time, followed by the HIL device resource utilization when running the model using 
        this minimal hardware configuration. This information is provided to help you with running and 
        customizing the model as you see fit.</p>
-     <table class="- topic/table table frame-all" id="doc__min_req" data-ofbid="doc__min_req" data-cols="2"><caption class="- topic/title title tablecap" data-caption-side="top" data-is-repeated="true"><span class="table--title-label">Table<span class="table--title-label-number"> 1</span><span class="table--title-label-punctuation">. </span></span><span class="table--title"><span class="- topic/ph ph" id="doc__an_min-req">Minimum requirements</span></span></caption><colgroup><col style="width:50%"/><col style="width:50%"/></colgroup><thead class="- topic/thead thead">
-           <tr class="- topic/row">
-             <th class="- topic/entry entry align-center colsep-0 rowsep-1" id="doc__min_req__entry__1" colspan="2">Files</th>
-           </tr>
-         </thead><tbody class="- topic/tbody tbody">
-           <tr class="- topic/row">
-             <td class="- topic/entry entry align-center colsep-1 rowsep-1" headers="doc__min_req__entry__1"><span class="- topic/ph ph" id="doc__an_min-req_TH-files">Typhoon HIL files</span></td>
-             <td class="- topic/entry entry align-center colsep-0 rowsep-1" headers="doc__min_req__entry__1"><p class="- topic/p p"><em class="+ topic/ph hi-d/i ph i"><a class="- topic/xref xref" href="https://marketplace.typhoon-hil.com/package?package_name=TMS320F2808+Example+Models" target="_blank" rel="external noopener">TMS320F2808 Example Models/ti pmsm sensored foc</a></em>*</p>
-               <p class="- topic/p p">ti pmsm sensored foc.tse</p>
-               <p class="- topic/p p">ti pmsm sensored foc.cus</p>
-               <p class="- topic/p p">20140220_pmsm3_1_TMS3202808.out</p>
-               <p class="- topic/p p">settings.runx</p>
-               <p class="- topic/p p"><em class="+ topic/ph hi-d/i ph i">*Downloadable via <a class="- topic/xref xref" href="https://marketplace.typhoon-hil.com/" target="_blank" rel="external noopener">Package Manager</a></em></p></td>
-           </tr>
-           <tr class="- topic/row">
-             <td class="- topic/entry entry align-center colsep-1 rowsep-1" headers="doc__min_req__entry__1">External Tools</td>
-             <td class="- topic/entry entry align-center colsep-0 rowsep-1" headers="doc__min_req__entry__1"><a class="- topic/xref xref" href="http://www.ti.com/tool/UNIFLASH" target="_blank" rel="external noopener">UniFlash</a>
-             </td>
-           </tr>
-           <tr class="- topic/row">
-             <td class="- topic/entry entry align-center colsep-0 rowsep-1" headers="doc__min_req__entry__1" colspan="2"><strong class="+ topic/ph hi-d/b ph b">Minimum hardware requirements</strong></td>
-           </tr>
-           <tr class="- topic/row">
-             <td class="- topic/entry entry align-center colsep-1 rowsep-1" headers="doc__min_req__entry__1"><span class="- topic/ph ph" id="doc__an_min-req_num-devices">No. of HIL devices</span></td>
-             <td class="- topic/entry entry align-center colsep-0 rowsep-1" headers="doc__min_req__entry__1"><span class="- topic/ph ph" id="doc__num_devices">1</span></td>
-           </tr>
-           <tr class="- topic/row">
-             <td class="- topic/entry entry align-center colsep-1 rowsep-1" headers="doc__min_req__entry__1"><span class="- topic/ph ph" id="doc__an_min-req_model-num">HIL device model</span></td>
-             <td class="- topic/entry entry align-center colsep-0 rowsep-1" headers="doc__min_req__entry__1"><span class="- topic/ph ph" id="doc__type_devices">HIL402</span></td>
-           </tr>
-           <tr class="- topic/row">
-             <td class="- topic/entry entry align-center colsep-1 rowsep-1" headers="doc__min_req__entry__1"><u class="+ topic/ph hi-d/u ph u"><a class="- topic/xref xref" href="https://www.typhoon-hil.com/documentation/typhoon-hil-software-manual/concepts/device_manager.html" target="_blank" rel="external noopener">Device configuration</a></u></td>
-             <td class="- topic/entry entry align-center colsep-0 rowsep-1" headers="doc__min_req__entry__1"><span class="- topic/ph ph" id="doc__num_config">1</span></td>
-           </tr>
-           <tr class="- topic/row">
-             <td class="- topic/entry entry align-center colsep-1 rowsep-1" headers="doc__min_req__entry__1"><span class="- topic/ph ph" id="doc__an_min-req_interface">Interface</span></td>
-             <td class="- topic/entry entry align-center colsep-0 rowsep-1" headers="doc__min_req__entry__1">
-               <p class="- topic/p p"><a class="- topic/xref xref" href="http://www.ti.com/tool/TMDSCNCD2808" target="_blank" rel="external noopener">TMS320F2808</a><em class="+ topic/ph hi-d/i ph i"> (Hardware under test)</em></p>
-               <p class="- topic/p p"><a class="- topic/xref xref" href="https://www.typhoon-hil.com/documentation/typhoon-hil-hardware-manual/hil_dsp_180_interface/topics/abstract.html" target="_blank" rel="external noopener">HIL DSP180 Interface</a></p></td>
-           </tr>
-           <tr class="- topic/row">
-             <td class="- topic/entry entry align-center colsep-0 rowsep-1" headers="doc__min_req__entry__1" colspan="2"><strong class="+ topic/ph hi-d/b ph b">HIL device resource utilization</strong></td>
-           </tr>
-           <tr class="- topic/row">
-             <td class="- topic/entry entry align-center colsep-1 rowsep-1" headers="doc__min_req__entry__1"><span class="- topic/ph ph" id="doc__an_res-util_num-cores">No. of processing cores</span></td>
-             <td class="- topic/entry entry align-center colsep-0 rowsep-1" headers="doc__min_req__entry__1"><span class="- topic/ph ph" id="doc__num_cores">2</span></td>
-           </tr>
-           <tr class="- topic/row">
-             <td class="- topic/entry entry align-center colsep-1 rowsep-1" headers="doc__min_req__entry__1"><span class="- topic/ph ph" id="doc__an_res-util_max-memory">Max. matrix memory utilization</span></td>
-             <td class="- topic/entry entry align-center colsep-0 rowsep-1" headers="doc__min_req__entry__1"><p class="- topic/p p">2.25% (core0)</p><p class="- topic/p p">30.81% (core1)</p></td>
-           </tr>
-           <tr class="- topic/row">
-             <td class="- topic/entry entry align-center colsep-1 rowsep-1" headers="doc__min_req__entry__1"><span class="- topic/ph ph" id="doc__an_res-util_max-time">Max. time slot utilization</span></td>
-             <td class="- topic/entry entry align-center colsep-0 rowsep-1" headers="doc__min_req__entry__1"><p class="- topic/p p">29.38% (core0)</p><p class="- topic/p p">52.5% (core1)</p></td>
-           </tr>
-           <tr class="- topic/row">
-             <td class="- topic/entry entry align-center colsep-1 rowsep-1" headers="doc__min_req__entry__1"><span class="- topic/ph ph" id="doc__an_res-util_sim-step">Simulation step, electrical</span></td>
-             <td class="- topic/entry entry align-center colsep-0 rowsep-1" headers="doc__min_req__entry__1">1 µs</td>
-           </tr>
-           <tr class="- topic/row">
-             <td class="- topic/entry entry align-center colsep-1 rowsep-0" headers="doc__min_req__entry__1"><span class="- topic/ph ph" id="doc__an_res-util_exec-rate">Execution rate, signal processing</span></td>
-             <td class="- topic/entry entry align-center colsep-0 rowsep-0" headers="doc__min_req__entry__1">100 µs</td>
-           </tr>
-         </tbody></table>
-   </section>
-   <section class="- topic/section section" id="doc__section_udx_dgl_1nb" data-ofbid="doc__section_udx_dgl_1nb"><h2 class="- topic/title title sectiontitle">Authors</h2>
-      
-      <p class="- topic/p p">[1] Simisa Simic</p>
-    </section>
- </div>
+<table class="- topic/table table frame-all" data-cols="2" data-ofbid="doc__min_req" id="doc__min_req"><caption class="- topic/title title tablecap" data-caption-side="top" data-is-repeated="true"><span class="table--title-label">Table<span class="table--title-label-number"> 1</span><span class="table--title-label-punctuation">. </span></span><span class="table--title"><span class="- topic/ph ph" id="doc__an_min-req">Minimum requirements</span></span></caption><colgroup><col style="width:50%"/><col style="width:50%"/></colgroup><thead class="- topic/thead thead">
+<tr class="- topic/row">
+<th class="- topic/entry entry align-center colsep-0 rowsep-1" colspan="2" id="doc__min_req__entry__1">Files</th>
+</tr>
+</thead><tbody class="- topic/tbody tbody">
+<tr class="- topic/row">
+<td class="- topic/entry entry align-center colsep-1 rowsep-1" headers="doc__min_req__entry__1"><span class="- topic/ph ph" id="doc__an_min-req_TH-files">Typhoon HIL files</span></td>
+<td class="- topic/entry entry align-center colsep-0 rowsep-1" headers="doc__min_req__entry__1"><p class="- topic/p p"><em class="+ topic/ph hi-d/i ph i"><a class="- topic/xref xref" href="https://marketplace.typhoon-hil.com/package?package_name=TMS320F2808+Example+Models" rel="external noopener" target="_blank">TMS320F2808 Example Models/ti pmsm sensored foc</a></em>*</p>
+<p class="- topic/p p">ti pmsm sensored foc.tse</p>
+<p class="- topic/p p">ti pmsm sensored foc.cus</p>
+<p class="- topic/p p">20140220_pmsm3_1_TMS3202808.out</p>
+<p class="- topic/p p">settings.runx</p>
+<p class="- topic/p p"><em class="+ topic/ph hi-d/i ph i">*Downloadable via <a class="- topic/xref xref" href="https://marketplace.typhoon-hil.com/" rel="external noopener" target="_blank">Package Manager</a></em></p></td>
+</tr>
+<tr class="- topic/row">
+<td class="- topic/entry entry align-center colsep-1 rowsep-1" headers="doc__min_req__entry__1">External Tools</td>
+<td class="- topic/entry entry align-center colsep-0 rowsep-1" headers="doc__min_req__entry__1"><a class="- topic/xref xref" href="http://www.ti.com/tool/UNIFLASH" rel="external noopener" target="_blank">UniFlash</a>
+</td>
+</tr>
+<tr class="- topic/row">
+<td class="- topic/entry entry align-center colsep-0 rowsep-1" colspan="2" headers="doc__min_req__entry__1"><strong class="+ topic/ph hi-d/b ph b">Minimum hardware requirements</strong></td>
+</tr>
+<tr class="- topic/row">
+<td class="- topic/entry entry align-center colsep-1 rowsep-1" headers="doc__min_req__entry__1"><span class="- topic/ph ph" id="doc__an_min-req_num-devices">No. of HIL devices</span></td>
+<td class="- topic/entry entry align-center colsep-0 rowsep-1" headers="doc__min_req__entry__1"><span class="- topic/ph ph" id="doc__num_devices">1</span></td>
+</tr>
+<tr class="- topic/row">
+<td class="- topic/entry entry align-center colsep-1 rowsep-1" headers="doc__min_req__entry__1"><span class="- topic/ph ph" id="doc__an_min-req_model-num">HIL device model</span></td>
+<td class="- topic/entry entry align-center colsep-0 rowsep-1" headers="doc__min_req__entry__1"><span class="- topic/ph ph" id="doc__type_devices">HIL402</span></td>
+</tr>
+<tr class="- topic/row">
+<td class="- topic/entry entry align-center colsep-1 rowsep-1" headers="doc__min_req__entry__1"><u class="+ topic/ph hi-d/u ph u"><a class="- topic/xref xref" href="https://www.typhoon-hil.com/documentation/typhoon-hil-software-manual/concepts/device_manager.html" rel="external noopener" target="_blank">Device configuration</a></u></td>
+<td class="- topic/entry entry align-center colsep-0 rowsep-1" headers="doc__min_req__entry__1"><span class="- topic/ph ph" id="doc__num_config">1</span></td>
+</tr>
+<tr class="- topic/row">
+<td class="- topic/entry entry align-center colsep-1 rowsep-1" headers="doc__min_req__entry__1"><span class="- topic/ph ph" id="doc__an_min-req_interface">Interface</span></td>
+<td class="- topic/entry entry align-center colsep-0 rowsep-1" headers="doc__min_req__entry__1">
+<p class="- topic/p p"><a class="- topic/xref xref" href="http://www.ti.com/tool/TMDSCNCD2808" rel="external noopener" target="_blank">TMS320F2808</a><em class="+ topic/ph hi-d/i ph i"> (Hardware under test)</em></p>
+<p class="- topic/p p"><a class="- topic/xref xref" href="https://www.typhoon-hil.com/documentation/typhoon-hil-hardware-manual/hil_dsp_180_interface/topics/abstract.html" rel="external noopener" target="_blank">HIL DSP180 Interface</a></p></td>
+</tr>
+<tr class="- topic/row">
+<td class="- topic/entry entry align-center colsep-0 rowsep-1" colspan="2" headers="doc__min_req__entry__1"><strong class="+ topic/ph hi-d/b ph b">HIL device resource utilization</strong></td>
+</tr>
+<tr class="- topic/row">
+<td class="- topic/entry entry align-center colsep-1 rowsep-1" headers="doc__min_req__entry__1"><span class="- topic/ph ph" id="doc__an_res-util_num-cores">No. of processing cores</span></td>
+<td class="- topic/entry entry align-center colsep-0 rowsep-1" headers="doc__min_req__entry__1"><span class="- topic/ph ph" id="doc__num_cores">2</span></td>
+</tr>
+<tr class="- topic/row">
+<td class="- topic/entry entry align-center colsep-1 rowsep-1" headers="doc__min_req__entry__1"><span class="- topic/ph ph" id="doc__an_res-util_max-memory">Max. matrix memory utilization</span></td>
+<td class="- topic/entry entry align-center colsep-0 rowsep-1" headers="doc__min_req__entry__1"><p class="- topic/p p">2.25% (core0)</p><p class="- topic/p p">30.81% (core1)</p></td>
+</tr>
+<tr class="- topic/row">
+<td class="- topic/entry entry align-center colsep-1 rowsep-1" headers="doc__min_req__entry__1"><span class="- topic/ph ph" id="doc__an_res-util_max-time">Max. time slot utilization</span></td>
+<td class="- topic/entry entry align-center colsep-0 rowsep-1" headers="doc__min_req__entry__1"><p class="- topic/p p">29.38% (core0)</p><p class="- topic/p p">52.5% (core1)</p></td>
+</tr>
+<tr class="- topic/row">
+<td class="- topic/entry entry align-center colsep-1 rowsep-1" headers="doc__min_req__entry__1"><span class="- topic/ph ph" id="doc__an_res-util_sim-step">Simulation step, electrical</span></td>
+<td class="- topic/entry entry align-center colsep-0 rowsep-1" headers="doc__min_req__entry__1">1 µs</td>
+</tr>
+<tr class="- topic/row">
+<td class="- topic/entry entry align-center colsep-1 rowsep-0" headers="doc__min_req__entry__1"><span class="- topic/ph ph" id="doc__an_res-util_exec-rate">Execution rate, signal processing</span></td>
+<td class="- topic/entry entry align-center colsep-0 rowsep-0" headers="doc__min_req__entry__1">100 µs</td>
+</tr>
+</tbody></table>
+</section>
+<section class="- topic/section section" data-ofbid="doc__section_udx_dgl_1nb" id="doc__section_udx_dgl_1nb"><h2 class="- topic/title title sectiontitle">Authors</h2>
+<p class="- topic/p p">[1] Simisa Simic</p>
+</section>
+</div>
 </article></main></div>
-                        
-                        
-                        
-                        
-                        
-                        
-                    </div>
-                    
-                        <nav role="navigation" id="wh_topic_toc" aria-label="On this page" class="col-lg-2 d-none d-lg-block navbar d-print-none"> 
-                            <div id="wh_topic_toc_content">
-		                        
-	                            <div class=" wh_topic_toc "><div class="wh_topic_label">On this page</div><ul><li class="section-item"><div class="section-title"><a href="#doc__section_bnk_str_1kb" data-tocid="doc__section_bnk_str_1kb">Introduction</a></div></li><li class="section-item"><div class="section-title"><a href="#doc__7s2pkWRry" data-tocid="doc__7s2pkWRry">Model description</a></div></li><li class="section-item"><div class="section-title"><a href="#doc__simulation" data-tocid="doc__simulation">Simulation</a></div></li><li class="section-item"><div class="section-title"><a href="#doc__section_bdn_cfl_1nb" data-tocid="doc__section_bdn_cfl_1nb">Test Automation</a></div></li><li class="section-item"><div class="section-title"><a href="#doc__OXhFSC7pG" data-tocid="doc__OXhFSC7pG">Example requirements</a></div></li><li class="section-item"><div class="section-title"><a href="#doc__section_udx_dgl_1nb" data-tocid="doc__section_udx_dgl_1nb">Authors</a></div></li></ul></div>
-	                        	
-                        	</div>
-                        </nav>
-                    
-                </div>
-            </div>
-            
-            
-            
-        </div> 
-        <footer class="navbar navbar-default wh_footer">
-  <div class=" footer-container mx-auto ">
-    <div style="text-align:center">Typhoon HIL Inc.<span id="year"> <a href="https://www.typhoon-hil.com">www.typhoon-hil.com</a></span></div>
-  </div>
+</div>
+<nav aria-label="On this page" class="col-lg-2 d-none d-lg-block navbar d-print-none" id="wh_topic_toc" role="navigation">
+<div id="wh_topic_toc_content">
+<div class="wh_topic_toc"><div class="wh_topic_label">On this page</div><ul><li class="section-item"><div class="section-title"><a data-tocid="doc__section_bnk_str_1kb" href="#doc__section_bnk_str_1kb">Introduction</a></div></li><li class="section-item"><div class="section-title"><a data-tocid="doc__7s2pkWRry" href="#doc__7s2pkWRry">Model description</a></div></li><li class="section-item"><div class="section-title"><a data-tocid="doc__simulation" href="#doc__simulation">Simulation</a></div></li><li class="section-item"><div class="section-title"><a data-tocid="doc__section_bdn_cfl_1nb" href="#doc__section_bdn_cfl_1nb">Test Automation</a></div></li><li class="section-item"><div class="section-title"><a data-tocid="doc__OXhFSC7pG" href="#doc__OXhFSC7pG">Example requirements</a></div></li><li class="section-item"><div class="section-title"><a data-tocid="doc__section_udx_dgl_1nb" href="#doc__section_udx_dgl_1nb">Authors</a></div></li></ul></div>
+</div>
+</nav>
+</div>
+</div>
+</div>
+<footer class="navbar navbar-default wh_footer">
+<div class="footer-container mx-auto">
+<div style="text-align:center">Typhoon HIL Inc.<span id="year"> <a href="https://www.typhoon-hil.com">www.typhoon-hil.com</a></span></div>
+</div>
 </footer>
-        
-        <div id="go2top" class="d-print-none">
-            <span class="oxy-icon oxy-icon-up"></span>
-        </div>
-        
-        <div id="modal_img_large" class="modal">
-            <span class="close oxy-icon oxy-icon-remove"></span>
-            <div id="modal_img_container"></div>
-            <div id="caption"></div>
-        </div>
-        
-        
-<script type="text/javascript" src="../../assets/script.js"> 
+<div class="d-print-none" id="go2top">
+<span class="oxy-icon oxy-icon-up"></span>
+</div>
+<div class="modal" id="modal_img_large">
+<span class="close oxy-icon oxy-icon-remove"></span>
+<div id="modal_img_container"></div>
+<div id="caption"></div>
+</div>
+<script src="../../assets/script.js" type="text/javascript">
 </script>
-
-        
-    </body>
+</body>
 </html>

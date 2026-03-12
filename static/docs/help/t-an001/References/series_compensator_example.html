@@ -1,129 +1,79 @@
-<!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en" data-whc_version="24.1">
-    <head><link rel="shortcut icon" href="../../favicon.ico"/><link rel="icon" href="../../favicon.ico"/><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><meta name="DC.rights.owner" content="(C) Copyright 2026"/><meta name="copyright" content="(C) Copyright 2026"/><meta name="generator" content="DITA-OT"/><meta name="DC.type" content="reference"/><meta name="description" content="Demonstration of a Series Compensator response to a fault, including MOV and bypass switch functionality."/><meta name="DC.relation" content="../../t-an001/concepts/microgrids.html"/><meta name="DC.format" content="HTML5"/><meta name="DC.identifier" content="doc"/>        
-      <title>Series Compensator example</title><!--  Generated with Oxygen version 24.1, build number 2022030800.  --><meta name="wh-path2root" content="../../"/><meta name="wh-toc-id" content="doc-d16877e528"/><meta name="wh-source-relpath" content="t-an001/References/series_compensator_example.dita"/><meta name="wh-out-relpath" content="t-an001/References/series_compensator_example.html"/>
-    <!-- Latest compiled and minified Bootstrap CSS -->
-    <link rel="stylesheet" type="text/css" href="../../oxygen-webhelp/lib/bootstrap/css/bootstrap.min.css"/>
-    
-    <link rel="stylesheet" href="../../oxygen-webhelp/lib/jquery-ui/jquery-ui.min.css"/>
-    
-    <!-- Template default styles  -->
-    <link rel="stylesheet" type="text/css" href="../../oxygen-webhelp/app/topic-page.css?buildId=2022030800"/>
-    
-    
-    <script src="../../oxygen-webhelp/lib/jquery/jquery-3.5.1.min.js"></script>
-    
-    <script data-main="../../oxygen-webhelp/app/topic-page.js" src="../../oxygen-webhelp/lib/requirejs/require.js"></script>
-<link rel="stylesheet" type="text/css" href="../../oxygen-webhelp/template/oxygen.css?buildId=2022030800"/><link rel="stylesheet" type="text/css" href="../../oxygen-webhelp/template/notes.css?buildId=2022030800"/><script type="text/javascript" src="../../Scripts/mml-svg.js"> 
-</script><link rel="stylesheet" type="text/css" href="../../assets/typhoon.css"/></head>
-
-    <body id="doc" class="wh_topic_page frmBody">
-        <a href="#wh_topic_body" class="sr-only sr-only-focusable">
+<!DOCTYPE html>
+<html data-whc_version="24.1" lang="en" xml:lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head><link href="../../favicon.ico" rel="shortcut icon"/><link href="../../favicon.ico" rel="icon"/><meta content="text/html; charset=utf-8" http-equiv="Content-Type"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="IE=edge" http-equiv="X-UA-Compatible"/><meta content="(C) Copyright 2026" name="DC.rights.owner"/><meta content="(C) Copyright 2026" name="copyright"/><meta content="DITA-OT" name="generator"/><meta content="reference" name="DC.type"/><meta content="Demonstration of a Series Compensator response to a fault, including MOV and bypass switch functionality." name="description"/><meta content="../../t-an001/concepts/microgrids.html" name="DC.relation"/><meta content="HTML5" name="DC.format"/><meta content="doc" name="DC.identifier"/>
+<title>Series Compensator example</title><!--  Generated with Oxygen version 24.1, build number 2022030800.  --><meta content="../../" name="wh-path2root"/><meta content="doc-d16877e528" name="wh-toc-id"/><meta content="t-an001/References/series_compensator_example.dita" name="wh-source-relpath"/><meta content="t-an001/References/series_compensator_example.html" name="wh-out-relpath"/>
+<!-- Latest compiled and minified Bootstrap CSS -->
+<link href="../../oxygen-webhelp/lib/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
+<link href="../../oxygen-webhelp/lib/jquery-ui/jquery-ui.min.css" rel="stylesheet"/>
+<!-- Template default styles  -->
+<link href="../../oxygen-webhelp/app/topic-page.css?buildId=2022030800" rel="stylesheet" type="text/css"/>
+<script src="../../oxygen-webhelp/lib/jquery/jquery-3.5.1.min.js"></script>
+<script data-main="../../oxygen-webhelp/app/topic-page.js" src="../../oxygen-webhelp/lib/requirejs/require.js"></script>
+<link href="../../oxygen-webhelp/template/oxygen.css?buildId=2022030800" rel="stylesheet" type="text/css"/><link href="../../oxygen-webhelp/template/notes.css?buildId=2022030800" rel="stylesheet" type="text/css"/><script src="../../Scripts/mml-svg.js" type="text/javascript">
+</script><link href="../../assets/typhoon.css" rel="stylesheet" type="text/css"/></head>
+<body class="wh_topic_page frmBody" id="doc">
+<a class="sr-only sr-only-focusable" href="#wh_topic_body">
             Jump to main content
         </a>
-        
-        
-        
-        
-        <header class="navbar navbar-default wh_header">
-    <div class="container-fluid">
-        <div class="wh_header_flex_container navbar-nav navbar-expand-md navbar-dark">
-            <div class="wh_logo_and_publication_title_container">
-                <div class="wh_logo_and_publication_title">
-                    
-                    <a href="https://www.typhoon-hil.com" class=" wh_logo d-none d-sm-block "><img src="../../logo.svg" alt="  Typhoon HIL Documentation  Version: 2026.1  "/></a>
-                    <div class=" wh_publication_title "><a href="../../index.html"><span class="booktitle">  <span class="ph mainbooktitle">Typhoon HIL Documentation</span>  <span class="ph booktitlealt">Version: 2026.1</span>  </span></a></div>
-                    
-                </div>
-                
-                <button type="button" data-target="#wh_top_menu_and_indexterms_link" id="wh_menu_mobile_button" data-toggle="collapse" class="navbar-toggler collapsed wh_toggle_button" aria-expanded="false" aria-label="Toggle menu" aria-controls="wh_top_menu_and_indexterms_link">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-            </div>
-
-            <div class="wh_top_menu_and_indexterms_link collapse navbar-collapse" id="wh_top_menu_and_indexterms_link">
-                
-                <nav class=" wh_top_menu " aria-label="Menu Container"><ul role="menubar" aria-label="Menu"><li role="menuitem" aria-haspopup="true" aria-expanded="false" class="has-children"><span id="tocId-d16877e21-mi" data-tocid="tocId-d16877e21" data-state="not-ready" class=" topicref application-notes"><span class="title"><a href="../../t-an001/concepts/application_notes_introduction.html">Typhoon HIL Application Notes</a></span></span></li><li role="menuitem" aria-haspopup="true" aria-expanded="false" class="has-children"><span id="tocId-d16877e737-mi" data-tocid="tocId-d16877e737" data-state="not-ready" class=" topicref software-manual"><span class="title"><a href="../../t-ug002/topics/software_manual_introduction.html">Typhoon HIL Software Manual</a></span></span></li><li role="menuitem" aria-haspopup="true" aria-expanded="false" class="has-children"><span id="tocId-d16877e7901-mi" data-tocid="tocId-d16877e7901" data-state="not-ready" class=" topicref hardware-manual"><span class="title"><a href="../../t-ug001/abstract/hardware_manual_introduction.html">Typhoon HIL Hardware Manual</a></span></span></li></ul></nav>
-                
-                
-            </div>
-        </div>
-    </div>
+<header class="navbar navbar-default wh_header">
+<div class="container-fluid">
+<div class="wh_header_flex_container navbar-nav navbar-expand-md navbar-dark">
+<div class="wh_logo_and_publication_title_container">
+<div class="wh_logo_and_publication_title">
+<a class="wh_logo d-none d-sm-block" href="../../../index.html"><img alt="  Typhoon HIL Documentation  Version: 2026.1  " src="../../logo.svg"/></a>
+<div class="wh_publication_title"><a href="../../index.html"><span class="booktitle"> <span class="ph mainbooktitle">Typhoon HIL Documentation</span> <span class="ph booktitlealt">Version: 2026.1</span> </span></a></div>
+</div>
+<button aria-controls="wh_top_menu_and_indexterms_link" aria-expanded="false" aria-label="Toggle menu" class="navbar-toggler collapsed wh_toggle_button" data-target="#wh_top_menu_and_indexterms_link" data-toggle="collapse" id="wh_menu_mobile_button" type="button">
+<span class="navbar-toggler-icon"></span>
+</button>
+</div>
+<div class="wh_top_menu_and_indexterms_link collapse navbar-collapse" id="wh_top_menu_and_indexterms_link">
+<nav aria-label="Menu Container" class="wh_top_menu"><ul aria-label="Menu" role="menubar"><li aria-expanded="false" aria-haspopup="true" class="has-children" role="menuitem"><span class="topicref application-notes" data-state="not-ready" data-tocid="tocId-d16877e21" id="tocId-d16877e21-mi"><span class="title"><a href="../../t-an001/concepts/application_notes_introduction.html">Typhoon HIL Application Notes</a></span></span></li><li aria-expanded="false" aria-haspopup="true" class="has-children" role="menuitem"><span class="topicref software-manual" data-state="not-ready" data-tocid="tocId-d16877e737" id="tocId-d16877e737-mi"><span class="title"><a href="../../t-ug002/topics/software_manual_introduction.html">Typhoon HIL Software Manual</a></span></span></li><li aria-expanded="false" aria-haspopup="true" class="has-children" role="menuitem"><span class="topicref hardware-manual" data-state="not-ready" data-tocid="tocId-d16877e7901" id="tocId-d16877e7901-mi"><span class="title"><a href="../../t-ug001/abstract/hardware_manual_introduction.html">Typhoon HIL Hardware Manual</a></span></span></li></ul></nav>
+</div>
+</div>
+</div>
 </header>
-        
-        
-         
-        
-        <div class=" wh_search_input navbar-form wh_topic_page_search search " role="form">
-            
-            
-            
-            <form id="searchForm" method="get" role="search" action="../../search.html"><div><input type="search" placeholder="Search " class="wh_search_textfield" id="textToSearch" name="searchQuery" aria-label="Search query" required="required"/><button type="submit" class="wh_search_button" aria-label="Search"><span class="search_input_text">Search</span></button></div></form>
-            
-            
-            
-        </div>
-        
-        <div class="container-fluid" id="wh_topic_container">
-            <div class="row">
-
-                <nav class="wh_tools d-print-none navbar-expand-md" aria-label="Tools">
-                    
-                    <div data-tooltip-position="bottom" class=" wh_breadcrumb "><ol class="d-print-none"><li><span class="home"><a href="../../index.html"><span>Home</span></a></span></li><li><div class="topicref application-notes"><div class="title"><a href="../../t-an001/concepts/application_notes_introduction.html">Typhoon HIL Application Notes</a></div></div></li><li><div class="topicref" data-id="doc"><div class="title"><a href="../../t-an001/concepts/microgrids.html">Microgrids</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">Rapid microgrid pre-commissioning and system integration. Microgrid controller RCP and   testing.</span></p></div></div></div></li><li class="active"><div class="topicref" data-id="doc"><div class="title"><a href="../../t-an001/References/series_compensator_example.html">Series Compensator example</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">Demonstration of a Series Compensator response to a fault,       including MOV and bypass switch functionality.</span></p></div></div></div></li></ol></div>
-                    
-                    
-                    
-                    <div class="wh_right_tools">
-                        <button class="wh_hide_highlight" aria-label="Toggle search highlights" title="Toggle search highlights"></button>
-                        <button class="webhelp_expand_collapse_sections" data-next-state="collapsed" aria-label="Collapse sections" title="Collapse sections"></button>
-                        
-                        
-                        
-                        
-                        <div class=" wh_print_link print d-none d-md-inline-block "><button onClick="window.print()" title="Print this page" aria-label="Print this page"></button></div>
-                        
-                        <button type="button" id="wh_toc_button" class="custom-toggler navbar-toggler collapsed wh_toggle_button navbar-light" aria-expanded="false" aria-label="Toggle publishing table of content" aria-controls="wh_publication_toc">
-                            <span class="navbar-toggler-icon"></span>
-                        </button>
-                    </div>
-                    
-                </nav>
-            </div>
-            
-            
-            
-            
-            <div class="wh_content_area">
-                <div class="row">
-                    
-                        <nav id="wh_publication_toc" class="col-lg-3 col-md-3 col-sm-12 d-md-block d-none d-print-none" aria-label="Table of Contents Container">
-                            <div id="wh_publication_toc_content">
-		                        
-                            	<div class=" wh_publication_toc " data-tooltip-position="right"><span class="expand-button-action-labels"><span id="button-expand-action" role="button" aria-label="Expand"></span><span id="button-collapse-action" role="button" aria-label="Collapse"></span><span id="button-pending-action" role="button" aria-label="Pending"></span></span><ul role="tree" aria-label="Table of Contents"><li role="treeitem" aria-expanded="true"><div data-tocid="tocId-d16877e21" class="topicref application-notes" data-state="expanded"><span role="button" tabindex="0" aria-labelledby="button-collapse-action tocId-d16877e21-link" class="wh-expand-btn"></span><div class="title"><a href="../../t-an001/concepts/application_notes_introduction.html" id="tocId-d16877e21-link">Typhoon HIL Application Notes</a></div></div><ul role="group" class="navbar-nav nav-list"><li role="treeitem"><div data-tocid="doc-d16877e25" class="topicref" data-id="doc" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../../t-an001/concepts/application_notes_introduction.html" id="doc-d16877e25-link">Application Notes Introduction</a><div class="wh-tooltip"><p class="shortdesc">Brief overview of the different categories of Application Notes</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="doc-d16877e36" class="topicref" data-id="doc" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action doc-d16877e36-link" class="wh-expand-btn"></span><div class="title"><a href="../../t-an001/concepts/grid_connected_converters.html" id="doc-d16877e36-link">Grid-connected converters</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">Grid-connected converter applications featuring various grid support    functionalities.</span></p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="doc-d16877e96" class="topicref" data-id="doc" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action doc-d16877e96-link" class="wh-expand-btn"></span><div class="title"><a href="../../t-an001/concepts/automotive.html" id="doc-d16877e96-link">Automotive</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">Electric cars and other automotive applications.</span></p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="doc-d16877e132" class="topicref" data-id="doc" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action doc-d16877e132-link" class="wh-expand-btn"></span><div class="title"><a href="../../t-an001/concepts/aerospace.html" id="doc-d16877e132-link">Aerospace</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">System-level and component-level aircraft applications.</span></p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="doc-d16877e168" class="topicref" data-id="doc" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action doc-d16877e168-link" class="wh-expand-btn"></span><div class="title"><a href="../../t-an001/concepts/battery_management_systems.html" id="doc-d16877e168-link">Battery management systems</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">Battery management system (BMS) examples</span></p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="doc-d16877e216" class="topicref" data-id="doc" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action doc-d16877e216-link" class="wh-expand-btn"></span><div class="title"><a href="../../t-an001/concepts/how-to_guides.html" id="doc-d16877e216-link">How-to Guides</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">Guides, tips, and tricks on various aspects of Typhoon HIL toolchain usage.</span></p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="doc-d16877e312" class="topicref" data-id="doc" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action doc-d16877e312-link" class="wh-expand-btn"></span><div class="title"><a href="../../t-an001/concepts/communication_protocols.html" id="doc-d16877e312-link">Communication Protocols</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">Interoperability. Cybersecurity. Modbus, Sunspec, IEC61850, IEEE    C37.118, DNP3, CAN, OPC UA, and more.</span></p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="doc-d16877e384" class="topicref" data-id="doc" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action doc-d16877e384-link" class="wh-expand-btn"></span><div class="title"><a href="../../t-an001/concepts/power_systems.html" id="doc-d16877e384-link">Power Systems</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">Power system simulation. Relay protection testing. Power flow tool integration and   co-simulation.</span></p></div></div></div></li><li role="treeitem" aria-expanded="true"><div data-tocid="doc-d16877e468" class="topicref" data-id="doc" data-state="expanded"><span role="button" tabindex="0" aria-labelledby="button-collapse-action doc-d16877e468-link" class="wh-expand-btn"></span><div class="title"><a href="../../t-an001/concepts/microgrids.html" id="doc-d16877e468-link">Microgrids</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">Rapid microgrid pre-commissioning and system integration. Microgrid controller RCP and   testing.</span></p></div></div></div><ul role="group" class="navbar-nav nav-list"><li role="treeitem"><div data-tocid="doc-d16877e480" class="topicref" data-id="doc" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../../t-an001/References/terrestrial_microgrid_(switching).html" id="doc-d16877e480-link">Plug-and-play microgrid library and testing of microgrid controller</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">Demonstration of the performance of both switching and average microgrid controller     components in the Microgrid Library</span></p></div></div></div></li><li role="treeitem"><div data-tocid="doc-d16877e492" class="topicref" data-id="doc" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../../t-an001/References/generic_pv_plant.html" id="doc-d16877e492-link">Generic PV plant</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">Description and demonstration of the capabilities of the Generic PV Plant   component</span></p></div></div></div></li><li role="treeitem"><div data-tocid="doc-d16877e504" class="topicref" data-id="doc" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../../t-an001/References/generic_battery.html" id="doc-d16877e504-link">Generic battery</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">Description and demonstration of the capabilities of the Generic Battery component</span></p></div></div></div></li><li role="treeitem"><div data-tocid="doc-d16877e516" class="topicref" data-id="doc" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../../t-an001/References/wind_farm_microgrid.html" id="doc-d16877e516-link">Microgrid powered by a wind farm</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">Microgrid operation of a mini wind farm, battery unit, large consumer area, and power system connection in both island and reconnection modes</span></p></div></div></div></li><li role="treeitem" class="active"><div data-tocid="doc-d16877e528" class="topicref" data-id="doc" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../../t-an001/References/series_compensator_example.html" id="doc-d16877e528-link">Series Compensator example</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">Demonstration of a Series Compensator response to a fault,       including MOV and bypass switch functionality.</span></p></div></div></div></li><li role="treeitem"><div data-tocid="doc-d16877e540" class="topicref" data-id="doc" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../../t-an001/References/switching_and_average_models_grid-connected_bat_inv.html" id="doc-d16877e540-link">Switching and average models of grid-connected battery inverter </a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">Performance comparison of the switching and average models of grid-connected battery     inverters available in Schematic Editor</span></p></div></div></div></li></ul></li><li role="treeitem" aria-expanded="false"><div data-tocid="doc-d16877e552" class="topicref" data-id="doc" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action doc-d16877e552-link" class="wh-expand-btn"></span><div class="title"><a href="../../t-an001/concepts/electrical_drives.html" id="doc-d16877e552-link">Electrical Drives</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">Converters coupled with high-fidelity electrical machine models for high performance   motor drive applications.</span></p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="doc-d16877e601" class="topicref" data-id="doc" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action doc-d16877e601-link" class="wh-expand-btn"></span><div class="title"><a href="../../t-an001/concepts/power_supplies.html" id="doc-d16877e601-link">Power Supplies</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">Linear and switching power supplies for industrial and laboratory   applications.</span></p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="doc-d16877e625" class="topicref" data-id="doc" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action doc-d16877e625-link" class="wh-expand-btn"></span><div class="title"><a href="../../t-an001/concepts/marine_power_systems.html" id="doc-d16877e625-link">Marine Power Systems</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">Hybrid propulsion, shipboard power management, offshore renewables, offshore oil and   gas platform power supplies. </span></p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="doc-d16877e649" class="topicref" data-id="doc" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action doc-d16877e649-link" class="wh-expand-btn"></span><div class="title"><a href="../../t-an001/concepts/power_quality.html" id="doc-d16877e649-link">Power Quality</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">Real-time power quality/harmonic analysis. Incorporate active filters and FACTS devices (STATCOM, DVR,   SVC).</span></p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="doc-d16877e685" class="topicref" data-id="doc" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action doc-d16877e685-link" class="wh-expand-btn"></span><div class="title"><a href="../../t-an001/concepts/railway.html" id="doc-d16877e685-link">Railway</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">System-level and component-level application examples for railway    (traction) equipment.</span></p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="doc-d16877e709" class="topicref" data-id="doc" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action doc-d16877e709-link" class="wh-expand-btn"></span><div class="title"><a href="../../t-an001/concepts/medical_devices.html" id="doc-d16877e709-link">Medical Devices</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">X-ray, MRI, ICD, pacemakers, defibrillators, emergency ventilators, ECG, EMG,   bioelectronics.</span></p></div></div></div></li></ul></li></ul></div>
-		                        
-                            </div>
-                        </nav>
-                    
-                    
-                    <div class="col-lg-7 col-md-9 col-sm-12" id="wh_topic_body">
-                        <button id="wh_close_publication_toc_button" class="close-toc-button d-none" aria-label="Toggle publishing table of content" aria-controls="wh_publication_toc" aria-expanded="true">
-                            <span class="close-toc-icon-container">
-                                <span class="close-toc-icon"></span>     
-                            </span>
-                        </button>
-                        <button id="wh_close_topic_toc_button" class="close-toc-button d-none" aria-label="Toggle topic table of content" aria-controls="wh_topic_toc" aria-expanded="true">
-                            <span class="close-toc-icon-container">
-                                <span class="close-toc-icon"></span>     
-                            </span>
-                        </button>
-                        
-                        <div class=" wh_topic_content body "><main role="main"><article role="article" aria-labelledby="ariaid-title1">
-  <h1 class="- topic/title title topictitle1" id="ariaid-title1">Series Compensator example</h1>
-  
-  <div class="- topic/body reference/refbody body refbody"><p class="- topic/shortdesc shortdesc"><span class="- topic/ph ph" id="doc__description">Demonstration of a Series Compensator response to a fault,
+<div class="wh_search_input navbar-form wh_topic_page_search search" role="form">
+<form action="../../search.html" id="searchForm" method="get" role="search"><div><input aria-label="Search query" class="wh_search_textfield" id="textToSearch" name="searchQuery" placeholder="Search " required="required" type="search"/><button aria-label="Search" class="wh_search_button" type="submit"><span class="search_input_text">Search</span></button></div></form>
+</div>
+<div class="container-fluid" id="wh_topic_container">
+<div class="row">
+<nav aria-label="Tools" class="wh_tools d-print-none navbar-expand-md">
+<div class="wh_breadcrumb" data-tooltip-position="bottom"><ol class="d-print-none"><li><span class="home"><a href="../../index.html"><span>Home</span></a></span></li><li><div class="topicref application-notes"><div class="title"><a href="../../t-an001/concepts/application_notes_introduction.html">Typhoon HIL Application Notes</a></div></div></li><li><div class="topicref" data-id="doc"><div class="title"><a href="../../t-an001/concepts/microgrids.html">Microgrids</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">Rapid microgrid pre-commissioning and system integration. Microgrid controller RCP and   testing.</span></p></div></div></div></li><li class="active"><div class="topicref" data-id="doc"><div class="title"><a href="../../t-an001/References/series_compensator_example.html">Series Compensator example</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">Demonstration of a Series Compensator response to a fault,       including MOV and bypass switch functionality.</span></p></div></div></div></li></ol></div>
+<div class="wh_right_tools">
+<button aria-label="Toggle search highlights" class="wh_hide_highlight" title="Toggle search highlights"></button>
+<button aria-label="Collapse sections" class="webhelp_expand_collapse_sections" data-next-state="collapsed" title="Collapse sections"></button>
+<div class="wh_print_link print d-none d-md-inline-block"><button aria-label="Print this page" onclick="window.print()" title="Print this page"></button></div>
+<button aria-controls="wh_publication_toc" aria-expanded="false" aria-label="Toggle publishing table of content" class="custom-toggler navbar-toggler collapsed wh_toggle_button navbar-light" id="wh_toc_button" type="button">
+<span class="navbar-toggler-icon"></span>
+</button>
+</div>
+</nav>
+</div>
+<div class="wh_content_area">
+<div class="row">
+<nav aria-label="Table of Contents Container" class="col-lg-3 col-md-3 col-sm-12 d-md-block d-none d-print-none" id="wh_publication_toc">
+<div id="wh_publication_toc_content">
+<div class="wh_publication_toc" data-tooltip-position="right"><span class="expand-button-action-labels"><span aria-label="Expand" id="button-expand-action" role="button"></span><span aria-label="Collapse" id="button-collapse-action" role="button"></span><span aria-label="Pending" id="button-pending-action" role="button"></span></span><ul aria-label="Table of Contents" role="tree"><li aria-expanded="true" role="treeitem"><div class="topicref application-notes" data-state="expanded" data-tocid="tocId-d16877e21"><span aria-labelledby="button-collapse-action tocId-d16877e21-link" class="wh-expand-btn" role="button" tabindex="0"></span><div class="title"><a href="../../t-an001/concepts/application_notes_introduction.html" id="tocId-d16877e21-link">Typhoon HIL Application Notes</a></div></div><ul class="navbar-nav nav-list" role="group"><li role="treeitem"><div class="topicref" data-id="doc" data-state="leaf" data-tocid="doc-d16877e25"><span class="wh-expand-btn" role="button"></span><div class="title"><a href="../../t-an001/concepts/application_notes_introduction.html" id="doc-d16877e25-link">Application Notes Introduction</a><div class="wh-tooltip"><p class="shortdesc">Brief overview of the different categories of Application Notes</p></div></div></div></li><li aria-expanded="false" role="treeitem"><div class="topicref" data-id="doc" data-state="not-ready" data-tocid="doc-d16877e36"><span aria-labelledby="button-expand-action doc-d16877e36-link" class="wh-expand-btn" role="button" tabindex="0"></span><div class="title"><a href="../../t-an001/concepts/grid_connected_converters.html" id="doc-d16877e36-link">Grid-connected converters</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">Grid-connected converter applications featuring various grid support    functionalities.</span></p></div></div></div></li><li aria-expanded="false" role="treeitem"><div class="topicref" data-id="doc" data-state="not-ready" data-tocid="doc-d16877e96"><span aria-labelledby="button-expand-action doc-d16877e96-link" class="wh-expand-btn" role="button" tabindex="0"></span><div class="title"><a href="../../t-an001/concepts/automotive.html" id="doc-d16877e96-link">Automotive</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">Electric cars and other automotive applications.</span></p></div></div></div></li><li aria-expanded="false" role="treeitem"><div class="topicref" data-id="doc" data-state="not-ready" data-tocid="doc-d16877e132"><span aria-labelledby="button-expand-action doc-d16877e132-link" class="wh-expand-btn" role="button" tabindex="0"></span><div class="title"><a href="../../t-an001/concepts/aerospace.html" id="doc-d16877e132-link">Aerospace</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">System-level and component-level aircraft applications.</span></p></div></div></div></li><li aria-expanded="false" role="treeitem"><div class="topicref" data-id="doc" data-state="not-ready" data-tocid="doc-d16877e168"><span aria-labelledby="button-expand-action doc-d16877e168-link" class="wh-expand-btn" role="button" tabindex="0"></span><div class="title"><a href="../../t-an001/concepts/battery_management_systems.html" id="doc-d16877e168-link">Battery management systems</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">Battery management system (BMS) examples</span></p></div></div></div></li><li aria-expanded="false" role="treeitem"><div class="topicref" data-id="doc" data-state="not-ready" data-tocid="doc-d16877e216"><span aria-labelledby="button-expand-action doc-d16877e216-link" class="wh-expand-btn" role="button" tabindex="0"></span><div class="title"><a href="../../t-an001/concepts/how-to_guides.html" id="doc-d16877e216-link">How-to Guides</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">Guides, tips, and tricks on various aspects of Typhoon HIL toolchain usage.</span></p></div></div></div></li><li aria-expanded="false" role="treeitem"><div class="topicref" data-id="doc" data-state="not-ready" data-tocid="doc-d16877e312"><span aria-labelledby="button-expand-action doc-d16877e312-link" class="wh-expand-btn" role="button" tabindex="0"></span><div class="title"><a href="../../t-an001/concepts/communication_protocols.html" id="doc-d16877e312-link">Communication Protocols</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">Interoperability. Cybersecurity. Modbus, Sunspec, IEC61850, IEEE    C37.118, DNP3, CAN, OPC UA, and more.</span></p></div></div></div></li><li aria-expanded="false" role="treeitem"><div class="topicref" data-id="doc" data-state="not-ready" data-tocid="doc-d16877e384"><span aria-labelledby="button-expand-action doc-d16877e384-link" class="wh-expand-btn" role="button" tabindex="0"></span><div class="title"><a href="../../t-an001/concepts/power_systems.html" id="doc-d16877e384-link">Power Systems</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">Power system simulation. Relay protection testing. Power flow tool integration and   co-simulation.</span></p></div></div></div></li><li aria-expanded="true" role="treeitem"><div class="topicref" data-id="doc" data-state="expanded" data-tocid="doc-d16877e468"><span aria-labelledby="button-collapse-action doc-d16877e468-link" class="wh-expand-btn" role="button" tabindex="0"></span><div class="title"><a href="../../t-an001/concepts/microgrids.html" id="doc-d16877e468-link">Microgrids</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">Rapid microgrid pre-commissioning and system integration. Microgrid controller RCP and   testing.</span></p></div></div></div><ul class="navbar-nav nav-list" role="group"><li role="treeitem"><div class="topicref" data-id="doc" data-state="leaf" data-tocid="doc-d16877e480"><span class="wh-expand-btn" role="button"></span><div class="title"><a href="../../t-an001/References/terrestrial_microgrid_(switching).html" id="doc-d16877e480-link">Plug-and-play microgrid library and testing of microgrid controller</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">Demonstration of the performance of both switching and average microgrid controller     components in the Microgrid Library</span></p></div></div></div></li><li role="treeitem"><div class="topicref" data-id="doc" data-state="leaf" data-tocid="doc-d16877e492"><span class="wh-expand-btn" role="button"></span><div class="title"><a href="../../t-an001/References/generic_pv_plant.html" id="doc-d16877e492-link">Generic PV plant</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">Description and demonstration of the capabilities of the Generic PV Plant   component</span></p></div></div></div></li><li role="treeitem"><div class="topicref" data-id="doc" data-state="leaf" data-tocid="doc-d16877e504"><span class="wh-expand-btn" role="button"></span><div class="title"><a href="../../t-an001/References/generic_battery.html" id="doc-d16877e504-link">Generic battery</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">Description and demonstration of the capabilities of the Generic Battery component</span></p></div></div></div></li><li role="treeitem"><div class="topicref" data-id="doc" data-state="leaf" data-tocid="doc-d16877e516"><span class="wh-expand-btn" role="button"></span><div class="title"><a href="../../t-an001/References/wind_farm_microgrid.html" id="doc-d16877e516-link">Microgrid powered by a wind farm</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">Microgrid operation of a mini wind farm, battery unit, large consumer area, and power system connection in both island and reconnection modes</span></p></div></div></div></li><li class="active" role="treeitem"><div class="topicref" data-id="doc" data-state="leaf" data-tocid="doc-d16877e528"><span class="wh-expand-btn" role="button"></span><div class="title"><a href="../../t-an001/References/series_compensator_example.html" id="doc-d16877e528-link">Series Compensator example</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">Demonstration of a Series Compensator response to a fault,       including MOV and bypass switch functionality.</span></p></div></div></div></li><li role="treeitem"><div class="topicref" data-id="doc" data-state="leaf" data-tocid="doc-d16877e540"><span class="wh-expand-btn" role="button"></span><div class="title"><a href="../../t-an001/References/switching_and_average_models_grid-connected_bat_inv.html" id="doc-d16877e540-link">Switching and average models of grid-connected battery inverter </a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">Performance comparison of the switching and average models of grid-connected battery     inverters available in Schematic Editor</span></p></div></div></div></li></ul></li><li aria-expanded="false" role="treeitem"><div class="topicref" data-id="doc" data-state="not-ready" data-tocid="doc-d16877e552"><span aria-labelledby="button-expand-action doc-d16877e552-link" class="wh-expand-btn" role="button" tabindex="0"></span><div class="title"><a href="../../t-an001/concepts/electrical_drives.html" id="doc-d16877e552-link">Electrical Drives</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">Converters coupled with high-fidelity electrical machine models for high performance   motor drive applications.</span></p></div></div></div></li><li aria-expanded="false" role="treeitem"><div class="topicref" data-id="doc" data-state="not-ready" data-tocid="doc-d16877e601"><span aria-labelledby="button-expand-action doc-d16877e601-link" class="wh-expand-btn" role="button" tabindex="0"></span><div class="title"><a href="../../t-an001/concepts/power_supplies.html" id="doc-d16877e601-link">Power Supplies</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">Linear and switching power supplies for industrial and laboratory   applications.</span></p></div></div></div></li><li aria-expanded="false" role="treeitem"><div class="topicref" data-id="doc" data-state="not-ready" data-tocid="doc-d16877e625"><span aria-labelledby="button-expand-action doc-d16877e625-link" class="wh-expand-btn" role="button" tabindex="0"></span><div class="title"><a href="../../t-an001/concepts/marine_power_systems.html" id="doc-d16877e625-link">Marine Power Systems</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">Hybrid propulsion, shipboard power management, offshore renewables, offshore oil and   gas platform power supplies. </span></p></div></div></div></li><li aria-expanded="false" role="treeitem"><div class="topicref" data-id="doc" data-state="not-ready" data-tocid="doc-d16877e649"><span aria-labelledby="button-expand-action doc-d16877e649-link" class="wh-expand-btn" role="button" tabindex="0"></span><div class="title"><a href="../../t-an001/concepts/power_quality.html" id="doc-d16877e649-link">Power Quality</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">Real-time power quality/harmonic analysis. Incorporate active filters and FACTS devices (STATCOM, DVR,   SVC).</span></p></div></div></div></li><li aria-expanded="false" role="treeitem"><div class="topicref" data-id="doc" data-state="not-ready" data-tocid="doc-d16877e685"><span aria-labelledby="button-expand-action doc-d16877e685-link" class="wh-expand-btn" role="button" tabindex="0"></span><div class="title"><a href="../../t-an001/concepts/railway.html" id="doc-d16877e685-link">Railway</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">System-level and component-level application examples for railway    (traction) equipment.</span></p></div></div></div></li><li aria-expanded="false" role="treeitem"><div class="topicref" data-id="doc" data-state="not-ready" data-tocid="doc-d16877e709"><span aria-labelledby="button-expand-action doc-d16877e709-link" class="wh-expand-btn" role="button" tabindex="0"></span><div class="title"><a href="../../t-an001/concepts/medical_devices.html" id="doc-d16877e709-link">Medical Devices</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">X-ray, MRI, ICD, pacemakers, defibrillators, emergency ventilators, ECG, EMG,   bioelectronics.</span></p></div></div></div></li></ul></li></ul></div>
+</div>
+</nav>
+<div class="col-lg-7 col-md-9 col-sm-12" id="wh_topic_body">
+<button aria-controls="wh_publication_toc" aria-expanded="true" aria-label="Toggle publishing table of content" class="close-toc-button d-none" id="wh_close_publication_toc_button">
+<span class="close-toc-icon-container">
+<span class="close-toc-icon"></span>
+</span>
+</button>
+<button aria-controls="wh_topic_toc" aria-expanded="true" aria-label="Toggle topic table of content" class="close-toc-button d-none" id="wh_close_topic_toc_button">
+<span class="close-toc-icon-container">
+<span class="close-toc-icon"></span>
+</span>
+</button>
+<div class="wh_topic_content body"><main role="main"><article aria-labelledby="ariaid-title1" role="article">
+<h1 class="- topic/title title topictitle1" id="ariaid-title1">Series Compensator example</h1>
+<div class="- topic/body reference/refbody body refbody"><p class="- topic/shortdesc shortdesc"><span class="- topic/ph ph" id="doc__description">Demonstration of a Series Compensator response to a fault,
       including MOV and bypass switch functionality.</span></p>
-    <section class="- topic/section section" id="doc__section_k2p_hzb_az" data-ofbid="doc__section_k2p_hzb_az"><h2 class="- topic/title title sectiontitle">Introduction</h2>
-      
-      <p class="- topic/p p">The use of series capacitance compensation in transmission lines considerably increases
+<section class="- topic/section section" data-ofbid="doc__section_k2p_hzb_az" id="doc__section_k2p_hzb_az"><h2 class="- topic/title title sectiontitle">Introduction</h2>
+<p class="- topic/p p">The use of series capacitance compensation in transmission lines considerably increases
         transfer capabilities and has proven to be an effective and economical strategy for
         maximizing the utility of transmission assets. System stability is also enhanced by reducing
         line impedance through the insertion of capacitive reactive power, which compensates for
@@ -137,26 +87,24 @@
         period of time that can cause cracking of the metal oxide disks [<a class="- topic/xref xref" href="#doc__section_qys_h4c_xtb">3</a>]. This example model consists of a
         500 kV 3-phase transmission line with series compensation and a time-define fault insertion
         mechanism.</p>
-      <p class="- topic/p p">The objective of this example is to show the MOV model protecting the capacitor bank by
+<p class="- topic/p p">The objective of this example is to show the MOV model protecting the capacitor bank by
         clamping overvoltage above a pre-defined limit and to show the operation of the bypass
         switch that takes the MOV out of the conductive state by changing the energy path, protecting the MOV.</p>
-    </section>
-    <section class="- topic/section section" id="doc__section_qys_h4s_xtb" data-ofbid="doc__section_qys_h4s_xtb"><h2 class="- topic/title title sectiontitle">Model description</h2>
-      
-      <p class="- topic/p p">The
+</section>
+<section class="- topic/section section" data-ofbid="doc__section_qys_h4s_xtb" id="doc__section_qys_h4s_xtb"><h2 class="- topic/title title sectiontitle">Model description</h2>
+<p class="- topic/p p">The
         model is comprised of the following elements, as shown in <a class="- topic/xref xref" href="#doc__fig_lrw_dvs_alb">Figure 1</a>:</p>
-      <ol class="- topic/ol ol" id="doc__ol_lc4_5c4_tvb" data-ofbid="doc__ol_lc4_5c4_tvb">
-        <li class="- topic/li li">Voltage source (Vs1)</li>
-        <li class="- topic/li li">Transmission line (RL Section 1)</li>
-        <li class="- topic/li li">Series compensation (3ph Series Compensator)</li>
-        <li class="- topic/li li">Load (Constant Impedance Load 4)</li>
-        <li class="- topic/li li">Fault (S4 + Switch Controller + R1) </li>
-      </ol>
-      <figure class="- topic/fig fig fignone" id="doc__fig_lrw_dvs_alb" data-ofbid="doc__fig_lrw_dvs_alb"><figcaption class="- topic/title title figcapcenter"><span class="figtitleprefix fig--title-label">Figure<span class="fig--title-label-number"> 1</span><span class="fig--title-label-punctuation">. </span></span><span class="fig--title">Example model (complete system)</span></figcaption>
-        
-        <div class="imagecenter break"><img class="- topic/image image imagecenter break" id="doc__image_e1b_b4a_45b" src="../Images/series_compensator_an_01.png"/></div>
-      </figure>
-      <p class="- topic/p p">The three-phase grid consists of a 500 kV / 60 Hz voltage source and of a transmission line
+<ol class="- topic/ol ol" data-ofbid="doc__ol_lc4_5c4_tvb" id="doc__ol_lc4_5c4_tvb">
+<li class="- topic/li li">Voltage source (Vs1)</li>
+<li class="- topic/li li">Transmission line (RL Section 1)</li>
+<li class="- topic/li li">Series compensation (3ph Series Compensator)</li>
+<li class="- topic/li li">Load (Constant Impedance Load 4)</li>
+<li class="- topic/li li">Fault (S4 + Switch Controller + R1) </li>
+</ol>
+<figure class="- topic/fig fig fignone" data-ofbid="doc__fig_lrw_dvs_alb" id="doc__fig_lrw_dvs_alb"><figcaption class="- topic/title title figcapcenter"><span class="figtitleprefix fig--title-label">Figure<span class="fig--title-label-number"> 1</span><span class="fig--title-label-punctuation">. </span></span><span class="fig--title">Example model (complete system)</span></figcaption>
+<div class="imagecenter break"><img class="- topic/image image imagecenter break" id="doc__image_e1b_b4a_45b" src="../Images/series_compensator_an_01.png"/></div>
+</figure>
+<p class="- topic/p p">The three-phase grid consists of a 500 kV / 60 Hz voltage source and of a transmission line
         modeled as an RL-section. The 3ph Series Compensator is a subsystem composed of one
         single-phase <a class="- topic/xref xref" href="../../t-ug002/References/series_compensator.html" title="Description of the Series Compensator component, for compensating physical inductance of transmission lines.">Series Compensator</a> component per
         phase of the electrical system, as shown in <a class="- topic/xref xref" href="#doc__fig_lrw_dva_alb">Figure 2</a>. Each single-phase Series Compensator component has an internal MOV model
@@ -165,35 +113,32 @@
         internal components, with a few modifications to allow for automatic change of the internal
         components' parameters. All settings can be configured on the top layer component
         properties.</p>
-      <figure class="- topic/fig fig fignone" id="doc__fig_lrw_dva_alb" data-ofbid="doc__fig_lrw_dva_alb"><figcaption class="- topic/title title figcapcenter"><span class="figtitleprefix fig--title-label">Figure<span class="fig--title-label-number"> 2</span><span class="fig--title-label-punctuation">. </span></span><span class="fig--title">The internal structure of the 3ph Series Compensator subsystem</span></figcaption>
-        
-        <div class="imagecenter break"><img class="- topic/image image imagecenter break" id="doc__image_e1s_b4a_45b" src="../Images/series_compensator_an_02.png" height="188" width="250"/></div>
-      </figure>
-      <p class="- topic/p p"><a class="- topic/xref xref" href="#doc__fig_lrw_dva_alb">Figure 2</a> shows the internal circuit
+<figure class="- topic/fig fig fignone" data-ofbid="doc__fig_lrw_dva_alb" id="doc__fig_lrw_dva_alb"><figcaption class="- topic/title title figcapcenter"><span class="figtitleprefix fig--title-label">Figure<span class="fig--title-label-number"> 2</span><span class="fig--title-label-punctuation">. </span></span><span class="fig--title">The internal structure of the 3ph Series Compensator subsystem</span></figcaption>
+<div class="imagecenter break"><img class="- topic/image image imagecenter break" height="188" id="doc__image_e1s_b4a_45b" src="../Images/series_compensator_an_02.png" width="250"/></div>
+</figure>
+<p class="- topic/p p"><a class="- topic/xref xref" href="#doc__fig_lrw_dva_alb">Figure 2</a> shows the internal circuit
         of the Series Compensator component. The MOV is modeled as a diode leg component, two
         controlled voltage sources, and two resistors. The diode leg ensures that the curve
           <em class="+ topic/ph hi-d/i ph i">Voltage x Current</em> behaves in a similar way to the real-life MOV device curve.
         Controlled voltage sources and resistors adjust the diode leg's conductance limits and the
         curve slopes, respectively. The resistors' values inside the MOV are automatically calculated
         based on the component parameters.</p>
-      <figure class="- topic/fig fig fignone" id="doc__fig_lrw_dva_ala" data-ofbid="doc__fig_lrw_dva_ala"><figcaption class="- topic/title title figcapcenter"><span class="figtitleprefix fig--title-label">Figure<span class="fig--title-label-number"> 3</span><span class="fig--title-label-punctuation">. </span></span><span class="fig--title">The internal structure of the Series Compensator component</span></figcaption>
-        
-        <div class="imagecenter break"><img class="- topic/image image imagecenter break" id="doc__image_e1s_b3a_45b" src="../Images/series_compensator_an_03.png"/></div>
-      </figure>
-      <p class="- topic/p p">The bypass breaker is implemented with a branch that contains the switch S connected in
+<figure class="- topic/fig fig fignone" data-ofbid="doc__fig_lrw_dva_ala" id="doc__fig_lrw_dva_ala"><figcaption class="- topic/title title figcapcenter"><span class="figtitleprefix fig--title-label">Figure<span class="fig--title-label-number"> 3</span><span class="fig--title-label-punctuation">. </span></span><span class="fig--title">The internal structure of the Series Compensator component</span></figcaption>
+<div class="imagecenter break"><img class="- topic/image image imagecenter break" id="doc__image_e1s_b3a_45b" src="../Images/series_compensator_an_03.png"/></div>
+</figure>
+<p class="- topic/p p">The bypass breaker is implemented with a branch that contains the switch S connected in
         series with the parallel association of the resistor R and the inductor L. The branch is
         connected in parallel to the MOV. An energy counter calculates the energy flow through the
         MOV and closes the switch S when the flow surpasses the defined energy threshold.</p>
-      <p class="- topic/p p">Finally, the load is modeled as a constant impedance and the fault insertion component is
+<p class="- topic/p p">Finally, the load is modeled as a constant impedance and the fault insertion component is
         modeled as a Switch Controller and a single-phase switch. The Switch Controller
         closes the switch at the specified simulation time, applying a single-phase short-circuit
         with fault resistance R1. The opening and closing time of the fault switch can be
         defined on the Switch Controller's mask, as shown in <a class="- topic/xref xref" href="#doc__fig_lrw_dva_alp">Figure 4</a>.</p>
-      <figure class="- topic/fig fig fignone" id="doc__fig_lrw_dva_alp" data-ofbid="doc__fig_lrw_dva_alp"><figcaption class="- topic/title title figcapcenter"><span class="figtitleprefix fig--title-label">Figure<span class="fig--title-label-number"> 4</span><span class="fig--title-label-punctuation">. </span></span><span class="fig--title">Switch Controller mask</span></figcaption>
-        
-        <div class="imagecenter break"><img class="- topic/image image imagecenter break" id="doc__image_e1s_b2a_46b" src="../Images/series_compensator_an_05.png"/></div>
-      </figure>
-      <p class="- topic/p p">Two core couplings were used in this example to distribute the resource usage between <span class="- topic/ph ph">3</span> different cores of the HIL device. The use of
+<figure class="- topic/fig fig fignone" data-ofbid="doc__fig_lrw_dva_alp" id="doc__fig_lrw_dva_alp"><figcaption class="- topic/title title figcapcenter"><span class="figtitleprefix fig--title-label">Figure<span class="fig--title-label-number"> 4</span><span class="fig--title-label-punctuation">. </span></span><span class="fig--title">Switch Controller mask</span></figcaption>
+<div class="imagecenter break"><img class="- topic/image image imagecenter break" id="doc__image_e1s_b2a_46b" src="../Images/series_compensator_an_05.png"/></div>
+</figure>
+<p class="- topic/p p">Two core couplings were used in this example to distribute the resource usage between <span class="- topic/ph ph">3</span> different cores of the HIL device. The use of
         three Series Compensator components in the same SPC requires a large matrix memory
         utilization. Therefore, the 3ph Series Compensator must be placed in a separated core with
         coupling components on each of its sides, as shown in <a class="- topic/xref xref" href="#doc__fig_lrw_dvs_alb">Figure 1</a>. The red side of a coupling
@@ -208,43 +153,38 @@
         pass the system ground reference to all cores. For more information regarding principles
         around core coupling placement, please refer to our <a class="- topic/xref xref" href="../../t-ug002/concepts/coupling_placement_IT.html" title="This section describes the coupling component placement procedure and provides some general rules and tips for successful partitioning.">dedicated documentation
           pages</a>.</p>
-    </section>
-    <section class="- topic/section section" id="doc__section_k2p_hzb_bz" data-ofbid="doc__section_k2p_hzb_bz"><h2 class="- topic/title title sectiontitle">Simulation</h2>
-      
-      <p class="- topic/p p">This application example comes with a pre-built SCADA panel (<a class="- topic/xref xref" href="#doc__scada">Figure 5</a>), composed of only a <span class="+ topic/ph ui-d/uicontrol ph uicontrol">Capture/Scope widget</span>, with the
+</section>
+<section class="- topic/section section" data-ofbid="doc__section_k2p_hzb_bz" id="doc__section_k2p_hzb_bz"><h2 class="- topic/title title sectiontitle">Simulation</h2>
+<p class="- topic/p p">This application example comes with a pre-built SCADA panel (<a class="- topic/xref xref" href="#doc__scada">Figure 5</a>), composed of only a <span class="+ topic/ph ui-d/uicontrol ph uicontrol">Capture/Scope widget</span>, with the
         signals of interest already configured on it (all referred to phase A). The panel can be
         freely customized to fit your needs.</p>
-      <figure class="- topic/fig fig fignone" id="doc__scada" data-ofbid="doc__scada"><figcaption class="- topic/title title figcap"><span class="figtitleprefix fig--title-label">Figure<span class="fig--title-label-number"> 5</span><span class="fig--title-label-punctuation">. </span></span><span class="fig--title">Series Compensator SCADA Panel</span></figcaption>
-        
-        <img class="- topic/image image" src="../Images/series_compensator_an_10.png"/>
-      </figure>
-      <p class="- topic/p p">The most significant events of the simulation last 1 second. A single line fault on phase A is set
+<figure class="- topic/fig fig fignone" data-ofbid="doc__scada" id="doc__scada"><figcaption class="- topic/title title figcap"><span class="figtitleprefix fig--title-label">Figure<span class="fig--title-label-number"> 5</span><span class="fig--title-label-punctuation">. </span></span><span class="fig--title">Series Compensator SCADA Panel</span></figcaption>
+<img class="- topic/image image" src="../Images/series_compensator_an_10.png"/>
+</figure>
+<p class="- topic/p p">The most significant events of the simulation last 1 second. A single line fault on phase A is set
         to happen in the simulation time between 30/60 and 60/60 seconds. The fault is applied when the
         Switch Controller closes the switch S4 at time 30/60 s. The controller clears the fault, opening S4,
         at time 60/60 s. The 3ph Series Compensator component is set
         to have a capacitor overvoltage threshold of around 160 kV and an energy limit
         flowing through the MOV of 20 MJ (<a class="- topic/xref xref" href="#doc__fig_lrw_dva_al1">Figure 6</a> and <a class="- topic/xref xref" href="#doc__fig_lrw_dva_al2">Figure 7</a>).
         These values are defined according to the MOV datasheet as demonstrated in [<a class="- topic/xref xref" href="#doc__section_qys_h4c_xtb">1</a>] and [<a class="- topic/xref xref" href="#doc__section_qys_h4c_xtb">4</a>].</p>
-      <figure class="- topic/fig fig fignone" id="doc__fig_lrw_dva_al1" data-ofbid="doc__fig_lrw_dva_al1"><figcaption class="- topic/title title figcapcenter"><span class="figtitleprefix fig--title-label">Figure<span class="fig--title-label-number"> 6</span><span class="fig--title-label-punctuation">. </span></span><span class="fig--title">Mask with the overvoltage threshold</span></figcaption>
-        
-        <div class="imagecenter break"><img class="- topic/image image imagecenter break" id="doc__image_e1s_b21_46b" src="../Images/series_compensator_an_06.png"/></div>
-      </figure>
-      <figure class="- topic/fig fig fignone" id="doc__fig_lrw_dva_al2" data-ofbid="doc__fig_lrw_dva_al2"><figcaption class="- topic/title title figcapcenter"><span class="figtitleprefix fig--title-label">Figure<span class="fig--title-label-number"> 7</span><span class="fig--title-label-punctuation">. </span></span><span class="fig--title">Mask with bypass switch energy limit</span></figcaption>
-        
-        <div class="imagecenter break"><img class="- topic/image image imagecenter break" id="doc__image_e1s_b22_46b" src="../Images/series_compensator_an_07.png"/></div>
-      </figure>
-      <p class="- topic/p p">The first and second windows of the Scope widget show the voltage and the
+<figure class="- topic/fig fig fignone" data-ofbid="doc__fig_lrw_dva_al1" id="doc__fig_lrw_dva_al1"><figcaption class="- topic/title title figcapcenter"><span class="figtitleprefix fig--title-label">Figure<span class="fig--title-label-number"> 6</span><span class="fig--title-label-punctuation">. </span></span><span class="fig--title">Mask with the overvoltage threshold</span></figcaption>
+<div class="imagecenter break"><img class="- topic/image image imagecenter break" id="doc__image_e1s_b21_46b" src="../Images/series_compensator_an_06.png"/></div>
+</figure>
+<figure class="- topic/fig fig fignone" data-ofbid="doc__fig_lrw_dva_al2" id="doc__fig_lrw_dva_al2"><figcaption class="- topic/title title figcapcenter"><span class="figtitleprefix fig--title-label">Figure<span class="fig--title-label-number"> 7</span><span class="fig--title-label-punctuation">. </span></span><span class="fig--title">Mask with bypass switch energy limit</span></figcaption>
+<div class="imagecenter break"><img class="- topic/image image imagecenter break" id="doc__image_e1s_b22_46b" src="../Images/series_compensator_an_07.png"/></div>
+</figure>
+<p class="- topic/p p">The first and second windows of the Scope widget show the voltage and the
         current, respectively, on the MOV during the simulation. The third window shows two signals:
         the current that flows on the capacitor and on the bypass switch. The fourth window shows
         the energy that flows through the MOV. To capture the planned events of the simulation, it
         is necessary to click the "Force" button of the capture/scope widget before starting the
         simulation, since no automatic trigger is configured. The simulation results are shown in
           <a class="- topic/xref xref" href="#doc__fig_lrw_dva_al3">Figure 8</a>.</p>
-      <figure class="- topic/fig fig fignone" id="doc__fig_lrw_dva_al3" data-ofbid="doc__fig_lrw_dva_al3"><figcaption class="- topic/title title figcapcenter"><span class="figtitleprefix fig--title-label">Figure<span class="fig--title-label-number"> 8</span><span class="fig--title-label-punctuation">. </span></span><span class="fig--title">Simulation results</span></figcaption>
-        
-        <div class="imagecenter break"><img class="- topic/image image imagecenter break" id="doc__image_e1s_b12_46b" src="../Images/series_compensator_an_08.png"/></div>
-      </figure>
-      <p class="- topic/p p"><a class="- topic/xref xref" href="#doc__fig_lrw_dva_bl4">Figure 9</a> shows the results with a zoom
+<figure class="- topic/fig fig fignone" data-ofbid="doc__fig_lrw_dva_al3" id="doc__fig_lrw_dva_al3"><figcaption class="- topic/title title figcapcenter"><span class="figtitleprefix fig--title-label">Figure<span class="fig--title-label-number"> 8</span><span class="fig--title-label-punctuation">. </span></span><span class="fig--title">Simulation results</span></figcaption>
+<div class="imagecenter break"><img class="- topic/image image imagecenter break" id="doc__image_e1s_b12_46b" src="../Images/series_compensator_an_08.png"/></div>
+</figure>
+<p class="- topic/p p"><a class="- topic/xref xref" href="#doc__fig_lrw_dva_bl4">Figure 9</a> shows the results with a zoom
         on the simulation main event, with a cursor positioned to measure the voltage level
         of viewport 1. Note that the voltage clamp is in accordance to the defined voltage
         threshold of the 3ph Series Compensator, as shown in <a class="- topic/xref xref" href="#doc__fig_lrw_dva_bl4">Figure 9</a>. On the signals shown in
@@ -252,142 +192,116 @@
         are complementary, confirming that the MOV works as expected. In viewports 3 and 4 of
           <a class="- topic/xref xref" href="#doc__fig_lrw_dva_al3">Figure 8</a>, it is also possible to
         verify that the bypass switch closed when the energy level reached 20 MJ. </p>
-      <figure class="- topic/fig fig fignone" id="doc__fig_lrw_dva_bl4" data-ofbid="doc__fig_lrw_dva_bl4"><figcaption class="- topic/title title figcapcenter"><span class="figtitleprefix fig--title-label">Figure<span class="fig--title-label-number"> 9</span><span class="fig--title-label-punctuation">. </span></span><span class="fig--title">Simulation results with zoom</span></figcaption>
-        
-        <div class="imagecenter break"><img class="- topic/image image imagecenter break" id="doc__image_eas_b12_46b" src="../Images/series_compensator_an_09.png"/></div>
-      </figure>
-    </section>
-    
-    <section class="- topic/section section" id="doc__section_czt_r4m_blbb1" data-ofbid="doc__section_czt_r4m_blbb1"><h2 class="- topic/title title sectiontitle"><span class="- topic/ph ph" id="doc__an_title_test-automation">Test Automation</span></h2>
-      
-      <p class="- topic/p p">We don’t have a test automation for this example yet. <a class="- topic/xref xref" href="https://subscription.typhoon-hil.com/" target="_blank" rel="external noopener">Let us know</a> if you wish to
+<figure class="- topic/fig fig fignone" data-ofbid="doc__fig_lrw_dva_bl4" id="doc__fig_lrw_dva_bl4"><figcaption class="- topic/title title figcapcenter"><span class="figtitleprefix fig--title-label">Figure<span class="fig--title-label-number"> 9</span><span class="fig--title-label-punctuation">. </span></span><span class="fig--title">Simulation results with zoom</span></figcaption>
+<div class="imagecenter break"><img class="- topic/image image imagecenter break" id="doc__image_eas_b12_46b" src="../Images/series_compensator_an_09.png"/></div>
+</figure>
+</section>
+<section class="- topic/section section" data-ofbid="doc__section_czt_r4m_blbb1" id="doc__section_czt_r4m_blbb1"><h2 class="- topic/title title sectiontitle"><span class="- topic/ph ph" id="doc__an_title_test-automation">Test Automation</span></h2>
+<p class="- topic/p p">We don’t have a test automation for this example yet. <a class="- topic/xref xref" href="https://subscription.typhoon-hil.com/" rel="external noopener" target="_blank">Let us know</a> if you wish to
         contribute and we will gladly have you signed on the application note!</p>
-    </section>
-    <section class="- topic/section section" id="doc__example_requirements" data-ofbid="doc__example_requirements"><h2 class="- topic/title title sectiontitle">Example requirements</h2>
-      
-      <p class="- topic/p p"><a class="- topic/xref xref" href="#doc__min_req">Table 1</a> provides detailed information about the file locations and hardware requirements 
+</section>
+<section class="- topic/section section" data-ofbid="doc__example_requirements" id="doc__example_requirements"><h2 class="- topic/title title sectiontitle">Example requirements</h2>
+<p class="- topic/p p"><a class="- topic/xref xref" href="#doc__min_req">Table 1</a> provides detailed information about the file locations and hardware requirements 
         for running the model in real-time, followed by the HIL device resource utilization when running the model using 
         this minimal hardware configuration. This information is provided to help you with running and 
         customizing the model as you see fit.</p>
-      <table class="- topic/table table frame-all" id="doc__min_req" data-ofbid="doc__min_req" data-cols="2"><caption class="- topic/title title tablecap" data-caption-side="top" data-is-repeated="true"><span class="table--title-label">Table<span class="table--title-label-number"> 1</span><span class="table--title-label-punctuation">. </span></span><span class="table--title"><span class="- topic/ph ph" id="doc__an_min-req">Minimum requirements</span></span></caption><colgroup><col style="width:50%"/><col style="width:50%"/></colgroup><thead class="- topic/thead thead">
-            <tr class="- topic/row">
-              <th class="- topic/entry entry align-center colsep-0 rowsep-1" id="doc__min_req__entry__1" colspan="2">Files</th>
-            </tr>
-          </thead><tbody class="- topic/tbody tbody">
-            <tr class="- topic/row">
-              <td class="- topic/entry entry align-center colsep-1 rowsep-1" headers="doc__min_req__entry__1"><span class="- topic/ph ph" id="doc__an_min-req_TH-files">Typhoon HIL files</span></td>
-              <td class="- topic/entry entry align-center colsep-0 rowsep-1" headers="doc__min_req__entry__1"><p class="- topic/p p"><em class="+ topic/ph hi-d/i ph i">examples\models\microgrid\FACTS</em></p>
-                <p class="- topic/p p">series compensator example.tse</p>
-                <p class="- topic/p p">series compensator example.cus</p></td>
-            </tr>
-            <tr class="- topic/row">
-              <td class="- topic/entry entry align-center colsep-0 rowsep-1" headers="doc__min_req__entry__1" colspan="2"><strong class="+ topic/ph hi-d/b ph b">Minimum hardware requirements</strong></td>
-            </tr>
-            <tr class="- topic/row">
-              <td class="- topic/entry entry align-center colsep-1 rowsep-1" headers="doc__min_req__entry__1"><span class="- topic/ph ph" id="doc__an_min-req_num-devices">No. of HIL devices</span></td>
-              <td class="- topic/entry entry align-center colsep-0 rowsep-1" headers="doc__min_req__entry__1"><span class="- topic/ph ph" id="doc__num_devices">1</span></td>
-            </tr>
-            <tr class="- topic/row">
-              <td class="- topic/entry entry align-center colsep-1 rowsep-1" headers="doc__min_req__entry__1"><span class="- topic/ph ph" id="doc__an_min-req_model-num">HIL device model</span></td>
-              <td class="- topic/entry entry align-center colsep-0 rowsep-1" headers="doc__min_req__entry__1"><span class="- topic/ph ph" id="doc__type_devices">HIL604</span></td>
-            </tr>
-            <tr class="- topic/row">
-              <td class="- topic/entry entry align-center colsep-1 rowsep-1" headers="doc__min_req__entry__1"><u class="+ topic/ph hi-d/u ph u"><a class="- topic/xref xref" href="../../t-ug002/concepts/device_manager.html" title="Device Manager is used to create, manipulate, and activate HIL device setups.">Device configuration</a></u></td>
-              <td class="- topic/entry entry align-center colsep-0 rowsep-1" headers="doc__min_req__entry__1"><span class="- topic/ph ph" id="doc__num_config">4</span></td>
-            </tr>
-            <tr class="- topic/row">
-              <td class="- topic/entry entry align-center colsep-0 rowsep-1" headers="doc__min_req__entry__1" colspan="2"><strong class="+ topic/ph hi-d/b ph b">HIL device resource utilization</strong></td>
-            </tr>
-            <tr class="- topic/row">
-              <td class="- topic/entry entry align-center colsep-1 rowsep-1" headers="doc__min_req__entry__1"><span class="- topic/ph ph" id="doc__an_res-util_num-cores">No. of processing cores</span></td>
-              <td class="- topic/entry entry align-center colsep-0 rowsep-1" headers="doc__min_req__entry__1"><span class="- topic/ph ph" id="doc__num_cores">3</span></td>
-            </tr>
-            <tr class="- topic/row">
-              <td class="- topic/entry entry align-center colsep-1 rowsep-1" headers="doc__min_req__entry__1"><span class="- topic/ph ph" id="doc__an_res-util_max-memory">Max. matrix memory utilization</span></td>
-              <td class="- topic/entry entry align-center colsep-0 rowsep-1" headers="doc__min_req__entry__1"><p class="- topic/p p">54.72% (core0)</p><p class="- topic/p p">0.11% (core1)</p><p class="- topic/p p">0.11% (core2)</p></td>
-            </tr>
-            <tr class="- topic/row">
-              <td class="- topic/entry entry align-center colsep-1 rowsep-1" headers="doc__min_req__entry__1"><span class="- topic/ph ph" id="doc__an_res-util_max-time">Max. time slot utilization</span></td>
-              <td class="- topic/entry entry align-center colsep-0 rowsep-1" headers="doc__min_req__entry__1"><p class="- topic/p p">4.56% (core0)</p><p class="- topic/p p">2.62% (core1)</p><p class="- topic/p p">2.06% (core2)</p></td>
-            </tr>
-            <tr class="- topic/row">
-              <td class="- topic/entry entry align-center colsep-1 rowsep-1" headers="doc__min_req__entry__1"><span class="- topic/ph ph" id="doc__an_res-util_sim-step">Simulation step, electrical</span></td>
-              <td class="- topic/entry entry align-center colsep-0 rowsep-1" headers="doc__min_req__entry__1">10 µs</td>
-            </tr>
-            <tr class="- topic/row">
-              <td class="- topic/entry entry align-center colsep-1 rowsep-0" headers="doc__min_req__entry__1"><span class="- topic/ph ph" id="doc__an_res-util_exec-rate">Execution rate, signal processing</span></td>
-              <td class="- topic/entry entry align-center colsep-0 rowsep-0" headers="doc__min_req__entry__1">100 µs</td>
-            </tr>
-          </tbody></table>
-    </section>
-    <section class="- topic/section section" id="doc__section_qys_h4c_xtb" data-ofbid="doc__section_qys_h4c_xtb"><h2 class="- topic/title title sectiontitle">References</h2>
-      
-      <p class="- topic/p p">[1] O. V. Sivov, H. A. Abdelsalam and E. B. Makram, "Operation of MOV-protected series
+<table class="- topic/table table frame-all" data-cols="2" data-ofbid="doc__min_req" id="doc__min_req"><caption class="- topic/title title tablecap" data-caption-side="top" data-is-repeated="true"><span class="table--title-label">Table<span class="table--title-label-number"> 1</span><span class="table--title-label-punctuation">. </span></span><span class="table--title"><span class="- topic/ph ph" id="doc__an_min-req">Minimum requirements</span></span></caption><colgroup><col style="width:50%"/><col style="width:50%"/></colgroup><thead class="- topic/thead thead">
+<tr class="- topic/row">
+<th class="- topic/entry entry align-center colsep-0 rowsep-1" colspan="2" id="doc__min_req__entry__1">Files</th>
+</tr>
+</thead><tbody class="- topic/tbody tbody">
+<tr class="- topic/row">
+<td class="- topic/entry entry align-center colsep-1 rowsep-1" headers="doc__min_req__entry__1"><span class="- topic/ph ph" id="doc__an_min-req_TH-files">Typhoon HIL files</span></td>
+<td class="- topic/entry entry align-center colsep-0 rowsep-1" headers="doc__min_req__entry__1"><p class="- topic/p p"><em class="+ topic/ph hi-d/i ph i">examples\models\microgrid\FACTS</em></p>
+<p class="- topic/p p">series compensator example.tse</p>
+<p class="- topic/p p">series compensator example.cus</p></td>
+</tr>
+<tr class="- topic/row">
+<td class="- topic/entry entry align-center colsep-0 rowsep-1" colspan="2" headers="doc__min_req__entry__1"><strong class="+ topic/ph hi-d/b ph b">Minimum hardware requirements</strong></td>
+</tr>
+<tr class="- topic/row">
+<td class="- topic/entry entry align-center colsep-1 rowsep-1" headers="doc__min_req__entry__1"><span class="- topic/ph ph" id="doc__an_min-req_num-devices">No. of HIL devices</span></td>
+<td class="- topic/entry entry align-center colsep-0 rowsep-1" headers="doc__min_req__entry__1"><span class="- topic/ph ph" id="doc__num_devices">1</span></td>
+</tr>
+<tr class="- topic/row">
+<td class="- topic/entry entry align-center colsep-1 rowsep-1" headers="doc__min_req__entry__1"><span class="- topic/ph ph" id="doc__an_min-req_model-num">HIL device model</span></td>
+<td class="- topic/entry entry align-center colsep-0 rowsep-1" headers="doc__min_req__entry__1"><span class="- topic/ph ph" id="doc__type_devices">HIL604</span></td>
+</tr>
+<tr class="- topic/row">
+<td class="- topic/entry entry align-center colsep-1 rowsep-1" headers="doc__min_req__entry__1"><u class="+ topic/ph hi-d/u ph u"><a class="- topic/xref xref" href="../../t-ug002/concepts/device_manager.html" title="Device Manager is used to create, manipulate, and activate HIL device setups.">Device configuration</a></u></td>
+<td class="- topic/entry entry align-center colsep-0 rowsep-1" headers="doc__min_req__entry__1"><span class="- topic/ph ph" id="doc__num_config">4</span></td>
+</tr>
+<tr class="- topic/row">
+<td class="- topic/entry entry align-center colsep-0 rowsep-1" colspan="2" headers="doc__min_req__entry__1"><strong class="+ topic/ph hi-d/b ph b">HIL device resource utilization</strong></td>
+</tr>
+<tr class="- topic/row">
+<td class="- topic/entry entry align-center colsep-1 rowsep-1" headers="doc__min_req__entry__1"><span class="- topic/ph ph" id="doc__an_res-util_num-cores">No. of processing cores</span></td>
+<td class="- topic/entry entry align-center colsep-0 rowsep-1" headers="doc__min_req__entry__1"><span class="- topic/ph ph" id="doc__num_cores">3</span></td>
+</tr>
+<tr class="- topic/row">
+<td class="- topic/entry entry align-center colsep-1 rowsep-1" headers="doc__min_req__entry__1"><span class="- topic/ph ph" id="doc__an_res-util_max-memory">Max. matrix memory utilization</span></td>
+<td class="- topic/entry entry align-center colsep-0 rowsep-1" headers="doc__min_req__entry__1"><p class="- topic/p p">54.72% (core0)</p><p class="- topic/p p">0.11% (core1)</p><p class="- topic/p p">0.11% (core2)</p></td>
+</tr>
+<tr class="- topic/row">
+<td class="- topic/entry entry align-center colsep-1 rowsep-1" headers="doc__min_req__entry__1"><span class="- topic/ph ph" id="doc__an_res-util_max-time">Max. time slot utilization</span></td>
+<td class="- topic/entry entry align-center colsep-0 rowsep-1" headers="doc__min_req__entry__1"><p class="- topic/p p">4.56% (core0)</p><p class="- topic/p p">2.62% (core1)</p><p class="- topic/p p">2.06% (core2)</p></td>
+</tr>
+<tr class="- topic/row">
+<td class="- topic/entry entry align-center colsep-1 rowsep-1" headers="doc__min_req__entry__1"><span class="- topic/ph ph" id="doc__an_res-util_sim-step">Simulation step, electrical</span></td>
+<td class="- topic/entry entry align-center colsep-0 rowsep-1" headers="doc__min_req__entry__1">10 µs</td>
+</tr>
+<tr class="- topic/row">
+<td class="- topic/entry entry align-center colsep-1 rowsep-0" headers="doc__min_req__entry__1"><span class="- topic/ph ph" id="doc__an_res-util_exec-rate">Execution rate, signal processing</span></td>
+<td class="- topic/entry entry align-center colsep-0 rowsep-0" headers="doc__min_req__entry__1">100 µs</td>
+</tr>
+</tbody></table>
+</section>
+<section class="- topic/section section" data-ofbid="doc__section_qys_h4c_xtb" id="doc__section_qys_h4c_xtb"><h2 class="- topic/title title sectiontitle">References</h2>
+<p class="- topic/p p">[1] O. V. Sivov, H. A. Abdelsalam and E. B. Makram, "Operation of MOV-protected series
         compensator with wind power during faults," <em class="+ topic/ph hi-d/i ph i">2015 North American Power Symposium
           (NAPS)</em>, 2015, pp. 1-6, doi: 10.1109/NAPS.2015.7335164. Retrieved from
         https://ieeexplore.ieee.org/document/7335164</p>
-      <p class="- topic/p p">[2] D. L. Goldsworthy, "A Linearized Model for Mov-Protected Series Capacitors," in <em class="+ topic/ph hi-d/i ph i">IEEE
+<p class="- topic/p p">[2] D. L. Goldsworthy, "A Linearized Model for Mov-Protected Series Capacitors," in <em class="+ topic/ph hi-d/i ph i">IEEE
           Transactions on Power Systems</em>, vol. 2, no. 4, pp. 953-957, Nov. 1987, doi:
         10.1109/TPWRS.1987.4335284. Retrieved from https://ieeexplore.ieee.org/document/4335284</p>
-      <p class="- topic/p p">[3] "IEEE Guide for Protective Relay Application to Transmission-Line Series Capacitor
+<p class="- topic/p p">[3] "IEEE Guide for Protective Relay Application to Transmission-Line Series Capacitor
         Banks," in <em class="+ topic/ph hi-d/i ph i">IEEE Std C37.116-2018 (Revision of IEEE Std C37.116-2007)</em>, vol., no.,
         pp.1-88, 19 Oct. 2018, doi: 10.1109/IEEESTD.2018.8497106. Retrieved from
         https://ieeexplore.ieee.org/document/8497106</p>
-      <p class="- topic/p p">[4] Nekoubin, Abdolamir. "Simulation of series compensated transmission lines protected
+<p class="- topic/p p">[4] Nekoubin, Abdolamir. "Simulation of series compensated transmission lines protected
         with mov." <em class="+ topic/ph hi-d/i ph i">World Academy of Science, Engineering and Technology 58 (2011)</em>:
         1002-1006.</p>
-    </section>
-    <section class="- topic/section section" id="doc__section_wys_h4c_xtb" data-ofbid="doc__section_wys_h4c_xtb"><h2 class="- topic/title title sectiontitle">Authors</h2>
-      
-      <ol class="- topic/ol ol">
-        <li class="- topic/li li">Jose Octavio Cesario Pereira Pinto</li>
-      </ol>
-    </section>
-    
-  </div>
+</section>
+<section class="- topic/section section" data-ofbid="doc__section_wys_h4c_xtb" id="doc__section_wys_h4c_xtb"><h2 class="- topic/title title sectiontitle">Authors</h2>
+<ol class="- topic/ol ol">
+<li class="- topic/li li">Jose Octavio Cesario Pereira Pinto</li>
+</ol>
+</section>
+</div>
 </article></main></div>
-                        
-                        
-                        
-                        
-                        
-                        
-                    </div>
-                    
-                        <nav role="navigation" id="wh_topic_toc" aria-label="On this page" class="col-lg-2 d-none d-lg-block navbar d-print-none"> 
-                            <div id="wh_topic_toc_content">
-		                        
-	                            <div class=" wh_topic_toc "><div class="wh_topic_label">On this page</div><ul><li class="section-item"><div class="section-title"><a href="#doc__section_k2p_hzb_az" data-tocid="doc__section_k2p_hzb_az">Introduction</a></div></li><li class="section-item"><div class="section-title"><a href="#doc__section_qys_h4s_xtb" data-tocid="doc__section_qys_h4s_xtb">Model description</a></div></li><li class="section-item"><div class="section-title"><a href="#doc__section_k2p_hzb_bz" data-tocid="doc__section_k2p_hzb_bz">Simulation</a></div></li><li class="section-item"><div class="section-title"><a href="#doc__section_czt_r4m_blbb1" data-tocid="doc__section_czt_r4m_blbb1"><span class="- topic/ph ph" id="doc__an_title_test-automation">Test Automation</span></a></div></li><li class="section-item"><div class="section-title"><a href="#doc__example_requirements" data-tocid="doc__example_requirements">Example requirements</a></div></li><li class="section-item"><div class="section-title"><a href="#doc__section_qys_h4c_xtb" data-tocid="doc__section_qys_h4c_xtb">References</a></div></li><li class="section-item"><div class="section-title"><a href="#doc__section_wys_h4c_xtb" data-tocid="doc__section_wys_h4c_xtb">Authors</a></div></li></ul></div>
-	                        	
-                        	</div>
-                        </nav>
-                    
-                </div>
-            </div>
-            
-            
-            
-        </div> 
-        <footer class="navbar navbar-default wh_footer">
-  <div class=" footer-container mx-auto ">
-    <div style="text-align:center">Typhoon HIL Inc.<span id="year"> <a href="https://www.typhoon-hil.com">www.typhoon-hil.com</a></span></div>
-  </div>
+</div>
+<nav aria-label="On this page" class="col-lg-2 d-none d-lg-block navbar d-print-none" id="wh_topic_toc" role="navigation">
+<div id="wh_topic_toc_content">
+<div class="wh_topic_toc"><div class="wh_topic_label">On this page</div><ul><li class="section-item"><div class="section-title"><a data-tocid="doc__section_k2p_hzb_az" href="#doc__section_k2p_hzb_az">Introduction</a></div></li><li class="section-item"><div class="section-title"><a data-tocid="doc__section_qys_h4s_xtb" href="#doc__section_qys_h4s_xtb">Model description</a></div></li><li class="section-item"><div class="section-title"><a data-tocid="doc__section_k2p_hzb_bz" href="#doc__section_k2p_hzb_bz">Simulation</a></div></li><li class="section-item"><div class="section-title"><a data-tocid="doc__section_czt_r4m_blbb1" href="#doc__section_czt_r4m_blbb1"><span class="- topic/ph ph" id="doc__an_title_test-automation">Test Automation</span></a></div></li><li class="section-item"><div class="section-title"><a data-tocid="doc__example_requirements" href="#doc__example_requirements">Example requirements</a></div></li><li class="section-item"><div class="section-title"><a data-tocid="doc__section_qys_h4c_xtb" href="#doc__section_qys_h4c_xtb">References</a></div></li><li class="section-item"><div class="section-title"><a data-tocid="doc__section_wys_h4c_xtb" href="#doc__section_wys_h4c_xtb">Authors</a></div></li></ul></div>
+</div>
+</nav>
+</div>
+</div>
+</div>
+<footer class="navbar navbar-default wh_footer">
+<div class="footer-container mx-auto">
+<div style="text-align:center">Typhoon HIL Inc.<span id="year"> <a href="https://www.typhoon-hil.com">www.typhoon-hil.com</a></span></div>
+</div>
 </footer>
-        
-        <div id="go2top" class="d-print-none">
-            <span class="oxy-icon oxy-icon-up"></span>
-        </div>
-        
-        <div id="modal_img_large" class="modal">
-            <span class="close oxy-icon oxy-icon-remove"></span>
-            <div id="modal_img_container"></div>
-            <div id="caption"></div>
-        </div>
-        
-        
-<script type="text/javascript" src="../../assets/script.js"> 
+<div class="d-print-none" id="go2top">
+<span class="oxy-icon oxy-icon-up"></span>
+</div>
+<div class="modal" id="modal_img_large">
+<span class="close oxy-icon oxy-icon-remove"></span>
+<div id="modal_img_container"></div>
+<div id="caption"></div>
+</div>
+<script src="../../assets/script.js" type="text/javascript">
 </script>
-
-        
-    </body>
+</body>
 </html>
