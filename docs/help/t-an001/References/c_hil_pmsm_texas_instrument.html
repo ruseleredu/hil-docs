@@ -1,133 +1,83 @@
-<!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en" data-whc_version="24.1">
-    <head><link rel="shortcut icon" href="../../favicon.ico"/><link rel="icon" href="../../favicon.ico"/><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><meta name="DC.rights.owner" content="(C) Copyright 2026"/><meta name="copyright" content="(C) Copyright 2026"/><meta name="generator" content="DITA-OT"/><meta name="DC.type" content="reference"/><meta name="description" content="Demonstration on how to use a Texas Instruments card for rapid control prototyping and real-time HIL testing of TMS320F2808 code."/><meta name="DC.relation" content="../../t-an001/concepts/electrical_drives.html"/><meta name="DC.format" content="HTML5"/><meta name="DC.identifier" content="doc"/>        
-      <title>C-HIL: Field-oriented control of PMSM using Texas Instruments TMS320F2808 card</title><!--  Generated with Oxygen version 24.1, build number 2022030800.  --><meta name="wh-path2root" content="../../"/><meta name="wh-toc-id" content="doc-d16877e564"/><meta name="wh-source-relpath" content="t-an001/References/c_hil_pmsm_texas_instrument.dita"/><meta name="wh-out-relpath" content="t-an001/References/c_hil_pmsm_texas_instrument.html"/>
-    <!-- Latest compiled and minified Bootstrap CSS -->
-    <link rel="stylesheet" type="text/css" href="../../oxygen-webhelp/lib/bootstrap/css/bootstrap.min.css"/>
-    
-    <link rel="stylesheet" href="../../oxygen-webhelp/lib/jquery-ui/jquery-ui.min.css"/>
-    
-    <!-- Template default styles  -->
-    <link rel="stylesheet" type="text/css" href="../../oxygen-webhelp/app/topic-page.css?buildId=2022030800"/>
-    
-    
-    <script src="../../oxygen-webhelp/lib/jquery/jquery-3.5.1.min.js"></script>
-    
-    <script data-main="../../oxygen-webhelp/app/topic-page.js" src="../../oxygen-webhelp/lib/requirejs/require.js"></script>
-<link rel="stylesheet" type="text/css" href="../../oxygen-webhelp/template/oxygen.css?buildId=2022030800"/><link rel="stylesheet" type="text/css" href="../../oxygen-webhelp/template/notes.css?buildId=2022030800"/><script type="text/javascript" src="../../Scripts/mml-svg.js"> 
-</script><link rel="stylesheet" type="text/css" href="../../assets/typhoon.css"/></head>
-
-    <body id="doc" class="wh_topic_page frmBody">
-        <a href="#wh_topic_body" class="sr-only sr-only-focusable">
+<!DOCTYPE html>
+<html data-whc_version="24.1" lang="en" xml:lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head><link href="../../favicon.ico" rel="shortcut icon"/><link href="../../favicon.ico" rel="icon"/><meta content="text/html; charset=utf-8" http-equiv="Content-Type"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="IE=edge" http-equiv="X-UA-Compatible"/><meta content="(C) Copyright 2026" name="DC.rights.owner"/><meta content="(C) Copyright 2026" name="copyright"/><meta content="DITA-OT" name="generator"/><meta content="reference" name="DC.type"/><meta content="Demonstration on how to use a Texas Instruments card for rapid control prototyping and real-time HIL testing of TMS320F2808 code." name="description"/><meta content="../../t-an001/concepts/electrical_drives.html" name="DC.relation"/><meta content="HTML5" name="DC.format"/><meta content="doc" name="DC.identifier"/>
+<title>C-HIL: Field-oriented control of PMSM using Texas Instruments TMS320F2808 card</title><!--  Generated with Oxygen version 24.1, build number 2022030800.  --><meta content="../../" name="wh-path2root"/><meta content="doc-d16877e564" name="wh-toc-id"/><meta content="t-an001/References/c_hil_pmsm_texas_instrument.dita" name="wh-source-relpath"/><meta content="t-an001/References/c_hil_pmsm_texas_instrument.html" name="wh-out-relpath"/>
+<!-- Latest compiled and minified Bootstrap CSS -->
+<link href="../../oxygen-webhelp/lib/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
+<link href="../../oxygen-webhelp/lib/jquery-ui/jquery-ui.min.css" rel="stylesheet"/>
+<!-- Template default styles  -->
+<link href="../../oxygen-webhelp/app/topic-page.css?buildId=2022030800" rel="stylesheet" type="text/css"/>
+<script src="../../oxygen-webhelp/lib/jquery/jquery-3.5.1.min.js"></script>
+<script data-main="../../oxygen-webhelp/app/topic-page.js" src="../../oxygen-webhelp/lib/requirejs/require.js"></script>
+<link href="../../oxygen-webhelp/template/oxygen.css?buildId=2022030800" rel="stylesheet" type="text/css"/><link href="../../oxygen-webhelp/template/notes.css?buildId=2022030800" rel="stylesheet" type="text/css"/><script src="../../Scripts/mml-svg.js" type="text/javascript">
+</script><link href="../../assets/typhoon.css" rel="stylesheet" type="text/css"/></head>
+<body class="wh_topic_page frmBody" id="doc">
+<a class="sr-only sr-only-focusable" href="#wh_topic_body">
             Jump to main content
         </a>
-        
-        
-        
-        
-        <header class="navbar navbar-default wh_header">
-    <div class="container-fluid">
-        <div class="wh_header_flex_container navbar-nav navbar-expand-md navbar-dark">
-            <div class="wh_logo_and_publication_title_container">
-                <div class="wh_logo_and_publication_title">
-                    
-                    <a href="https://www.typhoon-hil.com" class=" wh_logo d-none d-sm-block "><img src="../../logo.svg" alt="  Typhoon HIL Documentation  Version: 2026.1  "/></a>
-                    <div class=" wh_publication_title "><a href="../../index.html"><span class="booktitle">  <span class="ph mainbooktitle">Typhoon HIL Documentation</span>  <span class="ph booktitlealt">Version: 2026.1</span>  </span></a></div>
-                    
-                </div>
-                
-                <button type="button" data-target="#wh_top_menu_and_indexterms_link" id="wh_menu_mobile_button" data-toggle="collapse" class="navbar-toggler collapsed wh_toggle_button" aria-expanded="false" aria-label="Toggle menu" aria-controls="wh_top_menu_and_indexterms_link">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-            </div>
-
-            <div class="wh_top_menu_and_indexterms_link collapse navbar-collapse" id="wh_top_menu_and_indexterms_link">
-                
-                <nav class=" wh_top_menu " aria-label="Menu Container"><ul role="menubar" aria-label="Menu"><li role="menuitem" aria-haspopup="true" aria-expanded="false" class="has-children"><span id="tocId-d16877e21-mi" data-tocid="tocId-d16877e21" data-state="not-ready" class=" topicref application-notes"><span class="title"><a href="../../t-an001/concepts/application_notes_introduction.html">Typhoon HIL Application Notes</a></span></span></li><li role="menuitem" aria-haspopup="true" aria-expanded="false" class="has-children"><span id="tocId-d16877e737-mi" data-tocid="tocId-d16877e737" data-state="not-ready" class=" topicref software-manual"><span class="title"><a href="../../t-ug002/topics/software_manual_introduction.html">Typhoon HIL Software Manual</a></span></span></li><li role="menuitem" aria-haspopup="true" aria-expanded="false" class="has-children"><span id="tocId-d16877e7901-mi" data-tocid="tocId-d16877e7901" data-state="not-ready" class=" topicref hardware-manual"><span class="title"><a href="../../t-ug001/abstract/hardware_manual_introduction.html">Typhoon HIL Hardware Manual</a></span></span></li></ul></nav>
-                
-                
-            </div>
-        </div>
-    </div>
+<header class="navbar navbar-default wh_header">
+<div class="container-fluid">
+<div class="wh_header_flex_container navbar-nav navbar-expand-md navbar-dark">
+<div class="wh_logo_and_publication_title_container">
+<div class="wh_logo_and_publication_title">
+<a class="wh_logo d-none d-sm-block" href="../../../index.html"><img alt="  Typhoon HIL Documentation  Version: 2026.1  " src="../../logo.svg"/></a>
+<div class="wh_publication_title"><a href="../../index.html"><span class="booktitle"> <span class="ph mainbooktitle">Typhoon HIL Documentation</span> <span class="ph booktitlealt">Version: 2026.1</span> </span></a></div>
+</div>
+<button aria-controls="wh_top_menu_and_indexterms_link" aria-expanded="false" aria-label="Toggle menu" class="navbar-toggler collapsed wh_toggle_button" data-target="#wh_top_menu_and_indexterms_link" data-toggle="collapse" id="wh_menu_mobile_button" type="button">
+<span class="navbar-toggler-icon"></span>
+</button>
+</div>
+<div class="wh_top_menu_and_indexterms_link collapse navbar-collapse" id="wh_top_menu_and_indexterms_link">
+<nav aria-label="Menu Container" class="wh_top_menu"><ul aria-label="Menu" role="menubar"><li aria-expanded="false" aria-haspopup="true" class="has-children" role="menuitem"><span class="topicref application-notes" data-state="not-ready" data-tocid="tocId-d16877e21" id="tocId-d16877e21-mi"><span class="title"><a href="../../t-an001/concepts/application_notes_introduction.html">Typhoon HIL Application Notes</a></span></span></li><li aria-expanded="false" aria-haspopup="true" class="has-children" role="menuitem"><span class="topicref software-manual" data-state="not-ready" data-tocid="tocId-d16877e737" id="tocId-d16877e737-mi"><span class="title"><a href="../../t-ug002/topics/software_manual_introduction.html">Typhoon HIL Software Manual</a></span></span></li><li aria-expanded="false" aria-haspopup="true" class="has-children" role="menuitem"><span class="topicref hardware-manual" data-state="not-ready" data-tocid="tocId-d16877e7901" id="tocId-d16877e7901-mi"><span class="title"><a href="../../t-ug001/abstract/hardware_manual_introduction.html">Typhoon HIL Hardware Manual</a></span></span></li></ul></nav>
+</div>
+</div>
+</div>
 </header>
-        
-        
-         
-        
-        <div class=" wh_search_input navbar-form wh_topic_page_search search " role="form">
-            
-            
-            
-            <form id="searchForm" method="get" role="search" action="../../search.html"><div><input type="search" placeholder="Search " class="wh_search_textfield" id="textToSearch" name="searchQuery" aria-label="Search query" required="required"/><button type="submit" class="wh_search_button" aria-label="Search"><span class="search_input_text">Search</span></button></div></form>
-            
-            
-            
-        </div>
-        
-        <div class="container-fluid" id="wh_topic_container">
-            <div class="row">
-
-                <nav class="wh_tools d-print-none navbar-expand-md" aria-label="Tools">
-                    
-                    <div data-tooltip-position="bottom" class=" wh_breadcrumb "><ol class="d-print-none"><li><span class="home"><a href="../../index.html"><span>Home</span></a></span></li><li><div class="topicref application-notes"><div class="title"><a href="../../t-an001/concepts/application_notes_introduction.html">Typhoon HIL Application Notes</a></div></div></li><li><div class="topicref" data-id="doc"><div class="title"><a href="../../t-an001/concepts/electrical_drives.html">Electrical Drives</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">Converters coupled with high-fidelity electrical machine models for high performance   motor drive applications.</span></p></div></div></div></li><li class="active"><div class="topicref" data-id="doc"><div class="title"><a href="../../t-an001/References/c_hil_pmsm_texas_instrument.html">C-HIL: Field-oriented control of PMSM using Texas Instruments TMS320F2808 card</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">Demonstration on how to use a Texas Instruments card for rapid control    prototyping and real-time HIL testing of TMS320F2808 code.</span></p></div></div></div></li></ol></div>
-                    
-                    
-                    
-                    <div class="wh_right_tools">
-                        <button class="wh_hide_highlight" aria-label="Toggle search highlights" title="Toggle search highlights"></button>
-                        <button class="webhelp_expand_collapse_sections" data-next-state="collapsed" aria-label="Collapse sections" title="Collapse sections"></button>
-                        
-                        
-                        
-                        
-                        <div class=" wh_print_link print d-none d-md-inline-block "><button onClick="window.print()" title="Print this page" aria-label="Print this page"></button></div>
-                        
-                        <button type="button" id="wh_toc_button" class="custom-toggler navbar-toggler collapsed wh_toggle_button navbar-light" aria-expanded="false" aria-label="Toggle publishing table of content" aria-controls="wh_publication_toc">
-                            <span class="navbar-toggler-icon"></span>
-                        </button>
-                    </div>
-                    
-                </nav>
-            </div>
-            
-            
-            
-            
-            <div class="wh_content_area">
-                <div class="row">
-                    
-                        <nav id="wh_publication_toc" class="col-lg-3 col-md-3 col-sm-12 d-md-block d-none d-print-none" aria-label="Table of Contents Container">
-                            <div id="wh_publication_toc_content">
-		                        
-                            	<div class=" wh_publication_toc " data-tooltip-position="right"><span class="expand-button-action-labels"><span id="button-expand-action" role="button" aria-label="Expand"></span><span id="button-collapse-action" role="button" aria-label="Collapse"></span><span id="button-pending-action" role="button" aria-label="Pending"></span></span><ul role="tree" aria-label="Table of Contents"><li role="treeitem" aria-expanded="true"><div data-tocid="tocId-d16877e21" class="topicref application-notes" data-state="expanded"><span role="button" tabindex="0" aria-labelledby="button-collapse-action tocId-d16877e21-link" class="wh-expand-btn"></span><div class="title"><a href="../../t-an001/concepts/application_notes_introduction.html" id="tocId-d16877e21-link">Typhoon HIL Application Notes</a></div></div><ul role="group" class="navbar-nav nav-list"><li role="treeitem"><div data-tocid="doc-d16877e25" class="topicref" data-id="doc" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../../t-an001/concepts/application_notes_introduction.html" id="doc-d16877e25-link">Application Notes Introduction</a><div class="wh-tooltip"><p class="shortdesc">Brief overview of the different categories of Application Notes</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="doc-d16877e36" class="topicref" data-id="doc" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action doc-d16877e36-link" class="wh-expand-btn"></span><div class="title"><a href="../../t-an001/concepts/grid_connected_converters.html" id="doc-d16877e36-link">Grid-connected converters</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">Grid-connected converter applications featuring various grid support    functionalities.</span></p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="doc-d16877e96" class="topicref" data-id="doc" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action doc-d16877e96-link" class="wh-expand-btn"></span><div class="title"><a href="../../t-an001/concepts/automotive.html" id="doc-d16877e96-link">Automotive</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">Electric cars and other automotive applications.</span></p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="doc-d16877e132" class="topicref" data-id="doc" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action doc-d16877e132-link" class="wh-expand-btn"></span><div class="title"><a href="../../t-an001/concepts/aerospace.html" id="doc-d16877e132-link">Aerospace</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">System-level and component-level aircraft applications.</span></p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="doc-d16877e168" class="topicref" data-id="doc" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action doc-d16877e168-link" class="wh-expand-btn"></span><div class="title"><a href="../../t-an001/concepts/battery_management_systems.html" id="doc-d16877e168-link">Battery management systems</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">Battery management system (BMS) examples</span></p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="doc-d16877e216" class="topicref" data-id="doc" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action doc-d16877e216-link" class="wh-expand-btn"></span><div class="title"><a href="../../t-an001/concepts/how-to_guides.html" id="doc-d16877e216-link">How-to Guides</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">Guides, tips, and tricks on various aspects of Typhoon HIL toolchain usage.</span></p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="doc-d16877e312" class="topicref" data-id="doc" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action doc-d16877e312-link" class="wh-expand-btn"></span><div class="title"><a href="../../t-an001/concepts/communication_protocols.html" id="doc-d16877e312-link">Communication Protocols</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">Interoperability. Cybersecurity. Modbus, Sunspec, IEC61850, IEEE    C37.118, DNP3, CAN, OPC UA, and more.</span></p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="doc-d16877e384" class="topicref" data-id="doc" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action doc-d16877e384-link" class="wh-expand-btn"></span><div class="title"><a href="../../t-an001/concepts/power_systems.html" id="doc-d16877e384-link">Power Systems</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">Power system simulation. Relay protection testing. Power flow tool integration and   co-simulation.</span></p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="doc-d16877e468" class="topicref" data-id="doc" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action doc-d16877e468-link" class="wh-expand-btn"></span><div class="title"><a href="../../t-an001/concepts/microgrids.html" id="doc-d16877e468-link">Microgrids</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">Rapid microgrid pre-commissioning and system integration. Microgrid controller RCP and   testing.</span></p></div></div></div></li><li role="treeitem" aria-expanded="true"><div data-tocid="doc-d16877e552" class="topicref" data-id="doc" data-state="expanded"><span role="button" tabindex="0" aria-labelledby="button-collapse-action doc-d16877e552-link" class="wh-expand-btn"></span><div class="title"><a href="../../t-an001/concepts/electrical_drives.html" id="doc-d16877e552-link">Electrical Drives</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">Converters coupled with high-fidelity electrical machine models for high performance   motor drive applications.</span></p></div></div></div><ul role="group" class="navbar-nav nav-list"><li role="treeitem" class="active"><div data-tocid="doc-d16877e564" class="topicref" data-id="doc" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../../t-an001/References/c_hil_pmsm_texas_instrument.html" id="doc-d16877e564-link">C-HIL: Field-oriented control of PMSM using Texas Instruments TMS320F2808 card</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">Demonstration on how to use a Texas Instruments card for rapid control    prototyping and real-time HIL testing of TMS320F2808 code.</span></p></div></div></div></li><li role="treeitem"><div data-tocid="doc-d16877e576" class="topicref" data-id="doc" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../../t-an001/References/modular_multi_level_converter_mmc_with_induction_machine.html" id="doc-d16877e576-link">Modular Multi-level Converter (MMC) with Induction Machine</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">Demonstration of real-time testing of an MMC in one of its main applications: electrical drive   systems.</span></p></div></div></div></li><li role="treeitem"><div data-tocid="doc-d16877e588" class="topicref" data-id="doc" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../../t-an001/References/ti_pmsm_torque_control.html" id="doc-d16877e588-link">C-HIL: PMSM torque control using Texas Instruments LAUNCHXL-F28379D LaunchPad</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">Demonstration on how to use a Texas Instruments LaunchPad development kit to implement     the control of an electrical drive model emulated in real-time.</span></p></div></div></div></li></ul></li><li role="treeitem" aria-expanded="false"><div data-tocid="doc-d16877e601" class="topicref" data-id="doc" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action doc-d16877e601-link" class="wh-expand-btn"></span><div class="title"><a href="../../t-an001/concepts/power_supplies.html" id="doc-d16877e601-link">Power Supplies</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">Linear and switching power supplies for industrial and laboratory   applications.</span></p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="doc-d16877e625" class="topicref" data-id="doc" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action doc-d16877e625-link" class="wh-expand-btn"></span><div class="title"><a href="../../t-an001/concepts/marine_power_systems.html" id="doc-d16877e625-link">Marine Power Systems</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">Hybrid propulsion, shipboard power management, offshore renewables, offshore oil and   gas platform power supplies. </span></p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="doc-d16877e649" class="topicref" data-id="doc" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action doc-d16877e649-link" class="wh-expand-btn"></span><div class="title"><a href="../../t-an001/concepts/power_quality.html" id="doc-d16877e649-link">Power Quality</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">Real-time power quality/harmonic analysis. Incorporate active filters and FACTS devices (STATCOM, DVR,   SVC).</span></p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="doc-d16877e685" class="topicref" data-id="doc" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action doc-d16877e685-link" class="wh-expand-btn"></span><div class="title"><a href="../../t-an001/concepts/railway.html" id="doc-d16877e685-link">Railway</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">System-level and component-level application examples for railway    (traction) equipment.</span></p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="doc-d16877e709" class="topicref" data-id="doc" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action doc-d16877e709-link" class="wh-expand-btn"></span><div class="title"><a href="../../t-an001/concepts/medical_devices.html" id="doc-d16877e709-link">Medical Devices</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">X-ray, MRI, ICD, pacemakers, defibrillators, emergency ventilators, ECG, EMG,   bioelectronics.</span></p></div></div></div></li></ul></li></ul></div>
-		                        
-                            </div>
-                        </nav>
-                    
-                    
-                    <div class="col-lg-7 col-md-9 col-sm-12" id="wh_topic_body">
-                        <button id="wh_close_publication_toc_button" class="close-toc-button d-none" aria-label="Toggle publishing table of content" aria-controls="wh_publication_toc" aria-expanded="true">
-                            <span class="close-toc-icon-container">
-                                <span class="close-toc-icon"></span>     
-                            </span>
-                        </button>
-                        <button id="wh_close_topic_toc_button" class="close-toc-button d-none" aria-label="Toggle topic table of content" aria-controls="wh_topic_toc" aria-expanded="true">
-                            <span class="close-toc-icon-container">
-                                <span class="close-toc-icon"></span>     
-                            </span>
-                        </button>
-                        
-                        <div class=" wh_topic_content body "><main role="main"><article role="article" aria-labelledby="ariaid-title1">
- <h1 class="- topic/title title topictitle1" id="ariaid-title1">C-HIL: Field-oriented control of PMSM using Texas Instruments TMS320F2808 card</h1>
-  
- <div class="- topic/body reference/refbody body refbody"><p class="- topic/shortdesc shortdesc"><span class="- topic/ph ph" id="doc__description">Demonstration on how to use a Texas Instruments card for rapid control 
-  prototyping and real-time HIL testing of TMS320F2808 code.</span></p> 
-   <section class="- topic/section section" id="doc__section_hqr_1zb_rz" data-ofbid="doc__section_hqr_1zb_rz"><h2 class="- topic/title title sectiontitle"><span class="- topic/ph ph" id="doc__an_title_intro">Introduction</span></h2>
-     
-     <div class="- topic/note note note note_note"><span class="note__title">Note:</span> The model described in this application note can be found on Typhoon HIL's Package
-      Manager service, which is accessible as a <a class="- topic/xref xref" href="https://www.typhoon-hil.com/documentation/typhoon-hil-software-manual/concepts/package_manager.html" target="_blank" rel="external noopener">tool in the Typhoon HIL Control Center toolchain</a> or
-      on the <a class="- topic/xref xref" href="https://marketplace.typhoon-hil.com/" target="_blank" rel="external noopener">
+<div class="wh_search_input navbar-form wh_topic_page_search search" role="form">
+<form action="../../search.html" id="searchForm" method="get" role="search"><div><input aria-label="Search query" class="wh_search_textfield" id="textToSearch" name="searchQuery" placeholder="Search " required="required" type="search"/><button aria-label="Search" class="wh_search_button" type="submit"><span class="search_input_text">Search</span></button></div></form>
+</div>
+<div class="container-fluid" id="wh_topic_container">
+<div class="row">
+<nav aria-label="Tools" class="wh_tools d-print-none navbar-expand-md">
+<div class="wh_breadcrumb" data-tooltip-position="bottom"><ol class="d-print-none"><li><span class="home"><a href="../../index.html"><span>Home</span></a></span></li><li><div class="topicref application-notes"><div class="title"><a href="../../t-an001/concepts/application_notes_introduction.html">Typhoon HIL Application Notes</a></div></div></li><li><div class="topicref" data-id="doc"><div class="title"><a href="../../t-an001/concepts/electrical_drives.html">Electrical Drives</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">Converters coupled with high-fidelity electrical machine models for high performance   motor drive applications.</span></p></div></div></div></li><li class="active"><div class="topicref" data-id="doc"><div class="title"><a href="../../t-an001/References/c_hil_pmsm_texas_instrument.html">C-HIL: Field-oriented control of PMSM using Texas Instruments TMS320F2808 card</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">Demonstration on how to use a Texas Instruments card for rapid control    prototyping and real-time HIL testing of TMS320F2808 code.</span></p></div></div></div></li></ol></div>
+<div class="wh_right_tools">
+<button aria-label="Toggle search highlights" class="wh_hide_highlight" title="Toggle search highlights"></button>
+<button aria-label="Collapse sections" class="webhelp_expand_collapse_sections" data-next-state="collapsed" title="Collapse sections"></button>
+<div class="wh_print_link print d-none d-md-inline-block"><button aria-label="Print this page" onclick="window.print()" title="Print this page"></button></div>
+<button aria-controls="wh_publication_toc" aria-expanded="false" aria-label="Toggle publishing table of content" class="custom-toggler navbar-toggler collapsed wh_toggle_button navbar-light" id="wh_toc_button" type="button">
+<span class="navbar-toggler-icon"></span>
+</button>
+</div>
+</nav>
+</div>
+<div class="wh_content_area">
+<div class="row">
+<nav aria-label="Table of Contents Container" class="col-lg-3 col-md-3 col-sm-12 d-md-block d-none d-print-none" id="wh_publication_toc">
+<div id="wh_publication_toc_content">
+<div class="wh_publication_toc" data-tooltip-position="right"><span class="expand-button-action-labels"><span aria-label="Expand" id="button-expand-action" role="button"></span><span aria-label="Collapse" id="button-collapse-action" role="button"></span><span aria-label="Pending" id="button-pending-action" role="button"></span></span><ul aria-label="Table of Contents" role="tree"><li aria-expanded="true" role="treeitem"><div class="topicref application-notes" data-state="expanded" data-tocid="tocId-d16877e21"><span aria-labelledby="button-collapse-action tocId-d16877e21-link" class="wh-expand-btn" role="button" tabindex="0"></span><div class="title"><a href="../../t-an001/concepts/application_notes_introduction.html" id="tocId-d16877e21-link">Typhoon HIL Application Notes</a></div></div><ul class="navbar-nav nav-list" role="group"><li role="treeitem"><div class="topicref" data-id="doc" data-state="leaf" data-tocid="doc-d16877e25"><span class="wh-expand-btn" role="button"></span><div class="title"><a href="../../t-an001/concepts/application_notes_introduction.html" id="doc-d16877e25-link">Application Notes Introduction</a><div class="wh-tooltip"><p class="shortdesc">Brief overview of the different categories of Application Notes</p></div></div></div></li><li aria-expanded="false" role="treeitem"><div class="topicref" data-id="doc" data-state="not-ready" data-tocid="doc-d16877e36"><span aria-labelledby="button-expand-action doc-d16877e36-link" class="wh-expand-btn" role="button" tabindex="0"></span><div class="title"><a href="../../t-an001/concepts/grid_connected_converters.html" id="doc-d16877e36-link">Grid-connected converters</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">Grid-connected converter applications featuring various grid support    functionalities.</span></p></div></div></div></li><li aria-expanded="false" role="treeitem"><div class="topicref" data-id="doc" data-state="not-ready" data-tocid="doc-d16877e96"><span aria-labelledby="button-expand-action doc-d16877e96-link" class="wh-expand-btn" role="button" tabindex="0"></span><div class="title"><a href="../../t-an001/concepts/automotive.html" id="doc-d16877e96-link">Automotive</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">Electric cars and other automotive applications.</span></p></div></div></div></li><li aria-expanded="false" role="treeitem"><div class="topicref" data-id="doc" data-state="not-ready" data-tocid="doc-d16877e132"><span aria-labelledby="button-expand-action doc-d16877e132-link" class="wh-expand-btn" role="button" tabindex="0"></span><div class="title"><a href="../../t-an001/concepts/aerospace.html" id="doc-d16877e132-link">Aerospace</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">System-level and component-level aircraft applications.</span></p></div></div></div></li><li aria-expanded="false" role="treeitem"><div class="topicref" data-id="doc" data-state="not-ready" data-tocid="doc-d16877e168"><span aria-labelledby="button-expand-action doc-d16877e168-link" class="wh-expand-btn" role="button" tabindex="0"></span><div class="title"><a href="../../t-an001/concepts/battery_management_systems.html" id="doc-d16877e168-link">Battery management systems</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">Battery management system (BMS) examples</span></p></div></div></div></li><li aria-expanded="false" role="treeitem"><div class="topicref" data-id="doc" data-state="not-ready" data-tocid="doc-d16877e216"><span aria-labelledby="button-expand-action doc-d16877e216-link" class="wh-expand-btn" role="button" tabindex="0"></span><div class="title"><a href="../../t-an001/concepts/how-to_guides.html" id="doc-d16877e216-link">How-to Guides</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">Guides, tips, and tricks on various aspects of Typhoon HIL toolchain usage.</span></p></div></div></div></li><li aria-expanded="false" role="treeitem"><div class="topicref" data-id="doc" data-state="not-ready" data-tocid="doc-d16877e312"><span aria-labelledby="button-expand-action doc-d16877e312-link" class="wh-expand-btn" role="button" tabindex="0"></span><div class="title"><a href="../../t-an001/concepts/communication_protocols.html" id="doc-d16877e312-link">Communication Protocols</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">Interoperability. Cybersecurity. Modbus, Sunspec, IEC61850, IEEE    C37.118, DNP3, CAN, OPC UA, and more.</span></p></div></div></div></li><li aria-expanded="false" role="treeitem"><div class="topicref" data-id="doc" data-state="not-ready" data-tocid="doc-d16877e384"><span aria-labelledby="button-expand-action doc-d16877e384-link" class="wh-expand-btn" role="button" tabindex="0"></span><div class="title"><a href="../../t-an001/concepts/power_systems.html" id="doc-d16877e384-link">Power Systems</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">Power system simulation. Relay protection testing. Power flow tool integration and   co-simulation.</span></p></div></div></div></li><li aria-expanded="false" role="treeitem"><div class="topicref" data-id="doc" data-state="not-ready" data-tocid="doc-d16877e468"><span aria-labelledby="button-expand-action doc-d16877e468-link" class="wh-expand-btn" role="button" tabindex="0"></span><div class="title"><a href="../../t-an001/concepts/microgrids.html" id="doc-d16877e468-link">Microgrids</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">Rapid microgrid pre-commissioning and system integration. Microgrid controller RCP and   testing.</span></p></div></div></div></li><li aria-expanded="true" role="treeitem"><div class="topicref" data-id="doc" data-state="expanded" data-tocid="doc-d16877e552"><span aria-labelledby="button-collapse-action doc-d16877e552-link" class="wh-expand-btn" role="button" tabindex="0"></span><div class="title"><a href="../../t-an001/concepts/electrical_drives.html" id="doc-d16877e552-link">Electrical Drives</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">Converters coupled with high-fidelity electrical machine models for high performance   motor drive applications.</span></p></div></div></div><ul class="navbar-nav nav-list" role="group"><li class="active" role="treeitem"><div class="topicref" data-id="doc" data-state="leaf" data-tocid="doc-d16877e564"><span class="wh-expand-btn" role="button"></span><div class="title"><a href="../../t-an001/References/c_hil_pmsm_texas_instrument.html" id="doc-d16877e564-link">C-HIL: Field-oriented control of PMSM using Texas Instruments TMS320F2808 card</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">Demonstration on how to use a Texas Instruments card for rapid control    prototyping and real-time HIL testing of TMS320F2808 code.</span></p></div></div></div></li><li role="treeitem"><div class="topicref" data-id="doc" data-state="leaf" data-tocid="doc-d16877e576"><span class="wh-expand-btn" role="button"></span><div class="title"><a href="../../t-an001/References/modular_multi_level_converter_mmc_with_induction_machine.html" id="doc-d16877e576-link">Modular Multi-level Converter (MMC) with Induction Machine</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">Demonstration of real-time testing of an MMC in one of its main applications: electrical drive   systems.</span></p></div></div></div></li><li role="treeitem"><div class="topicref" data-id="doc" data-state="leaf" data-tocid="doc-d16877e588"><span class="wh-expand-btn" role="button"></span><div class="title"><a href="../../t-an001/References/ti_pmsm_torque_control.html" id="doc-d16877e588-link">C-HIL: PMSM torque control using Texas Instruments LAUNCHXL-F28379D LaunchPad</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">Demonstration on how to use a Texas Instruments LaunchPad development kit to implement     the control of an electrical drive model emulated in real-time.</span></p></div></div></div></li></ul></li><li aria-expanded="false" role="treeitem"><div class="topicref" data-id="doc" data-state="not-ready" data-tocid="doc-d16877e601"><span aria-labelledby="button-expand-action doc-d16877e601-link" class="wh-expand-btn" role="button" tabindex="0"></span><div class="title"><a href="../../t-an001/concepts/power_supplies.html" id="doc-d16877e601-link">Power Supplies</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">Linear and switching power supplies for industrial and laboratory   applications.</span></p></div></div></div></li><li aria-expanded="false" role="treeitem"><div class="topicref" data-id="doc" data-state="not-ready" data-tocid="doc-d16877e625"><span aria-labelledby="button-expand-action doc-d16877e625-link" class="wh-expand-btn" role="button" tabindex="0"></span><div class="title"><a href="../../t-an001/concepts/marine_power_systems.html" id="doc-d16877e625-link">Marine Power Systems</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">Hybrid propulsion, shipboard power management, offshore renewables, offshore oil and   gas platform power supplies. </span></p></div></div></div></li><li aria-expanded="false" role="treeitem"><div class="topicref" data-id="doc" data-state="not-ready" data-tocid="doc-d16877e649"><span aria-labelledby="button-expand-action doc-d16877e649-link" class="wh-expand-btn" role="button" tabindex="0"></span><div class="title"><a href="../../t-an001/concepts/power_quality.html" id="doc-d16877e649-link">Power Quality</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">Real-time power quality/harmonic analysis. Incorporate active filters and FACTS devices (STATCOM, DVR,   SVC).</span></p></div></div></div></li><li aria-expanded="false" role="treeitem"><div class="topicref" data-id="doc" data-state="not-ready" data-tocid="doc-d16877e685"><span aria-labelledby="button-expand-action doc-d16877e685-link" class="wh-expand-btn" role="button" tabindex="0"></span><div class="title"><a href="../../t-an001/concepts/railway.html" id="doc-d16877e685-link">Railway</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">System-level and component-level application examples for railway    (traction) equipment.</span></p></div></div></div></li><li aria-expanded="false" role="treeitem"><div class="topicref" data-id="doc" data-state="not-ready" data-tocid="doc-d16877e709"><span aria-labelledby="button-expand-action doc-d16877e709-link" class="wh-expand-btn" role="button" tabindex="0"></span><div class="title"><a href="../../t-an001/concepts/medical_devices.html" id="doc-d16877e709-link">Medical Devices</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">X-ray, MRI, ICD, pacemakers, defibrillators, emergency ventilators, ECG, EMG,   bioelectronics.</span></p></div></div></div></li></ul></li></ul></div>
+</div>
+</nav>
+<div class="col-lg-7 col-md-9 col-sm-12" id="wh_topic_body">
+<button aria-controls="wh_publication_toc" aria-expanded="true" aria-label="Toggle publishing table of content" class="close-toc-button d-none" id="wh_close_publication_toc_button">
+<span class="close-toc-icon-container">
+<span class="close-toc-icon"></span>
+</span>
+</button>
+<button aria-controls="wh_topic_toc" aria-expanded="true" aria-label="Toggle topic table of content" class="close-toc-button d-none" id="wh_close_topic_toc_button">
+<span class="close-toc-icon-container">
+<span class="close-toc-icon"></span>
+</span>
+</button>
+<div class="wh_topic_content body"><main role="main"><article aria-labelledby="ariaid-title1" role="article">
+<h1 class="- topic/title title topictitle1" id="ariaid-title1">C-HIL: Field-oriented control of PMSM using Texas Instruments TMS320F2808 card</h1>
+<div class="- topic/body reference/refbody body refbody"><p class="- topic/shortdesc shortdesc"><span class="- topic/ph ph" id="doc__description">Demonstration on how to use a Texas Instruments card for rapid control 
+  prototyping and real-time HIL testing of TMS320F2808 code.</span></p>
+<section class="- topic/section section" data-ofbid="doc__section_hqr_1zb_rz" id="doc__section_hqr_1zb_rz"><h2 class="- topic/title title sectiontitle"><span class="- topic/ph ph" id="doc__an_title_intro">Introduction</span></h2>
+<div class="- topic/note note note note_note"><span class="note__title">Note:</span> The model described in this application note can be found on Typhoon HIL's Package
+      Manager service, which is accessible as a <a class="- topic/xref xref" href="https://www.typhoon-hil.com/documentation/typhoon-hil-software-manual/concepts/package_manager.html" rel="external noopener" target="_blank">tool in the Typhoon HIL Control Center toolchain</a> or
+      on the <a class="- topic/xref xref" href="https://marketplace.typhoon-hil.com/" rel="external noopener" target="_blank">
        Package Manager Website</a>.</div>
-     <p class="- topic/p p">Texas Instrument cards are the hardware of choice for those who want to accelerate the
+<p class="- topic/p p">Texas Instrument cards are the hardware of choice for those who want to accelerate the
         development of Power Electronics (PE) applications for the Texas Instrument family of Digital 
         Signal Processors (DSPs). To allow you to properly test with Texas Instrument cards, Typhoon HIL
         Control Center emulates the power stage of a PE device including power converters,
@@ -135,202 +85,164 @@
         you can develop and immediately begin testing and validating your control applications
         without worrying about the safety measures required in a power laboratory (P-HIL)
         environment.</p>
-   <p class="- topic/p p">This example shows you how to use an external controller from a Texas Instruments TMS320F2808
+<p class="- topic/p p">This example shows you how to use an external controller from a Texas Instruments TMS320F2808
         card in order to control a model implemented in the Typhoon HIL software. In particular,
         this section focuses on how you can connect the model with an external control and how they
         can operate together. While this case study uses a specific Texas Instruments control card
         as an example, the general process is applicable to a wide range of available cards.</p>
-  </section>
-  <section class="- topic/section section" id="doc__KuiRbDA5n" data-ofbid="doc__KuiRbDA5n"><h2 class="- topic/title title sectiontitle"><span class="- topic/ph ph" id="doc__an_title_model">Model description</span></h2>
-    
-   <p class="- topic/p p">The model consists of a <a class="- topic/xref xref" href="https://www.typhoon-hil.com/documentation/typhoon-hil-software-manual/References/single-phase_diode_rectifier.html" target="_blank" rel="external noopener">single-phase rectifier</a>, a <a class="- topic/xref xref" href="https://www.typhoon-hil.com/documentation/typhoon-hil-software-manual/References/three-phase_two-level_inverter_rectifier.html" target="_blank" rel="external noopener">three-phase
-        inverter</a>, and a <a class="- topic/xref xref" href="https://www.typhoon-hil.com/documentation/typhoon-hil-software-manual/References/three_phase_cylindrical_rotor_permanent_magnet_synchronous_machine.html" target="_blank" rel="external noopener">permanent magnet synchronous machine</a>. The
+</section>
+<section class="- topic/section section" data-ofbid="doc__KuiRbDA5n" id="doc__KuiRbDA5n"><h2 class="- topic/title title sectiontitle"><span class="- topic/ph ph" id="doc__an_title_model">Model description</span></h2>
+<p class="- topic/p p">The model consists of a <a class="- topic/xref xref" href="https://www.typhoon-hil.com/documentation/typhoon-hil-software-manual/References/single-phase_diode_rectifier.html" rel="external noopener" target="_blank">single-phase rectifier</a>, a <a class="- topic/xref xref" href="https://www.typhoon-hil.com/documentation/typhoon-hil-software-manual/References/three-phase_two-level_inverter_rectifier.html" rel="external noopener" target="_blank">three-phase
+        inverter</a>, and a <a class="- topic/xref xref" href="https://www.typhoon-hil.com/documentation/typhoon-hil-software-manual/References/three_phase_cylindrical_rotor_permanent_magnet_synchronous_machine.html" rel="external noopener" target="_blank">permanent magnet synchronous machine</a>. The
         single-phase rectifier and the three-phase inverter components are taken directly
         from the Converter library, while the permanent magnet synchronous machine is taken from the
         Machines library.</p>
-    <figure class="- topic/fig fig fignone" id="doc__fig_lx4_jnb_hlb" data-ofbid="doc__fig_lx4_jnb_hlb"><figcaption class="- topic/title title figcap"><span class="figtitleprefix fig--title-label">Figure<span class="fig--title-label-number"> 1</span><span class="fig--title-label-punctuation">. </span></span><span class="fig--title">PMSM Model</span></figcaption>
-     
-     <img class="- topic/image image" id="doc__image_mx4_jnb_hlb" src="../Images/pmsm_01.PNG"/></figure>
-  
-    <p class="- topic/p p">As shown in <a class="- topic/xref xref" href="#doc__fig_lx4_jnb_hlb">Figure 1</a>, this model contains only the
+<figure class="- topic/fig fig fignone" data-ofbid="doc__fig_lx4_jnb_hlb" id="doc__fig_lx4_jnb_hlb"><figcaption class="- topic/title title figcap"><span class="figtitleprefix fig--title-label">Figure<span class="fig--title-label-number"> 1</span><span class="fig--title-label-punctuation">. </span></span><span class="fig--title">PMSM Model</span></figcaption>
+<img class="- topic/image image" id="doc__image_mx4_jnb_hlb" src="../Images/pmsm_01.PNG"/></figure>
+<p class="- topic/p p">As shown in <a class="- topic/xref xref" href="#doc__fig_lx4_jnb_hlb">Figure 1</a>, this model contains only the
         electrical parts and all components in the model are controlled externally by changing the
         properties of the components. The operation mode for the three-phase inverter is set to
         “Digital input per switch”, while the load for the permanent magnet synchronous machine is
         set to “SCADA / external”, as shown in <a class="- topic/xref xref" href="#doc__fig_r3j_q4b_hlb">Figure 2</a> below.</p>
-      <figure class="- topic/fig fig fignone" id="doc__fig_r3j_q4b_hlb" data-ofbid="doc__fig_r3j_q4b_hlb"><figcaption class="- topic/title title figcap"><span class="figtitleprefix fig--title-label">Figure<span class="fig--title-label-number"> 2</span><span class="fig--title-label-punctuation">. </span></span><span class="fig--title">Components properties</span></figcaption>
-       
-       <img class="- topic/image image" id="doc__image_s3j_q4b_hlb" src="../Images/pmsm_02.png"/>
-      </figure>
-    
-     <p class="- topic/p p">Before compiling the model, it is necessary to upload the program code to the TMS320F2808
+<figure class="- topic/fig fig fignone" data-ofbid="doc__fig_r3j_q4b_hlb" id="doc__fig_r3j_q4b_hlb"><figcaption class="- topic/title title figcap"><span class="figtitleprefix fig--title-label">Figure<span class="fig--title-label-number"> 2</span><span class="fig--title-label-punctuation">. </span></span><span class="fig--title">Components properties</span></figcaption>
+<img class="- topic/image image" id="doc__image_s3j_q4b_hlb" src="../Images/pmsm_02.png"/>
+</figure>
+<p class="- topic/p p">Before compiling the model, it is necessary to upload the program code to the TMS320F2808
             control card. To do so, you will need the .out file provided with this document and an
-            appropriate software tool (for example, UniFlash). <a class="- topic/xref xref" href="http://www.ti.com/tool/UNIFLASH" target="_blank" rel="external noopener">UniFlash</a>
+            appropriate software tool (for example, UniFlash). <a class="- topic/xref xref" href="http://www.ti.com/tool/UNIFLASH" rel="external noopener" target="_blank">UniFlash</a>
             is a standalone tool used to program on-chip flash memory in TI Microcontrollers (MCUs)
             and on-board flash. It is available free of charge. To successfully flash the card, it
-            is necessary to follow the steps from <a class="- topic/xref xref" href="https://ticket.typhoon-hil.com/kb/faq.php?id=96" target="_blank" rel="external noopener">How-to flash a TI card and use a serial port widget</a>.</p>
-    
-   
-  </section>
-  <section class="- topic/section section" id="doc__kuQeNEusB" data-ofbid="doc__kuQeNEusB"><h2 class="- topic/title title sectiontitle"><span class="- topic/ph ph" id="doc__an_title_simulation">Simulation</span></h2>
-    
-    <p class="- topic/p p">This application comes with a pre-built SCADA panel shown in <a class="- topic/xref xref" href="#doc__fig_ygf_tpb_hlb">Figure 3</a>. It offers the most essential user interface
+            is necessary to follow the steps from <a class="- topic/xref xref" href="https://ticket.typhoon-hil.com/kb/faq.php?id=96" rel="external noopener" target="_blank">How-to flash a TI card and use a serial port widget</a>.</p>
+</section>
+<section class="- topic/section section" data-ofbid="doc__kuQeNEusB" id="doc__kuQeNEusB"><h2 class="- topic/title title sectiontitle"><span class="- topic/ph ph" id="doc__an_title_simulation">Simulation</span></h2>
+<p class="- topic/p p">This application comes with a pre-built SCADA panel shown in <a class="- topic/xref xref" href="#doc__fig_ygf_tpb_hlb">Figure 3</a>. It offers the most essential user interface
       elements (widgets) to monitor and interact with the simulation at runtime, allowing you to
       further customize it according to your needs.</p>
-      <p class="- topic/p p">Before starting the simulation, you should load the settings file and then run the
+<p class="- topic/p p">Before starting the simulation, you should load the settings file and then run the
         simulation. The settings file sends analog outputs and scales to signals towards the TI
         controller as an ABZ signal. Additionally, it contains digital output settings for the
         emulated machine encoder signals, sent as an ABZ inverted signal. The Settings file (.runx)
         is located in the same folder as the model and the SCADA file, and it will be automatically
         offered by the software.</p>
-    <figure class="- topic/fig fig fignone" id="doc__fig_ygf_tpb_hlb" data-ofbid="doc__fig_ygf_tpb_hlb"><figcaption class="- topic/title title figcap"><span class="figtitleprefix fig--title-label">Figure<span class="fig--title-label-number"> 3</span><span class="fig--title-label-punctuation">. </span></span><span class="fig--title">SCADA_panel</span></figcaption>
-     
-     <img class="- topic/image image" id="doc__image_zgf_tpb_hlb" src="../Images/pmsm_03.PNG"/></figure>
-   
-     <p class="- topic/p p">To interact with the simulation, you should set the reference speed. This reference is then
+<figure class="- topic/fig fig fignone" data-ofbid="doc__fig_ygf_tpb_hlb" id="doc__fig_ygf_tpb_hlb"><figcaption class="- topic/title title figcap"><span class="figtitleprefix fig--title-label">Figure<span class="fig--title-label-number"> 3</span><span class="fig--title-label-punctuation">. </span></span><span class="fig--title">SCADA_panel</span></figcaption>
+<img class="- topic/image image" id="doc__image_zgf_tpb_hlb" src="../Images/pmsm_03.PNG"/></figure>
+<p class="- topic/p p">To interact with the simulation, you should set the reference speed. This reference is then
         sent through the serial port widget to the TI card, which, in turn, sends that reference to
         the HIL inputs. <a class="- topic/xref xref" href="#doc__fig_pn5_bqb_hlb">Figure 4</a> shows the motor behavior
        following the set reference.</p>
-      <figure class="- topic/fig fig fignone" id="doc__fig_pn5_bqb_hlb" data-ofbid="doc__fig_pn5_bqb_hlb"><figcaption class="- topic/title title figcap"><span class="figtitleprefix fig--title-label">Figure<span class="fig--title-label-number"> 4</span><span class="fig--title-label-punctuation">. </span></span><span class="fig--title">Results obtained when the speed reference is changed</span></figcaption>
-       
-       <img class="- topic/image image" id="doc__image_qn5_bqb_hlb" src="../Images/pmsm_04.png"/></figure>
-     
-      <p class="- topic/p p">You can also change the parameters from PID. This is done in the Set/Read parameters group
+<figure class="- topic/fig fig fignone" data-ofbid="doc__fig_pn5_bqb_hlb" id="doc__fig_pn5_bqb_hlb"><figcaption class="- topic/title title figcap"><span class="figtitleprefix fig--title-label">Figure<span class="fig--title-label-number"> 4</span><span class="fig--title-label-punctuation">. </span></span><span class="fig--title">Results obtained when the speed reference is changed</span></figcaption>
+<img class="- topic/image image" id="doc__image_qn5_bqb_hlb" src="../Images/pmsm_04.png"/></figure>
+<p class="- topic/p p">You can also change the parameters from PID. This is done in the Set/Read parameters group
         (see the “Set/Read parameters” in <a class="- topic/xref xref" href="#doc__fig_pn5_bqb_hlb">Figure 4</a>).</p>
-        <figure class="- topic/fig fig fignone" id="doc__fig_a4q_kqb_hlb" data-ofbid="doc__fig_a4q_kqb_hlb"><figcaption class="- topic/title title figcap"><span class="figtitleprefix fig--title-label">Figure<span class="fig--title-label-number"> 5</span><span class="fig--title-label-punctuation">. </span></span><span class="fig--title">Results obtained when PID parameters are changed</span></figcaption>
-         
-         <img class="- topic/image image" id="doc__image_b4q_kqb_hlb" src="../Images/pmsm_05.png"/></figure>
-      
-      <p class="- topic/p p">Grid voltage can be changed manually or by using the LVRT (Low Voltage Ride Through) pulse
+<figure class="- topic/fig fig fignone" data-ofbid="doc__fig_a4q_kqb_hlb" id="doc__fig_a4q_kqb_hlb"><figcaption class="- topic/title title figcap"><span class="figtitleprefix fig--title-label">Figure<span class="fig--title-label-number"> 5</span><span class="fig--title-label-punctuation">. </span></span><span class="fig--title">Results obtained when PID parameters are changed</span></figcaption>
+<img class="- topic/image image" id="doc__image_b4q_kqb_hlb" src="../Images/pmsm_05.png"/></figure>
+<p class="- topic/p p">Grid voltage can be changed manually or by using the LVRT (Low Voltage Ride Through) pulse
         macro button. LVRT is the capability of electric generators to stay connected during short
         periods of lower grid voltage.</p>
-        <figure class="- topic/fig fig fignone" id="doc__fig_kky_drb_hlb" data-ofbid="doc__fig_kky_drb_hlb"><figcaption class="- topic/title title figcap"><span class="figtitleprefix fig--title-label">Figure<span class="fig--title-label-number"> 6</span><span class="fig--title-label-punctuation">. </span></span><span class="fig--title">Results when the LVRT pulse is activated</span></figcaption>
-        
-        <img class="- topic/image image" id="doc__image_lky_drb_hlb" src="../Images/pmsm_06.png"/></figure>
-      
-  </section>
-   <section class="- topic/section section" id="doc__section_pils_s3" data-ofbid="doc__section_pils_s3"><h2 class="- topic/title title sectiontitle"><span class="- topic/ph ph" id="doc__an_title_test-automation">Test automation</span></h2>
-     
-     <p class="- topic/p p">We don’t have a test automation for this example yet. <a class="- topic/xref xref" href="https://subscription.typhoon-hil.com/" target="_blank" rel="external noopener">Let us know</a> if you wish to contribute and we will gladly have you signed on the application note!</p>
-   </section>
-   <section class="- topic/section section" id="doc__example_requirements" data-ofbid="doc__example_requirements"><h2 class="- topic/title title sectiontitle">Example requirements</h2>
-     
-     <p class="- topic/p p"><a class="- topic/xref xref" href="#doc__min_req">Table 1</a> provides detailed information about the file locations and hardware requirements 
+<figure class="- topic/fig fig fignone" data-ofbid="doc__fig_kky_drb_hlb" id="doc__fig_kky_drb_hlb"><figcaption class="- topic/title title figcap"><span class="figtitleprefix fig--title-label">Figure<span class="fig--title-label-number"> 6</span><span class="fig--title-label-punctuation">. </span></span><span class="fig--title">Results when the LVRT pulse is activated</span></figcaption>
+<img class="- topic/image image" id="doc__image_lky_drb_hlb" src="../Images/pmsm_06.png"/></figure>
+</section>
+<section class="- topic/section section" data-ofbid="doc__section_pils_s3" id="doc__section_pils_s3"><h2 class="- topic/title title sectiontitle"><span class="- topic/ph ph" id="doc__an_title_test-automation">Test automation</span></h2>
+<p class="- topic/p p">We don’t have a test automation for this example yet. <a class="- topic/xref xref" href="https://subscription.typhoon-hil.com/" rel="external noopener" target="_blank">Let us know</a> if you wish to contribute and we will gladly have you signed on the application note!</p>
+</section>
+<section class="- topic/section section" data-ofbid="doc__example_requirements" id="doc__example_requirements"><h2 class="- topic/title title sectiontitle">Example requirements</h2>
+<p class="- topic/p p"><a class="- topic/xref xref" href="#doc__min_req">Table 1</a> provides detailed information about the file locations and hardware requirements 
        for running the model in real-time, followed by the HIL device resource utilization when running the model using 
        this minimal hardware configuration. This information is provided to help you with running and 
        customizing the model as you see fit.</p>
-     <table class="- topic/table table frame-all" id="doc__min_req" data-ofbid="doc__min_req" data-cols="2"><caption class="- topic/title title tablecap" data-caption-side="top" data-is-repeated="true"><span class="table--title-label">Table<span class="table--title-label-number"> 1</span><span class="table--title-label-punctuation">. </span></span><span class="table--title"><span class="- topic/ph ph" id="doc__an_min-req">Minimum requirements</span></span></caption><colgroup><col style="width:50%"/><col style="width:50%"/></colgroup><thead class="- topic/thead thead">
-           <tr class="- topic/row">
-             <th class="- topic/entry entry align-center colsep-0 rowsep-1" id="doc__min_req__entry__1" colspan="2">Files</th>
-           </tr>
-         </thead><tbody class="- topic/tbody tbody">
-           <tr class="- topic/row">
-             <td class="- topic/entry entry align-center colsep-1 rowsep-1" headers="doc__min_req__entry__1"><span class="- topic/ph ph" id="doc__an_min-req_TH-files">Typhoon HIL files</span></td>
-             <td class="- topic/entry entry align-center colsep-0 rowsep-1" headers="doc__min_req__entry__1"><p class="- topic/p p"><em class="+ topic/ph hi-d/i ph i"><a class="- topic/xref xref" href="https://marketplace.typhoon-hil.com/package?package_name=TMS320F2808+Example+Models" target="_blank" rel="external noopener">TMS320F2808 Example Models/ti pmsm sensored foc</a></em>*</p>
-               <p class="- topic/p p">ti pmsm sensored foc.tse</p>
-               <p class="- topic/p p">ti pmsm sensored foc.cus</p>
-               <p class="- topic/p p">20140220_pmsm3_1_TMS3202808.out</p>
-               <p class="- topic/p p">settings.runx</p>
-               <p class="- topic/p p"><em class="+ topic/ph hi-d/i ph i">*Downloadable via <a class="- topic/xref xref" href="https://marketplace.typhoon-hil.com/" target="_blank" rel="external noopener">Package Manager</a></em></p></td>
-           </tr>
-           <tr class="- topic/row">
-             <td class="- topic/entry entry align-center colsep-1 rowsep-1" headers="doc__min_req__entry__1">External Tools</td>
-             <td class="- topic/entry entry align-center colsep-0 rowsep-1" headers="doc__min_req__entry__1"><a class="- topic/xref xref" href="http://www.ti.com/tool/UNIFLASH" target="_blank" rel="external noopener">UniFlash</a>
-             </td>
-           </tr>
-           <tr class="- topic/row">
-             <td class="- topic/entry entry align-center colsep-0 rowsep-1" headers="doc__min_req__entry__1" colspan="2"><strong class="+ topic/ph hi-d/b ph b">Minimum hardware requirements</strong></td>
-           </tr>
-           <tr class="- topic/row">
-             <td class="- topic/entry entry align-center colsep-1 rowsep-1" headers="doc__min_req__entry__1"><span class="- topic/ph ph" id="doc__an_min-req_num-devices">No. of HIL devices</span></td>
-             <td class="- topic/entry entry align-center colsep-0 rowsep-1" headers="doc__min_req__entry__1"><span class="- topic/ph ph" id="doc__num_devices">1</span></td>
-           </tr>
-           <tr class="- topic/row">
-             <td class="- topic/entry entry align-center colsep-1 rowsep-1" headers="doc__min_req__entry__1"><span class="- topic/ph ph" id="doc__an_min-req_model-num">HIL device model</span></td>
-             <td class="- topic/entry entry align-center colsep-0 rowsep-1" headers="doc__min_req__entry__1"><span class="- topic/ph ph" id="doc__type_devices">HIL402</span></td>
-           </tr>
-           <tr class="- topic/row">
-             <td class="- topic/entry entry align-center colsep-1 rowsep-1" headers="doc__min_req__entry__1"><u class="+ topic/ph hi-d/u ph u"><a class="- topic/xref xref" href="https://www.typhoon-hil.com/documentation/typhoon-hil-software-manual/concepts/device_manager.html" target="_blank" rel="external noopener">Device configuration</a></u></td>
-             <td class="- topic/entry entry align-center colsep-0 rowsep-1" headers="doc__min_req__entry__1"><span class="- topic/ph ph" id="doc__num_config">1</span></td>
-           </tr>
-           <tr class="- topic/row">
-             <td class="- topic/entry entry align-center colsep-1 rowsep-1" headers="doc__min_req__entry__1"><span class="- topic/ph ph" id="doc__an_min-req_interface">Interface</span></td>
-             <td class="- topic/entry entry align-center colsep-0 rowsep-1" headers="doc__min_req__entry__1">
-               <p class="- topic/p p"><a class="- topic/xref xref" href="http://www.ti.com/tool/TMDSCNCD2808" target="_blank" rel="external noopener">TMS320F2808</a><em class="+ topic/ph hi-d/i ph i"> (Hardware under test)</em></p>
-               <p class="- topic/p p"><a class="- topic/xref xref" href="https://www.typhoon-hil.com/documentation/typhoon-hil-hardware-manual/hil_dsp_180_interface/topics/abstract.html" target="_blank" rel="external noopener">HIL DSP180 Interface</a></p></td>
-           </tr>
-           <tr class="- topic/row">
-             <td class="- topic/entry entry align-center colsep-0 rowsep-1" headers="doc__min_req__entry__1" colspan="2"><strong class="+ topic/ph hi-d/b ph b">HIL device resource utilization</strong></td>
-           </tr>
-           <tr class="- topic/row">
-             <td class="- topic/entry entry align-center colsep-1 rowsep-1" headers="doc__min_req__entry__1"><span class="- topic/ph ph" id="doc__an_res-util_num-cores">No. of processing cores</span></td>
-             <td class="- topic/entry entry align-center colsep-0 rowsep-1" headers="doc__min_req__entry__1"><span class="- topic/ph ph" id="doc__num_cores">2</span></td>
-           </tr>
-           <tr class="- topic/row">
-             <td class="- topic/entry entry align-center colsep-1 rowsep-1" headers="doc__min_req__entry__1"><span class="- topic/ph ph" id="doc__an_res-util_max-memory">Max. matrix memory utilization</span></td>
-             <td class="- topic/entry entry align-center colsep-0 rowsep-1" headers="doc__min_req__entry__1"><p class="- topic/p p">2.25% (core0)</p><p class="- topic/p p">30.81% (core1)</p></td>
-           </tr>
-           <tr class="- topic/row">
-             <td class="- topic/entry entry align-center colsep-1 rowsep-1" headers="doc__min_req__entry__1"><span class="- topic/ph ph" id="doc__an_res-util_max-time">Max. time slot utilization</span></td>
-             <td class="- topic/entry entry align-center colsep-0 rowsep-1" headers="doc__min_req__entry__1"><p class="- topic/p p">29.38% (core0)</p><p class="- topic/p p">52.5% (core1)</p></td>
-           </tr>
-           <tr class="- topic/row">
-             <td class="- topic/entry entry align-center colsep-1 rowsep-1" headers="doc__min_req__entry__1"><span class="- topic/ph ph" id="doc__an_res-util_sim-step">Simulation step, electrical</span></td>
-             <td class="- topic/entry entry align-center colsep-0 rowsep-1" headers="doc__min_req__entry__1">1 µs</td>
-           </tr>
-           <tr class="- topic/row">
-             <td class="- topic/entry entry align-center colsep-1 rowsep-0" headers="doc__min_req__entry__1"><span class="- topic/ph ph" id="doc__an_res-util_exec-rate">Execution rate, signal processing</span></td>
-             <td class="- topic/entry entry align-center colsep-0 rowsep-0" headers="doc__min_req__entry__1">100 µs</td>
-           </tr>
-         </tbody></table>
-   </section>
-   <section class="- topic/section section" id="doc__section_pils_s5" data-ofbid="doc__section_pils_s5"><h2 class="- topic/title title sectiontitle"><span class="- topic/ph ph" id="doc__an_title_author">Authors</span></h2>
-     
-     <p class="- topic/p p">[1] Jovana Markovic</p>
-   </section>
- </div>
+<table class="- topic/table table frame-all" data-cols="2" data-ofbid="doc__min_req" id="doc__min_req"><caption class="- topic/title title tablecap" data-caption-side="top" data-is-repeated="true"><span class="table--title-label">Table<span class="table--title-label-number"> 1</span><span class="table--title-label-punctuation">. </span></span><span class="table--title"><span class="- topic/ph ph" id="doc__an_min-req">Minimum requirements</span></span></caption><colgroup><col style="width:50%"/><col style="width:50%"/></colgroup><thead class="- topic/thead thead">
+<tr class="- topic/row">
+<th class="- topic/entry entry align-center colsep-0 rowsep-1" colspan="2" id="doc__min_req__entry__1">Files</th>
+</tr>
+</thead><tbody class="- topic/tbody tbody">
+<tr class="- topic/row">
+<td class="- topic/entry entry align-center colsep-1 rowsep-1" headers="doc__min_req__entry__1"><span class="- topic/ph ph" id="doc__an_min-req_TH-files">Typhoon HIL files</span></td>
+<td class="- topic/entry entry align-center colsep-0 rowsep-1" headers="doc__min_req__entry__1"><p class="- topic/p p"><em class="+ topic/ph hi-d/i ph i"><a class="- topic/xref xref" href="https://marketplace.typhoon-hil.com/package?package_name=TMS320F2808+Example+Models" rel="external noopener" target="_blank">TMS320F2808 Example Models/ti pmsm sensored foc</a></em>*</p>
+<p class="- topic/p p">ti pmsm sensored foc.tse</p>
+<p class="- topic/p p">ti pmsm sensored foc.cus</p>
+<p class="- topic/p p">20140220_pmsm3_1_TMS3202808.out</p>
+<p class="- topic/p p">settings.runx</p>
+<p class="- topic/p p"><em class="+ topic/ph hi-d/i ph i">*Downloadable via <a class="- topic/xref xref" href="https://marketplace.typhoon-hil.com/" rel="external noopener" target="_blank">Package Manager</a></em></p></td>
+</tr>
+<tr class="- topic/row">
+<td class="- topic/entry entry align-center colsep-1 rowsep-1" headers="doc__min_req__entry__1">External Tools</td>
+<td class="- topic/entry entry align-center colsep-0 rowsep-1" headers="doc__min_req__entry__1"><a class="- topic/xref xref" href="http://www.ti.com/tool/UNIFLASH" rel="external noopener" target="_blank">UniFlash</a>
+</td>
+</tr>
+<tr class="- topic/row">
+<td class="- topic/entry entry align-center colsep-0 rowsep-1" colspan="2" headers="doc__min_req__entry__1"><strong class="+ topic/ph hi-d/b ph b">Minimum hardware requirements</strong></td>
+</tr>
+<tr class="- topic/row">
+<td class="- topic/entry entry align-center colsep-1 rowsep-1" headers="doc__min_req__entry__1"><span class="- topic/ph ph" id="doc__an_min-req_num-devices">No. of HIL devices</span></td>
+<td class="- topic/entry entry align-center colsep-0 rowsep-1" headers="doc__min_req__entry__1"><span class="- topic/ph ph" id="doc__num_devices">1</span></td>
+</tr>
+<tr class="- topic/row">
+<td class="- topic/entry entry align-center colsep-1 rowsep-1" headers="doc__min_req__entry__1"><span class="- topic/ph ph" id="doc__an_min-req_model-num">HIL device model</span></td>
+<td class="- topic/entry entry align-center colsep-0 rowsep-1" headers="doc__min_req__entry__1"><span class="- topic/ph ph" id="doc__type_devices">HIL402</span></td>
+</tr>
+<tr class="- topic/row">
+<td class="- topic/entry entry align-center colsep-1 rowsep-1" headers="doc__min_req__entry__1"><u class="+ topic/ph hi-d/u ph u"><a class="- topic/xref xref" href="https://www.typhoon-hil.com/documentation/typhoon-hil-software-manual/concepts/device_manager.html" rel="external noopener" target="_blank">Device configuration</a></u></td>
+<td class="- topic/entry entry align-center colsep-0 rowsep-1" headers="doc__min_req__entry__1"><span class="- topic/ph ph" id="doc__num_config">1</span></td>
+</tr>
+<tr class="- topic/row">
+<td class="- topic/entry entry align-center colsep-1 rowsep-1" headers="doc__min_req__entry__1"><span class="- topic/ph ph" id="doc__an_min-req_interface">Interface</span></td>
+<td class="- topic/entry entry align-center colsep-0 rowsep-1" headers="doc__min_req__entry__1">
+<p class="- topic/p p"><a class="- topic/xref xref" href="http://www.ti.com/tool/TMDSCNCD2808" rel="external noopener" target="_blank">TMS320F2808</a><em class="+ topic/ph hi-d/i ph i"> (Hardware under test)</em></p>
+<p class="- topic/p p"><a class="- topic/xref xref" href="https://www.typhoon-hil.com/documentation/typhoon-hil-hardware-manual/hil_dsp_180_interface/topics/abstract.html" rel="external noopener" target="_blank">HIL DSP180 Interface</a></p></td>
+</tr>
+<tr class="- topic/row">
+<td class="- topic/entry entry align-center colsep-0 rowsep-1" colspan="2" headers="doc__min_req__entry__1"><strong class="+ topic/ph hi-d/b ph b">HIL device resource utilization</strong></td>
+</tr>
+<tr class="- topic/row">
+<td class="- topic/entry entry align-center colsep-1 rowsep-1" headers="doc__min_req__entry__1"><span class="- topic/ph ph" id="doc__an_res-util_num-cores">No. of processing cores</span></td>
+<td class="- topic/entry entry align-center colsep-0 rowsep-1" headers="doc__min_req__entry__1"><span class="- topic/ph ph" id="doc__num_cores">2</span></td>
+</tr>
+<tr class="- topic/row">
+<td class="- topic/entry entry align-center colsep-1 rowsep-1" headers="doc__min_req__entry__1"><span class="- topic/ph ph" id="doc__an_res-util_max-memory">Max. matrix memory utilization</span></td>
+<td class="- topic/entry entry align-center colsep-0 rowsep-1" headers="doc__min_req__entry__1"><p class="- topic/p p">2.25% (core0)</p><p class="- topic/p p">30.81% (core1)</p></td>
+</tr>
+<tr class="- topic/row">
+<td class="- topic/entry entry align-center colsep-1 rowsep-1" headers="doc__min_req__entry__1"><span class="- topic/ph ph" id="doc__an_res-util_max-time">Max. time slot utilization</span></td>
+<td class="- topic/entry entry align-center colsep-0 rowsep-1" headers="doc__min_req__entry__1"><p class="- topic/p p">29.38% (core0)</p><p class="- topic/p p">52.5% (core1)</p></td>
+</tr>
+<tr class="- topic/row">
+<td class="- topic/entry entry align-center colsep-1 rowsep-1" headers="doc__min_req__entry__1"><span class="- topic/ph ph" id="doc__an_res-util_sim-step">Simulation step, electrical</span></td>
+<td class="- topic/entry entry align-center colsep-0 rowsep-1" headers="doc__min_req__entry__1">1 µs</td>
+</tr>
+<tr class="- topic/row">
+<td class="- topic/entry entry align-center colsep-1 rowsep-0" headers="doc__min_req__entry__1"><span class="- topic/ph ph" id="doc__an_res-util_exec-rate">Execution rate, signal processing</span></td>
+<td class="- topic/entry entry align-center colsep-0 rowsep-0" headers="doc__min_req__entry__1">100 µs</td>
+</tr>
+</tbody></table>
+</section>
+<section class="- topic/section section" data-ofbid="doc__section_pils_s5" id="doc__section_pils_s5"><h2 class="- topic/title title sectiontitle"><span class="- topic/ph ph" id="doc__an_title_author">Authors</span></h2>
+<p class="- topic/p p">[1] Jovana Markovic</p>
+</section>
+</div>
 </article></main></div>
-                        
-                        
-                        
-                        
-                        
-                        
-                    </div>
-                    
-                        <nav role="navigation" id="wh_topic_toc" aria-label="On this page" class="col-lg-2 d-none d-lg-block navbar d-print-none"> 
-                            <div id="wh_topic_toc_content">
-		                        
-	                            <div class=" wh_topic_toc "><div class="wh_topic_label">On this page</div><ul><li class="section-item"><div class="section-title"><a href="#doc__section_hqr_1zb_rz" data-tocid="doc__section_hqr_1zb_rz"><span class="- topic/ph ph" id="doc__an_title_intro">Introduction</span></a></div></li><li class="section-item"><div class="section-title"><a href="#doc__KuiRbDA5n" data-tocid="doc__KuiRbDA5n"><span class="- topic/ph ph" id="doc__an_title_model">Model description</span></a></div></li><li class="section-item"><div class="section-title"><a href="#doc__kuQeNEusB" data-tocid="doc__kuQeNEusB"><span class="- topic/ph ph" id="doc__an_title_simulation">Simulation</span></a></div></li><li class="section-item"><div class="section-title"><a href="#doc__section_pils_s3" data-tocid="doc__section_pils_s3"><span class="- topic/ph ph" id="doc__an_title_test-automation">Test automation</span></a></div></li><li class="section-item"><div class="section-title"><a href="#doc__example_requirements" data-tocid="doc__example_requirements">Example requirements</a></div></li><li class="section-item"><div class="section-title"><a href="#doc__section_pils_s5" data-tocid="doc__section_pils_s5"><span class="- topic/ph ph" id="doc__an_title_author">Authors</span></a></div></li></ul></div>
-	                        	
-                        	</div>
-                        </nav>
-                    
-                </div>
-            </div>
-            
-            
-            
-        </div> 
-        <footer class="navbar navbar-default wh_footer">
-  <div class=" footer-container mx-auto ">
-    <div style="text-align:center">Typhoon HIL Inc.<span id="year"> <a href="https://www.typhoon-hil.com">www.typhoon-hil.com</a></span></div>
-  </div>
+</div>
+<nav aria-label="On this page" class="col-lg-2 d-none d-lg-block navbar d-print-none" id="wh_topic_toc" role="navigation">
+<div id="wh_topic_toc_content">
+<div class="wh_topic_toc"><div class="wh_topic_label">On this page</div><ul><li class="section-item"><div class="section-title"><a data-tocid="doc__section_hqr_1zb_rz" href="#doc__section_hqr_1zb_rz"><span class="- topic/ph ph" id="doc__an_title_intro">Introduction</span></a></div></li><li class="section-item"><div class="section-title"><a data-tocid="doc__KuiRbDA5n" href="#doc__KuiRbDA5n"><span class="- topic/ph ph" id="doc__an_title_model">Model description</span></a></div></li><li class="section-item"><div class="section-title"><a data-tocid="doc__kuQeNEusB" href="#doc__kuQeNEusB"><span class="- topic/ph ph" id="doc__an_title_simulation">Simulation</span></a></div></li><li class="section-item"><div class="section-title"><a data-tocid="doc__section_pils_s3" href="#doc__section_pils_s3"><span class="- topic/ph ph" id="doc__an_title_test-automation">Test automation</span></a></div></li><li class="section-item"><div class="section-title"><a data-tocid="doc__example_requirements" href="#doc__example_requirements">Example requirements</a></div></li><li class="section-item"><div class="section-title"><a data-tocid="doc__section_pils_s5" href="#doc__section_pils_s5"><span class="- topic/ph ph" id="doc__an_title_author">Authors</span></a></div></li></ul></div>
+</div>
+</nav>
+</div>
+</div>
+</div>
+<footer class="navbar navbar-default wh_footer">
+<div class="footer-container mx-auto">
+<div style="text-align:center">Typhoon HIL Inc.<span id="year"> <a href="https://www.typhoon-hil.com">www.typhoon-hil.com</a></span></div>
+</div>
 </footer>
-        
-        <div id="go2top" class="d-print-none">
-            <span class="oxy-icon oxy-icon-up"></span>
-        </div>
-        
-        <div id="modal_img_large" class="modal">
-            <span class="close oxy-icon oxy-icon-remove"></span>
-            <div id="modal_img_container"></div>
-            <div id="caption"></div>
-        </div>
-        
-        
-<script type="text/javascript" src="../../assets/script.js"> 
+<div class="d-print-none" id="go2top">
+<span class="oxy-icon oxy-icon-up"></span>
+</div>
+<div class="modal" id="modal_img_large">
+<span class="close oxy-icon oxy-icon-remove"></span>
+<div id="modal_img_container"></div>
+<div id="caption"></div>
+</div>
+<script src="../../assets/script.js" type="text/javascript">
 </script>
-
-        
-    </body>
+</body>
 </html>

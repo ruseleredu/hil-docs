@@ -1,48 +1,41 @@
 <!DOCTYPE html>
 
-<html lang="en" data-content_root="./">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
-
-    <title>Modbus Registers Specification Language &#8212; Typhoon API 2026.1 sp1 documentation</title>
-    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=03e43079" />
-    <link rel="stylesheet" type="text/css" href="_static/sphinxdoc.css?v=34905f61" />
-    <script src="_static/documentation_options.js?v=6122843d"></script>
-    <script src="_static/doctools.js?v=9bcbadda"></script>
-    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
-    <link rel="index" title="Index" href="genindex.html" />
-    <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="PV Generator API" href="pv_generator_api.html" />
-    <link rel="prev" title="Modbus API" href="modbus_api.html" /> 
-  </head><body>
-    <div class="related" role="navigation" aria-label="Related">
-      <h3>Navigation</h3>
-      <ul>
-        <li class="right" style="margin-right: 10px">
-          <a href="genindex.html" title="General Index"
-             accesskey="I">index</a></li>
-        <li class="right" >
-          <a href="py-modindex.html" title="Python Module Index"
-             >modules</a> |</li>
-        <li class="right" >
-          <a href="pv_generator_api.html" title="PV Generator API"
-             accesskey="N">next</a> |</li>
-        <li class="right" >
-          <a href="modbus_api.html" title="Modbus API"
-             accesskey="P">previous</a> |</li>
-        <li class="nav-item nav-item-0"><a href="typhoon_api.html">Typhoon API 2026.1 sp1 documentation</a> &#187;</li>
-          <li class="nav-item nav-item-1"><a href="modbus_api.html" accesskey="U">Modbus API</a> &#187;</li>
-        <li class="nav-item nav-item-this"><a href="">Modbus Registers Specification Language</a></li> 
-      </ul>
-    </div>  
-
-    <div class="document">
-      <div class="documentwrapper">
-        <div class="bodywrapper">
-          <div class="body" role="main">
-            
-  <section id="modbus-registers-specification-language">
+<html data-content_root="./" lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="width=device-width, initial-scale=1" name="viewport"/>
+<title>Modbus Registers Specification Language — Typhoon API 2026.1 sp1 documentation</title>
+<link href="_static/pygments.css?v=03e43079" rel="stylesheet" type="text/css"/>
+<link href="_static/sphinxdoc.css?v=34905f61" rel="stylesheet" type="text/css"/>
+<script src="_static/documentation_options.js?v=6122843d"></script>
+<script src="_static/doctools.js?v=9bcbadda"></script>
+<script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+<link href="genindex.html" rel="index" title="Index"/>
+<link href="search.html" rel="search" title="Search"/>
+<link href="pv_generator_api.html" rel="next" title="PV Generator API"/>
+<link href="modbus_api.html" rel="prev" title="Modbus API"/>
+</head><body>
+<div aria-label="Related" class="related" role="navigation">
+<h3>Navigation</h3>
+<ul>
+<li class="right" style="margin-right: 10px">
+<a accesskey="I" href="genindex.html" title="General Index">index</a></li>
+<li class="right">
+<a href="py-modindex.html" title="Python Module Index">modules</a> |</li>
+<li class="right">
+<a accesskey="N" href="pv_generator_api.html" title="PV Generator API">next</a> |</li>
+<li class="right">
+<a accesskey="P" href="modbus_api.html" title="Modbus API">previous</a> |</li>
+<li class="nav-item"><a href="../index.html"> Docs </a> » </li><li class="nav-item nav-item-0"><a href="typhoon_api.html">Typhoon API 2026.1 sp1 documentation</a> »</li>
+<li class="nav-item nav-item-1"><a accesskey="U" href="modbus_api.html">Modbus API</a> »</li>
+<li class="nav-item nav-item-this"><a href="">Modbus Registers Specification Language</a></li>
+</ul>
+</div>
+<div class="document">
+<div class="documentwrapper">
+<div class="bodywrapper">
+<div class="body" role="main">
+<section id="modbus-registers-specification-language">
 <h1>Modbus Registers Specification Language<a class="headerlink" href="#modbus-registers-specification-language" title="Link to this heading">¶</a></h1>
 <p><strong>Module:</strong> <code class="docutils literal notranslate"><span class="pre">typhoon.api.modbus</span></code></p>
 <p>In the Modbus API there are few advance functions for writing to multiple input/holding registers and function for reading from holding registers.
@@ -97,83 +90,74 @@ All advance functions use the same simple language for specifying registers that
 
 <span class="k">try</span><span class="p">:</span>
     <span class="c1"># write to int16, uint32, int64 and float registers</span>
-    <span class="n">modbus_client</span><span class="o">.</span><span class="n">write_registers_adv</span><span class="p">(</span><span class="s2">&quot;501i,[502,503]u,[504,505,506,507]i,[125,126]f&quot;</span><span class="p">,</span> <span class="p">[</span><span class="o">-</span><span class="mi">55</span><span class="p">,</span> <span class="mi">233</span><span class="p">,</span> <span class="o">-</span><span class="mi">45558444</span><span class="p">,</span> <span class="mf">256.36</span><span class="p">])</span>
+    <span class="n">modbus_client</span><span class="o">.</span><span class="n">write_registers_adv</span><span class="p">(</span><span class="s2">"501i,[502,503]u,[504,505,506,507]i,[125,126]f"</span><span class="p">,</span> <span class="p">[</span><span class="o">-</span><span class="mi">55</span><span class="p">,</span> <span class="mi">233</span><span class="p">,</span> <span class="o">-</span><span class="mi">45558444</span><span class="p">,</span> <span class="mf">256.36</span><span class="p">])</span>
 <span class="k">except</span> <span class="n">ModbusError</span> <span class="k">as</span> <span class="n">ex</span><span class="p">:</span>
     <span class="nb">print</span><span class="p">(</span><span class="n">ex</span><span class="p">)</span>
 
 <span class="k">try</span><span class="p">:</span>
     <span class="c1"># read int16, uint32, int64 and float registers</span>
-    <span class="n">values</span> <span class="o">=</span> <span class="n">modbus_client</span><span class="o">.</span><span class="n">read_holding_registers_adv</span><span class="p">(</span><span class="s2">&quot;501i,[502,503]u,[504,505,506,507]i,[125,126]f&quot;</span><span class="p">)</span>
+    <span class="n">values</span> <span class="o">=</span> <span class="n">modbus_client</span><span class="o">.</span><span class="n">read_holding_registers_adv</span><span class="p">(</span><span class="s2">"501i,[502,503]u,[504,505,506,507]i,[125,126]f"</span><span class="p">)</span>
 <span class="k">except</span> <span class="n">ModbusError</span> <span class="k">as</span> <span class="n">ex</span><span class="p">:</span>
     <span class="nb">print</span><span class="p">(</span><span class="n">ex</span><span class="p">)</span>
 </pre></div>
 </div>
 </section>
-
-
-            <div class="clearer"></div>
-          </div>
-        </div>
-      </div>
-      <div class="sphinxsidebar" role="navigation" aria-label="Main">
-        <div class="sphinxsidebarwrapper">
-            <p class="logo"><a href="typhoon_api.html">
-              <img class="logo" src="_static/logo.png" alt="Logo of Typhoon API"/>
-            </a></p>
-  <div>
-    <h4>Previous topic</h4>
-    <p class="topless"><a href="modbus_api.html"
-                          title="previous chapter">Modbus API</a></p>
-  </div>
-  <div>
-    <h4>Next topic</h4>
-    <p class="topless"><a href="pv_generator_api.html"
-                          title="next chapter">PV Generator API</a></p>
-  </div>
-  <div role="note" aria-label="source link">
-    <h3>This Page</h3>
-    <ul class="this-page-menu">
-      <li><a href="_sources/modbus_reg_spec.rst.txt"
-            rel="nofollow">Show Source</a></li>
-    </ul>
-   </div>
-<search id="searchbox" style="display: none" role="search">
-  <h3 id="searchlabel">Quick search</h3>
-    <div class="searchformwrapper">
-    <form class="search" action="search.html" method="get">
-      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
-      <input type="submit" value="Go" />
-    </form>
-    </div>
+<div class="clearer"></div>
+</div>
+</div>
+</div>
+<div aria-label="Main" class="sphinxsidebar" role="navigation">
+<div class="sphinxsidebarwrapper">
+<p class="logo"><a href="typhoon_api.html">
+<img alt="Logo of Typhoon API" class="logo" src="_static/logo.png"/>
+</a></p>
+<div>
+<h4>Previous topic</h4>
+<p class="topless"><a href="modbus_api.html" title="previous chapter">Modbus API</a></p>
+</div>
+<div>
+<h4>Next topic</h4>
+<p class="topless"><a href="pv_generator_api.html" title="next chapter">PV Generator API</a></p>
+</div>
+<div aria-label="source link" role="note">
+<h3>This Page</h3>
+<ul class="this-page-menu">
+<li><a href="_sources/modbus_reg_spec.rst.txt" rel="nofollow">Show Source</a></li>
+</ul>
+</div>
+<search id="searchbox" role="search" style="display: none">
+<h3 id="searchlabel">Quick search</h3>
+<div class="searchformwrapper">
+<form action="search.html" class="search" method="get">
+<input aria-labelledby="searchlabel" autocapitalize="off" autocomplete="off" autocorrect="off" name="q" spellcheck="false" type="text"/>
+<input type="submit" value="Go"/>
+</form>
+</div>
 </search>
 <script>document.getElementById('searchbox').style.display = "block"</script>
-        </div>
-      </div>
-      <div class="clearer"></div>
-    </div>
-    <div class="related" role="navigation" aria-label="Related">
-      <h3>Navigation</h3>
-      <ul>
-        <li class="right" style="margin-right: 10px">
-          <a href="genindex.html" title="General Index"
-             >index</a></li>
-        <li class="right" >
-          <a href="py-modindex.html" title="Python Module Index"
-             >modules</a> |</li>
-        <li class="right" >
-          <a href="pv_generator_api.html" title="PV Generator API"
-             >next</a> |</li>
-        <li class="right" >
-          <a href="modbus_api.html" title="Modbus API"
-             >previous</a> |</li>
-        <li class="nav-item nav-item-0"><a href="typhoon_api.html">Typhoon API 2026.1 sp1 documentation</a> &#187;</li>
-          <li class="nav-item nav-item-1"><a href="modbus_api.html" >Modbus API</a> &#187;</li>
-        <li class="nav-item nav-item-this"><a href="">Modbus Registers Specification Language</a></li> 
-      </ul>
-    </div>
-    <div class="footer" role="contentinfo">
-    &#169; Copyright 2026, Typhoon HIL.
+</div>
+</div>
+<div class="clearer"></div>
+</div>
+<div aria-label="Related" class="related" role="navigation">
+<h3>Navigation</h3>
+<ul>
+<li class="right" style="margin-right: 10px">
+<a href="genindex.html" title="General Index">index</a></li>
+<li class="right">
+<a href="py-modindex.html" title="Python Module Index">modules</a> |</li>
+<li class="right">
+<a href="pv_generator_api.html" title="PV Generator API">next</a> |</li>
+<li class="right">
+<a href="modbus_api.html" title="Modbus API">previous</a> |</li>
+<li class="nav-item"><a href="../index.html"> Docs </a> » </li><li class="nav-item nav-item-0"><a href="typhoon_api.html">Typhoon API 2026.1 sp1 documentation</a> »</li>
+<li class="nav-item nav-item-1"><a href="modbus_api.html">Modbus API</a> »</li>
+<li class="nav-item nav-item-this"><a href="">Modbus Registers Specification Language</a></li>
+</ul>
+</div>
+<div class="footer" role="contentinfo">
+    © Copyright 2026, Typhoon HIL.
       Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 8.2.1.
     </div>
-  </body>
+</body>
 </html>

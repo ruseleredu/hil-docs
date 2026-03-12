@@ -1,574 +1,517 @@
-<!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en" data-whc_version="24.1">
-    <head><link rel="shortcut icon" href="../../favicon.ico"/><link rel="icon" href="../../favicon.ico"/><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><meta name="DC.rights.owner" content="(C) Copyright 2026"/><meta name="copyright" content="(C) Copyright 2026"/><meta name="generator" content="DITA-OT"/><meta name="DC.type" content="reference"/><meta name="description" content="This how to guide explains scaling, which is a crucial step in interfacing a HIL device with an external device under test (DUT), such as a controller, relay, PLC, etc."/><meta name="DC.relation" content="../../t-an001/concepts/how-to_guides.html"/><meta name="DC.format" content="HTML5"/><meta name="DC.identifier" content="doc"/>        
-      <title>How to scale simulated signals for a C-HIL interface</title><!--  Generated with Oxygen version 24.1, build number 2022030800.  --><meta name="wh-path2root" content="../../"/><meta name="wh-toc-id" content="doc-d16877e300"/><meta name="wh-source-relpath" content="t-an001/References/how_to_signal_scaling.dita"/><meta name="wh-out-relpath" content="t-an001/References/how_to_signal_scaling.html"/>
-    <!-- Latest compiled and minified Bootstrap CSS -->
-    <link rel="stylesheet" type="text/css" href="../../oxygen-webhelp/lib/bootstrap/css/bootstrap.min.css"/>
-    
-    <link rel="stylesheet" href="../../oxygen-webhelp/lib/jquery-ui/jquery-ui.min.css"/>
-    
-    <!-- Template default styles  -->
-    <link rel="stylesheet" type="text/css" href="../../oxygen-webhelp/app/topic-page.css?buildId=2022030800"/>
-    
-    
-    <script src="../../oxygen-webhelp/lib/jquery/jquery-3.5.1.min.js"></script>
-    
-    <script data-main="../../oxygen-webhelp/app/topic-page.js" src="../../oxygen-webhelp/lib/requirejs/require.js"></script>
-<link rel="stylesheet" type="text/css" href="../../oxygen-webhelp/template/oxygen.css?buildId=2022030800"/><link rel="stylesheet" type="text/css" href="../../oxygen-webhelp/template/notes.css?buildId=2022030800"/><script type="text/javascript" src="../../Scripts/mml-svg.js"> 
-</script><link rel="stylesheet" type="text/css" href="../../assets/typhoon.css"/></head>
-
-    <body id="doc" class="wh_topic_page frmBody">
-        <a href="#wh_topic_body" class="sr-only sr-only-focusable">
+<!DOCTYPE html>
+<html data-whc_version="24.1" lang="en" xml:lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head><link href="../../favicon.ico" rel="shortcut icon"/><link href="../../favicon.ico" rel="icon"/><meta content="text/html; charset=utf-8" http-equiv="Content-Type"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="IE=edge" http-equiv="X-UA-Compatible"/><meta content="(C) Copyright 2026" name="DC.rights.owner"/><meta content="(C) Copyright 2026" name="copyright"/><meta content="DITA-OT" name="generator"/><meta content="reference" name="DC.type"/><meta content="This how to guide explains scaling, which is a crucial step in interfacing a HIL device with an external device under test (DUT), such as a controller, relay, PLC, etc." name="description"/><meta content="../../t-an001/concepts/how-to_guides.html" name="DC.relation"/><meta content="HTML5" name="DC.format"/><meta content="doc" name="DC.identifier"/>
+<title>How to scale simulated signals for a C-HIL interface</title><!--  Generated with Oxygen version 24.1, build number 2022030800.  --><meta content="../../" name="wh-path2root"/><meta content="doc-d16877e300" name="wh-toc-id"/><meta content="t-an001/References/how_to_signal_scaling.dita" name="wh-source-relpath"/><meta content="t-an001/References/how_to_signal_scaling.html" name="wh-out-relpath"/>
+<!-- Latest compiled and minified Bootstrap CSS -->
+<link href="../../oxygen-webhelp/lib/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
+<link href="../../oxygen-webhelp/lib/jquery-ui/jquery-ui.min.css" rel="stylesheet"/>
+<!-- Template default styles  -->
+<link href="../../oxygen-webhelp/app/topic-page.css?buildId=2022030800" rel="stylesheet" type="text/css"/>
+<script src="../../oxygen-webhelp/lib/jquery/jquery-3.5.1.min.js"></script>
+<script data-main="../../oxygen-webhelp/app/topic-page.js" src="../../oxygen-webhelp/lib/requirejs/require.js"></script>
+<link href="../../oxygen-webhelp/template/oxygen.css?buildId=2022030800" rel="stylesheet" type="text/css"/><link href="../../oxygen-webhelp/template/notes.css?buildId=2022030800" rel="stylesheet" type="text/css"/><script src="../../Scripts/mml-svg.js" type="text/javascript">
+</script><link href="../../assets/typhoon.css" rel="stylesheet" type="text/css"/></head>
+<body class="wh_topic_page frmBody" id="doc">
+<a class="sr-only sr-only-focusable" href="#wh_topic_body">
             Jump to main content
         </a>
-        
-        
-        
-        
-        <header class="navbar navbar-default wh_header">
-    <div class="container-fluid">
-        <div class="wh_header_flex_container navbar-nav navbar-expand-md navbar-dark">
-            <div class="wh_logo_and_publication_title_container">
-                <div class="wh_logo_and_publication_title">
-                    
-                    <a href="https://www.typhoon-hil.com" class=" wh_logo d-none d-sm-block "><img src="../../logo.svg" alt="  Typhoon HIL Documentation  Version: 2026.1  "/></a>
-                    <div class=" wh_publication_title "><a href="../../index.html"><span class="booktitle">  <span class="ph mainbooktitle">Typhoon HIL Documentation</span>  <span class="ph booktitlealt">Version: 2026.1</span>  </span></a></div>
-                    
-                </div>
-                
-                <button type="button" data-target="#wh_top_menu_and_indexterms_link" id="wh_menu_mobile_button" data-toggle="collapse" class="navbar-toggler collapsed wh_toggle_button" aria-expanded="false" aria-label="Toggle menu" aria-controls="wh_top_menu_and_indexterms_link">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-            </div>
-
-            <div class="wh_top_menu_and_indexterms_link collapse navbar-collapse" id="wh_top_menu_and_indexterms_link">
-                
-                <nav class=" wh_top_menu " aria-label="Menu Container"><ul role="menubar" aria-label="Menu"><li role="menuitem" aria-haspopup="true" aria-expanded="false" class="has-children"><span id="tocId-d16877e21-mi" data-tocid="tocId-d16877e21" data-state="not-ready" class=" topicref application-notes"><span class="title"><a href="../../t-an001/concepts/application_notes_introduction.html">Typhoon HIL Application Notes</a></span></span></li><li role="menuitem" aria-haspopup="true" aria-expanded="false" class="has-children"><span id="tocId-d16877e737-mi" data-tocid="tocId-d16877e737" data-state="not-ready" class=" topicref software-manual"><span class="title"><a href="../../t-ug002/topics/software_manual_introduction.html">Typhoon HIL Software Manual</a></span></span></li><li role="menuitem" aria-haspopup="true" aria-expanded="false" class="has-children"><span id="tocId-d16877e7901-mi" data-tocid="tocId-d16877e7901" data-state="not-ready" class=" topicref hardware-manual"><span class="title"><a href="../../t-ug001/abstract/hardware_manual_introduction.html">Typhoon HIL Hardware Manual</a></span></span></li></ul></nav>
-                
-                
-            </div>
-        </div>
-    </div>
+<header class="navbar navbar-default wh_header">
+<div class="container-fluid">
+<div class="wh_header_flex_container navbar-nav navbar-expand-md navbar-dark">
+<div class="wh_logo_and_publication_title_container">
+<div class="wh_logo_and_publication_title">
+<a class="wh_logo d-none d-sm-block" href="../../../index.html"><img alt="  Typhoon HIL Documentation  Version: 2026.1  " src="../../logo.svg"/></a>
+<div class="wh_publication_title"><a href="../../index.html"><span class="booktitle"> <span class="ph mainbooktitle">Typhoon HIL Documentation</span> <span class="ph booktitlealt">Version: 2026.1</span> </span></a></div>
+</div>
+<button aria-controls="wh_top_menu_and_indexterms_link" aria-expanded="false" aria-label="Toggle menu" class="navbar-toggler collapsed wh_toggle_button" data-target="#wh_top_menu_and_indexterms_link" data-toggle="collapse" id="wh_menu_mobile_button" type="button">
+<span class="navbar-toggler-icon"></span>
+</button>
+</div>
+<div class="wh_top_menu_and_indexterms_link collapse navbar-collapse" id="wh_top_menu_and_indexterms_link">
+<nav aria-label="Menu Container" class="wh_top_menu"><ul aria-label="Menu" role="menubar"><li aria-expanded="false" aria-haspopup="true" class="has-children" role="menuitem"><span class="topicref application-notes" data-state="not-ready" data-tocid="tocId-d16877e21" id="tocId-d16877e21-mi"><span class="title"><a href="../../t-an001/concepts/application_notes_introduction.html">Typhoon HIL Application Notes</a></span></span></li><li aria-expanded="false" aria-haspopup="true" class="has-children" role="menuitem"><span class="topicref software-manual" data-state="not-ready" data-tocid="tocId-d16877e737" id="tocId-d16877e737-mi"><span class="title"><a href="../../t-ug002/topics/software_manual_introduction.html">Typhoon HIL Software Manual</a></span></span></li><li aria-expanded="false" aria-haspopup="true" class="has-children" role="menuitem"><span class="topicref hardware-manual" data-state="not-ready" data-tocid="tocId-d16877e7901" id="tocId-d16877e7901-mi"><span class="title"><a href="../../t-ug001/abstract/hardware_manual_introduction.html">Typhoon HIL Hardware Manual</a></span></span></li></ul></nav>
+</div>
+</div>
+</div>
 </header>
-        
-        
-         
-        
-        <div class=" wh_search_input navbar-form wh_topic_page_search search " role="form">
-            
-            
-            
-            <form id="searchForm" method="get" role="search" action="../../search.html"><div><input type="search" placeholder="Search " class="wh_search_textfield" id="textToSearch" name="searchQuery" aria-label="Search query" required="required"/><button type="submit" class="wh_search_button" aria-label="Search"><span class="search_input_text">Search</span></button></div></form>
-            
-            
-            
-        </div>
-        
-        <div class="container-fluid" id="wh_topic_container">
-            <div class="row">
-
-                <nav class="wh_tools d-print-none navbar-expand-md" aria-label="Tools">
-                    
-                    <div data-tooltip-position="bottom" class=" wh_breadcrumb "><ol class="d-print-none"><li><span class="home"><a href="../../index.html"><span>Home</span></a></span></li><li><div class="topicref application-notes"><div class="title"><a href="../../t-an001/concepts/application_notes_introduction.html">Typhoon HIL Application Notes</a></div></div></li><li><div class="topicref" data-id="doc"><div class="title"><a href="../../t-an001/concepts/how-to_guides.html">How-to Guides</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">Guides, tips, and tricks on various aspects of Typhoon HIL toolchain usage.</span></p></div></div></div></li><li class="active"><div class="topicref" data-id="doc"><div class="title"><a href="../../t-an001/References/how_to_signal_scaling.html">How to scale simulated signals for a C-HIL interface</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">This how to guide explains scaling, which is a crucial step in interfacing a HIL device   with an external device under test (DUT), such as a controller, relay, PLC, etc.</span></p></div></div></div></li></ol></div>
-                    
-                    
-                    
-                    <div class="wh_right_tools">
-                        <button class="wh_hide_highlight" aria-label="Toggle search highlights" title="Toggle search highlights"></button>
-                        <button class="webhelp_expand_collapse_sections" data-next-state="collapsed" aria-label="Collapse sections" title="Collapse sections"></button>
-                        
-                        
-                        
-                        
-                        <div class=" wh_print_link print d-none d-md-inline-block "><button onClick="window.print()" title="Print this page" aria-label="Print this page"></button></div>
-                        
-                        <button type="button" id="wh_toc_button" class="custom-toggler navbar-toggler collapsed wh_toggle_button navbar-light" aria-expanded="false" aria-label="Toggle publishing table of content" aria-controls="wh_publication_toc">
-                            <span class="navbar-toggler-icon"></span>
-                        </button>
-                    </div>
-                    
-                </nav>
-            </div>
-            
-            
-            
-            
-            <div class="wh_content_area">
-                <div class="row">
-                    
-                        <nav id="wh_publication_toc" class="col-lg-3 col-md-3 col-sm-12 d-md-block d-none d-print-none" aria-label="Table of Contents Container">
-                            <div id="wh_publication_toc_content">
-		                        
-                            	<div class=" wh_publication_toc " data-tooltip-position="right"><span class="expand-button-action-labels"><span id="button-expand-action" role="button" aria-label="Expand"></span><span id="button-collapse-action" role="button" aria-label="Collapse"></span><span id="button-pending-action" role="button" aria-label="Pending"></span></span><ul role="tree" aria-label="Table of Contents"><li role="treeitem" aria-expanded="true"><div data-tocid="tocId-d16877e21" class="topicref application-notes" data-state="expanded"><span role="button" tabindex="0" aria-labelledby="button-collapse-action tocId-d16877e21-link" class="wh-expand-btn"></span><div class="title"><a href="../../t-an001/concepts/application_notes_introduction.html" id="tocId-d16877e21-link">Typhoon HIL Application Notes</a></div></div><ul role="group" class="navbar-nav nav-list"><li role="treeitem"><div data-tocid="doc-d16877e25" class="topicref" data-id="doc" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../../t-an001/concepts/application_notes_introduction.html" id="doc-d16877e25-link">Application Notes Introduction</a><div class="wh-tooltip"><p class="shortdesc">Brief overview of the different categories of Application Notes</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="doc-d16877e36" class="topicref" data-id="doc" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action doc-d16877e36-link" class="wh-expand-btn"></span><div class="title"><a href="../../t-an001/concepts/grid_connected_converters.html" id="doc-d16877e36-link">Grid-connected converters</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">Grid-connected converter applications featuring various grid support    functionalities.</span></p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="doc-d16877e96" class="topicref" data-id="doc" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action doc-d16877e96-link" class="wh-expand-btn"></span><div class="title"><a href="../../t-an001/concepts/automotive.html" id="doc-d16877e96-link">Automotive</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">Electric cars and other automotive applications.</span></p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="doc-d16877e132" class="topicref" data-id="doc" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action doc-d16877e132-link" class="wh-expand-btn"></span><div class="title"><a href="../../t-an001/concepts/aerospace.html" id="doc-d16877e132-link">Aerospace</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">System-level and component-level aircraft applications.</span></p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="doc-d16877e168" class="topicref" data-id="doc" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action doc-d16877e168-link" class="wh-expand-btn"></span><div class="title"><a href="../../t-an001/concepts/battery_management_systems.html" id="doc-d16877e168-link">Battery management systems</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">Battery management system (BMS) examples</span></p></div></div></div></li><li role="treeitem" aria-expanded="true"><div data-tocid="doc-d16877e216" class="topicref" data-id="doc" data-state="expanded"><span role="button" tabindex="0" aria-labelledby="button-collapse-action doc-d16877e216-link" class="wh-expand-btn"></span><div class="title"><a href="../../t-an001/concepts/how-to_guides.html" id="doc-d16877e216-link">How-to Guides</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">Guides, tips, and tricks on various aspects of Typhoon HIL toolchain usage.</span></p></div></div></div><ul role="group" class="navbar-nav nav-list"><li role="treeitem"><div data-tocid="doc-d16877e228" class="topicref" data-id="doc" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../../t-an001/References/how_to_electrical_thermal_coupling.html" id="doc-d16877e228-link">How to couple electrical and thermal models</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">How to guide for coupling electrical and thermal models in Typhoon HIL Schematic   Editor.</span></p></div></div></div></li><li role="treeitem"><div data-tocid="doc-d16877e240" class="topicref" data-id="doc" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../../t-an001/References/how_to_import_dll_files_in_typhoon_hil_model.html" id="doc-d16877e240-link">How to import DLL file for C function</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">Walkthrough on how to import and include Dynamic Link Library       (DLL) files into your model using the C function component.</span></p></div></div></div></li><li role="treeitem"><div data-tocid="doc-d16877e252" class="topicref" data-id="doc" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../../t-an001/References/software_in_the_loop_approach_in_rapid_prototyping.html" id="doc-d16877e252-link">Software-in-the-loop approach in rapid control prototyping</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">Demonstration of two RCP implementations of a PI Controller using Schematic Editor   libraries and C code import from Simulink</span></p></div></div></div></li><li role="treeitem"><div data-tocid="doc-d16877e264" class="topicref" data-id="doc" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../../t-an001/References/frequency_response_example.html" id="doc-d16877e264-link">How-to use the Frequency response widget</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">Demonstration on how to use the Frequency Response widget in HIL SCADA</span></p></div></div></div></li><li role="treeitem"><div data-tocid="doc-d16877e276" class="topicref" data-id="doc" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../../t-an001/References/using_scipy_functions_converter_design_issues.html" id="doc-d16877e276-link">Using Bode plots in Schematic Editor to troubleshoot converter design issues</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">Demonstration on how to use Python-specific libraries (such as       scipy) to resolve issues with designing power converter controls.</span></p></div></div></div></li><li role="treeitem"><div data-tocid="doc-d16877e288" class="topicref" data-id="doc" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../../t-an001/References/how_to_microgrid_der.html" id="doc-d16877e288-link">Microgrid Toolbox DER components guide</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">Comprehensive guide on Microgrid Toolbox DER component types and when to use   them.</span></p></div></div></div></li><li role="treeitem" class="active"><div data-tocid="doc-d16877e300" class="topicref" data-id="doc" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../../t-an001/References/how_to_signal_scaling.html" id="doc-d16877e300-link">How to scale simulated signals for a C-HIL interface</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">This how to guide explains scaling, which is a crucial step in interfacing a HIL device   with an external device under test (DUT), such as a controller, relay, PLC, etc.</span></p></div></div></div></li></ul></li><li role="treeitem" aria-expanded="false"><div data-tocid="doc-d16877e312" class="topicref" data-id="doc" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action doc-d16877e312-link" class="wh-expand-btn"></span><div class="title"><a href="../../t-an001/concepts/communication_protocols.html" id="doc-d16877e312-link">Communication Protocols</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">Interoperability. Cybersecurity. Modbus, Sunspec, IEC61850, IEEE    C37.118, DNP3, CAN, OPC UA, and more.</span></p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="doc-d16877e384" class="topicref" data-id="doc" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action doc-d16877e384-link" class="wh-expand-btn"></span><div class="title"><a href="../../t-an001/concepts/power_systems.html" id="doc-d16877e384-link">Power Systems</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">Power system simulation. Relay protection testing. Power flow tool integration and   co-simulation.</span></p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="doc-d16877e468" class="topicref" data-id="doc" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action doc-d16877e468-link" class="wh-expand-btn"></span><div class="title"><a href="../../t-an001/concepts/microgrids.html" id="doc-d16877e468-link">Microgrids</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">Rapid microgrid pre-commissioning and system integration. Microgrid controller RCP and   testing.</span></p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="doc-d16877e552" class="topicref" data-id="doc" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action doc-d16877e552-link" class="wh-expand-btn"></span><div class="title"><a href="../../t-an001/concepts/electrical_drives.html" id="doc-d16877e552-link">Electrical Drives</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">Converters coupled with high-fidelity electrical machine models for high performance   motor drive applications.</span></p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="doc-d16877e601" class="topicref" data-id="doc" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action doc-d16877e601-link" class="wh-expand-btn"></span><div class="title"><a href="../../t-an001/concepts/power_supplies.html" id="doc-d16877e601-link">Power Supplies</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">Linear and switching power supplies for industrial and laboratory   applications.</span></p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="doc-d16877e625" class="topicref" data-id="doc" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action doc-d16877e625-link" class="wh-expand-btn"></span><div class="title"><a href="../../t-an001/concepts/marine_power_systems.html" id="doc-d16877e625-link">Marine Power Systems</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">Hybrid propulsion, shipboard power management, offshore renewables, offshore oil and   gas platform power supplies. </span></p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="doc-d16877e649" class="topicref" data-id="doc" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action doc-d16877e649-link" class="wh-expand-btn"></span><div class="title"><a href="../../t-an001/concepts/power_quality.html" id="doc-d16877e649-link">Power Quality</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">Real-time power quality/harmonic analysis. Incorporate active filters and FACTS devices (STATCOM, DVR,   SVC).</span></p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="doc-d16877e685" class="topicref" data-id="doc" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action doc-d16877e685-link" class="wh-expand-btn"></span><div class="title"><a href="../../t-an001/concepts/railway.html" id="doc-d16877e685-link">Railway</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">System-level and component-level application examples for railway    (traction) equipment.</span></p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="doc-d16877e709" class="topicref" data-id="doc" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action doc-d16877e709-link" class="wh-expand-btn"></span><div class="title"><a href="../../t-an001/concepts/medical_devices.html" id="doc-d16877e709-link">Medical Devices</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">X-ray, MRI, ICD, pacemakers, defibrillators, emergency ventilators, ECG, EMG,   bioelectronics.</span></p></div></div></div></li></ul></li></ul></div>
-		                        
-                            </div>
-                        </nav>
-                    
-                    
-                    <div class="col-lg-7 col-md-9 col-sm-12" id="wh_topic_body">
-                        <button id="wh_close_publication_toc_button" class="close-toc-button d-none" aria-label="Toggle publishing table of content" aria-controls="wh_publication_toc" aria-expanded="true">
-                            <span class="close-toc-icon-container">
-                                <span class="close-toc-icon"></span>     
-                            </span>
-                        </button>
-                        <button id="wh_close_topic_toc_button" class="close-toc-button d-none" aria-label="Toggle topic table of content" aria-controls="wh_topic_toc" aria-expanded="true">
-                            <span class="close-toc-icon-container">
-                                <span class="close-toc-icon"></span>     
-                            </span>
-                        </button>
-                        
-                        <div class=" wh_topic_content body "><main role="main"><article role="article" aria-labelledby="ariaid-title1">
- <h1 class="- topic/title title topictitle1" id="ariaid-title1">How to scale simulated signals for a C-HIL interface</h1>
- 
- <div class="- topic/body reference/refbody body refbody"><p class="- topic/shortdesc shortdesc"><span class="- topic/ph ph" id="doc__description">This how to guide explains scaling, which is a crucial step in interfacing a HIL device
+<div class="wh_search_input navbar-form wh_topic_page_search search" role="form">
+<form action="../../search.html" id="searchForm" method="get" role="search"><div><input aria-label="Search query" class="wh_search_textfield" id="textToSearch" name="searchQuery" placeholder="Search " required="required" type="search"/><button aria-label="Search" class="wh_search_button" type="submit"><span class="search_input_text">Search</span></button></div></form>
+</div>
+<div class="container-fluid" id="wh_topic_container">
+<div class="row">
+<nav aria-label="Tools" class="wh_tools d-print-none navbar-expand-md">
+<div class="wh_breadcrumb" data-tooltip-position="bottom"><ol class="d-print-none"><li><span class="home"><a href="../../index.html"><span>Home</span></a></span></li><li><div class="topicref application-notes"><div class="title"><a href="../../t-an001/concepts/application_notes_introduction.html">Typhoon HIL Application Notes</a></div></div></li><li><div class="topicref" data-id="doc"><div class="title"><a href="../../t-an001/concepts/how-to_guides.html">How-to Guides</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">Guides, tips, and tricks on various aspects of Typhoon HIL toolchain usage.</span></p></div></div></div></li><li class="active"><div class="topicref" data-id="doc"><div class="title"><a href="../../t-an001/References/how_to_signal_scaling.html">How to scale simulated signals for a C-HIL interface</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">This how to guide explains scaling, which is a crucial step in interfacing a HIL device   with an external device under test (DUT), such as a controller, relay, PLC, etc.</span></p></div></div></div></li></ol></div>
+<div class="wh_right_tools">
+<button aria-label="Toggle search highlights" class="wh_hide_highlight" title="Toggle search highlights"></button>
+<button aria-label="Collapse sections" class="webhelp_expand_collapse_sections" data-next-state="collapsed" title="Collapse sections"></button>
+<div class="wh_print_link print d-none d-md-inline-block"><button aria-label="Print this page" onclick="window.print()" title="Print this page"></button></div>
+<button aria-controls="wh_publication_toc" aria-expanded="false" aria-label="Toggle publishing table of content" class="custom-toggler navbar-toggler collapsed wh_toggle_button navbar-light" id="wh_toc_button" type="button">
+<span class="navbar-toggler-icon"></span>
+</button>
+</div>
+</nav>
+</div>
+<div class="wh_content_area">
+<div class="row">
+<nav aria-label="Table of Contents Container" class="col-lg-3 col-md-3 col-sm-12 d-md-block d-none d-print-none" id="wh_publication_toc">
+<div id="wh_publication_toc_content">
+<div class="wh_publication_toc" data-tooltip-position="right"><span class="expand-button-action-labels"><span aria-label="Expand" id="button-expand-action" role="button"></span><span aria-label="Collapse" id="button-collapse-action" role="button"></span><span aria-label="Pending" id="button-pending-action" role="button"></span></span><ul aria-label="Table of Contents" role="tree"><li aria-expanded="true" role="treeitem"><div class="topicref application-notes" data-state="expanded" data-tocid="tocId-d16877e21"><span aria-labelledby="button-collapse-action tocId-d16877e21-link" class="wh-expand-btn" role="button" tabindex="0"></span><div class="title"><a href="../../t-an001/concepts/application_notes_introduction.html" id="tocId-d16877e21-link">Typhoon HIL Application Notes</a></div></div><ul class="navbar-nav nav-list" role="group"><li role="treeitem"><div class="topicref" data-id="doc" data-state="leaf" data-tocid="doc-d16877e25"><span class="wh-expand-btn" role="button"></span><div class="title"><a href="../../t-an001/concepts/application_notes_introduction.html" id="doc-d16877e25-link">Application Notes Introduction</a><div class="wh-tooltip"><p class="shortdesc">Brief overview of the different categories of Application Notes</p></div></div></div></li><li aria-expanded="false" role="treeitem"><div class="topicref" data-id="doc" data-state="not-ready" data-tocid="doc-d16877e36"><span aria-labelledby="button-expand-action doc-d16877e36-link" class="wh-expand-btn" role="button" tabindex="0"></span><div class="title"><a href="../../t-an001/concepts/grid_connected_converters.html" id="doc-d16877e36-link">Grid-connected converters</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">Grid-connected converter applications featuring various grid support    functionalities.</span></p></div></div></div></li><li aria-expanded="false" role="treeitem"><div class="topicref" data-id="doc" data-state="not-ready" data-tocid="doc-d16877e96"><span aria-labelledby="button-expand-action doc-d16877e96-link" class="wh-expand-btn" role="button" tabindex="0"></span><div class="title"><a href="../../t-an001/concepts/automotive.html" id="doc-d16877e96-link">Automotive</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">Electric cars and other automotive applications.</span></p></div></div></div></li><li aria-expanded="false" role="treeitem"><div class="topicref" data-id="doc" data-state="not-ready" data-tocid="doc-d16877e132"><span aria-labelledby="button-expand-action doc-d16877e132-link" class="wh-expand-btn" role="button" tabindex="0"></span><div class="title"><a href="../../t-an001/concepts/aerospace.html" id="doc-d16877e132-link">Aerospace</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">System-level and component-level aircraft applications.</span></p></div></div></div></li><li aria-expanded="false" role="treeitem"><div class="topicref" data-id="doc" data-state="not-ready" data-tocid="doc-d16877e168"><span aria-labelledby="button-expand-action doc-d16877e168-link" class="wh-expand-btn" role="button" tabindex="0"></span><div class="title"><a href="../../t-an001/concepts/battery_management_systems.html" id="doc-d16877e168-link">Battery management systems</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">Battery management system (BMS) examples</span></p></div></div></div></li><li aria-expanded="true" role="treeitem"><div class="topicref" data-id="doc" data-state="expanded" data-tocid="doc-d16877e216"><span aria-labelledby="button-collapse-action doc-d16877e216-link" class="wh-expand-btn" role="button" tabindex="0"></span><div class="title"><a href="../../t-an001/concepts/how-to_guides.html" id="doc-d16877e216-link">How-to Guides</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">Guides, tips, and tricks on various aspects of Typhoon HIL toolchain usage.</span></p></div></div></div><ul class="navbar-nav nav-list" role="group"><li role="treeitem"><div class="topicref" data-id="doc" data-state="leaf" data-tocid="doc-d16877e228"><span class="wh-expand-btn" role="button"></span><div class="title"><a href="../../t-an001/References/how_to_electrical_thermal_coupling.html" id="doc-d16877e228-link">How to couple electrical and thermal models</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">How to guide for coupling electrical and thermal models in Typhoon HIL Schematic   Editor.</span></p></div></div></div></li><li role="treeitem"><div class="topicref" data-id="doc" data-state="leaf" data-tocid="doc-d16877e240"><span class="wh-expand-btn" role="button"></span><div class="title"><a href="../../t-an001/References/how_to_import_dll_files_in_typhoon_hil_model.html" id="doc-d16877e240-link">How to import DLL file for C function</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">Walkthrough on how to import and include Dynamic Link Library       (DLL) files into your model using the C function component.</span></p></div></div></div></li><li role="treeitem"><div class="topicref" data-id="doc" data-state="leaf" data-tocid="doc-d16877e252"><span class="wh-expand-btn" role="button"></span><div class="title"><a href="../../t-an001/References/software_in_the_loop_approach_in_rapid_prototyping.html" id="doc-d16877e252-link">Software-in-the-loop approach in rapid control prototyping</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">Demonstration of two RCP implementations of a PI Controller using Schematic Editor   libraries and C code import from Simulink</span></p></div></div></div></li><li role="treeitem"><div class="topicref" data-id="doc" data-state="leaf" data-tocid="doc-d16877e264"><span class="wh-expand-btn" role="button"></span><div class="title"><a href="../../t-an001/References/frequency_response_example.html" id="doc-d16877e264-link">How-to use the Frequency response widget</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">Demonstration on how to use the Frequency Response widget in HIL SCADA</span></p></div></div></div></li><li role="treeitem"><div class="topicref" data-id="doc" data-state="leaf" data-tocid="doc-d16877e276"><span class="wh-expand-btn" role="button"></span><div class="title"><a href="../../t-an001/References/using_scipy_functions_converter_design_issues.html" id="doc-d16877e276-link">Using Bode plots in Schematic Editor to troubleshoot converter design issues</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">Demonstration on how to use Python-specific libraries (such as       scipy) to resolve issues with designing power converter controls.</span></p></div></div></div></li><li role="treeitem"><div class="topicref" data-id="doc" data-state="leaf" data-tocid="doc-d16877e288"><span class="wh-expand-btn" role="button"></span><div class="title"><a href="../../t-an001/References/how_to_microgrid_der.html" id="doc-d16877e288-link">Microgrid Toolbox DER components guide</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">Comprehensive guide on Microgrid Toolbox DER component types and when to use   them.</span></p></div></div></div></li><li class="active" role="treeitem"><div class="topicref" data-id="doc" data-state="leaf" data-tocid="doc-d16877e300"><span class="wh-expand-btn" role="button"></span><div class="title"><a href="../../t-an001/References/how_to_signal_scaling.html" id="doc-d16877e300-link">How to scale simulated signals for a C-HIL interface</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">This how to guide explains scaling, which is a crucial step in interfacing a HIL device   with an external device under test (DUT), such as a controller, relay, PLC, etc.</span></p></div></div></div></li></ul></li><li aria-expanded="false" role="treeitem"><div class="topicref" data-id="doc" data-state="not-ready" data-tocid="doc-d16877e312"><span aria-labelledby="button-expand-action doc-d16877e312-link" class="wh-expand-btn" role="button" tabindex="0"></span><div class="title"><a href="../../t-an001/concepts/communication_protocols.html" id="doc-d16877e312-link">Communication Protocols</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">Interoperability. Cybersecurity. Modbus, Sunspec, IEC61850, IEEE    C37.118, DNP3, CAN, OPC UA, and more.</span></p></div></div></div></li><li aria-expanded="false" role="treeitem"><div class="topicref" data-id="doc" data-state="not-ready" data-tocid="doc-d16877e384"><span aria-labelledby="button-expand-action doc-d16877e384-link" class="wh-expand-btn" role="button" tabindex="0"></span><div class="title"><a href="../../t-an001/concepts/power_systems.html" id="doc-d16877e384-link">Power Systems</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">Power system simulation. Relay protection testing. Power flow tool integration and   co-simulation.</span></p></div></div></div></li><li aria-expanded="false" role="treeitem"><div class="topicref" data-id="doc" data-state="not-ready" data-tocid="doc-d16877e468"><span aria-labelledby="button-expand-action doc-d16877e468-link" class="wh-expand-btn" role="button" tabindex="0"></span><div class="title"><a href="../../t-an001/concepts/microgrids.html" id="doc-d16877e468-link">Microgrids</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">Rapid microgrid pre-commissioning and system integration. Microgrid controller RCP and   testing.</span></p></div></div></div></li><li aria-expanded="false" role="treeitem"><div class="topicref" data-id="doc" data-state="not-ready" data-tocid="doc-d16877e552"><span aria-labelledby="button-expand-action doc-d16877e552-link" class="wh-expand-btn" role="button" tabindex="0"></span><div class="title"><a href="../../t-an001/concepts/electrical_drives.html" id="doc-d16877e552-link">Electrical Drives</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">Converters coupled with high-fidelity electrical machine models for high performance   motor drive applications.</span></p></div></div></div></li><li aria-expanded="false" role="treeitem"><div class="topicref" data-id="doc" data-state="not-ready" data-tocid="doc-d16877e601"><span aria-labelledby="button-expand-action doc-d16877e601-link" class="wh-expand-btn" role="button" tabindex="0"></span><div class="title"><a href="../../t-an001/concepts/power_supplies.html" id="doc-d16877e601-link">Power Supplies</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">Linear and switching power supplies for industrial and laboratory   applications.</span></p></div></div></div></li><li aria-expanded="false" role="treeitem"><div class="topicref" data-id="doc" data-state="not-ready" data-tocid="doc-d16877e625"><span aria-labelledby="button-expand-action doc-d16877e625-link" class="wh-expand-btn" role="button" tabindex="0"></span><div class="title"><a href="../../t-an001/concepts/marine_power_systems.html" id="doc-d16877e625-link">Marine Power Systems</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">Hybrid propulsion, shipboard power management, offshore renewables, offshore oil and   gas platform power supplies. </span></p></div></div></div></li><li aria-expanded="false" role="treeitem"><div class="topicref" data-id="doc" data-state="not-ready" data-tocid="doc-d16877e649"><span aria-labelledby="button-expand-action doc-d16877e649-link" class="wh-expand-btn" role="button" tabindex="0"></span><div class="title"><a href="../../t-an001/concepts/power_quality.html" id="doc-d16877e649-link">Power Quality</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">Real-time power quality/harmonic analysis. Incorporate active filters and FACTS devices (STATCOM, DVR,   SVC).</span></p></div></div></div></li><li aria-expanded="false" role="treeitem"><div class="topicref" data-id="doc" data-state="not-ready" data-tocid="doc-d16877e685"><span aria-labelledby="button-expand-action doc-d16877e685-link" class="wh-expand-btn" role="button" tabindex="0"></span><div class="title"><a href="../../t-an001/concepts/railway.html" id="doc-d16877e685-link">Railway</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">System-level and component-level application examples for railway    (traction) equipment.</span></p></div></div></div></li><li aria-expanded="false" role="treeitem"><div class="topicref" data-id="doc" data-state="not-ready" data-tocid="doc-d16877e709"><span aria-labelledby="button-expand-action doc-d16877e709-link" class="wh-expand-btn" role="button" tabindex="0"></span><div class="title"><a href="../../t-an001/concepts/medical_devices.html" id="doc-d16877e709-link">Medical Devices</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">X-ray, MRI, ICD, pacemakers, defibrillators, emergency ventilators, ECG, EMG,   bioelectronics.</span></p></div></div></div></li></ul></li></ul></div>
+</div>
+</nav>
+<div class="col-lg-7 col-md-9 col-sm-12" id="wh_topic_body">
+<button aria-controls="wh_publication_toc" aria-expanded="true" aria-label="Toggle publishing table of content" class="close-toc-button d-none" id="wh_close_publication_toc_button">
+<span class="close-toc-icon-container">
+<span class="close-toc-icon"></span>
+</span>
+</button>
+<button aria-controls="wh_topic_toc" aria-expanded="true" aria-label="Toggle topic table of content" class="close-toc-button d-none" id="wh_close_topic_toc_button">
+<span class="close-toc-icon-container">
+<span class="close-toc-icon"></span>
+</span>
+</button>
+<div class="wh_topic_content body"><main role="main"><article aria-labelledby="ariaid-title1" role="article">
+<h1 class="- topic/title title topictitle1" id="ariaid-title1">How to scale simulated signals for a C-HIL interface</h1>
+<div class="- topic/body reference/refbody body refbody"><p class="- topic/shortdesc shortdesc"><span class="- topic/ph ph" id="doc__description">This how to guide explains scaling, which is a crucial step in interfacing a HIL device
   with an external device under test (DUT), such as a controller, relay, PLC, etc.</span></p>
-  <section class="- topic/section section" id="doc__section_hqr_1zb_rz" data-ofbid="doc__section_hqr_1zb_rz"><h2 class="- topic/title title sectiontitle">Introduction</h2>
-   
-   <p class="- topic/p p">When setting up a Controller
+<section class="- topic/section section" data-ofbid="doc__section_hqr_1zb_rz" id="doc__section_hqr_1zb_rz"><h2 class="- topic/title title sectiontitle">Introduction</h2>
+<p class="- topic/p p">When setting up a Controller
     Hardware-In-the-Loop (C-HIL) simulation environment, a key step which follows the physical
     connection of the HIL device to the DUT, usually done via an interface board (or an interface
     device), is adjusting the interface related settings of the model. For analog outputs (AOs) this
     means mapping the necessary signals from the model to the appropriate AO pins of the HIL device
     and setting the correct scaling and offset. When possible, it is a good practice to limit the
     output voltages of the HIL device according to the values supported by the controller.</p>
-   <p class="- topic/p p">In this guide, signal scaling will be presented for two different interfacing scenarios. The
+<p class="- topic/p p">In this guide, signal scaling will be presented for two different interfacing scenarios. The
     first one considers DUTs for which the voltage and current capabilities of the HIL device are
     sufficient, and interfacing is done through an interface board (e.g. <em class="+ topic/ph hi-d/i ph i">Launchpad</em> interface
     for <em class="+ topic/ph hi-d/i ph i">TI LaunchPad</em> controllers). This will be covered in the <a class="- topic/xref xref" href="#doc__section_bnk_str_1kb">Interfacing with Interface Boards</a> section of this guide.</p>
-   <p class="- topic/p p">For DUTs which require higher voltage or current levels than what the HIL device can
-    provide such as relays and some types of controllers, interfacing is done through a <a class="- topic/xref xref" href="https://www.typhoon-hil.com/products/hil-connect/" target="_blank" rel="external noopener">HIL
+<p class="- topic/p p">For DUTs which require higher voltage or current levels than what the HIL device can
+    provide such as relays and some types of controllers, interfacing is done through a <a class="- topic/xref xref" href="https://www.typhoon-hil.com/products/hil-connect/" rel="external noopener" target="_blank">HIL
      Connect</a> interface device. This second scenario is covered in the <a class="- topic/xref xref" href="#doc__section_yyq_hnk_t4b">Interfacing with HIL Connect</a> chapter.</p>
-   <p class="- topic/p p">In general, the rated output voltage range of the analog outputs of the HIL device is -10 V to
+<p class="- topic/p p">In general, the rated output voltage range of the analog outputs of the HIL device is -10 V to
     +10 V. <span class="- topic/ph ph">More information about analog and digital IO voltage levels of each <a class="- topic/xref xref" href="../../t-ug001/resources/references/../../abstract/HIL_simulators.html" title="Overview of the currently supported Typhoon HIL simulator devices.">HIL Simulator device</a> is
                 documented in their respective <span class="+ topic/ph ui-d/uicontrol ph uicontrol">IO Voltage Levels</span> section.</span></p>
-  </section>
-   <section class="- topic/section section" id="doc__MIRhMILnT" data-ofbid="doc__MIRhMILnT"><h2 class="- topic/title title sectiontitle">Scaling for Analog Outputs</h2>
-    <p class="- topic/p p">Analog output settings can be defined in two
+</section>
+<section class="- topic/section section" data-ofbid="doc__MIRhMILnT" id="doc__MIRhMILnT"><h2 class="- topic/title title sectiontitle">Scaling for Analog Outputs</h2>
+<p class="- topic/p p">Analog output settings can be defined in two
     ways:</p>
-    <ul class="- topic/ul ul" id="doc__ul_pwz_2v4_3tb" data-ofbid="doc__ul_pwz_2v4_3tb">
-    <li class="- topic/li li">Using the <a class="- topic/xref xref" href="../../t-ug002/References/initial_settings.html" title="Description of the Initial Settings component in the Schematic Editor, which sets analog and/or digital outputs with corresponding signals from the model.">Initial Settings</a> component in
+<ul class="- topic/ul ul" data-ofbid="doc__ul_pwz_2v4_3tb" id="doc__ul_pwz_2v4_3tb">
+<li class="- topic/li li">Using the <a class="- topic/xref xref" href="../../t-ug002/References/initial_settings.html" title="Description of the Initial Settings component in the Schematic Editor, which sets analog and/or digital outputs with corresponding signals from the model.">Initial Settings</a> component in
      Schematic Editor</li>
-    <li class="- topic/li li">In the <a class="- topic/xref xref" href="../../t-ug002/concepts/model_settings_dock.html" title="This section describes model settings dock">Model Settings Dock</a> in HIL SCADA, under
+<li class="- topic/li li">In the <a class="- topic/xref xref" href="../../t-ug002/concepts/model_settings_dock.html" title="This section describes model settings dock">Model Settings Dock</a> in HIL SCADA, under
      the Model Settings Tab in Output Controls → Analog Outputs</li>
-   </ul>
-    <p class="- topic/p p">Using one of the two previously mentioned methods, you can assign a signal from the
+</ul>
+<p class="- topic/p p">Using one of the two previously mentioned methods, you can assign a signal from the
     simulation to a specific AO of the HIL device and set its scaling, offset, and upper and lower
     limits. When using HIL SCADA, you can save the Model Settings as a .runx file.</p>
-   <div class="- topic/note note note note_note"><span class="note__title">Note:</span> The best practice is to define the output settings in Schematic Editor. Still, if
+<div class="- topic/note note note note_note"><span class="note__title">Note:</span> The best practice is to define the output settings in Schematic Editor. Still, if
     necessary, you can override them in HIL SCADA. By default, when opening the Analog Output
     Settings in SCADA, signals that were already defined in Schematic Editor using the Output
     Settings component are locked and marked by an icon on the left. This is illustrated for the
     signal I2 (AO4) in <a class="- topic/xref xref" href="#doc__fig_r5w_qw4_3tb">Figure 1</a>. You can unlock it and
     modify the settings as desired. However, be aware that whenever you reload the model, these
-    modifications will be replaced back to the settings defined in Schematic Editor.</div><figure class="- topic/fig fig fignone" id="doc__fig_r5w_qw4_3tb" data-ofbid="doc__fig_r5w_qw4_3tb"><figcaption class="- topic/title title figcapcenter"><span class="figtitleprefix fig--title-label">Figure<span class="fig--title-label-number"> 1</span><span class="fig--title-label-punctuation">. </span></span><span class="fig--title">Analog Outputs settings with a signal previously defined in the Output Settings
+    modifications will be replaced back to the settings defined in Schematic Editor.</div><figure class="- topic/fig fig fignone" data-ofbid="doc__fig_r5w_qw4_3tb" id="doc__fig_r5w_qw4_3tb"><figcaption class="- topic/title title figcapcenter"><span class="figtitleprefix fig--title-label">Figure<span class="fig--title-label-number"> 1</span><span class="fig--title-label-punctuation">. </span></span><span class="fig--title">Analog Outputs settings with a signal previously defined in the Output Settings
      component</span></figcaption>
-    
-    <div class="imagecenter break"><img class="- topic/image image imagecenter break" id="doc__image_r5w_qw4_3tb" src="../Images/how_to_signal_scaling_01.png"/></div>
-   </figure>
-    <p class="- topic/p p">When determining the scaling factor, it is important to consider the largest measured value
+<div class="imagecenter break"><img class="- topic/image image imagecenter break" id="doc__image_r5w_qw4_3tb" src="../Images/how_to_signal_scaling_01.png"/></div>
+</figure>
+<p class="- topic/p p">When determining the scaling factor, it is important to consider the largest measured value
    which <em class="+ topic/ph hi-d/i ph i">can </em>appear in the simulation and needs to be seen by the DUT – an example of this
    would be to consider transient events, where we can have simulation values significantly higher
    than nominal ones. The scaling factor must ensure that these transient values, or any other large
    (relative to steady state) signals of interest produced by simulation, do not reach the HIL
    device saturation limits and end up clipped at the AO.</p>
-   </section>
-  <section class="- topic/section section" id="doc__T14MHSN8A" data-ofbid="doc__T14MHSN8A"><h2 class="- topic/title title sectiontitle">Scaling for Analog Inputs</h2>
-   
-   <p class="- topic/p p">Some C-HIL applications require feeding analog signals from the controller to the plant
+</section>
+<section class="- topic/section section" data-ofbid="doc__T14MHSN8A" id="doc__T14MHSN8A"><h2 class="- topic/title title sectiontitle">Scaling for Analog Inputs</h2>
+<p class="- topic/p p">Some C-HIL applications require feeding analog signals from the controller to the plant
     simulated on the HIL device. Analog inputs in this case may also require scaling, where the
     voltage levels on the analog inputs of the HIL device are scaled to be appropriately represented
     in the simulation.</p>
-   <div class="- topic/p p">There are two ways in which we can utilize analog inputs in our simulations:<ul class="- topic/ul ul" id="doc__ul_nqf_sdp_3tb" data-ofbid="doc__ul_nqf_sdp_3tb">
-     <li class="- topic/li li">Using the <a class="- topic/xref xref" href="../../t-ug002/References/analog_input.html" title="Description of the Analog Input source component in Schematic Editor, which outputs a value from a selected analog input.">Analog Input</a> component</li>
-     <li class="- topic/li li">Using <a class="- topic/xref xref" href="../../t-ug002/References/externally_controlled_sources.html" title="Description of the Externally Controlled Current Source and Externally Controlled Voltage Source components in Schematic Editor">Externally controlled sources</a></li>
-    </ul></div>
-   <p class="- topic/p p">The Analog Input component is a Signal Processing component which outputs the value that is
+<div class="- topic/p p">There are two ways in which we can utilize analog inputs in our simulations:<ul class="- topic/ul ul" data-ofbid="doc__ul_nqf_sdp_3tb" id="doc__ul_nqf_sdp_3tb">
+<li class="- topic/li li">Using the <a class="- topic/xref xref" href="../../t-ug002/References/analog_input.html" title="Description of the Analog Input source component in Schematic Editor, which outputs a value from a selected analog input.">Analog Input</a> component</li>
+<li class="- topic/li li">Using <a class="- topic/xref xref" href="../../t-ug002/References/externally_controlled_sources.html" title="Description of the Externally Controlled Current Source and Externally Controlled Voltage Source components in Schematic Editor">Externally controlled sources</a></li>
+</ul></div>
+<p class="- topic/p p">The Analog Input component is a Signal Processing component which outputs the value that is
     collected from the HIL device analog inputs to the simulation. In its properties, you can set
     the analog input pin that will receive the signal, as well as the gain (scaling) and the offset.
     The value output from this component in the simulation is given by:</p>
-   <p class="- topic/p p"><span class="+ topic/foreign mathml-d/mathml foreign mathml">
-     <math xmlns="http://www.w3.org/1998/Math/MathML">
-      <msub>
-       <mrow>
-        <mi>AI</mi>
-       </mrow>
-       <mrow>
-        <mi>simu</mi>
-       </mrow>
-      </msub>
-      <mrow>
-       <mi>=</mi>
-      </mrow>
-      <mrow>
-       
-        <mrow>
-         <mi> gain</mi>
-        </mrow>
-       
-       <mrow>
-        <mi>∙</mi>
-       </mrow>
-       <msub>
-        <mrow>
-         <mi>(AI</mi>
-        </mrow>
-        <mrow>
-         <mi>pin</mi>
-        </mrow>
-       </msub>
-       <mrow>
-        <mi>+</mi>
-       </mrow>
-       <mrow>
-        <mi> offset)</mi>
-       </mrow>
-      </mrow>
-     </math>
-    </span></p>
-   <p class="- topic/p p">The Externally Controlled Source is essentially implemented the same as an Analog Input
+<p class="- topic/p p"><span class="+ topic/foreign mathml-d/mathml foreign mathml">
+<math xmlns="http://www.w3.org/1998/Math/MathML">
+<msub>
+<mrow>
+<mi>AI</mi>
+</mrow>
+<mrow>
+<mi>simu</mi>
+</mrow>
+</msub>
+<mrow>
+<mi>=</mi>
+</mrow>
+<mrow>
+<mrow>
+<mi> gain</mi>
+</mrow>
+<mrow>
+<mi>∙</mi>
+</mrow>
+<msub>
+<mrow>
+<mi>(AI</mi>
+</mrow>
+<mrow>
+<mi>pin</mi>
+</mrow>
+</msub>
+<mrow>
+<mi>+</mi>
+</mrow>
+<mrow>
+<mi> offset)</mi>
+</mrow>
+</mrow>
+</math>
+</span></p>
+<p class="- topic/p p">The Externally Controlled Source is essentially implemented the same as an Analog Input
     component, but with a few advantages. These components run at the simulation step of circuit
     solver rather than the slower rate of the signal processing components. Therefore, they provide a
     higher fidelity analog signal. Also, gain and offset parameters can be tuned during simulation
     runtime.</p>
-  </section>
-  <section class="- topic/section section" id="doc__section_bnk_str_1kb" data-ofbid="doc__section_bnk_str_1kb"><h2 class="- topic/title title sectiontitle">Interfacing with Interface Boards </h2>
-   
-   <p class="- topic/p p"><u class="+ topic/ph hi-d/u ph u">Scaling for Low Voltage Outputs</u></p>
-   <p class="- topic/p p">The scaling required for an AO signal can be calculated considering the voltage range of the
+</section>
+<section class="- topic/section section" data-ofbid="doc__section_bnk_str_1kb" id="doc__section_bnk_str_1kb"><h2 class="- topic/title title sectiontitle">Interfacing with Interface Boards </h2>
+<p class="- topic/p p"><u class="+ topic/ph hi-d/u ph u">Scaling for Low Voltage Outputs</u></p>
+<p class="- topic/p p">The scaling required for an AO signal can be calculated considering the voltage range of the
     variable in the simulation and the voltage range of the HIL device AOs. Scaling can be defined
     by the following equation:</p>
-   <p class="- topic/p p"><span class="+ topic/foreign mathml-d/mathml foreign mathml">
-     <math xmlns="http://www.w3.org/1998/Math/MathML">
-      <msub>
-       <mrow>
-        <mi>scaling</mi>
-       </mrow>
-       <mrow>
-        <mi>LV</mi>
-       </mrow>
-      </msub>
-      <mrow>
-       <mi>=</mi>
-      </mrow>
-      <mfrac>
-       <mrow>
-        <msub>
-         <mrow>
-          <mi>V</mi>
-         </mrow>
-         <mrow>
-          <mi>simu_max</mi>
-         </mrow>
-        </msub>
-        <mrow>
-         <mi>-</mi>
-        </mrow>
-        <msub>
-         <mrow>
-          <mi>V</mi>
-         </mrow>
-         <mrow>
-          <mi>simu_min</mi>
-         </mrow>
-        </msub>
-       </mrow>
-       <mrow>
-        <msub>
-         <mrow>
-          <mi>V</mi>
-         </mrow>
-         <mrow>
-          <mi>AO_HIL_max</mi>
-         </mrow>
-        </msub>
-        <mrow>
-         <mi>-</mi>
-        </mrow>
-        <msub>
-         <mrow>
-          <mi>V</mi>
-         </mrow>
-         <mrow>
-          <mi>AO_HIL_min</mi>
-         </mrow>
-        </msub>
-       </mrow>
-      </mfrac>
-     </math>
-    </span></p>
-   <p class="- topic/p p">Where:</p>
-   <ul class="- topic/ul ul" id="doc__ul_xh4_wss_q5b" data-ofbid="doc__ul_xh4_wss_q5b">
-    <li class="- topic/li li">V<sub class="+ topic/ph hi-d/sub ph sub">simu_max</sub> - maximum value of the simulation variable;</li>
-    <li class="- topic/li li">V<sub class="+ topic/ph hi-d/sub ph sub">simu_min</sub> - minimum value of the simulation variable;</li>
-    <li class="- topic/li li">V<sub class="+ topic/ph hi-d/sub ph sub">AO_HIL_max</sub> – maximum voltage at the analog output of the HIL device;</li>
-    <li class="- topic/li li">V<sub class="+ topic/ph hi-d/sub ph sub">AO_HIL_min </sub>– minimum voltage at the analog output of the HIL device.</li>
-   </ul>
-   <p class="- topic/p p">It is important to note that V<sub class="+ topic/ph hi-d/sub ph sub">AO_HIL_max</sub> and V<sub class="+ topic/ph hi-d/sub ph sub">AO_HIL_min</sub> are not
+<p class="- topic/p p"><span class="+ topic/foreign mathml-d/mathml foreign mathml">
+<math xmlns="http://www.w3.org/1998/Math/MathML">
+<msub>
+<mrow>
+<mi>scaling</mi>
+</mrow>
+<mrow>
+<mi>LV</mi>
+</mrow>
+</msub>
+<mrow>
+<mi>=</mi>
+</mrow>
+<mfrac>
+<mrow>
+<msub>
+<mrow>
+<mi>V</mi>
+</mrow>
+<mrow>
+<mi>simu_max</mi>
+</mrow>
+</msub>
+<mrow>
+<mi>-</mi>
+</mrow>
+<msub>
+<mrow>
+<mi>V</mi>
+</mrow>
+<mrow>
+<mi>simu_min</mi>
+</mrow>
+</msub>
+</mrow>
+<mrow>
+<msub>
+<mrow>
+<mi>V</mi>
+</mrow>
+<mrow>
+<mi>AO_HIL_max</mi>
+</mrow>
+</msub>
+<mrow>
+<mi>-</mi>
+</mrow>
+<msub>
+<mrow>
+<mi>V</mi>
+</mrow>
+<mrow>
+<mi>AO_HIL_min</mi>
+</mrow>
+</msub>
+</mrow>
+</mfrac>
+</math>
+</span></p>
+<p class="- topic/p p">Where:</p>
+<ul class="- topic/ul ul" data-ofbid="doc__ul_xh4_wss_q5b" id="doc__ul_xh4_wss_q5b">
+<li class="- topic/li li">V<sub class="+ topic/ph hi-d/sub ph sub">simu_max</sub> - maximum value of the simulation variable;</li>
+<li class="- topic/li li">V<sub class="+ topic/ph hi-d/sub ph sub">simu_min</sub> - minimum value of the simulation variable;</li>
+<li class="- topic/li li">V<sub class="+ topic/ph hi-d/sub ph sub">AO_HIL_max</sub> – maximum voltage at the analog output of the HIL device;</li>
+<li class="- topic/li li">V<sub class="+ topic/ph hi-d/sub ph sub">AO_HIL_min </sub>– minimum voltage at the analog output of the HIL device.</li>
+</ul>
+<p class="- topic/p p">It is important to note that V<sub class="+ topic/ph hi-d/sub ph sub">AO_HIL_max</sub> and V<sub class="+ topic/ph hi-d/sub ph sub">AO_HIL_min</sub> are not
     necessarily the rated values of the analog output voltages of the HIL device, but the values
     chosen by the user to match the interface board input and controller specifications. We can
     calculate the scaling directly from the controller input specifications using the following
     equation:</p>
-   <p class="- topic/p p"><span class="+ topic/foreign mathml-d/mathml foreign mathml">
-     <math xmlns="http://www.w3.org/1998/Math/MathML">
-      <msub>
-       <mrow>
-        <mi>scaling</mi>
-       </mrow>
-       <mrow>
-        <mi>LV</mi>
-       </mrow>
-      </msub>
-      <mrow>
-       <mi>=</mi>
-      </mrow>
-      <msub>
-       <mrow>
-        <mi>G</mi>
-       </mrow>
-       <mrow>
-        <mi>v</mi>
-       </mrow>
-      </msub>
-      <mrow>
-       <mi>∙</mi>
-      </mrow>
-      <mfrac>
-       <mrow>
-        <msub>
-         <mrow>
-          <mi>V</mi>
-         </mrow>
-         <mrow>
-          <mi>simu_max</mi>
-         </mrow>
-        </msub>
-        <mrow>
-         <mi>-</mi>
-        </mrow>
-        <msub>
-         <mrow>
-          <mi>V</mi>
-         </mrow>
-         <mrow>
-          <mi>simu_min</mi>
-         </mrow>
-        </msub>
-       </mrow>
-       <mrow>
-        <msub>
-         <mrow>
-          <mi>V</mi>
-         </mrow>
-         <mrow>
-          <mi>AI_CTRL_max</mi>
-         </mrow>
-        </msub>
-        <mrow>
-         <mi>-</mi>
-        </mrow>
-        <msub>
-         <mrow>
-          <mi>V</mi>
-         </mrow>
-         <mrow>
-          <mi>AI_CTRL_min</mi>
-         </mrow>
-        </msub>
-       </mrow>
-      </mfrac>
-     </math>
-    </span></p>
-   <p class="- topic/p p">Where:</p>
-   <ul class="- topic/ul ul" id="doc__ul_rv1_cts_q5b" data-ofbid="doc__ul_rv1_cts_q5b">
-    <li class="- topic/li li">V<sub class="+ topic/ph hi-d/sub ph sub">simu_max</sub> - maximum value of the simulation variable;</li>
-    <li class="- topic/li li">V<sub class="+ topic/ph hi-d/sub ph sub">simu_min</sub> - minimum value of the simulation variable;</li>
-    <li class="- topic/li li">V<sub class="+ topic/ph hi-d/sub ph sub">AI_CTRL_max</sub> – maximum voltage at the analog input of the controller;</li>
-    <li class="- topic/li li">V<sub class="+ topic/ph hi-d/sub ph sub">AI_CTRL_min </sub>– minimum voltage at the analog input of the controller;</li>
-    <li class="- topic/li li">G<sub class="+ topic/ph hi-d/sub ph sub">v </sub>– voltage gain at the interface board.</li>
-   </ul>
-   <p class="- topic/p p">The gain at the interface board is a parameter defined at the hardware level of the board. It
+<p class="- topic/p p"><span class="+ topic/foreign mathml-d/mathml foreign mathml">
+<math xmlns="http://www.w3.org/1998/Math/MathML">
+<msub>
+<mrow>
+<mi>scaling</mi>
+</mrow>
+<mrow>
+<mi>LV</mi>
+</mrow>
+</msub>
+<mrow>
+<mi>=</mi>
+</mrow>
+<msub>
+<mrow>
+<mi>G</mi>
+</mrow>
+<mrow>
+<mi>v</mi>
+</mrow>
+</msub>
+<mrow>
+<mi>∙</mi>
+</mrow>
+<mfrac>
+<mrow>
+<msub>
+<mrow>
+<mi>V</mi>
+</mrow>
+<mrow>
+<mi>simu_max</mi>
+</mrow>
+</msub>
+<mrow>
+<mi>-</mi>
+</mrow>
+<msub>
+<mrow>
+<mi>V</mi>
+</mrow>
+<mrow>
+<mi>simu_min</mi>
+</mrow>
+</msub>
+</mrow>
+<mrow>
+<msub>
+<mrow>
+<mi>V</mi>
+</mrow>
+<mrow>
+<mi>AI_CTRL_max</mi>
+</mrow>
+</msub>
+<mrow>
+<mi>-</mi>
+</mrow>
+<msub>
+<mrow>
+<mi>V</mi>
+</mrow>
+<mrow>
+<mi>AI_CTRL_min</mi>
+</mrow>
+</msub>
+</mrow>
+</mfrac>
+</math>
+</span></p>
+<p class="- topic/p p">Where:</p>
+<ul class="- topic/ul ul" data-ofbid="doc__ul_rv1_cts_q5b" id="doc__ul_rv1_cts_q5b">
+<li class="- topic/li li">V<sub class="+ topic/ph hi-d/sub ph sub">simu_max</sub> - maximum value of the simulation variable;</li>
+<li class="- topic/li li">V<sub class="+ topic/ph hi-d/sub ph sub">simu_min</sub> - minimum value of the simulation variable;</li>
+<li class="- topic/li li">V<sub class="+ topic/ph hi-d/sub ph sub">AI_CTRL_max</sub> – maximum voltage at the analog input of the controller;</li>
+<li class="- topic/li li">V<sub class="+ topic/ph hi-d/sub ph sub">AI_CTRL_min </sub>– minimum voltage at the analog input of the controller;</li>
+<li class="- topic/li li">G<sub class="+ topic/ph hi-d/sub ph sub">v </sub>– voltage gain at the interface board.</li>
+</ul>
+<p class="- topic/p p">The gain at the interface board is a parameter defined at the hardware level of the board. It
     is a part of its specification and can vary for different interface boards. It can be
     represented by the following equation:</p>
-   <p class="- topic/p p"><span class="+ topic/foreign mathml-d/mathml foreign mathml">
-     <math xmlns="http://www.w3.org/1998/Math/MathML">
-      <msub>
-       <mrow>
-        <mi>G</mi>
-       </mrow>
-       <mrow>
-        <mi>v</mi>
-       </mrow>
-      </msub>
-      <mrow>
-       <mi>=</mi>
-      </mrow>
-      <mfrac>
-       <mrow>
-        <msub>
-         <mrow>
-          <mi>V</mi>
-         </mrow>
-         <mrow>
-          <mi>AO_INT_max</mi>
-         </mrow>
-        </msub>
-        <mrow>
-         <mi>-</mi>
-        </mrow>
-        <msub>
-         <mrow>
-          <mi>V</mi>
-         </mrow>
-         <mrow>
-          <mi>AO_INT_min</mi>
-         </mrow>
-        </msub>
-       </mrow>
-       <mrow>
-        <msub>
-         <mrow>
-          <mi>V</mi>
-         </mrow>
-         <mrow>
-          <mi>AI_INT_max</mi>
-         </mrow>
-        </msub>
-        <mrow>
-         <mi>-</mi>
-        </mrow>
-        <msub>
-         <mrow>
-          <mi>V</mi>
-         </mrow>
-         <mrow>
-          <mi>AI_INT_min</mi>
-         </mrow>
-        </msub>
-       </mrow>
-      </mfrac>
-     </math>
-    </span></p>
-   <p class="- topic/p p">Where:</p>
-   <ul class="- topic/ul ul" id="doc__ul_w4g_bys_q5b" data-ofbid="doc__ul_w4g_bys_q5b">
-    <li class="- topic/li li">V<sub class="+ topic/ph hi-d/sub ph sub">AO_INT_max</sub> - maximum voltage at the analog output of the interface board;</li>
-    <li class="- topic/li li">V<sub class="+ topic/ph hi-d/sub ph sub">AO_INT_min</sub> - minimum voltage at the analog output of the interface board;</li>
-    <li class="- topic/li li">V<sub class="+ topic/ph hi-d/sub ph sub">AI_INT_max</sub> – maximum voltage at the analog input of the interface board;</li>
-    <li class="- topic/li li">V<sub class="+ topic/ph hi-d/sub ph sub">AI_INT_min </sub>– minimum voltage at the analog input of the interface board.</li>
-   </ul>
-   <p class="- topic/p p">In case no interface board is used, Gv = 1.</p>
-   <div class="- topic/note note note note_note"><span class="note__title">Note:</span> When choosing the values for V<sub class="+ topic/ph hi-d/sub ph sub">AO_HIL_max</sub> and V<sub class="+ topic/ph hi-d/sub ph sub">AO_HIL_min</sub> or
+<p class="- topic/p p"><span class="+ topic/foreign mathml-d/mathml foreign mathml">
+<math xmlns="http://www.w3.org/1998/Math/MathML">
+<msub>
+<mrow>
+<mi>G</mi>
+</mrow>
+<mrow>
+<mi>v</mi>
+</mrow>
+</msub>
+<mrow>
+<mi>=</mi>
+</mrow>
+<mfrac>
+<mrow>
+<msub>
+<mrow>
+<mi>V</mi>
+</mrow>
+<mrow>
+<mi>AO_INT_max</mi>
+</mrow>
+</msub>
+<mrow>
+<mi>-</mi>
+</mrow>
+<msub>
+<mrow>
+<mi>V</mi>
+</mrow>
+<mrow>
+<mi>AO_INT_min</mi>
+</mrow>
+</msub>
+</mrow>
+<mrow>
+<msub>
+<mrow>
+<mi>V</mi>
+</mrow>
+<mrow>
+<mi>AI_INT_max</mi>
+</mrow>
+</msub>
+<mrow>
+<mi>-</mi>
+</mrow>
+<msub>
+<mrow>
+<mi>V</mi>
+</mrow>
+<mrow>
+<mi>AI_INT_min</mi>
+</mrow>
+</msub>
+</mrow>
+</mfrac>
+</math>
+</span></p>
+<p class="- topic/p p">Where:</p>
+<ul class="- topic/ul ul" data-ofbid="doc__ul_w4g_bys_q5b" id="doc__ul_w4g_bys_q5b">
+<li class="- topic/li li">V<sub class="+ topic/ph hi-d/sub ph sub">AO_INT_max</sub> - maximum voltage at the analog output of the interface board;</li>
+<li class="- topic/li li">V<sub class="+ topic/ph hi-d/sub ph sub">AO_INT_min</sub> - minimum voltage at the analog output of the interface board;</li>
+<li class="- topic/li li">V<sub class="+ topic/ph hi-d/sub ph sub">AI_INT_max</sub> – maximum voltage at the analog input of the interface board;</li>
+<li class="- topic/li li">V<sub class="+ topic/ph hi-d/sub ph sub">AI_INT_min </sub>– minimum voltage at the analog input of the interface board.</li>
+</ul>
+<p class="- topic/p p">In case no interface board is used, Gv = 1.</p>
+<div class="- topic/note note note note_note"><span class="note__title">Note:</span> When choosing the values for V<sub class="+ topic/ph hi-d/sub ph sub">AO_HIL_max</sub> and V<sub class="+ topic/ph hi-d/sub ph sub">AO_HIL_min</sub> or
     when designing your own interface board, the following equation must hold to ensure that the
     input voltage range of the device under test are met:
   
   
    <p class="- topic/p p"><span class="+ topic/foreign mathml-d/mathml foreign mathml">
-     <math xmlns="http://www.w3.org/1998/Math/MathML">
-      <msub>
-       <mrow>
-        <mi>V</mi>
-       </mrow>
-       <mrow>
-        <mi>AO_HIL_max</mi>
-       </mrow>
-      </msub>
-      <mrow>
-       <mi>-</mi>
-      </mrow>
-      <msub>
-       <mrow>
-        <mi>V</mi>
-       </mrow>
-       <mrow>
-        <mi>AO_HIL_min</mi>
-       </mrow>
-      </msub>
-      <mrow>
-       <mi>=</mi>
-      </mrow>
-      <mfrac>
-       <mrow>
-        <msub>
-         <mrow>
-          <mi>V</mi>
-         </mrow>
-         <mrow>
-          <mi>AI_CTRL_max</mi>
-         </mrow>
-        </msub>
-        <mrow>
-         <mi>-</mi>
-        </mrow>
-        <msub>
-         <mrow>
-          <mi>V</mi>
-         </mrow>
-         <mrow>
-          <mi>AI_CTRL_min</mi>
-         </mrow>
-        </msub>
-       </mrow>
-       <mrow>
-        <msub>
-         <mrow>
-          <mi>G</mi>
-         </mrow>
-         <mrow>
-          <mi>v</mi>
-         </mrow>
-        </msub>
-       </mrow>
-      </mfrac>
-     </math>
-    </span></p>
-  
-  </div>
-  
-   <p class="- topic/p p">In addition to scaling, an offset may be required for both AC and DC signals. In case of AC
+<math xmlns="http://www.w3.org/1998/Math/MathML">
+<msub>
+<mrow>
+<mi>V</mi>
+</mrow>
+<mrow>
+<mi>AO_HIL_max</mi>
+</mrow>
+</msub>
+<mrow>
+<mi>-</mi>
+</mrow>
+<msub>
+<mrow>
+<mi>V</mi>
+</mrow>
+<mrow>
+<mi>AO_HIL_min</mi>
+</mrow>
+</msub>
+<mrow>
+<mi>=</mi>
+</mrow>
+<mfrac>
+<mrow>
+<msub>
+<mrow>
+<mi>V</mi>
+</mrow>
+<mrow>
+<mi>AI_CTRL_max</mi>
+</mrow>
+</msub>
+<mrow>
+<mi>-</mi>
+</mrow>
+<msub>
+<mrow>
+<mi>V</mi>
+</mrow>
+<mrow>
+<mi>AI_CTRL_min</mi>
+</mrow>
+</msub>
+</mrow>
+<mrow>
+<msub>
+<mrow>
+<mi>G</mi>
+</mrow>
+<mrow>
+<mi>v</mi>
+</mrow>
+</msub>
+</mrow>
+</mfrac>
+</math>
+</span></p>
+</div>
+<p class="- topic/p p">In addition to scaling, an offset may be required for both AC and DC signals. In case of AC
     signals, the offset is usually used to represent the negative half cycle as a set of positive
     values, so that the signal can be fully represented by the controller. In case of DC signals, a
     use case can be seen in the <em class="+ topic/ph hi-d/i ph i">Battery Charger Dual Active Bridge (DAB) with a TI
      LAUNCHXL-F28379D Controller</em> example: since the measured current I2 in this example can
     change its direction (and therefore, its sign), offset is used so that the current can be
     represented by the controller for both of its directions.</p>
-   <p class="- topic/p p">To calculate offset, the following equation can be used:</p>
-   <p class="- topic/p p"><span class="+ topic/foreign mathml-d/mathml foreign mathml">
-     <math xmlns="http://www.w3.org/1998/Math/MathML">
-      <mrow>
-       <mi>Offset</mi>
-      </mrow>
-      <mrow>
-       <mi>=</mi>
-      </mrow>
-      <mrow>
-       <msub>
-        <mrow>
-         <mi>V</mi>
-        </mrow>
-        <mrow>
-         <mi>AO_HIL_zero</mi>
-        </mrow>
-       </msub>
-      </mrow>
-     </math>
-    </span></p>
-   <p class="- topic/p p">Where:</p>
-   <p class="- topic/p p">
-    <span class="+ topic/foreign mathml-d/mathml foreign mathml">
-     <math xmlns="http://www.w3.org/1998/Math/MathML">
-      <mrow>
-       <msub>
-        <mrow>
-         <mi>V</mi>
-        </mrow>
-        <mrow>
-         <mi>AO_HIL_zero</mi>
-        </mrow>
-       </msub>
-      </mrow>
-     </math>
-    </span>- voltage measured at the analog outputs of the HIL device that represents 0 in the
+<p class="- topic/p p">To calculate offset, the following equation can be used:</p>
+<p class="- topic/p p"><span class="+ topic/foreign mathml-d/mathml foreign mathml">
+<math xmlns="http://www.w3.org/1998/Math/MathML">
+<mrow>
+<mi>Offset</mi>
+</mrow>
+<mrow>
+<mi>=</mi>
+</mrow>
+<mrow>
+<msub>
+<mrow>
+<mi>V</mi>
+</mrow>
+<mrow>
+<mi>AO_HIL_zero</mi>
+</mrow>
+</msub>
+</mrow>
+</math>
+</span></p>
+<p class="- topic/p p">Where:</p>
+<p class="- topic/p p">
+<span class="+ topic/foreign mathml-d/mathml foreign mathml">
+<math xmlns="http://www.w3.org/1998/Math/MathML">
+<mrow>
+<msub>
+<mrow>
+<mi>V</mi>
+</mrow>
+<mrow>
+<mi>AO_HIL_zero</mi>
+</mrow>
+</msub>
+</mrow>
+</math>
+</span>- voltage measured at the analog outputs of the HIL device that represents 0 in the
     simulation.</p>
-   <p class="- topic/p p">Two interfacing examples are presented in the sequence:</p>
-   <p class="- topic/p p">A) Considering the use of a <em class="+ topic/ph hi-d/i ph i">TI LAUNCHXL-F28379D</em> and the <a class="- topic/xref xref" href="https://www.typhoon-hil.com/documentation/typhoon-hil-hardware-manual/hil_ti_ugrid_launchpad_interface/References/detailed_description.html" target="_blank" rel="external noopener">HIL
+<p class="- topic/p p">Two interfacing examples are presented in the sequence:</p>
+<p class="- topic/p p">A) Considering the use of a <em class="+ topic/ph hi-d/i ph i">TI LAUNCHXL-F28379D</em> and the <a class="- topic/xref xref" href="https://www.typhoon-hil.com/documentation/typhoon-hil-hardware-manual/hil_ti_ugrid_launchpad_interface/References/detailed_description.html" rel="external noopener" target="_blank">HIL
      TI LaunchPad Interface</a>, the board does not include gain or offset in the signals (Gv =
     1), such that V<sub class="+ topic/ph hi-d/sub ph sub">AI_INT_max</sub> = V<sub class="+ topic/ph hi-d/sub ph sub">AI_CTRL_max</sub> = 3 V and V<sub class="+ topic/ph hi-d/sub ph sub">AI_INT_min</sub>
     = V<sub class="+ topic/ph hi-d/sub ph sub">AI_CTRL_min</sub> = 0 V. Therefore, the analog outputs of the HIL device should be
@@ -576,130 +519,122 @@
     Assuming that in the simulation we have a sinusoidal signal with amplitude equal to 60 V, one
     has that V<sub class="+ topic/ph hi-d/sub ph sub">AO_simu_max</sub> = 60 V and V<sub class="+ topic/ph hi-d/sub ph sub">AO_simu_min</sub> = -60 V. The scaling and
     offset can be calculated as follows:</p>
-   <p class="- topic/p p"><span class="+ topic/foreign mathml-d/mathml foreign mathml">
-     <math xmlns="http://www.w3.org/1998/Math/MathML">
-      <msub>
-       <mrow>
-        <mi>scaling</mi>
-       </mrow>
-       <mrow>
-        <mi>LV</mi>
-       </mrow>
-      </msub>
-      <mrow>
-       <mi>=</mi>
-      </mrow>
-      <mfrac>
-       <mrow>
-        <msub>
-         <mrow>
-          <mi>V</mi>
-         </mrow>
-         <mrow>
-          <mi>simu_max</mi>
-         </mrow>
-        </msub>
-        <mrow>
-         <mi>-</mi>
-        </mrow>
-        <msub>
-         <mrow>
-          <mi>V</mi>
-         </mrow>
-         <mrow>
-          <mi>simu_min</mi>
-         </mrow>
-        </msub>
-       </mrow>
-       <mrow>
-        <msub>
-         <mrow>
-          <mi>V</mi>
-         </mrow>
-         <mrow>
-          <mi>AO_HIL_max</mi>
-         </mrow>
-        </msub>
-        <mrow>
-         <mi>-</mi>
-        </mrow>
-        <msub>
-         <mrow>
-          <mi>V</mi>
-         </mrow>
-         <mrow>
-          <mi>AO_HIL_min</mi>
-         </mrow>
-        </msub>
-       </mrow>
-      </mfrac>
-      <mrow>
-       <mi>=</mi>
-      </mrow>
-      <mfrac>
-       <mrow>
-        
-         <mrow>
-          <mi>60</mi>
-         </mrow>
-        
-        <mrow>
-         <mi>-</mi>
-        </mrow>
-        
-         <mrow>
-          <mi>(-60)</mi>
-         </mrow>
-        
-       </mrow>
-       <mrow>
-        
-         <mrow>
-          <mi>3</mi>
-         </mrow>
-        
-        <mrow>
-         <mi>-</mi>
-        </mrow>
-        
-         <mrow>
-          <mi>0</mi>
-         </mrow>
-        
-       </mrow>
-      </mfrac>
-      <mrow>
-       <mi>= 40</mi>
-      </mrow>
-     </math>
-    </span></p>
-   <p class="- topic/p p"><span class="+ topic/foreign mathml-d/mathml foreign mathml">
-     <math xmlns="http://www.w3.org/1998/Math/MathML">
-      <mrow>
-       <mi>Offset</mi>
-      </mrow>
-      <mrow>
-       <mi>=</mi>
-      </mrow>
-      <mrow>
-       <msub>
-        <mrow>
-         <mi>V</mi>
-        </mrow>
-        <mrow>
-         <mi>AO_HIL_zero</mi>
-        </mrow>
-       </msub>
-      </mrow>
-      <mrow>
-       <mi>=</mi>
-      </mrow>
-      <mrow>
-       <mi>1.5 V</mi>
-      </mrow>
-     </math>
-    </span></p>
-   <p class="- topic/p p">B) Considering the use of a <em class="+ topic/ph hi-d/i ph i">DSP DIM100</em> card (<em class="+ topic/ph hi-d/i ph i">TI C2000</em> family and the <em class="+ topic/ph hi-d/i ph i">HIL TI
+<p class="- topic/p p"><span class="+ topic/foreign mathml-d/mathml foreign mathml">
+<math xmlns="http://www.w3.org/1998/Math/MathML">
+<msub>
+<mrow>
+<mi>scaling</mi>
+</mrow>
+<mrow>
+<mi>LV</mi>
+</mrow>
+</msub>
+<mrow>
+<mi>=</mi>
+</mrow>
+<mfrac>
+<mrow>
+<msub>
+<mrow>
+<mi>V</mi>
+</mrow>
+<mrow>
+<mi>simu_max</mi>
+</mrow>
+</msub>
+<mrow>
+<mi>-</mi>
+</mrow>
+<msub>
+<mrow>
+<mi>V</mi>
+</mrow>
+<mrow>
+<mi>simu_min</mi>
+</mrow>
+</msub>
+</mrow>
+<mrow>
+<msub>
+<mrow>
+<mi>V</mi>
+</mrow>
+<mrow>
+<mi>AO_HIL_max</mi>
+</mrow>
+</msub>
+<mrow>
+<mi>-</mi>
+</mrow>
+<msub>
+<mrow>
+<mi>V</mi>
+</mrow>
+<mrow>
+<mi>AO_HIL_min</mi>
+</mrow>
+</msub>
+</mrow>
+</mfrac>
+<mrow>
+<mi>=</mi>
+</mrow>
+<mfrac>
+<mrow>
+<mrow>
+<mi>60</mi>
+</mrow>
+<mrow>
+<mi>-</mi>
+</mrow>
+<mrow>
+<mi>(-60)</mi>
+</mrow>
+</mrow>
+<mrow>
+<mrow>
+<mi>3</mi>
+</mrow>
+<mrow>
+<mi>-</mi>
+</mrow>
+<mrow>
+<mi>0</mi>
+</mrow>
+</mrow>
+</mfrac>
+<mrow>
+<mi>= 40</mi>
+</mrow>
+</math>
+</span></p>
+<p class="- topic/p p"><span class="+ topic/foreign mathml-d/mathml foreign mathml">
+<math xmlns="http://www.w3.org/1998/Math/MathML">
+<mrow>
+<mi>Offset</mi>
+</mrow>
+<mrow>
+<mi>=</mi>
+</mrow>
+<mrow>
+<msub>
+<mrow>
+<mi>V</mi>
+</mrow>
+<mrow>
+<mi>AO_HIL_zero</mi>
+</mrow>
+</msub>
+</mrow>
+<mrow>
+<mi>=</mi>
+</mrow>
+<mrow>
+<mi>1.5 V</mi>
+</mrow>
+</math>
+</span></p>
+<p class="- topic/p p">B) Considering the use of a <em class="+ topic/ph hi-d/i ph i">DSP DIM100</em> card (<em class="+ topic/ph hi-d/i ph i">TI C2000</em> family and the <em class="+ topic/ph hi-d/i ph i">HIL TI
      uGrid DSP</em> interface, the board input specifications are V<sub class="+ topic/ph hi-d/sub ph sub">AI_INT_max</sub> = 5 V and
      V<sub class="+ topic/ph hi-d/sub ph sub">AI_INT_min</sub> = -5 V while V<sub class="+ topic/ph hi-d/sub ph sub">AI_CTRL_max</sub> = 3 V and V<sub class="+ topic/ph hi-d/sub ph sub">AI_CTRL_min</sub> =
     0 V. This means that the board has a voltage gain Gv = 0.3 and it also generates the appropriate
@@ -708,561 +643,529 @@
     the simulation we have a sinusoidal signal with amplitude equal to 60 V, one has that
      V<sub class="+ topic/ph hi-d/sub ph sub">AO_simu_max</sub> = 60 V and V<sub class="+ topic/ph hi-d/sub ph sub">AO_simu_min</sub> = -60 V. The scaling and offset in
     this case can be calculated as follows:</p>
-   <p class="- topic/p p"><span class="+ topic/foreign mathml-d/mathml foreign mathml">
-     <math xmlns="http://www.w3.org/1998/Math/MathML">
-      <msub>
-       <mrow>
-        <mi>scaling</mi>
-       </mrow>
-       <mrow>
-        <mi>LV</mi>
-       </mrow>
-      </msub>
-      <mrow>
-       <mi>=</mi>
-      </mrow>
-      <mfrac>
-       <mrow>
-        <msub>
-         <mrow>
-          <mi>V</mi>
-         </mrow>
-         <mrow>
-          <mi>simu_max</mi>
-         </mrow>
-        </msub>
-        <mrow>
-         <mi>-</mi>
-        </mrow>
-        <msub>
-         <mrow>
-          <mi>V</mi>
-         </mrow>
-         <mrow>
-          <mi>simu_min</mi>
-         </mrow>
-        </msub>
-       </mrow>
-       <mrow>
-        <msub>
-         <mrow>
-          <mi>V</mi>
-         </mrow>
-         <mrow>
-          <mi>AO_HIL_max</mi>
-         </mrow>
-        </msub>
-        <mrow>
-         <mi>-</mi>
-        </mrow>
-        <msub>
-         <mrow>
-          <mi>V</mi>
-         </mrow>
-         <mrow>
-          <mi>AO_HIL_min</mi>
-         </mrow>
-        </msub>
-       </mrow>
-      </mfrac>
-      <mrow>
-       <mi>=</mi>
-      </mrow>
-      <mfrac>
-       <mrow>
-        
-         <mrow>
-          <mi>60</mi>
-         </mrow>
-        
-        <mrow>
-         <mi>-</mi>
-        </mrow>
-        
-         <mrow>
-          <mi>(-60)</mi>
-         </mrow>
-        
-       </mrow>
-       <mrow>
-        
-         <mrow>
-          <mi>5</mi>
-         </mrow>
-        
-        <mrow>
-         <mi>-</mi>
-        </mrow>
-        
-         <mrow>
-          <mi>(-5)</mi>
-         </mrow>
-        
-       </mrow>
-      </mfrac>
-      
-       <mrow>
-        <mi>= 12</mi>
-       </mrow>
-      
-     </math>
-    </span></p>
-   <p class="- topic/p p"><span class="+ topic/foreign mathml-d/mathml foreign mathml">
-     <math xmlns="http://www.w3.org/1998/Math/MathML">
-      <mrow>
-       <mi>Offset</mi>
-      </mrow>
-      <mrow>
-       <mi>=</mi>
-      </mrow>
-      <mrow>
-       <msub>
-        <mrow>
-         <mi>V</mi>
-        </mrow>
-        <mrow>
-         <mi>AO_HIL_zero</mi>
-        </mrow>
-       </msub>
-      </mrow>
-      <mrow>
-       <mi>=</mi>
-      </mrow>
-      <mrow>
-       <mi>0 V</mi>
-      </mrow>
-     </math>
-    </span></p>
-  </section>
-  <section class="- topic/section section" id="doc__section_yyq_hnk_t4b" data-ofbid="doc__section_yyq_hnk_t4b"><h2 class="- topic/title title sectiontitle">Interfacing with HIL Connect</h2>
-   
-   <p class="- topic/p p"><u class="+ topic/ph hi-d/u ph u">Scaling for High Voltage outputs</u></p>
-   <p class="- topic/p p">DUTs are standardized in terms of which voltage levels they can receive at their analog
+<p class="- topic/p p"><span class="+ topic/foreign mathml-d/mathml foreign mathml">
+<math xmlns="http://www.w3.org/1998/Math/MathML">
+<msub>
+<mrow>
+<mi>scaling</mi>
+</mrow>
+<mrow>
+<mi>LV</mi>
+</mrow>
+</msub>
+<mrow>
+<mi>=</mi>
+</mrow>
+<mfrac>
+<mrow>
+<msub>
+<mrow>
+<mi>V</mi>
+</mrow>
+<mrow>
+<mi>simu_max</mi>
+</mrow>
+</msub>
+<mrow>
+<mi>-</mi>
+</mrow>
+<msub>
+<mrow>
+<mi>V</mi>
+</mrow>
+<mrow>
+<mi>simu_min</mi>
+</mrow>
+</msub>
+</mrow>
+<mrow>
+<msub>
+<mrow>
+<mi>V</mi>
+</mrow>
+<mrow>
+<mi>AO_HIL_max</mi>
+</mrow>
+</msub>
+<mrow>
+<mi>-</mi>
+</mrow>
+<msub>
+<mrow>
+<mi>V</mi>
+</mrow>
+<mrow>
+<mi>AO_HIL_min</mi>
+</mrow>
+</msub>
+</mrow>
+</mfrac>
+<mrow>
+<mi>=</mi>
+</mrow>
+<mfrac>
+<mrow>
+<mrow>
+<mi>60</mi>
+</mrow>
+<mrow>
+<mi>-</mi>
+</mrow>
+<mrow>
+<mi>(-60)</mi>
+</mrow>
+</mrow>
+<mrow>
+<mrow>
+<mi>5</mi>
+</mrow>
+<mrow>
+<mi>-</mi>
+</mrow>
+<mrow>
+<mi>(-5)</mi>
+</mrow>
+</mrow>
+</mfrac>
+<mrow>
+<mi>= 12</mi>
+</mrow>
+</math>
+</span></p>
+<p class="- topic/p p"><span class="+ topic/foreign mathml-d/mathml foreign mathml">
+<math xmlns="http://www.w3.org/1998/Math/MathML">
+<mrow>
+<mi>Offset</mi>
+</mrow>
+<mrow>
+<mi>=</mi>
+</mrow>
+<mrow>
+<msub>
+<mrow>
+<mi>V</mi>
+</mrow>
+<mrow>
+<mi>AO_HIL_zero</mi>
+</mrow>
+</msub>
+</mrow>
+<mrow>
+<mi>=</mi>
+</mrow>
+<mrow>
+<mi>0 V</mi>
+</mrow>
+</math>
+</span></p>
+</section>
+<section class="- topic/section section" data-ofbid="doc__section_yyq_hnk_t4b" id="doc__section_yyq_hnk_t4b"><h2 class="- topic/title title sectiontitle">Interfacing with HIL Connect</h2>
+<p class="- topic/p p"><u class="+ topic/ph hi-d/u ph u">Scaling for High Voltage outputs</u></p>
+<p class="- topic/p p">DUTs are standardized in terms of which voltage levels they can receive at their analog
     inputs. Input voltages for devices such as relays and some types of controllers typically range
     from 100 V to 250 V [rms]. As the voltage levels demanded by these types of DUTs exceed the
     voltage capabilities of the HIL device, the HIL Connect is the interface used to appropriately
     condition the analog output voltages of the HIL device to the higher voltage levels required by
     the DUT. Information about analog output specification of the HIL Connect is given in <a class="- topic/xref xref" href="#doc__table_d25_kcg_t4b">Table 1</a>. </p>
-   <table class="- topic/table table frame-all" id="doc__table_d25_kcg_t4b" data-ofbid="doc__table_d25_kcg_t4b" data-cols="2"><caption class="- topic/title title tablecap" data-caption-side="top" data-is-repeated="true"><span class="table--title-label">Table<span class="table--title-label-number"> 1</span><span class="table--title-label-punctuation">. </span></span><span class="table--title">Analog output specification</span></caption><colgroup><col style="width:50%"/><col style="width:50%"/></colgroup><thead class="- topic/thead thead">
-      <tr class="- topic/row">
-       <th class="- topic/entry entry align-center colsep-1 rowsep-1" id="doc__table_d25_kcg_t4b__entry__1">Type</th>
-       <th class="- topic/entry entry align-center colsep-0 rowsep-1" id="doc__table_d25_kcg_t4b__entry__2">Range (peak)</th>
-      </tr>
-     </thead><tbody class="- topic/tbody tbody">
-      <tr class="- topic/row">
-       <td class="- topic/entry entry align-center colsep-1 rowsep-1" headers="doc__table_d25_kcg_t4b__entry__1">Analog Output</td>
-       <td class="- topic/entry entry align-center colsep-0 rowsep-1" headers="doc__table_d25_kcg_t4b__entry__2"><span class="- topic/ph ph">±10 V or <span class="- topic/ph ph" id="doc__output_range_i">±20 mA</span></span></td>
-      </tr>
-      <tr class="- topic/row">
-       <td class="- topic/entry entry align-center colsep-1 rowsep-1" headers="doc__table_d25_kcg_t4b__entry__1">High Voltage</td>
-       <td class="- topic/entry entry align-center colsep-0 rowsep-1" headers="doc__table_d25_kcg_t4b__entry__2"><span class="- topic/ph ph">±183.3 V</span></td>
-      </tr>
-      <tr class="- topic/row">
-       <td class="- topic/entry entry align-center colsep-1 rowsep-0" headers="doc__table_d25_kcg_t4b__entry__1">Current Output</td>
-       <td class="- topic/entry entry align-center colsep-0 rowsep-0" headers="doc__table_d25_kcg_t4b__entry__2"><span class="- topic/ph ph">±20 mA</span></td>
-      </tr>
-     </tbody></table>
-   <p class="- topic/p p">As mentioned in the Introduction, the rated voltage range of the HIL device analog outputs is
+<table class="- topic/table table frame-all" data-cols="2" data-ofbid="doc__table_d25_kcg_t4b" id="doc__table_d25_kcg_t4b"><caption class="- topic/title title tablecap" data-caption-side="top" data-is-repeated="true"><span class="table--title-label">Table<span class="table--title-label-number"> 1</span><span class="table--title-label-punctuation">. </span></span><span class="table--title">Analog output specification</span></caption><colgroup><col style="width:50%"/><col style="width:50%"/></colgroup><thead class="- topic/thead thead">
+<tr class="- topic/row">
+<th class="- topic/entry entry align-center colsep-1 rowsep-1" id="doc__table_d25_kcg_t4b__entry__1">Type</th>
+<th class="- topic/entry entry align-center colsep-0 rowsep-1" id="doc__table_d25_kcg_t4b__entry__2">Range (peak)</th>
+</tr>
+</thead><tbody class="- topic/tbody tbody">
+<tr class="- topic/row">
+<td class="- topic/entry entry align-center colsep-1 rowsep-1" headers="doc__table_d25_kcg_t4b__entry__1">Analog Output</td>
+<td class="- topic/entry entry align-center colsep-0 rowsep-1" headers="doc__table_d25_kcg_t4b__entry__2"><span class="- topic/ph ph">±10 V or <span class="- topic/ph ph" id="doc__output_range_i">±20 mA</span></span></td>
+</tr>
+<tr class="- topic/row">
+<td class="- topic/entry entry align-center colsep-1 rowsep-1" headers="doc__table_d25_kcg_t4b__entry__1">High Voltage</td>
+<td class="- topic/entry entry align-center colsep-0 rowsep-1" headers="doc__table_d25_kcg_t4b__entry__2"><span class="- topic/ph ph">±183.3 V</span></td>
+</tr>
+<tr class="- topic/row">
+<td class="- topic/entry entry align-center colsep-1 rowsep-0" headers="doc__table_d25_kcg_t4b__entry__1">Current Output</td>
+<td class="- topic/entry entry align-center colsep-0 rowsep-0" headers="doc__table_d25_kcg_t4b__entry__2"><span class="- topic/ph ph">±20 mA</span></td>
+</tr>
+</tbody></table>
+<p class="- topic/p p">As mentioned in the Introduction, the rated voltage range of the HIL device analog outputs is
     from -10 V to +10 V. Therefore, we still need to scale the simulated voltages appropriately.
     Scaling can be calculated by considering the ranges of both the simulation variable and the DUT
     analog input voltage specifications:</p>
-   <p class="- topic/p p"><span class="+ topic/foreign mathml-d/mathml foreign mathml">
-     <math xmlns="http://www.w3.org/1998/Math/MathML">
-      <msub>
-       <mrow>
-        <mi>scaling</mi>
-       </mrow>
-       <mrow>
-        <mi>HV</mi>
-       </mrow>
-      </msub>
-      <mrow>
-       <mi>=</mi>
-      </mrow>
-      <msub>
-       <mrow>
-        <mi>G</mi>
-       </mrow>
-       <mrow>
-        <mi>v</mi>
-       </mrow>
-      </msub>
-      <mrow>
-       <mi>∙</mi>
-      </mrow>
-      <mfrac>
-       <mrow>
-        <msub>
-         <mrow>
-          <mi>V</mi>
-         </mrow>
-         <mrow>
-          <mi>simu_max</mi>
-         </mrow>
-        </msub>
-        <mrow>
-         <mi>-</mi>
-        </mrow>
-        <msub>
-         <mrow>
-          <mi>V</mi>
-         </mrow>
-         <mrow>
-          <mi>simu_min</mi>
-         </mrow>
-        </msub>
-       </mrow>
-       <mrow>
-        <msub>
-         <mrow>
-          <mi>V</mi>
-         </mrow>
-         <mrow>
-          <mi>AI_DUT_max</mi>
-         </mrow>
-        </msub>
-        <mrow>
-         <mi>-</mi>
-        </mrow>
-        <msub>
-         <mrow>
-          <mi>V</mi>
-         </mrow>
-         <mrow>
-          <mi>AI_DUT_min</mi>
-         </mrow>
-        </msub>
-       </mrow>
-      </mfrac>
-     </math>
-    </span></p>
-   <p class="- topic/p p">Where:</p>
-   <div class="- topic/p p">
-    <ul class="- topic/ul ul" id="doc__ul_v1d_czs_q5b" data-ofbid="doc__ul_v1d_czs_q5b">
-     <li class="- topic/li li">scaling<sub class="+ topic/ph hi-d/sub ph sub">HV</sub> – scaling factor for high voltage outputs;</li>
-     <li class="- topic/li li">G<sub class="+ topic/ph hi-d/sub ph sub">v </sub>– voltage gain of the HIL Connect;</li>
-     <li class="- topic/li li">V<sub class="+ topic/ph hi-d/sub ph sub">simu_max</sub> - maximum value of the simulation variable;</li>
-     <li class="- topic/li li">V<sub class="+ topic/ph hi-d/sub ph sub">simu_min</sub> - minimum value of the simulation variable;</li>
-    </ul>
-   </div>
-   <ul class="- topic/ul ul" id="doc__ul_tcn_pys_q5b" data-ofbid="doc__ul_tcn_pys_q5b">
-    <li class="- topic/li li">V<sub class="+ topic/ph hi-d/sub ph sub">AI_DUT_max</sub> – maximum voltage at the analog input of the DUT;</li>
-    <li class="- topic/li li">V<sub class="+ topic/ph hi-d/sub ph sub">AI_DUT_min </sub>– minimum voltage at the analog input of the DUT.</li>
-   </ul>
-   <p class="- topic/p p">The voltage gain of the HIL Connect is a parameter defined at the hardware level of the HIL
+<p class="- topic/p p"><span class="+ topic/foreign mathml-d/mathml foreign mathml">
+<math xmlns="http://www.w3.org/1998/Math/MathML">
+<msub>
+<mrow>
+<mi>scaling</mi>
+</mrow>
+<mrow>
+<mi>HV</mi>
+</mrow>
+</msub>
+<mrow>
+<mi>=</mi>
+</mrow>
+<msub>
+<mrow>
+<mi>G</mi>
+</mrow>
+<mrow>
+<mi>v</mi>
+</mrow>
+</msub>
+<mrow>
+<mi>∙</mi>
+</mrow>
+<mfrac>
+<mrow>
+<msub>
+<mrow>
+<mi>V</mi>
+</mrow>
+<mrow>
+<mi>simu_max</mi>
+</mrow>
+</msub>
+<mrow>
+<mi>-</mi>
+</mrow>
+<msub>
+<mrow>
+<mi>V</mi>
+</mrow>
+<mrow>
+<mi>simu_min</mi>
+</mrow>
+</msub>
+</mrow>
+<mrow>
+<msub>
+<mrow>
+<mi>V</mi>
+</mrow>
+<mrow>
+<mi>AI_DUT_max</mi>
+</mrow>
+</msub>
+<mrow>
+<mi>-</mi>
+</mrow>
+<msub>
+<mrow>
+<mi>V</mi>
+</mrow>
+<mrow>
+<mi>AI_DUT_min</mi>
+</mrow>
+</msub>
+</mrow>
+</mfrac>
+</math>
+</span></p>
+<p class="- topic/p p">Where:</p>
+<div class="- topic/p p">
+<ul class="- topic/ul ul" data-ofbid="doc__ul_v1d_czs_q5b" id="doc__ul_v1d_czs_q5b">
+<li class="- topic/li li">scaling<sub class="+ topic/ph hi-d/sub ph sub">HV</sub> – scaling factor for high voltage outputs;</li>
+<li class="- topic/li li">G<sub class="+ topic/ph hi-d/sub ph sub">v </sub>– voltage gain of the HIL Connect;</li>
+<li class="- topic/li li">V<sub class="+ topic/ph hi-d/sub ph sub">simu_max</sub> - maximum value of the simulation variable;</li>
+<li class="- topic/li li">V<sub class="+ topic/ph hi-d/sub ph sub">simu_min</sub> - minimum value of the simulation variable;</li>
+</ul>
+</div>
+<ul class="- topic/ul ul" data-ofbid="doc__ul_tcn_pys_q5b" id="doc__ul_tcn_pys_q5b">
+<li class="- topic/li li">V<sub class="+ topic/ph hi-d/sub ph sub">AI_DUT_max</sub> – maximum voltage at the analog input of the DUT;</li>
+<li class="- topic/li li">V<sub class="+ topic/ph hi-d/sub ph sub">AI_DUT_min </sub>– minimum voltage at the analog input of the DUT.</li>
+</ul>
+<p class="- topic/p p">The voltage gain of the HIL Connect is a parameter defined at the hardware level of the HIL
     Connect and it is a part of its specification. Considering the High Voltage Output of the HIL
     Connect, it can be calculated as follows:</p>
-   <p class="- topic/p p"><span class="+ topic/foreign mathml-d/mathml foreign mathml">
-     <math xmlns="http://www.w3.org/1998/Math/MathML">
-      <msub>
-       <mrow>
-        <mi>G</mi>
-       </mrow>
-       <mrow>
-        <mi>v</mi>
-       </mrow>
-      </msub>
-      <mrow>
-       <mi> = </mi>
-      </mrow>
-      <mfrac>
-       <mrow>
-        <msub>
-         <mrow>
-          <mi>V</mi>
-         </mrow>
-         <mrow>
-          <mi>HIL_Connect_peak</mi>
-         </mrow>
-        </msub>
-       </mrow>
-       <mrow>
-        <msub>
-         <mrow>
-          <mi>V</mi>
-         </mrow>
-         <mrow>
-          <mi>HIL_Device_peak</mi>
-         </mrow>
-        </msub>
-       </mrow>
-      </mfrac>
-      <mrow>
-       <mi> = </mi>
-      </mrow>
-      <mfrac>
-       <mrow>
-        <mrow>
-         <mi>183.3 V</mi>
-        </mrow>
-       </mrow>
-       <mrow>
-        <mrow>
-         <mi>10 V</mi>
-        </mrow>
-       </mrow>
-      </mfrac>
-      <mrow>
-       <mi> = </mi>
-      </mrow>
-      <mrow>
-       <mi>18.33 </mi>
-      </mrow>
-     </math>
-    </span></p>
-   <p class="- topic/p p">Where:</p>
-   <ul class="- topic/ul ul" id="doc__ul_m4g_bwv_ryb" data-ofbid="doc__ul_m4g_bwv_ryb">
-    <li class="- topic/li li">V<sub class="+ topic/ph hi-d/sub ph sub">HIL_Connect_peak</sub> - peak value of voltage at the analog output of the HIL
+<p class="- topic/p p"><span class="+ topic/foreign mathml-d/mathml foreign mathml">
+<math xmlns="http://www.w3.org/1998/Math/MathML">
+<msub>
+<mrow>
+<mi>G</mi>
+</mrow>
+<mrow>
+<mi>v</mi>
+</mrow>
+</msub>
+<mrow>
+<mi> = </mi>
+</mrow>
+<mfrac>
+<mrow>
+<msub>
+<mrow>
+<mi>V</mi>
+</mrow>
+<mrow>
+<mi>HIL_Connect_peak</mi>
+</mrow>
+</msub>
+</mrow>
+<mrow>
+<msub>
+<mrow>
+<mi>V</mi>
+</mrow>
+<mrow>
+<mi>HIL_Device_peak</mi>
+</mrow>
+</msub>
+</mrow>
+</mfrac>
+<mrow>
+<mi> = </mi>
+</mrow>
+<mfrac>
+<mrow>
+<mrow>
+<mi>183.3 V</mi>
+</mrow>
+</mrow>
+<mrow>
+<mrow>
+<mi>10 V</mi>
+</mrow>
+</mrow>
+</mfrac>
+<mrow>
+<mi> = </mi>
+</mrow>
+<mrow>
+<mi>18.33 </mi>
+</mrow>
+</math>
+</span></p>
+<p class="- topic/p p">Where:</p>
+<ul class="- topic/ul ul" data-ofbid="doc__ul_m4g_bwv_ryb" id="doc__ul_m4g_bwv_ryb">
+<li class="- topic/li li">V<sub class="+ topic/ph hi-d/sub ph sub">HIL_Connect_peak</sub> - peak value of voltage at the analog output of the HIL
      Connect, defined by its hardware specification;</li>
-    <li class="- topic/li li">V<sub class="+ topic/ph hi-d/sub ph sub">HIL_Device_peak</sub> - peak value of the analog output of the HIL device (10 V).</li>
-   </ul>
-   <div class="- topic/p p">
-    <div class="- topic/note note note note_note"><span class="note__title">Note:</span> In the voltage gain equation, the value of V<sub class="+ topic/ph hi-d/sub ph sub">HIL_Connect_peak</sub> was chosen by
-     considering the <a class="- topic/xref xref" href="https://www.typhoon-hil.com/documentation/typhoon-hil-hardware-manual/hil_connect/References/card_configurations.html" target="_blank" rel="external noopener">Universal configuration of HIL Connect</a>. Depending on different High Voltage Output card(s) which
+<li class="- topic/li li">V<sub class="+ topic/ph hi-d/sub ph sub">HIL_Device_peak</sub> - peak value of the analog output of the HIL device (10 V).</li>
+</ul>
+<div class="- topic/p p">
+<div class="- topic/note note note note_note"><span class="note__title">Note:</span> In the voltage gain equation, the value of V<sub class="+ topic/ph hi-d/sub ph sub">HIL_Connect_peak</sub> was chosen by
+     considering the <a class="- topic/xref xref" href="https://www.typhoon-hil.com/documentation/typhoon-hil-hardware-manual/hil_connect/References/card_configurations.html" rel="external noopener" target="_blank">Universal configuration of HIL Connect</a>. Depending on different High Voltage Output card(s) which
      may be present in other HIL Connect configurations, V<sub class="+ topic/ph hi-d/sub ph sub">HIL_Connect_peak</sub> may vary.</div>
-   </div>
-   <p class="- topic/p p">To appropriately represent the signals at the high voltage analog inputs of the DUT, the
+</div>
+<p class="- topic/p p">To appropriately represent the signals at the high voltage analog inputs of the DUT, the
     internal scaling factor of the DUT also needs to be set. The process of configuring this scaling
     factor depends on the type of DUT and its manufacturer. After configuration, the voltage value
     shown on the DUT’s HMI (human machine interface) display should be equal to the simulated
     voltage.</p>
-   <p class="- topic/p p">An example for setting up the scaling for High Voltage outputs is shown in <a class="- topic/xref xref" href="#doc__image_k22_pzp_3tb">Figure 2</a>.</p>
-   <figure class="- topic/fig fig fignone" id="doc__image_k22_pzp_3tb" data-ofbid="doc__image_k22_pzp_3tb"><figcaption class="- topic/title title figcapcenter"><span class="figtitleprefix fig--title-label">Figure<span class="fig--title-label-number"> 2</span><span class="fig--title-label-punctuation">. </span></span><span class="fig--title">High Voltage output signal scaling example</span></figcaption>
-    
-    <div class="imagecenter break"><img class="- topic/image image imagecenter break" id="doc__image_as5_qws_q5b" src="../Images/how_to_signal_scaling_02.png"/></div>
-   </figure>
-   <p class="- topic/p p">Where:</p>
-   <ul class="- topic/ul ul" id="doc__ul_zsp_qht_q5b" data-ofbid="doc__ul_zsp_qht_q5b">
-    <li class="- topic/li li">scaling<sub class="+ topic/ph hi-d/sub ph sub">DUT</sub> – scaling factor of the DUT;</li>
-    <li class="- topic/li li">V<sub class="+ topic/ph hi-d/sub ph sub">disp</sub> – the value of voltage displayed on the DUT.</li>
-   </ul>
-   <p class="- topic/p p"><u class="+ topic/ph hi-d/u ph u">Scaling for Low Voltage outputs</u></p>
-   <p class="- topic/p p">In testbeds where the DUT is interfaced via HIL Connect but high-voltage outputs are not
+<p class="- topic/p p">An example for setting up the scaling for High Voltage outputs is shown in <a class="- topic/xref xref" href="#doc__image_k22_pzp_3tb">Figure 2</a>.</p>
+<figure class="- topic/fig fig fignone" data-ofbid="doc__image_k22_pzp_3tb" id="doc__image_k22_pzp_3tb"><figcaption class="- topic/title title figcapcenter"><span class="figtitleprefix fig--title-label">Figure<span class="fig--title-label-number"> 2</span><span class="fig--title-label-punctuation">. </span></span><span class="fig--title">High Voltage output signal scaling example</span></figcaption>
+<div class="imagecenter break"><img class="- topic/image image imagecenter break" id="doc__image_as5_qws_q5b" src="../Images/how_to_signal_scaling_02.png"/></div>
+</figure>
+<p class="- topic/p p">Where:</p>
+<ul class="- topic/ul ul" data-ofbid="doc__ul_zsp_qht_q5b" id="doc__ul_zsp_qht_q5b">
+<li class="- topic/li li">scaling<sub class="+ topic/ph hi-d/sub ph sub">DUT</sub> – scaling factor of the DUT;</li>
+<li class="- topic/li li">V<sub class="+ topic/ph hi-d/sub ph sub">disp</sub> – the value of voltage displayed on the DUT.</li>
+</ul>
+<p class="- topic/p p"><u class="+ topic/ph hi-d/u ph u">Scaling for Low Voltage outputs</u></p>
+<p class="- topic/p p">In testbeds where the DUT is interfaced via HIL Connect but high-voltage outputs are not
     required, a feedthrough from the HIL device to DUT low voltage inputs is provided using voltage
     buffer channels inside the HIL Connect. In that case, the simulated voltages still need to be
     scaled in the software, as shown previously, in the <a class="- topic/xref xref" href="#doc__section_bnk_str_1kb">Interfacing with Interface Boards</a> section of the guide. </p>
-   <p class="- topic/p p"><u class="+ topic/ph hi-d/u ph u">Scaling for High Current outputs</u></p>
-   <p class="- topic/p p">DUTs are standardized in terms of which currents they can receive at their analog inputs.
+<p class="- topic/p p"><u class="+ topic/ph hi-d/u ph u">Scaling for High Current outputs</u></p>
+<p class="- topic/p p">DUTs are standardized in terms of which currents they can receive at their analog inputs.
     Input currents for devices such as relays and some types of controllers typically range from 1 A
     or 5 A [rms]. </p>
-   <p class="- topic/p p">As the current values demanded by these DUTs exceed the current capabilities of the HIL
+<p class="- topic/p p">As the current values demanded by these DUTs exceed the current capabilities of the HIL
     device, an interface is needed between the DUT and the HIL device. That interface is once again
     the HIL Connect. It has VCCSs (Voltage Controlled Current Sources) which enable us to provide
     the desired currents at the DUT input from the output voltages of the HIL device.</p>
-   <p class="- topic/p p">To do so, the currents measured in the simulation are represented as voltage values at the HIL
+<p class="- topic/p p">To do so, the currents measured in the simulation are represented as voltage values at the HIL
     device AOs. Therefore, we need to scale the signals appropriately. Scaling can be calculated by
     considering the ranges of both the simulation variable and the DUT analog input current
     specifications:</p>
-   <p class="- topic/p p"><span class="+ topic/foreign mathml-d/mathml foreign mathml">
-     <math xmlns="http://www.w3.org/1998/Math/MathML">
-      <msub>
-       <mrow>
-        <mi>scaling</mi>
-       </mrow>
-       <mrow>
-        <mi>HC</mi>
-       </mrow>
-      </msub>
-      <mrow>
-       <mi>=</mi>
-      </mrow>
-      <msub>
-       <mrow>
-        <mi>g</mi>
-       </mrow>
-       <mrow>
-        <mi>m</mi>
-       </mrow>
-      </msub>
-      <mrow>
-       <mi>∙</mi>
-      </mrow>
-      <mfrac>
-       <mrow>
-        <msub>
-         <mrow>
-          <mi>I</mi>
-         </mrow>
-         <mrow>
-          <mi>simu_max</mi>
-         </mrow>
-        </msub>
-        <mrow>
-         <mi>-</mi>
-        </mrow>
-        <msub>
-         <mrow>
-          <mi>I</mi>
-         </mrow>
-         <mrow>
-          <mi>simu_min</mi>
-         </mrow>
-        </msub>
-       </mrow>
-       <mrow>
-        <msub>
-         <mrow>
-          <mi>I</mi>
-         </mrow>
-         <mrow>
-          <mi>AI_DUT_max</mi>
-         </mrow>
-        </msub>
-        <mrow>
-         <mi>-</mi>
-        </mrow>
-        <msub>
-         <mrow>
-          <mi>I</mi>
-         </mrow>
-         <mrow>
-          <mi>AI_DUT_min</mi>
-         </mrow>
-        </msub>
-       </mrow>
-      </mfrac>
-     </math>
-    </span></p>
-   <p class="- topic/p p">Where:</p>
-   <ul class="- topic/ul ul" id="doc__ul_ytp_pqp_ryb" data-ofbid="doc__ul_ytp_pqp_ryb">
-    <li class="- topic/li li">scaling<sub class="+ topic/ph hi-d/sub ph sub">HC</sub> – scaling factor for high current outputs;</li>
-    <li class="- topic/li li">g<sub class="+ topic/ph hi-d/sub ph sub">m</sub> - transconductance of the HIL Connect;</li>
-    <li class="- topic/li li">I<sub class="+ topic/ph hi-d/sub ph sub">simu_max</sub> – maximum value of the simulation variable;</li>
-    <li class="- topic/li li">I<sub class="+ topic/ph hi-d/sub ph sub">simu_min</sub> – minimum value of the simulation variable.</li>
-    <li class="- topic/li li">I<sub class="+ topic/ph hi-d/sub ph sub">AI_DUT_max </sub>– maximum current at the analog input of the DUT;</li>
-    <li class="- topic/li li">I<sub class="+ topic/ph hi-d/sub ph sub">AI_DUT_min</sub> – minimum current at the analog input of the DUT.</li>
-   </ul>
-   <p class="- topic/p p">The transconductance of the HIL Connect is a parameter defined at the hardware level of the
+<p class="- topic/p p"><span class="+ topic/foreign mathml-d/mathml foreign mathml">
+<math xmlns="http://www.w3.org/1998/Math/MathML">
+<msub>
+<mrow>
+<mi>scaling</mi>
+</mrow>
+<mrow>
+<mi>HC</mi>
+</mrow>
+</msub>
+<mrow>
+<mi>=</mi>
+</mrow>
+<msub>
+<mrow>
+<mi>g</mi>
+</mrow>
+<mrow>
+<mi>m</mi>
+</mrow>
+</msub>
+<mrow>
+<mi>∙</mi>
+</mrow>
+<mfrac>
+<mrow>
+<msub>
+<mrow>
+<mi>I</mi>
+</mrow>
+<mrow>
+<mi>simu_max</mi>
+</mrow>
+</msub>
+<mrow>
+<mi>-</mi>
+</mrow>
+<msub>
+<mrow>
+<mi>I</mi>
+</mrow>
+<mrow>
+<mi>simu_min</mi>
+</mrow>
+</msub>
+</mrow>
+<mrow>
+<msub>
+<mrow>
+<mi>I</mi>
+</mrow>
+<mrow>
+<mi>AI_DUT_max</mi>
+</mrow>
+</msub>
+<mrow>
+<mi>-</mi>
+</mrow>
+<msub>
+<mrow>
+<mi>I</mi>
+</mrow>
+<mrow>
+<mi>AI_DUT_min</mi>
+</mrow>
+</msub>
+</mrow>
+</mfrac>
+</math>
+</span></p>
+<p class="- topic/p p">Where:</p>
+<ul class="- topic/ul ul" data-ofbid="doc__ul_ytp_pqp_ryb" id="doc__ul_ytp_pqp_ryb">
+<li class="- topic/li li">scaling<sub class="+ topic/ph hi-d/sub ph sub">HC</sub> – scaling factor for high current outputs;</li>
+<li class="- topic/li li">g<sub class="+ topic/ph hi-d/sub ph sub">m</sub> - transconductance of the HIL Connect;</li>
+<li class="- topic/li li">I<sub class="+ topic/ph hi-d/sub ph sub">simu_max</sub> – maximum value of the simulation variable;</li>
+<li class="- topic/li li">I<sub class="+ topic/ph hi-d/sub ph sub">simu_min</sub> – minimum value of the simulation variable.</li>
+<li class="- topic/li li">I<sub class="+ topic/ph hi-d/sub ph sub">AI_DUT_max </sub>– maximum current at the analog input of the DUT;</li>
+<li class="- topic/li li">I<sub class="+ topic/ph hi-d/sub ph sub">AI_DUT_min</sub> – minimum current at the analog input of the DUT.</li>
+</ul>
+<p class="- topic/p p">The transconductance of the HIL Connect is a parameter defined at the hardware level of the
     HIL Connect and it is part of its specification. Considering the High Current Output  of the HIL
     Connect, it can be calculated as follows:</p>
-   <p class="- topic/p p"><span class="+ topic/foreign mathml-d/mathml foreign mathml">
-     <math xmlns="http://www.w3.org/1998/Math/MathML">
-      <msub>
-       <mrow>
-        <mi>g</mi>
-       </mrow>
-       <mrow>
-        <mi>m</mi>
-       </mrow>
-      </msub>
-      <mrow>
-       <mi> = </mi>
-      </mrow>
-      <mfrac>
-       <mrow>
-        <msub>
-         <mrow>
-          <mi>I</mi>
-         </mrow>
-         <mrow>
-          <mi>HIL_Connect_peak</mi>
-         </mrow>
-        </msub>
-       </mrow>
-       <mrow>
-        <msub>
-         <mrow>
-          <mi>V</mi>
-         </mrow>
-         <mrow>
-          <mi>HIL_Device_peak</mi>
-         </mrow>
-        </msub>
-       </mrow>
-      </mfrac>
-      <mrow>
-       <mi> = </mi>
-      </mrow>
-      <mfrac>
-       <mrow>
-        <mrow>
-         <mi>2.82 A</mi>
-        </mrow>
-       </mrow>
-       <mrow>
-        <mrow>
-         <mi>10 V</mi>
-        </mrow>
-       </mrow>
-      </mfrac>
-      <mrow>
-       <mi> = </mi>
-      </mrow>
-      <mrow>
-       <mi>0.282 </mi>
-      </mrow>
-     </math>
-    </span></p>
-   <p class="- topic/p p">Where:</p>
-   <ul class="- topic/ul ul" id="doc__ul_c1g_2h1_myb" data-ofbid="doc__ul_c1g_2h1_myb">
-    <li class="- topic/li li">I<sub class="+ topic/ph hi-d/sub ph sub">HIL_Connect_peak</sub> - peak value of current at the analog output of the HIL
+<p class="- topic/p p"><span class="+ topic/foreign mathml-d/mathml foreign mathml">
+<math xmlns="http://www.w3.org/1998/Math/MathML">
+<msub>
+<mrow>
+<mi>g</mi>
+</mrow>
+<mrow>
+<mi>m</mi>
+</mrow>
+</msub>
+<mrow>
+<mi> = </mi>
+</mrow>
+<mfrac>
+<mrow>
+<msub>
+<mrow>
+<mi>I</mi>
+</mrow>
+<mrow>
+<mi>HIL_Connect_peak</mi>
+</mrow>
+</msub>
+</mrow>
+<mrow>
+<msub>
+<mrow>
+<mi>V</mi>
+</mrow>
+<mrow>
+<mi>HIL_Device_peak</mi>
+</mrow>
+</msub>
+</mrow>
+</mfrac>
+<mrow>
+<mi> = </mi>
+</mrow>
+<mfrac>
+<mrow>
+<mrow>
+<mi>2.82 A</mi>
+</mrow>
+</mrow>
+<mrow>
+<mrow>
+<mi>10 V</mi>
+</mrow>
+</mrow>
+</mfrac>
+<mrow>
+<mi> = </mi>
+</mrow>
+<mrow>
+<mi>0.282 </mi>
+</mrow>
+</math>
+</span></p>
+<p class="- topic/p p">Where:</p>
+<ul class="- topic/ul ul" data-ofbid="doc__ul_c1g_2h1_myb" id="doc__ul_c1g_2h1_myb">
+<li class="- topic/li li">I<sub class="+ topic/ph hi-d/sub ph sub">HIL_Connect_peak</sub> - peak value of current at the analog output of the HIL
      Connect, defined by its hardware specification</li>
-    <li class="- topic/li li">V<sub class="+ topic/ph hi-d/sub ph sub">HIL_Device_peak</sub> - peak value of the analog output of the HIL device (10 V).</li>
-   </ul>
-   <div class="- topic/p p">
-    <div class="- topic/note note note note_note"><span class="note__title">Note:</span> In the transconductance equation, the value of I<sub class="+ topic/ph hi-d/sub ph sub">HIL_Connect_peak</sub> was chosen by
-     considering the <a class="- topic/xref xref" href="https://www.typhoon-hil.com/documentation/typhoon-hil-hardware-manual/hil_connect/References/card_configurations.html" target="_blank" rel="external noopener">Universal configuration of HIL Connect</a>. Depending on different Current Output card(s) which may
+<li class="- topic/li li">V<sub class="+ topic/ph hi-d/sub ph sub">HIL_Device_peak</sub> - peak value of the analog output of the HIL device (10 V).</li>
+</ul>
+<div class="- topic/p p">
+<div class="- topic/note note note note_note"><span class="note__title">Note:</span> In the transconductance equation, the value of I<sub class="+ topic/ph hi-d/sub ph sub">HIL_Connect_peak</sub> was chosen by
+     considering the <a class="- topic/xref xref" href="https://www.typhoon-hil.com/documentation/typhoon-hil-hardware-manual/hil_connect/References/card_configurations.html" rel="external noopener" target="_blank">Universal configuration of HIL Connect</a>. Depending on different Current Output card(s) which may
      be present in other HIL Connect configurations, the I<sub class="+ topic/ph hi-d/sub ph sub">HIL_Connect_peak</sub> may vary.</div>
-   </div>
-   <p class="- topic/p p">Finally, to appropriately represent currents at the high current analog inputs of the DUT, the
+</div>
+<p class="- topic/p p">Finally, to appropriately represent currents at the high current analog inputs of the DUT, the
     internal scaling factor of the DUT also needs to be set. The process of configuring this scaling
     factor depends on the type of DUT and its manufacturer. After it is done, the measured current
     shown on the DUT’s HMI display should be equal to the simulated current. An example for setting
     up the scaling for High Current outputs is shown in <a class="- topic/xref xref" href="#doc__fig_b5y_qzp_3tb">Figure 3</a>.</p>
-   <figure class="- topic/fig fig fignone" id="doc__fig_b5y_qzp_3tb" data-ofbid="doc__fig_b5y_qzp_3tb"><figcaption class="- topic/title title figcapcenter"><span class="figtitleprefix fig--title-label">Figure<span class="fig--title-label-number"> 3</span><span class="fig--title-label-punctuation">. </span></span><span class="fig--title">High Current output signal scaling example</span></figcaption>
-    
-    <div class="imagecenter break"><img class="- topic/image image imagecenter break" id="doc__image_dgv_lzp_ryb" src="../Images/how_to_signal_scaling_03.png"/></div>
-   </figure>
-   <p class="- topic/p p">Where:</p>
-   <ul class="- topic/ul ul" id="doc__ul_l2m_vmt_q5b" data-ofbid="doc__ul_l2m_vmt_q5b">
-    <li class="- topic/li li">scaling<sub class="+ topic/ph hi-d/sub ph sub">DUT</sub> – scaling factor of the DUT;</li>
-    <li class="- topic/li li">I<sub class="+ topic/ph hi-d/sub ph sub">disp</sub> – the value of current displayed on the DUT.</li>
-   </ul>
-  </section>
- </div>
+<figure class="- topic/fig fig fignone" data-ofbid="doc__fig_b5y_qzp_3tb" id="doc__fig_b5y_qzp_3tb"><figcaption class="- topic/title title figcapcenter"><span class="figtitleprefix fig--title-label">Figure<span class="fig--title-label-number"> 3</span><span class="fig--title-label-punctuation">. </span></span><span class="fig--title">High Current output signal scaling example</span></figcaption>
+<div class="imagecenter break"><img class="- topic/image image imagecenter break" id="doc__image_dgv_lzp_ryb" src="../Images/how_to_signal_scaling_03.png"/></div>
+</figure>
+<p class="- topic/p p">Where:</p>
+<ul class="- topic/ul ul" data-ofbid="doc__ul_l2m_vmt_q5b" id="doc__ul_l2m_vmt_q5b">
+<li class="- topic/li li">scaling<sub class="+ topic/ph hi-d/sub ph sub">DUT</sub> – scaling factor of the DUT;</li>
+<li class="- topic/li li">I<sub class="+ topic/ph hi-d/sub ph sub">disp</sub> – the value of current displayed on the DUT.</li>
+</ul>
+</section>
+</div>
 </article></main></div>
-                        
-                        
-                        
-                        
-                        
-                        
-                    </div>
-                    
-                        <nav role="navigation" id="wh_topic_toc" aria-label="On this page" class="col-lg-2 d-none d-lg-block navbar d-print-none"> 
-                            <div id="wh_topic_toc_content">
-		                        
-	                            <div class=" wh_topic_toc "><div class="wh_topic_label">On this page</div><ul><li class="section-item"><div class="section-title"><a href="#doc__section_hqr_1zb_rz" data-tocid="doc__section_hqr_1zb_rz">Introduction</a></div></li><li class="section-item"><div class="section-title"><a href="#doc__MIRhMILnT" data-tocid="doc__MIRhMILnT">Scaling for Analog Outputs</a></div></li><li class="section-item"><div class="section-title"><a href="#doc__T14MHSN8A" data-tocid="doc__T14MHSN8A">Scaling for Analog Inputs</a></div></li><li class="section-item"><div class="section-title"><a href="#doc__section_bnk_str_1kb" data-tocid="doc__section_bnk_str_1kb">Interfacing with Interface Boards </a></div></li><li class="section-item"><div class="section-title"><a href="#doc__section_yyq_hnk_t4b" data-tocid="doc__section_yyq_hnk_t4b">Interfacing with HIL Connect</a></div></li></ul></div>
-	                        	
-                        	</div>
-                        </nav>
-                    
-                </div>
-            </div>
-            
-            
-            
-        </div> 
-        <footer class="navbar navbar-default wh_footer">
-  <div class=" footer-container mx-auto ">
-    <div style="text-align:center">Typhoon HIL Inc.<span id="year"> <a href="https://www.typhoon-hil.com">www.typhoon-hil.com</a></span></div>
-  </div>
+</div>
+<nav aria-label="On this page" class="col-lg-2 d-none d-lg-block navbar d-print-none" id="wh_topic_toc" role="navigation">
+<div id="wh_topic_toc_content">
+<div class="wh_topic_toc"><div class="wh_topic_label">On this page</div><ul><li class="section-item"><div class="section-title"><a data-tocid="doc__section_hqr_1zb_rz" href="#doc__section_hqr_1zb_rz">Introduction</a></div></li><li class="section-item"><div class="section-title"><a data-tocid="doc__MIRhMILnT" href="#doc__MIRhMILnT">Scaling for Analog Outputs</a></div></li><li class="section-item"><div class="section-title"><a data-tocid="doc__T14MHSN8A" href="#doc__T14MHSN8A">Scaling for Analog Inputs</a></div></li><li class="section-item"><div class="section-title"><a data-tocid="doc__section_bnk_str_1kb" href="#doc__section_bnk_str_1kb">Interfacing with Interface Boards </a></div></li><li class="section-item"><div class="section-title"><a data-tocid="doc__section_yyq_hnk_t4b" href="#doc__section_yyq_hnk_t4b">Interfacing with HIL Connect</a></div></li></ul></div>
+</div>
+</nav>
+</div>
+</div>
+</div>
+<footer class="navbar navbar-default wh_footer">
+<div class="footer-container mx-auto">
+<div style="text-align:center">Typhoon HIL Inc.<span id="year"> <a href="https://www.typhoon-hil.com">www.typhoon-hil.com</a></span></div>
+</div>
 </footer>
-        
-        <div id="go2top" class="d-print-none">
-            <span class="oxy-icon oxy-icon-up"></span>
-        </div>
-        
-        <div id="modal_img_large" class="modal">
-            <span class="close oxy-icon oxy-icon-remove"></span>
-            <div id="modal_img_container"></div>
-            <div id="caption"></div>
-        </div>
-        
-        
-<script type="text/javascript" src="../../assets/script.js"> 
+<div class="d-print-none" id="go2top">
+<span class="oxy-icon oxy-icon-up"></span>
+</div>
+<div class="modal" id="modal_img_large">
+<span class="close oxy-icon oxy-icon-remove"></span>
+<div id="modal_img_container"></div>
+<div id="caption"></div>
+</div>
+<script src="../../assets/script.js" type="text/javascript">
 </script>
-
-        
-    </body>
+</body>
 </html>

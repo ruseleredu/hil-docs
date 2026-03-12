@@ -1,132 +1,82 @@
-<!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en" data-whc_version="24.1">
-    <head><link rel="shortcut icon" href="../../favicon.ico"/><link rel="icon" href="../../favicon.ico"/><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><meta name="DC.rights.owner" content="(C) Copyright 2026"/><meta name="copyright" content="(C) Copyright 2026"/><meta name="generator" content="DITA-OT"/><meta name="DC.type" content="reference"/><meta name="description" content="Description and demonstration of the capabilities of the Generic PV Plant component"/><meta name="DC.relation" content="../../t-an001/concepts/microgrids.html"/><meta name="DC.format" content="HTML5"/><meta name="DC.identifier" content="doc"/>        
-      <title>Generic PV plant</title><!--  Generated with Oxygen version 24.1, build number 2022030800.  --><meta name="wh-path2root" content="../../"/><meta name="wh-toc-id" content="doc-d16877e492"/><meta name="wh-source-relpath" content="t-an001/References/generic_pv_plant.dita"/><meta name="wh-out-relpath" content="t-an001/References/generic_pv_plant.html"/>
-    <!-- Latest compiled and minified Bootstrap CSS -->
-    <link rel="stylesheet" type="text/css" href="../../oxygen-webhelp/lib/bootstrap/css/bootstrap.min.css"/>
-    
-    <link rel="stylesheet" href="../../oxygen-webhelp/lib/jquery-ui/jquery-ui.min.css"/>
-    
-    <!-- Template default styles  -->
-    <link rel="stylesheet" type="text/css" href="../../oxygen-webhelp/app/topic-page.css?buildId=2022030800"/>
-    
-    
-    <script src="../../oxygen-webhelp/lib/jquery/jquery-3.5.1.min.js"></script>
-    
-    <script data-main="../../oxygen-webhelp/app/topic-page.js" src="../../oxygen-webhelp/lib/requirejs/require.js"></script>
-<link rel="stylesheet" type="text/css" href="../../oxygen-webhelp/template/oxygen.css?buildId=2022030800"/><link rel="stylesheet" type="text/css" href="../../oxygen-webhelp/template/notes.css?buildId=2022030800"/><script type="text/javascript" src="../../Scripts/mml-svg.js"> 
-</script><link rel="stylesheet" type="text/css" href="../../assets/typhoon.css"/></head>
-
-    <body id="doc" class="wh_topic_page frmBody">
-        <a href="#wh_topic_body" class="sr-only sr-only-focusable">
+<!DOCTYPE html>
+<html data-whc_version="24.1" lang="en" xml:lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head><link href="../../favicon.ico" rel="shortcut icon"/><link href="../../favicon.ico" rel="icon"/><meta content="text/html; charset=utf-8" http-equiv="Content-Type"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="IE=edge" http-equiv="X-UA-Compatible"/><meta content="(C) Copyright 2026" name="DC.rights.owner"/><meta content="(C) Copyright 2026" name="copyright"/><meta content="DITA-OT" name="generator"/><meta content="reference" name="DC.type"/><meta content="Description and demonstration of the capabilities of the Generic PV Plant component" name="description"/><meta content="../../t-an001/concepts/microgrids.html" name="DC.relation"/><meta content="HTML5" name="DC.format"/><meta content="doc" name="DC.identifier"/>
+<title>Generic PV plant</title><!--  Generated with Oxygen version 24.1, build number 2022030800.  --><meta content="../../" name="wh-path2root"/><meta content="doc-d16877e492" name="wh-toc-id"/><meta content="t-an001/References/generic_pv_plant.dita" name="wh-source-relpath"/><meta content="t-an001/References/generic_pv_plant.html" name="wh-out-relpath"/>
+<!-- Latest compiled and minified Bootstrap CSS -->
+<link href="../../oxygen-webhelp/lib/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
+<link href="../../oxygen-webhelp/lib/jquery-ui/jquery-ui.min.css" rel="stylesheet"/>
+<!-- Template default styles  -->
+<link href="../../oxygen-webhelp/app/topic-page.css?buildId=2022030800" rel="stylesheet" type="text/css"/>
+<script src="../../oxygen-webhelp/lib/jquery/jquery-3.5.1.min.js"></script>
+<script data-main="../../oxygen-webhelp/app/topic-page.js" src="../../oxygen-webhelp/lib/requirejs/require.js"></script>
+<link href="../../oxygen-webhelp/template/oxygen.css?buildId=2022030800" rel="stylesheet" type="text/css"/><link href="../../oxygen-webhelp/template/notes.css?buildId=2022030800" rel="stylesheet" type="text/css"/><script src="../../Scripts/mml-svg.js" type="text/javascript">
+</script><link href="../../assets/typhoon.css" rel="stylesheet" type="text/css"/></head>
+<body class="wh_topic_page frmBody" id="doc">
+<a class="sr-only sr-only-focusable" href="#wh_topic_body">
             Jump to main content
         </a>
-        
-        
-        
-        
-        <header class="navbar navbar-default wh_header">
-    <div class="container-fluid">
-        <div class="wh_header_flex_container navbar-nav navbar-expand-md navbar-dark">
-            <div class="wh_logo_and_publication_title_container">
-                <div class="wh_logo_and_publication_title">
-                    
-                    <a href="https://www.typhoon-hil.com" class=" wh_logo d-none d-sm-block "><img src="../../logo.svg" alt="  Typhoon HIL Documentation  Version: 2026.1  "/></a>
-                    <div class=" wh_publication_title "><a href="../../index.html"><span class="booktitle">  <span class="ph mainbooktitle">Typhoon HIL Documentation</span>  <span class="ph booktitlealt">Version: 2026.1</span>  </span></a></div>
-                    
-                </div>
-                
-                <button type="button" data-target="#wh_top_menu_and_indexterms_link" id="wh_menu_mobile_button" data-toggle="collapse" class="navbar-toggler collapsed wh_toggle_button" aria-expanded="false" aria-label="Toggle menu" aria-controls="wh_top_menu_and_indexterms_link">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-            </div>
-
-            <div class="wh_top_menu_and_indexterms_link collapse navbar-collapse" id="wh_top_menu_and_indexterms_link">
-                
-                <nav class=" wh_top_menu " aria-label="Menu Container"><ul role="menubar" aria-label="Menu"><li role="menuitem" aria-haspopup="true" aria-expanded="false" class="has-children"><span id="tocId-d16877e21-mi" data-tocid="tocId-d16877e21" data-state="not-ready" class=" topicref application-notes"><span class="title"><a href="../../t-an001/concepts/application_notes_introduction.html">Typhoon HIL Application Notes</a></span></span></li><li role="menuitem" aria-haspopup="true" aria-expanded="false" class="has-children"><span id="tocId-d16877e737-mi" data-tocid="tocId-d16877e737" data-state="not-ready" class=" topicref software-manual"><span class="title"><a href="../../t-ug002/topics/software_manual_introduction.html">Typhoon HIL Software Manual</a></span></span></li><li role="menuitem" aria-haspopup="true" aria-expanded="false" class="has-children"><span id="tocId-d16877e7901-mi" data-tocid="tocId-d16877e7901" data-state="not-ready" class=" topicref hardware-manual"><span class="title"><a href="../../t-ug001/abstract/hardware_manual_introduction.html">Typhoon HIL Hardware Manual</a></span></span></li></ul></nav>
-                
-                
-            </div>
-        </div>
-    </div>
+<header class="navbar navbar-default wh_header">
+<div class="container-fluid">
+<div class="wh_header_flex_container navbar-nav navbar-expand-md navbar-dark">
+<div class="wh_logo_and_publication_title_container">
+<div class="wh_logo_and_publication_title">
+<a class="wh_logo d-none d-sm-block" href="../../../index.html"><img alt="  Typhoon HIL Documentation  Version: 2026.1  " src="../../logo.svg"/></a>
+<div class="wh_publication_title"><a href="../../index.html"><span class="booktitle"> <span class="ph mainbooktitle">Typhoon HIL Documentation</span> <span class="ph booktitlealt">Version: 2026.1</span> </span></a></div>
+</div>
+<button aria-controls="wh_top_menu_and_indexterms_link" aria-expanded="false" aria-label="Toggle menu" class="navbar-toggler collapsed wh_toggle_button" data-target="#wh_top_menu_and_indexterms_link" data-toggle="collapse" id="wh_menu_mobile_button" type="button">
+<span class="navbar-toggler-icon"></span>
+</button>
+</div>
+<div class="wh_top_menu_and_indexterms_link collapse navbar-collapse" id="wh_top_menu_and_indexterms_link">
+<nav aria-label="Menu Container" class="wh_top_menu"><ul aria-label="Menu" role="menubar"><li aria-expanded="false" aria-haspopup="true" class="has-children" role="menuitem"><span class="topicref application-notes" data-state="not-ready" data-tocid="tocId-d16877e21" id="tocId-d16877e21-mi"><span class="title"><a href="../../t-an001/concepts/application_notes_introduction.html">Typhoon HIL Application Notes</a></span></span></li><li aria-expanded="false" aria-haspopup="true" class="has-children" role="menuitem"><span class="topicref software-manual" data-state="not-ready" data-tocid="tocId-d16877e737" id="tocId-d16877e737-mi"><span class="title"><a href="../../t-ug002/topics/software_manual_introduction.html">Typhoon HIL Software Manual</a></span></span></li><li aria-expanded="false" aria-haspopup="true" class="has-children" role="menuitem"><span class="topicref hardware-manual" data-state="not-ready" data-tocid="tocId-d16877e7901" id="tocId-d16877e7901-mi"><span class="title"><a href="../../t-ug001/abstract/hardware_manual_introduction.html">Typhoon HIL Hardware Manual</a></span></span></li></ul></nav>
+</div>
+</div>
+</div>
 </header>
-        
-        
-         
-        
-        <div class=" wh_search_input navbar-form wh_topic_page_search search " role="form">
-            
-            
-            
-            <form id="searchForm" method="get" role="search" action="../../search.html"><div><input type="search" placeholder="Search " class="wh_search_textfield" id="textToSearch" name="searchQuery" aria-label="Search query" required="required"/><button type="submit" class="wh_search_button" aria-label="Search"><span class="search_input_text">Search</span></button></div></form>
-            
-            
-            
-        </div>
-        
-        <div class="container-fluid" id="wh_topic_container">
-            <div class="row">
-
-                <nav class="wh_tools d-print-none navbar-expand-md" aria-label="Tools">
-                    
-                    <div data-tooltip-position="bottom" class=" wh_breadcrumb "><ol class="d-print-none"><li><span class="home"><a href="../../index.html"><span>Home</span></a></span></li><li><div class="topicref application-notes"><div class="title"><a href="../../t-an001/concepts/application_notes_introduction.html">Typhoon HIL Application Notes</a></div></div></li><li><div class="topicref" data-id="doc"><div class="title"><a href="../../t-an001/concepts/microgrids.html">Microgrids</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">Rapid microgrid pre-commissioning and system integration. Microgrid controller RCP and   testing.</span></p></div></div></div></li><li class="active"><div class="topicref" data-id="doc"><div class="title"><a href="../../t-an001/References/generic_pv_plant.html">Generic PV plant</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">Description and demonstration of the capabilities of the Generic PV Plant   component</span></p></div></div></div></li></ol></div>
-                    
-                    
-                    
-                    <div class="wh_right_tools">
-                        <button class="wh_hide_highlight" aria-label="Toggle search highlights" title="Toggle search highlights"></button>
-                        <button class="webhelp_expand_collapse_sections" data-next-state="collapsed" aria-label="Collapse sections" title="Collapse sections"></button>
-                        
-                        
-                        
-                        
-                        <div class=" wh_print_link print d-none d-md-inline-block "><button onClick="window.print()" title="Print this page" aria-label="Print this page"></button></div>
-                        
-                        <button type="button" id="wh_toc_button" class="custom-toggler navbar-toggler collapsed wh_toggle_button navbar-light" aria-expanded="false" aria-label="Toggle publishing table of content" aria-controls="wh_publication_toc">
-                            <span class="navbar-toggler-icon"></span>
-                        </button>
-                    </div>
-                    
-                </nav>
-            </div>
-            
-            
-            
-            
-            <div class="wh_content_area">
-                <div class="row">
-                    
-                        <nav id="wh_publication_toc" class="col-lg-3 col-md-3 col-sm-12 d-md-block d-none d-print-none" aria-label="Table of Contents Container">
-                            <div id="wh_publication_toc_content">
-		                        
-                            	<div class=" wh_publication_toc " data-tooltip-position="right"><span class="expand-button-action-labels"><span id="button-expand-action" role="button" aria-label="Expand"></span><span id="button-collapse-action" role="button" aria-label="Collapse"></span><span id="button-pending-action" role="button" aria-label="Pending"></span></span><ul role="tree" aria-label="Table of Contents"><li role="treeitem" aria-expanded="true"><div data-tocid="tocId-d16877e21" class="topicref application-notes" data-state="expanded"><span role="button" tabindex="0" aria-labelledby="button-collapse-action tocId-d16877e21-link" class="wh-expand-btn"></span><div class="title"><a href="../../t-an001/concepts/application_notes_introduction.html" id="tocId-d16877e21-link">Typhoon HIL Application Notes</a></div></div><ul role="group" class="navbar-nav nav-list"><li role="treeitem"><div data-tocid="doc-d16877e25" class="topicref" data-id="doc" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../../t-an001/concepts/application_notes_introduction.html" id="doc-d16877e25-link">Application Notes Introduction</a><div class="wh-tooltip"><p class="shortdesc">Brief overview of the different categories of Application Notes</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="doc-d16877e36" class="topicref" data-id="doc" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action doc-d16877e36-link" class="wh-expand-btn"></span><div class="title"><a href="../../t-an001/concepts/grid_connected_converters.html" id="doc-d16877e36-link">Grid-connected converters</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">Grid-connected converter applications featuring various grid support    functionalities.</span></p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="doc-d16877e96" class="topicref" data-id="doc" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action doc-d16877e96-link" class="wh-expand-btn"></span><div class="title"><a href="../../t-an001/concepts/automotive.html" id="doc-d16877e96-link">Automotive</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">Electric cars and other automotive applications.</span></p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="doc-d16877e132" class="topicref" data-id="doc" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action doc-d16877e132-link" class="wh-expand-btn"></span><div class="title"><a href="../../t-an001/concepts/aerospace.html" id="doc-d16877e132-link">Aerospace</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">System-level and component-level aircraft applications.</span></p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="doc-d16877e168" class="topicref" data-id="doc" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action doc-d16877e168-link" class="wh-expand-btn"></span><div class="title"><a href="../../t-an001/concepts/battery_management_systems.html" id="doc-d16877e168-link">Battery management systems</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">Battery management system (BMS) examples</span></p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="doc-d16877e216" class="topicref" data-id="doc" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action doc-d16877e216-link" class="wh-expand-btn"></span><div class="title"><a href="../../t-an001/concepts/how-to_guides.html" id="doc-d16877e216-link">How-to Guides</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">Guides, tips, and tricks on various aspects of Typhoon HIL toolchain usage.</span></p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="doc-d16877e312" class="topicref" data-id="doc" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action doc-d16877e312-link" class="wh-expand-btn"></span><div class="title"><a href="../../t-an001/concepts/communication_protocols.html" id="doc-d16877e312-link">Communication Protocols</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">Interoperability. Cybersecurity. Modbus, Sunspec, IEC61850, IEEE    C37.118, DNP3, CAN, OPC UA, and more.</span></p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="doc-d16877e384" class="topicref" data-id="doc" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action doc-d16877e384-link" class="wh-expand-btn"></span><div class="title"><a href="../../t-an001/concepts/power_systems.html" id="doc-d16877e384-link">Power Systems</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">Power system simulation. Relay protection testing. Power flow tool integration and   co-simulation.</span></p></div></div></div></li><li role="treeitem" aria-expanded="true"><div data-tocid="doc-d16877e468" class="topicref" data-id="doc" data-state="expanded"><span role="button" tabindex="0" aria-labelledby="button-collapse-action doc-d16877e468-link" class="wh-expand-btn"></span><div class="title"><a href="../../t-an001/concepts/microgrids.html" id="doc-d16877e468-link">Microgrids</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">Rapid microgrid pre-commissioning and system integration. Microgrid controller RCP and   testing.</span></p></div></div></div><ul role="group" class="navbar-nav nav-list"><li role="treeitem"><div data-tocid="doc-d16877e480" class="topicref" data-id="doc" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../../t-an001/References/terrestrial_microgrid_(switching).html" id="doc-d16877e480-link">Plug-and-play microgrid library and testing of microgrid controller</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">Demonstration of the performance of both switching and average microgrid controller     components in the Microgrid Library</span></p></div></div></div></li><li role="treeitem" class="active"><div data-tocid="doc-d16877e492" class="topicref" data-id="doc" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../../t-an001/References/generic_pv_plant.html" id="doc-d16877e492-link">Generic PV plant</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">Description and demonstration of the capabilities of the Generic PV Plant   component</span></p></div></div></div></li><li role="treeitem"><div data-tocid="doc-d16877e504" class="topicref" data-id="doc" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../../t-an001/References/generic_battery.html" id="doc-d16877e504-link">Generic battery</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">Description and demonstration of the capabilities of the Generic Battery component</span></p></div></div></div></li><li role="treeitem"><div data-tocid="doc-d16877e516" class="topicref" data-id="doc" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../../t-an001/References/wind_farm_microgrid.html" id="doc-d16877e516-link">Microgrid powered by a wind farm</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">Microgrid operation of a mini wind farm, battery unit, large consumer area, and power system connection in both island and reconnection modes</span></p></div></div></div></li><li role="treeitem"><div data-tocid="doc-d16877e528" class="topicref" data-id="doc" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../../t-an001/References/series_compensator_example.html" id="doc-d16877e528-link">Series Compensator example</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">Demonstration of a Series Compensator response to a fault,       including MOV and bypass switch functionality.</span></p></div></div></div></li><li role="treeitem"><div data-tocid="doc-d16877e540" class="topicref" data-id="doc" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../../t-an001/References/switching_and_average_models_grid-connected_bat_inv.html" id="doc-d16877e540-link">Switching and average models of grid-connected battery inverter </a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">Performance comparison of the switching and average models of grid-connected battery     inverters available in Schematic Editor</span></p></div></div></div></li></ul></li><li role="treeitem" aria-expanded="false"><div data-tocid="doc-d16877e552" class="topicref" data-id="doc" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action doc-d16877e552-link" class="wh-expand-btn"></span><div class="title"><a href="../../t-an001/concepts/electrical_drives.html" id="doc-d16877e552-link">Electrical Drives</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">Converters coupled with high-fidelity electrical machine models for high performance   motor drive applications.</span></p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="doc-d16877e601" class="topicref" data-id="doc" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action doc-d16877e601-link" class="wh-expand-btn"></span><div class="title"><a href="../../t-an001/concepts/power_supplies.html" id="doc-d16877e601-link">Power Supplies</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">Linear and switching power supplies for industrial and laboratory   applications.</span></p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="doc-d16877e625" class="topicref" data-id="doc" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action doc-d16877e625-link" class="wh-expand-btn"></span><div class="title"><a href="../../t-an001/concepts/marine_power_systems.html" id="doc-d16877e625-link">Marine Power Systems</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">Hybrid propulsion, shipboard power management, offshore renewables, offshore oil and   gas platform power supplies. </span></p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="doc-d16877e649" class="topicref" data-id="doc" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action doc-d16877e649-link" class="wh-expand-btn"></span><div class="title"><a href="../../t-an001/concepts/power_quality.html" id="doc-d16877e649-link">Power Quality</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">Real-time power quality/harmonic analysis. Incorporate active filters and FACTS devices (STATCOM, DVR,   SVC).</span></p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="doc-d16877e685" class="topicref" data-id="doc" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action doc-d16877e685-link" class="wh-expand-btn"></span><div class="title"><a href="../../t-an001/concepts/railway.html" id="doc-d16877e685-link">Railway</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">System-level and component-level application examples for railway    (traction) equipment.</span></p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="doc-d16877e709" class="topicref" data-id="doc" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action doc-d16877e709-link" class="wh-expand-btn"></span><div class="title"><a href="../../t-an001/concepts/medical_devices.html" id="doc-d16877e709-link">Medical Devices</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">X-ray, MRI, ICD, pacemakers, defibrillators, emergency ventilators, ECG, EMG,   bioelectronics.</span></p></div></div></div></li></ul></li></ul></div>
-		                        
-                            </div>
-                        </nav>
-                    
-                    
-                    <div class="col-lg-7 col-md-9 col-sm-12" id="wh_topic_body">
-                        <button id="wh_close_publication_toc_button" class="close-toc-button d-none" aria-label="Toggle publishing table of content" aria-controls="wh_publication_toc" aria-expanded="true">
-                            <span class="close-toc-icon-container">
-                                <span class="close-toc-icon"></span>     
-                            </span>
-                        </button>
-                        <button id="wh_close_topic_toc_button" class="close-toc-button d-none" aria-label="Toggle topic table of content" aria-controls="wh_topic_toc" aria-expanded="true">
-                            <span class="close-toc-icon-container">
-                                <span class="close-toc-icon"></span>     
-                            </span>
-                        </button>
-                        
-                        <div class=" wh_topic_content body "><main role="main"><article role="article" aria-labelledby="ariaid-title1">
- <h1 class="- topic/title title topictitle1" id="ariaid-title1">Generic PV plant</h1>
- 
- <div class="- topic/body reference/refbody body refbody"><p class="- topic/shortdesc shortdesc"><span class="- topic/ph ph" id="doc__description">Description and demonstration of the capabilities of the Generic PV Plant
+<div class="wh_search_input navbar-form wh_topic_page_search search" role="form">
+<form action="../../search.html" id="searchForm" method="get" role="search"><div><input aria-label="Search query" class="wh_search_textfield" id="textToSearch" name="searchQuery" placeholder="Search " required="required" type="search"/><button aria-label="Search" class="wh_search_button" type="submit"><span class="search_input_text">Search</span></button></div></form>
+</div>
+<div class="container-fluid" id="wh_topic_container">
+<div class="row">
+<nav aria-label="Tools" class="wh_tools d-print-none navbar-expand-md">
+<div class="wh_breadcrumb" data-tooltip-position="bottom"><ol class="d-print-none"><li><span class="home"><a href="../../index.html"><span>Home</span></a></span></li><li><div class="topicref application-notes"><div class="title"><a href="../../t-an001/concepts/application_notes_introduction.html">Typhoon HIL Application Notes</a></div></div></li><li><div class="topicref" data-id="doc"><div class="title"><a href="../../t-an001/concepts/microgrids.html">Microgrids</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">Rapid microgrid pre-commissioning and system integration. Microgrid controller RCP and   testing.</span></p></div></div></div></li><li class="active"><div class="topicref" data-id="doc"><div class="title"><a href="../../t-an001/References/generic_pv_plant.html">Generic PV plant</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">Description and demonstration of the capabilities of the Generic PV Plant   component</span></p></div></div></div></li></ol></div>
+<div class="wh_right_tools">
+<button aria-label="Toggle search highlights" class="wh_hide_highlight" title="Toggle search highlights"></button>
+<button aria-label="Collapse sections" class="webhelp_expand_collapse_sections" data-next-state="collapsed" title="Collapse sections"></button>
+<div class="wh_print_link print d-none d-md-inline-block"><button aria-label="Print this page" onclick="window.print()" title="Print this page"></button></div>
+<button aria-controls="wh_publication_toc" aria-expanded="false" aria-label="Toggle publishing table of content" class="custom-toggler navbar-toggler collapsed wh_toggle_button navbar-light" id="wh_toc_button" type="button">
+<span class="navbar-toggler-icon"></span>
+</button>
+</div>
+</nav>
+</div>
+<div class="wh_content_area">
+<div class="row">
+<nav aria-label="Table of Contents Container" class="col-lg-3 col-md-3 col-sm-12 d-md-block d-none d-print-none" id="wh_publication_toc">
+<div id="wh_publication_toc_content">
+<div class="wh_publication_toc" data-tooltip-position="right"><span class="expand-button-action-labels"><span aria-label="Expand" id="button-expand-action" role="button"></span><span aria-label="Collapse" id="button-collapse-action" role="button"></span><span aria-label="Pending" id="button-pending-action" role="button"></span></span><ul aria-label="Table of Contents" role="tree"><li aria-expanded="true" role="treeitem"><div class="topicref application-notes" data-state="expanded" data-tocid="tocId-d16877e21"><span aria-labelledby="button-collapse-action tocId-d16877e21-link" class="wh-expand-btn" role="button" tabindex="0"></span><div class="title"><a href="../../t-an001/concepts/application_notes_introduction.html" id="tocId-d16877e21-link">Typhoon HIL Application Notes</a></div></div><ul class="navbar-nav nav-list" role="group"><li role="treeitem"><div class="topicref" data-id="doc" data-state="leaf" data-tocid="doc-d16877e25"><span class="wh-expand-btn" role="button"></span><div class="title"><a href="../../t-an001/concepts/application_notes_introduction.html" id="doc-d16877e25-link">Application Notes Introduction</a><div class="wh-tooltip"><p class="shortdesc">Brief overview of the different categories of Application Notes</p></div></div></div></li><li aria-expanded="false" role="treeitem"><div class="topicref" data-id="doc" data-state="not-ready" data-tocid="doc-d16877e36"><span aria-labelledby="button-expand-action doc-d16877e36-link" class="wh-expand-btn" role="button" tabindex="0"></span><div class="title"><a href="../../t-an001/concepts/grid_connected_converters.html" id="doc-d16877e36-link">Grid-connected converters</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">Grid-connected converter applications featuring various grid support    functionalities.</span></p></div></div></div></li><li aria-expanded="false" role="treeitem"><div class="topicref" data-id="doc" data-state="not-ready" data-tocid="doc-d16877e96"><span aria-labelledby="button-expand-action doc-d16877e96-link" class="wh-expand-btn" role="button" tabindex="0"></span><div class="title"><a href="../../t-an001/concepts/automotive.html" id="doc-d16877e96-link">Automotive</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">Electric cars and other automotive applications.</span></p></div></div></div></li><li aria-expanded="false" role="treeitem"><div class="topicref" data-id="doc" data-state="not-ready" data-tocid="doc-d16877e132"><span aria-labelledby="button-expand-action doc-d16877e132-link" class="wh-expand-btn" role="button" tabindex="0"></span><div class="title"><a href="../../t-an001/concepts/aerospace.html" id="doc-d16877e132-link">Aerospace</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">System-level and component-level aircraft applications.</span></p></div></div></div></li><li aria-expanded="false" role="treeitem"><div class="topicref" data-id="doc" data-state="not-ready" data-tocid="doc-d16877e168"><span aria-labelledby="button-expand-action doc-d16877e168-link" class="wh-expand-btn" role="button" tabindex="0"></span><div class="title"><a href="../../t-an001/concepts/battery_management_systems.html" id="doc-d16877e168-link">Battery management systems</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">Battery management system (BMS) examples</span></p></div></div></div></li><li aria-expanded="false" role="treeitem"><div class="topicref" data-id="doc" data-state="not-ready" data-tocid="doc-d16877e216"><span aria-labelledby="button-expand-action doc-d16877e216-link" class="wh-expand-btn" role="button" tabindex="0"></span><div class="title"><a href="../../t-an001/concepts/how-to_guides.html" id="doc-d16877e216-link">How-to Guides</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">Guides, tips, and tricks on various aspects of Typhoon HIL toolchain usage.</span></p></div></div></div></li><li aria-expanded="false" role="treeitem"><div class="topicref" data-id="doc" data-state="not-ready" data-tocid="doc-d16877e312"><span aria-labelledby="button-expand-action doc-d16877e312-link" class="wh-expand-btn" role="button" tabindex="0"></span><div class="title"><a href="../../t-an001/concepts/communication_protocols.html" id="doc-d16877e312-link">Communication Protocols</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">Interoperability. Cybersecurity. Modbus, Sunspec, IEC61850, IEEE    C37.118, DNP3, CAN, OPC UA, and more.</span></p></div></div></div></li><li aria-expanded="false" role="treeitem"><div class="topicref" data-id="doc" data-state="not-ready" data-tocid="doc-d16877e384"><span aria-labelledby="button-expand-action doc-d16877e384-link" class="wh-expand-btn" role="button" tabindex="0"></span><div class="title"><a href="../../t-an001/concepts/power_systems.html" id="doc-d16877e384-link">Power Systems</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">Power system simulation. Relay protection testing. Power flow tool integration and   co-simulation.</span></p></div></div></div></li><li aria-expanded="true" role="treeitem"><div class="topicref" data-id="doc" data-state="expanded" data-tocid="doc-d16877e468"><span aria-labelledby="button-collapse-action doc-d16877e468-link" class="wh-expand-btn" role="button" tabindex="0"></span><div class="title"><a href="../../t-an001/concepts/microgrids.html" id="doc-d16877e468-link">Microgrids</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">Rapid microgrid pre-commissioning and system integration. Microgrid controller RCP and   testing.</span></p></div></div></div><ul class="navbar-nav nav-list" role="group"><li role="treeitem"><div class="topicref" data-id="doc" data-state="leaf" data-tocid="doc-d16877e480"><span class="wh-expand-btn" role="button"></span><div class="title"><a href="../../t-an001/References/terrestrial_microgrid_(switching).html" id="doc-d16877e480-link">Plug-and-play microgrid library and testing of microgrid controller</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">Demonstration of the performance of both switching and average microgrid controller     components in the Microgrid Library</span></p></div></div></div></li><li class="active" role="treeitem"><div class="topicref" data-id="doc" data-state="leaf" data-tocid="doc-d16877e492"><span class="wh-expand-btn" role="button"></span><div class="title"><a href="../../t-an001/References/generic_pv_plant.html" id="doc-d16877e492-link">Generic PV plant</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">Description and demonstration of the capabilities of the Generic PV Plant   component</span></p></div></div></div></li><li role="treeitem"><div class="topicref" data-id="doc" data-state="leaf" data-tocid="doc-d16877e504"><span class="wh-expand-btn" role="button"></span><div class="title"><a href="../../t-an001/References/generic_battery.html" id="doc-d16877e504-link">Generic battery</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">Description and demonstration of the capabilities of the Generic Battery component</span></p></div></div></div></li><li role="treeitem"><div class="topicref" data-id="doc" data-state="leaf" data-tocid="doc-d16877e516"><span class="wh-expand-btn" role="button"></span><div class="title"><a href="../../t-an001/References/wind_farm_microgrid.html" id="doc-d16877e516-link">Microgrid powered by a wind farm</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">Microgrid operation of a mini wind farm, battery unit, large consumer area, and power system connection in both island and reconnection modes</span></p></div></div></div></li><li role="treeitem"><div class="topicref" data-id="doc" data-state="leaf" data-tocid="doc-d16877e528"><span class="wh-expand-btn" role="button"></span><div class="title"><a href="../../t-an001/References/series_compensator_example.html" id="doc-d16877e528-link">Series Compensator example</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">Demonstration of a Series Compensator response to a fault,       including MOV and bypass switch functionality.</span></p></div></div></div></li><li role="treeitem"><div class="topicref" data-id="doc" data-state="leaf" data-tocid="doc-d16877e540"><span class="wh-expand-btn" role="button"></span><div class="title"><a href="../../t-an001/References/switching_and_average_models_grid-connected_bat_inv.html" id="doc-d16877e540-link">Switching and average models of grid-connected battery inverter </a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">Performance comparison of the switching and average models of grid-connected battery     inverters available in Schematic Editor</span></p></div></div></div></li></ul></li><li aria-expanded="false" role="treeitem"><div class="topicref" data-id="doc" data-state="not-ready" data-tocid="doc-d16877e552"><span aria-labelledby="button-expand-action doc-d16877e552-link" class="wh-expand-btn" role="button" tabindex="0"></span><div class="title"><a href="../../t-an001/concepts/electrical_drives.html" id="doc-d16877e552-link">Electrical Drives</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">Converters coupled with high-fidelity electrical machine models for high performance   motor drive applications.</span></p></div></div></div></li><li aria-expanded="false" role="treeitem"><div class="topicref" data-id="doc" data-state="not-ready" data-tocid="doc-d16877e601"><span aria-labelledby="button-expand-action doc-d16877e601-link" class="wh-expand-btn" role="button" tabindex="0"></span><div class="title"><a href="../../t-an001/concepts/power_supplies.html" id="doc-d16877e601-link">Power Supplies</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">Linear and switching power supplies for industrial and laboratory   applications.</span></p></div></div></div></li><li aria-expanded="false" role="treeitem"><div class="topicref" data-id="doc" data-state="not-ready" data-tocid="doc-d16877e625"><span aria-labelledby="button-expand-action doc-d16877e625-link" class="wh-expand-btn" role="button" tabindex="0"></span><div class="title"><a href="../../t-an001/concepts/marine_power_systems.html" id="doc-d16877e625-link">Marine Power Systems</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">Hybrid propulsion, shipboard power management, offshore renewables, offshore oil and   gas platform power supplies. </span></p></div></div></div></li><li aria-expanded="false" role="treeitem"><div class="topicref" data-id="doc" data-state="not-ready" data-tocid="doc-d16877e649"><span aria-labelledby="button-expand-action doc-d16877e649-link" class="wh-expand-btn" role="button" tabindex="0"></span><div class="title"><a href="../../t-an001/concepts/power_quality.html" id="doc-d16877e649-link">Power Quality</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">Real-time power quality/harmonic analysis. Incorporate active filters and FACTS devices (STATCOM, DVR,   SVC).</span></p></div></div></div></li><li aria-expanded="false" role="treeitem"><div class="topicref" data-id="doc" data-state="not-ready" data-tocid="doc-d16877e685"><span aria-labelledby="button-expand-action doc-d16877e685-link" class="wh-expand-btn" role="button" tabindex="0"></span><div class="title"><a href="../../t-an001/concepts/railway.html" id="doc-d16877e685-link">Railway</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">System-level and component-level application examples for railway    (traction) equipment.</span></p></div></div></div></li><li aria-expanded="false" role="treeitem"><div class="topicref" data-id="doc" data-state="not-ready" data-tocid="doc-d16877e709"><span aria-labelledby="button-expand-action doc-d16877e709-link" class="wh-expand-btn" role="button" tabindex="0"></span><div class="title"><a href="../../t-an001/concepts/medical_devices.html" id="doc-d16877e709-link">Medical Devices</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">X-ray, MRI, ICD, pacemakers, defibrillators, emergency ventilators, ECG, EMG,   bioelectronics.</span></p></div></div></div></li></ul></li></ul></div>
+</div>
+</nav>
+<div class="col-lg-7 col-md-9 col-sm-12" id="wh_topic_body">
+<button aria-controls="wh_publication_toc" aria-expanded="true" aria-label="Toggle publishing table of content" class="close-toc-button d-none" id="wh_close_publication_toc_button">
+<span class="close-toc-icon-container">
+<span class="close-toc-icon"></span>
+</span>
+</button>
+<button aria-controls="wh_topic_toc" aria-expanded="true" aria-label="Toggle topic table of content" class="close-toc-button d-none" id="wh_close_topic_toc_button">
+<span class="close-toc-icon-container">
+<span class="close-toc-icon"></span>
+</span>
+</button>
+<div class="wh_topic_content body"><main role="main"><article aria-labelledby="ariaid-title1" role="article">
+<h1 class="- topic/title title topictitle1" id="ariaid-title1">Generic PV plant</h1>
+<div class="- topic/body reference/refbody body refbody"><p class="- topic/shortdesc shortdesc"><span class="- topic/ph ph" id="doc__description">Description and demonstration of the capabilities of the Generic PV Plant
   component</span></p>
-  <section class="- topic/section section" id="doc__section_hqr_1zb_rz" data-ofbid="doc__section_hqr_1zb_rz"><h2 class="- topic/title title sectiontitle"><span class="- topic/ph ph" id="doc__an_title_intro">Introduction</span></h2>
-   
-   <p class="- topic/p p">The usage of microgrids has been steadily increasing over the last few years, and so has been
+<section class="- topic/section section" data-ofbid="doc__section_hqr_1zb_rz" id="doc__section_hqr_1zb_rz"><h2 class="- topic/title title sectiontitle"><span class="- topic/ph ph" id="doc__an_title_intro">Introduction</span></h2>
+<p class="- topic/p p">The usage of microgrids has been steadily increasing over the last few years, and so has been
     the need to model and test their control system. In short, the microgrid field is currently on
     the rise, accompanied by a growing need for more efficient microgrid components.</p>
-   <p class="- topic/p p">To address this need, <span class="- topic/ph ph" id="doc__der_explanation_paragraph">Typhoon HIL software currently deploys three types of <a class="- topic/xref xref" href="../../t-ug002/concepts/distributed_energy_resources.html" title="Schematic Editor components available in the Distributed Energy Resources (DER) sub-category of the Microgrid library category">DER components</a> in its
+<p class="- topic/p p">To address this need, <span class="- topic/ph ph" id="doc__der_explanation_paragraph">Typhoon HIL software currently deploys three types of <a class="- topic/xref xref" href="../../t-ug002/concepts/distributed_energy_resources.html" title="Schematic Editor components available in the Distributed Energy Resources (DER) sub-category of the Microgrid library category">DER components</a> in its
     <a class="- topic/xref xref" href="../../t-ug002/topics/microgrid.html" title="This section describes the Microgrid library category in Typhoon HIL Schematic Editor.">Microgrid Library</a>: Switching, Average, and Generic, all of which are ready for use and
     for their respective applications. Switching components are mainly used
     in situations where real-world converter testing is required at the system level, where
@@ -137,38 +87,35 @@
     a need for adjusting the details of the grid filter and control.</span> As such, Generic components are
     especially convenient in grid stability and system integration studies, where the main interest
     is parametrization of the component with desired nominal values.</p>
-   <p class="- topic/p p">In this example, the main purpose of these
+<p class="- topic/p p">In this example, the main purpose of these
     components is to emulate the characteristic behavior of a grid connected PV plant in the
     following scenarios:</p>
-   <ul class="- topic/ul ul" id="doc__ul_pk5_s1l_qlb" data-ofbid="doc__ul_pk5_s1l_qlb">
-     <li class="- topic/li li">active power curtailment and reactive power control</li>
-     <li class="- topic/li li">plant state machine, faults detection, and limits according to nominal values</li>
-     <li class="- topic/li li">ramping functionalities for reference signals and MPPT</li>
-    </ul>
-   <p class="- topic/p p">This model demonstrates how you can use the Generic PV Plant components and what the advantages of
+<ul class="- topic/ul ul" data-ofbid="doc__ul_pk5_s1l_qlb" id="doc__ul_pk5_s1l_qlb">
+<li class="- topic/li li">active power curtailment and reactive power control</li>
+<li class="- topic/li li">plant state machine, faults detection, and limits according to nominal values</li>
+<li class="- topic/li li">ramping functionalities for reference signals and MPPT</li>
+</ul>
+<p class="- topic/p p">This model demonstrates how you can use the Generic PV Plant components and what the advantages of
     these components are for your own applications in this domain.</p>
-  </section>
-  <section class="- topic/section section" id="doc__section_lqh_zpl_y3b" data-ofbid="doc__section_lqh_zpl_y3b"><h2 class="- topic/title title sectiontitle"><span class="- topic/ph ph" id="doc__an_title_model">Model description</span></h2>
-   
-   <p class="- topic/p p">The model consists of a <a class="- topic/xref xref" href="../../t-ug002/References/pv_plant_generic.html#doc__table_i2x_ygl_lbb">PV Power Plant (Generic)</a>
+</section>
+<section class="- topic/section section" data-ofbid="doc__section_lqh_zpl_y3b" id="doc__section_lqh_zpl_y3b"><h2 class="- topic/title title sectiontitle"><span class="- topic/ph ph" id="doc__an_title_model">Model description</span></h2>
+<p class="- topic/p p">The model consists of a <a class="- topic/xref xref" href="../../t-ug002/References/pv_plant_generic.html#doc__table_i2x_ygl_lbb">PV Power Plant (Generic)</a>
     connected to the <a class="- topic/xref xref" href="../../t-ug002/References/grid_generic.html#doc__table_i2x_ygl_lbb">Grid</a>. There
     are also two user interface blocks which are intended to be used for sending and reading signals
     associated with Grid and PV Power Plant components respectively.</p>
-   <figure class="- topic/fig fig fignone" id="doc__fig_ttv_mbl_qlb" data-ofbid="doc__fig_ttv_mbl_qlb"><figcaption class="- topic/title title figcap"><span class="figtitleprefix fig--title-label">Figure<span class="fig--title-label-number"> 1</span><span class="fig--title-label-punctuation">. </span></span><span class="fig--title">PV plant connected on the grid</span></figcaption>
-     
-     <img class="- topic/image image" id="doc__image_utv_mbl_qlb" src="../Images/PV%20(generic)_001.png"/>
-    </figure>
-   <p class="- topic/p p">Generic components, unlike switching and average components, have inputs and defined outputs
+<figure class="- topic/fig fig fignone" data-ofbid="doc__fig_ttv_mbl_qlb" id="doc__fig_ttv_mbl_qlb"><figcaption class="- topic/title title figcap"><span class="figtitleprefix fig--title-label">Figure<span class="fig--title-label-number"> 1</span><span class="fig--title-label-punctuation">. </span></span><span class="fig--title">PV plant connected on the grid</span></figcaption>
+<img class="- topic/image image" id="doc__image_utv_mbl_qlb" src="../Images/PV%20(generic)_001.png"/>
+</figure>
+<p class="- topic/p p">Generic components, unlike switching and average components, have inputs and defined outputs
     within the user interface. The <a class="- topic/xref xref" href="../../t-ug002/References/pv_plant_generic.html#doc__table_i2x_ygl_lbb">PV
      Power Plant (Generic)</a> component consists of two main parts: a high-level control
     subsystem and a low-level control subsystem with the power stage and all the measurements. You
     only need to change the parameters on the mask of the component (<a class="- topic/xref xref" href="#doc__fig_o1c_ybl_qlb">Figure 2</a>) while all the inner logic and
     the power stage itself will be automatically scaled according to the parameters.</p>
-   <figure class="- topic/fig fig fignone" id="doc__fig_o1c_ybl_qlb" data-ofbid="doc__fig_o1c_ybl_qlb"><figcaption class="- topic/title title figcap"><span class="figtitleprefix fig--title-label">Figure<span class="fig--title-label-number"> 2</span><span class="fig--title-label-punctuation">. </span></span><span class="fig--title">PV plant (generic) properties</span></figcaption>
-     
-     <img class="- topic/image image" id="doc__image_p1c_ybl_qlb" src="../Images/PV%20(generic)_002.png"/>
-    </figure>
-   <p class="- topic/p p">User Interface components make it easier for you to use Generic components. Unlike common
+<figure class="- topic/fig fig fignone" data-ofbid="doc__fig_o1c_ybl_qlb" id="doc__fig_o1c_ybl_qlb"><figcaption class="- topic/title title figcap"><span class="figtitleprefix fig--title-label">Figure<span class="fig--title-label-number"> 2</span><span class="fig--title-label-punctuation">. </span></span><span class="fig--title">PV plant (generic) properties</span></figcaption>
+<img class="- topic/image image" id="doc__image_p1c_ybl_qlb" src="../Images/PV%20(generic)_002.png"/>
+</figure>
+<p class="- topic/p p">User Interface components make it easier for you to use Generic components. Unlike common
     microgrid components where you need to define all inputs and outputs, within the user interface
     all the inputs and outputs necessary for the operation of PV plant components are already
     defined for you. This is shown fully implemented in <a class="- topic/xref xref" href="#doc__fig_uwp_fcl_qlb">Figure 3</a>. All
@@ -177,191 +124,161 @@
     additional functionalities and improvements. In addition to the usual inputs and outputs set by
     the Power Management System (PMS), there are external inputs related to external plant factors.
     In this case, the external inputs are temperature and solar irradiation.</p>
-   <figure class="- topic/fig fig fignone" id="doc__fig_uwp_fcl_qlb" data-ofbid="doc__fig_uwp_fcl_qlb"><figcaption class="- topic/title title figcap"><span class="figtitleprefix fig--title-label">Figure<span class="fig--title-label-number"> 3</span><span class="fig--title-label-punctuation">. </span></span><span class="fig--title">PV Power Plant (generic) UI</span></figcaption>
-     
-     <img class="- topic/image image" id="doc__image_vwp_fcl_qlb" src="../Images/PV%20(generic)_003.png"/>
-    </figure>
-  </section>
-  <section class="- topic/section section" id="doc__section_urt_fvw_2jb" data-ofbid="doc__section_urt_fvw_2jb"><h2 class="- topic/title title sectiontitle"><span class="- topic/ph ph" id="doc__an_title_simulation">Simulation</span></h2>
-   
-   <p class="- topic/p p">This application comes with a pre-built SCADA panel shown in <a class="- topic/xref xref" href="#doc__fig_v2j_tcl_qlb">Figure 4</a>. It offers the most essential user interface
+<figure class="- topic/fig fig fignone" data-ofbid="doc__fig_uwp_fcl_qlb" id="doc__fig_uwp_fcl_qlb"><figcaption class="- topic/title title figcap"><span class="figtitleprefix fig--title-label">Figure<span class="fig--title-label-number"> 3</span><span class="fig--title-label-punctuation">. </span></span><span class="fig--title">PV Power Plant (generic) UI</span></figcaption>
+<img class="- topic/image image" id="doc__image_vwp_fcl_qlb" src="../Images/PV%20(generic)_003.png"/>
+</figure>
+</section>
+<section class="- topic/section section" data-ofbid="doc__section_urt_fvw_2jb" id="doc__section_urt_fvw_2jb"><h2 class="- topic/title title sectiontitle"><span class="- topic/ph ph" id="doc__an_title_simulation">Simulation</span></h2>
+<p class="- topic/p p">This application comes with a pre-built SCADA panel shown in <a class="- topic/xref xref" href="#doc__fig_v2j_tcl_qlb">Figure 4</a>. It offers the most essential user interface
     elements (widgets) to monitor and interact with the simulation at runtime, allowing you to
     further customize it according to your needs.</p>
-   <figure class="- topic/fig fig fignone" id="doc__fig_v2j_tcl_qlb" data-ofbid="doc__fig_v2j_tcl_qlb"><figcaption class="- topic/title title figcap"><span class="figtitleprefix fig--title-label">Figure<span class="fig--title-label-number"> 4</span><span class="fig--title-label-punctuation">. </span></span><span class="fig--title">SCADA_panel</span></figcaption>
-    
-    <img class="- topic/image image" id="doc__image_w2j_tcl_qlb" src="../Images/PV%20(generic)_004.png"/>
-   </figure>
-    <p class="- topic/p p">The PV Power Plant operates only in grid following mode which eliminates the possibility
+<figure class="- topic/fig fig fignone" data-ofbid="doc__fig_v2j_tcl_qlb" id="doc__fig_v2j_tcl_qlb"><figcaption class="- topic/title title figcap"><span class="figtitleprefix fig--title-label">Figure<span class="fig--title-label-number"> 4</span><span class="fig--title-label-punctuation">. </span></span><span class="fig--title">SCADA_panel</span></figcaption>
+<img class="- topic/image image" id="doc__image_w2j_tcl_qlb" src="../Images/PV%20(generic)_004.png"/>
+</figure>
+<p class="- topic/p p">The PV Power Plant operates only in grid following mode which eliminates the possibility
     for droop control, since this is only possible in a component which can operate in grid-forming
     mode (e.g. in a battery inverter).</p>
-     <p class="- topic/p p">The inverter has four operational states:</p><ul class="- topic/ul ul" id="doc__ul_hbx_kcl_qlb" data-ofbid="doc__ul_hbx_kcl_qlb">
-     <li class="- topic/li li">Disabled – the state when the inverter is turned off and the main circuit breaker is open.</li>
-     <li class="- topic/li li">Starting up - the state of the inverter between the moment of enabling signal activation
+<p class="- topic/p p">The inverter has four operational states:</p><ul class="- topic/ul ul" data-ofbid="doc__ul_hbx_kcl_qlb" id="doc__ul_hbx_kcl_qlb">
+<li class="- topic/li li">Disabled – the state when the inverter is turned off and the main circuit breaker is open.</li>
+<li class="- topic/li li">Starting up - the state of the inverter between the moment of enabling signal activation
       and the moment when the inverter starts operating, e.g. the synchronization time. </li>
-     <li class="- topic/li li">Running – the state when the inverter is operating.</li>
-     <li class="- topic/li li">Error – the state when a fault is detected. If the inverter is in the error state, in order
+<li class="- topic/li li">Running – the state when the inverter is operating.</li>
+<li class="- topic/li li">Error – the state when a fault is detected. If the inverter is in the error state, in order
       to start the plant again, it is necessary to reset the alarm.</li>
-    </ul>
-   <p class="- topic/p p">PV Power Plant Interface is shown in <a class="- topic/xref xref" href="#doc__fig_jcz_1dl_qlb">Figure 5</a>. The
+</ul>
+<p class="- topic/p p">PV Power Plant Interface is shown in <a class="- topic/xref xref" href="#doc__fig_jcz_1dl_qlb">Figure 5</a>. The
     left of the figure shows the Inverter Control and Status where you can read the state of the
     inverter as well as get information if protection is active. Here you can also read the
     measurements of active, reactive and apparent power, as well as the power factor. Parameters,
     such as temperature and irradiance, can be changed in the External commands group.</p>
-   <figure class="- topic/fig fig fignone" id="doc__fig_jcz_1dl_qlb" data-ofbid="doc__fig_jcz_1dl_qlb"><figcaption class="- topic/title title figcap"><span class="figtitleprefix fig--title-label">Figure<span class="fig--title-label-number"> 5</span><span class="fig--title-label-punctuation">. </span></span><span class="fig--title">PV Plant Power Interface</span></figcaption>
-    
-    <img class="- topic/image image" id="doc__image_kcz_1dl_qlb" src="../Images/PV%20(generic)_005.png"/>
-   </figure>
-   <p class="- topic/p p">One of the main advantages of generic components is the included protection. Here the
-    following types of protection are implemented:</p><ul class="- topic/ul ul" id="doc__ul_ezf_ddl_qlb" data-ofbid="doc__ul_ezf_ddl_qlb">
-     <li class="- topic/li li">Overcurrent protection – this type of protection occurs when some of the input phase
+<figure class="- topic/fig fig fignone" data-ofbid="doc__fig_jcz_1dl_qlb" id="doc__fig_jcz_1dl_qlb"><figcaption class="- topic/title title figcap"><span class="figtitleprefix fig--title-label">Figure<span class="fig--title-label-number"> 5</span><span class="fig--title-label-punctuation">. </span></span><span class="fig--title">PV Plant Power Interface</span></figcaption>
+<img class="- topic/image image" id="doc__image_kcz_1dl_qlb" src="../Images/PV%20(generic)_005.png"/>
+</figure>
+<p class="- topic/p p">One of the main advantages of generic components is the included protection. Here the
+    following types of protection are implemented:</p><ul class="- topic/ul ul" data-ofbid="doc__ul_ezf_ddl_qlb" id="doc__ul_ezf_ddl_qlb">
+<li class="- topic/li li">Overcurrent protection – this type of protection occurs when some of the input phase
       currents are 1.5 times over the maximum allowed instantaneous current.</li>
-     <li class="- topic/li li">Grid voltage is out of range - appears in case when the grid voltage is outside the
+<li class="- topic/li li">Grid voltage is out of range - appears in case when the grid voltage is outside the
       specified relative range [0.5, 1.5] pu, shown in <a class="- topic/xref xref" href="#doc__fig_hqb_4dl_qlb">Figure 6</a>. This protection is active in grid-following mode.</li>
-     <li class="- topic/li li">Grid frequency is out of range – activation of this type of protection is caused by grid
+<li class="- topic/li li">Grid frequency is out of range – activation of this type of protection is caused by grid
       frequency which is outside the specific relative range [0.5, 1.5] pu, shown in <a class="- topic/xref xref" href="#doc__fig_qk5_tdl_qlb">Figure 7</a>. </li>
-     <li class="- topic/li li">Overpower protection – this type of protection kicks in when the measured apparent power is
+<li class="- topic/li li">Overpower protection – this type of protection kicks in when the measured apparent power is
       1.2 times greater than the maximum allowed apparent power.</li>
-    </ul>
-   <figure class="- topic/fig fig fignone" id="doc__fig_hqb_4dl_qlb" data-ofbid="doc__fig_hqb_4dl_qlb"><figcaption class="- topic/title title figcap"><span class="figtitleprefix fig--title-label">Figure<span class="fig--title-label-number"> 6</span><span class="fig--title-label-punctuation">. </span></span><span class="fig--title">Grid voltage out of range protection is activated</span></figcaption>
-    
-    <img class="- topic/image image" id="doc__image_iqb_4dl_qlb" src="../Images/PV%20(generic)_006.png"/>
-   </figure>
-   <figure class="- topic/fig fig fignone" id="doc__fig_qk5_tdl_qlb" data-ofbid="doc__fig_qk5_tdl_qlb"><figcaption class="- topic/title title figcap"><span class="figtitleprefix fig--title-label">Figure<span class="fig--title-label-number"> 7</span><span class="fig--title-label-punctuation">. </span></span><span class="fig--title">Frequency out of range protection is activated</span></figcaption>
-    
-    <img class="- topic/image image" id="doc__image_rk5_tdl_qlb" src="../Images/PV%20(generic)_007.png"/>
-   </figure>
-  </section>
-  <section class="- topic/section section" id="doc__section_pils_s3" data-ofbid="doc__section_pils_s3"><h2 class="- topic/title title sectiontitle"><span class="- topic/ph ph" id="doc__an_title_test-automation">Test automation</span></h2>
-   
-   <p class="- topic/p p">This test demonstrates the HzWatt grid code functionality that is supported in the PV Power Plant 
+</ul>
+<figure class="- topic/fig fig fignone" data-ofbid="doc__fig_hqb_4dl_qlb" id="doc__fig_hqb_4dl_qlb"><figcaption class="- topic/title title figcap"><span class="figtitleprefix fig--title-label">Figure<span class="fig--title-label-number"> 6</span><span class="fig--title-label-punctuation">. </span></span><span class="fig--title">Grid voltage out of range protection is activated</span></figcaption>
+<img class="- topic/image image" id="doc__image_iqb_4dl_qlb" src="../Images/PV%20(generic)_006.png"/>
+</figure>
+<figure class="- topic/fig fig fignone" data-ofbid="doc__fig_qk5_tdl_qlb" id="doc__fig_qk5_tdl_qlb"><figcaption class="- topic/title title figcap"><span class="figtitleprefix fig--title-label">Figure<span class="fig--title-label-number"> 7</span><span class="fig--title-label-punctuation">. </span></span><span class="fig--title">Frequency out of range protection is activated</span></figcaption>
+<img class="- topic/image image" id="doc__image_rk5_tdl_qlb" src="../Images/PV%20(generic)_007.png"/>
+</figure>
+</section>
+<section class="- topic/section section" data-ofbid="doc__section_pils_s3" id="doc__section_pils_s3"><h2 class="- topic/title title sectiontitle"><span class="- topic/ph ph" id="doc__an_title_test-automation">Test automation</span></h2>
+<p class="- topic/p p">This test demonstrates the HzWatt grid code functionality that is supported in the PV Power Plant 
     (generic) component. Nominal parameters for the PV are defined on the component's mask. For this
     test, nominal power and nominal frequency are of interest. Nominal power is 250 kW while nominal
     frequency is 50 Hz.</p>
-   <p class="- topic/p p">The test contains five test cases. Four test cases verify if measured values for power
+<p class="- topic/p p">The test contains five test cases. Four test cases verify if measured values for power
     and frequency correspond to the reference values. Different values for frequency and active power
     are set, and it is checked whether the measured values correspond to the reference values with a
     tolerance of 1%.</p>
-   <p class="- topic/p p">Those passed tests indicate that the reference value and measured value are in the expected
+<p class="- topic/p p">Those passed tests indicate that the reference value and measured value are in the expected
     bandwidth, meaning that HzWatt grid code functionality behaving as expected.</p>
-   <p class="- topic/p p">The last test case plots the HzWatt curve with reference and measured values as you can 
+<p class="- topic/p p">The last test case plots the HzWatt curve with reference and measured values as you can 
     see in <a class="- topic/xref xref" href="#doc__fig_ehm_c5z_xrb">Figure 8</a>. There are also
     indicated points corresponding to the measured frequency and active power. This plot is
     generated in TyphoonTest IDE.</p>
-   <figure class="- topic/fig fig fignone" id="doc__fig_ehm_c5z_xrb" data-ofbid="doc__fig_ehm_c5z_xrb"><figcaption class="- topic/title title figcap"><span class="figtitleprefix fig--title-label">Figure<span class="fig--title-label-number"> 8</span><span class="fig--title-label-punctuation">. </span></span><span class="fig--title">HzWatt curve</span></figcaption>
-     
-     <img class="- topic/image image" id="doc__image_fhm_c5z_xrb" src="../Images/PV(generic)_008.png"/>
-   </figure>In order to generate the full test report you can click on the <a class="- topic/xref xref" href="../../t-ug002/concepts/example_explorer.html" title="General Description of the Typhoon HIL Control Center Example Explorer.">Example Explorer</a>, find the PV Plant
+<figure class="- topic/fig fig fignone" data-ofbid="doc__fig_ehm_c5z_xrb" id="doc__fig_ehm_c5z_xrb"><figcaption class="- topic/title title figcap"><span class="figtitleprefix fig--title-label">Figure<span class="fig--title-label-number"> 8</span><span class="fig--title-label-punctuation">. </span></span><span class="fig--title">HzWatt curve</span></figcaption>
+<img class="- topic/image image" id="doc__image_fhm_c5z_xrb" src="../Images/PV(generic)_008.png"/>
+</figure>In order to generate the full test report you can click on the <a class="- topic/xref xref" href="../../t-ug002/concepts/example_explorer.html" title="General Description of the Typhoon HIL Control Center Example Explorer.">Example Explorer</a>, find the PV Plant
     (generic) model within the microgrid library, and click the "Open Test" button.
   </section>
-  
-  <section class="- topic/section section" id="doc__example_requirements" data-ofbid="doc__example_requirements"><h2 class="- topic/title title sectiontitle">Example requirements</h2>
-   
-   <p class="- topic/p p"><a class="- topic/xref xref" href="#doc__min_req">Table 1</a> provides detailed information about the file locations and hardware requirements 
+<section class="- topic/section section" data-ofbid="doc__example_requirements" id="doc__example_requirements"><h2 class="- topic/title title sectiontitle">Example requirements</h2>
+<p class="- topic/p p"><a class="- topic/xref xref" href="#doc__min_req">Table 1</a> provides detailed information about the file locations and hardware requirements 
     for running the model in real-time, followed by the HIL device resource utilization when running the model using 
     this minimal hardware configuration. This information is provided to help you with running and 
     customizing the model as you see fit.</p>
-   <table class="- topic/table table frame-all" id="doc__min_req" data-ofbid="doc__min_req" data-cols="2"><caption class="- topic/title title tablecap" data-caption-side="top" data-is-repeated="true"><span class="table--title-label">Table<span class="table--title-label-number"> 1</span><span class="table--title-label-punctuation">. </span></span><span class="table--title"><span class="- topic/ph ph" id="doc__an_min-req">Minimum requirements</span></span></caption><colgroup><col style="width:50%"/><col style="width:50%"/></colgroup><thead class="- topic/thead thead">
-      <tr class="- topic/row">
-       <th class="- topic/entry entry align-center colsep-0 rowsep-1" id="doc__min_req__entry__1" colspan="2">Files</th>
-      </tr>
-     </thead><tbody class="- topic/tbody tbody">
-      <tr class="- topic/row">
-       <td class="- topic/entry entry align-center colsep-1 rowsep-1" headers="doc__min_req__entry__1"><span class="- topic/ph ph" id="doc__an_min-req_TH-files">Typhoon HIL files</span></td>
-       <td class="- topic/entry entry align-center colsep-0 rowsep-1" headers="doc__min_req__entry__1"><p class="- topic/p p"><em class="+ topic/ph hi-d/i ph i">examples\models\microgrid\pv plant\pv plant (generic)</em></p>
-        <p class="- topic/p p">pv plant gen.tse</p>
-        <p class="- topic/p p">pv plant gen.cus</p>
-        <p class="- topic/p p"><em class="+ topic/ph hi-d/i ph i">examples\tests\109_pv_plant_generic\</em></p>
-        <p class="- topic/p p">test_pv_plant_generic.py</p>
-       </td>
-      </tr>
-      <tr class="- topic/row">
-       <td class="- topic/entry entry align-center colsep-0 rowsep-1" headers="doc__min_req__entry__1" colspan="2"><strong class="+ topic/ph hi-d/b ph b">Minimum hardware requirements</strong></td>
-      </tr>
-      <tr class="- topic/row">
-       <td class="- topic/entry entry align-center colsep-1 rowsep-1" headers="doc__min_req__entry__1"><span class="- topic/ph ph" id="doc__an_min-req_num-devices">No. of HIL devices</span></td>
-       <td class="- topic/entry entry align-center colsep-0 rowsep-1" headers="doc__min_req__entry__1"><span class="- topic/ph ph" id="doc__num_devices">1</span></td>
-      </tr>
-      <tr class="- topic/row">
-       <td class="- topic/entry entry align-center colsep-1 rowsep-1" headers="doc__min_req__entry__1"><span class="- topic/ph ph" id="doc__an_min-req_model-num">HIL device model</span></td>
-       <td class="- topic/entry entry align-center colsep-0 rowsep-1" headers="doc__min_req__entry__1"><span class="- topic/ph ph" id="doc__type_devices">HIL402</span></td>
-      </tr>
-      <tr class="- topic/row">
-       <td class="- topic/entry entry align-center colsep-1 rowsep-1" headers="doc__min_req__entry__1"><u class="+ topic/ph hi-d/u ph u"><a class="- topic/xref xref" href="../../t-ug002/concepts/device_manager.html" title="Device Manager is used to create, manipulate, and activate HIL device setups.">Device configuration</a></u></td>
-       <td class="- topic/entry entry align-center colsep-0 rowsep-1" headers="doc__min_req__entry__1"><span class="- topic/ph ph" id="doc__num_config">1</span></td>
-      </tr>
-      <tr class="- topic/row">
-       <td class="- topic/entry entry align-center colsep-0 rowsep-1" headers="doc__min_req__entry__1" colspan="2"><strong class="+ topic/ph hi-d/b ph b">HIL device resource utilization</strong></td>
-      </tr>
-      <tr class="- topic/row">
-       <td class="- topic/entry entry align-center colsep-1 rowsep-1" headers="doc__min_req__entry__1"><span class="- topic/ph ph" id="doc__an_res-util_num-cores">No. of processing cores</span></td>
-       <td class="- topic/entry entry align-center colsep-0 rowsep-1" headers="doc__min_req__entry__1"><span class="- topic/ph ph" id="doc__num_cores">1</span></td>
-      </tr>
-      <tr class="- topic/row">
-       <td class="- topic/entry entry align-center colsep-1 rowsep-1" headers="doc__min_req__entry__1"><span class="- topic/ph ph" id="doc__an_res-util_max-memory">Max. matrix memory utilization</span></td>
-       <td class="- topic/entry entry align-center colsep-0 rowsep-1" headers="doc__min_req__entry__1">7.52%</td>
-      </tr>
-      <tr class="- topic/row">
-       <td class="- topic/entry entry align-center colsep-1 rowsep-1" headers="doc__min_req__entry__1"><span class="- topic/ph ph" id="doc__an_res-util_max-time">Max. time slot utilization</span></td>
-       <td class="- topic/entry entry align-center colsep-0 rowsep-1" headers="doc__min_req__entry__1">90%</td>
-      </tr>
-      <tr class="- topic/row">
-       <td class="- topic/entry entry align-center colsep-1 rowsep-1" headers="doc__min_req__entry__1"><span class="- topic/ph ph" id="doc__an_res-util_sim-step">Simulation step, electrical</span></td>
-       <td class="- topic/entry entry align-center colsep-0 rowsep-1" headers="doc__min_req__entry__1">1 µs</td>
-      </tr>
-      <tr class="- topic/row">
-       <td class="- topic/entry entry align-center colsep-1 rowsep-0" headers="doc__min_req__entry__1"><span class="- topic/ph ph" id="doc__an_res-util_exec-rate">Execution rate, signal processing</span></td>
-       <td class="- topic/entry entry align-center colsep-0 rowsep-0" headers="doc__min_req__entry__1">Multirate (100 µs, 500 µs)</td>
-      </tr>
-     </tbody></table>
-  </section>
-  <section class="- topic/section section" id="doc__section_pils_s5" data-ofbid="doc__section_pils_s5"><h2 class="- topic/title title sectiontitle"><span class="- topic/ph ph" id="doc__an_title_author">Authors</span></h2>
-   
-   <p class="- topic/p p">[1] Jovana Markovic</p>
-  </section>
- </div>
+<table class="- topic/table table frame-all" data-cols="2" data-ofbid="doc__min_req" id="doc__min_req"><caption class="- topic/title title tablecap" data-caption-side="top" data-is-repeated="true"><span class="table--title-label">Table<span class="table--title-label-number"> 1</span><span class="table--title-label-punctuation">. </span></span><span class="table--title"><span class="- topic/ph ph" id="doc__an_min-req">Minimum requirements</span></span></caption><colgroup><col style="width:50%"/><col style="width:50%"/></colgroup><thead class="- topic/thead thead">
+<tr class="- topic/row">
+<th class="- topic/entry entry align-center colsep-0 rowsep-1" colspan="2" id="doc__min_req__entry__1">Files</th>
+</tr>
+</thead><tbody class="- topic/tbody tbody">
+<tr class="- topic/row">
+<td class="- topic/entry entry align-center colsep-1 rowsep-1" headers="doc__min_req__entry__1"><span class="- topic/ph ph" id="doc__an_min-req_TH-files">Typhoon HIL files</span></td>
+<td class="- topic/entry entry align-center colsep-0 rowsep-1" headers="doc__min_req__entry__1"><p class="- topic/p p"><em class="+ topic/ph hi-d/i ph i">examples\models\microgrid\pv plant\pv plant (generic)</em></p>
+<p class="- topic/p p">pv plant gen.tse</p>
+<p class="- topic/p p">pv plant gen.cus</p>
+<p class="- topic/p p"><em class="+ topic/ph hi-d/i ph i">examples\tests\109_pv_plant_generic\</em></p>
+<p class="- topic/p p">test_pv_plant_generic.py</p>
+</td>
+</tr>
+<tr class="- topic/row">
+<td class="- topic/entry entry align-center colsep-0 rowsep-1" colspan="2" headers="doc__min_req__entry__1"><strong class="+ topic/ph hi-d/b ph b">Minimum hardware requirements</strong></td>
+</tr>
+<tr class="- topic/row">
+<td class="- topic/entry entry align-center colsep-1 rowsep-1" headers="doc__min_req__entry__1"><span class="- topic/ph ph" id="doc__an_min-req_num-devices">No. of HIL devices</span></td>
+<td class="- topic/entry entry align-center colsep-0 rowsep-1" headers="doc__min_req__entry__1"><span class="- topic/ph ph" id="doc__num_devices">1</span></td>
+</tr>
+<tr class="- topic/row">
+<td class="- topic/entry entry align-center colsep-1 rowsep-1" headers="doc__min_req__entry__1"><span class="- topic/ph ph" id="doc__an_min-req_model-num">HIL device model</span></td>
+<td class="- topic/entry entry align-center colsep-0 rowsep-1" headers="doc__min_req__entry__1"><span class="- topic/ph ph" id="doc__type_devices">HIL402</span></td>
+</tr>
+<tr class="- topic/row">
+<td class="- topic/entry entry align-center colsep-1 rowsep-1" headers="doc__min_req__entry__1"><u class="+ topic/ph hi-d/u ph u"><a class="- topic/xref xref" href="../../t-ug002/concepts/device_manager.html" title="Device Manager is used to create, manipulate, and activate HIL device setups.">Device configuration</a></u></td>
+<td class="- topic/entry entry align-center colsep-0 rowsep-1" headers="doc__min_req__entry__1"><span class="- topic/ph ph" id="doc__num_config">1</span></td>
+</tr>
+<tr class="- topic/row">
+<td class="- topic/entry entry align-center colsep-0 rowsep-1" colspan="2" headers="doc__min_req__entry__1"><strong class="+ topic/ph hi-d/b ph b">HIL device resource utilization</strong></td>
+</tr>
+<tr class="- topic/row">
+<td class="- topic/entry entry align-center colsep-1 rowsep-1" headers="doc__min_req__entry__1"><span class="- topic/ph ph" id="doc__an_res-util_num-cores">No. of processing cores</span></td>
+<td class="- topic/entry entry align-center colsep-0 rowsep-1" headers="doc__min_req__entry__1"><span class="- topic/ph ph" id="doc__num_cores">1</span></td>
+</tr>
+<tr class="- topic/row">
+<td class="- topic/entry entry align-center colsep-1 rowsep-1" headers="doc__min_req__entry__1"><span class="- topic/ph ph" id="doc__an_res-util_max-memory">Max. matrix memory utilization</span></td>
+<td class="- topic/entry entry align-center colsep-0 rowsep-1" headers="doc__min_req__entry__1">7.52%</td>
+</tr>
+<tr class="- topic/row">
+<td class="- topic/entry entry align-center colsep-1 rowsep-1" headers="doc__min_req__entry__1"><span class="- topic/ph ph" id="doc__an_res-util_max-time">Max. time slot utilization</span></td>
+<td class="- topic/entry entry align-center colsep-0 rowsep-1" headers="doc__min_req__entry__1">90%</td>
+</tr>
+<tr class="- topic/row">
+<td class="- topic/entry entry align-center colsep-1 rowsep-1" headers="doc__min_req__entry__1"><span class="- topic/ph ph" id="doc__an_res-util_sim-step">Simulation step, electrical</span></td>
+<td class="- topic/entry entry align-center colsep-0 rowsep-1" headers="doc__min_req__entry__1">1 µs</td>
+</tr>
+<tr class="- topic/row">
+<td class="- topic/entry entry align-center colsep-1 rowsep-0" headers="doc__min_req__entry__1"><span class="- topic/ph ph" id="doc__an_res-util_exec-rate">Execution rate, signal processing</span></td>
+<td class="- topic/entry entry align-center colsep-0 rowsep-0" headers="doc__min_req__entry__1">Multirate (100 µs, 500 µs)</td>
+</tr>
+</tbody></table>
+</section>
+<section class="- topic/section section" data-ofbid="doc__section_pils_s5" id="doc__section_pils_s5"><h2 class="- topic/title title sectiontitle"><span class="- topic/ph ph" id="doc__an_title_author">Authors</span></h2>
+<p class="- topic/p p">[1] Jovana Markovic</p>
+</section>
+</div>
 </article></main></div>
-                        
-                        
-                        
-                        
-                        
-                        
-                    </div>
-                    
-                        <nav role="navigation" id="wh_topic_toc" aria-label="On this page" class="col-lg-2 d-none d-lg-block navbar d-print-none"> 
-                            <div id="wh_topic_toc_content">
-		                        
-	                            <div class=" wh_topic_toc "><div class="wh_topic_label">On this page</div><ul><li class="section-item"><div class="section-title"><a href="#doc__section_hqr_1zb_rz" data-tocid="doc__section_hqr_1zb_rz"><span class="- topic/ph ph" id="doc__an_title_intro">Introduction</span></a></div></li><li class="section-item"><div class="section-title"><a href="#doc__section_lqh_zpl_y3b" data-tocid="doc__section_lqh_zpl_y3b"><span class="- topic/ph ph" id="doc__an_title_model">Model description</span></a></div></li><li class="section-item"><div class="section-title"><a href="#doc__section_urt_fvw_2jb" data-tocid="doc__section_urt_fvw_2jb"><span class="- topic/ph ph" id="doc__an_title_simulation">Simulation</span></a></div></li><li class="section-item"><div class="section-title"><a href="#doc__section_pils_s3" data-tocid="doc__section_pils_s3"><span class="- topic/ph ph" id="doc__an_title_test-automation">Test automation</span></a></div></li><li class="section-item"><div class="section-title"><a href="#doc__example_requirements" data-tocid="doc__example_requirements">Example requirements</a></div></li><li class="section-item"><div class="section-title"><a href="#doc__section_pils_s5" data-tocid="doc__section_pils_s5"><span class="- topic/ph ph" id="doc__an_title_author">Authors</span></a></div></li></ul></div>
-	                        	
-                        	</div>
-                        </nav>
-                    
-                </div>
-            </div>
-            
-            
-            
-        </div> 
-        <footer class="navbar navbar-default wh_footer">
-  <div class=" footer-container mx-auto ">
-    <div style="text-align:center">Typhoon HIL Inc.<span id="year"> <a href="https://www.typhoon-hil.com">www.typhoon-hil.com</a></span></div>
-  </div>
+</div>
+<nav aria-label="On this page" class="col-lg-2 d-none d-lg-block navbar d-print-none" id="wh_topic_toc" role="navigation">
+<div id="wh_topic_toc_content">
+<div class="wh_topic_toc"><div class="wh_topic_label">On this page</div><ul><li class="section-item"><div class="section-title"><a data-tocid="doc__section_hqr_1zb_rz" href="#doc__section_hqr_1zb_rz"><span class="- topic/ph ph" id="doc__an_title_intro">Introduction</span></a></div></li><li class="section-item"><div class="section-title"><a data-tocid="doc__section_lqh_zpl_y3b" href="#doc__section_lqh_zpl_y3b"><span class="- topic/ph ph" id="doc__an_title_model">Model description</span></a></div></li><li class="section-item"><div class="section-title"><a data-tocid="doc__section_urt_fvw_2jb" href="#doc__section_urt_fvw_2jb"><span class="- topic/ph ph" id="doc__an_title_simulation">Simulation</span></a></div></li><li class="section-item"><div class="section-title"><a data-tocid="doc__section_pils_s3" href="#doc__section_pils_s3"><span class="- topic/ph ph" id="doc__an_title_test-automation">Test automation</span></a></div></li><li class="section-item"><div class="section-title"><a data-tocid="doc__example_requirements" href="#doc__example_requirements">Example requirements</a></div></li><li class="section-item"><div class="section-title"><a data-tocid="doc__section_pils_s5" href="#doc__section_pils_s5"><span class="- topic/ph ph" id="doc__an_title_author">Authors</span></a></div></li></ul></div>
+</div>
+</nav>
+</div>
+</div>
+</div>
+<footer class="navbar navbar-default wh_footer">
+<div class="footer-container mx-auto">
+<div style="text-align:center">Typhoon HIL Inc.<span id="year"> <a href="https://www.typhoon-hil.com">www.typhoon-hil.com</a></span></div>
+</div>
 </footer>
-        
-        <div id="go2top" class="d-print-none">
-            <span class="oxy-icon oxy-icon-up"></span>
-        </div>
-        
-        <div id="modal_img_large" class="modal">
-            <span class="close oxy-icon oxy-icon-remove"></span>
-            <div id="modal_img_container"></div>
-            <div id="caption"></div>
-        </div>
-        
-        
-<script type="text/javascript" src="../../assets/script.js"> 
+<div class="d-print-none" id="go2top">
+<span class="oxy-icon oxy-icon-up"></span>
+</div>
+<div class="modal" id="modal_img_large">
+<span class="close oxy-icon oxy-icon-remove"></span>
+<div id="modal_img_container"></div>
+<div id="caption"></div>
+</div>
+<script src="../../assets/script.js" type="text/javascript">
 </script>
-
-        
-    </body>
+</body>
 </html>

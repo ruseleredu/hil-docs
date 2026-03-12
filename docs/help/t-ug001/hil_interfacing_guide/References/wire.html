@@ -1,256 +1,173 @@
-<!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en" data-whc_version="24.1">
-    <head><link rel="shortcut icon" href="../../../favicon.ico"/><link rel="icon" href="../../../favicon.ico"/><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><meta name="DC.rights.owner" content="(C) Copyright 2026"/><meta name="copyright" content="(C) Copyright 2026"/><meta name="generator" content="DITA-OT"/><meta name="DC.type" content="reference"/><meta name="description" content="Recommendations for interfacing using wires"/><meta name="DC.relation" content="../../../t-ug001/hil_interfacing_guide/topics/abstract.html"/><meta name="DC.format" content="HTML5"/><meta name="DC.identifier" content="doc"/>        
-      <title>Wire interfacing</title><!--  Generated with Oxygen version 24.1, build number 2022030800.  --><meta name="wh-path2root" content="../../../"/><meta name="wh-toc-id" content="doc-d16877e8886"/><meta name="wh-source-relpath" content="t-ug001/hil_interfacing_guide/References/wire.dita"/><meta name="wh-out-relpath" content="t-ug001/hil_interfacing_guide/References/wire.html"/>
-    <!-- Latest compiled and minified Bootstrap CSS -->
-    <link rel="stylesheet" type="text/css" href="../../../oxygen-webhelp/lib/bootstrap/css/bootstrap.min.css"/>
-    
-    <link rel="stylesheet" href="../../../oxygen-webhelp/lib/jquery-ui/jquery-ui.min.css"/>
-    
-    <!-- Template default styles  -->
-    <link rel="stylesheet" type="text/css" href="../../../oxygen-webhelp/app/topic-page.css?buildId=2022030800"/>
-    
-    
-    <script src="../../../oxygen-webhelp/lib/jquery/jquery-3.5.1.min.js"></script>
-    
-    <script data-main="../../../oxygen-webhelp/app/topic-page.js" src="../../../oxygen-webhelp/lib/requirejs/require.js"></script>
-<link rel="stylesheet" type="text/css" href="../../../oxygen-webhelp/template/oxygen.css?buildId=2022030800"/><link rel="stylesheet" type="text/css" href="../../../oxygen-webhelp/template/notes.css?buildId=2022030800"/><script type="text/javascript" src="../../Scripts/mml-svg.js"> 
-</script><link rel="stylesheet" type="text/css" href="../../../assets/typhoon.css"/></head>
-
-    <body id="doc" class="wh_topic_page frmBody">
-        <a href="#wh_topic_body" class="sr-only sr-only-focusable">
+<!DOCTYPE html>
+<html data-whc_version="24.1" lang="en" xml:lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head><link href="../../../favicon.ico" rel="shortcut icon"/><link href="../../../favicon.ico" rel="icon"/><meta content="text/html; charset=utf-8" http-equiv="Content-Type"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="IE=edge" http-equiv="X-UA-Compatible"/><meta content="(C) Copyright 2026" name="DC.rights.owner"/><meta content="(C) Copyright 2026" name="copyright"/><meta content="DITA-OT" name="generator"/><meta content="reference" name="DC.type"/><meta content="Recommendations for interfacing using wires" name="description"/><meta content="../../../t-ug001/hil_interfacing_guide/topics/abstract.html" name="DC.relation"/><meta content="HTML5" name="DC.format"/><meta content="doc" name="DC.identifier"/>
+<title>Wire interfacing</title><!--  Generated with Oxygen version 24.1, build number 2022030800.  --><meta content="../../../" name="wh-path2root"/><meta content="doc-d16877e8886" name="wh-toc-id"/><meta content="t-ug001/hil_interfacing_guide/References/wire.dita" name="wh-source-relpath"/><meta content="t-ug001/hil_interfacing_guide/References/wire.html" name="wh-out-relpath"/>
+<!-- Latest compiled and minified Bootstrap CSS -->
+<link href="../../../oxygen-webhelp/lib/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
+<link href="../../../oxygen-webhelp/lib/jquery-ui/jquery-ui.min.css" rel="stylesheet"/>
+<!-- Template default styles  -->
+<link href="../../../oxygen-webhelp/app/topic-page.css?buildId=2022030800" rel="stylesheet" type="text/css"/>
+<script src="../../../oxygen-webhelp/lib/jquery/jquery-3.5.1.min.js"></script>
+<script data-main="../../../oxygen-webhelp/app/topic-page.js" src="../../../oxygen-webhelp/lib/requirejs/require.js"></script>
+<link href="../../../oxygen-webhelp/template/oxygen.css?buildId=2022030800" rel="stylesheet" type="text/css"/><link href="../../../oxygen-webhelp/template/notes.css?buildId=2022030800" rel="stylesheet" type="text/css"/><script src="../../Scripts/mml-svg.js" type="text/javascript">
+</script><link href="../../../assets/typhoon.css" rel="stylesheet" type="text/css"/></head>
+<body class="wh_topic_page frmBody" id="doc">
+<a class="sr-only sr-only-focusable" href="#wh_topic_body">
             Jump to main content
         </a>
-        
-        
-        
-        
-        <header class="navbar navbar-default wh_header">
-    <div class="container-fluid">
-        <div class="wh_header_flex_container navbar-nav navbar-expand-md navbar-dark">
-            <div class="wh_logo_and_publication_title_container">
-                <div class="wh_logo_and_publication_title">
-                    
-                    <a href="https://www.typhoon-hil.com" class=" wh_logo d-none d-sm-block "><img src="../../../logo.svg" alt="  Typhoon HIL Documentation  Version: 2026.1  "/></a>
-                    <div class=" wh_publication_title "><a href="../../../index.html"><span class="booktitle">  <span class="ph mainbooktitle">Typhoon HIL Documentation</span>  <span class="ph booktitlealt">Version: 2026.1</span>  </span></a></div>
-                    
-                </div>
-                
-                <button type="button" data-target="#wh_top_menu_and_indexterms_link" id="wh_menu_mobile_button" data-toggle="collapse" class="navbar-toggler collapsed wh_toggle_button" aria-expanded="false" aria-label="Toggle menu" aria-controls="wh_top_menu_and_indexterms_link">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-            </div>
-
-            <div class="wh_top_menu_and_indexterms_link collapse navbar-collapse" id="wh_top_menu_and_indexterms_link">
-                
-                <nav class=" wh_top_menu " aria-label="Menu Container"><ul role="menubar" aria-label="Menu"><li role="menuitem" aria-haspopup="true" aria-expanded="false" class="has-children"><span id="tocId-d16877e21-mi" data-tocid="tocId-d16877e21" data-state="not-ready" class=" topicref application-notes"><span class="title"><a href="../../../t-an001/concepts/application_notes_introduction.html">Typhoon HIL Application Notes</a></span></span></li><li role="menuitem" aria-haspopup="true" aria-expanded="false" class="has-children"><span id="tocId-d16877e737-mi" data-tocid="tocId-d16877e737" data-state="not-ready" class=" topicref software-manual"><span class="title"><a href="../../../t-ug002/topics/software_manual_introduction.html">Typhoon HIL Software Manual</a></span></span></li><li role="menuitem" aria-haspopup="true" aria-expanded="false" class="has-children"><span id="tocId-d16877e7901-mi" data-tocid="tocId-d16877e7901" data-state="not-ready" class=" topicref hardware-manual"><span class="title"><a href="../../../t-ug001/abstract/hardware_manual_introduction.html">Typhoon HIL Hardware Manual</a></span></span></li></ul></nav>
-                
-                
-            </div>
-        </div>
-    </div>
+<header class="navbar navbar-default wh_header">
+<div class="container-fluid">
+<div class="wh_header_flex_container navbar-nav navbar-expand-md navbar-dark">
+<div class="wh_logo_and_publication_title_container">
+<div class="wh_logo_and_publication_title">
+<a class="wh_logo d-none d-sm-block" href="../../../../index.html"><img alt="  Typhoon HIL Documentation  Version: 2026.1  " src="../../../logo.svg"/></a>
+<div class="wh_publication_title"><a href="../../../index.html"><span class="booktitle"> <span class="ph mainbooktitle">Typhoon HIL Documentation</span> <span class="ph booktitlealt">Version: 2026.1</span> </span></a></div>
+</div>
+<button aria-controls="wh_top_menu_and_indexterms_link" aria-expanded="false" aria-label="Toggle menu" class="navbar-toggler collapsed wh_toggle_button" data-target="#wh_top_menu_and_indexterms_link" data-toggle="collapse" id="wh_menu_mobile_button" type="button">
+<span class="navbar-toggler-icon"></span>
+</button>
+</div>
+<div class="wh_top_menu_and_indexterms_link collapse navbar-collapse" id="wh_top_menu_and_indexterms_link">
+<nav aria-label="Menu Container" class="wh_top_menu"><ul aria-label="Menu" role="menubar"><li aria-expanded="false" aria-haspopup="true" class="has-children" role="menuitem"><span class="topicref application-notes" data-state="not-ready" data-tocid="tocId-d16877e21" id="tocId-d16877e21-mi"><span class="title"><a href="../../../t-an001/concepts/application_notes_introduction.html">Typhoon HIL Application Notes</a></span></span></li><li aria-expanded="false" aria-haspopup="true" class="has-children" role="menuitem"><span class="topicref software-manual" data-state="not-ready" data-tocid="tocId-d16877e737" id="tocId-d16877e737-mi"><span class="title"><a href="../../../t-ug002/topics/software_manual_introduction.html">Typhoon HIL Software Manual</a></span></span></li><li aria-expanded="false" aria-haspopup="true" class="has-children" role="menuitem"><span class="topicref hardware-manual" data-state="not-ready" data-tocid="tocId-d16877e7901" id="tocId-d16877e7901-mi"><span class="title"><a href="../../../t-ug001/abstract/hardware_manual_introduction.html">Typhoon HIL Hardware Manual</a></span></span></li></ul></nav>
+</div>
+</div>
+</div>
 </header>
-        
-        
-         
-        
-        <div class=" wh_search_input navbar-form wh_topic_page_search search " role="form">
-            
-            
-            
-            <form id="searchForm" method="get" role="search" action="../../../search.html"><div><input type="search" placeholder="Search " class="wh_search_textfield" id="textToSearch" name="searchQuery" aria-label="Search query" required="required"/><button type="submit" class="wh_search_button" aria-label="Search"><span class="search_input_text">Search</span></button></div></form>
-            
-            
-            
-        </div>
-        
-        <div class="container-fluid" id="wh_topic_container">
-            <div class="row">
-
-                <nav class="wh_tools d-print-none navbar-expand-md" aria-label="Tools">
-                    
-                    <div data-tooltip-position="bottom" class=" wh_breadcrumb "><ol class="d-print-none"><li><span class="home"><a href="../../../index.html"><span>Home</span></a></span></li><li><div class="topicref hardware-manual"><div class="title"><a href="../../../t-ug001/abstract/hardware_manual_introduction.html">Typhoon HIL Hardware Manual</a></div></div></li><li><div class="topicref" data-id="doc"><div class="title"><a href="../../../t-ug001/abstract/HIL_simulators.html">Typhoon HIL simulator devices</a><div class="wh-tooltip"><p class="shortdesc">Overview of the currently supported Typhoon HIL simulator devices.</p></div></div></div></li><li><div class="topicref" data-id="doc"><div class="title"><a href="../../../t-ug001/hil_interfacing_guide/topics/abstract.html">Hardware Interfacing Guide</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">Tips and examples on how to connect any controller to the HIL.</span></p></div></div></div></li><li class="active"><div class="topicref page-break-after" data-id="doc"><div class="title"><a href="../../../t-ug001/hil_interfacing_guide/References/wire.html">Wire interfacing</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">Recommendations for interfacing using wires</span></p></div></div></div></li></ol></div>
-                    
-                    
-                    
-                    <div class="wh_right_tools">
-                        <button class="wh_hide_highlight" aria-label="Toggle search highlights" title="Toggle search highlights"></button>
-                        <button class="webhelp_expand_collapse_sections" data-next-state="collapsed" aria-label="Collapse sections" title="Collapse sections"></button>
-                        
-                        
-                        
-                        
-                        <div class=" wh_print_link print d-none d-md-inline-block "><button onClick="window.print()" title="Print this page" aria-label="Print this page"></button></div>
-                        
-                        <button type="button" id="wh_toc_button" class="custom-toggler navbar-toggler collapsed wh_toggle_button navbar-light" aria-expanded="false" aria-label="Toggle publishing table of content" aria-controls="wh_publication_toc">
-                            <span class="navbar-toggler-icon"></span>
-                        </button>
-                    </div>
-                    
-                </nav>
-            </div>
-            
-            
-            
-            
-            <div class="wh_content_area">
-                <div class="row">
-                    
-                        <nav id="wh_publication_toc" class="col-lg-3 col-md-3 col-sm-12 d-md-block d-none d-print-none" aria-label="Table of Contents Container">
-                            <div id="wh_publication_toc_content">
-		                        
-                            	<div class=" wh_publication_toc " data-tooltip-position="right"><span class="expand-button-action-labels"><span id="button-expand-action" role="button" aria-label="Expand"></span><span id="button-collapse-action" role="button" aria-label="Collapse"></span><span id="button-pending-action" role="button" aria-label="Pending"></span></span><ul role="tree" aria-label="Table of Contents"><li role="treeitem" aria-expanded="true"><div data-tocid="tocId-d16877e7901" class="topicref hardware-manual" data-state="expanded"><span role="button" tabindex="0" aria-labelledby="button-collapse-action tocId-d16877e7901-link" class="wh-expand-btn"></span><div class="title"><a href="../../../t-ug001/abstract/hardware_manual_introduction.html" id="tocId-d16877e7901-link">Typhoon HIL Hardware Manual</a></div></div><ul role="group" class="navbar-nav nav-list"><li role="treeitem"><div data-tocid="doc-d16877e7905" class="topicref" data-id="doc" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../../../t-ug001/abstract/hardware_manual_introduction.html" id="doc-d16877e7905-link">Hardware Manual Introduction</a><div class="wh-tooltip"><p class="shortdesc">Collection of some of the guides on the deployment, use, and management of Typhoon HIL hardware devices.</p></div></div></div></li><li role="treeitem" aria-expanded="true"><div data-tocid="doc-d16877e7916" class="topicref" data-id="doc" data-state="expanded"><span role="button" tabindex="0" aria-labelledby="button-collapse-action doc-d16877e7916-link" class="wh-expand-btn"></span><div class="title"><a href="../../../t-ug001/abstract/HIL_simulators.html" id="doc-d16877e7916-link">Typhoon HIL simulator devices</a><div class="wh-tooltip"><p class="shortdesc">Overview of the currently supported Typhoon HIL simulator devices.</p></div></div></div><ul role="group" class="navbar-nav nav-list"><li role="treeitem" aria-expanded="false"><div data-tocid="doc-d16877e7930" class="topicref" data-id="doc" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action doc-d16877e7930-link" class="wh-expand-btn"></span><div class="title"><a href="../../../t-ug001/hil101_user_guide/topics/hil101_abstract.html" id="doc-d16877e7930-link">HIL101 Hardware User Guide</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">Official documentation of the HIL101 simulator hardware device.</span></p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="doc-d16877e8043" class="topicref" data-id="doc" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action doc-d16877e8043-link" class="wh-expand-btn"></span><div class="title"><a href="../../../t-ug001/hil402_user_guide/topics/hil402_abstract.html" id="doc-d16877e8043-link">HIL402 Hardware User Guide</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">Official documentation of the HIL402 simulator hardware device.</span></p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="doc-d16877e8168" class="topicref" data-id="doc" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action doc-d16877e8168-link" class="wh-expand-btn"></span><div class="title"><a href="../../../t-ug001/hil404_user_guide/topics/hil404_abstract.html" id="doc-d16877e8168-link">HIL404 Hardware User Guide</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">Official documentation of the HIL404 simulator hardware device.</span></p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="doc-d16877e8282" class="topicref" data-id="doc" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action doc-d16877e8282-link" class="wh-expand-btn"></span><div class="title"><a href="../../../t-ug001/hil506_user_guide/topics/hil506_abstract.html" id="doc-d16877e8282-link">HIL506 Hardware User Guide</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">Official documentation of the HIL506 simulator hardware device.</span></p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="doc-d16877e8407" class="topicref" data-id="doc" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action doc-d16877e8407-link" class="wh-expand-btn"></span><div class="title"><a href="../../../t-ug001/hil602p_user_guide/topics/hil602p_abstract.html" id="doc-d16877e8407-link">HIL602+ Hardware User Guide</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">Official documentation of the HIL602+ simulator hardware device.</span></p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="doc-d16877e8533" class="topicref" data-id="doc" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action doc-d16877e8533-link" class="wh-expand-btn"></span><div class="title"><a href="../../../t-ug001/hil604_user_guide/topics/hil604_abstract.html" id="doc-d16877e8533-link">HIL604 Hardware User Guide</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">Official documentation of the HIL604 simulator hardware device.</span></p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="doc-d16877e8670" class="topicref" data-id="doc" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action doc-d16877e8670-link" class="wh-expand-btn"></span><div class="title"><a href="../../../t-ug001/hil606_user_guide/topics/hil606_abstract.html" id="doc-d16877e8670-link">HIL606 Hardware User Guide</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">Official documentation of the HIL606 simulator hardware device.</span></p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="doc-d16877e8795" class="topicref" data-id="doc" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action doc-d16877e8795-link" class="wh-expand-btn"></span><div class="title"><a href="../../../t-ug001/hil_paralleling_guide/topics/abstract.html" id="doc-d16877e8795-link">HIL Paralleling Guide</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">This document introduces the HIL paralleling concept, defines modeling of relevant link parameters, and explains how to properly connect multiple Typhoon HIL devices.</span></p></div></div></div></li><li role="treeitem" aria-expanded="true"><div data-tocid="doc-d16877e8862" class="topicref" data-id="doc" data-state="expanded"><span role="button" tabindex="0" aria-labelledby="button-collapse-action doc-d16877e8862-link" class="wh-expand-btn"></span><div class="title"><a href="../../../t-ug001/hil_interfacing_guide/topics/abstract.html" id="doc-d16877e8862-link">Hardware Interfacing Guide</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">Tips and examples on how to connect any controller to the HIL.</span></p></div></div></div><ul role="group" class="navbar-nav nav-list"><li role="treeitem"><div data-tocid="doc-d16877e8874" class="topicref page-break-after" data-id="doc" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../../../t-ug001/hil_interfacing_guide/concepts/overview.html" id="doc-d16877e8874-link">Overview</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">Overview of the recommended interfacing options</span></p></div></div></div></li><li role="treeitem" class="active"><div data-tocid="doc-d16877e8886" class="topicref page-break-after" data-id="doc" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../../../t-ug001/hil_interfacing_guide/References/wire.html" id="doc-d16877e8886-link">Wire interfacing</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">Recommendations for interfacing using wires</span></p></div></div></div></li><li role="treeitem"><div data-tocid="doc-d16877e8898" class="topicref page-break-after" data-id="doc" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../../../t-ug001/hil_interfacing_guide/References/board.html" id="doc-d16877e8898-link">Board design tips</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">Recommendations for designing custom interface         boards</span></p></div></div></div></li></ul></li></ul></li><li role="treeitem" aria-expanded="false"><div data-tocid="doc-d16877e8927" class="topicref" data-id="doc" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action doc-d16877e8927-link" class="wh-expand-btn"></span><div class="title"><a href="../../../t-ug001/hil_connect/topics/abstract.html" id="doc-d16877e8927-link">HIL Connect</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">Information about the HIL Connect, a 19" 6U interface device,             designed to adapt HIL IO signal levels to those most commonly used in the         industry.</span></p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="doc-d16877e9278" class="topicref" data-id="doc" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action doc-d16877e9278-link" class="wh-expand-btn"></span><div class="title"><a href="../../../t-ug001/abstract/HIL_interfaces.html" id="doc-d16877e9278-link">HIL Interfaces</a><div class="wh-tooltip"><p class="shortdesc">Collection of some of the guides on the deployment, use, and management of HIL Interfaces available from Typhoon HIL.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="doc-d16877e10605" class="topicref" data-id="doc" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action doc-d16877e10605-link" class="wh-expand-btn"></span><div class="title"><a href="../../../t-ug001/abstract/HIL_accessories.html" id="doc-d16877e10605-link">HIL Accessories</a><div class="wh-tooltip"><p class="shortdesc">Collection of some of the guides on the deployment, use, and management of Typhoon HIL accessories.</p></div></div></div></li></ul></li></ul></div>
-		                        
-                            </div>
-                        </nav>
-                    
-                    
-                    <div class="col-lg-7 col-md-9 col-sm-12" id="wh_topic_body">
-                        <button id="wh_close_publication_toc_button" class="close-toc-button d-none" aria-label="Toggle publishing table of content" aria-controls="wh_publication_toc" aria-expanded="true">
-                            <span class="close-toc-icon-container">
-                                <span class="close-toc-icon"></span>     
-                            </span>
-                        </button>
-                        <button id="wh_close_topic_toc_button" class="close-toc-button d-none" aria-label="Toggle topic table of content" aria-controls="wh_topic_toc" aria-expanded="true">
-                            <span class="close-toc-icon-container">
-                                <span class="close-toc-icon"></span>     
-                            </span>
-                        </button>
-                        
-                        <div class=" wh_topic_content body "><main role="main"><article role="article" aria-labelledby="ariaid-title1">
-    <h1 class="- topic/title title topictitle1" id="ariaid-title1">Wire interfacing</h1>
-    
-    <div class="- topic/body reference/refbody body refbody"><p class="- topic/shortdesc shortdesc"><span class="- topic/ph ph" id="doc__description">Recommendations for interfacing using wires</span></p>
-        <section class="- topic/section section" id="doc__l12xwF0BD" data-ofbid="doc__l12xwF0BD">
-            <p class="- topic/p p">These methods are best applied when you want to bring up the setup fast, and there
+<div class="wh_search_input navbar-form wh_topic_page_search search" role="form">
+<form action="../../../search.html" id="searchForm" method="get" role="search"><div><input aria-label="Search query" class="wh_search_textfield" id="textToSearch" name="searchQuery" placeholder="Search " required="required" type="search"/><button aria-label="Search" class="wh_search_button" type="submit"><span class="search_input_text">Search</span></button></div></form>
+</div>
+<div class="container-fluid" id="wh_topic_container">
+<div class="row">
+<nav aria-label="Tools" class="wh_tools d-print-none navbar-expand-md">
+<div class="wh_breadcrumb" data-tooltip-position="bottom"><ol class="d-print-none"><li><span class="home"><a href="../../../index.html"><span>Home</span></a></span></li><li><div class="topicref hardware-manual"><div class="title"><a href="../../../t-ug001/abstract/hardware_manual_introduction.html">Typhoon HIL Hardware Manual</a></div></div></li><li><div class="topicref" data-id="doc"><div class="title"><a href="../../../t-ug001/abstract/HIL_simulators.html">Typhoon HIL simulator devices</a><div class="wh-tooltip"><p class="shortdesc">Overview of the currently supported Typhoon HIL simulator devices.</p></div></div></div></li><li><div class="topicref" data-id="doc"><div class="title"><a href="../../../t-ug001/hil_interfacing_guide/topics/abstract.html">Hardware Interfacing Guide</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">Tips and examples on how to connect any controller to the HIL.</span></p></div></div></div></li><li class="active"><div class="topicref page-break-after" data-id="doc"><div class="title"><a href="../../../t-ug001/hil_interfacing_guide/References/wire.html">Wire interfacing</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">Recommendations for interfacing using wires</span></p></div></div></div></li></ol></div>
+<div class="wh_right_tools">
+<button aria-label="Toggle search highlights" class="wh_hide_highlight" title="Toggle search highlights"></button>
+<button aria-label="Collapse sections" class="webhelp_expand_collapse_sections" data-next-state="collapsed" title="Collapse sections"></button>
+<div class="wh_print_link print d-none d-md-inline-block"><button aria-label="Print this page" onclick="window.print()" title="Print this page"></button></div>
+<button aria-controls="wh_publication_toc" aria-expanded="false" aria-label="Toggle publishing table of content" class="custom-toggler navbar-toggler collapsed wh_toggle_button navbar-light" id="wh_toc_button" type="button">
+<span class="navbar-toggler-icon"></span>
+</button>
+</div>
+</nav>
+</div>
+<div class="wh_content_area">
+<div class="row">
+<nav aria-label="Table of Contents Container" class="col-lg-3 col-md-3 col-sm-12 d-md-block d-none d-print-none" id="wh_publication_toc">
+<div id="wh_publication_toc_content">
+<div class="wh_publication_toc" data-tooltip-position="right"><span class="expand-button-action-labels"><span aria-label="Expand" id="button-expand-action" role="button"></span><span aria-label="Collapse" id="button-collapse-action" role="button"></span><span aria-label="Pending" id="button-pending-action" role="button"></span></span><ul aria-label="Table of Contents" role="tree"><li aria-expanded="true" role="treeitem"><div class="topicref hardware-manual" data-state="expanded" data-tocid="tocId-d16877e7901"><span aria-labelledby="button-collapse-action tocId-d16877e7901-link" class="wh-expand-btn" role="button" tabindex="0"></span><div class="title"><a href="../../../t-ug001/abstract/hardware_manual_introduction.html" id="tocId-d16877e7901-link">Typhoon HIL Hardware Manual</a></div></div><ul class="navbar-nav nav-list" role="group"><li role="treeitem"><div class="topicref" data-id="doc" data-state="leaf" data-tocid="doc-d16877e7905"><span class="wh-expand-btn" role="button"></span><div class="title"><a href="../../../t-ug001/abstract/hardware_manual_introduction.html" id="doc-d16877e7905-link">Hardware Manual Introduction</a><div class="wh-tooltip"><p class="shortdesc">Collection of some of the guides on the deployment, use, and management of Typhoon HIL hardware devices.</p></div></div></div></li><li aria-expanded="true" role="treeitem"><div class="topicref" data-id="doc" data-state="expanded" data-tocid="doc-d16877e7916"><span aria-labelledby="button-collapse-action doc-d16877e7916-link" class="wh-expand-btn" role="button" tabindex="0"></span><div class="title"><a href="../../../t-ug001/abstract/HIL_simulators.html" id="doc-d16877e7916-link">Typhoon HIL simulator devices</a><div class="wh-tooltip"><p class="shortdesc">Overview of the currently supported Typhoon HIL simulator devices.</p></div></div></div><ul class="navbar-nav nav-list" role="group"><li aria-expanded="false" role="treeitem"><div class="topicref" data-id="doc" data-state="not-ready" data-tocid="doc-d16877e7930"><span aria-labelledby="button-expand-action doc-d16877e7930-link" class="wh-expand-btn" role="button" tabindex="0"></span><div class="title"><a href="../../../t-ug001/hil101_user_guide/topics/hil101_abstract.html" id="doc-d16877e7930-link">HIL101 Hardware User Guide</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">Official documentation of the HIL101 simulator hardware device.</span></p></div></div></div></li><li aria-expanded="false" role="treeitem"><div class="topicref" data-id="doc" data-state="not-ready" data-tocid="doc-d16877e8043"><span aria-labelledby="button-expand-action doc-d16877e8043-link" class="wh-expand-btn" role="button" tabindex="0"></span><div class="title"><a href="../../../t-ug001/hil402_user_guide/topics/hil402_abstract.html" id="doc-d16877e8043-link">HIL402 Hardware User Guide</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">Official documentation of the HIL402 simulator hardware device.</span></p></div></div></div></li><li aria-expanded="false" role="treeitem"><div class="topicref" data-id="doc" data-state="not-ready" data-tocid="doc-d16877e8168"><span aria-labelledby="button-expand-action doc-d16877e8168-link" class="wh-expand-btn" role="button" tabindex="0"></span><div class="title"><a href="../../../t-ug001/hil404_user_guide/topics/hil404_abstract.html" id="doc-d16877e8168-link">HIL404 Hardware User Guide</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">Official documentation of the HIL404 simulator hardware device.</span></p></div></div></div></li><li aria-expanded="false" role="treeitem"><div class="topicref" data-id="doc" data-state="not-ready" data-tocid="doc-d16877e8282"><span aria-labelledby="button-expand-action doc-d16877e8282-link" class="wh-expand-btn" role="button" tabindex="0"></span><div class="title"><a href="../../../t-ug001/hil506_user_guide/topics/hil506_abstract.html" id="doc-d16877e8282-link">HIL506 Hardware User Guide</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">Official documentation of the HIL506 simulator hardware device.</span></p></div></div></div></li><li aria-expanded="false" role="treeitem"><div class="topicref" data-id="doc" data-state="not-ready" data-tocid="doc-d16877e8407"><span aria-labelledby="button-expand-action doc-d16877e8407-link" class="wh-expand-btn" role="button" tabindex="0"></span><div class="title"><a href="../../../t-ug001/hil602p_user_guide/topics/hil602p_abstract.html" id="doc-d16877e8407-link">HIL602+ Hardware User Guide</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">Official documentation of the HIL602+ simulator hardware device.</span></p></div></div></div></li><li aria-expanded="false" role="treeitem"><div class="topicref" data-id="doc" data-state="not-ready" data-tocid="doc-d16877e8533"><span aria-labelledby="button-expand-action doc-d16877e8533-link" class="wh-expand-btn" role="button" tabindex="0"></span><div class="title"><a href="../../../t-ug001/hil604_user_guide/topics/hil604_abstract.html" id="doc-d16877e8533-link">HIL604 Hardware User Guide</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">Official documentation of the HIL604 simulator hardware device.</span></p></div></div></div></li><li aria-expanded="false" role="treeitem"><div class="topicref" data-id="doc" data-state="not-ready" data-tocid="doc-d16877e8670"><span aria-labelledby="button-expand-action doc-d16877e8670-link" class="wh-expand-btn" role="button" tabindex="0"></span><div class="title"><a href="../../../t-ug001/hil606_user_guide/topics/hil606_abstract.html" id="doc-d16877e8670-link">HIL606 Hardware User Guide</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">Official documentation of the HIL606 simulator hardware device.</span></p></div></div></div></li><li aria-expanded="false" role="treeitem"><div class="topicref" data-id="doc" data-state="not-ready" data-tocid="doc-d16877e8795"><span aria-labelledby="button-expand-action doc-d16877e8795-link" class="wh-expand-btn" role="button" tabindex="0"></span><div class="title"><a href="../../../t-ug001/hil_paralleling_guide/topics/abstract.html" id="doc-d16877e8795-link">HIL Paralleling Guide</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">This document introduces the HIL paralleling concept, defines modeling of relevant link parameters, and explains how to properly connect multiple Typhoon HIL devices.</span></p></div></div></div></li><li aria-expanded="true" role="treeitem"><div class="topicref" data-id="doc" data-state="expanded" data-tocid="doc-d16877e8862"><span aria-labelledby="button-collapse-action doc-d16877e8862-link" class="wh-expand-btn" role="button" tabindex="0"></span><div class="title"><a href="../../../t-ug001/hil_interfacing_guide/topics/abstract.html" id="doc-d16877e8862-link">Hardware Interfacing Guide</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">Tips and examples on how to connect any controller to the HIL.</span></p></div></div></div><ul class="navbar-nav nav-list" role="group"><li role="treeitem"><div class="topicref page-break-after" data-id="doc" data-state="leaf" data-tocid="doc-d16877e8874"><span class="wh-expand-btn" role="button"></span><div class="title"><a href="../../../t-ug001/hil_interfacing_guide/concepts/overview.html" id="doc-d16877e8874-link">Overview</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">Overview of the recommended interfacing options</span></p></div></div></div></li><li class="active" role="treeitem"><div class="topicref page-break-after" data-id="doc" data-state="leaf" data-tocid="doc-d16877e8886"><span class="wh-expand-btn" role="button"></span><div class="title"><a href="../../../t-ug001/hil_interfacing_guide/References/wire.html" id="doc-d16877e8886-link">Wire interfacing</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">Recommendations for interfacing using wires</span></p></div></div></div></li><li role="treeitem"><div class="topicref page-break-after" data-id="doc" data-state="leaf" data-tocid="doc-d16877e8898"><span class="wh-expand-btn" role="button"></span><div class="title"><a href="../../../t-ug001/hil_interfacing_guide/References/board.html" id="doc-d16877e8898-link">Board design tips</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">Recommendations for designing custom interface         boards</span></p></div></div></div></li></ul></li></ul></li><li aria-expanded="false" role="treeitem"><div class="topicref" data-id="doc" data-state="not-ready" data-tocid="doc-d16877e8927"><span aria-labelledby="button-expand-action doc-d16877e8927-link" class="wh-expand-btn" role="button" tabindex="0"></span><div class="title"><a href="../../../t-ug001/hil_connect/topics/abstract.html" id="doc-d16877e8927-link">HIL Connect</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">Information about the HIL Connect, a 19" 6U interface device,             designed to adapt HIL IO signal levels to those most commonly used in the         industry.</span></p></div></div></div></li><li aria-expanded="false" role="treeitem"><div class="topicref" data-id="doc" data-state="not-ready" data-tocid="doc-d16877e9278"><span aria-labelledby="button-expand-action doc-d16877e9278-link" class="wh-expand-btn" role="button" tabindex="0"></span><div class="title"><a href="../../../t-ug001/abstract/HIL_interfaces.html" id="doc-d16877e9278-link">HIL Interfaces</a><div class="wh-tooltip"><p class="shortdesc">Collection of some of the guides on the deployment, use, and management of HIL Interfaces available from Typhoon HIL.</p></div></div></div></li><li aria-expanded="false" role="treeitem"><div class="topicref" data-id="doc" data-state="not-ready" data-tocid="doc-d16877e10605"><span aria-labelledby="button-expand-action doc-d16877e10605-link" class="wh-expand-btn" role="button" tabindex="0"></span><div class="title"><a href="../../../t-ug001/abstract/HIL_accessories.html" id="doc-d16877e10605-link">HIL Accessories</a><div class="wh-tooltip"><p class="shortdesc">Collection of some of the guides on the deployment, use, and management of Typhoon HIL accessories.</p></div></div></div></li></ul></li></ul></div>
+</div>
+</nav>
+<div class="col-lg-7 col-md-9 col-sm-12" id="wh_topic_body">
+<button aria-controls="wh_publication_toc" aria-expanded="true" aria-label="Toggle publishing table of content" class="close-toc-button d-none" id="wh_close_publication_toc_button">
+<span class="close-toc-icon-container">
+<span class="close-toc-icon"></span>
+</span>
+</button>
+<button aria-controls="wh_topic_toc" aria-expanded="true" aria-label="Toggle topic table of content" class="close-toc-button d-none" id="wh_close_topic_toc_button">
+<span class="close-toc-icon-container">
+<span class="close-toc-icon"></span>
+</span>
+</button>
+<div class="wh_topic_content body"><main role="main"><article aria-labelledby="ariaid-title1" role="article">
+<h1 class="- topic/title title topictitle1" id="ariaid-title1">Wire interfacing</h1>
+<div class="- topic/body reference/refbody body refbody"><p class="- topic/shortdesc shortdesc"><span class="- topic/ph ph" id="doc__description">Recommendations for interfacing using wires</span></p>
+<section class="- topic/section section" data-ofbid="doc__l12xwF0BD" id="doc__l12xwF0BD">
+<p class="- topic/p p">These methods are best applied when you want to bring up the setup fast, and there
                 are no signal adaptation requirements, i.e. all analog signals fall within a ±10 V
                 range. Once the setup is up and running, moving to a more reliable setup is
                 recommended.</p>
-            <div class="- topic/note note warning note_warning" id="doc__note_vxb_hq5_rqb" data-ofbid="doc__note_vxb_hq5_rqb"><span class="note__title">Warning:</span> Since this method involves mechanically
+<div class="- topic/note note warning note_warning" data-ofbid="doc__note_vxb_hq5_rqb" id="doc__note_vxb_hq5_rqb"><span class="note__title">Warning:</span> Since this method involves mechanically
                 unsecured wires, take extra care not to expose HIL terminals to voltages outside its
-                absolute maximum ratings (more details by HIL device in the <a class="- topic/xref xref" href="https://www.typhoon-hil.com/documentation/typhoon-hil-hardware-manual/abstract/hardware_manual_introduction.html" target="_blank" rel="external noopener">Hardware Manual</a>), 
+                absolute maximum ratings (more details by HIL device in the <a class="- topic/xref xref" href="https://www.typhoon-hil.com/documentation/typhoon-hil-hardware-manual/abstract/hardware_manual_introduction.html" rel="external noopener" target="_blank">Hardware Manual</a>), 
                 and check whether there is a possibility of a ground loop which may damage the
                 equipment.</div>
-        </section>
-        
-        <section class="- topic/section section" id="doc__breakout" data-ofbid="doc__breakout"><h2 class="- topic/title title sectiontitle">HIL Breakout Board</h2>
-            
-              
-            <p class="- topic/p p">To enable a fast start, Typhoon HIL has designed an interface board, featuring 
+</section>
+<section class="- topic/section section" data-ofbid="doc__breakout" id="doc__breakout"><h2 class="- topic/title title sectiontitle">HIL Breakout Board</h2>
+<p class="- topic/p p">To enable a fast start, Typhoon HIL has designed an interface board, featuring 
                 spring-cage connectors which break out all signals from the connected HIL. These connectors hold bare copper wires in place via spring-type contacts, which are actuated by a finger or a small
                 screwdriver. An example of such a setup, featuring a HIL Breakout Board 2.1, is shown in <a class="- topic/xref xref" href="#doc__example1">Figure 1</a>.</p>
-            <p class="- topic/p p">For more information please visit the <a class="- topic/xref xref" href="https://www.typhoon-hil.com/documentation/typhoon-hil-hardware-manual/hil_breakout_board/References/detailed_description.html" target="_blank" rel="external noopener">HIL Breakout Board product documentation</a>.
+<p class="- topic/p p">For more information please visit the <a class="- topic/xref xref" href="https://www.typhoon-hil.com/documentation/typhoon-hil-hardware-manual/hil_breakout_board/References/detailed_description.html" rel="external noopener" target="_blank">HIL Breakout Board product documentation</a>.
                 </p>
-            <figure class="- topic/fig fig fignone" id="doc__example1" data-ofbid="doc__example1"><figcaption class="- topic/title title figcap"><span class="figtitleprefix fig--title-label">Figure<span class="fig--title-label-number"> 1</span><span class="fig--title-label-punctuation">. </span></span><span class="fig--title">Wire interfacing example, HIL Breakout Board</span></figcaption>
-                    
-                    <img class="- topic/image image" id="doc__image_fl4_kwn_tsb" src="../Images/interfacing_11.png"/>
-                </figure>
-        </section>
-            <section class="- topic/section section" id="doc__crimp" data-ofbid="doc__crimp"><h2 class="- topic/title title sectiontitle">DIN41612 crimp connector</h2>
-                
-            
-            <p class="- topic/p p">If no HIL Breakout Board is available, the preferred method is to use a DIN41612
+<figure class="- topic/fig fig fignone" data-ofbid="doc__example1" id="doc__example1"><figcaption class="- topic/title title figcap"><span class="figtitleprefix fig--title-label">Figure<span class="fig--title-label-number"> 1</span><span class="fig--title-label-punctuation">. </span></span><span class="fig--title">Wire interfacing example, HIL Breakout Board</span></figcaption>
+<img class="- topic/image image" id="doc__image_fl4_kwn_tsb" src="../Images/interfacing_11.png"/>
+</figure>
+</section>
+<section class="- topic/section section" data-ofbid="doc__crimp" id="doc__crimp"><h2 class="- topic/title title sectiontitle">DIN41612 crimp connector</h2>
+<p class="- topic/p p">If no HIL Breakout Board is available, the preferred method is to use a DIN41612
                 connector which provides access to individual wires. An example of such a connector
                 is HARTING 09030963214, as illustrated in <a class="- topic/xref xref" href="#doc__din41612">Figure 2</a>.</p>
-                <figure class="- topic/fig fig fignone" id="doc__din41612" data-ofbid="doc__din41612"><figcaption class="- topic/title title figcap"><span class="figtitleprefix fig--title-label">Figure<span class="fig--title-label-number"> 2</span><span class="fig--title-label-punctuation">. </span></span><span class="fig--title">Wire interfacing example, DIN41612 connector</span></figcaption>
-                    
-                    <img class="- topic/image image" id="doc__image_gl4_kwn_tsb" src="../Images/interfacing_10.png"/>
-                </figure>
-        </section>
-        
-        
-        <section class="- topic/section section" id="doc__jumper" data-ofbid="doc__jumper"><h2 class="- topic/title title sectiontitle">Jumper wires</h2>
-            
-            <p class="- topic/p p">Another option for a fast start is the use of jumper wires, as illustrated in <a class="- topic/xref xref" href="#doc__example2">Figure 3</a>.</p>
-                <figure class="- topic/fig fig fignone" id="doc__example2" data-ofbid="doc__example2"><figcaption class="- topic/title title figcap"><span class="figtitleprefix fig--title-label">Figure<span class="fig--title-label-number"> 3</span><span class="fig--title-label-punctuation">. </span></span><span class="fig--title">Wire interfacing example, jumper wires</span></figcaption>
-                    
-                    <img class="- topic/image image" src="../Images/interfacing_09.png"/>
-                </figure>
-            
-           
-        </section>
-            
-            <section class="- topic/section section" id="doc__recomm" data-ofbid="doc__recomm"><h2 class="- topic/title title sectiontitle">Recommended material or supplies</h2>
-            
-                <table class="- topic/table table frame-all" id="doc__recommend1" data-ofbid="doc__recommend1" data-cols="3"><caption class="- topic/title title tablecap" data-caption-side="top" data-is-repeated="true"><span class="table--title-label">Table<span class="table--title-label-number"> 1</span><span class="table--title-label-punctuation">. </span></span><span class="table--title">Recommended material or supplies</span></caption><colgroup><col style="width:20%"/><col style="width:20%"/><col style="width:60%"/></colgroup><thead class="- topic/thead thead">
-                            <tr class="- topic/row">
-                                <th class="- topic/entry entry align-center colsep-1 rowsep-1" id="doc__recommend1__entry__1">Part Number</th>
-                                <th class="- topic/entry entry align-center colsep-1 rowsep-1" id="doc__recommend1__entry__2">Manufacturer</th>
-                                <th class="- topic/entry entry align-center colsep-0 rowsep-1" id="doc__recommend1__entry__3">Description</th>
-                            </tr>
-                        </thead><tbody class="- topic/tbody tbody">
-                        <tr class="- topic/row">
-                            <td class="- topic/entry entry align-left colsep-1 rowsep-1" headers="doc__recommend1__entry__1">20001</td>
-                            <td class="- topic/entry entry align-left colsep-1 rowsep-1" headers="doc__recommend1__entry__2">Typhoon HIL</td>
-                            <td class="- topic/entry entry align-left colsep-0 rowsep-1" headers="doc__recommend1__entry__3">HIL Breakout Board<span class="- topic/ph ph"> (see <a class="- topic/xref xref" href="../../hil_breakout_board/topics/abstract.html" title="Information about the HIL Breakout Board, a passive breakout board which provides easy access to individual HIL signals.">documentation</a>)</span></td>
-                        </tr>
-                            <tr class="- topic/row">
-                                <td class="- topic/entry entry align-left colsep-1 rowsep-1" headers="doc__recommend1__entry__1">PRT-09390</td>
-                                <td class="- topic/entry entry align-left colsep-1 rowsep-1" headers="doc__recommend1__entry__2">SparkFun Electronics</td>
-                                <td class="- topic/entry entry align-left colsep-0 rowsep-1" headers="doc__recommend1__entry__3">Jumper Wires Premium 12" F/F Pack of 100</td>
-                            </tr>
-                            <tr class="- topic/row">
-                                <td class="- topic/entry entry align-left colsep-1 rowsep-1" headers="doc__recommend1__entry__1">PRT-09386</td>
-                                <td class="- topic/entry entry align-left colsep-1 rowsep-1" headers="doc__recommend1__entry__2">SparkFun Electronics</td>
-                                <td class="- topic/entry entry align-left colsep-0 rowsep-1" headers="doc__recommend1__entry__3">Jumper Wires Premium 12" M/F Pack of 100</td>
-                            </tr>
-                        <tr class="- topic/row">
-                            <td class="- topic/entry entry align-left colsep-1 rowsep-1" headers="doc__recommend1__entry__1">09030963214</td>
-                            <td class="- topic/entry entry align-left colsep-1 rowsep-1" headers="doc__recommend1__entry__2">HARTING</td>
-                            <td class="- topic/entry entry align-left colsep-0 rowsep-1" headers="doc__recommend1__entry__3">DIN41612 connector housing, 96 pin, for crimped
+<figure class="- topic/fig fig fignone" data-ofbid="doc__din41612" id="doc__din41612"><figcaption class="- topic/title title figcap"><span class="figtitleprefix fig--title-label">Figure<span class="fig--title-label-number"> 2</span><span class="fig--title-label-punctuation">. </span></span><span class="fig--title">Wire interfacing example, DIN41612 connector</span></figcaption>
+<img class="- topic/image image" id="doc__image_gl4_kwn_tsb" src="../Images/interfacing_10.png"/>
+</figure>
+</section>
+<section class="- topic/section section" data-ofbid="doc__jumper" id="doc__jumper"><h2 class="- topic/title title sectiontitle">Jumper wires</h2>
+<p class="- topic/p p">Another option for a fast start is the use of jumper wires, as illustrated in <a class="- topic/xref xref" href="#doc__example2">Figure 3</a>.</p>
+<figure class="- topic/fig fig fignone" data-ofbid="doc__example2" id="doc__example2"><figcaption class="- topic/title title figcap"><span class="figtitleprefix fig--title-label">Figure<span class="fig--title-label-number"> 3</span><span class="fig--title-label-punctuation">. </span></span><span class="fig--title">Wire interfacing example, jumper wires</span></figcaption>
+<img class="- topic/image image" src="../Images/interfacing_09.png"/>
+</figure>
+</section>
+<section class="- topic/section section" data-ofbid="doc__recomm" id="doc__recomm"><h2 class="- topic/title title sectiontitle">Recommended material or supplies</h2>
+<table class="- topic/table table frame-all" data-cols="3" data-ofbid="doc__recommend1" id="doc__recommend1"><caption class="- topic/title title tablecap" data-caption-side="top" data-is-repeated="true"><span class="table--title-label">Table<span class="table--title-label-number"> 1</span><span class="table--title-label-punctuation">. </span></span><span class="table--title">Recommended material or supplies</span></caption><colgroup><col style="width:20%"/><col style="width:20%"/><col style="width:60%"/></colgroup><thead class="- topic/thead thead">
+<tr class="- topic/row">
+<th class="- topic/entry entry align-center colsep-1 rowsep-1" id="doc__recommend1__entry__1">Part Number</th>
+<th class="- topic/entry entry align-center colsep-1 rowsep-1" id="doc__recommend1__entry__2">Manufacturer</th>
+<th class="- topic/entry entry align-center colsep-0 rowsep-1" id="doc__recommend1__entry__3">Description</th>
+</tr>
+</thead><tbody class="- topic/tbody tbody">
+<tr class="- topic/row">
+<td class="- topic/entry entry align-left colsep-1 rowsep-1" headers="doc__recommend1__entry__1">20001</td>
+<td class="- topic/entry entry align-left colsep-1 rowsep-1" headers="doc__recommend1__entry__2">Typhoon HIL</td>
+<td class="- topic/entry entry align-left colsep-0 rowsep-1" headers="doc__recommend1__entry__3">HIL Breakout Board<span class="- topic/ph ph"> (see <a class="- topic/xref xref" href="../../hil_breakout_board/topics/abstract.html" title="Information about the HIL Breakout Board, a passive breakout board which provides easy access to individual HIL signals.">documentation</a>)</span></td>
+</tr>
+<tr class="- topic/row">
+<td class="- topic/entry entry align-left colsep-1 rowsep-1" headers="doc__recommend1__entry__1">PRT-09390</td>
+<td class="- topic/entry entry align-left colsep-1 rowsep-1" headers="doc__recommend1__entry__2">SparkFun Electronics</td>
+<td class="- topic/entry entry align-left colsep-0 rowsep-1" headers="doc__recommend1__entry__3">Jumper Wires Premium 12" F/F Pack of 100</td>
+</tr>
+<tr class="- topic/row">
+<td class="- topic/entry entry align-left colsep-1 rowsep-1" headers="doc__recommend1__entry__1">PRT-09386</td>
+<td class="- topic/entry entry align-left colsep-1 rowsep-1" headers="doc__recommend1__entry__2">SparkFun Electronics</td>
+<td class="- topic/entry entry align-left colsep-0 rowsep-1" headers="doc__recommend1__entry__3">Jumper Wires Premium 12" M/F Pack of 100</td>
+</tr>
+<tr class="- topic/row">
+<td class="- topic/entry entry align-left colsep-1 rowsep-1" headers="doc__recommend1__entry__1">09030963214</td>
+<td class="- topic/entry entry align-left colsep-1 rowsep-1" headers="doc__recommend1__entry__2">HARTING</td>
+<td class="- topic/entry entry align-left colsep-0 rowsep-1" headers="doc__recommend1__entry__3">DIN41612 connector housing, 96 pin, for crimped
                                 wires, 20-28AWG</td>
-                        </tr>
-                        <tr class="- topic/row">
-                            <td class="- topic/entry entry align-left colsep-1 rowsep-0" headers="doc__recommend1__entry__1">09020008484</td>
-                            <td class="- topic/entry entry align-left colsep-1 rowsep-0" headers="doc__recommend1__entry__2">HARTING</td>
-                            <td class="- topic/entry entry align-left colsep-0 rowsep-0" headers="doc__recommend1__entry__3">Crimp contact for DIN41612 connector housing,
+</tr>
+<tr class="- topic/row">
+<td class="- topic/entry entry align-left colsep-1 rowsep-0" headers="doc__recommend1__entry__1">09020008484</td>
+<td class="- topic/entry entry align-left colsep-1 rowsep-0" headers="doc__recommend1__entry__2">HARTING</td>
+<td class="- topic/entry entry align-left colsep-0 rowsep-0" headers="doc__recommend1__entry__3">Crimp contact for DIN41612 connector housing,
                                 20-28AWG</td>
-                        </tr>
-                        </tbody></table>
-        </section>
-    </div>
+</tr>
+</tbody></table>
+</section>
+</div>
 </article></main></div>
-                        
-                        
-                        
-                        
-                        
-                        
-                    </div>
-                    
-                        <nav role="navigation" id="wh_topic_toc" aria-label="On this page" class="col-lg-2 d-none d-lg-block navbar d-print-none"> 
-                            <div id="wh_topic_toc_content">
-		                        
-	                            <div class=" wh_topic_toc "><div class="wh_topic_label">On this page</div><ul><li class="section-item"><div class="section-title"><a href="#doc__breakout" data-tocid="doc__breakout">HIL Breakout Board</a></div></li><li class="section-item"><div class="section-title"><a href="#doc__crimp" data-tocid="doc__crimp">DIN41612 crimp connector</a></div></li><li class="section-item"><div class="section-title"><a href="#doc__jumper" data-tocid="doc__jumper">Jumper wires</a></div></li><li class="section-item"><div class="section-title"><a href="#doc__recomm" data-tocid="doc__recomm">Recommended material or supplies</a></div></li></ul></div>
-	                        	
-                        	</div>
-                        </nav>
-                    
-                </div>
-            </div>
-            
-            
-            
-        </div> 
-        <footer class="navbar navbar-default wh_footer">
-  <div class=" footer-container mx-auto ">
-    <div style="text-align:center">Typhoon HIL Inc.<span id="year"> <a href="https://www.typhoon-hil.com">www.typhoon-hil.com</a></span></div>
-  </div>
+</div>
+<nav aria-label="On this page" class="col-lg-2 d-none d-lg-block navbar d-print-none" id="wh_topic_toc" role="navigation">
+<div id="wh_topic_toc_content">
+<div class="wh_topic_toc"><div class="wh_topic_label">On this page</div><ul><li class="section-item"><div class="section-title"><a data-tocid="doc__breakout" href="#doc__breakout">HIL Breakout Board</a></div></li><li class="section-item"><div class="section-title"><a data-tocid="doc__crimp" href="#doc__crimp">DIN41612 crimp connector</a></div></li><li class="section-item"><div class="section-title"><a data-tocid="doc__jumper" href="#doc__jumper">Jumper wires</a></div></li><li class="section-item"><div class="section-title"><a data-tocid="doc__recomm" href="#doc__recomm">Recommended material or supplies</a></div></li></ul></div>
+</div>
+</nav>
+</div>
+</div>
+</div>
+<footer class="navbar navbar-default wh_footer">
+<div class="footer-container mx-auto">
+<div style="text-align:center">Typhoon HIL Inc.<span id="year"> <a href="https://www.typhoon-hil.com">www.typhoon-hil.com</a></span></div>
+</div>
 </footer>
-        
-        <div id="go2top" class="d-print-none">
-            <span class="oxy-icon oxy-icon-up"></span>
-        </div>
-        
-        <div id="modal_img_large" class="modal">
-            <span class="close oxy-icon oxy-icon-remove"></span>
-            <div id="modal_img_container"></div>
-            <div id="caption"></div>
-        </div>
-        
-        
-<script type="text/javascript" src="../../assets/script.js"> 
+<div class="d-print-none" id="go2top">
+<span class="oxy-icon oxy-icon-up"></span>
+</div>
+<div class="modal" id="modal_img_large">
+<span class="close oxy-icon oxy-icon-remove"></span>
+<div id="modal_img_container"></div>
+<div id="caption"></div>
+</div>
+<script src="../../assets/script.js" type="text/javascript">
 </script>
-
-        
-    </body>
+</body>
 </html>

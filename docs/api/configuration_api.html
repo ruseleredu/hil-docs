@@ -1,43 +1,37 @@
 <!DOCTYPE html>
 
-<html lang="en" data-content_root="./">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
-
-    <title>Configuration API &#8212; Typhoon API 2026.1 sp1 documentation</title>
-    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=03e43079" />
-    <link rel="stylesheet" type="text/css" href="_static/sphinxdoc.css?v=34905f61" />
-    <script src="_static/documentation_options.js?v=6122843d"></script>
-    <script src="_static/doctools.js?v=9bcbadda"></script>
-    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
-    <link rel="index" title="Index" href="genindex.html" />
-    <link rel="search" title="Search" href="search.html" />
-    <link rel="prev" title="Package Manager API" href="package_manager_api.html" /> 
-  </head><body>
-    <div class="related" role="navigation" aria-label="Related">
-      <h3>Navigation</h3>
-      <ul>
-        <li class="right" style="margin-right: 10px">
-          <a href="genindex.html" title="General Index"
-             accesskey="I">index</a></li>
-        <li class="right" >
-          <a href="py-modindex.html" title="Python Module Index"
-             >modules</a> |</li>
-        <li class="right" >
-          <a href="package_manager_api.html" title="Package Manager API"
-             accesskey="P">previous</a> |</li>
-        <li class="nav-item nav-item-0"><a href="typhoon_api.html">Typhoon API 2026.1 sp1 documentation</a> &#187;</li>
-        <li class="nav-item nav-item-this"><a href="">Configuration API</a></li> 
-      </ul>
-    </div>  
-
-    <div class="document">
-      <div class="documentwrapper">
-        <div class="bodywrapper">
-          <div class="body" role="main">
-            
-  <section id="configuration-api">
+<html data-content_root="./" lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="width=device-width, initial-scale=1" name="viewport"/>
+<title>Configuration API — Typhoon API 2026.1 sp1 documentation</title>
+<link href="_static/pygments.css?v=03e43079" rel="stylesheet" type="text/css"/>
+<link href="_static/sphinxdoc.css?v=34905f61" rel="stylesheet" type="text/css"/>
+<script src="_static/documentation_options.js?v=6122843d"></script>
+<script src="_static/doctools.js?v=9bcbadda"></script>
+<script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+<link href="genindex.html" rel="index" title="Index"/>
+<link href="search.html" rel="search" title="Search"/>
+<link href="package_manager_api.html" rel="prev" title="Package Manager API"/>
+</head><body>
+<div aria-label="Related" class="related" role="navigation">
+<h3>Navigation</h3>
+<ul>
+<li class="right" style="margin-right: 10px">
+<a accesskey="I" href="genindex.html" title="General Index">index</a></li>
+<li class="right">
+<a href="py-modindex.html" title="Python Module Index">modules</a> |</li>
+<li class="right">
+<a accesskey="P" href="package_manager_api.html" title="Package Manager API">previous</a> |</li>
+<li class="nav-item"><a href="../index.html"> Docs </a> » </li><li class="nav-item nav-item-0"><a href="typhoon_api.html">Typhoon API 2026.1 sp1 documentation</a> »</li>
+<li class="nav-item nav-item-this"><a href="">Configuration API</a></li>
+</ul>
+</div>
+<div class="document">
+<div class="documentwrapper">
+<div class="bodywrapper">
+<div class="body" role="main">
+<section id="configuration-api">
 <h1>Configuration API<a class="headerlink" href="#configuration-api" title="Link to this heading">¶</a></h1>
 <p><strong>Module:</strong> <code class="docutils literal notranslate"><span class="pre">typhoon.api.configuration</span></code></p>
 <p>Configuration API is a set of methods used to read and update the predefined configuration of Typhoon HIL Control Center.</p>
@@ -48,7 +42,7 @@
 <em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">ConfigurationAPI</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#typhoon.api.configuration.ConfigurationAPI" title="Link to this definition">¶</a></dt>
 <dd><dl class="py method">
 <dt class="sig sig-object py" id="typhoon.api.configuration.ConfigurationAPI.get">
-<span class="sig-name descname"><span class="pre">get</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">key</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">''</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">float</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">int</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">bool</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">dict</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">list</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span></span><a class="headerlink" href="#typhoon.api.configuration.ConfigurationAPI.get" title="Link to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">get</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">key</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">''</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">→</span> <span class="sig-return-typehint"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">float</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">int</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">bool</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">dict</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">list</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span></span><a class="headerlink" href="#typhoon.api.configuration.ConfigurationAPI.get" title="Link to this definition">¶</a></dt>
 <dd><p>Gets the current value of a configuration item specified by key.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
@@ -77,24 +71,23 @@ For a complete list of configuration keys and their descriptions check out the �
 <span class="c1">#</span>
 <span class="kn">from</span><span class="w"> </span><span class="nn">typhoon.api.configuration</span><span class="w"> </span><span class="kn">import</span> <span class="n">configuration</span>
 
-<span class="n">autosave_interval</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="n">configuration</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;general.autosave.interval&quot;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;The autosave interval is </span><span class="si">{</span><span class="n">autosave_interval</span><span class="si">}</span><span class="s2"> seconds.&quot;</span><span class="p">)</span>
+<span class="n">autosave_interval</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="n">configuration</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">"general.autosave.interval"</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"The autosave interval is </span><span class="si">{</span><span class="n">autosave_interval</span><span class="si">}</span><span class="s2"> seconds."</span><span class="p">)</span>
 
 <span class="c1"># Get values prefixed with partial key</span>
-<span class="n">general_configuration</span> <span class="o">=</span> <span class="n">configuration</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;general&quot;</span><span class="p">)</span>
+<span class="n">general_configuration</span> <span class="o">=</span> <span class="n">configuration</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">"general"</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">general_configuration</span><span class="p">)</span>
 </pre></div>
 </div>
 <p>Output</p>
 <div class="highlight-text notranslate"><div class="highlight"><pre><span></span>The autosave interval is 180 seconds.
-{&#39;general.autosave.interval&#39;: 180, &#39;general.autosave.file_extension&#39;: &#39;.bak&#39;}
+{'general.autosave.interval': 180, 'general.autosave.file_extension': '.bak'}
 </pre></div>
 </div>
 </dd></dl>
-
 <dl class="py method">
 <dt class="sig sig-object py" id="typhoon.api.configuration.ConfigurationAPI.get_schema">
-<span class="sig-name descname"><span class="pre">get_schema</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">key</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">''</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">JSONSchema</span></span></span><a class="headerlink" href="#typhoon.api.configuration.ConfigurationAPI.get_schema" title="Link to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">get_schema</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">key</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">''</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">→</span> <span class="sig-return-typehint"><span class="pre">JSONSchema</span></span></span><a class="headerlink" href="#typhoon.api.configuration.ConfigurationAPI.get_schema" title="Link to this definition">¶</a></dt>
 <dd><p>Retrieves the schema for a configuration item identified by the key.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
@@ -129,399 +122,398 @@ in the Typhoon HIL Control Center, but are still available for use in the API.</
 </div>
 <p>Output</p>
 <div class="highlight-text notranslate"><div class="highlight"><pre><span></span>{
-    &quot;$schema&quot;: &quot;https://json-schema.org/draft/2020-12/schema&quot;,
-    &quot;$id&quot;: &quot;/typhoon/thcc/configuration/schema.json&quot;,
-    &quot;title&quot;: &quot;Typhoon HIL Control Center Configuration Schema&quot;,
-    &quot;description&quot;: &quot;JSON Schema describing the configuration of various parts of the Typhoon HIL Control Center&quot;,
-    &quot;type&quot;: &quot;object&quot;,
-    &quot;properties&quot;: {
-        &quot;general.autosave.interval&quot;: {
-            &quot;type&quot;: &quot;number&quot;,
-            &quot;markdownDescription&quot;: &quot;\n            Interval (in seconds) between auto-saves in the HIL SCADA and Schematic Editor.\n            &quot;,
-            &quot;default&quot;: 180,
-            &quot;minimum&quot;: 3,
-            &quot;maximum&quot;: 36000
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "$id": "/typhoon/thcc/configuration/schema.json",
+    "title": "Typhoon HIL Control Center Configuration Schema",
+    "description": "JSON Schema describing the configuration of various parts of the Typhoon HIL Control Center",
+    "type": "object",
+    "properties": {
+        "general.autosave.interval": {
+            "type": "number",
+            "markdownDescription": "\n            Interval (in seconds) between auto-saves in the HIL SCADA and Schematic Editor.\n            ",
+            "default": 180,
+            "minimum": 3,
+            "maximum": 36000
         },
-        &quot;general.autosave.file_extension&quot;: {
-            &quot;type&quot;: &quot;string&quot;,
-            &quot;markdownDescription&quot;: &quot;\n            File extension for autosave files. The default extension is &#39;.bak&#39;.\n            &quot;,
-            &quot;default&quot;: &quot;.bak&quot;,
-            &quot;pattern&quot;: &quot;^\\.[a-zA-Z0-9]{1,10}$&quot;,
-            &quot;patternErrorMessage&quot;: &quot;Extension must start with a period and contain 1-10 alphanumeric characters. E.g., &#39;.bak&#39;&quot;
+        "general.autosave.file_extension": {
+            "type": "string",
+            "markdownDescription": "\n            File extension for autosave files. The default extension is '.bak'.\n            ",
+            "default": ".bak",
+            "pattern": "^\\.[a-zA-Z0-9]{1,10}$",
+            "patternErrorMessage": "Extension must start with a period and contain 1-10 alphanumeric characters. E.g., '.bak'"
         },
-        &quot;debug.logging_on&quot;: {
-            &quot;type&quot;: &quot;boolean&quot;,
-            &quot;markdownDescription&quot;: &quot;\n                Enables or disables logging.\n                The file &lt;code&gt;server.log&lt;/code&gt; is created in the source directory.\n                This settings is disabled by default.\n            &quot;,
-            &quot;default&quot;: false,
-            &quot;internal&quot;: true
+        "debug.logging_on": {
+            "type": "boolean",
+            "markdownDescription": "\n                Enables or disables logging.\n                The file &lt;code&gt;server.log&lt;/code&gt; is created in the source directory.\n                This settings is disabled by default.\n            ",
+            "default": false,
+            "internal": true
         },
-        &quot;paths.user_lib_dir&quot;: {
-            &quot;title&quot;: &quot;User Library Directories&quot;,
-            &quot;type&quot;: &quot;object&quot;,
-            &quot;description&quot;: &quot;User library directories to include. Each item represents a directory, and if its checkbox is checked the subdirectories will be included in the path as well.&quot;,
-            &quot;additionalProperties&quot;: {
-                &quot;type&quot;: &quot;boolean&quot;,
-                &quot;description&quot;: &quot;Indicates whether the library path should be imported recursively.&quot;
+        "paths.user_lib_dir": {
+            "title": "User Library Directories",
+            "type": "object",
+            "description": "User library directories to include. Each item represents a directory, and if its checkbox is checked the subdirectories will be included in the path as well.",
+            "additionalProperties": {
+                "type": "boolean",
+                "description": "Indicates whether the library path should be imported recursively."
             },
-            &quot;default&quot;: {},
-            &quot;examples&quot;: [
+            "default": {},
+            "examples": [
                 {
-                    &quot;C:\\Users\\DefaultUser\\AppData\\Local\\typhoon\\user-libs&quot;: true
+                    "C:\\Users\\DefaultUser\\AppData\\Local\\typhoon\\user-libs": true
                 }
             ],
-            &quot;internal&quot;: true
+            "internal": true
         },
-        &quot;paths.user_lib_dir.disabled&quot;: {
-            &quot;title&quot;: &quot;Disabled User Library Directories&quot;,
-            &quot;type&quot;: &quot;array&quot;,
-            &quot;description&quot;: &quot;User library directories that should not be loaded.&quot;,
-            &quot;items&quot;: {
-                &quot;type&quot;: &quot;string&quot;
+        "paths.user_lib_dir.disabled": {
+            "title": "Disabled User Library Directories",
+            "type": "array",
+            "description": "User library directories that should not be loaded.",
+            "items": {
+                "type": "string"
             },
-            &quot;default&quot;: [],
-            &quot;internal&quot;: true
+            "default": [],
+            "internal": true
         },
-        &quot;external_tools.psim_path&quot;: {
-            &quot;title&quot;: &quot;PSIM Installation Directory&quot;,
-            &quot;type&quot;: &quot;string&quot;,
-            &quot;markdownDescription&quot;: &quot;\n                Specifies the installation directory of the PSIM tool, if used. Empty if not set.\n                &lt;br&gt;&lt;br&gt;\n                &lt;b&gt;Note:&lt;/b&gt;\n                &lt;br&gt;\n                In order to import PSIM schematic files, the PSIM software v12.0.3 or later has to\n                be installed and activated with a valid license on your PC. &lt;br&gt;\n                If you still do not have the PSIM software,\n                please contact: &lt;a href=&#39;https://powersimtech.com/products/psim/&#39;&gt;https://powersimtech.com/products/psim/&lt;/a&gt;\n            &quot;,
-            &quot;default&quot;: &quot;&quot;
+        "external_tools.psim_path": {
+            "title": "PSIM Installation Directory",
+            "type": "string",
+            "markdownDescription": "\n                Specifies the installation directory of the PSIM tool, if used. Empty if not set.\n                &lt;br&gt;&lt;br&gt;\n                &lt;b&gt;Note:&lt;/b&gt;\n                &lt;br&gt;\n                In order to import PSIM schematic files, the PSIM software v12.0.3 or later has to\n                be installed and activated with a valid license on your PC. &lt;br&gt;\n                If you still do not have the PSIM software,\n                please contact: &lt;a href='https://powersimtech.com/products/psim/'&gt;https://powersimtech.com/products/psim/&lt;/a&gt;\n            ",
+            "default": ""
         },
-        &quot;control_center.hil_setup.default_path&quot;: {
-            &quot;type&quot;: [
-                &quot;string&quot;,
-                &quot;null&quot;
+        "control_center.hil_setup.default_path": {
+            "type": [
+                "string",
+                "null"
             ],
-            &quot;description&quot;: &quot;Default path for HIL setup files. Typhoon HIL Control Center needs to be restarted for changes to take effect.&quot;,
-            &quot;default&quot;: null,
-            &quot;internal&quot;: true
+            "description": "Default path for HIL setup files. Typhoon HIL Control Center needs to be restarted for changes to take effect.",
+            "default": null,
+            "internal": true
         },
-        &quot;control_center.hil_setup.custom_ip_addresses&quot;: {
-            &quot;type&quot;: &quot;array&quot;,
-            &quot;description&quot;: &quot;Specify a list of IP addresses where HIL devices are located if auto discovery fails to find them. Typhoon HIL Control Center needs to be restarted for changes to take effect.&quot;,
-            &quot;items&quot;: {
-                &quot;type&quot;: &quot;string&quot;,
-                &quot;format&quot;: &quot;ipv4&quot;
+        "control_center.hil_setup.custom_ip_addresses": {
+            "type": "array",
+            "description": "Specify a list of IP addresses where HIL devices are located if auto discovery fails to find them. Typhoon HIL Control Center needs to be restarted for changes to take effect.",
+            "items": {
+                "type": "string",
+                "format": "ipv4"
             },
-            &quot;default&quot;: [],
-            &quot;internal&quot;: true
+            "default": [],
+            "internal": true
         },
-        &quot;hil_activation.proxy.address&quot;: {
-            &quot;type&quot;: &quot;string&quot;,
-            &quot;description&quot;: &quot;HIL Activation Proxy Address. &quot;,
-            &quot;default&quot;: &quot;&quot;,
-            &quot;internal&quot;: true
+        "hil_activation.proxy.address": {
+            "type": "string",
+            "description": "HIL Activation Proxy Address. ",
+            "default": "",
+            "internal": true
         },
-        &quot;hil_activation.proxy.port&quot;: {
-            &quot;type&quot;: &quot;integer&quot;,
-            &quot;description&quot;: &quot;HIL Activation Proxy Port. &quot;,
-            &quot;default&quot;: 80,
-            &quot;minimum&quot;: 1,
-            &quot;maximum&quot;: 65535,
-            &quot;internal&quot;: true
+        "hil_activation.proxy.port": {
+            "type": "integer",
+            "description": "HIL Activation Proxy Port. ",
+            "default": 80,
+            "minimum": 1,
+            "maximum": 65535,
+            "internal": true
         },
-        &quot;hil_activation.proxy.username&quot;: {
-            &quot;type&quot;: &quot;string&quot;,
-            &quot;description&quot;: &quot;HIL Activation Proxy Username. &quot;,
-            &quot;default&quot;: &quot;&quot;,
-            &quot;internal&quot;: true
+        "hil_activation.proxy.username": {
+            "type": "string",
+            "description": "HIL Activation Proxy Username. ",
+            "default": "",
+            "internal": true
         },
-        &quot;hil_activation.proxy.password&quot;: {
-            &quot;type&quot;: &quot;string&quot;,
-            &quot;description&quot;: &quot;HIL Activation Proxy Password. &quot;,
-            &quot;default&quot;: &quot;&quot;,
-            &quot;internal&quot;: true
+        "hil_activation.proxy.password": {
+            "type": "string",
+            "description": "HIL Activation Proxy Password. ",
+            "default": "",
+            "internal": true
         },
-        &quot;hil_activation.proxy.authentication_method&quot;: {
-            &quot;type&quot;: &quot;string&quot;,
-            &quot;markdownDescription&quot;: &quot;\n            HIL Activation Proxy Authentication Method.\n            HIL Activation Proxy Authentication Method.\n            The default authentication method is &lt;code&gt;BASIC_AUTHENTICATION&lt;/code&gt;.\n            &quot;,
-            &quot;default&quot;: &quot;BASIC_AUTHENTICATION&quot;,
-            &quot;enum&quot;: [
-                &quot;BASIC_AUTHENTICATION&quot;,
-                &quot;DIGEST_AUTHENTICATION&quot;
+        "hil_activation.proxy.authentication_method": {
+            "type": "string",
+            "markdownDescription": "\n            HIL Activation Proxy Authentication Method.\n            HIL Activation Proxy Authentication Method.\n            The default authentication method is &lt;code&gt;BASIC_AUTHENTICATION&lt;/code&gt;.\n            ",
+            "default": "BASIC_AUTHENTICATION",
+            "enum": [
+                "BASIC_AUTHENTICATION",
+                "DIGEST_AUTHENTICATION"
             ],
-            &quot;enumDescriptions&quot;: [
-                &quot;The username and password are sent in clear text.&quot;,
-                &quot;The username and password are hashed before sending.&quot;
+            "enumDescriptions": [
+                "The username and password are sent in clear text.",
+                "The username and password are hashed before sending."
             ],
-            &quot;internal&quot;: true
+            "internal": true
         },
-        &quot;hil.server_rep_port&quot;: {
-            &quot;title&quot;: &quot;HIL Server Response Port&quot;,
-            &quot;type&quot;: [
-                &quot;integer&quot;,
-                &quot;null&quot;
+        "hil.server_rep_port": {
+            "title": "HIL Server Response Port",
+            "type": [
+                "integer",
+                "null"
             ],
-            &quot;description&quot;: &quot;HIL Server&#39;s response port. This parameter is assigned a random port between 49152 and 65535 at startup.&quot;,
-            &quot;default&quot;: null,
-            &quot;minimum&quot;: 1,
-            &quot;maximum&quot;: 65535,
-            &quot;internal&quot;: true
+            "description": "HIL Server's response port. This parameter is assigned a random port between 49152 and 65535 at startup.",
+            "default": null,
+            "minimum": 1,
+            "maximum": 65535,
+            "internal": true
         },
-        &quot;signal_analyzer.recent_files.recent_data_files&quot;: {
-            &quot;type&quot;: &quot;array&quot;,
-            &quot;description&quot;: &quot;List of recently opened signal analyzer data files.&quot;,
-            &quot;items&quot;: {
-                &quot;type&quot;: &quot;string&quot;
+        "signal_analyzer.recent_files.recent_data_files": {
+            "type": "array",
+            "description": "List of recently opened signal analyzer data files.",
+            "items": {
+                "type": "string"
             },
-            &quot;default&quot;: [],
-            &quot;internal&quot;: true
+            "default": [],
+            "internal": true
         },
-        &quot;schematic_editor.perspective&quot;: {
-            &quot;type&quot;: &quot;string&quot;,
-            &quot;enum&quot;: [
-                &quot;REAL_TIME&quot;,
-                &quot;TYPHOONSIM&quot;,
-                &quot;BOTH&quot;
+        "schematic_editor.perspective": {
+            "type": "string",
+            "enum": [
+                "REAL_TIME",
+                "TYPHOONSIM",
+                "BOTH"
             ],
-            &quot;enumDescriptions&quot;: [
-                &quot;Real-time perspective&quot;,
-                &quot;TyphoonSim perspective&quot;,
-                &quot;Integrated perspective&quot;
+            "enumDescriptions": [
+                "Real-time perspective",
+                "TyphoonSim perspective",
+                "Integrated perspective"
             ],
-            &quot;default&quot;: &quot;BOTH&quot;,
-            &quot;description&quot;: &quot;Schematic editor perspective.&quot;,
-            &quot;internal&quot;: true
+            "default": "BOTH",
+            "description": "Schematic editor perspective.",
+            "internal": true
         },
-        &quot;schematic_editor.recent_files.recent_schematic_files&quot;: {
-            &quot;type&quot;: &quot;array&quot;,
-            &quot;description&quot;: &quot;List of recently opened schematic (.tse) files.&quot;,
-            &quot;items&quot;: {
-                &quot;type&quot;: &quot;string&quot;
+        "schematic_editor.recent_files.recent_schematic_files": {
+            "type": "array",
+            "description": "List of recently opened schematic (.tse) files.",
+            "items": {
+                "type": "string"
             },
-            &quot;default&quot;: [],
-            &quot;internal&quot;: true
+            "default": [],
+            "internal": true
         },
-        &quot;schematic_editor.server_rep_port&quot;: {
-            &quot;title&quot;: &quot;Schematic Editor Server Response Port&quot;,
-            &quot;type&quot;: [
-                &quot;integer&quot;,
-                &quot;null&quot;
+        "schematic_editor.server_rep_port": {
+            "title": "Schematic Editor Server Response Port",
+            "type": [
+                "integer",
+                "null"
             ],
-            &quot;description&quot;: &quot;Schematic Editor Server&#39;s response port. This parameter is assigned a random port between 49152 and 65535 at startup.&quot;,
-            &quot;default&quot;: null,
-            &quot;minimum&quot;: 1,
-            &quot;maximum&quot;: 65535,
-            &quot;internal&quot;: true
+            "description": "Schematic Editor Server's response port. This parameter is assigned a random port between 49152 and 65535 at startup.",
+            "default": null,
+            "minimum": 1,
+            "maximum": 65535,
+            "internal": true
         },
-        &quot;scada.recent_files.recent_model_files&quot;: {
-            &quot;type&quot;: &quot;array&quot;,
-            &quot;description&quot;: &quot;List of recently opened model files.&quot;,
-            &quot;items&quot;: {
-                &quot;type&quot;: &quot;string&quot;
+        "scada.recent_files.recent_model_files": {
+            "type": "array",
+            "description": "List of recently opened model files.",
+            "items": {
+                "type": "string"
             },
-            &quot;default&quot;: [],
-            &quot;internal&quot;: true
+            "default": [],
+            "internal": true
         },
-        &quot;scada.recent_files.recent_model_settings_files&quot;: {
-            &quot;type&quot;: &quot;array&quot;,
-            &quot;description&quot;: &quot;List of recently opened model settings files.&quot;,
-            &quot;items&quot;: {
-                &quot;type&quot;: &quot;string&quot;
+        "scada.recent_files.recent_model_settings_files": {
+            "type": "array",
+            "description": "List of recently opened model settings files.",
+            "items": {
+                "type": "string"
             },
-            &quot;default&quot;: [],
-            &quot;internal&quot;: true
+            "default": [],
+            "internal": true
         },
-        &quot;scada.recent_files.recent_hil_scada_files&quot;: {
-            &quot;type&quot;: &quot;array&quot;,
-            &quot;description&quot;: &quot;List of recently opened HIL SCADA files.&quot;,
-            &quot;items&quot;: {
-                &quot;type&quot;: &quot;string&quot;
+        "scada.recent_files.recent_hil_scada_files": {
+            "type": "array",
+            "description": "List of recently opened HIL SCADA files.",
+            "items": {
+                "type": "string"
             },
-            &quot;default&quot;: [],
-            &quot;internal&quot;: true
+            "default": [],
+            "internal": true
         },
-        &quot;scada.recent_directories.last_cpd_files_dir&quot;: {
-            &quot;title&quot;: &quot;Last CPD Files Directory&quot;,
-            &quot;type&quot;: [
-                &quot;string&quot;,
-                &quot;null&quot;
+        "scada.recent_directories.last_cpd_files_dir": {
+            "title": "Last CPD Files Directory",
+            "type": [
+                "string",
+                "null"
             ],
-            &quot;description&quot;: &quot;Last used directory for CPD files.&quot;,
-            &quot;default&quot;: null,
-            &quot;internal&quot;: true
+            "description": "Last used directory for CPD files.",
+            "default": null,
+            "internal": true
         },
-        &quot;typhoon_test_ide.recent_files.recent_scripts&quot;: {
-            &quot;type&quot;: &quot;array&quot;,
-            &quot;description&quot;: &quot;List of recently opened scripts.&quot;,
-            &quot;items&quot;: {
-                &quot;type&quot;: &quot;string&quot;
+        "typhoon_test_ide.recent_files.recent_scripts": {
+            "type": "array",
+            "description": "List of recently opened scripts.",
+            "items": {
+                "type": "string"
             },
-            &quot;default&quot;: [],
-            &quot;internal&quot;: true
+            "default": [],
+            "internal": true
         },
-        &quot;typhoon_test_ide.interpreters.custom_interpreter_cmd&quot;: {
-            &quot;type&quot;: [
-                &quot;string&quot;,
-                &quot;null&quot;
+        "typhoon_test_ide.interpreters.custom_interpreter_cmd": {
+            "type": [
+                "string",
+                "null"
             ],
-            &quot;title&quot;: &quot;Custom Interpreter Command&quot;,
-            &quot;description&quot;: &quot;Custom interpreter command.&quot;,
-            &quot;default&quot;: null,
-            &quot;internal&quot;: true
+            "title": "Custom Interpreter Command",
+            "description": "Custom interpreter command.",
+            "default": null,
+            "internal": true
         },
-        &quot;typhoon_test_ide.pdf.trace&quot;: {
-            &quot;type&quot;: &quot;boolean&quot;,
-            &quot;description&quot;: &quot;Enable or disable trace in the PDF report.&quot;,
-            &quot;default&quot;: false,
-            &quot;internal&quot;: true
+        "typhoon_test_ide.pdf.trace": {
+            "type": "boolean",
+            "description": "Enable or disable trace in the PDF report.",
+            "default": false,
+            "internal": true
         },
-        &quot;typhoon_test_ide.pdf.plots&quot;: {
-            &quot;type&quot;: &quot;boolean&quot;,
-            &quot;description&quot;: &quot;Enable or disable plots in the PDF report.&quot;,
-            &quot;default&quot;: true,
-            &quot;internal&quot;: true
+        "typhoon_test_ide.pdf.plots": {
+            "type": "boolean",
+            "description": "Enable or disable plots in the PDF report.",
+            "default": true,
+            "internal": true
         },
-        &quot;typhoon_test_ide.pdf.steps&quot;: {
-            &quot;type&quot;: &quot;boolean&quot;,
-            &quot;description&quot;: &quot;Enable or disable steps in the PDF report.&quot;,
-            &quot;default&quot;: true,
-            &quot;internal&quot;: true
+        "typhoon_test_ide.pdf.steps": {
+            "type": "boolean",
+            "description": "Enable or disable steps in the PDF report.",
+            "default": true,
+            "internal": true
         },
-        &quot;typhoon_test_ide.pdf.slogan&quot;: {
-            &quot;type&quot;: &quot;string&quot;,
-            &quot;description&quot;: &quot;Slogan to be displayed in the PDF report.&quot;,
-            &quot;default&quot;: &quot;**Test**\n**_Design_**\n_Deploy_&quot;,
-            &quot;internal&quot;: true
+        "typhoon_test_ide.pdf.slogan": {
+            "type": "string",
+            "description": "Slogan to be displayed in the PDF report.",
+            "default": "**Test**\n**_Design_**\n_Deploy_",
+            "internal": true
         },
-        &quot;typhoon_test_ide.pdf.color&quot;: {
-            &quot;type&quot;: &quot;string&quot;,
-            &quot;description&quot;: &quot;Color for the PDF report heading text in HEX format (eg. #333333).&quot;,
-            &quot;default&quot;: &quot;#333333&quot;,
-            &quot;pattern&quot;: &quot;^#[0-9a-fA-F]{6}$&quot;,
-            &quot;internal&quot;: true
+        "typhoon_test_ide.pdf.color": {
+            "type": "string",
+            "description": "Color for the PDF report heading text in HEX format (eg. #333333).",
+            "default": "#333333",
+            "pattern": "^#[0-9a-fA-F]{6}$",
+            "internal": true
         },
-        &quot;typhoon_test_ide.pdf.title&quot;: {
-            &quot;type&quot;: &quot;string&quot;,
-            &quot;description&quot;: &quot;Title for the PDF report.&quot;,
-            &quot;default&quot;: &quot;Typhoon HIL Test session report&quot;,
-            &quot;internal&quot;: true
+        "typhoon_test_ide.pdf.title": {
+            "type": "string",
+            "description": "Title for the PDF report.",
+            "default": "Typhoon HIL Test session report",
+            "internal": true
         },
-        &quot;typhoon_test_ide.pdf.work_dir&quot;: {
-            &quot;type&quot;: &quot;boolean&quot;,
-            &quot;markdownDescription&quot;: &quot;\n            Use the working directory for the PDF report.\n            If disabled, the file path configured in &lt;a href=\&quot;typhoon_test_ide.pdf.file_path\&quot;&gt;PDF: File Path&lt;/a&gt; will be used.\n            &quot;,
-            &quot;default&quot;: true,
-            &quot;internal&quot;: true
+        "typhoon_test_ide.pdf.work_dir": {
+            "type": "boolean",
+            "markdownDescription": "\n            Use the working directory for the PDF report.\n            If disabled, the file path configured in &lt;a href=\"typhoon_test_ide.pdf.file_path\"&gt;PDF: File Path&lt;/a&gt; will be used.\n            ",
+            "default": true,
+            "internal": true
         },
-        &quot;typhoon_test_ide.pdf.file_path&quot;: {
-            &quot;type&quot;: &quot;string&quot;,
-            &quot;markdownDescription&quot;: &quot;\n            File path for the PDF report.\n            This path is ignored if &lt;a href=\&quot;typhoon_test_ide.pdf.work_dir\&quot;&gt;PDF: Work Dir&lt;/a&gt; is enabled.\n            &quot;,
-            &quot;default&quot;: &quot;&quot;,
-            &quot;internal&quot;: true
+        "typhoon_test_ide.pdf.file_path": {
+            "type": "string",
+            "markdownDescription": "\n            File path for the PDF report.\n            This path is ignored if &lt;a href=\"typhoon_test_ide.pdf.work_dir\"&gt;PDF: Work Dir&lt;/a&gt; is enabled.\n            ",
+            "default": "",
+            "internal": true
         },
-        &quot;typhoon_test_ide.pdf.typhoon_logo&quot;: {
-            &quot;type&quot;: &quot;boolean&quot;,
-            &quot;description&quot;: &quot;Include the Typhoon HIL logo in the PDF report.&quot;,
-            &quot;default&quot;: true,
-            &quot;internal&quot;: true
+        "typhoon_test_ide.pdf.typhoon_logo": {
+            "type": "boolean",
+            "description": "Include the Typhoon HIL logo in the PDF report.",
+            "default": true,
+            "internal": true
         },
-        &quot;typhoon_test_ide.pdf.logo&quot;: {
-            &quot;type&quot;: &quot;string&quot;,
-            &quot;markdownDescription&quot;: &quot;\n            Path to a custom logo to include in the PDF report.\n            This path is ignored if &lt;a href=&#39;typhoon_test_ide.pdf.typhoon_logo&#39;&gt;PDF: Typhoon Logo&lt;/a&gt; is enabled.\n            &quot;,
-            &quot;default&quot;: &quot;&quot;,
-            &quot;internal&quot;: true
+        "typhoon_test_ide.pdf.logo": {
+            "type": "string",
+            "markdownDescription": "\n            Path to a custom logo to include in the PDF report.\n            This path is ignored if &lt;a href='typhoon_test_ide.pdf.typhoon_logo'&gt;PDF: Typhoon Logo&lt;/a&gt; is enabled.\n            ",
+            "default": "",
+            "internal": true
         },
-        &quot;scada.server_rep_port&quot;: {
-            &quot;title&quot;: &quot;SCADA Server Response Port&quot;,
-            &quot;type&quot;: [
-                &quot;integer&quot;,
-                &quot;null&quot;
+        "scada.server_rep_port": {
+            "title": "SCADA Server Response Port",
+            "type": [
+                "integer",
+                "null"
             ],
-            &quot;description&quot;: &quot;SCADA Server&#39;s response port. This parameter is assigned a random port between 49152 and 65535 at startup.&quot;,
-            &quot;default&quot;: null,
-            &quot;minimum&quot;: 1,
-            &quot;maximum&quot;: 65535,
-            &quot;internal&quot;: true
+            "description": "SCADA Server's response port. This parameter is assigned a random port between 49152 and 65535 at startup.",
+            "default": null,
+            "minimum": 1,
+            "maximum": 65535,
+            "internal": true
         },
-        &quot;pv_generator.server_rep_port&quot;: {
-            &quot;title&quot;: &quot;PV Generator Server Response Port&quot;,
-            &quot;type&quot;: [
-                &quot;integer&quot;,
-                &quot;null&quot;
+        "pv_generator.server_rep_port": {
+            "title": "PV Generator Server Response Port",
+            "type": [
+                "integer",
+                "null"
             ],
-            &quot;description&quot;: &quot;PV Generator Server&#39;s response port. This parameter is assigned a random port between 49152 and 65535 at startup.&quot;,
-            &quot;default&quot;: null,
-            &quot;minimum&quot;: 1,
-            &quot;maximum&quot;: 65535,
-            &quot;internal&quot;: true
+            "description": "PV Generator Server's response port. This parameter is assigned a random port between 49152 and 65535 at startup.",
+            "default": null,
+            "minimum": 1,
+            "maximum": 65535,
+            "internal": true
         },
-        &quot;firmware_manager.server_rep_port&quot;: {
-            &quot;title&quot;: &quot;Firmware Manager Server Response Port&quot;,
-            &quot;type&quot;: [
-                &quot;integer&quot;,
-                &quot;null&quot;
+        "firmware_manager.server_rep_port": {
+            "title": "Firmware Manager Server Response Port",
+            "type": [
+                "integer",
+                "null"
             ],
-            &quot;description&quot;: &quot;Firmware Manager Server&#39;s response port. This parameter is assigned a random port between 49152 and 65535 at startup.&quot;,
-            &quot;default&quot;: null,
-            &quot;minimum&quot;: 1,
-            &quot;maximum&quot;: 65535,
-            &quot;internal&quot;: true
+            "description": "Firmware Manager Server's response port. This parameter is assigned a random port between 49152 and 65535 at startup.",
+            "default": null,
+            "minimum": 1,
+            "maximum": 65535,
+            "internal": true
         },
-        &quot;vhil.announcement_port_range&quot;: {
-            &quot;type&quot;: &quot;string&quot;,
-            &quot;description&quot;: &quot;Range of ports for announcements. The format is a dash-delimited range, e.g., &#39;40000-40050&#39;.&quot;,
-            &quot;pattern&quot;: &quot;^[0-9]{1,5}-[0-9]{1,5}$&quot;,
-            &quot;default&quot;: &quot;40000-40050&quot;,
-            &quot;internal&quot;: true
+        "vhil.announcement_port_range": {
+            "type": "string",
+            "description": "Range of ports for announcements. The format is a dash-delimited range, e.g., '40000-40050'.",
+            "pattern": "^[0-9]{1,5}-[0-9]{1,5}$",
+            "default": "40000-40050",
+            "internal": true
         },
-        &quot;communication.announcement_port_req_range&quot;: {
-            &quot;title&quot;: &quot;Announcement Port Request Range&quot;,
-            &quot;type&quot;: &quot;string&quot;,
-            &quot;description&quot;: &quot;Range for announcement port requests. The format is a dash-delimited range, e.g., &#39;30000-30100&#39;.&quot;,
-            &quot;default&quot;: &quot;30000-30100&quot;,
-            &quot;pattern&quot;: &quot;^[0-9]{1,5}-[0-9]{1,5}$&quot;,
-            &quot;examples&quot;: [
-                &quot;30000-30100&quot;
+        "communication.announcement_port_req_range": {
+            "title": "Announcement Port Request Range",
+            "type": "string",
+            "description": "Range for announcement port requests. The format is a dash-delimited range, e.g., '30000-30100'.",
+            "default": "30000-30100",
+            "pattern": "^[0-9]{1,5}-[0-9]{1,5}$",
+            "examples": [
+                "30000-30100"
             ],
-            &quot;internal&quot;: true
+            "internal": true
         },
-        &quot;communication.announcement_port_pub_range&quot;: {
-            &quot;title&quot;: &quot;Announcement Port Publication Range&quot;,
-            &quot;type&quot;: &quot;string&quot;,
-            &quot;description&quot;: &quot;Range for announcement port publications. The format is a dash-delimited range, e.g., &#39;50000-50100&#39;.&quot;,
-            &quot;default&quot;: &quot;50000-50100&quot;,
-            &quot;pattern&quot;: &quot;^(\\d{1,5})-(\\d{1,5})$&quot;,
-            &quot;examples&quot;: [
-                &quot;50000-50100&quot;
+        "communication.announcement_port_pub_range": {
+            "title": "Announcement Port Publication Range",
+            "type": "string",
+            "description": "Range for announcement port publications. The format is a dash-delimited range, e.g., '50000-50100'.",
+            "default": "50000-50100",
+            "pattern": "^(\\d{1,5})-(\\d{1,5})$",
+            "examples": [
+                "50000-50100"
             ],
-            &quot;errorMessage&quot;: &quot;Port range must be in the format &#39;lower-upper&#39;, where both sides are valid port numbers (1-65535) and the upper must be greater than the lower.&quot;,
-            &quot;internal&quot;: true
+            "errorMessage": "Port range must be in the format 'lower-upper', where both sides are valid port numbers (1-65535) and the upper must be greater than the lower.",
+            "internal": true
         },
-        &quot;communication.control_center_port&quot;: {
-            &quot;type&quot;: &quot;integer&quot;,
-            &quot;description&quot;: &quot;Port used by the control center.&quot;,
-            &quot;default&quot;: 54972,
-            &quot;minimum&quot;: 1,
-            &quot;maximum&quot;: 65535,
-            &quot;internal&quot;: true
+        "communication.control_center_port": {
+            "type": "integer",
+            "description": "Port used by the control center.",
+            "default": 54972,
+            "minimum": 1,
+            "maximum": 65535,
+            "internal": true
         },
-        &quot;communication.user_defined_ip_timeout&quot;: {
-            &quot;type&quot;: &quot;integer&quot;,
-            &quot;description&quot;: &quot;Timeout (in milliseconds) for user-defined IP connections.&quot;,
-            &quot;default&quot;: 100,
-            &quot;minimum&quot;: 1,
-            &quot;internal&quot;: true
+        "communication.user_defined_ip_timeout": {
+            "type": "integer",
+            "description": "Timeout (in milliseconds) for user-defined IP connections.",
+            "default": 100,
+            "minimum": 1,
+            "internal": true
         },
-        &quot;communication.socket_read_timeout&quot;: {
-            &quot;type&quot;: &quot;integer&quot;,
-            &quot;description&quot;: &quot;Timeout (in milliseconds) for socket reads.&quot;,
-            &quot;default&quot;: 20000,
-            &quot;minimum&quot;: 1,
-            &quot;internal&quot;: true
+        "communication.socket_read_timeout": {
+            "type": "integer",
+            "description": "Timeout (in milliseconds) for socket reads.",
+            "default": 20000,
+            "minimum": 1,
+            "internal": true
         },
-        &quot;communication.heartbeat_timeout&quot;: {
-            &quot;type&quot;: &quot;integer&quot;,
-            &quot;description&quot;: &quot;Timeout (in milliseconds) for heartbeat signals.&quot;,
-            &quot;default&quot;: 5000,
-            &quot;minimum&quot;: 1,
-            &quot;internal&quot;: true
+        "communication.heartbeat_timeout": {
+            "type": "integer",
+            "description": "Timeout (in milliseconds) for heartbeat signals.",
+            "default": 5000,
+            "minimum": 1,
+            "internal": true
         }
     }
 }
 </pre></div>
 </div>
 </dd></dl>
-
 <dl class="py method">
 <dt class="sig sig-object py" id="typhoon.api.configuration.ConfigurationAPI.reset">
 <span class="sig-name descname"><span class="pre">reset</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">key</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#typhoon.api.configuration.ConfigurationAPI.reset" title="Link to this definition">¶</a></dt>
@@ -543,8 +535,8 @@ in the Typhoon HIL Control Center, but are still available for use in the API.</
 <span class="c1">#</span>
 <span class="kn">from</span><span class="w"> </span><span class="nn">typhoon.api.configuration</span><span class="w"> </span><span class="kn">import</span> <span class="n">configuration</span>
 
-<span class="n">configuration</span><span class="o">.</span><span class="n">reset</span><span class="p">(</span><span class="s2">&quot;control_center.hil_setup.custom_ip_addresses&quot;</span><span class="p">)</span>
-<span class="n">ip_addresses</span> <span class="o">=</span> <span class="n">configuration</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;control_center.hil_setup.custom_ip_addresses&quot;</span><span class="p">)</span>
+<span class="n">configuration</span><span class="o">.</span><span class="n">reset</span><span class="p">(</span><span class="s2">"control_center.hil_setup.custom_ip_addresses"</span><span class="p">)</span>
+<span class="n">ip_addresses</span> <span class="o">=</span> <span class="n">configuration</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">"control_center.hil_setup.custom_ip_addresses"</span><span class="p">)</span>
 
 <span class="nb">print</span><span class="p">(</span><span class="n">ip_addresses</span><span class="p">)</span>
 </pre></div>
@@ -554,7 +546,6 @@ in the Typhoon HIL Control Center, but are still available for use in the API.</
 </pre></div>
 </div>
 </dd></dl>
-
 <dl class="py method">
 <dt class="sig sig-object py" id="typhoon.api.configuration.ConfigurationAPI.set">
 <span class="sig-name descname"><span class="pre">set</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">key</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">value</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">float</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">int</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">bool</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">dict</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">list</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#typhoon.api.configuration.ConfigurationAPI.set" title="Link to this definition">¶</a></dt>
@@ -575,7 +566,6 @@ in the Typhoon HIL Control Center, but are still available for use in the API.</
 </dd>
 </dl>
 </dd></dl>
-
 <dl class="py method">
 <dt class="sig sig-object py" id="typhoon.api.configuration.ConfigurationAPI.subscribe">
 <span class="sig-name descname"><span class="pre">subscribe</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">key</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">handler</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Callable</span><span class="p"><span class="pre">[</span></span><span class="p"><span class="pre">[</span></span><span class="pre">dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">float</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">int</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">bool</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">dict</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">list</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">None</span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">immediate</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#typhoon.api.configuration.ConfigurationAPI.subscribe" title="Link to this definition">¶</a></dt>
@@ -604,29 +594,28 @@ If False, the handler will be called on the next configuration change.</p></li>
 <span class="kn">from</span><span class="w"> </span><span class="nn">typhoon.api.configuration</span><span class="w"> </span><span class="kn">import</span> <span class="n">configuration</span>
 
 <span class="k">def</span><span class="w"> </span><span class="nf">handler</span><span class="p">(</span><span class="n">c</span><span class="p">):</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Configuration changed: &quot;</span><span class="p">,</span> <span class="n">c</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">"Configuration changed: "</span><span class="p">,</span> <span class="n">c</span><span class="p">)</span>
 
-<span class="n">configuration</span><span class="o">.</span><span class="n">subscribe</span><span class="p">(</span><span class="s2">&quot;paths.user_lib_dir&quot;</span><span class="p">,</span> <span class="n">handler</span><span class="p">)</span>
+<span class="n">configuration</span><span class="o">.</span><span class="n">subscribe</span><span class="p">(</span><span class="s2">"paths.user_lib_dir"</span><span class="p">,</span> <span class="n">handler</span><span class="p">)</span>
 
 <span class="c1"># Include /home/user/typhoon/libs and all subdirectories in the search path for user libraries</span>
-<span class="n">directories</span> <span class="o">=</span> <span class="p">{</span> <span class="s2">&quot;/home/user/typhoon/libs&quot;</span><span class="p">:</span> <span class="kc">True</span> <span class="p">}</span>
-<span class="n">configuration</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="s2">&quot;paths.user_lib_dir&quot;</span><span class="p">,</span> <span class="n">directories</span><span class="p">)</span>
+<span class="n">directories</span> <span class="o">=</span> <span class="p">{</span> <span class="s2">"/home/user/typhoon/libs"</span><span class="p">:</span> <span class="kc">True</span> <span class="p">}</span>
+<span class="n">configuration</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="s2">"paths.user_lib_dir"</span><span class="p">,</span> <span class="n">directories</span><span class="p">)</span>
 
 <span class="c1"># Clear the search path for user libraries</span>
 <span class="n">directories</span> <span class="o">=</span> <span class="p">{}</span>
-<span class="n">configuration</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="s2">&quot;paths.user_lib_dir&quot;</span><span class="p">,</span> <span class="n">directories</span><span class="p">)</span>
+<span class="n">configuration</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="s2">"paths.user_lib_dir"</span><span class="p">,</span> <span class="n">directories</span><span class="p">)</span>
 
 <span class="c1"># Unsubscribe from changes</span>
-<span class="n">configuration</span><span class="o">.</span><span class="n">unsubscribe</span><span class="p">(</span><span class="s2">&quot;paths.user_lib_dir&quot;</span><span class="p">,</span> <span class="n">handler</span><span class="p">)</span>
+<span class="n">configuration</span><span class="o">.</span><span class="n">unsubscribe</span><span class="p">(</span><span class="s2">"paths.user_lib_dir"</span><span class="p">,</span> <span class="n">handler</span><span class="p">)</span>
 </pre></div>
 </div>
 <p>Output</p>
-<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>Configuration changed:  {&#39;paths.user_lib_dir&#39;: {&#39;/home/user/typhoon/libs&#39;: True}}
-Configuration changed:  {&#39;paths.user_lib_dir&#39;: {}}
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>Configuration changed:  {'paths.user_lib_dir': {'/home/user/typhoon/libs': True}}
+Configuration changed:  {'paths.user_lib_dir': {}}
 </pre></div>
 </div>
 </dd></dl>
-
 <dl class="py property">
 <dt class="sig sig-object py" id="typhoon.api.configuration.ConfigurationAPI.subscriber_thread">
 <em class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">subscriber_thread</span></span><a class="headerlink" href="#typhoon.api.configuration.ConfigurationAPI.subscriber_thread" title="Link to this definition">¶</a></dt>
@@ -642,7 +631,6 @@ It can be joined using the “join()” method to wait for it to finish.</p>
 </dd>
 </dl>
 </dd></dl>
-
 <dl class="py method">
 <dt class="sig sig-object py" id="typhoon.api.configuration.ConfigurationAPI.unsubscribe">
 <span class="sig-name descname"><span class="pre">unsubscribe</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">key</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">handler</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Callable</span><span class="p"><span class="pre">[</span></span><span class="p"><span class="pre">[</span></span><span class="pre">dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">float</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">int</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">bool</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">dict</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">list</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">None</span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#typhoon.api.configuration.ConfigurationAPI.unsubscribe" title="Link to this definition">¶</a></dt>
@@ -660,25 +648,21 @@ It can be joined using the “join()” method to wait for it to finish.</p>
 </dd>
 </dl>
 </dd></dl>
-
 </dd></dl>
-
 </section>
 </section>
-
-
-            <div class="clearer"></div>
-          </div>
-        </div>
-      </div>
-      <div class="sphinxsidebar" role="navigation" aria-label="Main">
-        <div class="sphinxsidebarwrapper">
-            <p class="logo"><a href="typhoon_api.html">
-              <img class="logo" src="_static/logo.png" alt="Logo of Typhoon API"/>
-            </a></p>
-  <div>
-    <h3><a href="typhoon_api.html">Table of Contents</a></h3>
-    <ul>
+<div class="clearer"></div>
+</div>
+</div>
+</div>
+<div aria-label="Main" class="sphinxsidebar" role="navigation">
+<div class="sphinxsidebarwrapper">
+<p class="logo"><a href="typhoon_api.html">
+<img alt="Logo of Typhoon API" class="logo" src="_static/logo.png"/>
+</a></p>
+<div>
+<h3><a href="typhoon_api.html">Table of Contents</a></h3>
+<ul>
 <li><a class="reference internal" href="#">Configuration API</a><ul>
 <li><a class="reference internal" href="#api-references">API references</a><ul>
 <li><a class="reference internal" href="#typhoon.api.configuration.ConfigurationAPI"><code class="docutils literal notranslate"><span class="pre">ConfigurationAPI</span></code></a><ul>
@@ -696,53 +680,47 @@ It can be joined using the “join()” method to wait for it to finish.</p>
 </ul>
 </li>
 </ul>
-
-  </div>
-  <div>
-    <h4>Previous topic</h4>
-    <p class="topless"><a href="package_manager_api.html"
-                          title="previous chapter">Package Manager API</a></p>
-  </div>
-  <div role="note" aria-label="source link">
-    <h3>This Page</h3>
-    <ul class="this-page-menu">
-      <li><a href="_sources/configuration_api.rst.txt"
-            rel="nofollow">Show Source</a></li>
-    </ul>
-   </div>
-<search id="searchbox" style="display: none" role="search">
-  <h3 id="searchlabel">Quick search</h3>
-    <div class="searchformwrapper">
-    <form class="search" action="search.html" method="get">
-      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
-      <input type="submit" value="Go" />
-    </form>
-    </div>
+</div>
+<div>
+<h4>Previous topic</h4>
+<p class="topless"><a href="package_manager_api.html" title="previous chapter">Package Manager API</a></p>
+</div>
+<div aria-label="source link" role="note">
+<h3>This Page</h3>
+<ul class="this-page-menu">
+<li><a href="_sources/configuration_api.rst.txt" rel="nofollow">Show Source</a></li>
+</ul>
+</div>
+<search id="searchbox" role="search" style="display: none">
+<h3 id="searchlabel">Quick search</h3>
+<div class="searchformwrapper">
+<form action="search.html" class="search" method="get">
+<input aria-labelledby="searchlabel" autocapitalize="off" autocomplete="off" autocorrect="off" name="q" spellcheck="false" type="text"/>
+<input type="submit" value="Go"/>
+</form>
+</div>
 </search>
 <script>document.getElementById('searchbox').style.display = "block"</script>
-        </div>
-      </div>
-      <div class="clearer"></div>
-    </div>
-    <div class="related" role="navigation" aria-label="Related">
-      <h3>Navigation</h3>
-      <ul>
-        <li class="right" style="margin-right: 10px">
-          <a href="genindex.html" title="General Index"
-             >index</a></li>
-        <li class="right" >
-          <a href="py-modindex.html" title="Python Module Index"
-             >modules</a> |</li>
-        <li class="right" >
-          <a href="package_manager_api.html" title="Package Manager API"
-             >previous</a> |</li>
-        <li class="nav-item nav-item-0"><a href="typhoon_api.html">Typhoon API 2026.1 sp1 documentation</a> &#187;</li>
-        <li class="nav-item nav-item-this"><a href="">Configuration API</a></li> 
-      </ul>
-    </div>
-    <div class="footer" role="contentinfo">
-    &#169; Copyright 2026, Typhoon HIL.
+</div>
+</div>
+<div class="clearer"></div>
+</div>
+<div aria-label="Related" class="related" role="navigation">
+<h3>Navigation</h3>
+<ul>
+<li class="right" style="margin-right: 10px">
+<a href="genindex.html" title="General Index">index</a></li>
+<li class="right">
+<a href="py-modindex.html" title="Python Module Index">modules</a> |</li>
+<li class="right">
+<a href="package_manager_api.html" title="Package Manager API">previous</a> |</li>
+<li class="nav-item"><a href="../index.html"> Docs </a> » </li><li class="nav-item nav-item-0"><a href="typhoon_api.html">Typhoon API 2026.1 sp1 documentation</a> »</li>
+<li class="nav-item nav-item-this"><a href="">Configuration API</a></li>
+</ul>
+</div>
+<div class="footer" role="contentinfo">
+    © Copyright 2026, Typhoon HIL.
       Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 8.2.1.
     </div>
-  </body>
+</body>
 </html>

@@ -1,330 +1,250 @@
-<!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en" data-whc_version="24.1">
-    <head><link rel="shortcut icon" href="../../../favicon.ico"/><link rel="icon" href="../../../favicon.ico"/><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><meta name="DC.rights.owner" content="(C) Copyright 2026"/><meta name="copyright" content="(C) Copyright 2026"/><meta name="generator" content="DITA-OT"/><meta name="DC.type" content="reference"/><meta name="description" content="Description of the Shunt Emulator card for HIL Connect hardware"/><meta name="DC.relation" content="../../../t-ug001/hil_connect/References/card_overview.html"/><meta name="DC.format" content="HTML5"/><meta name="DC.identifier" content="doc"/>        
-      <title>Shunt Emulator card</title><!--  Generated with Oxygen version 24.1, build number 2022030800.  --><meta name="wh-path2root" content="../../../"/><meta name="wh-toc-id" content="doc-d16877e9216"/><meta name="wh-source-relpath" content="t-ug001/hil_connect/References/shunt_emulator_card.dita"/><meta name="wh-out-relpath" content="t-ug001/hil_connect/References/shunt_emulator_card.html"/>
-    <!-- Latest compiled and minified Bootstrap CSS -->
-    <link rel="stylesheet" type="text/css" href="../../../oxygen-webhelp/lib/bootstrap/css/bootstrap.min.css"/>
-    
-    <link rel="stylesheet" href="../../../oxygen-webhelp/lib/jquery-ui/jquery-ui.min.css"/>
-    
-    <!-- Template default styles  -->
-    <link rel="stylesheet" type="text/css" href="../../../oxygen-webhelp/app/topic-page.css?buildId=2022030800"/>
-    
-    
-    <script src="../../../oxygen-webhelp/lib/jquery/jquery-3.5.1.min.js"></script>
-    
-    <script data-main="../../../oxygen-webhelp/app/topic-page.js" src="../../../oxygen-webhelp/lib/requirejs/require.js"></script>
-<link rel="stylesheet" type="text/css" href="../../../oxygen-webhelp/template/oxygen.css?buildId=2022030800"/><link rel="stylesheet" type="text/css" href="../../../oxygen-webhelp/template/notes.css?buildId=2022030800"/><script type="text/javascript" src="../../Scripts/mml-svg.js"> 
-</script><link rel="stylesheet" type="text/css" href="../../../assets/typhoon.css"/></head>
-
-    <body id="doc" class="wh_topic_page frmBody">
-        <a href="#wh_topic_body" class="sr-only sr-only-focusable">
+<!DOCTYPE html>
+<html data-whc_version="24.1" lang="en" xml:lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head><link href="../../../favicon.ico" rel="shortcut icon"/><link href="../../../favicon.ico" rel="icon"/><meta content="text/html; charset=utf-8" http-equiv="Content-Type"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="IE=edge" http-equiv="X-UA-Compatible"/><meta content="(C) Copyright 2026" name="DC.rights.owner"/><meta content="(C) Copyright 2026" name="copyright"/><meta content="DITA-OT" name="generator"/><meta content="reference" name="DC.type"/><meta content="Description of the Shunt Emulator card for HIL Connect hardware" name="description"/><meta content="../../../t-ug001/hil_connect/References/card_overview.html" name="DC.relation"/><meta content="HTML5" name="DC.format"/><meta content="doc" name="DC.identifier"/>
+<title>Shunt Emulator card</title><!--  Generated with Oxygen version 24.1, build number 2022030800.  --><meta content="../../../" name="wh-path2root"/><meta content="doc-d16877e9216" name="wh-toc-id"/><meta content="t-ug001/hil_connect/References/shunt_emulator_card.dita" name="wh-source-relpath"/><meta content="t-ug001/hil_connect/References/shunt_emulator_card.html" name="wh-out-relpath"/>
+<!-- Latest compiled and minified Bootstrap CSS -->
+<link href="../../../oxygen-webhelp/lib/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
+<link href="../../../oxygen-webhelp/lib/jquery-ui/jquery-ui.min.css" rel="stylesheet"/>
+<!-- Template default styles  -->
+<link href="../../../oxygen-webhelp/app/topic-page.css?buildId=2022030800" rel="stylesheet" type="text/css"/>
+<script src="../../../oxygen-webhelp/lib/jquery/jquery-3.5.1.min.js"></script>
+<script data-main="../../../oxygen-webhelp/app/topic-page.js" src="../../../oxygen-webhelp/lib/requirejs/require.js"></script>
+<link href="../../../oxygen-webhelp/template/oxygen.css?buildId=2022030800" rel="stylesheet" type="text/css"/><link href="../../../oxygen-webhelp/template/notes.css?buildId=2022030800" rel="stylesheet" type="text/css"/><script src="../../Scripts/mml-svg.js" type="text/javascript">
+</script><link href="../../../assets/typhoon.css" rel="stylesheet" type="text/css"/></head>
+<body class="wh_topic_page frmBody" id="doc">
+<a class="sr-only sr-only-focusable" href="#wh_topic_body">
             Jump to main content
         </a>
-        
-        
-        
-        
-        <header class="navbar navbar-default wh_header">
-    <div class="container-fluid">
-        <div class="wh_header_flex_container navbar-nav navbar-expand-md navbar-dark">
-            <div class="wh_logo_and_publication_title_container">
-                <div class="wh_logo_and_publication_title">
-                    
-                    <a href="https://www.typhoon-hil.com" class=" wh_logo d-none d-sm-block "><img src="../../../logo.svg" alt="  Typhoon HIL Documentation  Version: 2026.1  "/></a>
-                    <div class=" wh_publication_title "><a href="../../../index.html"><span class="booktitle">  <span class="ph mainbooktitle">Typhoon HIL Documentation</span>  <span class="ph booktitlealt">Version: 2026.1</span>  </span></a></div>
-                    
-                </div>
-                
-                <button type="button" data-target="#wh_top_menu_and_indexterms_link" id="wh_menu_mobile_button" data-toggle="collapse" class="navbar-toggler collapsed wh_toggle_button" aria-expanded="false" aria-label="Toggle menu" aria-controls="wh_top_menu_and_indexterms_link">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-            </div>
-
-            <div class="wh_top_menu_and_indexterms_link collapse navbar-collapse" id="wh_top_menu_and_indexterms_link">
-                
-                <nav class=" wh_top_menu " aria-label="Menu Container"><ul role="menubar" aria-label="Menu"><li role="menuitem" aria-haspopup="true" aria-expanded="false" class="has-children"><span id="tocId-d16877e21-mi" data-tocid="tocId-d16877e21" data-state="not-ready" class=" topicref application-notes"><span class="title"><a href="../../../t-an001/concepts/application_notes_introduction.html">Typhoon HIL Application Notes</a></span></span></li><li role="menuitem" aria-haspopup="true" aria-expanded="false" class="has-children"><span id="tocId-d16877e737-mi" data-tocid="tocId-d16877e737" data-state="not-ready" class=" topicref software-manual"><span class="title"><a href="../../../t-ug002/topics/software_manual_introduction.html">Typhoon HIL Software Manual</a></span></span></li><li role="menuitem" aria-haspopup="true" aria-expanded="false" class="has-children"><span id="tocId-d16877e7901-mi" data-tocid="tocId-d16877e7901" data-state="not-ready" class=" topicref hardware-manual"><span class="title"><a href="../../../t-ug001/abstract/hardware_manual_introduction.html">Typhoon HIL Hardware Manual</a></span></span></li></ul></nav>
-                
-                
-            </div>
-        </div>
-    </div>
+<header class="navbar navbar-default wh_header">
+<div class="container-fluid">
+<div class="wh_header_flex_container navbar-nav navbar-expand-md navbar-dark">
+<div class="wh_logo_and_publication_title_container">
+<div class="wh_logo_and_publication_title">
+<a class="wh_logo d-none d-sm-block" href="../../../../index.html"><img alt="  Typhoon HIL Documentation  Version: 2026.1  " src="../../../logo.svg"/></a>
+<div class="wh_publication_title"><a href="../../../index.html"><span class="booktitle"> <span class="ph mainbooktitle">Typhoon HIL Documentation</span> <span class="ph booktitlealt">Version: 2026.1</span> </span></a></div>
+</div>
+<button aria-controls="wh_top_menu_and_indexterms_link" aria-expanded="false" aria-label="Toggle menu" class="navbar-toggler collapsed wh_toggle_button" data-target="#wh_top_menu_and_indexterms_link" data-toggle="collapse" id="wh_menu_mobile_button" type="button">
+<span class="navbar-toggler-icon"></span>
+</button>
+</div>
+<div class="wh_top_menu_and_indexterms_link collapse navbar-collapse" id="wh_top_menu_and_indexterms_link">
+<nav aria-label="Menu Container" class="wh_top_menu"><ul aria-label="Menu" role="menubar"><li aria-expanded="false" aria-haspopup="true" class="has-children" role="menuitem"><span class="topicref application-notes" data-state="not-ready" data-tocid="tocId-d16877e21" id="tocId-d16877e21-mi"><span class="title"><a href="../../../t-an001/concepts/application_notes_introduction.html">Typhoon HIL Application Notes</a></span></span></li><li aria-expanded="false" aria-haspopup="true" class="has-children" role="menuitem"><span class="topicref software-manual" data-state="not-ready" data-tocid="tocId-d16877e737" id="tocId-d16877e737-mi"><span class="title"><a href="../../../t-ug002/topics/software_manual_introduction.html">Typhoon HIL Software Manual</a></span></span></li><li aria-expanded="false" aria-haspopup="true" class="has-children" role="menuitem"><span class="topicref hardware-manual" data-state="not-ready" data-tocid="tocId-d16877e7901" id="tocId-d16877e7901-mi"><span class="title"><a href="../../../t-ug001/abstract/hardware_manual_introduction.html">Typhoon HIL Hardware Manual</a></span></span></li></ul></nav>
+</div>
+</div>
+</div>
 </header>
-        
-        
-         
-        
-        <div class=" wh_search_input navbar-form wh_topic_page_search search " role="form">
-            
-            
-            
-            <form id="searchForm" method="get" role="search" action="../../../search.html"><div><input type="search" placeholder="Search " class="wh_search_textfield" id="textToSearch" name="searchQuery" aria-label="Search query" required="required"/><button type="submit" class="wh_search_button" aria-label="Search"><span class="search_input_text">Search</span></button></div></form>
-            
-            
-            
-        </div>
-        
-        <div class="container-fluid" id="wh_topic_container">
-            <div class="row">
-
-                <nav class="wh_tools d-print-none navbar-expand-md" aria-label="Tools">
-                    
-                    <div data-tooltip-position="bottom" class=" wh_breadcrumb "><ol class="d-print-none"><li><span class="home"><a href="../../../index.html"><span>Home</span></a></span></li><li><div class="topicref hardware-manual"><div class="title"><a href="../../../t-ug001/abstract/hardware_manual_introduction.html">Typhoon HIL Hardware Manual</a></div></div></li><li><div class="topicref" data-id="doc"><div class="title"><a href="../../../t-ug001/hil_connect/topics/abstract.html">HIL Connect</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">Information about the HIL Connect, a 19" 6U interface device,             designed to adapt HIL IO signal levels to those most commonly used in the         industry.</span></p></div></div></div></li><li><div class="topicref page-break-after" data-id="doc"><div class="title"><a href="../../../t-ug001/hil_connect/References/card_overview.html">HIL Connect card overview</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">Definition of available HIL Connect cards.</span></p></div></div></div></li><li class="active"><div class="topicref page-break-after" data-id="doc"><div class="title"><a href="../../../t-ug001/hil_connect/References/shunt_emulator_card.html">Shunt Emulator card</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">Description of the Shunt Emulator card for HIL Connect             hardware</span></p></div></div></div></li></ol></div>
-                    
-                    
-                    
-                    <div class="wh_right_tools">
-                        <button class="wh_hide_highlight" aria-label="Toggle search highlights" title="Toggle search highlights"></button>
-                        <button class="webhelp_expand_collapse_sections" data-next-state="collapsed" aria-label="Collapse sections" title="Collapse sections"></button>
-                        
-                        
-                        
-                        
-                        <div class=" wh_print_link print d-none d-md-inline-block "><button onClick="window.print()" title="Print this page" aria-label="Print this page"></button></div>
-                        
-                        <button type="button" id="wh_toc_button" class="custom-toggler navbar-toggler collapsed wh_toggle_button navbar-light" aria-expanded="false" aria-label="Toggle publishing table of content" aria-controls="wh_publication_toc">
-                            <span class="navbar-toggler-icon"></span>
-                        </button>
-                    </div>
-                    
-                </nav>
-            </div>
-            
-            
-            
-            
-            <div class="wh_content_area">
-                <div class="row">
-                    
-                        <nav id="wh_publication_toc" class="col-lg-3 col-md-3 col-sm-12 d-md-block d-none d-print-none" aria-label="Table of Contents Container">
-                            <div id="wh_publication_toc_content">
-		                        
-                            	<div class=" wh_publication_toc " data-tooltip-position="right"><span class="expand-button-action-labels"><span id="button-expand-action" role="button" aria-label="Expand"></span><span id="button-collapse-action" role="button" aria-label="Collapse"></span><span id="button-pending-action" role="button" aria-label="Pending"></span></span><ul role="tree" aria-label="Table of Contents"><li role="treeitem" aria-expanded="true"><div data-tocid="tocId-d16877e7901" class="topicref hardware-manual" data-state="expanded"><span role="button" tabindex="0" aria-labelledby="button-collapse-action tocId-d16877e7901-link" class="wh-expand-btn"></span><div class="title"><a href="../../../t-ug001/abstract/hardware_manual_introduction.html" id="tocId-d16877e7901-link">Typhoon HIL Hardware Manual</a></div></div><ul role="group" class="navbar-nav nav-list"><li role="treeitem"><div data-tocid="doc-d16877e7905" class="topicref" data-id="doc" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../../../t-ug001/abstract/hardware_manual_introduction.html" id="doc-d16877e7905-link">Hardware Manual Introduction</a><div class="wh-tooltip"><p class="shortdesc">Collection of some of the guides on the deployment, use, and management of Typhoon HIL hardware devices.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="doc-d16877e7916" class="topicref" data-id="doc" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action doc-d16877e7916-link" class="wh-expand-btn"></span><div class="title"><a href="../../../t-ug001/abstract/HIL_simulators.html" id="doc-d16877e7916-link">Typhoon HIL simulator devices</a><div class="wh-tooltip"><p class="shortdesc">Overview of the currently supported Typhoon HIL simulator devices.</p></div></div></div></li><li role="treeitem" aria-expanded="true"><div data-tocid="doc-d16877e8927" class="topicref" data-id="doc" data-state="expanded"><span role="button" tabindex="0" aria-labelledby="button-collapse-action doc-d16877e8927-link" class="wh-expand-btn"></span><div class="title"><a href="../../../t-ug001/hil_connect/topics/abstract.html" id="doc-d16877e8927-link">HIL Connect</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">Information about the HIL Connect, a 19" 6U interface device,             designed to adapt HIL IO signal levels to those most commonly used in the         industry.</span></p></div></div></div><ul role="group" class="navbar-nav nav-list"><li role="treeitem"><div data-tocid="doc-d16877e8939" class="topicref page-break-after" data-id="doc" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../../../t-ug001/hil_connect/concepts/overview.html" id="doc-d16877e8939-link">Overview</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">Overview of the purpose of the HIL Connect.</span></p></div></div></div></li><li role="treeitem"><div data-tocid="doc-d16877e8951" class="topicref page-break-after" data-id="doc" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../../../t-ug001/hil_connect/References/detailed_description.html" id="doc-d16877e8951-link">Detailed description</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">Detailed description of the functionality of the HIL             Connect.</span></p></div></div></div></li><li role="treeitem"><div data-tocid="doc-d16877e8963" class="topicref page-break-after" data-id="doc" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../../../t-ug001/hil_connect/References/chassis.html" id="doc-d16877e8963-link">HIL Connect chassis</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">Description of the HIL Connect chassis.</span></p></div></div></div></li><li role="treeitem" aria-expanded="true"><div data-tocid="doc-d16877e8975" class="topicref page-break-after" data-id="doc" data-state="expanded"><span role="button" tabindex="0" aria-labelledby="button-collapse-action doc-d16877e8975-link" class="wh-expand-btn"></span><div class="title"><a href="../../../t-ug001/hil_connect/References/card_overview.html" id="doc-d16877e8975-link">HIL Connect card overview</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">Definition of available HIL Connect cards.</span></p></div></div></div><ul role="group" class="navbar-nav nav-list"><li role="treeitem"><div data-tocid="doc-d16877e8987" class="topicref page-break-after" data-id="doc" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../../../t-ug001/hil_connect/References/analog_input_card.html" id="doc-d16877e8987-link">Analog Input card</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">Description of the Analog Input card for HIL Connect hardware</span></p></div></div></div></li><li role="treeitem"><div data-tocid="doc-d16877e8999" class="topicref page-break-after" data-id="doc" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../../../t-ug001/hil_connect/References/analog_output_card.html" id="doc-d16877e8999-link">Analog Output card</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">Description of the Analog Output card for HIL Connect hardware</span></p></div></div></div></li><li role="treeitem"><div data-tocid="doc-d16877e9011" class="topicref page-break-after" data-id="doc" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../../../t-ug001/hil_connect/References/24v_analog_output_card.html" id="doc-d16877e9011-link">24V Analog Output card</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">Description of the 24V Analog Output card for HIL Connect hardware</span></p></div></div></div></li><li role="treeitem"><div data-tocid="doc-d16877e9023" class="topicref page-break-after" data-id="doc" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../../../t-ug001/hil_connect/References/automotive_communication_extender.html" id="doc-d16877e9023-link">Automotive Communication Extender</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">Description of the Automotive Communication Extender card for             HIL Connect hardware</span></p></div></div></div></li><li role="treeitem"><div data-tocid="doc-d16877e9035" class="topicref page-break-after" data-id="doc" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../../../t-ug001/hil_connect/References/BMS_analog_output.html" id="doc-d16877e9035-link">BMS Analog Output card</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">Description of the BMS Analog Output card for HIL Connect hardware</span></p></div></div></div></li><li role="treeitem"><div data-tocid="doc-d16877e9047" class="topicref page-break-after" data-id="doc" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../../../t-ug001/hil_connect/References/BMS_digital_card.html" id="doc-d16877e9047-link">BMS Digital card</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">Description of the BMS Digital card for HIL Connect hardware</span></p></div></div></div></li><li role="treeitem"><div data-tocid="doc-d16877e9059" class="topicref page-break-after" data-id="doc" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../../../t-ug001/hil_connect/References/CAN_relay_output.html" id="doc-d16877e9059-link">CAN Relay Output card</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">Description of the CAN Relay Output card for HIL Connect hardware</span></p></div></div></div></li><li role="treeitem"><div data-tocid="doc-d16877e9071" class="topicref page-break-after" data-id="doc" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../../../t-ug001/hil_connect/References/current_output_card.html" id="doc-d16877e9071-link">Current Output card</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">Description of the Current Output card for HIL Connect             hardware</span></p></div></div></div></li><li role="treeitem"><div data-tocid="doc-d16877e9083" class="topicref page-break-after" data-id="doc" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../../../t-ug001/hil_connect/References/digital_input_card.html" id="doc-d16877e9083-link">Digital Input card</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">Description of the Digital Input card for HIL Connect hardware</span></p></div></div></div></li><li role="treeitem"><div data-tocid="doc-d16877e9095" class="topicref page-break-after" data-id="doc" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../../../t-ug001/hil_connect/References/digital_output_card.html" id="doc-d16877e9095-link">Digital Output card</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">Description of the Digital Output card for HIL Connect             hardware</span></p></div></div></div></li><li role="treeitem"><div data-tocid="doc-d16877e9108" class="topicref page-break-after" data-id="doc" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../../../t-ug001/hil_connect/References/fiber_input_card.html" id="doc-d16877e9108-link">Fiber Optic Input card</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">Description of the Fiber Optic Input card for HIL Connect hardware</span></p></div></div></div></li><li role="treeitem"><div data-tocid="doc-d16877e9120" class="topicref page-break-after" data-id="doc" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../../../t-ug001/hil_connect/References/fiber_output_card.html" id="doc-d16877e9120-link">Fiber Optic Output card</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">Description of the Fiber Optic Output card for HIL Connect hardware</span></p></div></div></div></li><li role="treeitem"><div data-tocid="doc-d16877e9132" class="topicref page-break-after" data-id="doc" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../../../t-ug001/hil_connect/References/high_voltage_card.html" id="doc-d16877e9132-link">High Voltage card</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">Description of the High Voltage card for HIL Connect hardware</span></p></div></div></div></li><li role="treeitem"><div data-tocid="doc-d16877e9144" class="topicref page-break-after" data-id="doc" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../../../t-ug001/hil_connect/References/dual_resolver_card.html" id="doc-d16877e9144-link">Dual Resolver card</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">Description of the Dual Resolver card for HIL Connect hardware</span></p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="doc-d16877e9156" class="topicref page-break-after" data-id="doc" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action doc-d16877e9156-link" class="wh-expand-btn"></span><div class="title"><a href="../../../t-ug001/hil_connect/References/resistor_emulator_cards.html" id="doc-d16877e9156-link">Resistor Emulator card overview</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">Overview of the Resistor Emulator cards available for use in the HIL Connect</span></p></div></div></div></li><li role="treeitem"><div data-tocid="doc-d16877e9204" class="topicref page-break-after" data-id="doc" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../../../t-ug001/hil_connect/References/smart_cell_emulator_card.html" id="doc-d16877e9204-link">Smart Cell Emulator card</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">Description of the Smart Cell Emulator card for HIL Connect             hardware</span></p></div></div></div></li><li role="treeitem" class="active"><div data-tocid="doc-d16877e9216" class="topicref page-break-after" data-id="doc" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../../../t-ug001/hil_connect/References/shunt_emulator_card.html" id="doc-d16877e9216-link">Shunt Emulator card</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">Description of the Shunt Emulator card for HIL Connect             hardware</span></p></div></div></div></li></ul></li><li role="treeitem"><div data-tocid="doc-d16877e9228" class="topicref page-break-after" data-id="doc" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../../../t-ug001/hil_connect/References/card_configurations.html" id="doc-d16877e9228-link">Common HIL Connect configurations</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">Description of common HIL Connect card         configurations.</span></p></div></div></div></li><li role="treeitem"><div data-tocid="doc-d16877e9240" class="topicref page-break-after" data-id="doc" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../../../t-ug001/hil_connect/References/mechanical.html" id="doc-d16877e9240-link">Mechanical</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">Mechanical dimensions of the HIL Connect.</span></p></div></div></div></li><li role="treeitem"><div data-tocid="doc-d16877e9252" class="topicref page-break-after" data-id="doc" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../../../t-ug001/hil_connect/References/scope_of_delivery.html" id="doc-d16877e9252-link">Scope of delivery</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">Scope of delivery of the HIL Connect package.</span></p></div></div></div></li></ul></li><li role="treeitem" aria-expanded="false"><div data-tocid="doc-d16877e9278" class="topicref" data-id="doc" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action doc-d16877e9278-link" class="wh-expand-btn"></span><div class="title"><a href="../../../t-ug001/abstract/HIL_interfaces.html" id="doc-d16877e9278-link">HIL Interfaces</a><div class="wh-tooltip"><p class="shortdesc">Collection of some of the guides on the deployment, use, and management of HIL Interfaces available from Typhoon HIL.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="doc-d16877e10605" class="topicref" data-id="doc" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action doc-d16877e10605-link" class="wh-expand-btn"></span><div class="title"><a href="../../../t-ug001/abstract/HIL_accessories.html" id="doc-d16877e10605-link">HIL Accessories</a><div class="wh-tooltip"><p class="shortdesc">Collection of some of the guides on the deployment, use, and management of Typhoon HIL accessories.</p></div></div></div></li></ul></li></ul></div>
-		                        
-                            </div>
-                        </nav>
-                    
-                    
-                    <div class="col-lg-7 col-md-9 col-sm-12" id="wh_topic_body">
-                        <button id="wh_close_publication_toc_button" class="close-toc-button d-none" aria-label="Toggle publishing table of content" aria-controls="wh_publication_toc" aria-expanded="true">
-                            <span class="close-toc-icon-container">
-                                <span class="close-toc-icon"></span>     
-                            </span>
-                        </button>
-                        <button id="wh_close_topic_toc_button" class="close-toc-button d-none" aria-label="Toggle topic table of content" aria-controls="wh_topic_toc" aria-expanded="true">
-                            <span class="close-toc-icon-container">
-                                <span class="close-toc-icon"></span>     
-                            </span>
-                        </button>
-                        
-                        <div class=" wh_topic_content body "><main role="main"><article role="article" aria-labelledby="ariaid-title1">
-    <h1 class="- topic/title title topictitle1" id="ariaid-title1">Shunt Emulator card</h1>
-    
-       
-    <div class="- topic/body reference/refbody body refbody"><p class="- topic/shortdesc shortdesc"><span class="- topic/ph ph" id="doc__description">Description of the Shunt Emulator card for HIL Connect
-            hardware</span></p>   
-        
-        <section class="- topic/section section" id="doc__overview" data-ofbid="doc__overview"><h2 class="- topic/title title sectiontitle">Card Overview</h2>
-            
-            <span class="- topic/ph ph" id="doc__card_description">The Shunt Emulator card is an analog interface card designed
+<div class="wh_search_input navbar-form wh_topic_page_search search" role="form">
+<form action="../../../search.html" id="searchForm" method="get" role="search"><div><input aria-label="Search query" class="wh_search_textfield" id="textToSearch" name="searchQuery" placeholder="Search " required="required" type="search"/><button aria-label="Search" class="wh_search_button" type="submit"><span class="search_input_text">Search</span></button></div></form>
+</div>
+<div class="container-fluid" id="wh_topic_container">
+<div class="row">
+<nav aria-label="Tools" class="wh_tools d-print-none navbar-expand-md">
+<div class="wh_breadcrumb" data-tooltip-position="bottom"><ol class="d-print-none"><li><span class="home"><a href="../../../index.html"><span>Home</span></a></span></li><li><div class="topicref hardware-manual"><div class="title"><a href="../../../t-ug001/abstract/hardware_manual_introduction.html">Typhoon HIL Hardware Manual</a></div></div></li><li><div class="topicref" data-id="doc"><div class="title"><a href="../../../t-ug001/hil_connect/topics/abstract.html">HIL Connect</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">Information about the HIL Connect, a 19" 6U interface device,             designed to adapt HIL IO signal levels to those most commonly used in the         industry.</span></p></div></div></div></li><li><div class="topicref page-break-after" data-id="doc"><div class="title"><a href="../../../t-ug001/hil_connect/References/card_overview.html">HIL Connect card overview</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">Definition of available HIL Connect cards.</span></p></div></div></div></li><li class="active"><div class="topicref page-break-after" data-id="doc"><div class="title"><a href="../../../t-ug001/hil_connect/References/shunt_emulator_card.html">Shunt Emulator card</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">Description of the Shunt Emulator card for HIL Connect             hardware</span></p></div></div></div></li></ol></div>
+<div class="wh_right_tools">
+<button aria-label="Toggle search highlights" class="wh_hide_highlight" title="Toggle search highlights"></button>
+<button aria-label="Collapse sections" class="webhelp_expand_collapse_sections" data-next-state="collapsed" title="Collapse sections"></button>
+<div class="wh_print_link print d-none d-md-inline-block"><button aria-label="Print this page" onclick="window.print()" title="Print this page"></button></div>
+<button aria-controls="wh_publication_toc" aria-expanded="false" aria-label="Toggle publishing table of content" class="custom-toggler navbar-toggler collapsed wh_toggle_button navbar-light" id="wh_toc_button" type="button">
+<span class="navbar-toggler-icon"></span>
+</button>
+</div>
+</nav>
+</div>
+<div class="wh_content_area">
+<div class="row">
+<nav aria-label="Table of Contents Container" class="col-lg-3 col-md-3 col-sm-12 d-md-block d-none d-print-none" id="wh_publication_toc">
+<div id="wh_publication_toc_content">
+<div class="wh_publication_toc" data-tooltip-position="right"><span class="expand-button-action-labels"><span aria-label="Expand" id="button-expand-action" role="button"></span><span aria-label="Collapse" id="button-collapse-action" role="button"></span><span aria-label="Pending" id="button-pending-action" role="button"></span></span><ul aria-label="Table of Contents" role="tree"><li aria-expanded="true" role="treeitem"><div class="topicref hardware-manual" data-state="expanded" data-tocid="tocId-d16877e7901"><span aria-labelledby="button-collapse-action tocId-d16877e7901-link" class="wh-expand-btn" role="button" tabindex="0"></span><div class="title"><a href="../../../t-ug001/abstract/hardware_manual_introduction.html" id="tocId-d16877e7901-link">Typhoon HIL Hardware Manual</a></div></div><ul class="navbar-nav nav-list" role="group"><li role="treeitem"><div class="topicref" data-id="doc" data-state="leaf" data-tocid="doc-d16877e7905"><span class="wh-expand-btn" role="button"></span><div class="title"><a href="../../../t-ug001/abstract/hardware_manual_introduction.html" id="doc-d16877e7905-link">Hardware Manual Introduction</a><div class="wh-tooltip"><p class="shortdesc">Collection of some of the guides on the deployment, use, and management of Typhoon HIL hardware devices.</p></div></div></div></li><li aria-expanded="false" role="treeitem"><div class="topicref" data-id="doc" data-state="not-ready" data-tocid="doc-d16877e7916"><span aria-labelledby="button-expand-action doc-d16877e7916-link" class="wh-expand-btn" role="button" tabindex="0"></span><div class="title"><a href="../../../t-ug001/abstract/HIL_simulators.html" id="doc-d16877e7916-link">Typhoon HIL simulator devices</a><div class="wh-tooltip"><p class="shortdesc">Overview of the currently supported Typhoon HIL simulator devices.</p></div></div></div></li><li aria-expanded="true" role="treeitem"><div class="topicref" data-id="doc" data-state="expanded" data-tocid="doc-d16877e8927"><span aria-labelledby="button-collapse-action doc-d16877e8927-link" class="wh-expand-btn" role="button" tabindex="0"></span><div class="title"><a href="../../../t-ug001/hil_connect/topics/abstract.html" id="doc-d16877e8927-link">HIL Connect</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">Information about the HIL Connect, a 19" 6U interface device,             designed to adapt HIL IO signal levels to those most commonly used in the         industry.</span></p></div></div></div><ul class="navbar-nav nav-list" role="group"><li role="treeitem"><div class="topicref page-break-after" data-id="doc" data-state="leaf" data-tocid="doc-d16877e8939"><span class="wh-expand-btn" role="button"></span><div class="title"><a href="../../../t-ug001/hil_connect/concepts/overview.html" id="doc-d16877e8939-link">Overview</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">Overview of the purpose of the HIL Connect.</span></p></div></div></div></li><li role="treeitem"><div class="topicref page-break-after" data-id="doc" data-state="leaf" data-tocid="doc-d16877e8951"><span class="wh-expand-btn" role="button"></span><div class="title"><a href="../../../t-ug001/hil_connect/References/detailed_description.html" id="doc-d16877e8951-link">Detailed description</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">Detailed description of the functionality of the HIL             Connect.</span></p></div></div></div></li><li role="treeitem"><div class="topicref page-break-after" data-id="doc" data-state="leaf" data-tocid="doc-d16877e8963"><span class="wh-expand-btn" role="button"></span><div class="title"><a href="../../../t-ug001/hil_connect/References/chassis.html" id="doc-d16877e8963-link">HIL Connect chassis</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">Description of the HIL Connect chassis.</span></p></div></div></div></li><li aria-expanded="true" role="treeitem"><div class="topicref page-break-after" data-id="doc" data-state="expanded" data-tocid="doc-d16877e8975"><span aria-labelledby="button-collapse-action doc-d16877e8975-link" class="wh-expand-btn" role="button" tabindex="0"></span><div class="title"><a href="../../../t-ug001/hil_connect/References/card_overview.html" id="doc-d16877e8975-link">HIL Connect card overview</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">Definition of available HIL Connect cards.</span></p></div></div></div><ul class="navbar-nav nav-list" role="group"><li role="treeitem"><div class="topicref page-break-after" data-id="doc" data-state="leaf" data-tocid="doc-d16877e8987"><span class="wh-expand-btn" role="button"></span><div class="title"><a href="../../../t-ug001/hil_connect/References/analog_input_card.html" id="doc-d16877e8987-link">Analog Input card</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">Description of the Analog Input card for HIL Connect hardware</span></p></div></div></div></li><li role="treeitem"><div class="topicref page-break-after" data-id="doc" data-state="leaf" data-tocid="doc-d16877e8999"><span class="wh-expand-btn" role="button"></span><div class="title"><a href="../../../t-ug001/hil_connect/References/analog_output_card.html" id="doc-d16877e8999-link">Analog Output card</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">Description of the Analog Output card for HIL Connect hardware</span></p></div></div></div></li><li role="treeitem"><div class="topicref page-break-after" data-id="doc" data-state="leaf" data-tocid="doc-d16877e9011"><span class="wh-expand-btn" role="button"></span><div class="title"><a href="../../../t-ug001/hil_connect/References/24v_analog_output_card.html" id="doc-d16877e9011-link">24V Analog Output card</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">Description of the 24V Analog Output card for HIL Connect hardware</span></p></div></div></div></li><li role="treeitem"><div class="topicref page-break-after" data-id="doc" data-state="leaf" data-tocid="doc-d16877e9023"><span class="wh-expand-btn" role="button"></span><div class="title"><a href="../../../t-ug001/hil_connect/References/automotive_communication_extender.html" id="doc-d16877e9023-link">Automotive Communication Extender</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">Description of the Automotive Communication Extender card for             HIL Connect hardware</span></p></div></div></div></li><li role="treeitem"><div class="topicref page-break-after" data-id="doc" data-state="leaf" data-tocid="doc-d16877e9035"><span class="wh-expand-btn" role="button"></span><div class="title"><a href="../../../t-ug001/hil_connect/References/BMS_analog_output.html" id="doc-d16877e9035-link">BMS Analog Output card</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">Description of the BMS Analog Output card for HIL Connect hardware</span></p></div></div></div></li><li role="treeitem"><div class="topicref page-break-after" data-id="doc" data-state="leaf" data-tocid="doc-d16877e9047"><span class="wh-expand-btn" role="button"></span><div class="title"><a href="../../../t-ug001/hil_connect/References/BMS_digital_card.html" id="doc-d16877e9047-link">BMS Digital card</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">Description of the BMS Digital card for HIL Connect hardware</span></p></div></div></div></li><li role="treeitem"><div class="topicref page-break-after" data-id="doc" data-state="leaf" data-tocid="doc-d16877e9059"><span class="wh-expand-btn" role="button"></span><div class="title"><a href="../../../t-ug001/hil_connect/References/CAN_relay_output.html" id="doc-d16877e9059-link">CAN Relay Output card</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">Description of the CAN Relay Output card for HIL Connect hardware</span></p></div></div></div></li><li role="treeitem"><div class="topicref page-break-after" data-id="doc" data-state="leaf" data-tocid="doc-d16877e9071"><span class="wh-expand-btn" role="button"></span><div class="title"><a href="../../../t-ug001/hil_connect/References/current_output_card.html" id="doc-d16877e9071-link">Current Output card</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">Description of the Current Output card for HIL Connect             hardware</span></p></div></div></div></li><li role="treeitem"><div class="topicref page-break-after" data-id="doc" data-state="leaf" data-tocid="doc-d16877e9083"><span class="wh-expand-btn" role="button"></span><div class="title"><a href="../../../t-ug001/hil_connect/References/digital_input_card.html" id="doc-d16877e9083-link">Digital Input card</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">Description of the Digital Input card for HIL Connect hardware</span></p></div></div></div></li><li role="treeitem"><div class="topicref page-break-after" data-id="doc" data-state="leaf" data-tocid="doc-d16877e9095"><span class="wh-expand-btn" role="button"></span><div class="title"><a href="../../../t-ug001/hil_connect/References/digital_output_card.html" id="doc-d16877e9095-link">Digital Output card</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">Description of the Digital Output card for HIL Connect             hardware</span></p></div></div></div></li><li role="treeitem"><div class="topicref page-break-after" data-id="doc" data-state="leaf" data-tocid="doc-d16877e9108"><span class="wh-expand-btn" role="button"></span><div class="title"><a href="../../../t-ug001/hil_connect/References/fiber_input_card.html" id="doc-d16877e9108-link">Fiber Optic Input card</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">Description of the Fiber Optic Input card for HIL Connect hardware</span></p></div></div></div></li><li role="treeitem"><div class="topicref page-break-after" data-id="doc" data-state="leaf" data-tocid="doc-d16877e9120"><span class="wh-expand-btn" role="button"></span><div class="title"><a href="../../../t-ug001/hil_connect/References/fiber_output_card.html" id="doc-d16877e9120-link">Fiber Optic Output card</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">Description of the Fiber Optic Output card for HIL Connect hardware</span></p></div></div></div></li><li role="treeitem"><div class="topicref page-break-after" data-id="doc" data-state="leaf" data-tocid="doc-d16877e9132"><span class="wh-expand-btn" role="button"></span><div class="title"><a href="../../../t-ug001/hil_connect/References/high_voltage_card.html" id="doc-d16877e9132-link">High Voltage card</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">Description of the High Voltage card for HIL Connect hardware</span></p></div></div></div></li><li role="treeitem"><div class="topicref page-break-after" data-id="doc" data-state="leaf" data-tocid="doc-d16877e9144"><span class="wh-expand-btn" role="button"></span><div class="title"><a href="../../../t-ug001/hil_connect/References/dual_resolver_card.html" id="doc-d16877e9144-link">Dual Resolver card</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">Description of the Dual Resolver card for HIL Connect hardware</span></p></div></div></div></li><li aria-expanded="false" role="treeitem"><div class="topicref page-break-after" data-id="doc" data-state="not-ready" data-tocid="doc-d16877e9156"><span aria-labelledby="button-expand-action doc-d16877e9156-link" class="wh-expand-btn" role="button" tabindex="0"></span><div class="title"><a href="../../../t-ug001/hil_connect/References/resistor_emulator_cards.html" id="doc-d16877e9156-link">Resistor Emulator card overview</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">Overview of the Resistor Emulator cards available for use in the HIL Connect</span></p></div></div></div></li><li role="treeitem"><div class="topicref page-break-after" data-id="doc" data-state="leaf" data-tocid="doc-d16877e9204"><span class="wh-expand-btn" role="button"></span><div class="title"><a href="../../../t-ug001/hil_connect/References/smart_cell_emulator_card.html" id="doc-d16877e9204-link">Smart Cell Emulator card</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">Description of the Smart Cell Emulator card for HIL Connect             hardware</span></p></div></div></div></li><li class="active" role="treeitem"><div class="topicref page-break-after" data-id="doc" data-state="leaf" data-tocid="doc-d16877e9216"><span class="wh-expand-btn" role="button"></span><div class="title"><a href="../../../t-ug001/hil_connect/References/shunt_emulator_card.html" id="doc-d16877e9216-link">Shunt Emulator card</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">Description of the Shunt Emulator card for HIL Connect             hardware</span></p></div></div></div></li></ul></li><li role="treeitem"><div class="topicref page-break-after" data-id="doc" data-state="leaf" data-tocid="doc-d16877e9228"><span class="wh-expand-btn" role="button"></span><div class="title"><a href="../../../t-ug001/hil_connect/References/card_configurations.html" id="doc-d16877e9228-link">Common HIL Connect configurations</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">Description of common HIL Connect card         configurations.</span></p></div></div></div></li><li role="treeitem"><div class="topicref page-break-after" data-id="doc" data-state="leaf" data-tocid="doc-d16877e9240"><span class="wh-expand-btn" role="button"></span><div class="title"><a href="../../../t-ug001/hil_connect/References/mechanical.html" id="doc-d16877e9240-link">Mechanical</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">Mechanical dimensions of the HIL Connect.</span></p></div></div></div></li><li role="treeitem"><div class="topicref page-break-after" data-id="doc" data-state="leaf" data-tocid="doc-d16877e9252"><span class="wh-expand-btn" role="button"></span><div class="title"><a href="../../../t-ug001/hil_connect/References/scope_of_delivery.html" id="doc-d16877e9252-link">Scope of delivery</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">Scope of delivery of the HIL Connect package.</span></p></div></div></div></li></ul></li><li aria-expanded="false" role="treeitem"><div class="topicref" data-id="doc" data-state="not-ready" data-tocid="doc-d16877e9278"><span aria-labelledby="button-expand-action doc-d16877e9278-link" class="wh-expand-btn" role="button" tabindex="0"></span><div class="title"><a href="../../../t-ug001/abstract/HIL_interfaces.html" id="doc-d16877e9278-link">HIL Interfaces</a><div class="wh-tooltip"><p class="shortdesc">Collection of some of the guides on the deployment, use, and management of HIL Interfaces available from Typhoon HIL.</p></div></div></div></li><li aria-expanded="false" role="treeitem"><div class="topicref" data-id="doc" data-state="not-ready" data-tocid="doc-d16877e10605"><span aria-labelledby="button-expand-action doc-d16877e10605-link" class="wh-expand-btn" role="button" tabindex="0"></span><div class="title"><a href="../../../t-ug001/abstract/HIL_accessories.html" id="doc-d16877e10605-link">HIL Accessories</a><div class="wh-tooltip"><p class="shortdesc">Collection of some of the guides on the deployment, use, and management of Typhoon HIL accessories.</p></div></div></div></li></ul></li></ul></div>
+</div>
+</nav>
+<div class="col-lg-7 col-md-9 col-sm-12" id="wh_topic_body">
+<button aria-controls="wh_publication_toc" aria-expanded="true" aria-label="Toggle publishing table of content" class="close-toc-button d-none" id="wh_close_publication_toc_button">
+<span class="close-toc-icon-container">
+<span class="close-toc-icon"></span>
+</span>
+</button>
+<button aria-controls="wh_topic_toc" aria-expanded="true" aria-label="Toggle topic table of content" class="close-toc-button d-none" id="wh_close_topic_toc_button">
+<span class="close-toc-icon-container">
+<span class="close-toc-icon"></span>
+</span>
+</button>
+<div class="wh_topic_content body"><main role="main"><article aria-labelledby="ariaid-title1" role="article">
+<h1 class="- topic/title title topictitle1" id="ariaid-title1">Shunt Emulator card</h1>
+<div class="- topic/body reference/refbody body refbody"><p class="- topic/shortdesc shortdesc"><span class="- topic/ph ph" id="doc__description">Description of the Shunt Emulator card for HIL Connect
+            hardware</span></p>
+<section class="- topic/section section" data-ofbid="doc__overview" id="doc__overview"><h2 class="- topic/title title sectiontitle">Card Overview</h2>
+<span class="- topic/ph ph" id="doc__card_description">The Shunt Emulator card is an analog interface card designed
                 to emulate shunt voltage in BMS and Power Electronic applications. It has two
                 independent differential output channels, galvanically isolated from the HIL system
                 ground. DIP switches on the card are used to select the driving HIL AO channels. The
                 output (shunt) voltage is proportional to the driving analog output voltage
                 multiplied by 0.025 (shunt emulator voltage gain).</span>
-        </section>
-        <section class="- topic/section section" id="doc__revisions" data-ofbid="doc__revisions"><h2 class="- topic/title title sectiontitle">Shunt Emulator card revisions</h2>
-            
-            <table class="- topic/table table frame-all" id="doc__table_revisions" data-ofbid="doc__table_revisions" data-cols="3"><caption class="- topic/title title tablecap" data-caption-side="top" data-is-repeated="true"><span class="table--title-label">Table<span class="table--title-label-number"> 1</span><span class="table--title-label-punctuation">. </span></span><span class="table--title">Card revisions</span></caption><colgroup><col style="width:38.46153846153847%"/><col style="width:30.76923076923077%"/><col style="width:30.76923076923077%"/></colgroup><thead class="- topic/thead thead">
-                        <tr class="- topic/row">
-                            <th class="- topic/entry entry align-center colsep-1 rowsep-1" id="doc__table_revisions__entry__1">Code</th>
-                            <th class="- topic/entry entry colsep-1 rowsep-1" id="doc__table_revisions__entry__2">Revision</th>
-                            <th class="- topic/entry entry align-center colsep-0 rowsep-1" id="doc__table_revisions__entry__3">Part number</th>
-                        </tr>
-                    </thead><tbody class="- topic/tbody tbody">
-                        <tr class="- topic/row">
-                            <td class="- topic/entry entry align-center colsep-1 rowsep-1" headers="doc__table_revisions__entry__1">NH</td>
-                            <td class="- topic/entry entry align-center colsep-1 rowsep-1" headers="doc__table_revisions__entry__2">1.1</td>
-                            <td class="- topic/entry entry align-center colsep-0 rowsep-1" headers="doc__table_revisions__entry__3">26097</td>
-                        </tr>
-                        <tr class="- topic/row">
-                            <td class="- topic/entry entry align-center colsep-1 rowsep-0" headers="doc__table_revisions__entry__1">MR</td>
-                            <td class="- topic/entry entry align-center colsep-1 rowsep-0" headers="doc__table_revisions__entry__2">1.0</td>
-                            <td class="- topic/entry entry align-center colsep-0 rowsep-0" headers="doc__table_revisions__entry__3">25278</td>
-                        </tr>
-                    </tbody></table>
-        </section>
-        
-        
-        <section class="- topic/section section" id="doc__section_card_description" data-ofbid="doc__section_card_description"><h2 class="- topic/title title sectiontitle">Shunt Emulator card hardware specification</h2>
-            
-            <table class="- topic/table table frame-all" id="doc__table_specification" data-ofbid="doc__table_specification" data-cols="2"><caption class="- topic/title title tablecap" data-caption-side="top" data-is-repeated="true"><span class="table--title-label">Table<span class="table--title-label-number"> 2</span><span class="table--title-label-punctuation">. </span></span><span class="table--title">Hardware Specification</span></caption><colgroup><col/><col/></colgroup><thead class="- topic/thead thead">
-                            <tr class="- topic/row">
-                                <th class="- topic/entry entry align-left colsep-1 rowsep-1" id="doc__table_specification__entry__1">Parameter</th>
-                                <th class="- topic/entry entry align-left colsep-0 rowsep-1" id="doc__table_specification__entry__2">Value</th>
-                            </tr>
-                        </thead><tbody class="- topic/tbody tbody">
-                            <tr class="- topic/row">
-                                <td class="- topic/entry entry align-left colsep-1 rowsep-1" headers="doc__table_specification__entry__1">Type</td>
-                                <td class="- topic/entry entry colsep-0 rowsep-1" headers="doc__table_specification__entry__2"><span class="- topic/ph ph" id="doc__type">Shunt emulator</span></td>
-                            </tr>
-                            <tr class="- topic/row">
-                                <td class="- topic/entry entry align-left colsep-1 rowsep-1" headers="doc__table_specification__entry__1">Number of channels</td>
-                                <td class="- topic/entry entry colsep-0 rowsep-1" headers="doc__table_specification__entry__2"><span class="- topic/ph ph" id="doc__channels">2</span></td>
-                            </tr>
-                            <tr class="- topic/row">
-                                <td class="- topic/entry entry align-left colsep-1 rowsep-1" headers="doc__table_specification__entry__1">Input signal range</td>
-                                <td class="- topic/entry entry colsep-0 rowsep-1" headers="doc__table_specification__entry__2"><span class="- topic/ph ph" id="doc__input_range">±10 V</span></td>
-                            </tr>
-                            <tr class="- topic/row">
-                                <td class="- topic/entry entry align-left colsep-1 rowsep-1" headers="doc__table_specification__entry__1">Output range</td>
-                                <td class="- topic/entry entry colsep-0 rowsep-1" headers="doc__table_specification__entry__2"><span class="- topic/ph ph" id="doc__output_range">±250 mV</span></td>
-                            </tr>
-                        <tr class="- topic/row">
-                            <td class="- topic/entry entry align-left colsep-1 rowsep-1" headers="doc__table_specification__entry__1">Resolution</td>
-                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="doc__table_specification__entry__2">7.7 µV</td>
-                        </tr>
-                        <tr class="- topic/row">
-                            <td class="- topic/entry entry align-left colsep-1 rowsep-1" headers="doc__table_specification__entry__1">Accuracy</td>
-                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="doc__table_specification__entry__2">0.1 mV ±0.1% FS</td>
-                        </tr>
-                            <tr class="- topic/row">
-                                <td class="- topic/entry entry align-left colsep-1 rowsep-1" headers="doc__table_specification__entry__1">Bandwidth</td>
-                                <td class="- topic/entry entry colsep-0 rowsep-1" headers="doc__table_specification__entry__2">DC-20 kHz</td>
-                            </tr>
-                            <tr class="- topic/row">
-                                <td class="- topic/entry entry align-left colsep-1 rowsep-1" headers="doc__table_specification__entry__1">Isolation</td>
-                                <td class="- topic/entry entry colsep-0 rowsep-1" headers="doc__table_specification__entry__2"><span class="- topic/ph ph" id="doc__isolation">Yes</span></td>
-                            </tr>
-                            <tr class="- topic/row">
-                                <td class="- topic/entry entry align-left colsep-1 rowsep-1" headers="doc__table_specification__entry__1">Max Load</td>
-                                <td class="- topic/entry entry colsep-0 rowsep-1" headers="doc__table_specification__entry__2">±20 mA</td>
-                            </tr>
-                            <tr class="- topic/row">
-                                <td class="- topic/entry entry align-left colsep-1 rowsep-0" headers="doc__table_specification__entry__1">Output Resistance</td>
-                                <td class="- topic/entry entry colsep-0 rowsep-0" headers="doc__table_specification__entry__2">4 Ω</td>
-                            </tr>
-                        </tbody></table>
-        </section>
-        
-        <section class="- topic/section section" id="doc__connector" data-ofbid="doc__connector"><h2 class="- topic/title title sectiontitle">Shunt Emulator card connector data</h2>
-            
-            <table class="- topic/table table frame-all" id="doc__table_connector" data-ofbid="doc__table_connector" data-cols="2"><caption class="- topic/title title tablecap" data-caption-side="top" data-is-repeated="true"><span class="table--title-label">Table<span class="table--title-label-number"> 3</span><span class="table--title-label-punctuation">. </span></span><span class="table--title">Connector data</span></caption><colgroup><col style="width:33.33333333333333%"/><col style="width:66.66666666666666%"/></colgroup><thead class="- topic/thead thead">
-                        <tr class="- topic/row">
-                            <th class="- topic/entry entry align-left colsep-1 rowsep-1" id="doc__table_connector__entry__1">Parameter</th>
-                            <th class="- topic/entry entry align-left colsep-0 rowsep-1" id="doc__table_connector__entry__2">Value</th>
-                        </tr>
-                    </thead><tbody class="- topic/tbody tbody">
-                        <tr class="- topic/row">
-                            <td class="- topic/entry entry align-left colsep-1 rowsep-1" headers="doc__table_connector__entry__1">Card Connector part number</td>
-                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="doc__table_connector__entry__2"><p class="- topic/p p"><img class="- topic/image image" src="../Images/shunt_emulator_card_04.png" height="100"/></p><a class="- topic/xref xref" href="https://www.digikey.com/en/products/detail/norcomp-inc/182-009-213R561/1120101" target="_blank" rel="external noopener">182-009-213R561</a></td>
-                        </tr>
-                        <tr class="- topic/row">
-                            <td class="- topic/entry entry align-left colsep-1 rowsep-0" headers="doc__table_connector__entry__1">Mating Cable example</td>
-                            <td class="- topic/entry entry colsep-0 rowsep-0" headers="doc__table_connector__entry__2"><p class="- topic/p p"><img class="- topic/image image" src="../Images/shunt_emulator_card_05.png" height="100"/></p><a class="- topic/xref xref" href="https://www.gridconnect.com/products/can-2-meter-cable-can-bus-cable" target="_blank" rel="external noopener">Cable Example</a></td>
-                        </tr>
-                    </tbody></table>
-        </section>
-        
-        <section class="- topic/section section" id="doc__pinouts" data-ofbid="doc__pinouts"><h2 class="- topic/title title sectiontitle">Shunt Emulator card pinouts</h2>
-            
-            <table class="- topic/table table frame-all" id="doc__table_pinout_x1" data-ofbid="doc__table_pinout_x1" data-cols="5"><caption class="- topic/title title tablecap" data-caption-side="top" data-is-repeated="true"><span class="table--title-label">Table<span class="table--title-label-number"> 4</span><span class="table--title-label-punctuation">. </span></span><span class="table--title">Pinout - X1</span></caption><colgroup><col style="width:16.666666666666664%"/><col style="width:13.333333333333334%"/><col style="width:13.333333333333334%"/><col style="width:16.666666666666664%"/><col style="width:40%"/></colgroup><thead class="- topic/thead thead">
-                        <tr class="- topic/row">
-                            <th class="- topic/entry entry align-center colsep-1 rowsep-1" id="doc__table_pinout_x1__entry__1">Connector</th>
-                            <th class="- topic/entry entry align-center colsep-1 rowsep-1" id="doc__table_pinout_x1__entry__2">Pin</th>
-                            <th class="- topic/entry entry align-center colsep-1 rowsep-1" id="doc__table_pinout_x1__entry__3">Signal</th>
-                            <th class="- topic/entry entry align-center colsep-1 rowsep-1" id="doc__table_pinout_x1__entry__4">Rating</th>
-                            <th class="- topic/entry entry align-center colsep-0 rowsep-1" id="doc__table_pinout_x1__entry__5">Comment</th>
-                        </tr>
-                    </thead><tbody class="- topic/tbody tbody">
-                        <tr class="- topic/row">
-                            <td class="- topic/entry entry align-center colsep-1 rowsep-1" headers="doc__table_pinout_x1__entry__1">X1</td>
-                            <td class="- topic/entry entry align-center colsep-1 rowsep-1" headers="doc__table_pinout_x1__entry__2">2</td>
-                            <td class="- topic/entry entry align-center colsep-1 rowsep-1" headers="doc__table_pinout_x1__entry__3">Out1+</td>
-                            <td class="- topic/entry entry align-center colsep-1 rowsep-1" headers="doc__table_pinout_x1__entry__4">±250 mV</td>
-                            <td class="- topic/entry entry align-center colsep-0 rowsep-1" headers="doc__table_pinout_x1__entry__5">Channel 1 Positive Output</td>
-                        </tr>
-                        <tr class="- topic/row">
-                            <td class="- topic/entry entry align-center colsep-1 rowsep-1" headers="doc__table_pinout_x1__entry__1">X1</td>
-                            <td class="- topic/entry entry align-center colsep-1 rowsep-1" headers="doc__table_pinout_x1__entry__2">3</td>
-                            <td class="- topic/entry entry align-center colsep-1 rowsep-1" headers="doc__table_pinout_x1__entry__3">LGND1</td>
-                            <td class="- topic/entry entry align-center colsep-1 rowsep-1" headers="doc__table_pinout_x1__entry__4">0 V</td>
-                            <td class="- topic/entry entry align-center colsep-0 rowsep-1" headers="doc__table_pinout_x1__entry__5">Channel 1 Local Ground</td>
-                        </tr>
-                        <tr class="- topic/row">
-                            <td class="- topic/entry entry align-center colsep-1 rowsep-1" headers="doc__table_pinout_x1__entry__1">X1</td>
-                            <td class="- topic/entry entry align-center colsep-1 rowsep-1" headers="doc__table_pinout_x1__entry__2">7</td>
-                            <td class="- topic/entry entry align-center colsep-1 rowsep-1" headers="doc__table_pinout_x1__entry__3">Out1-</td>
-                            <td class="- topic/entry entry align-center colsep-1 rowsep-1" headers="doc__table_pinout_x1__entry__4">∓250 mV</td>
-                            <td class="- topic/entry entry align-center colsep-0 rowsep-1" headers="doc__table_pinout_x1__entry__5">Channel 1 Negative Output</td>
-                        </tr>
-                        <tr class="- topic/row">
-                            <td class="- topic/entry entry align-center colsep-1 rowsep-1" headers="doc__table_pinout_x1__entry__1">X2</td>
-                            <td class="- topic/entry entry align-center colsep-1 rowsep-1" headers="doc__table_pinout_x1__entry__2">2</td>
-                            <td class="- topic/entry entry align-center colsep-1 rowsep-1" headers="doc__table_pinout_x1__entry__3">Out2+</td>
-                            <td class="- topic/entry entry align-center colsep-1 rowsep-1" headers="doc__table_pinout_x1__entry__4">±250 mV</td>
-                            <td class="- topic/entry entry align-center colsep-0 rowsep-1" headers="doc__table_pinout_x1__entry__5">Channel 2 Positive Output</td>
-                        </tr>
-                        <tr class="- topic/row">
-                            <td class="- topic/entry entry align-center colsep-1 rowsep-1" headers="doc__table_pinout_x1__entry__1">X2</td>
-                            <td class="- topic/entry entry align-center colsep-1 rowsep-1" headers="doc__table_pinout_x1__entry__2">3</td>
-                            <td class="- topic/entry entry align-center colsep-1 rowsep-1" headers="doc__table_pinout_x1__entry__3">LGND2</td>
-                            <td class="- topic/entry entry align-center colsep-1 rowsep-1" headers="doc__table_pinout_x1__entry__4">0 V</td>
-                            <td class="- topic/entry entry align-center colsep-0 rowsep-1" headers="doc__table_pinout_x1__entry__5">Channel 2 Local Ground</td>
-                        </tr>
-                        <tr class="- topic/row">
-                            <td class="- topic/entry entry align-center colsep-1 rowsep-0" headers="doc__table_pinout_x1__entry__1">X2</td>
-                            <td class="- topic/entry entry align-center colsep-1 rowsep-0" headers="doc__table_pinout_x1__entry__2">7</td>
-                            <td class="- topic/entry entry align-center colsep-1 rowsep-0" headers="doc__table_pinout_x1__entry__3">Out2-</td>
-                            <td class="- topic/entry entry align-center colsep-1 rowsep-0" headers="doc__table_pinout_x1__entry__4">∓250 mV</td>
-                            <td class="- topic/entry entry align-center colsep-0 rowsep-0" headers="doc__table_pinout_x1__entry__5">Channel 2 Negative Output</td>
-                        </tr>
-                    </tbody></table>
-            
-        </section>
-    </div>
+</section>
+<section class="- topic/section section" data-ofbid="doc__revisions" id="doc__revisions"><h2 class="- topic/title title sectiontitle">Shunt Emulator card revisions</h2>
+<table class="- topic/table table frame-all" data-cols="3" data-ofbid="doc__table_revisions" id="doc__table_revisions"><caption class="- topic/title title tablecap" data-caption-side="top" data-is-repeated="true"><span class="table--title-label">Table<span class="table--title-label-number"> 1</span><span class="table--title-label-punctuation">. </span></span><span class="table--title">Card revisions</span></caption><colgroup><col style="width:38.46153846153847%"/><col style="width:30.76923076923077%"/><col style="width:30.76923076923077%"/></colgroup><thead class="- topic/thead thead">
+<tr class="- topic/row">
+<th class="- topic/entry entry align-center colsep-1 rowsep-1" id="doc__table_revisions__entry__1">Code</th>
+<th class="- topic/entry entry colsep-1 rowsep-1" id="doc__table_revisions__entry__2">Revision</th>
+<th class="- topic/entry entry align-center colsep-0 rowsep-1" id="doc__table_revisions__entry__3">Part number</th>
+</tr>
+</thead><tbody class="- topic/tbody tbody">
+<tr class="- topic/row">
+<td class="- topic/entry entry align-center colsep-1 rowsep-1" headers="doc__table_revisions__entry__1">NH</td>
+<td class="- topic/entry entry align-center colsep-1 rowsep-1" headers="doc__table_revisions__entry__2">1.1</td>
+<td class="- topic/entry entry align-center colsep-0 rowsep-1" headers="doc__table_revisions__entry__3">26097</td>
+</tr>
+<tr class="- topic/row">
+<td class="- topic/entry entry align-center colsep-1 rowsep-0" headers="doc__table_revisions__entry__1">MR</td>
+<td class="- topic/entry entry align-center colsep-1 rowsep-0" headers="doc__table_revisions__entry__2">1.0</td>
+<td class="- topic/entry entry align-center colsep-0 rowsep-0" headers="doc__table_revisions__entry__3">25278</td>
+</tr>
+</tbody></table>
+</section>
+<section class="- topic/section section" data-ofbid="doc__section_card_description" id="doc__section_card_description"><h2 class="- topic/title title sectiontitle">Shunt Emulator card hardware specification</h2>
+<table class="- topic/table table frame-all" data-cols="2" data-ofbid="doc__table_specification" id="doc__table_specification"><caption class="- topic/title title tablecap" data-caption-side="top" data-is-repeated="true"><span class="table--title-label">Table<span class="table--title-label-number"> 2</span><span class="table--title-label-punctuation">. </span></span><span class="table--title">Hardware Specification</span></caption><colgroup><col/><col/></colgroup><thead class="- topic/thead thead">
+<tr class="- topic/row">
+<th class="- topic/entry entry align-left colsep-1 rowsep-1" id="doc__table_specification__entry__1">Parameter</th>
+<th class="- topic/entry entry align-left colsep-0 rowsep-1" id="doc__table_specification__entry__2">Value</th>
+</tr>
+</thead><tbody class="- topic/tbody tbody">
+<tr class="- topic/row">
+<td class="- topic/entry entry align-left colsep-1 rowsep-1" headers="doc__table_specification__entry__1">Type</td>
+<td class="- topic/entry entry colsep-0 rowsep-1" headers="doc__table_specification__entry__2"><span class="- topic/ph ph" id="doc__type">Shunt emulator</span></td>
+</tr>
+<tr class="- topic/row">
+<td class="- topic/entry entry align-left colsep-1 rowsep-1" headers="doc__table_specification__entry__1">Number of channels</td>
+<td class="- topic/entry entry colsep-0 rowsep-1" headers="doc__table_specification__entry__2"><span class="- topic/ph ph" id="doc__channels">2</span></td>
+</tr>
+<tr class="- topic/row">
+<td class="- topic/entry entry align-left colsep-1 rowsep-1" headers="doc__table_specification__entry__1">Input signal range</td>
+<td class="- topic/entry entry colsep-0 rowsep-1" headers="doc__table_specification__entry__2"><span class="- topic/ph ph" id="doc__input_range">±10 V</span></td>
+</tr>
+<tr class="- topic/row">
+<td class="- topic/entry entry align-left colsep-1 rowsep-1" headers="doc__table_specification__entry__1">Output range</td>
+<td class="- topic/entry entry colsep-0 rowsep-1" headers="doc__table_specification__entry__2"><span class="- topic/ph ph" id="doc__output_range">±250 mV</span></td>
+</tr>
+<tr class="- topic/row">
+<td class="- topic/entry entry align-left colsep-1 rowsep-1" headers="doc__table_specification__entry__1">Resolution</td>
+<td class="- topic/entry entry colsep-0 rowsep-1" headers="doc__table_specification__entry__2">7.7 µV</td>
+</tr>
+<tr class="- topic/row">
+<td class="- topic/entry entry align-left colsep-1 rowsep-1" headers="doc__table_specification__entry__1">Accuracy</td>
+<td class="- topic/entry entry colsep-0 rowsep-1" headers="doc__table_specification__entry__2">0.1 mV ±0.1% FS</td>
+</tr>
+<tr class="- topic/row">
+<td class="- topic/entry entry align-left colsep-1 rowsep-1" headers="doc__table_specification__entry__1">Bandwidth</td>
+<td class="- topic/entry entry colsep-0 rowsep-1" headers="doc__table_specification__entry__2">DC-20 kHz</td>
+</tr>
+<tr class="- topic/row">
+<td class="- topic/entry entry align-left colsep-1 rowsep-1" headers="doc__table_specification__entry__1">Isolation</td>
+<td class="- topic/entry entry colsep-0 rowsep-1" headers="doc__table_specification__entry__2"><span class="- topic/ph ph" id="doc__isolation">Yes</span></td>
+</tr>
+<tr class="- topic/row">
+<td class="- topic/entry entry align-left colsep-1 rowsep-1" headers="doc__table_specification__entry__1">Max Load</td>
+<td class="- topic/entry entry colsep-0 rowsep-1" headers="doc__table_specification__entry__2">±20 mA</td>
+</tr>
+<tr class="- topic/row">
+<td class="- topic/entry entry align-left colsep-1 rowsep-0" headers="doc__table_specification__entry__1">Output Resistance</td>
+<td class="- topic/entry entry colsep-0 rowsep-0" headers="doc__table_specification__entry__2">4 Ω</td>
+</tr>
+</tbody></table>
+</section>
+<section class="- topic/section section" data-ofbid="doc__connector" id="doc__connector"><h2 class="- topic/title title sectiontitle">Shunt Emulator card connector data</h2>
+<table class="- topic/table table frame-all" data-cols="2" data-ofbid="doc__table_connector" id="doc__table_connector"><caption class="- topic/title title tablecap" data-caption-side="top" data-is-repeated="true"><span class="table--title-label">Table<span class="table--title-label-number"> 3</span><span class="table--title-label-punctuation">. </span></span><span class="table--title">Connector data</span></caption><colgroup><col style="width:33.33333333333333%"/><col style="width:66.66666666666666%"/></colgroup><thead class="- topic/thead thead">
+<tr class="- topic/row">
+<th class="- topic/entry entry align-left colsep-1 rowsep-1" id="doc__table_connector__entry__1">Parameter</th>
+<th class="- topic/entry entry align-left colsep-0 rowsep-1" id="doc__table_connector__entry__2">Value</th>
+</tr>
+</thead><tbody class="- topic/tbody tbody">
+<tr class="- topic/row">
+<td class="- topic/entry entry align-left colsep-1 rowsep-1" headers="doc__table_connector__entry__1">Card Connector part number</td>
+<td class="- topic/entry entry colsep-0 rowsep-1" headers="doc__table_connector__entry__2"><p class="- topic/p p"><img class="- topic/image image" height="100" src="../Images/shunt_emulator_card_04.png"/></p><a class="- topic/xref xref" href="https://www.digikey.com/en/products/detail/norcomp-inc/182-009-213R561/1120101" rel="external noopener" target="_blank">182-009-213R561</a></td>
+</tr>
+<tr class="- topic/row">
+<td class="- topic/entry entry align-left colsep-1 rowsep-0" headers="doc__table_connector__entry__1">Mating Cable example</td>
+<td class="- topic/entry entry colsep-0 rowsep-0" headers="doc__table_connector__entry__2"><p class="- topic/p p"><img class="- topic/image image" height="100" src="../Images/shunt_emulator_card_05.png"/></p><a class="- topic/xref xref" href="https://www.gridconnect.com/products/can-2-meter-cable-can-bus-cable" rel="external noopener" target="_blank">Cable Example</a></td>
+</tr>
+</tbody></table>
+</section>
+<section class="- topic/section section" data-ofbid="doc__pinouts" id="doc__pinouts"><h2 class="- topic/title title sectiontitle">Shunt Emulator card pinouts</h2>
+<table class="- topic/table table frame-all" data-cols="5" data-ofbid="doc__table_pinout_x1" id="doc__table_pinout_x1"><caption class="- topic/title title tablecap" data-caption-side="top" data-is-repeated="true"><span class="table--title-label">Table<span class="table--title-label-number"> 4</span><span class="table--title-label-punctuation">. </span></span><span class="table--title">Pinout - X1</span></caption><colgroup><col style="width:16.666666666666664%"/><col style="width:13.333333333333334%"/><col style="width:13.333333333333334%"/><col style="width:16.666666666666664%"/><col style="width:40%"/></colgroup><thead class="- topic/thead thead">
+<tr class="- topic/row">
+<th class="- topic/entry entry align-center colsep-1 rowsep-1" id="doc__table_pinout_x1__entry__1">Connector</th>
+<th class="- topic/entry entry align-center colsep-1 rowsep-1" id="doc__table_pinout_x1__entry__2">Pin</th>
+<th class="- topic/entry entry align-center colsep-1 rowsep-1" id="doc__table_pinout_x1__entry__3">Signal</th>
+<th class="- topic/entry entry align-center colsep-1 rowsep-1" id="doc__table_pinout_x1__entry__4">Rating</th>
+<th class="- topic/entry entry align-center colsep-0 rowsep-1" id="doc__table_pinout_x1__entry__5">Comment</th>
+</tr>
+</thead><tbody class="- topic/tbody tbody">
+<tr class="- topic/row">
+<td class="- topic/entry entry align-center colsep-1 rowsep-1" headers="doc__table_pinout_x1__entry__1">X1</td>
+<td class="- topic/entry entry align-center colsep-1 rowsep-1" headers="doc__table_pinout_x1__entry__2">2</td>
+<td class="- topic/entry entry align-center colsep-1 rowsep-1" headers="doc__table_pinout_x1__entry__3">Out1+</td>
+<td class="- topic/entry entry align-center colsep-1 rowsep-1" headers="doc__table_pinout_x1__entry__4">±250 mV</td>
+<td class="- topic/entry entry align-center colsep-0 rowsep-1" headers="doc__table_pinout_x1__entry__5">Channel 1 Positive Output</td>
+</tr>
+<tr class="- topic/row">
+<td class="- topic/entry entry align-center colsep-1 rowsep-1" headers="doc__table_pinout_x1__entry__1">X1</td>
+<td class="- topic/entry entry align-center colsep-1 rowsep-1" headers="doc__table_pinout_x1__entry__2">3</td>
+<td class="- topic/entry entry align-center colsep-1 rowsep-1" headers="doc__table_pinout_x1__entry__3">LGND1</td>
+<td class="- topic/entry entry align-center colsep-1 rowsep-1" headers="doc__table_pinout_x1__entry__4">0 V</td>
+<td class="- topic/entry entry align-center colsep-0 rowsep-1" headers="doc__table_pinout_x1__entry__5">Channel 1 Local Ground</td>
+</tr>
+<tr class="- topic/row">
+<td class="- topic/entry entry align-center colsep-1 rowsep-1" headers="doc__table_pinout_x1__entry__1">X1</td>
+<td class="- topic/entry entry align-center colsep-1 rowsep-1" headers="doc__table_pinout_x1__entry__2">7</td>
+<td class="- topic/entry entry align-center colsep-1 rowsep-1" headers="doc__table_pinout_x1__entry__3">Out1-</td>
+<td class="- topic/entry entry align-center colsep-1 rowsep-1" headers="doc__table_pinout_x1__entry__4">∓250 mV</td>
+<td class="- topic/entry entry align-center colsep-0 rowsep-1" headers="doc__table_pinout_x1__entry__5">Channel 1 Negative Output</td>
+</tr>
+<tr class="- topic/row">
+<td class="- topic/entry entry align-center colsep-1 rowsep-1" headers="doc__table_pinout_x1__entry__1">X2</td>
+<td class="- topic/entry entry align-center colsep-1 rowsep-1" headers="doc__table_pinout_x1__entry__2">2</td>
+<td class="- topic/entry entry align-center colsep-1 rowsep-1" headers="doc__table_pinout_x1__entry__3">Out2+</td>
+<td class="- topic/entry entry align-center colsep-1 rowsep-1" headers="doc__table_pinout_x1__entry__4">±250 mV</td>
+<td class="- topic/entry entry align-center colsep-0 rowsep-1" headers="doc__table_pinout_x1__entry__5">Channel 2 Positive Output</td>
+</tr>
+<tr class="- topic/row">
+<td class="- topic/entry entry align-center colsep-1 rowsep-1" headers="doc__table_pinout_x1__entry__1">X2</td>
+<td class="- topic/entry entry align-center colsep-1 rowsep-1" headers="doc__table_pinout_x1__entry__2">3</td>
+<td class="- topic/entry entry align-center colsep-1 rowsep-1" headers="doc__table_pinout_x1__entry__3">LGND2</td>
+<td class="- topic/entry entry align-center colsep-1 rowsep-1" headers="doc__table_pinout_x1__entry__4">0 V</td>
+<td class="- topic/entry entry align-center colsep-0 rowsep-1" headers="doc__table_pinout_x1__entry__5">Channel 2 Local Ground</td>
+</tr>
+<tr class="- topic/row">
+<td class="- topic/entry entry align-center colsep-1 rowsep-0" headers="doc__table_pinout_x1__entry__1">X2</td>
+<td class="- topic/entry entry align-center colsep-1 rowsep-0" headers="doc__table_pinout_x1__entry__2">7</td>
+<td class="- topic/entry entry align-center colsep-1 rowsep-0" headers="doc__table_pinout_x1__entry__3">Out2-</td>
+<td class="- topic/entry entry align-center colsep-1 rowsep-0" headers="doc__table_pinout_x1__entry__4">∓250 mV</td>
+<td class="- topic/entry entry align-center colsep-0 rowsep-0" headers="doc__table_pinout_x1__entry__5">Channel 2 Negative Output</td>
+</tr>
+</tbody></table>
+</section>
+</div>
 </article></main></div>
-                        
-                        
-                        
-                        
-                        
-                        
-                    </div>
-                    
-                        <nav role="navigation" id="wh_topic_toc" aria-label="On this page" class="col-lg-2 d-none d-lg-block navbar d-print-none"> 
-                            <div id="wh_topic_toc_content">
-		                        
-	                            <div class=" wh_topic_toc "><div class="wh_topic_label">On this page</div><ul><li class="section-item"><div class="section-title"><a href="#doc__overview" data-tocid="doc__overview">Card Overview</a></div></li><li class="section-item"><div class="section-title"><a href="#doc__revisions" data-tocid="doc__revisions">Shunt Emulator card revisions</a></div></li><li class="section-item"><div class="section-title"><a href="#doc__section_card_description" data-tocid="doc__section_card_description">Shunt Emulator card hardware specification</a></div></li><li class="section-item"><div class="section-title"><a href="#doc__connector" data-tocid="doc__connector">Shunt Emulator card connector data</a></div></li><li class="section-item"><div class="section-title"><a href="#doc__pinouts" data-tocid="doc__pinouts">Shunt Emulator card pinouts</a></div></li></ul></div>
-	                        	
-                        	</div>
-                        </nav>
-                    
-                </div>
-            </div>
-            
-            
-            
-        </div> 
-        <footer class="navbar navbar-default wh_footer">
-  <div class=" footer-container mx-auto ">
-    <div style="text-align:center">Typhoon HIL Inc.<span id="year"> <a href="https://www.typhoon-hil.com">www.typhoon-hil.com</a></span></div>
-  </div>
+</div>
+<nav aria-label="On this page" class="col-lg-2 d-none d-lg-block navbar d-print-none" id="wh_topic_toc" role="navigation">
+<div id="wh_topic_toc_content">
+<div class="wh_topic_toc"><div class="wh_topic_label">On this page</div><ul><li class="section-item"><div class="section-title"><a data-tocid="doc__overview" href="#doc__overview">Card Overview</a></div></li><li class="section-item"><div class="section-title"><a data-tocid="doc__revisions" href="#doc__revisions">Shunt Emulator card revisions</a></div></li><li class="section-item"><div class="section-title"><a data-tocid="doc__section_card_description" href="#doc__section_card_description">Shunt Emulator card hardware specification</a></div></li><li class="section-item"><div class="section-title"><a data-tocid="doc__connector" href="#doc__connector">Shunt Emulator card connector data</a></div></li><li class="section-item"><div class="section-title"><a data-tocid="doc__pinouts" href="#doc__pinouts">Shunt Emulator card pinouts</a></div></li></ul></div>
+</div>
+</nav>
+</div>
+</div>
+</div>
+<footer class="navbar navbar-default wh_footer">
+<div class="footer-container mx-auto">
+<div style="text-align:center">Typhoon HIL Inc.<span id="year"> <a href="https://www.typhoon-hil.com">www.typhoon-hil.com</a></span></div>
+</div>
 </footer>
-        
-        <div id="go2top" class="d-print-none">
-            <span class="oxy-icon oxy-icon-up"></span>
-        </div>
-        
-        <div id="modal_img_large" class="modal">
-            <span class="close oxy-icon oxy-icon-remove"></span>
-            <div id="modal_img_container"></div>
-            <div id="caption"></div>
-        </div>
-        
-        
-<script type="text/javascript" src="../../assets/script.js"> 
+<div class="d-print-none" id="go2top">
+<span class="oxy-icon oxy-icon-up"></span>
+</div>
+<div class="modal" id="modal_img_large">
+<span class="close oxy-icon oxy-icon-remove"></span>
+<div id="modal_img_container"></div>
+<div id="caption"></div>
+</div>
+<script src="../../assets/script.js" type="text/javascript">
 </script>
-
-        
-    </body>
+</body>
 </html>

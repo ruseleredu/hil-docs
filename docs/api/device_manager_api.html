@@ -1,47 +1,40 @@
 <!DOCTYPE html>
 
-<html lang="en" data-content_root="./">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
-
-    <title>Device Manager API &#8212; Typhoon API 2026.1 sp1 documentation</title>
-    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=03e43079" />
-    <link rel="stylesheet" type="text/css" href="_static/sphinxdoc.css?v=34905f61" />
-    <script src="_static/documentation_options.js?v=6122843d"></script>
-    <script src="_static/doctools.js?v=9bcbadda"></script>
-    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
-    <link rel="index" title="Index" href="genindex.html" />
-    <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Package Manager API" href="package_manager_api.html" />
-    <link rel="prev" title="Typhoon HIL RPC API" href="rpc_api.html" /> 
-  </head><body>
-    <div class="related" role="navigation" aria-label="Related">
-      <h3>Navigation</h3>
-      <ul>
-        <li class="right" style="margin-right: 10px">
-          <a href="genindex.html" title="General Index"
-             accesskey="I">index</a></li>
-        <li class="right" >
-          <a href="py-modindex.html" title="Python Module Index"
-             >modules</a> |</li>
-        <li class="right" >
-          <a href="package_manager_api.html" title="Package Manager API"
-             accesskey="N">next</a> |</li>
-        <li class="right" >
-          <a href="rpc_api.html" title="Typhoon HIL RPC API"
-             accesskey="P">previous</a> |</li>
-        <li class="nav-item nav-item-0"><a href="typhoon_api.html">Typhoon API 2026.1 sp1 documentation</a> &#187;</li>
-        <li class="nav-item nav-item-this"><a href="">Device Manager API</a></li> 
-      </ul>
-    </div>  
-
-    <div class="document">
-      <div class="documentwrapper">
-        <div class="bodywrapper">
-          <div class="body" role="main">
-            
-  <section id="device-manager-api">
+<html data-content_root="./" lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="width=device-width, initial-scale=1" name="viewport"/>
+<title>Device Manager API — Typhoon API 2026.1 sp1 documentation</title>
+<link href="_static/pygments.css?v=03e43079" rel="stylesheet" type="text/css"/>
+<link href="_static/sphinxdoc.css?v=34905f61" rel="stylesheet" type="text/css"/>
+<script src="_static/documentation_options.js?v=6122843d"></script>
+<script src="_static/doctools.js?v=9bcbadda"></script>
+<script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+<link href="genindex.html" rel="index" title="Index"/>
+<link href="search.html" rel="search" title="Search"/>
+<link href="package_manager_api.html" rel="next" title="Package Manager API"/>
+<link href="rpc_api.html" rel="prev" title="Typhoon HIL RPC API"/>
+</head><body>
+<div aria-label="Related" class="related" role="navigation">
+<h3>Navigation</h3>
+<ul>
+<li class="right" style="margin-right: 10px">
+<a accesskey="I" href="genindex.html" title="General Index">index</a></li>
+<li class="right">
+<a href="py-modindex.html" title="Python Module Index">modules</a> |</li>
+<li class="right">
+<a accesskey="N" href="package_manager_api.html" title="Package Manager API">next</a> |</li>
+<li class="right">
+<a accesskey="P" href="rpc_api.html" title="Typhoon HIL RPC API">previous</a> |</li>
+<li class="nav-item"><a href="../index.html"> Docs </a> » </li><li class="nav-item nav-item-0"><a href="typhoon_api.html">Typhoon API 2026.1 sp1 documentation</a> »</li>
+<li class="nav-item nav-item-this"><a href="">Device Manager API</a></li>
+</ul>
+</div>
+<div class="document">
+<div class="documentwrapper">
+<div class="bodywrapper">
+<div class="body" role="main">
+<section id="device-manager-api">
 <h1>Device Manager API<a class="headerlink" href="#device-manager-api" title="Link to this heading">¶</a></h1>
 <p><strong>Module:</strong> <code class="docutils literal notranslate"><span class="pre">typhoon.api.device_manager</span></code></p>
 <p>Device Manager API set of functions/methods to manipulate current HIL setup
@@ -60,8 +53,8 @@ setup and how to connect/disconnect current setup.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">typhoon.api.device_manager</span><span class="w"> </span><span class="kn">import</span> <span class="n">device_manager</span>
 
 <span class="c1"># specify HIL devices serial numbers</span>
-<span class="n">hil_device_1</span> <span class="o">=</span> <span class="s2">&quot;604-01-00001&quot;</span>
-<span class="n">hil_device_2</span> <span class="o">=</span> <span class="s2">&quot;604-01-00002&quot;</span>
+<span class="n">hil_device_1</span> <span class="o">=</span> <span class="s2">"604-01-00001"</span>
+<span class="n">hil_device_2</span> <span class="o">=</span> <span class="s2">"604-01-00002"</span>
 <span class="n">devices_to_add</span> <span class="o">=</span> <span class="p">[</span><span class="n">hil_device_1</span><span class="p">,</span> <span class="n">hil_device_2</span><span class="p">]</span>
 <span class="c1"># add devices to setup</span>
 <span class="n">device_manager</span><span class="o">.</span><span class="n">add_devices_to_setup</span><span class="p">(</span><span class="n">devices_to_add</span><span class="p">)</span>
@@ -72,10 +65,10 @@ setup and how to connect/disconnect current setup.</p>
 <span class="c1">#</span>
 <span class="n">device_manager</span><span class="o">.</span><span class="n">disconnect_setup</span><span class="p">()</span>
 
-<span class="c1"># remove device with &quot;604-01-00002&quot; serial number</span>
+<span class="c1"># remove device with "604-01-00002" serial number</span>
 <span class="n">device_manager</span><span class="o">.</span><span class="n">remove_devices</span><span class="p">(</span><span class="n">hil_device_2</span><span class="p">)</span>
 
-<span class="c1"># connect setup again this time only with device with serial &quot;604-01-00001&quot;</span>
+<span class="c1"># connect setup again this time only with device with serial "604-01-00001"</span>
 <span class="n">device_manager</span><span class="o">.</span><span class="n">connect_setup</span><span class="p">()</span>
 </pre></div>
 </div>
@@ -89,7 +82,7 @@ setup and how to connect/disconnect current setup.</p>
 <span class="c1"># print all detected devices on network</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">device_manager</span><span class="o">.</span><span class="n">get_detected_devices</span><span class="p">())</span>
 
-<span class="n">device_manager</span><span class="o">.</span><span class="n">load_setup</span><span class="p">(</span><span class="n">file</span><span class="o">=</span><span class="s2">&quot;C:/Users/User/Desktop/test_setup.setup&quot;</span><span class="p">)</span>
+<span class="n">device_manager</span><span class="o">.</span><span class="n">load_setup</span><span class="p">(</span><span class="n">file</span><span class="o">=</span><span class="s2">"C:/Users/User/Desktop/test_setup.setup"</span><span class="p">)</span>
 <span class="c1"># connect HIL setup</span>
 <span class="n">device_manager</span><span class="o">.</span><span class="n">connect_setup</span><span class="p">()</span>
 
@@ -124,7 +117,6 @@ setup and how to connect/disconnect current setup.</p>
 </dd>
 </dl>
 </dd></dl>
-
 <dl class="py method">
 <dt class="sig sig-object py" id="typhoon.api.device_manager.DeviceManagerAPI.add_discovery_ip_addresses">
 <span class="sig-name descname"><span class="pre">add_discovery_ip_addresses</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">addresses</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#typhoon.api.device_manager.DeviceManagerAPI.add_discovery_ip_addresses" title="Link to this definition">¶</a></dt>
@@ -142,7 +134,6 @@ fails for some reason.</p>
 </dd>
 </dl>
 </dd></dl>
-
 <dl class="py method">
 <dt class="sig sig-object py" id="typhoon.api.device_manager.DeviceManagerAPI.connect_setup">
 <span class="sig-name descname"><span class="pre">connect_setup</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#typhoon.api.device_manager.DeviceManagerAPI.connect_setup" title="Link to this definition">¶</a></dt>
@@ -161,7 +152,6 @@ Make all devices in the selected setup inaccessible to others.</p>
 <p>If any of the devices from the setup has a status (busy/not online), the execution of this function will return False</p>
 </div>
 </dd></dl>
-
 <dl class="py method">
 <dt class="sig sig-object py" id="typhoon.api.device_manager.DeviceManagerAPI.disconnect_setup">
 <span class="sig-name descname"><span class="pre">disconnect_setup</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#typhoon.api.device_manager.DeviceManagerAPI.disconnect_setup" title="Link to this definition">¶</a></dt>
@@ -176,7 +166,6 @@ Make all devices in the selected setup accessible to others.</p>
 </dd>
 </dl>
 </dd></dl>
-
 <dl class="py method">
 <dt class="sig sig-object py" id="typhoon.api.device_manager.DeviceManagerAPI.get_available_devices">
 <span class="sig-name descname"><span class="pre">get_available_devices</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#typhoon.api.device_manager.DeviceManagerAPI.get_available_devices" title="Link to this definition">¶</a></dt>
@@ -190,7 +179,6 @@ Make all devices in the selected setup accessible to others.</p>
 </dd>
 </dl>
 </dd></dl>
-
 <dl class="py method">
 <dt class="sig sig-object py" id="typhoon.api.device_manager.DeviceManagerAPI.get_detected_devices">
 <span class="sig-name descname"><span class="pre">get_detected_devices</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#typhoon.api.device_manager.DeviceManagerAPI.get_detected_devices" title="Link to this definition">¶</a></dt>
@@ -204,7 +192,6 @@ Make all devices in the selected setup accessible to others.</p>
 </dd>
 </dl>
 </dd></dl>
-
 <dl class="py method">
 <dt class="sig sig-object py" id="typhoon.api.device_manager.DeviceManagerAPI.get_device_settings">
 <span class="sig-name descname"><span class="pre">get_device_settings</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">device_serial</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#typhoon.api.device_manager.DeviceManagerAPI.get_device_settings" title="Link to this definition">¶</a></dt>
@@ -284,7 +271,6 @@ Make all devices in the selected setup accessible to others.</p>
 netmask_eth_port_1, gateway_eth_port_1 and become deprecated</p>
 </div>
 </dd></dl>
-
 <dl class="py method">
 <dt class="sig sig-object py" id="typhoon.api.device_manager.DeviceManagerAPI.get_hil_info">
 <span class="sig-name descname"><span class="pre">get_hil_info</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#typhoon.api.device_manager.DeviceManagerAPI.get_hil_info" title="Link to this definition">¶</a></dt>
@@ -338,7 +324,6 @@ wrong or calibration is not supported on connected HIL)</p></td>
 </tbody>
 </table>
 </dd></dl>
-
 <dl class="py method">
 <dt class="sig sig-object py" id="typhoon.api.device_manager.DeviceManagerAPI.get_setup_devices">
 <span class="sig-name descname"><span class="pre">get_setup_devices</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#typhoon.api.device_manager.DeviceManagerAPI.get_setup_devices" title="Link to this definition">¶</a></dt>
@@ -359,7 +344,6 @@ wrong or calibration is not supported on connected HIL)</p></td>
 </dd>
 </dl>
 </dd></dl>
-
 <dl class="py method">
 <dt class="sig sig-object py" id="typhoon.api.device_manager.DeviceManagerAPI.get_setup_devices_serials">
 <span class="sig-name descname"><span class="pre">get_setup_devices_serials</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#typhoon.api.device_manager.DeviceManagerAPI.get_setup_devices_serials" title="Link to this definition">¶</a></dt>
@@ -373,7 +357,6 @@ wrong or calibration is not supported on connected HIL)</p></td>
 </dd>
 </dl>
 </dd></dl>
-
 <dl class="py method">
 <dt class="sig sig-object py" id="typhoon.api.device_manager.DeviceManagerAPI.is_setup_connected">
 <span class="sig-name descname"><span class="pre">is_setup_connected</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#typhoon.api.device_manager.DeviceManagerAPI.is_setup_connected" title="Link to this definition">¶</a></dt>
@@ -387,7 +370,6 @@ wrong or calibration is not supported on connected HIL)</p></td>
 </dd>
 </dl>
 </dd></dl>
-
 <dl class="py method">
 <dt class="sig sig-object py" id="typhoon.api.device_manager.DeviceManagerAPI.load_setup">
 <span class="sig-name descname"><span class="pre">load_setup</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">file</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#typhoon.api.device_manager.DeviceManagerAPI.load_setup" title="Link to this definition">¶</a></dt>
@@ -404,7 +386,6 @@ wrong or calibration is not supported on connected HIL)</p></td>
 </dd>
 </dl>
 </dd></dl>
-
 <dl class="py method">
 <dt class="sig sig-object py" id="typhoon.api.device_manager.DeviceManagerAPI.remove_devices_from_setup">
 <span class="sig-name descname"><span class="pre">remove_devices_from_setup</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">devices</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#typhoon.api.device_manager.DeviceManagerAPI.remove_devices_from_setup" title="Link to this definition">¶</a></dt>
@@ -421,7 +402,6 @@ wrong or calibration is not supported on connected HIL)</p></td>
 </dd>
 </dl>
 </dd></dl>
-
 <dl class="py method">
 <dt class="sig sig-object py" id="typhoon.api.device_manager.DeviceManagerAPI.remove_discovery_ip_addresses">
 <span class="sig-name descname"><span class="pre">remove_discovery_ip_addresses</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">addresses</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#typhoon.api.device_manager.DeviceManagerAPI.remove_discovery_ip_addresses" title="Link to this definition">¶</a></dt>
@@ -439,7 +419,6 @@ if auto discovery fails for some reason.</p>
 </dd>
 </dl>
 </dd></dl>
-
 <dl class="py method">
 <dt class="sig sig-object py" id="typhoon.api.device_manager.DeviceManagerAPI.set_device_settings">
 <span class="sig-name descname"><span class="pre">set_device_settings</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">device_serial</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">settings</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#typhoon.api.device_manager.DeviceManagerAPI.set_device_settings" title="Link to this definition">¶</a></dt>
@@ -479,7 +458,6 @@ if auto discovery fails for some reason.</p>
 gateway_eth_port_1 and netmask_eth_port_1 in future versions.</p>
 </div>
 </dd></dl>
-
 <dl class="py method">
 <dt class="sig sig-object py" id="typhoon.api.device_manager.DeviceManagerAPI.sync_firmware">
 <span class="sig-name descname"><span class="pre">sync_firmware</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">device_to_update</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">configuration_id</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">force</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#typhoon.api.device_manager.DeviceManagerAPI.sync_firmware" title="Link to this definition">¶</a></dt>
@@ -495,7 +473,6 @@ the one already in HIL device</p></li>
 </dd>
 </dl>
 </dd></dl>
-
 <dl class="py method">
 <dt class="sig sig-object py" id="typhoon.api.device_manager.DeviceManagerAPI.update_firmware">
 <span class="sig-name descname"><span class="pre">update_firmware</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">device_to_update</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">configuration_id</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">force</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#typhoon.api.device_manager.DeviceManagerAPI.update_firmware" title="Link to this definition">¶</a></dt>
@@ -511,26 +488,22 @@ the one already in HIL device</p></li>
 </dd>
 </dl>
 </dd></dl>
-
 </dd></dl>
-
 </section>
 </section>
 </section>
-
-
-            <div class="clearer"></div>
-          </div>
-        </div>
-      </div>
-      <div class="sphinxsidebar" role="navigation" aria-label="Main">
-        <div class="sphinxsidebarwrapper">
-            <p class="logo"><a href="typhoon_api.html">
-              <img class="logo" src="_static/logo.png" alt="Logo of Typhoon API"/>
-            </a></p>
-  <div>
-    <h3><a href="typhoon_api.html">Table of Contents</a></h3>
-    <ul>
+<div class="clearer"></div>
+</div>
+</div>
+</div>
+<div aria-label="Main" class="sphinxsidebar" role="navigation">
+<div class="sphinxsidebarwrapper">
+<p class="logo"><a href="typhoon_api.html">
+<img alt="Logo of Typhoon API" class="logo" src="_static/logo.png"/>
+</a></p>
+<div>
+<h3><a href="typhoon_api.html">Table of Contents</a></h3>
+<ul>
 <li><a class="reference internal" href="#">Device Manager API</a><ul>
 <li><a class="reference internal" href="#examples">Examples</a><ul>
 <li><a class="reference internal" href="#example-1">Example 1</a></li>
@@ -562,61 +535,53 @@ the one already in HIL device</p></li>
 </ul>
 </li>
 </ul>
-
-  </div>
-  <div>
-    <h4>Previous topic</h4>
-    <p class="topless"><a href="rpc_api.html"
-                          title="previous chapter">Typhoon HIL RPC API</a></p>
-  </div>
-  <div>
-    <h4>Next topic</h4>
-    <p class="topless"><a href="package_manager_api.html"
-                          title="next chapter">Package Manager API</a></p>
-  </div>
-  <div role="note" aria-label="source link">
-    <h3>This Page</h3>
-    <ul class="this-page-menu">
-      <li><a href="_sources/device_manager_api.rst.txt"
-            rel="nofollow">Show Source</a></li>
-    </ul>
-   </div>
-<search id="searchbox" style="display: none" role="search">
-  <h3 id="searchlabel">Quick search</h3>
-    <div class="searchformwrapper">
-    <form class="search" action="search.html" method="get">
-      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
-      <input type="submit" value="Go" />
-    </form>
-    </div>
+</div>
+<div>
+<h4>Previous topic</h4>
+<p class="topless"><a href="rpc_api.html" title="previous chapter">Typhoon HIL RPC API</a></p>
+</div>
+<div>
+<h4>Next topic</h4>
+<p class="topless"><a href="package_manager_api.html" title="next chapter">Package Manager API</a></p>
+</div>
+<div aria-label="source link" role="note">
+<h3>This Page</h3>
+<ul class="this-page-menu">
+<li><a href="_sources/device_manager_api.rst.txt" rel="nofollow">Show Source</a></li>
+</ul>
+</div>
+<search id="searchbox" role="search" style="display: none">
+<h3 id="searchlabel">Quick search</h3>
+<div class="searchformwrapper">
+<form action="search.html" class="search" method="get">
+<input aria-labelledby="searchlabel" autocapitalize="off" autocomplete="off" autocorrect="off" name="q" spellcheck="false" type="text"/>
+<input type="submit" value="Go"/>
+</form>
+</div>
 </search>
 <script>document.getElementById('searchbox').style.display = "block"</script>
-        </div>
-      </div>
-      <div class="clearer"></div>
-    </div>
-    <div class="related" role="navigation" aria-label="Related">
-      <h3>Navigation</h3>
-      <ul>
-        <li class="right" style="margin-right: 10px">
-          <a href="genindex.html" title="General Index"
-             >index</a></li>
-        <li class="right" >
-          <a href="py-modindex.html" title="Python Module Index"
-             >modules</a> |</li>
-        <li class="right" >
-          <a href="package_manager_api.html" title="Package Manager API"
-             >next</a> |</li>
-        <li class="right" >
-          <a href="rpc_api.html" title="Typhoon HIL RPC API"
-             >previous</a> |</li>
-        <li class="nav-item nav-item-0"><a href="typhoon_api.html">Typhoon API 2026.1 sp1 documentation</a> &#187;</li>
-        <li class="nav-item nav-item-this"><a href="">Device Manager API</a></li> 
-      </ul>
-    </div>
-    <div class="footer" role="contentinfo">
-    &#169; Copyright 2026, Typhoon HIL.
+</div>
+</div>
+<div class="clearer"></div>
+</div>
+<div aria-label="Related" class="related" role="navigation">
+<h3>Navigation</h3>
+<ul>
+<li class="right" style="margin-right: 10px">
+<a href="genindex.html" title="General Index">index</a></li>
+<li class="right">
+<a href="py-modindex.html" title="Python Module Index">modules</a> |</li>
+<li class="right">
+<a href="package_manager_api.html" title="Package Manager API">next</a> |</li>
+<li class="right">
+<a href="rpc_api.html" title="Typhoon HIL RPC API">previous</a> |</li>
+<li class="nav-item"><a href="../index.html"> Docs </a> » </li><li class="nav-item nav-item-0"><a href="typhoon_api.html">Typhoon API 2026.1 sp1 documentation</a> »</li>
+<li class="nav-item nav-item-this"><a href="">Device Manager API</a></li>
+</ul>
+</div>
+<div class="footer" role="contentinfo">
+    © Copyright 2026, Typhoon HIL.
       Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 8.2.1.
     </div>
-  </body>
+</body>
 </html>

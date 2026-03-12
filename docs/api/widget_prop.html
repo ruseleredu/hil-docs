@@ -1,48 +1,41 @@
 <!DOCTYPE html>
 
-<html lang="en" data-content_root="./">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
-
-    <title>Available Widget Properties &#8212; Typhoon API 2026.1 sp1 documentation</title>
-    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=03e43079" />
-    <link rel="stylesheet" type="text/css" href="_static/sphinxdoc.css?v=34905f61" />
-    <script src="_static/documentation_options.js?v=6122843d"></script>
-    <script src="_static/doctools.js?v=9bcbadda"></script>
-    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
-    <link rel="index" title="Index" href="genindex.html" />
-    <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Schematic Editor API" href="schematic_api.html" />
-    <link rel="prev" title="Available Widget Actions" href="widget_actions.html" /> 
-  </head><body>
-    <div class="related" role="navigation" aria-label="Related">
-      <h3>Navigation</h3>
-      <ul>
-        <li class="right" style="margin-right: 10px">
-          <a href="genindex.html" title="General Index"
-             accesskey="I">index</a></li>
-        <li class="right" >
-          <a href="py-modindex.html" title="Python Module Index"
-             >modules</a> |</li>
-        <li class="right" >
-          <a href="schematic_api.html" title="Schematic Editor API"
-             accesskey="N">next</a> |</li>
-        <li class="right" >
-          <a href="widget_actions.html" title="Available Widget Actions"
-             accesskey="P">previous</a> |</li>
-        <li class="nav-item nav-item-0"><a href="typhoon_api.html">Typhoon API 2026.1 sp1 documentation</a> &#187;</li>
-          <li class="nav-item nav-item-1"><a href="scada_api.html" accesskey="U">SCADA API</a> &#187;</li>
-        <li class="nav-item nav-item-this"><a href="">Available Widget Properties</a></li> 
-      </ul>
-    </div>  
-
-    <div class="document">
-      <div class="documentwrapper">
-        <div class="bodywrapper">
-          <div class="body" role="main">
-            
-  <section id="available-widget-properties">
+<html data-content_root="./" lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="width=device-width, initial-scale=1" name="viewport"/>
+<title>Available Widget Properties — Typhoon API 2026.1 sp1 documentation</title>
+<link href="_static/pygments.css?v=03e43079" rel="stylesheet" type="text/css"/>
+<link href="_static/sphinxdoc.css?v=34905f61" rel="stylesheet" type="text/css"/>
+<script src="_static/documentation_options.js?v=6122843d"></script>
+<script src="_static/doctools.js?v=9bcbadda"></script>
+<script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+<link href="genindex.html" rel="index" title="Index"/>
+<link href="search.html" rel="search" title="Search"/>
+<link href="schematic_api.html" rel="next" title="Schematic Editor API"/>
+<link href="widget_actions.html" rel="prev" title="Available Widget Actions"/>
+</head><body>
+<div aria-label="Related" class="related" role="navigation">
+<h3>Navigation</h3>
+<ul>
+<li class="right" style="margin-right: 10px">
+<a accesskey="I" href="genindex.html" title="General Index">index</a></li>
+<li class="right">
+<a href="py-modindex.html" title="Python Module Index">modules</a> |</li>
+<li class="right">
+<a accesskey="N" href="schematic_api.html" title="Schematic Editor API">next</a> |</li>
+<li class="right">
+<a accesskey="P" href="widget_actions.html" title="Available Widget Actions">previous</a> |</li>
+<li class="nav-item"><a href="../index.html"> Docs </a> » </li><li class="nav-item nav-item-0"><a href="typhoon_api.html">Typhoon API 2026.1 sp1 documentation</a> »</li>
+<li class="nav-item nav-item-1"><a accesskey="U" href="scada_api.html">SCADA API</a> »</li>
+<li class="nav-item nav-item-this"><a href="">Available Widget Properties</a></li>
+</ul>
+</div>
+<div class="document">
+<div class="documentwrapper">
+<div class="bodywrapper">
+<div class="body" role="main">
+<section id="available-widget-properties">
 <h1>Available Widget Properties<a class="headerlink" href="#available-widget-properties" title="Link to this heading">¶</a></h1>
 <p>The properties which are available depend on the type of widget which is being changed,
 as well as on the type of values that can be set for a particular property.</p>
@@ -60,19 +53,19 @@ or listed in the section <a class="reference internal" href="scada_api.html#api-
 <span class="kn">import</span><span class="w"> </span><span class="nn">typhoon.api.scada.const</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">api_const</span>
 
 <span class="c1"># load a Panel file</span>
-<span class="n">panel</span><span class="o">.</span><span class="n">load_panel</span><span class="p">(</span><span class="sa">r</span><span class="s2">&quot;C:\scada_file.cus&quot;</span><span class="p">)</span>
+<span class="n">panel</span><span class="o">.</span><span class="n">load_panel</span><span class="p">(</span><span class="sa">r</span><span class="s2">"C:\scada_file.cus"</span><span class="p">)</span>
 
 <span class="c1"># get the handle of the widget whose properties you want to change</span>
-<span class="n">widget_handle</span> <span class="o">=</span> <span class="n">panel</span><span class="o">.</span><span class="n">get_widget_by_id</span><span class="p">(</span><span class="s2">&quot;e18c3fe582d011e9bac3e0d55e6b2045&quot;</span><span class="p">)</span>
+<span class="n">widget_handle</span> <span class="o">=</span> <span class="n">panel</span><span class="o">.</span><span class="n">get_widget_by_id</span><span class="p">(</span><span class="s2">"e18c3fe582d011e9bac3e0d55e6b2045"</span><span class="p">)</span>
 
 <span class="c1"># change the widget name by using the handle as a widget identifier</span>
 <span class="c1"># and specify the property by using property constants</span>
 <span class="n">panel</span><span class="o">.</span><span class="n">set_property_value</span><span class="p">(</span><span class="n">widget_handle</span><span class="p">,</span>
                          <span class="n">api_const</span><span class="o">.</span><span class="n">PROP_NAME</span><span class="p">,</span>
-                         <span class="s2">&quot;New widget name&quot;</span><span class="p">)</span>
+                         <span class="s2">"New widget name"</span><span class="p">)</span>
 
 <span class="c1"># get the widget name by using the handle as a widget identifier</span>
-<span class="n">widget_name</span> <span class="o">=</span> <span class="n">panel</span><span class="o">.</span><span class="n">get_property_value</span><span class="p">(</span><span class="n">widget_handle</span><span class="p">,</span> <span class="s2">&quot;name&quot;</span><span class="p">)</span>
+<span class="n">widget_name</span> <span class="o">=</span> <span class="n">panel</span><span class="o">.</span><span class="n">get_property_value</span><span class="p">(</span><span class="n">widget_handle</span><span class="p">,</span> <span class="s2">"name"</span><span class="p">)</span>
 </pre></div>
 </div>
 <section id="common-properties">
@@ -151,7 +144,7 @@ or listed in the section <a class="reference internal" href="scada_api.html#api-
 <p>The color needs to be specified as a hex number in string representation.</p>
 <p>Example:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># red color</span>
-<span class="n">color</span> <span class="o">=</span> <span class="s2">&quot;#ff0000&quot;</span>
+<span class="n">color</span> <span class="o">=</span> <span class="s2">"#ff0000"</span>
 </pre></div>
 </div>
 </div>
@@ -178,14 +171,14 @@ or listed in the section <a class="reference internal" href="scada_api.html#api-
 <td><ul>
 <li><p>list[list[analog_signals], list[digital_signals]] - in case <code class="docutils literal notranslate"><span class="pre">Trace</span> <span class="pre">Graph</span></code> Widget is changed.</p>
 <p>Example:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">([</span><span class="s2">&quot;an_sig_1&quot;</span><span class="p">,</span> <span class="s2">&quot;an_sig_2&quot;</span><span class="p">],</span>
- <span class="p">[</span><span class="s2">&quot;di_sig_1&quot;</span><span class="p">,</span> <span class="s2">&quot;di_sig_2&quot;</span><span class="p">])</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">([</span><span class="s2">"an_sig_1"</span><span class="p">,</span> <span class="s2">"an_sig_2"</span><span class="p">],</span>
+ <span class="p">[</span><span class="s2">"di_sig_1"</span><span class="p">,</span> <span class="s2">"di_sig_2"</span><span class="p">])</span>
 </pre></div>
 </div>
 </li>
 <li><p>list[analog_signals] - in case <code class="docutils literal notranslate"><span class="pre">XY</span> <span class="pre">Graph</span></code> Widget is changed.</p>
 <p>Example:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="s2">&quot;an_sig_1&quot;</span><span class="p">,</span> <span class="s2">&quot;an_sig_2&quot;</span><span class="p">]</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="s2">"an_sig_1"</span><span class="p">,</span> <span class="s2">"an_sig_2"</span><span class="p">]</span>
 </pre></div>
 </div>
 </li>
@@ -309,10 +302,10 @@ Use <code class="docutils literal notranslate"><span class="pre">PROP_CS_CAPTURE
 </div>
 <p>Example:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">[</span>
-    <span class="p">[</span><span class="s2">&quot;VDC1&quot;</span><span class="p">,</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">]],</span>
-    <span class="p">[</span><span class="s2">&quot;VDC2&quot;</span><span class="p">,</span> <span class="p">[</span><span class="mi">4</span><span class="p">]],</span>
-    <span class="p">[</span><span class="s2">&quot;VDC3&quot;</span><span class="p">],</span>
-    <span class="p">[</span><span class="s2">&quot;VDC4&quot;</span><span class="p">]</span>
+    <span class="p">[</span><span class="s2">"VDC1"</span><span class="p">,</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">]],</span>
+    <span class="p">[</span><span class="s2">"VDC2"</span><span class="p">,</span> <span class="p">[</span><span class="mi">4</span><span class="p">]],</span>
+    <span class="p">[</span><span class="s2">"VDC3"</span><span class="p">],</span>
+    <span class="p">[</span><span class="s2">"VDC4"</span><span class="p">]</span>
 <span class="p">]</span>
 </pre></div>
 </div>
@@ -351,9 +344,9 @@ Use <code class="docutils literal notranslate"><span class="pre">PROP_CS_CAPTURE
 </div>
 <p>Example:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">[</span>
-    <span class="p">[</span><span class="s2">&quot;HIL0 digital signal 1&quot;</span><span class="p">,</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">]],</span>
-    <span class="p">[</span><span class="s2">&quot;HIL0 digital signal 2&quot;</span><span class="p">,</span> <span class="p">[</span><span class="mi">4</span><span class="p">]],</span>
-    <span class="p">[</span><span class="s2">&quot;HIL0 digital signal 3&quot;</span><span class="p">]</span>
+    <span class="p">[</span><span class="s2">"HIL0 digital signal 1"</span><span class="p">,</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">]],</span>
+    <span class="p">[</span><span class="s2">"HIL0 digital signal 2"</span><span class="p">,</span> <span class="p">[</span><span class="mi">4</span><span class="p">]],</span>
+    <span class="p">[</span><span class="s2">"HIL0 digital signal 3"</span><span class="p">]</span>
 <span class="p">]</span>
 </pre></div>
 </div>
@@ -373,9 +366,9 @@ Use <code class="docutils literal notranslate"><span class="pre">PROP_CS_CAPTURE
 <td><dl>
 <dt>list[signal_1, signal_2, …], where:</dt><dd><ul>
 <li><p><code class="docutils literal notranslate"><span class="pre">signal</span></code> is a dictionary:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{</span><span class="s1">&#39;Name&#39;</span><span class="p">:</span> <span class="n">signal_name</span><span class="p">,</span>
- <span class="s1">&#39;Type&#39;</span><span class="p">:</span> <span class="n">signal_type</span><span class="p">,</span>
- <span class="s1">&#39;Viewports&#39;</span><span class="p">:</span> <span class="n">signal_viewports</span><span class="p">}</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{</span><span class="s1">'Name'</span><span class="p">:</span> <span class="n">signal_name</span><span class="p">,</span>
+ <span class="s1">'Type'</span><span class="p">:</span> <span class="n">signal_type</span><span class="p">,</span>
+ <span class="s1">'Viewports'</span><span class="p">:</span> <span class="n">signal_viewports</span><span class="p">}</span>
 </pre></div>
 </div>
 </li>
@@ -391,9 +384,9 @@ Use <code class="docutils literal notranslate"><span class="pre">PROP_CS_CAPTURE
 </div>
 <p>Example:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">[</span>
-    <span class="p">{</span><span class="s1">&#39;Name&#39;</span><span class="p">:</span> <span class="s2">&quot;Vgrid_a&quot;</span><span class="p">,</span> <span class="s1">&#39;Type&#39;</span><span class="p">:</span> <span class="s1">&#39;Analog&#39;</span><span class="p">,</span> <span class="s1">&#39;Viewports&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">]},</span>
-    <span class="p">{</span><span class="s1">&#39;Name&#39;</span><span class="p">:</span> <span class="s2">&quot;HIL0 digital signal 3&quot;</span><span class="p">,</span> <span class="s1">&#39;Type&#39;</span><span class="p">:</span> <span class="s1">&#39;Digital&#39;</span><span class="p">,</span> <span class="s1">&#39;Viewports&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">4</span><span class="p">]},</span>
-    <span class="p">{</span><span class="s1">&#39;Name&#39;</span><span class="p">:</span> <span class="s2">&quot;Virtual signal 1&quot;</span><span class="p">,</span> <span class="s1">&#39;Type&#39;</span><span class="p">:</span> <span class="s1">&#39;Virtual&#39;</span><span class="p">},</span>
+    <span class="p">{</span><span class="s1">'Name'</span><span class="p">:</span> <span class="s2">"Vgrid_a"</span><span class="p">,</span> <span class="s1">'Type'</span><span class="p">:</span> <span class="s1">'Analog'</span><span class="p">,</span> <span class="s1">'Viewports'</span><span class="p">:</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">]},</span>
+    <span class="p">{</span><span class="s1">'Name'</span><span class="p">:</span> <span class="s2">"HIL0 digital signal 3"</span><span class="p">,</span> <span class="s1">'Type'</span><span class="p">:</span> <span class="s1">'Digital'</span><span class="p">,</span> <span class="s1">'Viewports'</span><span class="p">:</span> <span class="p">[</span><span class="mi">4</span><span class="p">]},</span>
+    <span class="p">{</span><span class="s1">'Name'</span><span class="p">:</span> <span class="s2">"Virtual signal 1"</span><span class="p">,</span> <span class="s1">'Type'</span><span class="p">:</span> <span class="s1">'Virtual'</span><span class="p">},</span>
 <span class="p">]</span>
 </pre></div>
 </div>
@@ -403,9 +396,9 @@ Use <code class="docutils literal notranslate"><span class="pre">PROP_CS_CAPTURE
 <td><dl>
 <dt>list[signal_1, signal_2, …], where:</dt><dd><ul>
 <li><p><code class="docutils literal notranslate"><span class="pre">signal</span></code> is a is a dictionary:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{</span><span class="s1">&#39;Name&#39;</span><span class="p">:</span> <span class="n">signal_name</span><span class="p">,</span>
- <span class="s1">&#39;Type&#39;</span><span class="p">:</span> <span class="n">signal_type</span><span class="p">,</span>
- <span class="s1">&#39;Viewports&#39;</span><span class="p">:</span> <span class="n">signal_viewports</span><span class="p">}</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{</span><span class="s1">'Name'</span><span class="p">:</span> <span class="n">signal_name</span><span class="p">,</span>
+ <span class="s1">'Type'</span><span class="p">:</span> <span class="n">signal_type</span><span class="p">,</span>
+ <span class="s1">'Viewports'</span><span class="p">:</span> <span class="n">signal_viewports</span><span class="p">}</span>
 </pre></div>
 </div>
 </li>
@@ -482,9 +475,9 @@ Use <code class="docutils literal notranslate"><span class="pre">PROP_CS_CAPTURE
 </div>
 <p>M - mandatory, O - optional</p>
 <p>Example:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="s2">&quot;Analog&quot;</span><span class="p">,</span> <span class="s2">&quot;VDC5&quot;</span><span class="p">,</span> <span class="s2">&quot;Falling edge&quot;</span><span class="p">,</span> <span class="mi">60</span><span class="p">,</span> <span class="kc">True</span><span class="p">,</span> <span class="mi">500</span><span class="p">],</span> <span class="ow">or</span>
-<span class="p">[</span><span class="s2">&quot;Digital&quot;</span><span class="p">,</span> <span class="s2">&quot;HIL0 digital signal 4&quot;</span><span class="p">,</span> <span class="s2">&quot;Falling edge&quot;</span><span class="p">,</span> <span class="mi">55</span><span class="p">,</span> <span class="kc">True</span><span class="p">],</span> <span class="ow">or</span>
-<span class="p">[</span><span class="s2">&quot;User&quot;</span><span class="p">,</span> <span class="mi">78</span><span class="p">]</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="s2">"Analog"</span><span class="p">,</span> <span class="s2">"VDC5"</span><span class="p">,</span> <span class="s2">"Falling edge"</span><span class="p">,</span> <span class="mi">60</span><span class="p">,</span> <span class="kc">True</span><span class="p">,</span> <span class="mi">500</span><span class="p">],</span> <span class="ow">or</span>
+<span class="p">[</span><span class="s2">"Digital"</span><span class="p">,</span> <span class="s2">"HIL0 digital signal 4"</span><span class="p">,</span> <span class="s2">"Falling edge"</span><span class="p">,</span> <span class="mi">55</span><span class="p">,</span> <span class="kc">True</span><span class="p">],</span> <span class="ow">or</span>
+<span class="p">[</span><span class="s2">"User"</span><span class="p">,</span> <span class="mi">78</span><span class="p">]</span>
 </pre></div>
 </div>
 </dd>
@@ -615,9 +608,9 @@ Use <code class="docutils literal notranslate"><span class="pre">PROP_CS_SCOPE_S
 </div>
 <p>Example:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">[</span>
-    <span class="p">[</span><span class="s2">&quot;const_0V&quot;</span><span class="p">],</span>
-    <span class="p">[</span><span class="s2">&quot;Va1&quot;</span><span class="p">,</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">3</span><span class="p">],</span> <span class="s2">&quot;2k&quot;</span><span class="p">,</span> <span class="o">-</span><span class="mi">2</span><span class="p">,</span> <span class="kc">True</span><span class="p">],</span>
-    <span class="p">[</span><span class="s2">&quot;Va2&quot;</span><span class="p">,</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span><span class="mi">4</span><span class="p">],</span> <span class="s2">&quot;2k&quot;</span><span class="p">,</span> <span class="mf">3.5</span><span class="p">]</span>
+    <span class="p">[</span><span class="s2">"const_0V"</span><span class="p">],</span>
+    <span class="p">[</span><span class="s2">"Va1"</span><span class="p">,</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">3</span><span class="p">],</span> <span class="s2">"2k"</span><span class="p">,</span> <span class="o">-</span><span class="mi">2</span><span class="p">,</span> <span class="kc">True</span><span class="p">],</span>
+    <span class="p">[</span><span class="s2">"Va2"</span><span class="p">,</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span><span class="mi">4</span><span class="p">],</span> <span class="s2">"2k"</span><span class="p">,</span> <span class="mf">3.5</span><span class="p">]</span>
 <span class="p">]</span>
 </pre></div>
 </div>
@@ -660,9 +653,9 @@ Use <code class="docutils literal notranslate"><span class="pre">PROP_CS_SCOPE_S
 </div>
 <p>Example:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">[</span>
-    <span class="p">[</span><span class="s2">&quot;HIL0 digital input 1&quot;</span><span class="p">],</span>
-    <span class="p">[</span><span class="s2">&quot;HIL0 digital input 2&quot;</span><span class="p">,</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">],</span> <span class="o">-</span><span class="mi">2</span><span class="p">],</span>
-    <span class="p">[</span><span class="s2">&quot;HIL0 digital input 3&quot;</span><span class="p">,</span> <span class="p">[</span><span class="mi">2</span><span class="p">],</span> <span class="mf">1.5</span><span class="p">]</span>
+    <span class="p">[</span><span class="s2">"HIL0 digital input 1"</span><span class="p">],</span>
+    <span class="p">[</span><span class="s2">"HIL0 digital input 2"</span><span class="p">,</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">],</span> <span class="o">-</span><span class="mi">2</span><span class="p">],</span>
+    <span class="p">[</span><span class="s2">"HIL0 digital input 3"</span><span class="p">,</span> <span class="p">[</span><span class="mi">2</span><span class="p">],</span> <span class="mf">1.5</span><span class="p">]</span>
 <span class="p">]</span>
 </pre></div>
 </div>
@@ -682,12 +675,12 @@ Use <code class="docutils literal notranslate"><span class="pre">PROP_CS_SCOPE_S
 <td><dl>
 <dt>list[signal_1, signal_2, …], where:</dt><dd><ul>
 <li><p><code class="docutils literal notranslate"><span class="pre">signal</span></code> is a dictionary:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{</span><span class="s1">&#39;Name&#39;</span><span class="p">:</span> <span class="n">signal_name</span><span class="p">,</span>
- <span class="s1">&#39;Type&#39;</span><span class="p">:</span> <span class="n">signal_type</span><span class="p">,</span>
- <span class="s1">&#39;Viewports&#39;</span><span class="p">:</span> <span class="n">signal_viewports</span><span class="p">,</span>
- <span class="s1">&#39;Scale&#39;</span><span class="p">,</span> <span class="n">vertical_scale</span><span class="p">,</span>
- <span class="s1">&#39;Offset&#39;</span><span class="p">,</span> <span class="n">vertical_offset</span><span class="p">,</span>
- <span class="s1">&#39;Coupling&#39;</span><span class="p">,</span> <span class="n">coupling</span><span class="p">,</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{</span><span class="s1">'Name'</span><span class="p">:</span> <span class="n">signal_name</span><span class="p">,</span>
+ <span class="s1">'Type'</span><span class="p">:</span> <span class="n">signal_type</span><span class="p">,</span>
+ <span class="s1">'Viewports'</span><span class="p">:</span> <span class="n">signal_viewports</span><span class="p">,</span>
+ <span class="s1">'Scale'</span><span class="p">,</span> <span class="n">vertical_scale</span><span class="p">,</span>
+ <span class="s1">'Offset'</span><span class="p">,</span> <span class="n">vertical_offset</span><span class="p">,</span>
+ <span class="s1">'Coupling'</span><span class="p">,</span> <span class="n">coupling</span><span class="p">,</span>
  <span class="p">}</span>
 </pre></div>
 </div>
@@ -717,8 +710,8 @@ Use <code class="docutils literal notranslate"><span class="pre">PROP_CS_SCOPE_S
 </div>
 <p>Example:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">[</span>
-    <span class="p">{</span><span class="s1">&#39;Name&#39;</span><span class="p">:</span> <span class="s2">&quot;Vgrid_a&quot;</span><span class="p">,</span> <span class="s1">&#39;Type&#39;</span><span class="p">:</span> <span class="s1">&#39;Analog&#39;</span><span class="p">,</span> <span class="s1">&#39;Viewports&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">],</span> <span class="s1">&#39;Scale&#39;</span><span class="p">:</span> <span class="s2">&quot;2k&quot;</span><span class="p">,</span> <span class="s1">&#39;Offset&#39;</span><span class="p">:</span> <span class="o">-</span><span class="mi">2</span><span class="p">,</span> <span class="s1">&#39;Coupling&#39;</span><span class="p">:</span> <span class="kc">True</span><span class="p">},</span>
-    <span class="p">{</span><span class="s1">&#39;Name&#39;</span><span class="p">:</span> <span class="s2">&quot;HIL0 digital signal 3&quot;</span><span class="p">,</span> <span class="s1">&#39;Type&#39;</span><span class="p">:</span> <span class="s1">&#39;Digital&#39;</span><span class="p">,</span> <span class="s1">&#39;Viewports&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">4</span><span class="p">],</span> <span class="s1">&#39;Offset&#39;</span><span class="p">:</span> <span class="mf">1.5</span><span class="p">},</span>
+    <span class="p">{</span><span class="s1">'Name'</span><span class="p">:</span> <span class="s2">"Vgrid_a"</span><span class="p">,</span> <span class="s1">'Type'</span><span class="p">:</span> <span class="s1">'Analog'</span><span class="p">,</span> <span class="s1">'Viewports'</span><span class="p">:</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">],</span> <span class="s1">'Scale'</span><span class="p">:</span> <span class="s2">"2k"</span><span class="p">,</span> <span class="s1">'Offset'</span><span class="p">:</span> <span class="o">-</span><span class="mi">2</span><span class="p">,</span> <span class="s1">'Coupling'</span><span class="p">:</span> <span class="kc">True</span><span class="p">},</span>
+    <span class="p">{</span><span class="s1">'Name'</span><span class="p">:</span> <span class="s2">"HIL0 digital signal 3"</span><span class="p">,</span> <span class="s1">'Type'</span><span class="p">:</span> <span class="s1">'Digital'</span><span class="p">,</span> <span class="s1">'Viewports'</span><span class="p">:</span> <span class="p">[</span><span class="mi">4</span><span class="p">],</span> <span class="s1">'Offset'</span><span class="p">:</span> <span class="mf">1.5</span><span class="p">},</span>
 <span class="p">]</span>
 </pre></div>
 </div>
@@ -728,12 +721,12 @@ Use <code class="docutils literal notranslate"><span class="pre">PROP_CS_SCOPE_S
 <td><dl>
 <dt>list[signal_1, signal_2, …], where:</dt><dd><ul>
 <li><p><code class="docutils literal notranslate"><span class="pre">signal</span></code> is a dictionary:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{</span><span class="s1">&#39;Name&#39;</span><span class="p">:</span> <span class="n">signal_name</span><span class="p">,</span>
- <span class="s1">&#39;Type&#39;</span><span class="p">:</span> <span class="n">signal_type</span><span class="p">,</span>
- <span class="s1">&#39;Viewports&#39;</span><span class="p">:</span> <span class="n">signal_viewports</span><span class="p">,</span>
- <span class="s1">&#39;Scale&#39;</span><span class="p">,</span> <span class="n">vertical_scale</span><span class="p">,</span>
- <span class="s1">&#39;Offset&#39;</span><span class="p">,</span> <span class="n">vertical_offset</span><span class="p">,</span>
- <span class="s1">&#39;Coupling&#39;</span><span class="p">,</span> <span class="n">coupling</span><span class="p">,</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{</span><span class="s1">'Name'</span><span class="p">:</span> <span class="n">signal_name</span><span class="p">,</span>
+ <span class="s1">'Type'</span><span class="p">:</span> <span class="n">signal_type</span><span class="p">,</span>
+ <span class="s1">'Viewports'</span><span class="p">:</span> <span class="n">signal_viewports</span><span class="p">,</span>
+ <span class="s1">'Scale'</span><span class="p">,</span> <span class="n">vertical_scale</span><span class="p">,</span>
+ <span class="s1">'Offset'</span><span class="p">,</span> <span class="n">vertical_offset</span><span class="p">,</span>
+ <span class="s1">'Coupling'</span><span class="p">,</span> <span class="n">coupling</span><span class="p">,</span>
  <span class="p">}</span>
 </pre></div>
 </div>
@@ -812,11 +805,11 @@ Use <code class="docutils literal notranslate"><span class="pre">PROP_CS_SCOPE_S
 </div>
 <p>M - mandatory, O - optional</p>
 <p>Example:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="s2">&quot;Analog&quot;</span><span class="p">,</span> <span class="s2">&quot;VDC1&quot;</span><span class="p">],</span> <span class="ow">or</span>
-<span class="p">[</span><span class="s2">&quot;Analog&quot;</span><span class="p">,</span> <span class="s2">&quot;VDC2&quot;</span><span class="p">,</span> <span class="s2">&quot;Falling edge&quot;</span><span class="p">],</span> <span class="ow">or</span>
-<span class="p">[</span><span class="s2">&quot;Digital&quot;</span><span class="p">,</span> <span class="s2">&quot;HIL0 digital signal 1&quot;</span><span class="p">,</span> <span class="s2">&quot;Rising edge&quot;</span><span class="p">,</span> <span class="mi">70</span><span class="p">],</span> <span class="ow">or</span>
-<span class="p">[</span><span class="s2">&quot;Analog&quot;</span><span class="p">,</span> <span class="s2">&quot;VDC3&quot;</span><span class="p">,</span> <span class="s2">&quot;Rising edge&quot;</span><span class="p">,</span> <span class="mi">70</span><span class="p">,</span> <span class="mi">400</span><span class="p">],</span> <span class="ow">or</span>
-<span class="p">[</span><span class="s2">&quot;Analog&quot;</span><span class="p">,</span> <span class="s2">&quot;VDC4&quot;</span><span class="p">,</span> <span class="s2">&quot;Rising edge&quot;</span><span class="p">,</span> <span class="mi">70</span><span class="p">,</span> <span class="mi">400</span><span class="p">,</span> <span class="s2">&quot;Normal&quot;</span><span class="p">]</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="s2">"Analog"</span><span class="p">,</span> <span class="s2">"VDC1"</span><span class="p">],</span> <span class="ow">or</span>
+<span class="p">[</span><span class="s2">"Analog"</span><span class="p">,</span> <span class="s2">"VDC2"</span><span class="p">,</span> <span class="s2">"Falling edge"</span><span class="p">],</span> <span class="ow">or</span>
+<span class="p">[</span><span class="s2">"Digital"</span><span class="p">,</span> <span class="s2">"HIL0 digital signal 1"</span><span class="p">,</span> <span class="s2">"Rising edge"</span><span class="p">,</span> <span class="mi">70</span><span class="p">],</span> <span class="ow">or</span>
+<span class="p">[</span><span class="s2">"Analog"</span><span class="p">,</span> <span class="s2">"VDC3"</span><span class="p">,</span> <span class="s2">"Rising edge"</span><span class="p">,</span> <span class="mi">70</span><span class="p">,</span> <span class="mi">400</span><span class="p">],</span> <span class="ow">or</span>
+<span class="p">[</span><span class="s2">"Analog"</span><span class="p">,</span> <span class="s2">"VDC4"</span><span class="p">,</span> <span class="s2">"Rising edge"</span><span class="p">,</span> <span class="mi">70</span><span class="p">,</span> <span class="mi">400</span><span class="p">,</span> <span class="s2">"Normal"</span><span class="p">]</span>
 </pre></div>
 </div>
 </dd>
@@ -1004,7 +997,7 @@ numbers that represent <code class="docutils literal notranslate"><span class="p
 <p>The color needs to be specified as a hex number in string representation.</p>
 <p>Example:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># red color</span>
-<span class="n">color</span> <span class="o">=</span> <span class="s2">&quot;#ff0000&quot;</span>
+<span class="n">color</span> <span class="o">=</span> <span class="s2">"#ff0000"</span>
 </pre></div>
 </div>
 </div>
@@ -1033,8 +1026,8 @@ maximum_value, use_warning_critical, warning_value, critical_value, scaling_fact
 </li>
 </ul>
 <p>Example:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">([</span><span class="s2">&quot;Bar_1&quot;</span><span class="p">,</span> <span class="s2">&quot;Sig1&quot;</span><span class="p">,</span> <span class="s2">&quot;A&quot;</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">100</span><span class="p">,</span> <span class="kc">True</span><span class="p">,</span> <span class="mi">70</span><span class="p">,</span> <span class="mi">90</span><span class="p">,</span> <span class="mi">100</span><span class="p">],</span>
- <span class="p">[</span><span class="s2">&quot;Bar_2&quot;</span><span class="p">,</span> <span class="s2">&quot;Sig2&quot;</span><span class="p">,</span> <span class="s2">&quot;V&quot;</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">100</span><span class="p">,</span> <span class="kc">False</span><span class="p">,</span> <span class="kc">None</span><span class="p">,</span> <span class="kc">None</span><span class="p">,</span> <span class="mi">10</span><span class="p">],</span> <span class="o">...</span><span class="p">)</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">([</span><span class="s2">"Bar_1"</span><span class="p">,</span> <span class="s2">"Sig1"</span><span class="p">,</span> <span class="s2">"A"</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">100</span><span class="p">,</span> <span class="kc">True</span><span class="p">,</span> <span class="mi">70</span><span class="p">,</span> <span class="mi">90</span><span class="p">,</span> <span class="mi">100</span><span class="p">],</span>
+ <span class="p">[</span><span class="s2">"Bar_2"</span><span class="p">,</span> <span class="s2">"Sig2"</span><span class="p">,</span> <span class="s2">"V"</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">100</span><span class="p">,</span> <span class="kc">False</span><span class="p">,</span> <span class="kc">None</span><span class="p">,</span> <span class="kc">None</span><span class="p">,</span> <span class="mi">10</span><span class="p">],</span> <span class="o">...</span><span class="p">)</span>
 </pre></div>
 </div>
 </dd>
@@ -1075,7 +1068,7 @@ supported to be changed.</p>
 <p>The color needs to be specified as a hex number in string representation.</p>
 <p>Example:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># red color</span>
-<span class="n">color</span> <span class="o">=</span> <span class="s2">&quot;#ff0000&quot;</span>
+<span class="n">color</span> <span class="o">=</span> <span class="s2">"#ff0000"</span>
 </pre></div>
 </div>
 </div>
@@ -1163,8 +1156,8 @@ supported to be changed.</p>
 <li><p><code class="docutils literal notranslate"><span class="pre">di_str_signals</span></code> is a list of Digital streaming signals names.</p></li>
 </ul>
 <p>Example:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">([</span><span class="s2">&quot;Analog_str_sig1&quot;</span><span class="p">,</span> <span class="s2">&quot;Analog_str_sig2&quot;</span><span class="p">,</span> <span class="o">...</span><span class="p">],</span>
- <span class="p">[</span><span class="s2">&quot;Digital_str_sig1&quot;</span><span class="p">,</span> <span class="s2">&quot;Digital_str_sig2&quot;</span><span class="p">,</span> <span class="o">...</span><span class="p">])</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">([</span><span class="s2">"Analog_str_sig1"</span><span class="p">,</span> <span class="s2">"Analog_str_sig2"</span><span class="p">,</span> <span class="o">...</span><span class="p">],</span>
+ <span class="p">[</span><span class="s2">"Digital_str_sig1"</span><span class="p">,</span> <span class="s2">"Digital_str_sig2"</span><span class="p">,</span> <span class="o">...</span><span class="p">])</span>
 </pre></div>
 </div>
 </dd>
@@ -1190,15 +1183,15 @@ scaling factors for all signals are reset to the default value (1.0).</p>
 </div>
 <p>Example:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># specify scaling for all signals</span>
-<span class="p">{</span><span class="s2">&quot;Analog_str_sig1_name&quot;</span><span class="p">:</span> <span class="mf">1.0</span><span class="p">,</span>
- <span class="s2">&quot;Analog_str_sig2_name&quot;</span><span class="p">:</span> <span class="mf">100.0</span><span class="p">,</span>
- <span class="s2">&quot;Analog_str_sig3_name&quot;</span><span class="p">:</span> <span class="mf">10.0</span><span class="p">,</span>
- <span class="s2">&quot;Analog_str_sig4_name&quot;</span><span class="p">:</span> <span class="mf">1.0</span><span class="p">,}</span>
+<span class="p">{</span><span class="s2">"Analog_str_sig1_name"</span><span class="p">:</span> <span class="mf">1.0</span><span class="p">,</span>
+ <span class="s2">"Analog_str_sig2_name"</span><span class="p">:</span> <span class="mf">100.0</span><span class="p">,</span>
+ <span class="s2">"Analog_str_sig3_name"</span><span class="p">:</span> <span class="mf">10.0</span><span class="p">,</span>
+ <span class="s2">"Analog_str_sig4_name"</span><span class="p">:</span> <span class="mf">1.0</span><span class="p">,}</span>
 
  <span class="c1"># or specify scaling only for specific signals.</span>
  <span class="c1"># For all other signals, the default scaling factor (1.0) is used.</span>
-<span class="p">{</span><span class="s2">&quot;Analog_str_sig2_name&quot;</span><span class="p">:</span> <span class="mf">100.0</span><span class="p">,</span>
- <span class="s2">&quot;Analog_str_sig3_name&quot;</span><span class="p">:</span> <span class="mf">10.0</span><span class="p">}</span>
+<span class="p">{</span><span class="s2">"Analog_str_sig2_name"</span><span class="p">:</span> <span class="mf">100.0</span><span class="p">,</span>
+ <span class="s2">"Analog_str_sig3_name"</span><span class="p">:</span> <span class="mf">10.0</span><span class="p">}</span>
 </pre></div>
 </div>
 </td>
@@ -1222,15 +1215,15 @@ scaling factors for all signals are reset to the default value (1.0).</p>
 </div>
 <p>Example:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># specify scaling for all signals</span>
-<span class="p">{</span><span class="s2">&quot;Analog_sig1_name&quot;</span><span class="p">:</span> <span class="mf">1.0</span><span class="p">,</span>
- <span class="s2">&quot;Analog_sig2_name&quot;</span><span class="p">:</span> <span class="mf">100.0</span><span class="p">,</span>
- <span class="s2">&quot;Analog_sig3_name&quot;</span><span class="p">:</span> <span class="mf">10.0</span><span class="p">,</span>
- <span class="s2">&quot;Analog_sig4_name&quot;</span><span class="p">:</span> <span class="mf">1.0</span><span class="p">,}</span>
+<span class="p">{</span><span class="s2">"Analog_sig1_name"</span><span class="p">:</span> <span class="mf">1.0</span><span class="p">,</span>
+ <span class="s2">"Analog_sig2_name"</span><span class="p">:</span> <span class="mf">100.0</span><span class="p">,</span>
+ <span class="s2">"Analog_sig3_name"</span><span class="p">:</span> <span class="mf">10.0</span><span class="p">,</span>
+ <span class="s2">"Analog_sig4_name"</span><span class="p">:</span> <span class="mf">1.0</span><span class="p">,}</span>
 
  <span class="c1"># or specify scaling only for specific signals.</span>
  <span class="c1"># For all other signals, the default scaling factor (1.0) is used.</span>
-<span class="p">{</span><span class="s2">&quot;Analog_sig2_name&quot;</span><span class="p">:</span> <span class="mf">100.0</span><span class="p">,</span>
- <span class="s2">&quot;Analog_sig3_name&quot;</span><span class="p">:</span> <span class="mf">10.0</span><span class="p">}</span>
+<span class="p">{</span><span class="s2">"Analog_sig2_name"</span><span class="p">:</span> <span class="mf">100.0</span><span class="p">,</span>
+ <span class="s2">"Analog_sig3_name"</span><span class="p">:</span> <span class="mf">10.0</span><span class="p">}</span>
 </pre></div>
 </div>
 </td>
@@ -1310,7 +1303,7 @@ scaling factors for all signals are reset to the default value (1.0).</p>
 <p>The color needs to be specified as a hex number in string representation.</p>
 <p>Example:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># red color</span>
-<span class="n">color</span> <span class="o">=</span> <span class="s2">&quot;#ff0000&quot;</span>
+<span class="n">color</span> <span class="o">=</span> <span class="s2">"#ff0000"</span>
 </pre></div>
 </div>
 </div>
@@ -1407,7 +1400,7 @@ to be changed.</p>
 <p>The color needs to be specified as a hex number in string representation.</p>
 <p>Example:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># red color</span>
-<span class="n">color</span> <span class="o">=</span> <span class="s2">&quot;#ff0000&quot;</span>
+<span class="n">color</span> <span class="o">=</span> <span class="s2">"#ff0000"</span>
 </pre></div>
 </div>
 </div>
@@ -1429,8 +1422,8 @@ to be changed.</p>
 </li>
 </ul>
 <p>Example:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">([</span><span class="s2">&quot;Phasor_name_1&quot;</span><span class="p">,</span> <span class="s2">&quot;Magnitude_sig1&quot;</span><span class="p">,</span> <span class="s2">&quot;Phase_sig1&quot;</span><span class="p">],</span>
- <span class="p">[</span><span class="s2">&quot;Phasor_name_2&quot;</span><span class="p">,</span> <span class="s2">&quot;Magnitude_sig2&quot;</span><span class="p">,</span> <span class="s2">&quot;Phase_sig2], ...)</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">([</span><span class="s2">"Phasor_name_1"</span><span class="p">,</span> <span class="s2">"Magnitude_sig1"</span><span class="p">,</span> <span class="s2">"Phase_sig1"</span><span class="p">],</span>
+ <span class="p">[</span><span class="s2">"Phasor_name_2"</span><span class="p">,</span> <span class="s2">"Magnitude_sig2"</span><span class="p">,</span> <span class="s2">"Phase_sig2], ...)</span>
 </pre></div>
 </div>
 </dd>
@@ -1807,8 +1800,8 @@ data file.</p></td>
 </ul>
 </div></blockquote>
 <p>Example:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">([</span><span class="s2">&quot;an_sig_1&quot;</span><span class="p">,</span> <span class="s2">&quot;an_sig_2&quot;</span><span class="p">],</span>
- <span class="p">[</span><span class="s2">&quot;di_sig_1&quot;</span><span class="p">,</span> <span class="s2">&quot;di_sig_2&quot;</span><span class="p">])</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">([</span><span class="s2">"an_sig_1"</span><span class="p">,</span> <span class="s2">"an_sig_2"</span><span class="p">],</span>
+ <span class="p">[</span><span class="s2">"di_sig_1"</span><span class="p">,</span> <span class="s2">"di_sig_2"</span><span class="p">])</span>
 </pre></div>
 </div>
 </td>
@@ -1854,8 +1847,8 @@ data file.</p></td>
 <li><p><code class="docutils literal notranslate"><span class="pre">di_str_signals</span></code> is a list of Digital streaming signals names.</p></li>
 </ul>
 <p>Example:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">([</span><span class="s2">&quot;Analog_str_sig1&quot;</span><span class="p">,</span> <span class="s2">&quot;Analog_str_sig2&quot;</span><span class="p">,</span> <span class="o">...</span><span class="p">],</span>
- <span class="p">[</span><span class="s2">&quot;Digital_str_sig1&quot;</span><span class="p">,</span> <span class="s2">&quot;Digital_str_sig2&quot;</span><span class="p">,</span> <span class="o">...</span><span class="p">])</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">([</span><span class="s2">"Analog_str_sig1"</span><span class="p">,</span> <span class="s2">"Analog_str_sig2"</span><span class="p">,</span> <span class="o">...</span><span class="p">],</span>
+ <span class="p">[</span><span class="s2">"Digital_str_sig1"</span><span class="p">,</span> <span class="s2">"Digital_str_sig2"</span><span class="p">,</span> <span class="o">...</span><span class="p">])</span>
 </pre></div>
 </div>
 </dd>
@@ -1903,7 +1896,7 @@ the <a class="reference internal" href="#common-properties">Common Properties</a
 <p>The color needs to be specified as a hex number in string representation.</p>
 <p>Example:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># red color</span>
-<span class="n">color</span> <span class="o">=</span> <span class="s2">&quot;#ff0000&quot;</span>
+<span class="n">color</span> <span class="o">=</span> <span class="s2">"#ff0000"</span>
 </pre></div>
 </div>
 </div>
@@ -1919,7 +1912,7 @@ the <a class="reference internal" href="#common-properties">Common Properties</a
 </td>
 <td><p>list value</p>
 <p>Example:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="s2">&quot;Inductor&quot;</span><span class="p">,</span> <span class="s2">&quot;Voltage Source&quot;</span><span class="p">]</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="s2">"Inductor"</span><span class="p">,</span> <span class="s2">"Voltage Source"</span><span class="p">]</span>
 </pre></div>
 </div>
 </td>
@@ -2051,7 +2044,7 @@ Use <code class="docutils literal notranslate"><span class="pre">PROP_LABEL</spa
 <p>The color needs to be specified as a hex number in string representation.</p>
 <p>Example:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># red color</span>
-<span class="n">color</span> <span class="o">=</span> <span class="s2">&quot;#ff0000&quot;</span>
+<span class="n">color</span> <span class="o">=</span> <span class="s2">"#ff0000"</span>
 </pre></div>
 </div>
 </div>
@@ -2111,7 +2104,7 @@ Use <code class="docutils literal notranslate"><span class="pre">PROP_LABEL</spa
 <p>The color needs to be specified as a hex number in string representation.</p>
 <p>Example:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># red color</span>
-<span class="n">color</span> <span class="o">=</span> <span class="s2">&quot;#ff0000&quot;</span>
+<span class="n">color</span> <span class="o">=</span> <span class="s2">"#ff0000"</span>
 </pre></div>
 </div>
 </div>
@@ -2208,20 +2201,18 @@ the <a class="reference internal" href="#common-properties">Common Properties</a
 </section>
 </section>
 </section>
-
-
-            <div class="clearer"></div>
-          </div>
-        </div>
-      </div>
-      <div class="sphinxsidebar" role="navigation" aria-label="Main">
-        <div class="sphinxsidebarwrapper">
-            <p class="logo"><a href="typhoon_api.html">
-              <img class="logo" src="_static/logo.png" alt="Logo of Typhoon API"/>
-            </a></p>
-  <div>
-    <h3><a href="typhoon_api.html">Table of Contents</a></h3>
-    <ul>
+<div class="clearer"></div>
+</div>
+</div>
+</div>
+<div aria-label="Main" class="sphinxsidebar" role="navigation">
+<div class="sphinxsidebarwrapper">
+<p class="logo"><a href="typhoon_api.html">
+<img alt="Logo of Typhoon API" class="logo" src="_static/logo.png"/>
+</a></p>
+<div>
+<h3><a href="typhoon_api.html">Table of Contents</a></h3>
+<ul>
 <li><a class="reference internal" href="#">Available Widget Properties</a><ul>
 <li><a class="reference internal" href="#common-properties">Common Properties</a></li>
 <li><a class="reference internal" href="#monitoring-widgets-common-properties">Monitoring Widgets Common Properties</a><ul>
@@ -2278,62 +2269,54 @@ the <a class="reference internal" href="#common-properties">Common Properties</a
 </ul>
 </li>
 </ul>
-
-  </div>
-  <div>
-    <h4>Previous topic</h4>
-    <p class="topless"><a href="widget_actions.html"
-                          title="previous chapter">Available Widget Actions</a></p>
-  </div>
-  <div>
-    <h4>Next topic</h4>
-    <p class="topless"><a href="schematic_api.html"
-                          title="next chapter">Schematic Editor API</a></p>
-  </div>
-  <div role="note" aria-label="source link">
-    <h3>This Page</h3>
-    <ul class="this-page-menu">
-      <li><a href="_sources/widget_prop.rst.txt"
-            rel="nofollow">Show Source</a></li>
-    </ul>
-   </div>
-<search id="searchbox" style="display: none" role="search">
-  <h3 id="searchlabel">Quick search</h3>
-    <div class="searchformwrapper">
-    <form class="search" action="search.html" method="get">
-      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
-      <input type="submit" value="Go" />
-    </form>
-    </div>
+</div>
+<div>
+<h4>Previous topic</h4>
+<p class="topless"><a href="widget_actions.html" title="previous chapter">Available Widget Actions</a></p>
+</div>
+<div>
+<h4>Next topic</h4>
+<p class="topless"><a href="schematic_api.html" title="next chapter">Schematic Editor API</a></p>
+</div>
+<div aria-label="source link" role="note">
+<h3>This Page</h3>
+<ul class="this-page-menu">
+<li><a href="_sources/widget_prop.rst.txt" rel="nofollow">Show Source</a></li>
+</ul>
+</div>
+<search id="searchbox" role="search" style="display: none">
+<h3 id="searchlabel">Quick search</h3>
+<div class="searchformwrapper">
+<form action="search.html" class="search" method="get">
+<input aria-labelledby="searchlabel" autocapitalize="off" autocomplete="off" autocorrect="off" name="q" spellcheck="false" type="text"/>
+<input type="submit" value="Go"/>
+</form>
+</div>
 </search>
 <script>document.getElementById('searchbox').style.display = "block"</script>
-        </div>
-      </div>
-      <div class="clearer"></div>
-    </div>
-    <div class="related" role="navigation" aria-label="Related">
-      <h3>Navigation</h3>
-      <ul>
-        <li class="right" style="margin-right: 10px">
-          <a href="genindex.html" title="General Index"
-             >index</a></li>
-        <li class="right" >
-          <a href="py-modindex.html" title="Python Module Index"
-             >modules</a> |</li>
-        <li class="right" >
-          <a href="schematic_api.html" title="Schematic Editor API"
-             >next</a> |</li>
-        <li class="right" >
-          <a href="widget_actions.html" title="Available Widget Actions"
-             >previous</a> |</li>
-        <li class="nav-item nav-item-0"><a href="typhoon_api.html">Typhoon API 2026.1 sp1 documentation</a> &#187;</li>
-          <li class="nav-item nav-item-1"><a href="scada_api.html" >SCADA API</a> &#187;</li>
-        <li class="nav-item nav-item-this"><a href="">Available Widget Properties</a></li> 
-      </ul>
-    </div>
-    <div class="footer" role="contentinfo">
-    &#169; Copyright 2026, Typhoon HIL.
+</div>
+</div>
+<div class="clearer"></div>
+</div>
+<div aria-label="Related" class="related" role="navigation">
+<h3>Navigation</h3>
+<ul>
+<li class="right" style="margin-right: 10px">
+<a href="genindex.html" title="General Index">index</a></li>
+<li class="right">
+<a href="py-modindex.html" title="Python Module Index">modules</a> |</li>
+<li class="right">
+<a href="schematic_api.html" title="Schematic Editor API">next</a> |</li>
+<li class="right">
+<a href="widget_actions.html" title="Available Widget Actions">previous</a> |</li>
+<li class="nav-item"><a href="../index.html"> Docs </a> » </li><li class="nav-item nav-item-0"><a href="typhoon_api.html">Typhoon API 2026.1 sp1 documentation</a> »</li>
+<li class="nav-item nav-item-1"><a href="scada_api.html">SCADA API</a> »</li>
+<li class="nav-item nav-item-this"><a href="">Available Widget Properties</a></li>
+</ul>
+</div>
+<div class="footer" role="contentinfo">
+    © Copyright 2026, Typhoon HIL.
       Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 8.2.1.
     </div>
-  </body>
+</body>
 </html>

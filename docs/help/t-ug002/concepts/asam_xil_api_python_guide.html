@@ -1,130 +1,80 @@
-<!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en" data-whc_version="24.1">
-    <head><link rel="shortcut icon" href="../../favicon.ico"/><link rel="icon" href="../../favicon.ico"/><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><meta name="DC.rights.owner" content="(C) Copyright 2026"/><meta name="copyright" content="(C) Copyright 2026"/><meta name="generator" content="DITA-OT"/><meta name="DC.type" content="topic"/><meta name="description" content="How to start to use ASAM XIL API for creating tests in a Python environment"/><meta name="DC.relation" content="../../t-ug002/concepts/asam_xil_compatibility.html"/><meta name="DC.format" content="HTML5"/><meta name="DC.identifier" content="doc"/>        
-      <title>Typhoon HIL XIL API Python Guide</title><!--  Generated with Oxygen version 24.1, build number 2022030800.  --><meta name="wh-path2root" content="../../"/><meta name="wh-toc-id" content="doc-d16877e6795"/><meta name="wh-source-relpath" content="t-ug002/concepts/asam_xil_api_python_guide.dita"/><meta name="wh-out-relpath" content="t-ug002/concepts/asam_xil_api_python_guide.html"/>
-    <!-- Latest compiled and minified Bootstrap CSS -->
-    <link rel="stylesheet" type="text/css" href="../../oxygen-webhelp/lib/bootstrap/css/bootstrap.min.css"/>
-    
-    <link rel="stylesheet" href="../../oxygen-webhelp/lib/jquery-ui/jquery-ui.min.css"/>
-    
-    <!-- Template default styles  -->
-    <link rel="stylesheet" type="text/css" href="../../oxygen-webhelp/app/topic-page.css?buildId=2022030800"/>
-    
-    
-    <script src="../../oxygen-webhelp/lib/jquery/jquery-3.5.1.min.js"></script>
-    
-    <script data-main="../../oxygen-webhelp/app/topic-page.js" src="../../oxygen-webhelp/lib/requirejs/require.js"></script>
-<link rel="stylesheet" type="text/css" href="../../oxygen-webhelp/template/oxygen.css?buildId=2022030800"/><link rel="stylesheet" type="text/css" href="../../oxygen-webhelp/template/notes.css?buildId=2022030800"/><script type="text/javascript" src="../../Scripts/mml-svg.js"> 
-</script><link rel="stylesheet" type="text/css" href="../../assets/typhoon.css"/></head>
-
-    <body id="doc" class="wh_topic_page frmBody">
-        <a href="#wh_topic_body" class="sr-only sr-only-focusable">
+<!DOCTYPE html>
+<html data-whc_version="24.1" lang="en" xml:lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head><link href="../../favicon.ico" rel="shortcut icon"/><link href="../../favicon.ico" rel="icon"/><meta content="text/html; charset=utf-8" http-equiv="Content-Type"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="IE=edge" http-equiv="X-UA-Compatible"/><meta content="(C) Copyright 2026" name="DC.rights.owner"/><meta content="(C) Copyright 2026" name="copyright"/><meta content="DITA-OT" name="generator"/><meta content="topic" name="DC.type"/><meta content="How to start to use ASAM XIL API for creating tests in a Python environment" name="description"/><meta content="../../t-ug002/concepts/asam_xil_compatibility.html" name="DC.relation"/><meta content="HTML5" name="DC.format"/><meta content="doc" name="DC.identifier"/>
+<title>Typhoon HIL XIL API Python Guide</title><!--  Generated with Oxygen version 24.1, build number 2022030800.  --><meta content="../../" name="wh-path2root"/><meta content="doc-d16877e6795" name="wh-toc-id"/><meta content="t-ug002/concepts/asam_xil_api_python_guide.dita" name="wh-source-relpath"/><meta content="t-ug002/concepts/asam_xil_api_python_guide.html" name="wh-out-relpath"/>
+<!-- Latest compiled and minified Bootstrap CSS -->
+<link href="../../oxygen-webhelp/lib/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
+<link href="../../oxygen-webhelp/lib/jquery-ui/jquery-ui.min.css" rel="stylesheet"/>
+<!-- Template default styles  -->
+<link href="../../oxygen-webhelp/app/topic-page.css?buildId=2022030800" rel="stylesheet" type="text/css"/>
+<script src="../../oxygen-webhelp/lib/jquery/jquery-3.5.1.min.js"></script>
+<script data-main="../../oxygen-webhelp/app/topic-page.js" src="../../oxygen-webhelp/lib/requirejs/require.js"></script>
+<link href="../../oxygen-webhelp/template/oxygen.css?buildId=2022030800" rel="stylesheet" type="text/css"/><link href="../../oxygen-webhelp/template/notes.css?buildId=2022030800" rel="stylesheet" type="text/css"/><script src="../../Scripts/mml-svg.js" type="text/javascript">
+</script><link href="../../assets/typhoon.css" rel="stylesheet" type="text/css"/></head>
+<body class="wh_topic_page frmBody" id="doc">
+<a class="sr-only sr-only-focusable" href="#wh_topic_body">
             Jump to main content
         </a>
-        
-        
-        
-        
-        <header class="navbar navbar-default wh_header">
-    <div class="container-fluid">
-        <div class="wh_header_flex_container navbar-nav navbar-expand-md navbar-dark">
-            <div class="wh_logo_and_publication_title_container">
-                <div class="wh_logo_and_publication_title">
-                    
-                    <a href="https://www.typhoon-hil.com" class=" wh_logo d-none d-sm-block "><img src="../../logo.svg" alt="  Typhoon HIL Documentation  Version: 2026.1  "/></a>
-                    <div class=" wh_publication_title "><a href="../../index.html"><span class="booktitle">  <span class="ph mainbooktitle">Typhoon HIL Documentation</span>  <span class="ph booktitlealt">Version: 2026.1</span>  </span></a></div>
-                    
-                </div>
-                
-                <button type="button" data-target="#wh_top_menu_and_indexterms_link" id="wh_menu_mobile_button" data-toggle="collapse" class="navbar-toggler collapsed wh_toggle_button" aria-expanded="false" aria-label="Toggle menu" aria-controls="wh_top_menu_and_indexterms_link">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-            </div>
-
-            <div class="wh_top_menu_and_indexterms_link collapse navbar-collapse" id="wh_top_menu_and_indexterms_link">
-                
-                <nav class=" wh_top_menu " aria-label="Menu Container"><ul role="menubar" aria-label="Menu"><li role="menuitem" aria-haspopup="true" aria-expanded="false" class="has-children"><span id="tocId-d16877e21-mi" data-tocid="tocId-d16877e21" data-state="not-ready" class=" topicref application-notes"><span class="title"><a href="../../t-an001/concepts/application_notes_introduction.html">Typhoon HIL Application Notes</a></span></span></li><li role="menuitem" aria-haspopup="true" aria-expanded="false" class="has-children"><span id="tocId-d16877e737-mi" data-tocid="tocId-d16877e737" data-state="not-ready" class=" topicref software-manual"><span class="title"><a href="../../t-ug002/topics/software_manual_introduction.html">Typhoon HIL Software Manual</a></span></span></li><li role="menuitem" aria-haspopup="true" aria-expanded="false" class="has-children"><span id="tocId-d16877e7901-mi" data-tocid="tocId-d16877e7901" data-state="not-ready" class=" topicref hardware-manual"><span class="title"><a href="../../t-ug001/abstract/hardware_manual_introduction.html">Typhoon HIL Hardware Manual</a></span></span></li></ul></nav>
-                
-                
-            </div>
-        </div>
-    </div>
+<header class="navbar navbar-default wh_header">
+<div class="container-fluid">
+<div class="wh_header_flex_container navbar-nav navbar-expand-md navbar-dark">
+<div class="wh_logo_and_publication_title_container">
+<div class="wh_logo_and_publication_title">
+<a class="wh_logo d-none d-sm-block" href="../../../index.html"><img alt="  Typhoon HIL Documentation  Version: 2026.1  " src="../../logo.svg"/></a>
+<div class="wh_publication_title"><a href="../../index.html"><span class="booktitle"> <span class="ph mainbooktitle">Typhoon HIL Documentation</span> <span class="ph booktitlealt">Version: 2026.1</span> </span></a></div>
+</div>
+<button aria-controls="wh_top_menu_and_indexterms_link" aria-expanded="false" aria-label="Toggle menu" class="navbar-toggler collapsed wh_toggle_button" data-target="#wh_top_menu_and_indexterms_link" data-toggle="collapse" id="wh_menu_mobile_button" type="button">
+<span class="navbar-toggler-icon"></span>
+</button>
+</div>
+<div class="wh_top_menu_and_indexterms_link collapse navbar-collapse" id="wh_top_menu_and_indexterms_link">
+<nav aria-label="Menu Container" class="wh_top_menu"><ul aria-label="Menu" role="menubar"><li aria-expanded="false" aria-haspopup="true" class="has-children" role="menuitem"><span class="topicref application-notes" data-state="not-ready" data-tocid="tocId-d16877e21" id="tocId-d16877e21-mi"><span class="title"><a href="../../t-an001/concepts/application_notes_introduction.html">Typhoon HIL Application Notes</a></span></span></li><li aria-expanded="false" aria-haspopup="true" class="has-children" role="menuitem"><span class="topicref software-manual" data-state="not-ready" data-tocid="tocId-d16877e737" id="tocId-d16877e737-mi"><span class="title"><a href="../../t-ug002/topics/software_manual_introduction.html">Typhoon HIL Software Manual</a></span></span></li><li aria-expanded="false" aria-haspopup="true" class="has-children" role="menuitem"><span class="topicref hardware-manual" data-state="not-ready" data-tocid="tocId-d16877e7901" id="tocId-d16877e7901-mi"><span class="title"><a href="../../t-ug001/abstract/hardware_manual_introduction.html">Typhoon HIL Hardware Manual</a></span></span></li></ul></nav>
+</div>
+</div>
+</div>
 </header>
-        
-        
-         
-        
-        <div class=" wh_search_input navbar-form wh_topic_page_search search " role="form">
-            
-            
-            
-            <form id="searchForm" method="get" role="search" action="../../search.html"><div><input type="search" placeholder="Search " class="wh_search_textfield" id="textToSearch" name="searchQuery" aria-label="Search query" required="required"/><button type="submit" class="wh_search_button" aria-label="Search"><span class="search_input_text">Search</span></button></div></form>
-            
-            
-            
-        </div>
-        
-        <div class="container-fluid" id="wh_topic_container">
-            <div class="row">
-
-                <nav class="wh_tools d-print-none navbar-expand-md" aria-label="Tools">
-                    
-                    <div data-tooltip-position="bottom" class=" wh_breadcrumb "><ol class="d-print-none"><li><span class="home"><a href="../../index.html"><span>Home</span></a></span></li><li><div class="topicref software-manual"><div class="title"><a href="../../t-ug002/topics/software_manual_introduction.html">Typhoon HIL Software Manual</a></div></div></li><li><div class="topicref" data-id="doc"><div class="title"><a href="../../t-ug002/concepts/third-party_integrations.html">Third-party integrations</a><div class="wh-tooltip"><p class="shortdesc">This section provides an overview of the key third party integrations within Typhoon     HIL's toolchain.</p></div></div></div></li><li><div class="topicref" data-id="doc"><div class="title"><a href="../../t-ug002/concepts/asam_xil_compatibility.html">ASAM XIL Integration</a><div class="wh-tooltip"><p class="shortdesc">This section describes the Typhoon HIL implementation of the ASAM XIL             standard.</p></div></div></div></li><li class="active"><div class="topicref" data-id="doc"><div class="title"><a href="../../t-ug002/concepts/asam_xil_api_python_guide.html">Typhoon HIL XIL API Python Guide</a><div class="wh-tooltip"><p class="shortdesc">How to start to use ASAM XIL API for creating tests in a Python environment </p></div></div></div></li></ol></div>
-                    
-                    
-                    
-                    <div class="wh_right_tools">
-                        <button class="wh_hide_highlight" aria-label="Toggle search highlights" title="Toggle search highlights"></button>
-                        <button class="webhelp_expand_collapse_sections" data-next-state="collapsed" aria-label="Collapse sections" title="Collapse sections"></button>
-                        
-                        
-                        
-                        
-                        <div class=" wh_print_link print d-none d-md-inline-block "><button onClick="window.print()" title="Print this page" aria-label="Print this page"></button></div>
-                        
-                        <button type="button" id="wh_toc_button" class="custom-toggler navbar-toggler collapsed wh_toggle_button navbar-light" aria-expanded="false" aria-label="Toggle publishing table of content" aria-controls="wh_publication_toc">
-                            <span class="navbar-toggler-icon"></span>
-                        </button>
-                    </div>
-                    
-                </nav>
-            </div>
-            
-            
-            
-            
-            <div class="wh_content_area">
-                <div class="row">
-                    
-                        <nav id="wh_publication_toc" class="col-lg-3 col-md-3 col-sm-12 d-md-block d-none d-print-none" aria-label="Table of Contents Container">
-                            <div id="wh_publication_toc_content">
-		                        
-                            	<div class=" wh_publication_toc " data-tooltip-position="right"><span class="expand-button-action-labels"><span id="button-expand-action" role="button" aria-label="Expand"></span><span id="button-collapse-action" role="button" aria-label="Collapse"></span><span id="button-pending-action" role="button" aria-label="Pending"></span></span><ul role="tree" aria-label="Table of Contents"><li role="treeitem" aria-expanded="true"><div data-tocid="tocId-d16877e737" class="topicref software-manual" data-state="expanded"><span role="button" tabindex="0" aria-labelledby="button-collapse-action tocId-d16877e737-link" class="wh-expand-btn"></span><div class="title"><a href="../../t-ug002/topics/software_manual_introduction.html" id="tocId-d16877e737-link">Typhoon HIL Software Manual</a></div></div><ul role="group" class="navbar-nav nav-list"><li role="treeitem"><div data-tocid="doc-d16877e749" class="topicref" data-id="doc" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../../t-ug002/topics/software_manual_introduction.html" id="doc-d16877e749-link">Introduction</a><div class="wh-tooltip"><p class="shortdesc">Overview of the categories covered in the Typhoon HIL Software Manual </p></div></div></div></li><li role="treeitem"><div data-tocid="doc-d16877e760" class="topicref" data-id="doc" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../../t-ug002/concepts/system_requirements.html" id="doc-d16877e760-link">System Requirements</a><div class="wh-tooltip"><p class="shortdesc">Guidelines for the hardware and/or software environment necessary to     run Typhoon HIL software, for both PC and Test Server/Virtual Machine-based setups.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="doc-d16877e771" class="topicref" data-id="doc" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action doc-d16877e771-link" class="wh-expand-btn"></span><div class="title"><a href="../../t-ug002/topics/quick_start_guide_abstract.html" id="doc-d16877e771-link">Typhoon HIL Quick Start Guide</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">Instructions in this section should help you quickly install all             necessary software tools and setup hardware components in order to run an example model,             either in real-time simulation or TyphoonSim.</span></p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="doc-d16877e818" class="topicref" data-id="doc" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action doc-d16877e818-link" class="wh-expand-btn"></span><div class="title"><a href="../../t-ug002/concepts/toolboxes.html" id="doc-d16877e818-link">Typhoon HIL Toolboxes</a><div class="wh-tooltip"><p class="shortdesc">List of the Toolbox Packages available in the Typhoon HIL software suite</p></div></div></div></li><li role="treeitem"><div data-tocid="doc-d16877e1039" class="topicref" data-id="doc" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../../t-ug002/concepts/connecting_to_your_hil_device.html" id="doc-d16877e1039-link">Connecting to your HIL device</a><div class="wh-tooltip"><p class="shortdesc">Guidelines on how to connect to a HIL device using either USB or Ethernet         ports.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="doc-d16877e1050" class="topicref" data-id="doc" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action doc-d16877e1050-link" class="wh-expand-btn"></span><div class="title"><a href="../../t-ug002/concepts/device_manager.html" id="doc-d16877e1050-link">Device Manager</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph uicontrol">Device Manager</span> is used to create, manipulate, and activate HIL         device setups.</p></div></div></div></li><li role="treeitem"><div data-tocid="doc-d16877e1151" class="topicref" data-id="doc" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../../t-ug002/concepts/typhoon_hil_control_center.html" id="doc-d16877e1151-link">Typhoon HIL Control Center</a><div class="wh-tooltip"><p class="shortdesc">This section provides a general description of  Typhoon HIL Control Center and lists the     main software components accessible from it, as well as additional software tools which can be     invoked from its interface.</p></div></div></div></li><li role="treeitem"><div data-tocid="doc-d16877e1162" class="topicref" data-id="doc" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../../t-ug002/concepts/typhoonsim.html" id="doc-d16877e1162-link">TyphoonSim</a><div class="wh-tooltip"><p class="shortdesc">This section provides a general description of the TyphoonSim software, which is     available as both a standalone software and integrated in Typhoon HIL Control     Center.</p></div></div></div></li><li role="treeitem"><div data-tocid="doc-d16877e1173" class="topicref" data-id="doc" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../../t-ug002/concepts/example_explorer.html" id="doc-d16877e1173-link">Example Explorer</a><div class="wh-tooltip"><p class="shortdesc">General Description of the Typhoon HIL Control Center         Example Explorer.</p></div></div></div></li><li role="treeitem"><div data-tocid="doc-d16877e1184" class="topicref" data-id="doc" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../../t-ug002/topics/signal_access_management.html" id="doc-d16877e1184-link">Signal Access Management</a><div class="wh-tooltip"><p class="shortdesc">This feature allows you to change the visibility of signals</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="doc-d16877e1196" class="topicref" data-id="doc" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action doc-d16877e1196-link" class="wh-expand-btn"></span><div class="title"><a href="../../t-ug002/concepts/schematic_editor.html" id="doc-d16877e1196-link">Schematic Editor</a><div class="wh-tooltip"><p class="shortdesc">Introduction to the Schematic Editor tool in Typhoon HIL software toolchain</p></div></div></div></li><li role="treeitem"><div data-tocid="doc-d16877e1712" class="topicref" data-id="doc" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../../t-ug002/concepts/typhoonsim_solvers_guide.html" id="doc-d16877e1712-link">TyphoonSim Solver Engine</a><div class="wh-tooltip"><p class="shortdesc">Summary of the TyphoonSim solver engine algorithms and capabilities   as well as its modeling principles and simulation workflow.</p></div></div></div></li><li role="treeitem"><div data-tocid="doc-d16877e1723" class="topicref" data-id="doc" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../../t-ug002/topics/general_simulation_context_definitions.html" id="doc-d16877e1723-link">Simulation context definitions</a><div class="wh-tooltip"><p class="shortdesc">Introductory overview of the different simulation contexts - Real-time (VHIL) and     TyphoonSim. Core library component and feature availability and visibility for each of these     contexts are explained in detail.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="doc-d16877e1734" class="topicref" data-id="doc" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action doc-d16877e1734-link" class="wh-expand-btn"></span><div class="title"><a href="../../t-ug002/concepts/schematic_editor_component_libraries.html" id="doc-d16877e1734-link">Schematic Editor Component Libraries</a><div class="wh-tooltip"><p class="shortdesc">Detailed functionality and use of the pre-built Component Libraries in Schematic   Editor</p></div></div></div></li><li role="treeitem" aria-expanded="true"><div data-tocid="doc-d16877e6773" class="topicref" data-id="doc" data-state="expanded"><span role="button" tabindex="0" aria-labelledby="button-collapse-action doc-d16877e6773-link" class="wh-expand-btn"></span><div class="title"><a href="../../t-ug002/concepts/third-party_integrations.html" id="doc-d16877e6773-link">Third-party integrations</a><div class="wh-tooltip"><p class="shortdesc">This section provides an overview of the key third party integrations within Typhoon     HIL's toolchain.</p></div></div></div><ul role="group" class="navbar-nav nav-list"><li role="treeitem" aria-expanded="true"><div data-tocid="doc-d16877e6784" class="topicref" data-id="doc" data-state="expanded"><span role="button" tabindex="0" aria-labelledby="button-collapse-action doc-d16877e6784-link" class="wh-expand-btn"></span><div class="title"><a href="../../t-ug002/concepts/asam_xil_compatibility.html" id="doc-d16877e6784-link">ASAM XIL Integration</a><div class="wh-tooltip"><p class="shortdesc">This section describes the Typhoon HIL implementation of the ASAM XIL             standard.</p></div></div></div><ul role="group" class="navbar-nav nav-list"><li role="treeitem" class="active"><div data-tocid="doc-d16877e6795" class="topicref" data-id="doc" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../../t-ug002/concepts/asam_xil_api_python_guide.html" id="doc-d16877e6795-link">Typhoon HIL XIL API Python Guide</a><div class="wh-tooltip"><p class="shortdesc">How to start to use ASAM XIL API for creating tests in a Python environment </p></div></div></div></li></ul></li><li role="treeitem" aria-expanded="false"><div data-tocid="doc-d16877e6806" class="topicref" data-id="doc" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action doc-d16877e6806-link" class="wh-expand-btn"></span><div class="title"><a href="../../t-ug002/concepts/psim_import.html" id="doc-d16877e6806-link">Import PSIM Schematic files</a><div class="wh-tooltip"><p class="shortdesc">This section describes how to successfully import a PSIM model in Typhoon HIL             Schematic Editor, what the requirements are, and which components are             supported.</p></div></div></div></li></ul></li><li role="treeitem" aria-expanded="false"><div data-tocid="doc-d16877e6828" class="topicref" data-id="doc" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action doc-d16877e6828-link" class="wh-expand-btn"></span><div class="title"><a href="../../t-ug002/concepts/hil_scada.html" id="doc-d16877e6828-link">HIL SCADA</a><div class="wh-tooltip"><p class="shortdesc">Description of the HIL SCADA tool in Typhoon HIL Control Center</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="doc-d16877e7379" class="topicref" data-id="doc" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action doc-d16877e7379-link" class="wh-expand-btn"></span><div class="title"><a href="../../t-ug002/concepts/wave_generator_tool.html" id="doc-d16877e7379-link">Waveform Generator</a><div class="wh-tooltip"><p class="shortdesc">This section describes the waveform generator tool in Typhoon HIL Control Center.</p></div></div></div></li><li role="treeitem"><div data-tocid="doc-d16877e7467" class="topicref" data-id="doc" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../../t-ug002/concepts/test_and_calibration_tool.html" id="doc-d16877e7467-link">Test and Calibration Tool</a><div class="wh-tooltip"><p class="shortdesc">Description of the Test and Calibration tool in Typhoon HIL Control Center</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="doc-d16877e7478" class="topicref" data-id="doc" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action doc-d16877e7478-link" class="wh-expand-btn"></span><div class="title"><a href="../../t-ug002/concepts/typhoontest_ide.html" id="doc-d16877e7478-link">TyphoonTest IDE</a><div class="wh-tooltip"><p class="shortdesc">This section describes TyphoonTest IDE</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="doc-d16877e7588" class="topicref" data-id="doc" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action doc-d16877e7588-link" class="wh-expand-btn"></span><div class="title"><a href="../../t-ug002/concepts/signal_analyzer.html" id="doc-d16877e7588-link">Signal Analyzer</a><div class="wh-tooltip"><p class="shortdesc">Description of the Signal Analyzer tool in Typhoon HIL Control Center.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="doc-d16877e7610" class="topicref" data-id="doc" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action doc-d16877e7610-link" class="wh-expand-btn"></span><div class="title"><a href="../../t-ug002/concepts/lookup_table_extraction_tool.html" id="doc-d16877e7610-link">Lookup table extraction tool</a><div class="wh-tooltip"><p class="shortdesc">Description of the Typhoon HIL Control Center tool for extracting characteristics (lookup tables) from datasheet graphs and charts into a format that can be imported by non-linear models.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="doc-d16877e7677" class="topicref" data-id="doc" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action doc-d16877e7677-link" class="wh-expand-btn"></span><div class="title"><a href="../../t-ug002/concepts/package_manager.html" id="doc-d16877e7677-link">Package Manager</a><div class="wh-tooltip"><p class="shortdesc">Description of the Typhoon HIL Control Center tool for creating and managing Typhoon packages that contain Schematic examples, Schematic and widget libraries, documentation etc.</p></div></div></div></li><li role="treeitem"><div data-tocid="doc-d16877e7798" class="topicref" data-id="doc" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../../t-ug002/concepts/usage_logging.html" id="doc-d16877e7798-link">Usage Logging</a><div class="wh-tooltip"><p class="shortdesc">This section briefly describes Typhoon HIL software logging feature.</p></div></div></div></li><li role="treeitem"><div data-tocid="doc-d16877e7809" class="topicref" data-id="doc" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../../t-ug002/concepts/python_interpreters.html" id="doc-d16877e7809-link">Python Interpreters</a><div class="wh-tooltip"><p class="shortdesc">Overview of how you can use Typhoon HIL Python Interpreters to further customize your         test files.</p></div></div></div></li></ul></li></ul></div>
-		                        
-                            </div>
-                        </nav>
-                    
-                    
-                    <div class="col-lg-7 col-md-9 col-sm-12" id="wh_topic_body">
-                        <button id="wh_close_publication_toc_button" class="close-toc-button d-none" aria-label="Toggle publishing table of content" aria-controls="wh_publication_toc" aria-expanded="true">
-                            <span class="close-toc-icon-container">
-                                <span class="close-toc-icon"></span>     
-                            </span>
-                        </button>
-                        <button id="wh_close_topic_toc_button" class="close-toc-button d-none" aria-label="Toggle topic table of content" aria-controls="wh_topic_toc" aria-expanded="true">
-                            <span class="close-toc-icon-container">
-                                <span class="close-toc-icon"></span>     
-                            </span>
-                        </button>
-                        
-                        <div class=" wh_topic_content body "><main role="main"><article role="article" aria-labelledby="ariaid-title1">
-    <h1 class="- topic/title title topictitle1" id="ariaid-title1">Typhoon HIL XIL API Python Guide</h1>
-    
-    <div class="- topic/body body"><p class="- topic/shortdesc shortdesc">How to start to use ASAM XIL API for creating tests in a Python environment </p>
-        <div class="- topic/note note note note_note typhoonsim_notsupported"><span class="note__title">Real-time only:</span> This document is valid only for real-time/VHIL
+<div class="wh_search_input navbar-form wh_topic_page_search search" role="form">
+<form action="../../search.html" id="searchForm" method="get" role="search"><div><input aria-label="Search query" class="wh_search_textfield" id="textToSearch" name="searchQuery" placeholder="Search " required="required" type="search"/><button aria-label="Search" class="wh_search_button" type="submit"><span class="search_input_text">Search</span></button></div></form>
+</div>
+<div class="container-fluid" id="wh_topic_container">
+<div class="row">
+<nav aria-label="Tools" class="wh_tools d-print-none navbar-expand-md">
+<div class="wh_breadcrumb" data-tooltip-position="bottom"><ol class="d-print-none"><li><span class="home"><a href="../../index.html"><span>Home</span></a></span></li><li><div class="topicref software-manual"><div class="title"><a href="../../t-ug002/topics/software_manual_introduction.html">Typhoon HIL Software Manual</a></div></div></li><li><div class="topicref" data-id="doc"><div class="title"><a href="../../t-ug002/concepts/third-party_integrations.html">Third-party integrations</a><div class="wh-tooltip"><p class="shortdesc">This section provides an overview of the key third party integrations within Typhoon     HIL's toolchain.</p></div></div></div></li><li><div class="topicref" data-id="doc"><div class="title"><a href="../../t-ug002/concepts/asam_xil_compatibility.html">ASAM XIL Integration</a><div class="wh-tooltip"><p class="shortdesc">This section describes the Typhoon HIL implementation of the ASAM XIL             standard.</p></div></div></div></li><li class="active"><div class="topicref" data-id="doc"><div class="title"><a href="../../t-ug002/concepts/asam_xil_api_python_guide.html">Typhoon HIL XIL API Python Guide</a><div class="wh-tooltip"><p class="shortdesc">How to start to use ASAM XIL API for creating tests in a Python environment </p></div></div></div></li></ol></div>
+<div class="wh_right_tools">
+<button aria-label="Toggle search highlights" class="wh_hide_highlight" title="Toggle search highlights"></button>
+<button aria-label="Collapse sections" class="webhelp_expand_collapse_sections" data-next-state="collapsed" title="Collapse sections"></button>
+<div class="wh_print_link print d-none d-md-inline-block"><button aria-label="Print this page" onclick="window.print()" title="Print this page"></button></div>
+<button aria-controls="wh_publication_toc" aria-expanded="false" aria-label="Toggle publishing table of content" class="custom-toggler navbar-toggler collapsed wh_toggle_button navbar-light" id="wh_toc_button" type="button">
+<span class="navbar-toggler-icon"></span>
+</button>
+</div>
+</nav>
+</div>
+<div class="wh_content_area">
+<div class="row">
+<nav aria-label="Table of Contents Container" class="col-lg-3 col-md-3 col-sm-12 d-md-block d-none d-print-none" id="wh_publication_toc">
+<div id="wh_publication_toc_content">
+<div class="wh_publication_toc" data-tooltip-position="right"><span class="expand-button-action-labels"><span aria-label="Expand" id="button-expand-action" role="button"></span><span aria-label="Collapse" id="button-collapse-action" role="button"></span><span aria-label="Pending" id="button-pending-action" role="button"></span></span><ul aria-label="Table of Contents" role="tree"><li aria-expanded="true" role="treeitem"><div class="topicref software-manual" data-state="expanded" data-tocid="tocId-d16877e737"><span aria-labelledby="button-collapse-action tocId-d16877e737-link" class="wh-expand-btn" role="button" tabindex="0"></span><div class="title"><a href="../../t-ug002/topics/software_manual_introduction.html" id="tocId-d16877e737-link">Typhoon HIL Software Manual</a></div></div><ul class="navbar-nav nav-list" role="group"><li role="treeitem"><div class="topicref" data-id="doc" data-state="leaf" data-tocid="doc-d16877e749"><span class="wh-expand-btn" role="button"></span><div class="title"><a href="../../t-ug002/topics/software_manual_introduction.html" id="doc-d16877e749-link">Introduction</a><div class="wh-tooltip"><p class="shortdesc">Overview of the categories covered in the Typhoon HIL Software Manual </p></div></div></div></li><li role="treeitem"><div class="topicref" data-id="doc" data-state="leaf" data-tocid="doc-d16877e760"><span class="wh-expand-btn" role="button"></span><div class="title"><a href="../../t-ug002/concepts/system_requirements.html" id="doc-d16877e760-link">System Requirements</a><div class="wh-tooltip"><p class="shortdesc">Guidelines for the hardware and/or software environment necessary to     run Typhoon HIL software, for both PC and Test Server/Virtual Machine-based setups.</p></div></div></div></li><li aria-expanded="false" role="treeitem"><div class="topicref" data-id="doc" data-state="not-ready" data-tocid="doc-d16877e771"><span aria-labelledby="button-expand-action doc-d16877e771-link" class="wh-expand-btn" role="button" tabindex="0"></span><div class="title"><a href="../../t-ug002/topics/quick_start_guide_abstract.html" id="doc-d16877e771-link">Typhoon HIL Quick Start Guide</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">Instructions in this section should help you quickly install all             necessary software tools and setup hardware components in order to run an example model,             either in real-time simulation or TyphoonSim.</span></p></div></div></div></li><li aria-expanded="false" role="treeitem"><div class="topicref" data-id="doc" data-state="not-ready" data-tocid="doc-d16877e818"><span aria-labelledby="button-expand-action doc-d16877e818-link" class="wh-expand-btn" role="button" tabindex="0"></span><div class="title"><a href="../../t-ug002/concepts/toolboxes.html" id="doc-d16877e818-link">Typhoon HIL Toolboxes</a><div class="wh-tooltip"><p class="shortdesc">List of the Toolbox Packages available in the Typhoon HIL software suite</p></div></div></div></li><li role="treeitem"><div class="topicref" data-id="doc" data-state="leaf" data-tocid="doc-d16877e1039"><span class="wh-expand-btn" role="button"></span><div class="title"><a href="../../t-ug002/concepts/connecting_to_your_hil_device.html" id="doc-d16877e1039-link">Connecting to your HIL device</a><div class="wh-tooltip"><p class="shortdesc">Guidelines on how to connect to a HIL device using either USB or Ethernet         ports.</p></div></div></div></li><li aria-expanded="false" role="treeitem"><div class="topicref" data-id="doc" data-state="not-ready" data-tocid="doc-d16877e1050"><span aria-labelledby="button-expand-action doc-d16877e1050-link" class="wh-expand-btn" role="button" tabindex="0"></span><div class="title"><a href="../../t-ug002/concepts/device_manager.html" id="doc-d16877e1050-link">Device Manager</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph uicontrol">Device Manager</span> is used to create, manipulate, and activate HIL         device setups.</p></div></div></div></li><li role="treeitem"><div class="topicref" data-id="doc" data-state="leaf" data-tocid="doc-d16877e1151"><span class="wh-expand-btn" role="button"></span><div class="title"><a href="../../t-ug002/concepts/typhoon_hil_control_center.html" id="doc-d16877e1151-link">Typhoon HIL Control Center</a><div class="wh-tooltip"><p class="shortdesc">This section provides a general description of  Typhoon HIL Control Center and lists the     main software components accessible from it, as well as additional software tools which can be     invoked from its interface.</p></div></div></div></li><li role="treeitem"><div class="topicref" data-id="doc" data-state="leaf" data-tocid="doc-d16877e1162"><span class="wh-expand-btn" role="button"></span><div class="title"><a href="../../t-ug002/concepts/typhoonsim.html" id="doc-d16877e1162-link">TyphoonSim</a><div class="wh-tooltip"><p class="shortdesc">This section provides a general description of the TyphoonSim software, which is     available as both a standalone software and integrated in Typhoon HIL Control     Center.</p></div></div></div></li><li role="treeitem"><div class="topicref" data-id="doc" data-state="leaf" data-tocid="doc-d16877e1173"><span class="wh-expand-btn" role="button"></span><div class="title"><a href="../../t-ug002/concepts/example_explorer.html" id="doc-d16877e1173-link">Example Explorer</a><div class="wh-tooltip"><p class="shortdesc">General Description of the Typhoon HIL Control Center         Example Explorer.</p></div></div></div></li><li role="treeitem"><div class="topicref" data-id="doc" data-state="leaf" data-tocid="doc-d16877e1184"><span class="wh-expand-btn" role="button"></span><div class="title"><a href="../../t-ug002/topics/signal_access_management.html" id="doc-d16877e1184-link">Signal Access Management</a><div class="wh-tooltip"><p class="shortdesc">This feature allows you to change the visibility of signals</p></div></div></div></li><li aria-expanded="false" role="treeitem"><div class="topicref" data-id="doc" data-state="not-ready" data-tocid="doc-d16877e1196"><span aria-labelledby="button-expand-action doc-d16877e1196-link" class="wh-expand-btn" role="button" tabindex="0"></span><div class="title"><a href="../../t-ug002/concepts/schematic_editor.html" id="doc-d16877e1196-link">Schematic Editor</a><div class="wh-tooltip"><p class="shortdesc">Introduction to the Schematic Editor tool in Typhoon HIL software toolchain</p></div></div></div></li><li role="treeitem"><div class="topicref" data-id="doc" data-state="leaf" data-tocid="doc-d16877e1712"><span class="wh-expand-btn" role="button"></span><div class="title"><a href="../../t-ug002/concepts/typhoonsim_solvers_guide.html" id="doc-d16877e1712-link">TyphoonSim Solver Engine</a><div class="wh-tooltip"><p class="shortdesc">Summary of the TyphoonSim solver engine algorithms and capabilities   as well as its modeling principles and simulation workflow.</p></div></div></div></li><li role="treeitem"><div class="topicref" data-id="doc" data-state="leaf" data-tocid="doc-d16877e1723"><span class="wh-expand-btn" role="button"></span><div class="title"><a href="../../t-ug002/topics/general_simulation_context_definitions.html" id="doc-d16877e1723-link">Simulation context definitions</a><div class="wh-tooltip"><p class="shortdesc">Introductory overview of the different simulation contexts - Real-time (VHIL) and     TyphoonSim. Core library component and feature availability and visibility for each of these     contexts are explained in detail.</p></div></div></div></li><li aria-expanded="false" role="treeitem"><div class="topicref" data-id="doc" data-state="not-ready" data-tocid="doc-d16877e1734"><span aria-labelledby="button-expand-action doc-d16877e1734-link" class="wh-expand-btn" role="button" tabindex="0"></span><div class="title"><a href="../../t-ug002/concepts/schematic_editor_component_libraries.html" id="doc-d16877e1734-link">Schematic Editor Component Libraries</a><div class="wh-tooltip"><p class="shortdesc">Detailed functionality and use of the pre-built Component Libraries in Schematic   Editor</p></div></div></div></li><li aria-expanded="true" role="treeitem"><div class="topicref" data-id="doc" data-state="expanded" data-tocid="doc-d16877e6773"><span aria-labelledby="button-collapse-action doc-d16877e6773-link" class="wh-expand-btn" role="button" tabindex="0"></span><div class="title"><a href="../../t-ug002/concepts/third-party_integrations.html" id="doc-d16877e6773-link">Third-party integrations</a><div class="wh-tooltip"><p class="shortdesc">This section provides an overview of the key third party integrations within Typhoon     HIL's toolchain.</p></div></div></div><ul class="navbar-nav nav-list" role="group"><li aria-expanded="true" role="treeitem"><div class="topicref" data-id="doc" data-state="expanded" data-tocid="doc-d16877e6784"><span aria-labelledby="button-collapse-action doc-d16877e6784-link" class="wh-expand-btn" role="button" tabindex="0"></span><div class="title"><a href="../../t-ug002/concepts/asam_xil_compatibility.html" id="doc-d16877e6784-link">ASAM XIL Integration</a><div class="wh-tooltip"><p class="shortdesc">This section describes the Typhoon HIL implementation of the ASAM XIL             standard.</p></div></div></div><ul class="navbar-nav nav-list" role="group"><li class="active" role="treeitem"><div class="topicref" data-id="doc" data-state="leaf" data-tocid="doc-d16877e6795"><span class="wh-expand-btn" role="button"></span><div class="title"><a href="../../t-ug002/concepts/asam_xil_api_python_guide.html" id="doc-d16877e6795-link">Typhoon HIL XIL API Python Guide</a><div class="wh-tooltip"><p class="shortdesc">How to start to use ASAM XIL API for creating tests in a Python environment </p></div></div></div></li></ul></li><li aria-expanded="false" role="treeitem"><div class="topicref" data-id="doc" data-state="not-ready" data-tocid="doc-d16877e6806"><span aria-labelledby="button-expand-action doc-d16877e6806-link" class="wh-expand-btn" role="button" tabindex="0"></span><div class="title"><a href="../../t-ug002/concepts/psim_import.html" id="doc-d16877e6806-link">Import PSIM Schematic files</a><div class="wh-tooltip"><p class="shortdesc">This section describes how to successfully import a PSIM model in Typhoon HIL             Schematic Editor, what the requirements are, and which components are             supported.</p></div></div></div></li></ul></li><li aria-expanded="false" role="treeitem"><div class="topicref" data-id="doc" data-state="not-ready" data-tocid="doc-d16877e6828"><span aria-labelledby="button-expand-action doc-d16877e6828-link" class="wh-expand-btn" role="button" tabindex="0"></span><div class="title"><a href="../../t-ug002/concepts/hil_scada.html" id="doc-d16877e6828-link">HIL SCADA</a><div class="wh-tooltip"><p class="shortdesc">Description of the HIL SCADA tool in Typhoon HIL Control Center</p></div></div></div></li><li aria-expanded="false" role="treeitem"><div class="topicref" data-id="doc" data-state="not-ready" data-tocid="doc-d16877e7379"><span aria-labelledby="button-expand-action doc-d16877e7379-link" class="wh-expand-btn" role="button" tabindex="0"></span><div class="title"><a href="../../t-ug002/concepts/wave_generator_tool.html" id="doc-d16877e7379-link">Waveform Generator</a><div class="wh-tooltip"><p class="shortdesc">This section describes the waveform generator tool in Typhoon HIL Control Center.</p></div></div></div></li><li role="treeitem"><div class="topicref" data-id="doc" data-state="leaf" data-tocid="doc-d16877e7467"><span class="wh-expand-btn" role="button"></span><div class="title"><a href="../../t-ug002/concepts/test_and_calibration_tool.html" id="doc-d16877e7467-link">Test and Calibration Tool</a><div class="wh-tooltip"><p class="shortdesc">Description of the Test and Calibration tool in Typhoon HIL Control Center</p></div></div></div></li><li aria-expanded="false" role="treeitem"><div class="topicref" data-id="doc" data-state="not-ready" data-tocid="doc-d16877e7478"><span aria-labelledby="button-expand-action doc-d16877e7478-link" class="wh-expand-btn" role="button" tabindex="0"></span><div class="title"><a href="../../t-ug002/concepts/typhoontest_ide.html" id="doc-d16877e7478-link">TyphoonTest IDE</a><div class="wh-tooltip"><p class="shortdesc">This section describes TyphoonTest IDE</p></div></div></div></li><li aria-expanded="false" role="treeitem"><div class="topicref" data-id="doc" data-state="not-ready" data-tocid="doc-d16877e7588"><span aria-labelledby="button-expand-action doc-d16877e7588-link" class="wh-expand-btn" role="button" tabindex="0"></span><div class="title"><a href="../../t-ug002/concepts/signal_analyzer.html" id="doc-d16877e7588-link">Signal Analyzer</a><div class="wh-tooltip"><p class="shortdesc">Description of the Signal Analyzer tool in Typhoon HIL Control Center.</p></div></div></div></li><li aria-expanded="false" role="treeitem"><div class="topicref" data-id="doc" data-state="not-ready" data-tocid="doc-d16877e7610"><span aria-labelledby="button-expand-action doc-d16877e7610-link" class="wh-expand-btn" role="button" tabindex="0"></span><div class="title"><a href="../../t-ug002/concepts/lookup_table_extraction_tool.html" id="doc-d16877e7610-link">Lookup table extraction tool</a><div class="wh-tooltip"><p class="shortdesc">Description of the Typhoon HIL Control Center tool for extracting characteristics (lookup tables) from datasheet graphs and charts into a format that can be imported by non-linear models.</p></div></div></div></li><li aria-expanded="false" role="treeitem"><div class="topicref" data-id="doc" data-state="not-ready" data-tocid="doc-d16877e7677"><span aria-labelledby="button-expand-action doc-d16877e7677-link" class="wh-expand-btn" role="button" tabindex="0"></span><div class="title"><a href="../../t-ug002/concepts/package_manager.html" id="doc-d16877e7677-link">Package Manager</a><div class="wh-tooltip"><p class="shortdesc">Description of the Typhoon HIL Control Center tool for creating and managing Typhoon packages that contain Schematic examples, Schematic and widget libraries, documentation etc.</p></div></div></div></li><li role="treeitem"><div class="topicref" data-id="doc" data-state="leaf" data-tocid="doc-d16877e7798"><span class="wh-expand-btn" role="button"></span><div class="title"><a href="../../t-ug002/concepts/usage_logging.html" id="doc-d16877e7798-link">Usage Logging</a><div class="wh-tooltip"><p class="shortdesc">This section briefly describes Typhoon HIL software logging feature.</p></div></div></div></li><li role="treeitem"><div class="topicref" data-id="doc" data-state="leaf" data-tocid="doc-d16877e7809"><span class="wh-expand-btn" role="button"></span><div class="title"><a href="../../t-ug002/concepts/python_interpreters.html" id="doc-d16877e7809-link">Python Interpreters</a><div class="wh-tooltip"><p class="shortdesc">Overview of how you can use Typhoon HIL Python Interpreters to further customize your         test files.</p></div></div></div></li></ul></li></ul></div>
+</div>
+</nav>
+<div class="col-lg-7 col-md-9 col-sm-12" id="wh_topic_body">
+<button aria-controls="wh_publication_toc" aria-expanded="true" aria-label="Toggle publishing table of content" class="close-toc-button d-none" id="wh_close_publication_toc_button">
+<span class="close-toc-icon-container">
+<span class="close-toc-icon"></span>
+</span>
+</button>
+<button aria-controls="wh_topic_toc" aria-expanded="true" aria-label="Toggle topic table of content" class="close-toc-button d-none" id="wh_close_topic_toc_button">
+<span class="close-toc-icon-container">
+<span class="close-toc-icon"></span>
+</span>
+</button>
+<div class="wh_topic_content body"><main role="main"><article aria-labelledby="ariaid-title1" role="article">
+<h1 class="- topic/title title topictitle1" id="ariaid-title1">Typhoon HIL XIL API Python Guide</h1>
+<div class="- topic/body body"><p class="- topic/shortdesc shortdesc">How to start to use ASAM XIL API for creating tests in a Python environment </p>
+<div class="- topic/note note note note_note typhoonsim_notsupported"><span class="note__title">Real-time only:</span> This document is valid only for real-time/VHIL
                 simulation.</div>
-        <section class="- topic/section section" id="doc__asam_xil_import_assemblies" data-ofbid="doc__asam_xil_import_assemblies"><h2 class="- topic/title title sectiontitle">Importing the XIL API .NET Assemblies</h2>
-            
-            <div class="- topic/p p">If you want to use .NET components and services, you have to add a reference of the
+<section class="- topic/section section" data-ofbid="doc__asam_xil_import_assemblies" id="doc__asam_xil_import_assemblies"><h2 class="- topic/title title sectiontitle">Importing the XIL API .NET Assemblies</h2>
+<div class="- topic/p p">If you want to use .NET components and services, you have to add a reference of the
                 required assembly into the Python workspace. To do this, you can use Python for .NET
                 command clr.AddReference().
                 <pre class="+ topic/pre pr-d/codeblock pre codeblock"><code>import sys
@@ -146,30 +96,28 @@ sys.path.append(str(ASSEMBLY_ROOT))
 # Add reference to the XIL API .NET assemblies
 clr.AddReference(ASSEMBLY_NAME)
 clr.AddReference(SERVER_CLASS_NAME)</code></pre></div>
-            <p class="- topic/p p"></p>
-        </section>
-        <section class="- topic/section section" id="doc__asam_xil_creating_testbench" data-ofbid="doc__asam_xil_creating_testbench"><h2 class="- topic/title title sectiontitle">Creating a Typhoon HIL XIL API Testbench</h2>
-            
-            <p class="- topic/p p">All XIL API interfaces can be created via factory methods. A factory approach is
+<p class="- topic/p p"></p>
+</section>
+<section class="- topic/section section" data-ofbid="doc__asam_xil_creating_testbench" id="doc__asam_xil_creating_testbench"><h2 class="- topic/title title sectiontitle">Creating a Typhoon HIL XIL API Testbench</h2>
+<p class="- topic/p p">All XIL API interfaces can be created via factory methods. A factory approach is
                 applied in order to maximize independence of test cases from the test system. The Testbench
                 API separates the test hardware from the test software and allows standardized
                 access to the hardware. </p>
-            <div class="- topic/p p">You can create a Testbench using the following code:
+<div class="- topic/p p">You can create a Testbench using the following code:
                 
                 <pre class="+ topic/pre pr-d/codeblock pre codeblock"><code>import TyphoonHIL.ASAM.XIL.Server as server
 
 testbench = server.Testbench()
 print('Testbench invoked') </code></pre></div>
-            <p class="- topic/p p"></p>
-        </section>
-        <section class="- topic/section section" id="doc__asam_xil_creating_maport" data-ofbid="doc__asam_xil_creating_maport"><h2 class="- topic/title title sectiontitle">Creating and Configuring a MA (Model Access) Port</h2>
-            
-            <p class="- topic/p p">The Testbench API covers access to the Model Access hardware. Model Access
+<p class="- topic/p p"></p>
+</section>
+<section class="- topic/section section" data-ofbid="doc__asam_xil_creating_maport" id="doc__asam_xil_creating_maport"><h2 class="- topic/title title sectiontitle">Creating and Configuring a MA (Model Access) Port</h2>
+<p class="- topic/p p">The Testbench API covers access to the Model Access hardware. Model Access
                 provides access to simulation model read and write parameters, capture functionality, 
                 and generated signals.</p>
-            <p class="- topic/p p">To load and apply the configuration to an MAPort instance, the LoadConfiguration and Configure
+<p class="- topic/p p">To load and apply the configuration to an MAPort instance, the LoadConfiguration and Configure
                 methods are used.</p>
-            <div class="- topic/p p">Then, check the Typhoon HIL API Python code
+<div class="- topic/p p">Then, check the Typhoon HIL API Python code
                 fragment:<pre class="+ topic/pre pr-d/codeblock pre codeblock"><code>import os
 from pathlib import Path
 import typhoon.api.hil as hil
@@ -185,8 +133,8 @@ model.load(model_path)
 
 model.compile()
 hil.load_model(compiled_model_path, vhil_device=vhil_enable)</code></pre></div>
-            <p class="- topic/p p"></p>
-            <div class="- topic/p p">and the corresponding XIL API .NET code fragment:
+<p class="- topic/p p"></p>
+<div class="- topic/p p">and the corresponding XIL API .NET code fragment:
                 <pre class="+ topic/pre pr-d/codeblock pre codeblock"><code># script directory
 TEST_DIR_PATH = Path(__file__).parent
 
@@ -220,28 +168,27 @@ cfg = maPort.LoadConfiguration(str(MA_PORT_CONFIG))
 
 # Apply to the MA Port
 maPort.Configure(cfg, False)</code></pre></div>
-            <p class="- topic/p p">In order to maximize independence of test cases from test systems it is not
+<p class="- topic/p p">In order to maximize independence of test cases from test systems it is not
                 sufficient to just standardize interfaces of a test system. Rather there should be a
                 generic way to obtain corresponding instances from any vendor providing an XIL
                 implementation. Therefore, the factory approach is applied. That means instances are
                 obtained from methods of already existing objects. </p>
-            <p class="- topic/p p"></p>
-        </section>
-        <section class="- topic/section section" id="doc__asam_xil_maport_read_write" data-ofbid="doc__asam_xil_maport_read_write"><h2 class="- topic/title title sectiontitle">MA Port - Reading and Writing Variables</h2>
-            
-            <p class="- topic/p p">The sequence diagram in <a class="- topic/xref xref" href="#doc__image_w1v_r1g_1vb">Figure 1</a> shows 
+<p class="- topic/p p"></p>
+</section>
+<section class="- topic/section section" data-ofbid="doc__asam_xil_maport_read_write" id="doc__asam_xil_maport_read_write"><h2 class="- topic/title title sectiontitle">MA Port - Reading and Writing Variables</h2>
+<p class="- topic/p p">The sequence diagram in <a class="- topic/xref xref" href="#doc__image_w1v_r1g_1vb">Figure 1</a> shows 
                 how to handle and access model variables. We assume that the XIL simulator is 
                 already initialized, and a simulation model is running. An MAPort instance is used to 
                 collect all available model variables and to check their presence in the simulation model. 
                 Before accessing a model variable, we can check if a variable's data type and if it is
                 readable or writable through the MAPort instance. The variable can be accessed by the Read()
                 and the Write() method of the MAPort object.</p>
-            <p class="- topic/p p"></p>
-            <div class="- topic/p p"><figure class="- topic/fig fig fignone" id="doc__image_w1v_r1g_1vb" data-ofbid="doc__image_w1v_r1g_1vb"><figcaption class="- topic/title title figcap"><span class="figtitleprefix fig--title-label">Figure<span class="fig--title-label-number"> 1</span><span class="fig--title-label-punctuation">. </span></span><span class="fig--title">MA Port Sequence Diagram</span></figcaption>
-                <img class="- topic/image image" src="../Images/asam_xil_api_python_guide_01.png"/>
-               </figure>
-            </div>
-            <div class="- topic/p p">Below you can find an example of how to read / write
+<p class="- topic/p p"></p>
+<div class="- topic/p p"><figure class="- topic/fig fig fignone" data-ofbid="doc__image_w1v_r1g_1vb" id="doc__image_w1v_r1g_1vb"><figcaption class="- topic/title title figcap"><span class="figtitleprefix fig--title-label">Figure<span class="fig--title-label-number"> 1</span><span class="fig--title-label-punctuation">. </span></span><span class="fig--title">MA Port Sequence Diagram</span></figcaption>
+<img class="- topic/image image" src="../Images/asam_xil_api_python_guide_01.png"/>
+</figure>
+</div>
+<div class="- topic/p p">Below you can find an example of how to read / write
                 variables:<pre class="+ topic/pre pr-d/codeblock pre codeblock"><code># The model is a SCADA Input connected to a Probe
 setVal = 10.0
 
@@ -258,11 +205,10 @@ maPort.Write('SCADA Input1', testbenchVar.ValueFactory.CreateFloatValue(setVal))
 raw_probeExp = maPort.Read('Probe1')
 probeExp = raw_probeExp.__raw_implementation__
 print(str(probeExp.Value))</code></pre></div>
-            <p class="- topic/p p"></p>
-        </section>
-        <section class="- topic/section section" id="doc__asam_xil_maport_start_stop_sim" data-ofbid="doc__asam_xil_maport_start_stop_sim"><h2 class="- topic/title title sectiontitle">MA Port - Start / Stop Simulation and Simulation States</h2>
-            
-            <div class="- topic/p p">When MAport configuration is finished, you can start and stop simulation on the way
+<p class="- topic/p p"></p>
+</section>
+<section class="- topic/section section" data-ofbid="doc__asam_xil_maport_start_stop_sim" id="doc__asam_xil_maport_start_stop_sim"><h2 class="- topic/title title sectiontitle">MA Port - Start / Stop Simulation and Simulation States</h2>
+<div class="- topic/p p">When MAport configuration is finished, you can start and stop simulation on the way
                 below:<pre class="+ topic/pre pr-d/codeblock pre codeblock"><code># Start simulation – simulation can be started from MAport states: 
 # eDISCONNECTED or eSIMULATION_STOPPED
 maPort.StartSimulation()
@@ -289,7 +235,7 @@ print(“The current MAport state is: {}”.format(currentState))
 
 maPort.Dispose()
 print("MAPort DISPOSED")</code></pre></div>
-            <div class="- topic/p p">To check the MAport state, you can define a maPortState dictionary with all possible
+<div class="- topic/p p">To check the MAport state, you can define a maPortState dictionary with all possible
                 states:<pre class="+ topic/pre pr-d/codeblock pre codeblock"><code>maPortState = {
     # A connection to the port's hardware is established. Model simulation 
     # is not running (stopped).
@@ -306,48 +252,47 @@ currentState = maPort.State
 
 assert maPortState[currentState] == "eSIMULATION_RUNNING", "The MA Port" \ 
                                         "state is not in eSIMULATION_RUNNING state."</code></pre></div>
-            <p class="- topic/p p">The MAport state diagram is shown in <a class="- topic/xref xref" href="#doc__image_dfk_v1g_1vb">Figure 2</a>. 
+<p class="- topic/p p">The MAport state diagram is shown in <a class="- topic/xref xref" href="#doc__image_dfk_v1g_1vb">Figure 2</a>. 
                Here you can see which methods can be called from which states.</p>
-            <div class="- topic/p p"> <figure class="- topic/fig fig fignone" id="doc__image_dfk_v1g_1vb" data-ofbid="doc__image_dfk_v1g_1vb"><figcaption class="- topic/title title figcap"><span class="figtitleprefix fig--title-label">Figure<span class="fig--title-label-number"> 2</span><span class="fig--title-label-punctuation">. </span></span><span class="fig--title">MAport state diagram</span></figcaption>
-                <img class="- topic/image image" src="../Images/asam_xil_api_python_guide_02.png"/></figure>
-            </div>
-            <p class="- topic/p p"></p>
-            <p class="- topic/p p">If you want to check which variables are in the model, you can use the 
+<div class="- topic/p p"> <figure class="- topic/fig fig fignone" data-ofbid="doc__image_dfk_v1g_1vb" id="doc__image_dfk_v1g_1vb"><figcaption class="- topic/title title figcap"><span class="figtitleprefix fig--title-label">Figure<span class="fig--title-label-number"> 2</span><span class="fig--title-label-punctuation">. </span></span><span class="fig--title">MAport state diagram</span></figcaption>
+<img class="- topic/image image" src="../Images/asam_xil_api_python_guide_02.png"/></figure>
+</div>
+<p class="- topic/p p"></p>
+<p class="- topic/p p">If you want to check which variables are in the model, you can use the 
              <span class="+ topic/ph ui-d/uicontrol ph uicontrol">VariableNames</span> property:</p>
-            <pre class="+ topic/pre pr-d/codeblock pre codeblock"><code># Get all variable names from the list of variable names
+<pre class="+ topic/pre pr-d/codeblock pre codeblock"><code># Get all variable names from the list of variable names
 raw_varNamesList = maPort.VariableNames
 varNamesList = raw_varNamesList.__raw_implementation__
 # List of all Variable Names from the model
 for variable in varNamesList:
     print(str(variable))</code></pre>
-            <p class="- topic/p p">Or list of all task names using <strong class="+ topic/ph hi-d/b ph b">TaskNames</strong> property:</p>
-            <div class="- topic/p p">
-                <pre class="+ topic/pre pr-d/codeblock pre codeblock"><code># Get all task names from the list of task names
+<p class="- topic/p p">Or list of all task names using <strong class="+ topic/ph hi-d/b ph b">TaskNames</strong> property:</p>
+<div class="- topic/p p">
+<pre class="+ topic/pre pr-d/codeblock pre codeblock"><code># Get all task names from the list of task names
 raw_taskNames = maPort.TaskNames
 taskNames = raw_taskNames.__raw_implementation__
 # List of all Task Names from available list of supported tasks
 for task in taskNames:
     print(str(task))</code></pre>
-            </div>
-        </section>
-        <section class="- topic/section section" id="doc__asam_xil_capture_create_start_stop" data-ofbid="doc__asam_xil_capture_create_start_stop"><h2 class="- topic/title title sectiontitle">Capture - Create, Start, Stop Capture, and Capture States</h2>
-            
-            <p class="- topic/p p">The process of acquiring data in a continuous data stream is called CAPTURING. It
+</div>
+</section>
+<section class="- topic/section section" data-ofbid="doc__asam_xil_capture_create_start_stop" id="doc__asam_xil_capture_create_start_stop"><h2 class="- topic/title title sectiontitle">Capture - Create, Start, Stop Capture, and Capture States</h2>
+<p class="- topic/p p">The process of acquiring data in a continuous data stream is called CAPTURING. It
                 guarantees that all process data can be retrieved as they occur related to the
                 real-time service in respect to the capture service task. After completion of this
                 process or even while it is still in progress, the data acquired can be retrieved. </p>
-            <p class="- topic/p p">The classes responsible for controlling Capture execution, 
+<p class="- topic/p p">The classes responsible for controlling Capture execution, 
                 as well as obtaining and displaying measured data, are accessible 
                 in the Common.Capturing package. These classes are used by 
                 <span class="+ topic/ph ui-d/uicontrol ph uicontrol">MAPort</span> instances.
             </p>
-            <p class="- topic/p p">The Capture class is the main class of the Capturing package. It is used to define
+<p class="- topic/p p">The Capture class is the main class of the Capturing package. It is used to define
                 control capture execution.</p>
-            <p class="- topic/p p">When capturing a Probe signal, signal streaming must be set. Enabling the Signal
+<p class="- topic/p p">When capturing a Probe signal, signal streaming must be set. Enabling the Signal
                 Streaming property allows acquisition and logging of the signal. An instance of the
                 Capture class represents a capture definition. A capture is created by the port for
                 which a capture shall be defined (<span class="+ topic/ph ui-d/uicontrol ph uicontrol">MAPort</span> in our case). </p>
-            <div class="- topic/p p"><pre class="+ topic/pre pr-d/codeblock pre codeblock"><code><em class="+ topic/ph hi-d/i ph i"># Create and initialize a Capture object</em>
+<div class="- topic/p p"><pre class="+ topic/pre pr-d/codeblock pre codeblock"><code><em class="+ topic/ph hi-d/i ph i"># Create and initialize a Capture object</em>
 taskName = "Capturing_Probe"
 capture = maPort.CreateCapture(taskName)
 <em class="+ topic/ph hi-d/i ph i"># Get the current Capture State (should be "eCONFIGURED")</em>
@@ -368,19 +313,18 @@ currentCaptureState = capture.State
 
 <em class="+ topic/ph hi-d/i ph i"># Capturing process – Stop must be called to explicitly stop the capture process</em>
 capture.Stop()</code></pre></div>
-            <p class="- topic/p p">Capture objects have a state representing the status of data acquisition. It can be
+<p class="- topic/p p">Capture objects have a state representing the status of data acquisition. It can be
                 retrieved via the Capture's state property.</p>
-            <p class="- topic/p p">file_path – path to the MDF file.</p>
-            <p class="- topic/p p">The <span class="+ topic/ph ui-d/uicontrol ph uicontrol">State diagram</span> for an untriggered capturing mode is shown in
+<p class="- topic/p p">file_path – path to the MDF file.</p>
+<p class="- topic/p p">The <span class="+ topic/ph ui-d/uicontrol ph uicontrol">State diagram</span> for an untriggered capturing mode is shown in
             <a class="- topic/xref xref" href="#doc__image_nw2_y1g_1vb">Figure 3</a>.</p>
-            <div class="- topic/p p"><figure class="- topic/fig fig fignone" id="doc__image_nw2_y1g_1vb" data-ofbid="doc__image_nw2_y1g_1vb"><figcaption class="- topic/title title figcap"><span class="figtitleprefix fig--title-label">Figure<span class="fig--title-label-number"> 3</span><span class="fig--title-label-punctuation">. </span></span><span class="fig--title">State diagram for an untriggered Capture mode</span></figcaption>
-               <img class="- topic/image image" src="../Images/asam_xil_api_python_guide_03.png"/></figure>
-            </div>
-            <p class="- topic/p p"></p>
-        </section>
-        <section class="- topic/section section" id="doc__asam_xil_sig_seg_create" data-ofbid="doc__asam_xil_sig_seg_create"><h2 class="- topic/title title sectiontitle">Signal Segments - Creating Stimulus Signals</h2>
-            
-            <div class="- topic/p p">To create the signals and symbols of the stimulus domain of XIL API, use the
+<div class="- topic/p p"><figure class="- topic/fig fig fignone" data-ofbid="doc__image_nw2_y1g_1vb" id="doc__image_nw2_y1g_1vb"><figcaption class="- topic/title title figcap"><span class="figtitleprefix fig--title-label">Figure<span class="fig--title-label-number"> 3</span><span class="fig--title-label-punctuation">. </span></span><span class="fig--title">State diagram for an untriggered Capture mode</span></figcaption>
+<img class="- topic/image image" src="../Images/asam_xil_api_python_guide_03.png"/></figure>
+</div>
+<p class="- topic/p p"></p>
+</section>
+<section class="- topic/section section" data-ofbid="doc__asam_xil_sig_seg_create" id="doc__asam_xil_sig_seg_create"><h2 class="- topic/title title sectiontitle">Signal Segments - Creating Stimulus Signals</h2>
+<div class="- topic/p p">To create the signals and symbols of the stimulus domain of XIL API, use the
                 SignalFactory and SymbolFactory classes instead of constructors. The available
                 signal segments are shown below.
                 <pre class="+ topic/pre pr-d/codeblock pre codeblock"><code><em class="+ topic/ph hi-d/i ph i"># Create Const segment</em>
@@ -625,19 +569,18 @@ print("Value of Const segment is: " + str(operationSegment_right_value.Value))
 <em class="+ topic/ph hi-d/i ph i"># Get the Segment Type</em>
 segment_typ = operationSegment_right.<strong class="+ topic/ph hi-d/b ph b">Type</strong>
 print("Type of segment is: " + str(segment_typ))</code></pre></div>
-            <p class="- topic/p p">If you want to create a <span class="+ topic/ph ui-d/uicontrol ph uicontrol">SignalValue</span> signal segment then you need to create it
+<p class="- topic/p p">If you want to create a <span class="+ topic/ph ui-d/uicontrol ph uicontrol">SignalValue</span> signal segment then you need to create it
                 manually in Typhoon HIL, with 3rd party tools, or by loading a segment from a
                 <strong class="+ topic/ph hi-d/b ph b">.STI</strong> file. </p>
-            <p class="- topic/p p">The signal description file is used to serialize objects of type
+<p class="- topic/p p">The signal description file is used to serialize objects of type
                 SignalDescriptionSet, and furthermore to serialize objects of type SignalGenerator.
                 The signal description file is an XML file with the file extension <strong class="+ topic/ph hi-d/b ph b">STI</strong>.</p>
-        </section>
-        <section class="- topic/section section" id="doc__asam_xil_gen_stim_sig" data-ofbid="doc__asam_xil_gen_stim_sig"><h2 class="- topic/title title sectiontitle">Generating Stimulus Signals</h2>
-            
-            <p class="- topic/p p">In order to use signals for stimulation, a signal generator is used. A signal
+</section>
+<section class="- topic/section section" data-ofbid="doc__asam_xil_gen_stim_sig" id="doc__asam_xil_gen_stim_sig"><h2 class="- topic/title title sectiontitle">Generating Stimulus Signals</h2>
+<p class="- topic/p p">In order to use signals for stimulation, a signal generator is used. A signal
                 generator relates signals to model variables and controls the signal generation
                 process.</p>
-            <div class="- topic/p p">All classes from the Common.SignalGenerator namespace are constructed via methods of
+<div class="- topic/p p">All classes from the Common.SignalGenerator namespace are constructed via methods of
                 the SignalGeneratorFactory class in the XIL
                 API.<pre class="+ topic/pre pr-d/codeblock pre codeblock"><code>channels_list = [(["SampleSignal1"]), (["SampleSignal2"]), (["SampleSignal3"])]
 <em class="+ topic/ph hi-d/i ph i">
@@ -682,13 +625,13 @@ signalGenerator.<strong class="+ topic/ph hi-d/b ph b">Start</strong>()
 
 <em class="+ topic/ph hi-d/i ph i"># Stop the Signal Generator – switch to the state eSTOPPED</em>
 signalGenerator.<strong class="+ topic/ph hi-d/b ph b">Stop</strong>()</code></pre></div>
-            <p class="- topic/p p">A SignalGenerator defines stimuli and manages their execution. For the definition of
+<p class="- topic/p p">A SignalGenerator defines stimuli and manages their execution. For the definition of
                 a stimulus, a SignalDescriptionSet is referenced by the SignalGenerator. The signals
                 from the SignalDescriptionSet are assigned with model variables in the "Assignments"
                 collection. To manage stimuli, functionality is provided for
                 downloading a stimulus to the target system, for starting, stopping, and pausing
                 it and for observing its current state.</p>
-            <div class="- topic/p p">An example of a <strong class="+ topic/ph hi-d/b ph b">STI</strong> file structure with one signal is shown
+<div class="- topic/p p">An example of a <strong class="+ topic/ph hi-d/b ph b">STI</strong> file structure with one signal is shown
                 below:<pre class="+ topic/pre pr-d/codeblock pre codeblock"><code>&lt;?xml version="1.0" encoding="utf-8"?&gt;
 &lt;SignalDescriptionFile xmlns="http://www.asam.net/XIL/Signal/2.2.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.asam.net/XIL/Signal/2.2.0 ../SignalDescriptionFormat.xsd"&gt;
 	&lt;!-- Signal generator file demonstrating the assignment of signal descriptions to target system variables --&gt;
@@ -814,36 +757,33 @@ signalGenerator.<strong class="+ topic/ph hi-d/b ph b">Stop</strong>()</code></p
 		&lt;/SignalDescription&gt;
 	&lt;/SignalDescriptionSet&gt;
 &lt;/SignalDescriptionFile&gt;</code></pre></div>
-            <p class="- topic/p p">The format of the STI file is defined via an XML schema definition file. All signals
+<p class="- topic/p p">The format of the STI file is defined via an XML schema definition file. All signals
                 and segments are serialized in their corresponding XML tags. Due to performance
                 issues the numerical values of the SignalValueSegment are serialized in a separate
                 MATLAB file (.mat) and not in the XML file.</p>
-            <div class="- topic/p p"><div class="- topic/note note note note_note"><span class="note__title">Note:</span> When using Signal Generator, Dynamic Model Stimulation must be turned on in Model Settings.</div></div>
-            <p class="- topic/p p"></p>
-        </section>
-        <section class="- topic/section section" id="doc__asam_xil_cond_watch" data-ofbid="doc__asam_xil_cond_watch"><h2 class="- topic/title title sectiontitle">MAPort - Creating and Using ConditionWatcher</h2>
-            
-            <p class="- topic/p p">The ConditionWatcher fires when the condition specified by the property Condition
+<div class="- topic/p p"><div class="- topic/note note note note_note"><span class="note__title">Note:</span> When using Signal Generator, Dynamic Model Stimulation must be turned on in Model Settings.</div></div>
+<p class="- topic/p p"></p>
+</section>
+<section class="- topic/section section" data-ofbid="doc__asam_xil_cond_watch" id="doc__asam_xil_cond_watch"><h2 class="- topic/title title sectiontitle">MAPort - Creating and Using ConditionWatcher</h2>
+<p class="- topic/p p">The ConditionWatcher fires when the condition specified by the property Condition
                 becomes true after its activation. The condition syntax is validated when the property Condition is set. As soon 
                 as the specified condition becomes true, the ConditionWatcher fires.
                 The ConditionWatcher’s condition may contain signals or parameters of the simulation 
                 model. To shorten the condition expression, aliases for the simulation variables are used 
                 which are mapped to model paths. The mapping can be defined via the property ‘Defines’.</p>
-            <p class="- topic/p p">In order to prevent the program of blocking endlessly, the property TimeOut of the 
+<p class="- topic/p p">In order to prevent the program of blocking endlessly, the property TimeOut of the 
                 ConditionWatcher should be set. This ensures, that the ConditionWatcher stops 
                 evaluating its condition and fires its event as soon as the duration given by TimeOut is 
                 elapsed.
                 If a timeout value of zero is given, the ConditionWatcher fires its event immediately and 
                 the specified condition is ignored.</p>
-            <p class="- topic/p p">The model shown in <a class="- topic/xref xref" href="#doc__image_em1_y1g_1vb">Figure 4</a> together with the code below shows an example of the usage of Condition Watcher. The model from this example
+<p class="- topic/p p">The model shown in <a class="- topic/xref xref" href="#doc__image_em1_y1g_1vb">Figure 4</a> together with the code below shows an example of the usage of Condition Watcher. The model from this example
                 consists of a Ramp (signal generator) and Probe1 for monitoring the value of the
                 signal.</p>
-            <figure class="- topic/fig fig fignone" id="doc__image_em1_y1g_1vb" data-ofbid="doc__image_em1_y1g_1vb"><figcaption class="- topic/title title figcap"><span class="figtitleprefix fig--title-label">Figure<span class="fig--title-label-number"> 4</span><span class="fig--title-label-punctuation">. </span></span><span class="fig--title">Simple example model that, when paired with the code below, demonstrates ConditionWatcher functionality</span></figcaption>
-                
-                <img class="- topic/image image" src="../Images/asam_xil_api_python_guide_04.PNG"/>
-            </figure>
-            
-            <pre class="+ topic/pre pr-d/codeblock pre codeblock"><code>from TyphoonHIL.ASAM.XIL import Server
+<figure class="- topic/fig fig fignone" data-ofbid="doc__image_em1_y1g_1vb" id="doc__image_em1_y1g_1vb"><figcaption class="- topic/title title figcap"><span class="figtitleprefix fig--title-label">Figure<span class="fig--title-label-number"> 4</span><span class="fig--title-label-punctuation">. </span></span><span class="fig--title">Simple example model that, when paired with the code below, demonstrates ConditionWatcher functionality</span></figcaption>
+<img class="- topic/image image" src="../Images/asam_xil_api_python_guide_04.PNG"/>
+</figure>
+<pre class="+ topic/pre pr-d/codeblock pre codeblock"><code>from TyphoonHIL.ASAM.XIL import Server
 from TyphoonHIL.ASAM.XIL.Server.MAPort import SampleBreakPoint
 from ASAM.XIL.Interfaces.Testbench.MAPort.Enum import BreakpointAction
                 
@@ -897,51 +837,32 @@ timeout = cw_instance.TimeOut
 # Invoke WaitForBreakpoint function
 maPort.<strong class="+ topic/ph hi-d/b ph b">WaitForBreakpoint</strong>(timeout)
             </code></pre>
-        </section>
-    </div>
+</section>
+</div>
 </article></main></div>
-                        
-                        
-                        
-                        
-                        
-                        
-                    </div>
-                    
-                        <nav role="navigation" id="wh_topic_toc" aria-label="On this page" class="col-lg-2 d-none d-lg-block navbar d-print-none"> 
-                            <div id="wh_topic_toc_content">
-		                        
-	                            <div class=" wh_topic_toc "><div class="wh_topic_label">On this page</div><ul><li class="section-item"><div class="section-title"><a href="#doc__asam_xil_import_assemblies" data-tocid="doc__asam_xil_import_assemblies">Importing the XIL API .NET Assemblies</a></div></li><li class="section-item"><div class="section-title"><a href="#doc__asam_xil_creating_testbench" data-tocid="doc__asam_xil_creating_testbench">Creating a Typhoon HIL XIL API Testbench</a></div></li><li class="section-item"><div class="section-title"><a href="#doc__asam_xil_creating_maport" data-tocid="doc__asam_xil_creating_maport">Creating and Configuring a MA (Model Access) Port</a></div></li><li class="section-item"><div class="section-title"><a href="#doc__asam_xil_maport_read_write" data-tocid="doc__asam_xil_maport_read_write">MA Port - Reading and Writing Variables</a></div></li><li class="section-item"><div class="section-title"><a href="#doc__asam_xil_maport_start_stop_sim" data-tocid="doc__asam_xil_maport_start_stop_sim">MA Port - Start / Stop Simulation and Simulation States</a></div></li><li class="section-item"><div class="section-title"><a href="#doc__asam_xil_capture_create_start_stop" data-tocid="doc__asam_xil_capture_create_start_stop">Capture - Create, Start, Stop Capture, and Capture States</a></div></li><li class="section-item"><div class="section-title"><a href="#doc__asam_xil_sig_seg_create" data-tocid="doc__asam_xil_sig_seg_create">Signal Segments - Creating Stimulus Signals</a></div></li><li class="section-item"><div class="section-title"><a href="#doc__asam_xil_gen_stim_sig" data-tocid="doc__asam_xil_gen_stim_sig">Generating Stimulus Signals</a></div></li><li class="section-item"><div class="section-title"><a href="#doc__asam_xil_cond_watch" data-tocid="doc__asam_xil_cond_watch">MAPort - Creating and Using ConditionWatcher</a></div></li></ul></div>
-	                        	
-                        	</div>
-                        </nav>
-                    
-                </div>
-            </div>
-            
-            
-            
-        </div> 
-        <footer class="navbar navbar-default wh_footer">
-  <div class=" footer-container mx-auto ">
-    <div style="text-align:center">Typhoon HIL Inc.<span id="year"> <a href="https://www.typhoon-hil.com">www.typhoon-hil.com</a></span></div>
-  </div>
+</div>
+<nav aria-label="On this page" class="col-lg-2 d-none d-lg-block navbar d-print-none" id="wh_topic_toc" role="navigation">
+<div id="wh_topic_toc_content">
+<div class="wh_topic_toc"><div class="wh_topic_label">On this page</div><ul><li class="section-item"><div class="section-title"><a data-tocid="doc__asam_xil_import_assemblies" href="#doc__asam_xil_import_assemblies">Importing the XIL API .NET Assemblies</a></div></li><li class="section-item"><div class="section-title"><a data-tocid="doc__asam_xil_creating_testbench" href="#doc__asam_xil_creating_testbench">Creating a Typhoon HIL XIL API Testbench</a></div></li><li class="section-item"><div class="section-title"><a data-tocid="doc__asam_xil_creating_maport" href="#doc__asam_xil_creating_maport">Creating and Configuring a MA (Model Access) Port</a></div></li><li class="section-item"><div class="section-title"><a data-tocid="doc__asam_xil_maport_read_write" href="#doc__asam_xil_maport_read_write">MA Port - Reading and Writing Variables</a></div></li><li class="section-item"><div class="section-title"><a data-tocid="doc__asam_xil_maport_start_stop_sim" href="#doc__asam_xil_maport_start_stop_sim">MA Port - Start / Stop Simulation and Simulation States</a></div></li><li class="section-item"><div class="section-title"><a data-tocid="doc__asam_xil_capture_create_start_stop" href="#doc__asam_xil_capture_create_start_stop">Capture - Create, Start, Stop Capture, and Capture States</a></div></li><li class="section-item"><div class="section-title"><a data-tocid="doc__asam_xil_sig_seg_create" href="#doc__asam_xil_sig_seg_create">Signal Segments - Creating Stimulus Signals</a></div></li><li class="section-item"><div class="section-title"><a data-tocid="doc__asam_xil_gen_stim_sig" href="#doc__asam_xil_gen_stim_sig">Generating Stimulus Signals</a></div></li><li class="section-item"><div class="section-title"><a data-tocid="doc__asam_xil_cond_watch" href="#doc__asam_xil_cond_watch">MAPort - Creating and Using ConditionWatcher</a></div></li></ul></div>
+</div>
+</nav>
+</div>
+</div>
+</div>
+<footer class="navbar navbar-default wh_footer">
+<div class="footer-container mx-auto">
+<div style="text-align:center">Typhoon HIL Inc.<span id="year"> <a href="https://www.typhoon-hil.com">www.typhoon-hil.com</a></span></div>
+</div>
 </footer>
-        
-        <div id="go2top" class="d-print-none">
-            <span class="oxy-icon oxy-icon-up"></span>
-        </div>
-        
-        <div id="modal_img_large" class="modal">
-            <span class="close oxy-icon oxy-icon-remove"></span>
-            <div id="modal_img_container"></div>
-            <div id="caption"></div>
-        </div>
-        
-        
-<script type="text/javascript" src="../../assets/script.js"> 
+<div class="d-print-none" id="go2top">
+<span class="oxy-icon oxy-icon-up"></span>
+</div>
+<div class="modal" id="modal_img_large">
+<span class="close oxy-icon oxy-icon-remove"></span>
+<div id="modal_img_container"></div>
+<div id="caption"></div>
+</div>
+<script src="../../assets/script.js" type="text/javascript">
 </script>
-
-        
-    </body>
+</body>
 </html>
