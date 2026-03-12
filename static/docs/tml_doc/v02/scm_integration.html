@@ -1,454 +1,380 @@
+
 <!DOCTYPE html>
+
 <html class="no-js" lang="en">
- <head>
-  <meta charset="utf-8"/>
-  <meta content="width=device-width,initial-scale=1" name="viewport"/>
-  <link href="../assets/images/favicon.png" rel="icon"/>
-  <meta content="mkdocs-1.6.1, mkdocs-material-9.7.1" name="generator"/>
-  <title>
-   Schematic Editor integration - TML Documentation
-  </title>
-  <link href="../assets/stylesheets/main.484c7ddc.min.css" rel="stylesheet"/>
-  <link href="../assets/stylesheets/palette.ab4e12ef.min.css" rel="stylesheet"/>
-  <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
-  <link href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&amp;display=fallback" rel="stylesheet"/>
-  <style>
-   :root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}
-  </style>
-  <link href="../stylesheets/extra.css" rel="stylesheet"/>
-  <script>
-   __md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}
-  </script>
- </head>
- <body data-md-color-accent="indigo" data-md-color-primary="custom" data-md-color-scheme="default" dir="ltr">
-  <input autocomplete="off" class="md-toggle" data-md-toggle="drawer" id="__drawer" type="checkbox"/>
-  <input autocomplete="off" class="md-toggle" data-md-toggle="search" id="__search" type="checkbox"/>
-  <label class="md-overlay" for="__drawer">
-  </label>
-  <div data-md-component="skip">
-   <a class="md-skip" href="#schematic-editor-integration">
-    Skip to content
-   </a>
-  </div>
-  <div data-md-component="announce">
-  </div>
-  <header class="md-header md-header--shadow" data-md-component="header">
-   <nav aria-label="Header" class="md-header__inner md-grid">
-    <a aria-label="TML Documentation" class="md-header__button md-logo" data-md-component="logo" href=".." title="TML Documentation">
-     <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-      <path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54">
-      </path>
-     </svg>
-    </a>
-    <label class="md-header__button md-icon" for="__drawer">
-     <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-      <path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z">
-      </path>
-     </svg>
-    </label>
-    <div class="md-header__title" data-md-component="header-title">
-     <div class="md-header__ellipsis">
-      <div class="md-header__topic">
-       <span class="md-ellipsis">
-        TML Documentation
-       </span>
-      </div>
-      <div class="md-header__topic" data-md-component="header-topic">
-       <span class="md-ellipsis">
-        Schematic Editor integration
-       </span>
-      </div>
-     </div>
-    </div>
-    <label class="md-header__button md-icon" for="__search">
-     <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-      <path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5">
-      </path>
-     </svg>
-    </label>
-    <div class="md-search" data-md-component="search" role="dialog">
-     <label class="md-search__overlay" for="__search">
-     </label>
-     <div class="md-search__inner" role="search">
-      <form class="md-search__form" name="search">
-       <input aria-label="Search" autocapitalize="off" autocomplete="off" autocorrect="off" class="md-search__input" data-md-component="search-query" name="query" placeholder="Search" required="" spellcheck="false" type="text"/>
-       <label class="md-search__icon md-icon" for="__search">
-        <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-         <path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5">
-         </path>
-        </svg>
-        <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-         <path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z">
-         </path>
-        </svg>
-       </label>
-       <nav aria-label="Search" class="md-search__options">
-        <button aria-label="Clear" class="md-search__icon md-icon" tabindex="-1" title="Clear" type="reset">
-         <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-          <path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z">
-          </path>
-         </svg>
-        </button>
-       </nav>
-      </form>
-      <div class="md-search__output">
-       <div class="md-search__scrollwrap" data-md-scrollfix="" tabindex="0">
-        <div class="md-search-result" data-md-component="search-result">
-         <div class="md-search-result__meta">
-          Initializing search
-         </div>
-         <ol class="md-search-result__list" role="presentation">
-         </ol>
-        </div>
-       </div>
-      </div>
-     </div>
-    </div>
-   </nav>
-   <div class="injected">
-    Formatted Content
-   </div>
-  </header>
-  <div class="md-container" data-md-component="container">
-   <main class="md-main" data-md-component="main">
-    <div class="md-main__inner md-grid">
-     <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation">
-      <div class="md-sidebar__scrollwrap">
-       <div class="md-sidebar__inner">
-        <nav aria-label="Navigation" class="md-nav md-nav--primary" data-md-level="0">
-         <label class="md-nav__title" for="__drawer">
-          <a aria-label="TML Documentation" class="md-nav__button md-logo" data-md-component="logo" href=".." title="TML Documentation">
-           <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-            <path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54">
-            </path>
-           </svg>
-          </a>
-          TML Documentation
-         </label>
-         <ul class="md-nav__list" data-md-scrollfix="">
-          <li class="md-nav__item">
-           <a class="md-nav__link" href="../variables.html">
-            <span class="md-ellipsis">
-             Variables
-            </span>
-           </a>
-          </li>
-          <li class="md-nav__item">
-           <a class="md-nav__link" href="../type_system.html">
-            <span class="md-ellipsis">
-             Type system
-            </span>
-           </a>
-          </li>
-          <li class="md-nav__item">
-           <a class="md-nav__link" href="../broadcasting.html">
-            <span class="md-ellipsis">
-             Broadcasting
-            </span>
-           </a>
-          </li>
-          <li class="md-nav__item">
-           <a class="md-nav__link" href="../reduction.html">
-            <span class="md-ellipsis">
-             Reduction
-            </span>
-           </a>
-          </li>
-          <li class="md-nav__item">
-           <a class="md-nav__link" href="../terminals.html">
-            <span class="md-ellipsis">
-             Terminals
-            </span>
-           </a>
-          </li>
-          <li class="md-nav__item">
-           <a class="md-nav__link" href="../guards.html">
-            <span class="md-ellipsis">
-             Guards
-            </span>
-           </a>
-          </li>
-          <li class="md-nav__item">
-           <a class="md-nav__link" href="../functions.html">
-            <span class="md-ellipsis">
-             Functions
-            </span>
-           </a>
-          </li>
-          <li class="md-nav__item">
-           <a class="md-nav__link" href="../statements.html">
-            <span class="md-ellipsis">
-             Statements
-            </span>
-           </a>
-          </li>
-          <li class="md-nav__item">
-           <a class="md-nav__link" href="../expressions.html">
-            <span class="md-ellipsis">
-             Expressions
-            </span>
-           </a>
-          </li>
-          <li class="md-nav__item">
-           <a class="md-nav__link" href="../macro_system.html">
-            <span class="md-ellipsis">
-             Macro system
-            </span>
-           </a>
-          </li>
-          <li class="md-nav__item">
-           <a class="md-nav__link" href="../comments.html">
-            <span class="md-ellipsis">
-             Comments
-            </span>
-           </a>
-          </li>
-          <li class="md-nav__item">
-           <a class="md-nav__link" href="../builtins.html">
-            <span class="md-ellipsis">
-             Built-ins
-            </span>
-           </a>
-          </li>
-         </ul>
-        </nav>
-       </div>
-      </div>
-     </div>
-     <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc">
-      <div class="md-sidebar__scrollwrap">
-       <div class="md-sidebar__inner">
-        <nav aria-label="Table of contents" class="md-nav md-nav--secondary">
-         <label class="md-nav__title" for="__toc">
-          <span class="md-nav__icon md-icon">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width,initial-scale=1" name="viewport"/>
+<link href="../assets/images/favicon.png" rel="icon"/>
+<meta content="mkdocs-1.6.1, mkdocs-material-9.7.1" name="generator"/>
+<title>Schematic Editor integration - TML Documentation</title>
+<link href="../assets/stylesheets/main.484c7ddc.min.css" rel="stylesheet"/>
+<link href="../assets/stylesheets/palette.ab4e12ef.min.css" rel="stylesheet"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&amp;display=fallback" rel="stylesheet"/>
+<style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+<link href="../stylesheets/extra.css" rel="stylesheet"/>
+<script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+</head>
+<body data-md-color-accent="indigo" data-md-color-primary="custom" data-md-color-scheme="default" dir="ltr">
+<input autocomplete="off" class="md-toggle" data-md-toggle="drawer" id="__drawer" type="checkbox"/>
+<input autocomplete="off" class="md-toggle" data-md-toggle="search" id="__search" type="checkbox"/>
+<label class="md-overlay" for="__drawer"></label>
+<div data-md-component="skip">
+<a class="md-skip" href="#schematic-editor-integration">
+          Skip to content
+        </a>
+</div>
+<div data-md-component="announce">
+</div>
+<header class="md-header md-header--shadow" data-md-component="header">
+<nav aria-label="Header" class="md-header__inner md-grid">
+<a aria-label="HIL Documentation" class="md-header__button md-logo" data-md-component="logo" href="../../index.html" title="HIL Documentation">
+<svg fill="currentColor" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M20 5h-7.586l-2-2H4c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2zM4 5h5.586l2 2H20v12H4V5z"></path>
+</svg>
+</a>
+
+<a aria-label="TML Documentation" class="md-header__button md-logo" data-md-component="logo" href=".." title="TML Documentation">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"></path></svg>
+</a>
+<label class="md-header__button md-icon" for="__drawer">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"></path></svg>
+</label>
+<div class="md-header__title" data-md-component="header-title">
+<div class="md-header__ellipsis">
+<div class="md-header__topic">
+<span class="md-ellipsis">
+            TML Documentation
           </span>
-          Table of contents
-         </label>
-         <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
-          <li class="md-nav__item">
-           <a class="md-nav__link" href="#model-preparation">
-            <span class="md-ellipsis">
-             Model preparation
-            </span>
-           </a>
-          </li>
-          <li class="md-nav__item">
-           <a class="md-nav__link" href="#calling-the-tml-compiler">
-            <span class="md-ellipsis">
-             Calling the TML compiler
-            </span>
-           </a>
-           <nav aria-label="Calling the TML compiler" class="md-nav">
-            <ul class="md-nav__list">
-             <li class="md-nav__item">
-              <a class="md-nav__link" href="#the-compile-command">
-               <span class="md-ellipsis">
-                The compile command
-               </span>
-              </a>
-             </li>
-            </ul>
-           </nav>
-          </li>
-          <li class="md-nav__item">
-           <a class="md-nav__link" href="#challenges">
-            <span class="md-ellipsis">
-             Challenges
-            </span>
-           </a>
-           <nav aria-label="Challenges" class="md-nav">
-            <ul class="md-nav__list">
-             <li class="md-nav__item">
-              <a class="md-nav__link" href="#namespace-variables-trac-6886">
-               <span class="md-ellipsis">
-                Namespace variables (Trac 6886)
-               </span>
-              </a>
-             </li>
-             <li class="md-nav__item">
-              <a class="md-nav__link" href="#schematic-model-deserialization">
-               <span class="md-ellipsis">
-                Schematic model (de)serialization
-               </span>
-              </a>
-             </li>
-            </ul>
-           </nav>
-          </li>
-         </ul>
-        </nav>
-       </div>
-      </div>
-     </div>
-     <div class="md-content" data-md-component="content">
-      <article class="md-content__inner md-typeset">
-       <h1 id="schematic-editor-integration">
-        Schematic Editor integration
-       </h1>
-       <div class="admonition note">
-        <p class="admonition-title">
-         Note
-        </p>
-        <p>
-         All TML related changes in Schematic Editor can be found on
-         <code>
-          tml-develop
-         </code>
-         branch.
-        </p>
-       </div>
-       <p>
-        TML compiler is called like any other compiler in SE, via utilizing the
-        <code>
-         subprocess
-        </code>
-        module.
-       </p>
-       <h2 id="model-preparation">
+</div>
+<div class="md-header__topic" data-md-component="header-topic">
+<span class="md-ellipsis">
+            
+              Schematic Editor integration
+            
+          </span>
+</div>
+</div>
+</div>
+<label class="md-header__button md-icon" for="__search">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"></path></svg>
+</label>
+<div class="md-search" data-md-component="search" role="dialog">
+<label class="md-search__overlay" for="__search"></label>
+<div class="md-search__inner" role="search">
+<form class="md-search__form" name="search">
+<input aria-label="Search" autocapitalize="off" autocomplete="off" autocorrect="off" class="md-search__input" data-md-component="search-query" name="query" placeholder="Search" required="" spellcheck="false" type="text"/>
+<label class="md-search__icon md-icon" for="__search">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"></path></svg>
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"></path></svg>
+</label>
+<nav aria-label="Search" class="md-search__options">
+<button aria-label="Clear" class="md-search__icon md-icon" tabindex="-1" title="Clear" type="reset">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"></path></svg>
+</button>
+</nav>
+</form>
+<div class="md-search__output">
+<div class="md-search__scrollwrap" data-md-scrollfix="" tabindex="0">
+<div class="md-search-result" data-md-component="search-result">
+<div class="md-search-result__meta">
+            Initializing search
+          </div>
+<ol class="md-search-result__list" role="presentation"></ol>
+</div>
+</div>
+</div>
+</div>
+</div>
+</nav>
+</header>
+<div class="md-container" data-md-component="container">
+<main class="md-main" data-md-component="main">
+<div class="md-main__inner md-grid">
+<div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation">
+<div class="md-sidebar__scrollwrap">
+<div class="md-sidebar__inner">
+<nav aria-label="Navigation" class="md-nav md-nav--primary" data-md-level="0">
+<label class="md-nav__title" for="__drawer">
+<a aria-label="TML Documentation" class="md-nav__button md-logo" data-md-component="logo" href=".." title="TML Documentation">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"></path></svg>
+</a>
+    TML Documentation
+  </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../variables.html">
+<span class="md-ellipsis">
+    
+  
+    Variables
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../type_system.html">
+<span class="md-ellipsis">
+    
+  
+    Type system
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../broadcasting.html">
+<span class="md-ellipsis">
+    
+  
+    Broadcasting
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../reduction.html">
+<span class="md-ellipsis">
+    
+  
+    Reduction
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../terminals.html">
+<span class="md-ellipsis">
+    
+  
+    Terminals
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../guards.html">
+<span class="md-ellipsis">
+    
+  
+    Guards
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../functions.html">
+<span class="md-ellipsis">
+    
+  
+    Functions
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../statements.html">
+<span class="md-ellipsis">
+    
+  
+    Statements
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../expressions.html">
+<span class="md-ellipsis">
+    
+  
+    Expressions
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../macro_system.html">
+<span class="md-ellipsis">
+    
+  
+    Macro system
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../comments.html">
+<span class="md-ellipsis">
+    
+  
+    Comments
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../builtins.html">
+<span class="md-ellipsis">
+    
+  
+    Built-ins
+  
+
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</div>
+</div>
+</div>
+<div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc">
+<div class="md-sidebar__scrollwrap">
+<div class="md-sidebar__inner">
+<nav aria-label="Table of contents" class="md-nav md-nav--secondary">
+<label class="md-nav__title" for="__toc">
+<span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#model-preparation">
+<span class="md-ellipsis">
+      
         Model preparation
-       </h2>
-       <p>
-        Before the TML compiler is called, some small preparations are being made during
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#calling-the-tml-compiler">
+<span class="md-ellipsis">
+      
+        Calling the TML compiler
+      
+    </span>
+</a>
+<nav aria-label="Calling the TML compiler" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#the-compile-command">
+<span class="md-ellipsis">
+      
+        The compile command
+      
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#challenges">
+<span class="md-ellipsis">
+      
+        Challenges
+      
+    </span>
+</a>
+<nav aria-label="Challenges" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#namespace-variables-trac-6886">
+<span class="md-ellipsis">
+      
+        Namespace variables (Trac 6886)
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#schematic-model-deserialization">
+<span class="md-ellipsis">
+      
+        Schematic model (de)serialization
+      
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</div>
+</div>
+</div>
+<div class="md-content" data-md-component="content">
+<article class="md-content__inner md-typeset">
+<h1 id="schematic-editor-integration">Schematic Editor integration</h1>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>All TML related changes in Schematic Editor can be found on <code>tml-develop</code> branch.</p>
+</div>
+<p>TML compiler is called like any other compiler in SE, via utilizing the <code>subprocess</code> module.</p>
+<h2 id="model-preparation">Model preparation</h2>
+<p>Before the TML compiler is called, some small preparations are being made during
 creation of the reduced model. Since we are calling TML just like any other external
 compiler, we need to store the results (generated C code) in a directory that can
 be later on utilized by the code generator. In our case, we are creating a temp
-directory in
-        <code>
-         convert_core_model()
-        </code>
-        and use it for the current compilation.
-       </p>
-       <h2 id="calling-the-tml-compiler">
-        Calling the TML compiler
-       </h2>
-       <p>
-        The function that communicates with the TML compiler is called
-        <code>
-         call_tml
-        </code>
-        and
+directory in <code>convert_core_model()</code> and use it for the current compilation.</p>
+<h2 id="calling-the-tml-compiler">Calling the TML compiler</h2>
+<p>The function that communicates with the TML compiler is called <code>call_tml</code> and
 can be found here:
-        <a href="https://gitlab.typhoon-hil.com/dev/t_sw/-/blob/tml-develop/thcc/typhoon/tools/compiler/code_generation/generator/compile.py?ref_type=heads#L371">
-         t_sw/thcc/typhoon/tools/compiler/code_generation/generator/compile.py::371
-        </a>
-        .
-The
-        <code>
-         call_tml()
-        </code>
-        calls TML compiler and stores the result (compiled C code) into
-the previously mentioned temp directory.
-       </p>
-       <h3 id="the-compile-command">
-        The
-        <code>
-         compile
-        </code>
-        command
-       </h3>
-       <p>
-        TML compiler comes with a
-        <code>
-         compile
-        </code>
-        command that compiles all the components from the
-model that have TML implementation. The
-        <code>
-         compile
-        </code>
-        command comes with the following arguments:
-       </p>
-       <ul>
-        <li>
-         <code>
-          model_file_path
-         </code>
-         - a path to the serialized Schematic model
-        </li>
-        <li>
-         <code>
-          components_impl_path
-         </code>
-         - a dir that contains component implementations in TML
-        </li>
-        <li>
-         <code>
-          --output-dir
-         </code>
-         (optional) - a dir where the generated C code will be stored
-        </li>
-       </ul>
-       <p>
-        Once the command is executed, the compiler will first create an object representation
-of the model. After that, all TML implementations from the dir defined by
-        <code>
-         components_impl_path
-        </code>
-        are loaded. Finally, the compiler will iterate through the model
-and compile every components that has a TML implementation.
-       </p>
-       <p>
-        If the optional
-        <code>
-         --output-dir
-        </code>
-        argument is omitted, the compiler will not generate any files,
+<a href="https://gitlab.typhoon-hil.com/dev/t_sw/-/blob/tml-develop/thcc/typhoon/tools/compiler/code_generation/generator/compile.py?ref_type=heads#L371">t_sw/thcc/typhoon/tools/compiler/code_generation/generator/compile.py::371</a>.
+The <code>call_tml()</code> calls TML compiler and stores the result (compiled C code) into
+the previously mentioned temp directory.</p>
+<h3 id="the-compile-command">The <code>compile</code> command</h3>
+<p>TML compiler comes with a <code>compile</code> command that compiles all the components from the
+model that have TML implementation. The <code>compile</code> command comes with the following arguments:</p>
+<ul>
+<li><code>model_file_path</code> - a path to the serialized Schematic model</li>
+<li><code>components_impl_path</code> - a dir that contains component implementations in TML</li>
+<li><code>--output-dir</code> (optional) - a dir where the generated C code will be stored</li>
+</ul>
+<p>Once the command is executed, the compiler will first create an object representation
+of the model. After that, all TML implementations from the dir defined by <code>components_impl_path</code> are loaded. Finally, the compiler will iterate through the model
+and compile every components that has a TML implementation.</p>
+<p>If the optional <code>--output-dir</code> argument is omitted, the compiler will not generate any files,
 but it will still perform a complete analysis and even call the code generator. However, if the
-argument is provided, for each component, the following files will be generated:
-       </p>
-       <ul>
-        <li>
-         <code>
-          &lt;component_fqn&gt;.var
-         </code>
-         - defines all variables that will be used in the C code,
-        </li>
-        <li>
-         <code>
-          &lt;component_fqn&gt;.init_fnc
-         </code>
-         - generated C code for the init_fnc,
-        </li>
-        <li>
-         <code>
-          &lt;component_fqn&gt;.output_fnc
-         </code>
-         - generated C code for the output_fnc,
-        </li>
-        <li>
-         <code>
-          &lt;component_fqn&gt;.update_fnc
-         </code>
-         - generated C code for the update_fnc,
-        </li>
-        <li>
-         <code>
-          &lt;component_fqn&gt;.fnc
-         </code>
-         - generated C code for all user-defined functions,
-        </li>
-        <li>
-         <code>
-          &lt;component_fqn&gt;.proto
-         </code>
-         - defines prototypes for all functions from TML file, and
-        </li>
-        <li>
-         <code>
-          &lt;component_fqn&gt;.error
-         </code>
-         - contains all errors and warnings for the corresponding component.
-        </li>
-       </ul>
-       <p>
-        <code>
-         ``admonish note
+argument is provided, for each component, the following files will be generated:</p>
+<ul>
+<li><code>&lt;component_fqn&gt;.var</code> - defines all variables that will be used in the C code,</li>
+<li><code>&lt;component_fqn&gt;.init_fnc</code> - generated C code for the init_fnc,</li>
+<li><code>&lt;component_fqn&gt;.output_fnc</code> - generated C code for the output_fnc,</li>
+<li><code>&lt;component_fqn&gt;.update_fnc</code> - generated C code for the update_fnc,</li>
+<li><code>&lt;component_fqn&gt;.fnc</code> - generated C code for all user-defined functions,</li>
+<li><code>&lt;component_fqn&gt;.proto</code> - defines prototypes for all functions from TML file, and</li>
+<li><code>&lt;component_fqn&gt;.error</code> - contains all errors and warnings for the corresponding component.</li>
+</ul>
+<p><code>``admonish note
 For all components in the model with a TML implementation corresponding C code is
-generated during
-        </code>
-        call_tml()`, before the C code generator in SE is called.
-        <div class="highlight">
-         <pre><span></span><code>### stout, stderr, status code
+generated during</code>call_tml()`, before the C code generator in SE is called.
+<div class="highlight"><pre><span></span><code>### stout, stderr, status code
 
 The TML compiler will print all information during the compilation into the console.
 Status message (i.e. compilation started/finished) will be printed to the `sys.stdout`.
@@ -471,60 +397,35 @@ in `generator/base.py`).
 ```admonish note
 Data is sent into templates as a dict. Meaning, generated code is stored in the
 dict with `tml_` prefix (e.g. init function will be stored as `tml_init_fnc`).
-</code></pre>
-        </div>
-       </p>
-       <p>
-        In templates, for each function we simply check if the corresponding key is defined
-in the template data. For example,
-       </p>
-       <div class="highlight">
-        <pre><span></span><code>{# from common_int2_handler_function.template #}
+</code></pre></div></p>
+<p>In templates, for each function we simply check if the corresponding key is defined
+in the template data. For example,</p>
+<div class="highlight"><pre><span></span><code>{# from common_int2_handler_function.template #}
 {% for c in components_per_exec_rate[i] -%}
 {% if "tml_output_fnc" in c %}
     {{c.tml_output_fnc}}
 {% else %}
     {# code that calls template instead #}
 {% endfor %}
-</code></pre>
-       </div>
-       <p>
-        To support user-defined functions,
-        <code>
-         common_HIL_functions.template
-        </code>
-        is updated with
-the following:
-       </p>
-       <div class="highlight">
-        <pre><span></span><code>// TML functions
+</code></pre></div>
+<p>To support user-defined functions, <code>common_HIL_functions.template</code> is updated with
+the following:</p>
+<div class="highlight"><pre><span></span><code>// TML functions
 
 {% for c in component_list -%}
 {% if "tml_fnc" in c%}
 {{c.tml_fnc}}
 {% endif %}
 {% endfor %}
-</code></pre>
-       </div>
-       <h2 id="challenges">
-        Challenges
-       </h2>
-       <p>
-        During the implementation of TML, there were several workaround (hacks) in SE side
-that should be addressed properly.
-       </p>
-       <p>
-        Next sections contain examples where we needed to introduce hacks to help TML,
-or bugs that often occurred.
-       </p>
-       <p>
-        <code>
-         ``admonish note
-All issues that require changes in the Schematic Editor are labeled with
-        </code>
-        schematic-rework` label.
-        <div class="highlight">
-         <pre><span></span><code>### Dynamic terminals ([Trac 6887](https://trac.typhoon-hil.com/ticket/6887))
+</code></pre></div>
+<h2 id="challenges">Challenges</h2>
+<p>During the implementation of TML, there were several workaround (hacks) in SE side
+that should be addressed properly.</p>
+<p>Next sections contain examples where we needed to introduce hacks to help TML,
+or bugs that often occurred.</p>
+<p><code>``admonish note
+All issues that require changes in the Schematic Editor are labeled with</code>schematic-rework` label.
+<div class="highlight"><pre><span></span><code>### Dynamic terminals ([Trac 6887](https://trac.typhoon-hil.com/ticket/6887))
 
 We use `dynamic` keyword to define whether a terminal is dynamic or not. However, there is no way to tell if a terminal is optional (either exists or not), or we can have multiple instances of the terminal (i.e. input terminals for Sum, Product,...).
 
@@ -537,9 +438,8 @@ A much more informative way would be to use cardinal numbers. A cardinality of a
 
 
 For example, optional terminals can be defined like this:
-</code></pre>
-        </div>
-        in {
+</code></pre></div>
+in {
     cardinality=(0, 1)
     kind = sp
     label = ""
@@ -550,44 +450,18 @@ For example, optional terminals can be defined like this:
         default = real
     }
 }
-        <div class="highlight">
-         <pre><span></span><code>A biggest advantage of this approach is that the validation can be integrated directly into Schematic Editor, and manual code for such validations can be removed.
+<div class="highlight"><pre><span></span><code>A biggest advantage of this approach is that the validation can be integrated directly into Schematic Editor, and manual code for such validations can be removed.
 
 In addition, this feature is needed for TML project to implement guards properly.
 
 ```admonish note
 At the moment, this is handled manually in `reduced_sch_model/export.py`, where
 `CARDINAL_NUM_PER_CMP_TERM` dict defines a cardinal number for each dynamic terminal.
-</code></pre>
-        </div>
-       </p>
-       <h3 id="namespace-variables-trac-6886">
-        Namespace variables (
-        <a href="https://trac.typhoon-hil.com/ticket/6886">
-         Trac 6886
-        </a>
-        )
-       </h3>
-       <p>
-        Currently, namespace variables are defined inside
-        <code>
-         pre_compile
-        </code>
-        or
-        <code>
-         post_resolve
-        </code>
-        handlers, in an arbitrary way.
-       </p>
-       <p>
-        Problem that often occurs is that a namespace variable is declared within if-else clause, which can cause problems during code generation. The latest example of such problem was with
-        <code>
-         discrete_state_space.cmp
-        </code>
-        where a template tried to access variable that is never defined:
-       </p>
-       <div class="highlight">
-        <pre><span></span><code>A_all_zeros, B_all_zeros, C_all_zeros, D_all_zeros, dss_mat_csr = convert_dense_dss_to_csr(A, B, C, D)
+</code></pre></div></p>
+<h3 id="namespace-variables-trac-6886">Namespace variables (<a href="https://trac.typhoon-hil.com/ticket/6886">Trac 6886</a>)</h3>
+<p>Currently, namespace variables are defined inside <code>pre_compile</code> or <code>post_resolve</code> handlers, in an arbitrary way.</p>
+<p>Problem that often occurs is that a namespace variable is declared within if-else clause, which can cause problems during code generation. The latest example of such problem was with <code>discrete_state_space.cmp</code> where a template tried to access variable that is never defined:</p>
+<div class="highlight"><pre><span></span><code>A_all_zeros, B_all_zeros, C_all_zeros, D_all_zeros, dss_mat_csr = convert_dense_dss_to_csr(A, B, C, D)
 A_mat, B_mat, C_mat, D_mat = dss_mat_csr
 if A_all_zeros is False:
     A_values, A_indices, A_indptr, A_values_list, A_indices_list, A_indptr_list, a_values_rows, a_indices_rows, a_indptr_rows, a_rows = A_mat
@@ -597,98 +471,57 @@ if C_all_zeros is False:
     C_values, C_indices, C_indptr, C_values_list, C_indices_list, C_indptr_list, c_values_rows, c_indices_rows, c_indptr_rows, c_rows = C_mat
 if D_all_zeros is False:
     D_values, D_indices, D_indptr, D_values_list, D_indices_list, D_indptr_list, d_values_rows, d_indices_rows, d_indptr_rows, d_rows = D_mat
-</code></pre>
-       </div>
-       <p>
-        As we can see, there are cases where some of the variables are defined only if certain condition is met. This, in conjunction with pretty complicated templates, makes debugging extra hard.
-       </p>
-       <p>
-        In addition, with the development of TML, it would be really beneficial to have as complete component description as possible because it will provide more precise type checking and more concise C code.
-       </p>
-       <p>
-        One way to provide better definition of namespace variables would be to expand .cmp file with a section similar to properties and terminals. For example:
-       </p>
-       <div class="highlight">
-        <pre><span></span><code>namespace_vars {
+</code></pre></div>
+<p>As we can see, there are cases where some of the variables are defined only if certain condition is met. This, in conjunction with pretty complicated templates, makes debugging extra hard.</p>
+<p>In addition, with the development of TML, it would be really beneficial to have as complete component description as possible because it will provide more precise type checking and more concise C code.</p>
+<p>One way to provide better definition of namespace variables would be to expand .cmp file with a section similar to properties and terminals. For example:</p>
+<div class="highlight"><pre><span></span><code>namespace_vars {
    A_values {
      type = real[],
      default_value = [1, 2, 3]  // optional, if omitted default_value will be None
    }
 
 }
-</code></pre>
-       </div>
-       <p>
-        The migration to more formal way of defining namespace variables can be implemented gradually. At the beginning, we can allow both formal and informal namespace variable definition, then slowly deprecate the informal way.
-       </p>
-       <div class="admonition note">
-        <p class="admonition-title">
-         Note
-        </p>
-        <p>
-         We need to pay extra attention to user libraries, and we will probably need to
-add option for defining namespace variables in the Mask Editor.
-        </p>
-       </div>
-       <h3 id="schematic-model-deserialization">
-        Schematic model (de)serialization
-       </h3>
-       <p>
-        The modules for creating a reduced schematic model and (de)serialization are tightly
-coupled with the Schematic core (check
-        <a href="https://gitlab.typhoon-hil.com/dev/t_sw/-/blob/tml-develop/thcc/typhoon/tools/compiler/reduced_sch_model/export.py">
-         export.py
-        </a>
-        and
-        <a href="https://gitlab.typhoon-hil.com/dev/t_sw/-/blob/tml-develop/thcc/typhoon/tools/compiler/reduced_sch_model/serialize.py">
-         serialize.py
-        </a>
-        for example).
-       </p>
-       <p>
-        In order to keep TML as separate as possible from THCC toolchain, a simplifier
-version of reduced model is implemented and can be found in
-        <a href="https://gitlab.typhoon-hil.com/dev/tml/-/tree/main/tml/thcc">
-         tml/thcc
-        </a>
-        module.
-       </p>
-       <p>
-        However, a major drawback of this approach is that there is always a possibility
-of getting out of sync with the modules in Schematic Editor.
-       </p>
-      </article>
-     </div>
-     <script>
-      var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))
-     </script>
-    </div>
-   </main>
-   <footer class="md-footer">
-    <div class="md-footer-meta md-typeset">
-     <div class="md-footer-meta__inner md-grid">
-      <div class="md-copyright">
-       Made with
-       <a href="https://squidfunk.github.io/mkdocs-material/" rel="noopener" target="_blank">
-        Material for MkDocs
-       </a>
-      </div>
-     </div>
-    </div>
-   </footer>
-  </div>
-  <div class="md-dialog" data-md-component="dialog">
-   <div class="md-dialog__inner md-typeset">
-   </div>
-  </div>
-  <script id="__config" type="application/json">
-   {"annotate": null, "base": "..", "features": [], "search": "../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}
-  </script>
-  <script src="../assets/javascripts/bundle.79ae519e.min.js">
-  </script>
-  <script src="../javascripts/mathjax.js">
-  </script>
-  <script src="https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js">
-  </script>
- </body>
+</code></pre></div>
+<p>The migration to more formal way of defining namespace variables can be implemented gradually. At the beginning, we can allow both formal and informal namespace variable definition, then slowly deprecate the informal way.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>We need to pay extra attention to user libraries, and we will probably need to
+add option for defining namespace variables in the Mask Editor.</p>
+</div>
+<h3 id="schematic-model-deserialization">Schematic model (de)serialization</h3>
+<p>The modules for creating a reduced schematic model and (de)serialization are tightly
+coupled with the Schematic core (check <a href="https://gitlab.typhoon-hil.com/dev/t_sw/-/blob/tml-develop/thcc/typhoon/tools/compiler/reduced_sch_model/export.py">export.py</a> and <a href="https://gitlab.typhoon-hil.com/dev/t_sw/-/blob/tml-develop/thcc/typhoon/tools/compiler/reduced_sch_model/serialize.py">serialize.py</a> for example).</p>
+<p>In order to keep TML as separate as possible from THCC toolchain, a simplifier
+version of reduced model is implemented and can be found in <a href="https://gitlab.typhoon-hil.com/dev/tml/-/tree/main/tml/thcc">tml/thcc</a> module.</p>
+<p>However, a major drawback of this approach is that there is always a possibility
+of getting out of sync with the modules in Schematic Editor.</p>
+</article>
+</div>
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+</div>
+</main>
+<footer class="md-footer">
+<div class="md-footer-meta md-typeset">
+<div class="md-footer-meta__inner md-grid">
+<div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" rel="noopener" target="_blank">
+      Material for MkDocs
+    </a>
+</div>
+</div>
+</div>
+</footer>
+</div>
+<div class="md-dialog" data-md-component="dialog">
+<div class="md-dialog__inner md-typeset"></div>
+</div>
+<script id="__config" type="application/json">{"annotate": null, "base": "..", "features": [], "search": "../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+<script src="../assets/javascripts/bundle.79ae519e.min.js"></script>
+<script src="../javascripts/mathjax.js"></script>
+<script src="https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js"></script>
+</body>
 </html>

@@ -1,496 +1,527 @@
+
 <!DOCTYPE html>
+
 <html class="no-js" lang="en">
- <head>
-  <meta charset="utf-8"/>
-  <meta content="width=device-width,initial-scale=1" name="viewport"/>
-  <link href="statements.html" rel="prev"/>
-  <link href="macro_system.html" rel="next"/>
-  <link href="assets/images/favicon.png" rel="icon"/>
-  <meta content="mkdocs-1.6.1, mkdocs-material-9.7.1" name="generator"/>
-  <title>
-   Expressions - TML Documentation
-  </title>
-  <link href="assets/stylesheets/main.484c7ddc.min.css" rel="stylesheet"/>
-  <link href="assets/stylesheets/palette.ab4e12ef.min.css" rel="stylesheet"/>
-  <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
-  <link href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&amp;display=fallback" rel="stylesheet"/>
-  <style>
-   :root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}
-  </style>
-  <link href="stylesheets/extra.css" rel="stylesheet"/>
-  <script>
-   __md_scope=new URL(".",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}
-  </script>
- </head>
- <body data-md-color-accent="indigo" data-md-color-primary="custom" data-md-color-scheme="default" dir="ltr">
-  <input autocomplete="off" class="md-toggle" data-md-toggle="drawer" id="__drawer" type="checkbox"/>
-  <input autocomplete="off" class="md-toggle" data-md-toggle="search" id="__search" type="checkbox"/>
-  <label class="md-overlay" for="__drawer">
-  </label>
-  <div data-md-component="skip">
-   <a class="md-skip" href="#expressions">
-    Skip to content
-   </a>
-  </div>
-  <div data-md-component="announce">
-  </div>
-  <header class="md-header md-header--shadow" data-md-component="header">
-   <nav aria-label="Header" class="md-header__inner md-grid">
-    <a aria-label="TML Documentation" class="md-header__button md-logo" data-md-component="logo" href="." title="TML Documentation">
-     <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-      <path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54">
-      </path>
-     </svg>
-    </a>
-    <label class="md-header__button md-icon" for="__drawer">
-     <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-      <path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z">
-      </path>
-     </svg>
-    </label>
-    <div class="md-header__title" data-md-component="header-title">
-     <div class="md-header__ellipsis">
-      <div class="md-header__topic">
-       <span class="md-ellipsis">
-        TML Documentation
-       </span>
-      </div>
-      <div class="md-header__topic" data-md-component="header-topic">
-       <span class="md-ellipsis">
-        Expressions
-       </span>
-      </div>
-     </div>
-    </div>
-    <label class="md-header__button md-icon" for="__search">
-     <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-      <path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5">
-      </path>
-     </svg>
-    </label>
-    <div class="md-search" data-md-component="search" role="dialog">
-     <label class="md-search__overlay" for="__search">
-     </label>
-     <div class="md-search__inner" role="search">
-      <form class="md-search__form" name="search">
-       <input aria-label="Search" autocapitalize="off" autocomplete="off" autocorrect="off" class="md-search__input" data-md-component="search-query" name="query" placeholder="Search" required="" spellcheck="false" type="text"/>
-       <label class="md-search__icon md-icon" for="__search">
-        <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-         <path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5">
-         </path>
-        </svg>
-        <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-         <path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z">
-         </path>
-        </svg>
-       </label>
-       <nav aria-label="Search" class="md-search__options">
-        <button aria-label="Clear" class="md-search__icon md-icon" tabindex="-1" title="Clear" type="reset">
-         <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-          <path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z">
-          </path>
-         </svg>
-        </button>
-       </nav>
-      </form>
-      <div class="md-search__output">
-       <div class="md-search__scrollwrap" data-md-scrollfix="" tabindex="0">
-        <div class="md-search-result" data-md-component="search-result">
-         <div class="md-search-result__meta">
-          Initializing search
-         </div>
-         <ol class="md-search-result__list" role="presentation">
-         </ol>
-        </div>
-       </div>
-      </div>
-     </div>
-    </div>
-   </nav>
-   <div class="injected">
-    Formatted Content
-   </div>
-  </header>
-  <div class="md-container" data-md-component="container">
-   <main class="md-main" data-md-component="main">
-    <div class="md-main__inner md-grid">
-     <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation">
-      <div class="md-sidebar__scrollwrap">
-       <div class="md-sidebar__inner">
-        <nav aria-label="Navigation" class="md-nav md-nav--primary" data-md-level="0">
-         <label class="md-nav__title" for="__drawer">
-          <a aria-label="TML Documentation" class="md-nav__button md-logo" data-md-component="logo" href="." title="TML Documentation">
-           <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-            <path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54">
-            </path>
-           </svg>
-          </a>
-          TML Documentation
-         </label>
-         <ul class="md-nav__list" data-md-scrollfix="">
-          <li class="md-nav__item">
-           <a class="md-nav__link" href="variables.html">
-            <span class="md-ellipsis">
-             Variables
-            </span>
-           </a>
-          </li>
-          <li class="md-nav__item">
-           <a class="md-nav__link" href="type_system.html">
-            <span class="md-ellipsis">
-             Type system
-            </span>
-           </a>
-          </li>
-          <li class="md-nav__item">
-           <a class="md-nav__link" href="broadcasting.html">
-            <span class="md-ellipsis">
-             Broadcasting
-            </span>
-           </a>
-          </li>
-          <li class="md-nav__item">
-           <a class="md-nav__link" href="reduction.html">
-            <span class="md-ellipsis">
-             Reduction
-            </span>
-           </a>
-          </li>
-          <li class="md-nav__item">
-           <a class="md-nav__link" href="terminals.html">
-            <span class="md-ellipsis">
-             Terminals
-            </span>
-           </a>
-          </li>
-          <li class="md-nav__item">
-           <a class="md-nav__link" href="guards.html">
-            <span class="md-ellipsis">
-             Guards
-            </span>
-           </a>
-          </li>
-          <li class="md-nav__item">
-           <a class="md-nav__link" href="functions.html">
-            <span class="md-ellipsis">
-             Functions
-            </span>
-           </a>
-          </li>
-          <li class="md-nav__item">
-           <a class="md-nav__link" href="statements.html">
-            <span class="md-ellipsis">
-             Statements
-            </span>
-           </a>
-          </li>
-          <li class="md-nav__item md-nav__item--active">
-           <input class="md-nav__toggle md-toggle" id="__toc" type="checkbox"/>
-           <label class="md-nav__link md-nav__link--active" for="__toc">
-            <span class="md-ellipsis">
-             Expressions
-            </span>
-            <span class="md-nav__icon md-icon">
-            </span>
-           </label>
-           <a class="md-nav__link md-nav__link--active" href="expressions.html">
-            <span class="md-ellipsis">
-             Expressions
-            </span>
-           </a>
-           <nav aria-label="Table of contents" class="md-nav md-nav--secondary">
-            <label class="md-nav__title" for="__toc">
-             <span class="md-nav__icon md-icon">
-             </span>
-             Table of contents
-            </label>
-            <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
-             <li class="md-nav__item">
-              <a class="md-nav__link" href="#arithmetic-operators">
-               <span class="md-ellipsis">
-                Arithmetic operators
-               </span>
-              </a>
-             </li>
-             <li class="md-nav__item">
-              <a class="md-nav__link" href="#dot-product">
-               <span class="md-ellipsis">
-                Dot product
-               </span>
-              </a>
-             </li>
-             <li class="md-nav__item">
-              <a class="md-nav__link" href="#range-expressions">
-               <span class="md-ellipsis">
-                Range Expressions
-               </span>
-              </a>
-             </li>
-             <li class="md-nav__item">
-              <a class="md-nav__link" href="#index-expression">
-               <span class="md-ellipsis">
-                Index Expression
-               </span>
-              </a>
-              <nav aria-label="Index Expression" class="md-nav">
-               <ul class="md-nav__list">
-                <li class="md-nav__item">
-                 <a class="md-nav__link" href="#indexing-terminal-groups">
-                  <span class="md-ellipsis">
-                   Indexing Terminal Groups
-                  </span>
-                 </a>
-                </li>
-                <li class="md-nav__item">
-                 <a class="md-nav__link" href="#indexing-strings">
-                  <span class="md-ellipsis">
-                   Indexing strings
-                  </span>
-                 </a>
-                </li>
-               </ul>
-              </nav>
-             </li>
-             <li class="md-nav__item">
-              <a class="md-nav__link" href="#relational-operators">
-               <span class="md-ellipsis">
-                Relational operators
-               </span>
-              </a>
-             </li>
-             <li class="md-nav__item">
-              <a class="md-nav__link" href="#logical-operators">
-               <span class="md-ellipsis">
-                Logical operators
-               </span>
-              </a>
-             </li>
-             <li class="md-nav__item">
-              <a class="md-nav__link" href="#bitwise-operators">
-               <span class="md-ellipsis">
-                Bitwise operators
-               </span>
-              </a>
-             </li>
-             <li class="md-nav__item">
-              <a class="md-nav__link" href="#neutral-elements">
-               <span class="md-ellipsis">
-                Neutral Elements
-               </span>
-              </a>
-             </li>
-             <li class="md-nav__item">
-              <a class="md-nav__link" href="#operator-precedence">
-               <span class="md-ellipsis">
-                Operator Precedence
-               </span>
-              </a>
-             </li>
-            </ul>
-           </nav>
-          </li>
-          <li class="md-nav__item">
-           <a class="md-nav__link" href="macro_system.html">
-            <span class="md-ellipsis">
-             Macro system
-            </span>
-           </a>
-          </li>
-          <li class="md-nav__item">
-           <a class="md-nav__link" href="comments.html">
-            <span class="md-ellipsis">
-             Comments
-            </span>
-           </a>
-          </li>
-          <li class="md-nav__item">
-           <a class="md-nav__link" href="builtins.html">
-            <span class="md-ellipsis">
-             Built-ins
-            </span>
-           </a>
-          </li>
-         </ul>
-        </nav>
-       </div>
-      </div>
-     </div>
-     <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc">
-      <div class="md-sidebar__scrollwrap">
-       <div class="md-sidebar__inner">
-        <nav aria-label="Table of contents" class="md-nav md-nav--secondary">
-         <label class="md-nav__title" for="__toc">
-          <span class="md-nav__icon md-icon">
-          </span>
-          Table of contents
-         </label>
-         <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
-          <li class="md-nav__item">
-           <a class="md-nav__link" href="#arithmetic-operators">
-            <span class="md-ellipsis">
-             Arithmetic operators
-            </span>
-           </a>
-          </li>
-          <li class="md-nav__item">
-           <a class="md-nav__link" href="#dot-product">
-            <span class="md-ellipsis">
-             Dot product
-            </span>
-           </a>
-          </li>
-          <li class="md-nav__item">
-           <a class="md-nav__link" href="#range-expressions">
-            <span class="md-ellipsis">
-             Range Expressions
-            </span>
-           </a>
-          </li>
-          <li class="md-nav__item">
-           <a class="md-nav__link" href="#index-expression">
-            <span class="md-ellipsis">
-             Index Expression
-            </span>
-           </a>
-           <nav aria-label="Index Expression" class="md-nav">
-            <ul class="md-nav__list">
-             <li class="md-nav__item">
-              <a class="md-nav__link" href="#indexing-terminal-groups">
-               <span class="md-ellipsis">
-                Indexing Terminal Groups
-               </span>
-              </a>
-             </li>
-             <li class="md-nav__item">
-              <a class="md-nav__link" href="#indexing-strings">
-               <span class="md-ellipsis">
-                Indexing strings
-               </span>
-              </a>
-             </li>
-            </ul>
-           </nav>
-          </li>
-          <li class="md-nav__item">
-           <a class="md-nav__link" href="#relational-operators">
-            <span class="md-ellipsis">
-             Relational operators
-            </span>
-           </a>
-          </li>
-          <li class="md-nav__item">
-           <a class="md-nav__link" href="#logical-operators">
-            <span class="md-ellipsis">
-             Logical operators
-            </span>
-           </a>
-          </li>
-          <li class="md-nav__item">
-           <a class="md-nav__link" href="#bitwise-operators">
-            <span class="md-ellipsis">
-             Bitwise operators
-            </span>
-           </a>
-          </li>
-          <li class="md-nav__item">
-           <a class="md-nav__link" href="#neutral-elements">
-            <span class="md-ellipsis">
-             Neutral Elements
-            </span>
-           </a>
-          </li>
-          <li class="md-nav__item">
-           <a class="md-nav__link" href="#operator-precedence">
-            <span class="md-ellipsis">
-             Operator Precedence
-            </span>
-           </a>
-          </li>
-         </ul>
-        </nav>
-       </div>
-      </div>
-     </div>
-     <div class="md-content" data-md-component="content">
-      <article class="md-content__inner md-typeset">
-       <h1 id="expressions">
-        Expressions
-       </h1>
-       <h2 id="arithmetic-operators">
-        Arithmetic operators
-       </h2>
-       <p>
-        Arithmetic operations can be applied on numeric scalars and tensors.
-Broadcasting is applied if needed per arithmetic broadcasting rules.
-See the
-        <a href="broadcasting.html">
-         <em>
-          Broadcasting
-         </em>
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width,initial-scale=1" name="viewport"/>
+<link href="statements.html" rel="prev"/>
+<link href="macro_system.html" rel="next"/>
+<link href="assets/images/favicon.png" rel="icon"/>
+<meta content="mkdocs-1.6.1, mkdocs-material-9.7.1" name="generator"/>
+<title>Expressions - TML Documentation</title>
+<link href="assets/stylesheets/main.484c7ddc.min.css" rel="stylesheet"/>
+<link href="assets/stylesheets/palette.ab4e12ef.min.css" rel="stylesheet"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&amp;display=fallback" rel="stylesheet"/>
+<style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+<link href="stylesheets/extra.css" rel="stylesheet"/>
+<script>__md_scope=new URL(".",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+</head>
+<body data-md-color-accent="indigo" data-md-color-primary="custom" data-md-color-scheme="default" dir="ltr">
+<input autocomplete="off" class="md-toggle" data-md-toggle="drawer" id="__drawer" type="checkbox"/>
+<input autocomplete="off" class="md-toggle" data-md-toggle="search" id="__search" type="checkbox"/>
+<label class="md-overlay" for="__drawer"></label>
+<div data-md-component="skip">
+<a class="md-skip" href="#expressions">
+          Skip to content
         </a>
-        section for more information
+</div>
+<div data-md-component="announce">
+</div>
+<header class="md-header md-header--shadow" data-md-component="header">
+<nav aria-label="Header" class="md-header__inner md-grid">
+<a aria-label="HIL Documentation" class="md-header__button md-logo" data-md-component="logo" href="../index.html" title="HIL Documentation">
+<svg fill="currentColor" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M20 5h-7.586l-2-2H4c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2zM4 5h5.586l2 2H20v12H4V5z"></path>
+</svg>
+</a>
+
+<a aria-label="TML Documentation" class="md-header__button md-logo" data-md-component="logo" href="." title="TML Documentation">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"></path></svg>
+</a>
+<label class="md-header__button md-icon" for="__drawer">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"></path></svg>
+</label>
+<div class="md-header__title" data-md-component="header-title">
+<div class="md-header__ellipsis">
+<div class="md-header__topic">
+<span class="md-ellipsis">
+            TML Documentation
+          </span>
+</div>
+<div class="md-header__topic" data-md-component="header-topic">
+<span class="md-ellipsis">
+            
+              Expressions
+            
+          </span>
+</div>
+</div>
+</div>
+<label class="md-header__button md-icon" for="__search">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"></path></svg>
+</label>
+<div class="md-search" data-md-component="search" role="dialog">
+<label class="md-search__overlay" for="__search"></label>
+<div class="md-search__inner" role="search">
+<form class="md-search__form" name="search">
+<input aria-label="Search" autocapitalize="off" autocomplete="off" autocorrect="off" class="md-search__input" data-md-component="search-query" name="query" placeholder="Search" required="" spellcheck="false" type="text"/>
+<label class="md-search__icon md-icon" for="__search">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"></path></svg>
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"></path></svg>
+</label>
+<nav aria-label="Search" class="md-search__options">
+<button aria-label="Clear" class="md-search__icon md-icon" tabindex="-1" title="Clear" type="reset">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"></path></svg>
+</button>
+</nav>
+</form>
+<div class="md-search__output">
+<div class="md-search__scrollwrap" data-md-scrollfix="" tabindex="0">
+<div class="md-search-result" data-md-component="search-result">
+<div class="md-search-result__meta">
+            Initializing search
+          </div>
+<ol class="md-search-result__list" role="presentation"></ol>
+</div>
+</div>
+</div>
+</div>
+</div>
+</nav>
+</header>
+<div class="md-container" data-md-component="container">
+<main class="md-main" data-md-component="main">
+<div class="md-main__inner md-grid">
+<div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation">
+<div class="md-sidebar__scrollwrap">
+<div class="md-sidebar__inner">
+<nav aria-label="Navigation" class="md-nav md-nav--primary" data-md-level="0">
+<label class="md-nav__title" for="__drawer">
+<a aria-label="TML Documentation" class="md-nav__button md-logo" data-md-component="logo" href="." title="TML Documentation">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"></path></svg>
+</a>
+    TML Documentation
+  </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="variables.html">
+<span class="md-ellipsis">
+    
+  
+    Variables
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="type_system.html">
+<span class="md-ellipsis">
+    
+  
+    Type system
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="broadcasting.html">
+<span class="md-ellipsis">
+    
+  
+    Broadcasting
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="reduction.html">
+<span class="md-ellipsis">
+    
+  
+    Reduction
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="terminals.html">
+<span class="md-ellipsis">
+    
+  
+    Terminals
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="guards.html">
+<span class="md-ellipsis">
+    
+  
+    Guards
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="functions.html">
+<span class="md-ellipsis">
+    
+  
+    Functions
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="statements.html">
+<span class="md-ellipsis">
+    
+  
+    Statements
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item md-nav__item--active">
+<input class="md-nav__toggle md-toggle" id="__toc" type="checkbox"/>
+<label class="md-nav__link md-nav__link--active" for="__toc">
+<span class="md-ellipsis">
+    
+  
+    Expressions
+  
+
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<a class="md-nav__link md-nav__link--active" href="expressions.html">
+<span class="md-ellipsis">
+    
+  
+    Expressions
+  
+
+    
+  </span>
+</a>
+<nav aria-label="Table of contents" class="md-nav md-nav--secondary">
+<label class="md-nav__title" for="__toc">
+<span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#arithmetic-operators">
+<span class="md-ellipsis">
+      
+        Arithmetic operators
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#dot-product">
+<span class="md-ellipsis">
+      
+        Dot product
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#range-expressions">
+<span class="md-ellipsis">
+      
+        Range Expressions
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#index-expression">
+<span class="md-ellipsis">
+      
+        Index Expression
+      
+    </span>
+</a>
+<nav aria-label="Index Expression" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#indexing-terminal-groups">
+<span class="md-ellipsis">
+      
+        Indexing Terminal Groups
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#indexing-strings">
+<span class="md-ellipsis">
+      
+        Indexing strings
+      
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#relational-operators">
+<span class="md-ellipsis">
+      
+        Relational operators
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#logical-operators">
+<span class="md-ellipsis">
+      
+        Logical operators
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#bitwise-operators">
+<span class="md-ellipsis">
+      
+        Bitwise operators
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#neutral-elements">
+<span class="md-ellipsis">
+      
+        Neutral Elements
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#operator-precedence">
+<span class="md-ellipsis">
+      
+        Operator Precedence
+      
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="macro_system.html">
+<span class="md-ellipsis">
+    
+  
+    Macro system
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="comments.html">
+<span class="md-ellipsis">
+    
+  
+    Comments
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="builtins.html">
+<span class="md-ellipsis">
+    
+  
+    Built-ins
+  
+
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</div>
+</div>
+</div>
+<div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc">
+<div class="md-sidebar__scrollwrap">
+<div class="md-sidebar__inner">
+<nav aria-label="Table of contents" class="md-nav md-nav--secondary">
+<label class="md-nav__title" for="__toc">
+<span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#arithmetic-operators">
+<span class="md-ellipsis">
+      
+        Arithmetic operators
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#dot-product">
+<span class="md-ellipsis">
+      
+        Dot product
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#range-expressions">
+<span class="md-ellipsis">
+      
+        Range Expressions
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#index-expression">
+<span class="md-ellipsis">
+      
+        Index Expression
+      
+    </span>
+</a>
+<nav aria-label="Index Expression" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#indexing-terminal-groups">
+<span class="md-ellipsis">
+      
+        Indexing Terminal Groups
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#indexing-strings">
+<span class="md-ellipsis">
+      
+        Indexing strings
+      
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#relational-operators">
+<span class="md-ellipsis">
+      
+        Relational operators
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#logical-operators">
+<span class="md-ellipsis">
+      
+        Logical operators
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#bitwise-operators">
+<span class="md-ellipsis">
+      
+        Bitwise operators
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#neutral-elements">
+<span class="md-ellipsis">
+      
+        Neutral Elements
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#operator-precedence">
+<span class="md-ellipsis">
+      
+        Operator Precedence
+      
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</div>
+</div>
+</div>
+<div class="md-content" data-md-component="content">
+<article class="md-content__inner md-typeset">
+<h1 id="expressions">Expressions</h1>
+<h2 id="arithmetic-operators">Arithmetic operators</h2>
+<p>Arithmetic operations can be applied on numeric scalars and tensors.
+Broadcasting is applied if needed per arithmetic broadcasting rules.
+See the <a href="broadcasting.html"><em>Broadcasting</em></a> section for more information
 about when broadcast is applicable. All operators in TML
-behave as element-wise operators.
-       </p>
-       <div class="admonition warning">
-        <p class="admonition-title">
-         Warning
-        </p>
-        <p>
-         At the moment, TML does not support the following:
-        </p>
-        <ul>
-         <li>
-          Operators:
-          <code>
-           \
-          </code>
-          (left division)
-         </li>
-        </ul>
-       </div>
-       <p>
-        TML currently supports the following in-place assignments on scalars and vectors:
-       </p>
-       <ul>
-        <li>
-         <code>
-          +=
-         </code>
-        </li>
-        <li>
-         <code>
-          -=
-         </code>
-        </li>
-        <li>
-         <code>
-          *=
-         </code>
-        </li>
-        <li>
-         <code>
-          /=
-         </code>
-        </li>
-        <li>
-         <code>
-          %=
-         </code>
-        </li>
-       </ul>
-       <p>
-        The assignments using the operator
-        <code>
-         %=
-        </code>
-        can be applied on scalars only.
-       </p>
-       <!-- Test whether this works on matrices. -->
-       <p>
-        Examples of using arithmetic expression.
-        <div class="highlight">
-         <pre><span></span><code>m1 = [1, 2; 3, 4]
+behave as element-wise operators.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>At the moment, TML does not support the following:</p>
+<ul>
+<li>Operators: <code>\</code> (left division)</li>
+</ul>
+</div>
+<p>TML currently supports the following in-place assignments on scalars and vectors:</p>
+<ul>
+<li><code>+=</code></li>
+<li><code>-=</code></li>
+<li><code>*=</code></li>
+<li><code>/=</code></li>
+<li><code>%=</code></li>
+</ul>
+<p>The assignments using the operator <code>%=</code> can be applied on scalars only.</p>
+<!-- Test whether this works on matrices. -->
+<p>Examples of using arithmetic expression.
+<div class="highlight"><pre><span></span><code>m1 = [1, 2; 3, 4]
 m2 = [5, 6; 7, 8]
 
 #
@@ -550,227 +581,42 @@ x = -m1
 # Transpose
 x = m1'
 #&gt; [1, 3; 2, 4]
-</code></pre>
-        </div>
-       </p>
-       <h2 id="dot-product">
-        Dot product
-       </h2>
-       <p>
-        Dot product operation is supported for scalars (
-        <code>
-         T
-        </code>
-        ), vectors (
-        <code>
-         tensor&lt;T, x&gt;
-        </code>
-        )
-and matrices (
-        <code>
-         tensor&lt;T, x, y&gt;
-        </code>
-        ). Dot product
-        <strong>
-         is not
-        </strong>
-        supported for nested tensors.
+</code></pre></div></p>
+<h2 id="dot-product">Dot product</h2>
+<p>Dot product operation is supported for scalars (<code>T</code>), vectors (<code>tensor&lt;T, x&gt;</code>)
+and matrices (<code>tensor&lt;T, x, y&gt;</code>). Dot product <strong>is not</strong> supported for nested tensors.
 Dot product returns either a scalar or a tensor as the result.
 Scalar part of the result type is inferred from operand base scalar types,
 like in ordinary binary operations. Full result type depends on the combination
-of operand types on which the operation is applied.
-       </p>
-       <p>
-        Operation
-        <code>
-         a .* b
-        </code>
-        is defined by the following rules:
-       </p>
-       <ol>
-        <li>
-         If both
-         <code>
-          a
-         </code>
-         and
-         <code>
-          b
-         </code>
-         are vectors, the result is inner product of vectors
-        </li>
-        <li>
-         Vector dot product
-         <strong>
-          is
-         </strong>
-         a commutative operation
-        </li>
-        <li>
-         Both vectors must be of the same length
-        </li>
-        <li>
-         Result is sum of products of corresponding vector elements
-     (i.e.
-         <code>
-          a1 * b1 + ... + an * bn
-         </code>
-         )
-        </li>
-        <li>
-         Result is a scalar
-        </li>
-        <li>
-         If both
-         <code>
-          a
-         </code>
-         and
-         <code>
-          b
-         </code>
-         are matrices, the result is matrix multiplication
-        </li>
-        <li>
-         Matrix multiplication
-         <strong>
-          is not
-         </strong>
-         a commutative operation
-        </li>
-        <li>
-         Inner dimensions of matrices must be equal (i.e. matrix multiplication is defined
-     only for matrices of dimensions
-         <code>
-          A x B
-         </code>
-         and
-         <code>
-          B x C
-         </code>
-         )
-        </li>
-        <li>
-         Result type is a matrix of dimensions
-         <code>
-          A x C
-         </code>
-        </li>
-        <li>
-         If one operand is a scalar, and the other is either a vector or a matrix,
-   the result is element-wise multiplication by the scalar value
-        </li>
-        <li>
-         This
-         <strong>
-          is not
-         </strong>
-         equivalent to element-wise multiplication of scalars and tensors,
-     because nested tensors and tensors of arbitrary dimensions are
-         <strong>
-          forbidden
-         </strong>
-        </li>
-        <li>
-         If
-         <code>
-          a
-         </code>
-         is a
-         <strong>
-          vector
-         </strong>
-         and
-         <code>
-          b
-         </code>
-         is a
-         <strong>
-          matrix
-         </strong>
-         , the result is sum product of vector
-   and matrix elements per
-         <strong>
-          column
-         </strong>
-        </li>
-        <li>
-         Length of vector must be equal to the number of matrix
-         <strong>
-          rows
-         </strong>
-        </li>
-        <li>
-         If
-         <code>
-          a
-         </code>
-         is of length
-         <code>
-          A
-         </code>
-         ,
-         <code>
-          b
-         </code>
-         must be of dimensions
-         <code>
-          A x B
-         </code>
-        </li>
-        <li>
-         If
-         <code>
-          a
-         </code>
-         is a
-         <strong>
-          matrix
-         </strong>
-         and
-         <code>
-          b
-         </code>
-         is a
-         <strong>
-          vector
-         </strong>
-         , the result is sum product of vector
-   and matrix elements per
-         <strong>
-          row
-         </strong>
-        </li>
-        <li>
-         Length of vector must be equal to the number of matrix
-         <strong>
-          columns
-         </strong>
-        </li>
-        <li>
-         If
-         <code>
-          b
-         </code>
-         is of dimensions
-         <code>
-          A x B
-         </code>
-         ,
-         <code>
-          a
-         </code>
-         must be of length
-         <code>
-          B
-         </code>
-        </li>
-       </ol>
-       <p>
-        Following examples show usage od dot product:
-       </p>
-       <div class="highlight">
-        <pre><span></span><code>a = 2
+of operand types on which the operation is applied.</p>
+<p>Operation <code>a .* b</code> is defined by the following rules:</p>
+<ol>
+<li>If both <code>a</code> and <code>b</code> are vectors, the result is inner product of vectors</li>
+<li>Vector dot product <strong>is</strong> a commutative operation</li>
+<li>Both vectors must be of the same length</li>
+<li>Result is sum of products of corresponding vector elements
+     (i.e. <code>a1 * b1 + ... + an * bn</code>)</li>
+<li>Result is a scalar</li>
+<li>If both <code>a</code> and <code>b</code> are matrices, the result is matrix multiplication</li>
+<li>Matrix multiplication <strong>is not</strong> a commutative operation</li>
+<li>Inner dimensions of matrices must be equal (i.e. matrix multiplication is defined
+     only for matrices of dimensions <code>A x B</code> and <code>B x C</code>)</li>
+<li>Result type is a matrix of dimensions <code>A x C</code></li>
+<li>If one operand is a scalar, and the other is either a vector or a matrix,
+   the result is element-wise multiplication by the scalar value</li>
+<li>This <strong>is not</strong> equivalent to element-wise multiplication of scalars and tensors,
+     because nested tensors and tensors of arbitrary dimensions are <strong>forbidden</strong></li>
+<li>If <code>a</code> is a <strong>vector</strong> and <code>b</code> is a <strong>matrix</strong>, the result is sum product of vector
+   and matrix elements per <strong>column</strong></li>
+<li>Length of vector must be equal to the number of matrix <strong>rows</strong></li>
+<li>If <code>a</code> is of length <code>A</code>, <code>b</code> must be of dimensions <code>A x B</code> </li>
+<li>If <code>a</code> is a <strong>matrix</strong> and <code>b</code> is a <strong>vector</strong>, the result is sum product of vector
+   and matrix elements per <strong>row</strong></li>
+<li>Length of vector must be equal to the number of matrix <strong>columns</strong></li>
+<li>If <code>b</code> is of dimensions <code>A x B</code>, <code>a</code> must be of length <code>B</code></li>
+</ol>
+<p>Following examples show usage od dot product:</p>
+<div class="highlight"><pre><span></span><code>a = 2
 b = [1, 2, 3]
 c = [
     1, 2, 3;
@@ -798,245 +644,102 @@ r7 = d .* c # r7 = [
             #    90, 114, 138;
             #    54, 69, 84
             # ]
-</code></pre>
-       </div>
-       <div class="admonition note">
-        <p class="admonition-title">
-         Note
-        </p>
-        <p>
-         Rules 4. and 5. present simplified and specialized versions of Numpy rules 4. and 5.
-present in
-         <a href="https://numpy.org/doc/stable/reference/generated/numpy.dot.html">
-          numpy.dot
-         </a>
-         documentation. We found Numpy rules confusing for users and decided to
-implement dot product which covers currently needed use cases.
-        </p>
-       </div>
-       <h2 id="range-expressions">
-        Range Expressions
-       </h2>
-       <p>
-        Ranges present a special built-in syntax for describing bounded and unbounded sets
+</code></pre></div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Rules 4. and 5. present simplified and specialized versions of Numpy rules 4. and 5.
+present in <a href="https://numpy.org/doc/stable/reference/generated/numpy.dot.html">numpy.dot</a>
+documentation. We found Numpy rules confusing for users and decided to
+implement dot product which covers currently needed use cases.</p>
+</div>
+<h2 id="range-expressions">Range Expressions</h2>
+<p>Ranges present a special built-in syntax for describing bounded and unbounded sets
 of values, with optional step for spacing. If step is omitted, elements are spaced by 1.
-Ranges can be only of
-        <code>
-         int
-        </code>
-        type.
-       </p>
-       <p>
-        Ranges can be used in for loops and in tensor indexing.
-Support for using ranges for initializing arrays will be added in the future.
-       </p>
-       <p>
-        TML supports following range types:
-       </p>
-       <table>
-        <thead>
-         <tr>
-          <th>
-           Name
-          </th>
-          <th>
-           Syntax
-          </th>
-          <th>
-           Example
-          </th>
-          <th>
-           Range
-          </th>
-          <th>
-           Note
-          </th>
-         </tr>
-        </thead>
-        <tbody>
-         <tr>
-          <td>
-           Range from to
-          </td>
-          <td>
-           <code>
-            &lt;expr&gt;:&lt;expr&gt;
-           </code>
-          </td>
-          <td>
-           <code>
-            1:10
-           </code>
-          </td>
-          <td>
-           [1, 10)
-          </td>
-          <td>
-           Can be used in
-           <code>
-            for
-           </code>
-           loop and indices
-          </td>
-         </tr>
-         <tr>
-          <td>
-           Range from
-          </td>
-          <td>
-           <code>
-            &lt;expr&gt;:
-           </code>
-          </td>
-          <td>
-           <code>
-            1:
-           </code>
-          </td>
-          <td>
-           [1, max)
-          </td>
-          <td>
-           Can be used only as an index for slicing
-          </td>
-         </tr>
-         <tr>
-          <td>
-           Range to
-          </td>
-          <td>
-           <code>
-            :&lt;expr&gt;
-           </code>
-          </td>
-          <td>
-           <code>
-            :10
-           </code>
-          </td>
-          <td>
-           [0, 10)
-          </td>
-          <td>
-           Can be used only as an index for slicing
-          </td>
-         </tr>
-         <tr>
-          <td>
-           Range from step to
-          </td>
-          <td>
-           <code>
-            &lt;expr&gt;:&lt;expr&gt;:&lt;expr&gt;
-           </code>
-          </td>
-          <td>
-           <code>
-            1:10:2
-           </code>
-          </td>
-          <td>
-           [1, 10), spaced by 2
-          </td>
-          <td>
-           Can be used in
-           <code>
-            for
-           </code>
-           loop and indices
-          </td>
-         </tr>
-         <tr>
-          <td>
-           Range all
-          </td>
-          <td>
-           <code>
-            :
-           </code>
-          </td>
-          <td>
-           <code>
-            a[1, :, :]
-           </code>
-          </td>
-          <td>
-          </td>
-          <td>
-           Can be used only as an index for slicing
-          </td>
-         </tr>
-        </tbody>
-       </table>
-       <p>
-        Following example shows range expression usage in for loop:
-        <div class="highlight">
-         <pre><span></span><code>for i = 1:10:
+Ranges can be only of <code>int</code> type.</p>
+<p>Ranges can be used in for loops and in tensor indexing.
+Support for using ranges for initializing arrays will be added in the future.</p>
+<p>TML supports following range types:</p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Syntax</th>
+<th>Example</th>
+<th>Range</th>
+<th>Note</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Range from to</td>
+<td><code>&lt;expr&gt;:&lt;expr&gt;</code></td>
+<td><code>1:10</code></td>
+<td>[1, 10)</td>
+<td>Can be used in <code>for</code> loop and indices</td>
+</tr>
+<tr>
+<td>Range from</td>
+<td><code>&lt;expr&gt;:</code></td>
+<td><code>1:</code></td>
+<td>[1, max)</td>
+<td>Can be used only as an index for slicing</td>
+</tr>
+<tr>
+<td>Range to</td>
+<td><code>:&lt;expr&gt;</code></td>
+<td><code>:10</code></td>
+<td>[0, 10)</td>
+<td>Can be used only as an index for slicing</td>
+</tr>
+<tr>
+<td>Range from step to</td>
+<td><code>&lt;expr&gt;:&lt;expr&gt;:&lt;expr&gt;</code></td>
+<td><code>1:10:2</code></td>
+<td>[1, 10), spaced by 2</td>
+<td>Can be used in <code>for</code> loop and indices</td>
+</tr>
+<tr>
+<td>Range all</td>
+<td><code>:</code></td>
+<td><code>a[1, :, :]</code></td>
+<td></td>
+<td>Can be used only as an index for slicing</td>
+</tr>
+</tbody>
+</table>
+<p>Following example shows range expression usage in for loop:
+<div class="highlight"><pre><span></span><code>for i = 1:10:
     x = i + 1
 end
 
 for i = 1:10:2:
     x = i + 1
 end
-</code></pre>
-        </div>
-       </p>
-       <h2 id="index-expression">
-        Index Expression
-       </h2>
-       <p>
-        Indexing expression allows referencing elements of a tensor.
+</code></pre></div></p>
+<h2 id="index-expression">Index Expression</h2>
+<p>Indexing expression allows referencing elements of a tensor.
 Number of indices must be equal to the number of tensor dimensions.
 Index expressions can be applied recursively to obtain elements
-of nested tensors. Index expressions can be nested arbitrarily.
-       </p>
-       <p>
-        When a scalar value is used as index, dimension is removed from an object
+of nested tensors. Index expressions can be nested arbitrarily.</p>
+<p>When a scalar value is used as index, dimension is removed from an object
 (i.e. resulting objects present a hyperplane extracted from n-D space).
 When a range expression is used as index, dimension is retained while the length of the 
-dimension is adjusted.
-       </p>
-       <p>
-        If a tensor has more than one dimension, indexing it using only one index as a plain
+dimension is adjusted.</p>
+<p>If a tensor has more than one dimension, indexing it using only one index as a plain
 array of values is possible. Indexing a multidimensional tensor is possible only
-using either
-        <strong>
-         the same
-        </strong>
-        number of indices or using
-        <strong>
-         one
-        </strong>
-        index.
+using either <strong>the same</strong> number of indices or using <strong>one</strong> index.
 If single index is used, tensors are represented as an array holding elements from
-the left to the right (e.g.
-        <code>
-         [1, 2, 3; 4, 5, 6]
-        </code>
-        can be viewed as
-        <code>
-         [1, 2, 3, 4, 5, 6]
-        </code>
-        ).
-       </p>
-       <div class="admonition note">
-        <p class="admonition-title">
-         Note
-        </p>
-        <p>
-         Index expression can be ignored by the compiler if a scalar is indexed. As ignoring
+the left to the right (e.g. <code>[1, 2, 3; 4, 5, 6]</code> can be viewed as <code>[1, 2, 3, 4, 5, 6]</code>).</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Index expression can be ignored by the compiler if a scalar is indexed. As ignoring
 expressions with side effects would alter program execution semantics, having side
-effects in index expressions is not allowed.
-        </p>
-        <p>
-         Using such code would not be useful in practical terms, and enforcing such restrictions
-is necessary for avoiding subtle bugs and having predictable behavior.
-        </p>
-       </div>
-       <p>
-        Following example shows usage of index expression for basic indexing:
-        <div class="highlight">
-         <pre><span></span><code>array = [1, 2, 3]
+effects in index expressions is not allowed.</p>
+<p>Using such code would not be useful in practical terms, and enforcing such restrictions
+is necessary for avoiding subtle bugs and having predictable behavior.</p>
+</div>
+<p>Following example shows usage of index expression for basic indexing:
+<div class="highlight"><pre><span></span><code>array = [1, 2, 3]
 
 a = array[0]            # a = 1
 
@@ -1057,75 +760,30 @@ nested_array = [
 
 c = nested_array[0]     # c = [1, 2, 3]
 d = nested_array[0][0]  # d = 1
-</code></pre>
-        </div>
-       </p>
-       <div class="admonition note">
-        <p class="admonition-title">
-         Note
-        </p>
-        <p>
-         Index expression results in a slice of the original supported tensor.
-Slice is just a view to the supported vector allocated by the TML compiler.
-        </p>
-       </div>
-       <div class="admonition note">
-        <p class="admonition-title">
-         Note
-        </p>
-        <p>
-         Octave-like
-         <code>
-          append
-         </code>
-         ,
-         <code>
-          insert
-         </code>
-         and
-         <code>
-          delete
-         </code>
-         operations are not supported.
-Arrays are static by nature.
-        </p>
-       </div>
-       <div class="admonition warning">
-        <p class="admonition-title">
-         Warning
-        </p>
-        <p>
-         Vectors cannot be used for indexing like in Octave (for now).
-        </p>
-       </div>
-       <h3 id="indexing-terminal-groups">
-        Indexing Terminal Groups
-       </h3>
-       <p>
-        TML supports simple indexing terminals and groups in the following way:
-       </p>
-       <div class="highlight">
-        <pre><span></span><code>a = t.in[0]           # a is equal to the first input terminal
-</code></pre>
-       </div>
-       <h3 id="indexing-strings">
-        Indexing strings
-       </h3>
-       <p>
-        Strings can be indexed in a similar way to how tensors are indexed.
-Indexing
-        <code>
-         str
-        </code>
-        type returns
-        <code>
-         char
-        </code>
-        . Char is treated like a scalar and infinite
-indexing is allowed (and ignored).
-       </p>
-       <div class="highlight">
-        <pre><span></span><code># x == "asd"
+</code></pre></div></p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Index expression results in a slice of the original supported tensor.
+Slice is just a view to the supported vector allocated by the TML compiler.</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Octave-like <code>append</code>, <code>insert</code> and <code>delete</code> operations are not supported.
+Arrays are static by nature.</p>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Vectors cannot be used for indexing like in Octave (for now).</p>
+</div>
+<h3 id="indexing-terminal-groups">Indexing Terminal Groups</h3>
+<p>TML supports simple indexing terminals and groups in the following way:</p>
+<div class="highlight"><pre><span></span><code>a = t.in[0]           # a is equal to the first input terminal
+</code></pre></div>
+<h3 id="indexing-strings">Indexing strings</h3>
+<p>Strings can be indexed in a similar way to how tensors are indexed.
+Indexing <code>str</code> type returns <code>char</code>. Char is treated like a scalar and infinite
+indexing is allowed (and ignored).</p>
+<div class="highlight"><pre><span></span><code># x == "asd"
 # x.type == str
 # x[].type == char
 # x[][][].type == char
@@ -1161,197 +819,55 @@ if y[0][1][2] == "a":
     b = 0
 end
 end
-</code></pre>
-       </div>
-       <h2 id="relational-operators">
-        Relational operators
-       </h2>
-       <table>
-        <thead>
-         <tr>
-          <th>
-           Operator
-          </th>
-          <th>
-           Usage
-          </th>
-          <th>
-           Description
-          </th>
-         </tr>
-        </thead>
-        <tbody>
-         <tr>
-          <td>
-           <code>
-            &gt;
-           </code>
-          </td>
-          <td>
-           <code>
-            x &gt; y
-           </code>
-          </td>
-          <td>
-           <code>
-            true
-           </code>
-           if
-           <code>
-            x
-           </code>
-           is greater than
-           <code>
-            y
-           </code>
-          </td>
-         </tr>
-         <tr>
-          <td>
-           <code>
-            &gt;=
-           </code>
-          </td>
-          <td>
-           <code>
-            x &gt;= y
-           </code>
-          </td>
-          <td>
-           <code>
-            true
-           </code>
-           if
-           <code>
-            x
-           </code>
-           is greater than or equal to
-           <code>
-            y
-           </code>
-          </td>
-         </tr>
-         <tr>
-          <td>
-           <code>
-            ==
-           </code>
-          </td>
-          <td>
-           <code>
-            x == y
-           </code>
-          </td>
-          <td>
-           <code>
-            true
-           </code>
-           if
-           <code>
-            x
-           </code>
-           is equal to
-           <code>
-            y
-           </code>
-          </td>
-         </tr>
-         <tr>
-          <td>
-           <code>
-            &lt;
-           </code>
-          </td>
-          <td>
-           <code>
-            x &lt; y
-           </code>
-          </td>
-          <td>
-           <code>
-            true
-           </code>
-           if
-           <code>
-            x
-           </code>
-           is less than
-           <code>
-            y
-           </code>
-          </td>
-         </tr>
-         <tr>
-          <td>
-           <code>
-            &lt;=
-           </code>
-          </td>
-          <td>
-           <code>
-            x &lt;= y
-           </code>
-          </td>
-          <td>
-           <code>
-            true
-           </code>
-           if
-           <code>
-            x
-           </code>
-           is less than or equal to
-           <code>
-            y
-           </code>
-          </td>
-         </tr>
-         <tr>
-          <td>
-           <code>
-            !=
-           </code>
-          </td>
-          <td>
-           <code>
-            x != y
-           </code>
-          </td>
-          <td>
-           <code>
-            true
-           </code>
-           if
-           <code>
-            x
-           </code>
-           is not equal to
-           <code>
-            y
-           </code>
-          </td>
-         </tr>
-        </tbody>
-       </table>
-       <p>
-        Relational operations can be applied on
-        <strong>
-         boolean
-        </strong>
-        scalars and tensors.
+</code></pre></div>
+<h2 id="relational-operators">Relational operators</h2>
+<table>
+<thead>
+<tr>
+<th>Operator</th>
+<th>Usage</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>&gt;</code></td>
+<td><code>x &gt; y</code></td>
+<td><code>true</code> if <code>x</code> is greater than <code>y</code></td>
+</tr>
+<tr>
+<td><code>&gt;=</code></td>
+<td><code>x &gt;= y</code></td>
+<td><code>true</code> if <code>x</code> is greater than or equal to<code>y</code></td>
+</tr>
+<tr>
+<td><code>==</code></td>
+<td><code>x == y</code></td>
+<td><code>true</code> if <code>x</code> is equal to<code>y</code></td>
+</tr>
+<tr>
+<td><code>&lt;</code></td>
+<td><code>x &lt; y</code></td>
+<td><code>true</code> if <code>x</code> is less than <code>y</code></td>
+</tr>
+<tr>
+<td><code>&lt;=</code></td>
+<td><code>x &lt;= y</code></td>
+<td><code>true</code> if <code>x</code> is less than or equal to <code>y</code></td>
+</tr>
+<tr>
+<td><code>!=</code></td>
+<td><code>x != y</code></td>
+<td><code>true</code> if <code>x</code> is not equal to <code>y</code></td>
+</tr>
+</tbody>
+</table>
+<p>Relational operations can be applied on <strong>boolean</strong> scalars and tensors.
 Broadcasting is applied if needed per logical and relational broadcasting rules.
-See the
-        <a href="broadcasting.html">
-         <em>
-          Broadcasting
-         </em>
-        </a>
-        section for more information
+See the <a href="broadcasting.html"><em>Broadcasting</em></a> section for more information
 about when broadcast is applicable. Relational operators behave as element-wise
-operators.
-       </p>
-       <div class="highlight">
-        <pre><span></span><code># scalar
+operators.</p>
+<div class="highlight"><pre><span></span><code># scalar
 m1 = [1, 2; 3, 4]
 x = m1 &gt; 1
 #&gt; [0, 1; 1, 1]
@@ -1369,27 +885,11 @@ x = m1 == m3
 v1 = [1, 2]
 x = m1 &gt; v1
 #&gt; [0, 0; 1, 1]
-</code></pre>
-       </div>
-       <p>
-        If an expression results in a boolean tensor,
-using
-        <a href="builtins.html#all">
-         <code>
-          all
-         </code>
-        </a>
-        or
-        <a href="builtins.html#any">
-         <code>
-          any
-         </code>
-        </a>
-        is necessary in selection statements.
-       </p>
-       <!--TODO: Do we have a component that does vector comparison-->
-       <div class="highlight">
-        <pre><span></span><code>fn foo() int:
+</code></pre></div>
+<p>If an expression results in a boolean tensor,
+using <a href="builtins.html#all"><code>all</code></a> or <a href="builtins.html#any"><code>any</code></a> is necessary in selection statements.</p>
+<!--TODO: Do we have a component that does vector comparison-->
+<div class="highlight"><pre><span></span><code>fn foo() int:
     a = [1, 2, 3]
     b = [-3, -4, 5]
     c = [-1, 2, 0]
@@ -1408,311 +908,112 @@ using
 
     return res  # res is 2
 end
-</code></pre>
-       </div>
-       <h2 id="logical-operators">
-        Logical operators
-       </h2>
-       <!-- TODO: Semantics of the language should define if logic operators
+</code></pre></div>
+<h2 id="logical-operators">Logical operators</h2>
+<!-- TODO: Semantics of the language should define if logic operators
 short-circuiting is performed. This is important if subexpressions may introduce
 side-effects.
 -->
-       <p>
-        Logical operations can be applied on boolean scalars and tensors.
+<p>Logical operations can be applied on boolean scalars and tensors.
 Broadcasting is applied if needed per logical, relational and bitwise broadcasting rules.
-See the
-        <a href="broadcasting.html">
-         <em>
-          Broadcasting
-         </em>
-        </a>
-        section for more information
+See the <a href="broadcasting.html"><em>Broadcasting</em></a> section for more information
 about when broadcast is applicable. Logical operators in TML
-behave as element-wise operators.
-       </p>
-       <p>
-        TML supports the following logic operators that behaves as element-wise
-operators assuming implicit broadcasting of smaller operands.
-       </p>
-       <table>
-        <thead>
-         <tr>
-          <th>
-           Operator
-          </th>
-          <th>
-           Usage
-          </th>
-          <th>
-           Description
-          </th>
-         </tr>
-        </thead>
-        <tbody>
-         <tr>
-          <td>
-           <code>
-            and
-           </code>
-          </td>
-          <td>
-           <code>
-            x and y
-           </code>
-          </td>
-          <td>
-           Applies logical-and on corresponding pair of elements of
-           <code>
-            x
-           </code>
-           and
-           <code>
-            y
-           </code>
-          </td>
-         </tr>
-         <tr>
-          <td>
-           <code>
-            or
-           </code>
-          </td>
-          <td>
-           <code>
-            x or y
-           </code>
-          </td>
-          <td>
-           Applies logical-or on corresponding pair of elements of
-           <code>
-            x
-           </code>
-           and
-           <code>
-            y
-           </code>
-          </td>
-         </tr>
-         <tr>
-          <td>
-           <code>
-            not
-           </code>
-          </td>
-          <td>
-           <code>
-            not x
-           </code>
-          </td>
-          <td>
-           Applies logical-not on elements of
-           <code>
-            x
-           </code>
-          </td>
-         </tr>
-        </tbody>
-       </table>
-       <p>
-        The following examples shows how logic operators behave on scalars:
-       </p>
-       <div class="highlight">
-        <pre><span></span><code>a = True
+behave as element-wise operators.</p>
+<p>TML supports the following logic operators that behaves as element-wise
+operators assuming implicit broadcasting of smaller operands.</p>
+<table>
+<thead>
+<tr>
+<th>Operator</th>
+<th>Usage</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>and</code></td>
+<td><code>x and y</code></td>
+<td>Applies logical-and on corresponding pair of elements of <code>x</code> and <code>y</code></td>
+</tr>
+<tr>
+<td><code>or</code></td>
+<td><code>x or y</code></td>
+<td>Applies logical-or on corresponding pair of elements of <code>x</code> and <code>y</code></td>
+</tr>
+<tr>
+<td><code>not</code></td>
+<td><code>not x</code></td>
+<td>Applies logical-not on elements of <code>x</code></td>
+</tr>
+</tbody>
+</table>
+<p>The following examples shows how logic operators behave on scalars:</p>
+<div class="highlight"><pre><span></span><code>a = True
 b = False
 
 c = a and b # c = 0
 c = a or b  # c = 1
 c = not a   # c = 0
-</code></pre>
-       </div>
-       <p>
-        The following examples shows how logic operators behave on tensors:
-       </p>
-       <div class="highlight">
-        <pre><span></span><code>a = [True, False, True]
+</code></pre></div>
+<p>The following examples shows how logic operators behave on tensors:</p>
+<div class="highlight"><pre><span></span><code>a = [True, False, True]
 b = [False, True, False]
 
 c = a and b # c = [0, 0, 0]
 c = a or b  # c = [1, 1, 1]
 c = not a   # c = [0, 1, 0]
-</code></pre>
-       </div>
-       <h2 id="bitwise-operators">
-        Bitwise operators
-       </h2>
-       <p>
-        Bitwise operations can be applied on
-        <code>
-         uint
-        </code>
-        scalars and tensors.
+</code></pre></div>
+<h2 id="bitwise-operators">Bitwise operators</h2>
+<p>Bitwise operations can be applied on <code>uint</code> scalars and tensors.
 Broadcasting is applied if needed per logical, relational and bitwise broadcasting rules.
-See the
-        <a href="broadcasting.html">
-         <em>
-          Broadcasting
-         </em>
-        </a>
-        section for more information
+See the <a href="broadcasting.html"><em>Broadcasting</em></a> section for more information
 about when broadcast is applicable. Bitwise operators in TML
-behave as element-wise operators.
-       </p>
-       <p>
-        TML supports the following logic operators that behaves as element-wise
-operators assuming implicit broadcasting of smaller operands.
-       </p>
-       <table>
-        <thead>
-         <tr>
-          <th>
-           Operator
-          </th>
-          <th>
-           Usage
-          </th>
-          <th>
-           Description
-          </th>
-         </tr>
-        </thead>
-        <tbody>
-         <tr>
-          <td>
-           <code>
-            &lt;&lt;
-           </code>
-          </td>
-          <td>
-           <code>
-            x &lt;&lt; y
-           </code>
-          </td>
-          <td>
-           Applies bitwise left shift of
-           <code>
-            x
-           </code>
-           bits by
-           <code>
-            y
-           </code>
-           count
-          </td>
-         </tr>
-         <tr>
-          <td>
-           <code>
-            &gt;&gt;
-           </code>
-          </td>
-          <td>
-           <code>
-            x &gt;&gt; y
-           </code>
-          </td>
-          <td>
-           Applies bitwise right shift of
-           <code>
-            x
-           </code>
-           bits by
-           <code>
-            y
-           </code>
-           count
-          </td>
-         </tr>
-         <tr>
-          <td>
-           <code>
-            ^
-           </code>
-          </td>
-          <td>
-           <code>
-            x ^ y
-           </code>
-          </td>
-          <td>
-           Applies bitwise exclusive or (XOR) on bits of corresponding pair of elements of
-           <code>
-            x
-           </code>
-           and
-           <code>
-            y
-           </code>
-          </td>
-         </tr>
-         <tr>
-          <td>
-           <code>
-            &amp;
-           </code>
-          </td>
-          <td>
-           <code>
-            x &amp; y
-           </code>
-          </td>
-          <td>
-           Applies bitwise-and on bits of corresponding pair of elements of
-           <code>
-            x
-           </code>
-           and
-           <code>
-            y
-           </code>
-          </td>
-         </tr>
-         <tr>
-          <td>
-           <code>
-            \|
-           </code>
-          </td>
-          <td>
-           <code>
-            x \| y
-           </code>
-          </td>
-          <td>
-           Applies bitwise-or on bits of corresponding pair of elements of
-           <code>
-            x
-           </code>
-           and
-           <code>
-            y
-           </code>
-          </td>
-         </tr>
-         <tr>
-          <td>
-           <code>
-            ~
-           </code>
-          </td>
-          <td>
-           <code>
-            ~x
-           </code>
-          </td>
-          <td>
-           Applies bitwise bit flip of bits on elements of
-           <code>
-            x
-           </code>
-          </td>
-         </tr>
-        </tbody>
-       </table>
-       <p>
-        The following examples shows basic bitwise operator usage:
-       </p>
-       <div class="highlight">
-        <pre><span></span><code>uint a = 0u
+behave as element-wise operators.</p>
+<p>TML supports the following logic operators that behaves as element-wise
+operators assuming implicit broadcasting of smaller operands.</p>
+<table>
+<thead>
+<tr>
+<th>Operator</th>
+<th>Usage</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>&lt;&lt;</code></td>
+<td><code>x &lt;&lt; y</code></td>
+<td>Applies bitwise left shift of <code>x</code> bits by <code>y</code> count</td>
+</tr>
+<tr>
+<td><code>&gt;&gt;</code></td>
+<td><code>x &gt;&gt; y</code></td>
+<td>Applies bitwise right shift of <code>x</code> bits by <code>y</code> count</td>
+</tr>
+<tr>
+<td><code>^</code></td>
+<td><code>x ^ y</code></td>
+<td>Applies bitwise exclusive or (XOR) on bits of corresponding pair of elements of <code>x</code> and <code>y</code></td>
+</tr>
+<tr>
+<td><code>&amp;</code></td>
+<td><code>x &amp; y</code></td>
+<td>Applies bitwise-and on bits of corresponding pair of elements of <code>x</code> and <code>y</code></td>
+</tr>
+<tr>
+<td><code>\|</code></td>
+<td><code>x \| y</code></td>
+<td>Applies bitwise-or on bits of corresponding pair of elements of <code>x</code> and <code>y</code></td>
+</tr>
+<tr>
+<td><code>~</code></td>
+<td><code>~x</code></td>
+<td>Applies bitwise bit flip of bits on elements of <code>x</code></td>
+</tr>
+</tbody>
+</table>
+<p>The following examples shows basic bitwise operator usage:</p>
+<div class="highlight"><pre><span></span><code>uint a = 0u
 uint b = 1u
 
 c1 = a &lt;&lt; b
@@ -1721,761 +1022,253 @@ c3 = a ^ b
 c4 = a &amp; b
 c5 = a | b
 c6 = ~a
-</code></pre>
-       </div>
-       <h2 id="neutral-elements">
-        Neutral Elements
-       </h2>
-       <p>
-        TML allows treating inline guarded optionally present variables as neutral elements in
+</code></pre></div>
+<h2 id="neutral-elements">Neutral Elements</h2>
+<p>TML allows treating inline guarded optionally present variables as neutral elements in
 binary arithmetic, logical and bitwise expressions. An expression is treated as neutral
 element if all subexpressions are optional and missing. Relational and all unary
 expressions do not have neutral element. The following table shows left and right
-neutral elements of binary arithmetic operations.
-       </p>
-       <table>
-        <thead>
-         <tr>
-          <th>
-           Operator
-          </th>
-          <th>
-           left neutral
-          </th>
-          <th>
-           right neutral
-          </th>
-         </tr>
-        </thead>
-        <tbody>
-         <tr>
-          <td>
-           <code>
-            .*
-           </code>
-          </td>
-          <td>
-           not supported
-          </td>
-          <td>
-           not supported
-          </td>
-         </tr>
-         <tr>
-          <td>
-           <code>
-            **
-           </code>
-          </td>
-          <td>
-           not supported
-          </td>
-          <td>
-           <code>
-            1
-           </code>
-          </td>
-         </tr>
-         <tr>
-          <td>
-           <code>
-            /
-           </code>
-          </td>
-          <td>
-           not supported
-          </td>
-          <td>
-           <code>
-            1
-           </code>
-          </td>
-         </tr>
-         <tr>
-          <td>
-           <code>
-            *
-           </code>
-          </td>
-          <td>
-           <code>
-            1
-           </code>
-          </td>
-          <td>
-           <code>
-            1
-           </code>
-          </td>
-         </tr>
-         <tr>
-          <td>
-           <code>
-            -
-           </code>
-          </td>
-          <td>
-           not supported
-          </td>
-          <td>
-           <code>
-            0
-           </code>
-          </td>
-         </tr>
-         <tr>
-          <td>
-           <code>
-            +
-           </code>
-          </td>
-          <td>
-           <code>
-            0
-           </code>
-          </td>
-          <td>
-           <code>
-            0
-           </code>
-          </td>
-         </tr>
-         <tr>
-          <td>
-           <code>
-            and
-           </code>
-          </td>
-          <td>
-           <code>
-            true
-           </code>
-          </td>
-          <td>
-           <code>
-            true
-           </code>
-          </td>
-         </tr>
-         <tr>
-          <td>
-           <code>
-            or
-           </code>
-          </td>
-          <td>
-           <code>
-            false
-           </code>
-          </td>
-          <td>
-           <code>
-            false
-           </code>
-          </td>
-         </tr>
-         <tr>
-          <td>
-           <code>
-            ^
-           </code>
-          </td>
-          <td>
-           all bits
-           <code>
-            0
-           </code>
-          </td>
-          <td>
-           all bits
-           <code>
-            0
-           </code>
-          </td>
-         </tr>
-         <tr>
-          <td>
-           <code>
-            &amp;
-           </code>
-          </td>
-          <td>
-           all bits
-           <code>
-            1
-           </code>
-          </td>
-          <td>
-           all bits
-           <code>
-            1
-           </code>
-          </td>
-         </tr>
-         <tr>
-          <td>
-           <code>
-            \|
-           </code>
-          </td>
-          <td>
-           all bits
-           <code>
-            0
-           </code>
-          </td>
-          <td>
-           all bits
-           <code>
-            0
-           </code>
-          </td>
-         </tr>
-         <tr>
-          <td>
-           <code>
-            &lt;&lt;
-           </code>
-          </td>
-          <td>
-           not supported
-          </td>
-          <td>
-           <code>
-            0
-           </code>
-          </td>
-         </tr>
-         <tr>
-          <td>
-           <code>
-            &gt;&gt;
-           </code>
-          </td>
-          <td>
-           not supported
-          </td>
-          <td>
-           <code>
-            0
-           </code>
-          </td>
-         </tr>
-        </tbody>
-       </table>
-       <div class="admonition note">
-        <p class="admonition-title">
-         Note
-        </p>
-        <p>
-         Optional expressions and neutral elements are not implemented as binary operations
-in the compiler. They are implemented as pruning missing expressions from code.
-        </p>
-       </div>
-       <h2 id="operator-precedence">
-        Operator Precedence
-       </h2>
-       <p>
-        The following table contains arithmetic expression that TML supports,
+neutral elements of binary arithmetic operations.</p>
+<table>
+<thead>
+<tr>
+<th>Operator</th>
+<th>left neutral</th>
+<th>right neutral</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>.*</code></td>
+<td>not supported</td>
+<td>not supported</td>
+</tr>
+<tr>
+<td><code>**</code></td>
+<td>not supported</td>
+<td><code>1</code></td>
+</tr>
+<tr>
+<td><code>/</code></td>
+<td>not supported</td>
+<td><code>1</code></td>
+</tr>
+<tr>
+<td><code>*</code></td>
+<td><code>1</code></td>
+<td><code>1</code></td>
+</tr>
+<tr>
+<td><code>-</code></td>
+<td>not supported</td>
+<td><code>0</code></td>
+</tr>
+<tr>
+<td><code>+</code></td>
+<td><code>0</code></td>
+<td><code>0</code></td>
+</tr>
+<tr>
+<td><code>and</code></td>
+<td><code>true</code></td>
+<td><code>true</code></td>
+</tr>
+<tr>
+<td><code>or</code></td>
+<td><code>false</code></td>
+<td><code>false</code></td>
+</tr>
+<tr>
+<td><code>^</code></td>
+<td>all bits <code>0</code></td>
+<td>all bits <code>0</code></td>
+</tr>
+<tr>
+<td><code>&amp;</code></td>
+<td>all bits <code>1</code></td>
+<td>all bits <code>1</code></td>
+</tr>
+<tr>
+<td><code>\|</code></td>
+<td>all bits <code>0</code></td>
+<td>all bits <code>0</code></td>
+</tr>
+<tr>
+<td><code>&lt;&lt;</code></td>
+<td>not supported</td>
+<td><code>0</code></td>
+</tr>
+<tr>
+<td><code>&gt;&gt;</code></td>
+<td>not supported</td>
+<td><code>0</code></td>
+</tr>
+</tbody>
+</table>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Optional expressions and neutral elements are not implemented as binary operations
+in the compiler. They are implemented as pruning missing expressions from code.</p>
+</div>
+<h2 id="operator-precedence">Operator Precedence</h2>
+<p>The following table contains arithmetic expression that TML supports,
 with their respective priority and associativity.
-Higher number represents higher priority.
-       </p>
-       <table>
-        <thead>
-         <tr>
-          <th>
-           Priority
-          </th>
-          <th>
-           Operator
-          </th>
-          <th>
-           Note
-          </th>
-          <th>
-           Associativity
-          </th>
-         </tr>
-        </thead>
-        <tbody>
-         <tr>
-          <td>
-           14
-          </td>
-          <td>
-           <code>
-            .&lt;attr&gt;
-           </code>
-          </td>
-          <td>
-           Attribute access (e.g.
-           <code>
-            a.len
-           </code>
-           )
-          </td>
-          <td>
-           left
-          </td>
-         </tr>
-         <tr>
-          <td>
-           14
-          </td>
-          <td>
-           <code>
-            []
-           </code>
-          </td>
-          <td>
-           Indexing operator (e.g.
-           <code>
-            a[1]
-           </code>
-           ,
-           <code>
-            a[1][2]
-           </code>
-           )
-          </td>
-          <td>
-           left
-          </td>
-         </tr>
-         <tr>
-          <td>
-           14
-          </td>
-          <td>
-           <code>
-            ()
-           </code>
-          </td>
-          <td>
-           Parenthesis (e.g.
-           <code>
-            (1 + 2) * 3
-           </code>
-           )
-          </td>
-          <td>
-           left
-          </td>
-         </tr>
-         <tr>
-          <td>
-           13
-          </td>
-          <td>
-           <code>
-            '
-           </code>
-          </td>
-          <td>
-           Transpose (e.g.
-           <code>
-            a'
-           </code>
-           )
-          </td>
-          <td>
-           left
-          </td>
-         </tr>
-         <tr>
-          <td>
-           13
-          </td>
-          <td>
-           <code>
-            **
-           </code>
-          </td>
-          <td>
-           Exponentiation (e.g.
-           <code>
-            2 ** 4
-           </code>
-           )
-          </td>
-          <td>
-           left
-          </td>
-         </tr>
-         <tr>
-          <td>
-           12
-          </td>
-          <td>
-           <code>
-            +
-           </code>
-           ,
-           <code>
-            -
-           </code>
-          </td>
-          <td>
-           Unary operators (e.g.
-           <code>
-            +a
-           </code>
-           ,
-           <code>
-            -a
-           </code>
-           )
-          </td>
-          <td>
-           right
-          </td>
-         </tr>
-         <tr>
-          <td>
-           12
-          </td>
-          <td>
-           <code>
-            ~
-           </code>
-          </td>
-          <td>
-           Bitwise unary NOT (e.g.
-           <code>
-            ~a
-           </code>
-           )
-          </td>
-          <td>
-           right
-          </td>
-         </tr>
-         <tr>
-          <td>
-           11
-          </td>
-          <td>
-           <code>
-            *
-           </code>
-           ,
-           <code>
-            /
-           </code>
-           ,
-           <code>
-            %
-           </code>
-           ,
-           <code>
-            \\
-           </code>
-           ,
-           <code>
-            .*
-           </code>
-          </td>
-          <td>
-           Binary operators (e.g.
-           <code>
-            a * b
-           </code>
-           )
-          </td>
-          <td>
-           left
-          </td>
-         </tr>
-         <tr>
-          <td>
-           10
-          </td>
-          <td>
-           <code>
-            +
-           </code>
-           ,
-           <code>
-            -
-           </code>
-          </td>
-          <td>
-           Binary operators (e.g.
-           <code>
-            a + b
-           </code>
-           )
-          </td>
-          <td>
-           left
-          </td>
-         </tr>
-         <tr>
-          <td>
-           9
-          </td>
-          <td>
-           <code>
-            &lt;&lt;
-           </code>
-           ,
-           <code>
-            &gt;&gt;
-           </code>
-          </td>
-          <td>
-           Binary bitwise shift operators (e.g.
-           <code>
-            a &gt;&gt; b
-           </code>
-           )
-          </td>
-          <td>
-           left
-          </td>
-         </tr>
-         <tr>
-          <td>
-           8
-          </td>
-          <td>
-           <code>
-            ?:
-           </code>
-          </td>
-          <td>
-           Elvis operator (e.g.
-           <code>
-            a ?: 0
-           </code>
-           ,
-           <code>
-            (a? + b?) ?: 0
-           </code>
-           )
-          </td>
-          <td>
-           left
-          </td>
-         </tr>
-         <tr>
-          <td>
-           7
-          </td>
-          <td>
-           <code>
-            &lt;
-           </code>
-           ,
-           <code>
-            &lt;=
-           </code>
-           ,
-           <code>
-            &gt;
-           </code>
-           ,
-           <code>
-            &gt;=
-           </code>
-           ,
-           <code>
-            ==
-           </code>
-           ,
-           <code>
-            !=
-           </code>
-          </td>
-          <td>
-           Comparison operators (e.g.
-           <code>
-            a == b
-           </code>
-           )
-          </td>
-          <td>
-           left
-          </td>
-         </tr>
-         <tr>
-          <td>
-           6
-          </td>
-          <td>
-           <code>
-            &amp;
-           </code>
-          </td>
-          <td>
-           Bitwise binary AND (e.g.
-           <code>
-            a &amp; b
-           </code>
-           )
-          </td>
-          <td>
-           left
-          </td>
-         </tr>
-         <tr>
-          <td>
-           5
-          </td>
-          <td>
-           <code>
-            ^
-           </code>
-          </td>
-          <td>
-           Bitwise binary XOR (e.g.
-           <code>
-            a ^ b
-           </code>
-           )
-          </td>
-          <td>
-           left
-          </td>
-         </tr>
-         <tr>
-          <td>
-           4
-          </td>
-          <td>
-           <code>
-            \|
-           </code>
-          </td>
-          <td>
-           Bitwise binary OR (e.g.
-           <code>
-            a \| b
-           </code>
-           )
-          </td>
-          <td>
-           left
-          </td>
-         </tr>
-         <tr>
-          <td>
-           3
-          </td>
-          <td>
-           <code>
-            not
-           </code>
-          </td>
-          <td>
-           Logical unary NOT (e.g.
-           <code>
-            not a
-           </code>
-           )
-          </td>
-          <td>
-           right
-          </td>
-         </tr>
-         <tr>
-          <td>
-           2
-          </td>
-          <td>
-           <code>
-            and
-           </code>
-          </td>
-          <td>
-           Logical binary AND (e.g.
-           <code>
-            a and b
-           </code>
-           )
-          </td>
-          <td>
-           left
-          </td>
-         </tr>
-         <tr>
-          <td>
-           1
-          </td>
-          <td>
-           <code>
-            or
-           </code>
-          </td>
-          <td>
-           Logical binary OR (e.g.
-           <code>
-            a or c
-           </code>
-           )
-          </td>
-          <td>
-           left
-          </td>
-         </tr>
-        </tbody>
-       </table>
-       <div class="admonition note">
-        <p class="admonition-title">
-         Note
-        </p>
-        <p>
-         <em>
-          Priority
-         </em>
-         and
-         <em>
-          associativity
-         </em>
-         represent properties defined in
-the grammar.
-        </p>
-        <p>
-         For binary operations that are mathematically both left and right associative
-(e.g. addition, multiplication), associativity represents the shape of AST after parsing.
-        </p>
-        <p>
-         Expression evaluation represents a depth first left-to-right traversal of AST,
-so associativity defined in the grammar alters the evaluation order.
-        </p>
-       </div>
-      </article>
-     </div>
-     <script>
-      var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))
-     </script>
-    </div>
-   </main>
-   <footer class="md-footer">
-    <div class="md-footer-meta md-typeset">
-     <div class="md-footer-meta__inner md-grid">
-      <div class="md-copyright">
-       Made with
-       <a href="https://squidfunk.github.io/mkdocs-material/" rel="noopener" target="_blank">
-        Material for MkDocs
-       </a>
-      </div>
-     </div>
-    </div>
-   </footer>
-  </div>
-  <div class="md-dialog" data-md-component="dialog">
-   <div class="md-dialog__inner md-typeset">
-   </div>
-  </div>
-  <script id="__config" type="application/json">
-   {"annotate": null, "base": ".", "features": [], "search": "assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}
-  </script>
-  <script src="assets/javascripts/bundle.79ae519e.min.js">
-  </script>
-  <script src="javascripts/mathjax.js">
-  </script>
-  <script src="https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js">
-  </script>
- </body>
+Higher number represents higher priority.</p>
+<table>
+<thead>
+<tr>
+<th>Priority</th>
+<th>Operator</th>
+<th>Note</th>
+<th>Associativity</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>14</td>
+<td><code>.&lt;attr&gt;</code></td>
+<td>Attribute access (e.g. <code>a.len</code>)</td>
+<td>left</td>
+</tr>
+<tr>
+<td>14</td>
+<td><code>[]</code></td>
+<td>Indexing operator (e.g. <code>a[1]</code>, <code>a[1][2]</code>)</td>
+<td>left</td>
+</tr>
+<tr>
+<td>14</td>
+<td><code>()</code></td>
+<td>Parenthesis (e.g. <code>(1 + 2) * 3</code>)</td>
+<td>left</td>
+</tr>
+<tr>
+<td>13</td>
+<td><code>'</code></td>
+<td>Transpose (e.g. <code>a'</code>)</td>
+<td>left</td>
+</tr>
+<tr>
+<td>13</td>
+<td><code>**</code></td>
+<td>Exponentiation (e.g. <code>2 ** 4</code>)</td>
+<td>left</td>
+</tr>
+<tr>
+<td>12</td>
+<td><code>+</code>, <code>-</code></td>
+<td>Unary operators (e.g. <code>+a</code>, <code>-a</code>)</td>
+<td>right</td>
+</tr>
+<tr>
+<td>12</td>
+<td><code>~</code></td>
+<td>Bitwise unary NOT (e.g. <code>~a</code>)</td>
+<td>right</td>
+</tr>
+<tr>
+<td>11</td>
+<td><code>*</code>, <code>/</code>, <code>%</code>, <code>\\</code>, <code>.*</code></td>
+<td>Binary operators (e.g. <code>a * b</code>)</td>
+<td>left</td>
+</tr>
+<tr>
+<td>10</td>
+<td><code>+</code>, <code>-</code></td>
+<td>Binary operators (e.g. <code>a + b</code>)</td>
+<td>left</td>
+</tr>
+<tr>
+<td>9</td>
+<td><code>&lt;&lt;</code>, <code>&gt;&gt;</code></td>
+<td>Binary bitwise shift operators (e.g. <code>a &gt;&gt; b</code>)</td>
+<td>left</td>
+</tr>
+<tr>
+<td>8</td>
+<td><code>?:</code></td>
+<td>Elvis operator (e.g. <code>a ?: 0</code>, <code>(a? + b?) ?: 0</code>)</td>
+<td>left</td>
+</tr>
+<tr>
+<td>7</td>
+<td><code>&lt;</code>, <code>&lt;=</code>, <code>&gt;</code>, <code>&gt;=</code>, <code>==</code>, <code>!=</code></td>
+<td>Comparison operators (e.g. <code>a == b</code>)</td>
+<td>left</td>
+</tr>
+<tr>
+<td>6</td>
+<td><code>&amp;</code></td>
+<td>Bitwise binary AND (e.g. <code>a &amp; b</code>)</td>
+<td>left</td>
+</tr>
+<tr>
+<td>5</td>
+<td><code>^</code></td>
+<td>Bitwise binary XOR (e.g. <code>a ^ b</code>)</td>
+<td>left</td>
+</tr>
+<tr>
+<td>4</td>
+<td><code>\|</code></td>
+<td>Bitwise binary OR (e.g. <code>a \| b</code>)</td>
+<td>left</td>
+</tr>
+<tr>
+<td>3</td>
+<td><code>not</code></td>
+<td>Logical unary NOT (e.g. <code>not a</code>)</td>
+<td>right</td>
+</tr>
+<tr>
+<td>2</td>
+<td><code>and</code></td>
+<td>Logical binary AND (e.g. <code>a and b</code>)</td>
+<td>left</td>
+</tr>
+<tr>
+<td>1</td>
+<td><code>or</code></td>
+<td>Logical binary OR (e.g. <code>a or c</code>)</td>
+<td>left</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p><em>Priority</em> and <em>associativity</em> represent properties defined in
+the grammar.</p>
+<p>For binary operations that are mathematically both left and right associative
+(e.g. addition, multiplication), associativity represents the shape of AST after parsing.</p>
+<p>Expression evaluation represents a depth first left-to-right traversal of AST,
+so associativity defined in the grammar alters the evaluation order.</p>
+</div>
+</article>
+</div>
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+</div>
+</main>
+<footer class="md-footer">
+<div class="md-footer-meta md-typeset">
+<div class="md-footer-meta__inner md-grid">
+<div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" rel="noopener" target="_blank">
+      Material for MkDocs
+    </a>
+</div>
+</div>
+</div>
+</footer>
+</div>
+<div class="md-dialog" data-md-component="dialog">
+<div class="md-dialog__inner md-typeset"></div>
+</div>
+<script id="__config" type="application/json">{"annotate": null, "base": ".", "features": [], "search": "assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+<script src="assets/javascripts/bundle.79ae519e.min.js"></script>
+<script src="javascripts/mathjax.js"></script>
+<script src="https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js"></script>
+</body>
 </html>
