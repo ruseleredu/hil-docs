@@ -1,848 +1,479 @@
-
-<!doctype html>
-<html lang="en" class="no-js">
-  <head>
-    
-      <meta charset="utf-8">
-      <meta name="viewport" content="width=device-width,initial-scale=1">
-      
-      
-      
-      
-      
-        <link rel="next" href="type_system.html">
-      
-      
-        
-      
-      
-      <link rel="icon" href="assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.1">
-    
-    
-      
-        <title>Variables - TML Documentation</title>
-      
-    
-    
-      <link rel="stylesheet" href="assets/stylesheets/main.484c7ddc.min.css">
-      
-        
-        <link rel="stylesheet" href="assets/stylesheets/palette.ab4e12ef.min.css">
-      
-      
-
-
-    
-    
-      
-    
-    
-      
-        
-        
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
-        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
-      
-    
-    
-      <link rel="stylesheet" href="stylesheets/extra.css">
-    
-    <script>__md_scope=new URL(".",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
-    
-      
-
-    
-    
-  </head>
-  
-  
-    
-    
-    
-    
-    
-    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="custom" data-md-color-accent="indigo">
-  
-    
-    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
-    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
-    <label class="md-overlay" for="__drawer"></label>
-    <div data-md-component="skip">
-      
-        
-        <a href="#variables" class="md-skip">
-          Skip to content
-        </a>
-      
-    </div>
-    <div data-md-component="announce">
-      
-    </div>
-    
-    
-      
-
-  
-
-<header class="md-header md-header--shadow" data-md-component="header">
-  <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href="." title="TML Documentation" class="md-header__button md-logo" aria-label="TML Documentation" data-md-component="logo">
-      
-  
-  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
-
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width,initial-scale=1" name="viewport"/>
+  <link href="type_system.html" rel="next"/>
+  <link href="assets/images/favicon.png" rel="icon"/>
+  <meta content="mkdocs-1.6.1, mkdocs-material-9.7.1" name="generator"/>
+  <title>
+   Variables - TML Documentation
+  </title>
+  <link href="assets/stylesheets/main.484c7ddc.min.css" rel="stylesheet"/>
+  <link href="assets/stylesheets/palette.ab4e12ef.min.css" rel="stylesheet"/>
+  <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+  <link href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&amp;display=fallback" rel="stylesheet"/>
+  <style>
+   :root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}
+  </style>
+  <link href="stylesheets/extra.css" rel="stylesheet"/>
+  <script>
+   __md_scope=new URL(".",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}
+  </script>
+ </head>
+ <body data-md-color-accent="indigo" data-md-color-primary="custom" data-md-color-scheme="default" dir="ltr">
+  <input autocomplete="off" class="md-toggle" data-md-toggle="drawer" id="__drawer" type="checkbox"/>
+  <input autocomplete="off" class="md-toggle" data-md-toggle="search" id="__search" type="checkbox"/>
+  <label class="md-overlay" for="__drawer">
+  </label>
+  <div data-md-component="skip">
+   <a class="md-skip" href="#variables">
+    Skip to content
+   </a>
+  </div>
+  <div data-md-component="announce">
+  </div>
+  <header class="md-header md-header--shadow" data-md-component="header">
+   <nav aria-label="Header" class="md-header__inner md-grid">
+    <a aria-label="TML Documentation" class="md-header__button md-logo" data-md-component="logo" href="." title="TML Documentation">
+     <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+      <path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54">
+      </path>
+     </svg>
     </a>
     <label class="md-header__button md-icon" for="__drawer">
-      
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+     <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+      <path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z">
+      </path>
+     </svg>
     </label>
     <div class="md-header__title" data-md-component="header-title">
-      <div class="md-header__ellipsis">
-        <div class="md-header__topic">
-          <span class="md-ellipsis">
-            TML Documentation
-          </span>
-        </div>
-        <div class="md-header__topic" data-md-component="header-topic">
-          <span class="md-ellipsis">
-            
-              Variables
-            
-          </span>
-        </div>
+     <div class="md-header__ellipsis">
+      <div class="md-header__topic">
+       <span class="md-ellipsis">
+        TML Documentation
+       </span>
       </div>
+      <div class="md-header__topic" data-md-component="header-topic">
+       <span class="md-ellipsis">
+        Variables
+       </span>
+      </div>
+     </div>
     </div>
-    
-      
-    
-    
-    
-    
-      
-      
-        <label class="md-header__button md-icon" for="__search">
-          
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
-        </label>
-        <div class="md-search" data-md-component="search" role="dialog">
-  <label class="md-search__overlay" for="__search"></label>
-  <div class="md-search__inner" role="search">
-    <form class="md-search__form" name="search">
-      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
-      <label class="md-search__icon md-icon" for="__search">
-        
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
-        
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
-      </label>
-      <nav class="md-search__options" aria-label="Search">
-        
-        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
-          
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+    <label class="md-header__button md-icon" for="__search">
+     <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+      <path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5">
+      </path>
+     </svg>
+    </label>
+    <div class="md-search" data-md-component="search" role="dialog">
+     <label class="md-search__overlay" for="__search">
+     </label>
+     <div class="md-search__inner" role="search">
+      <form class="md-search__form" name="search">
+       <input aria-label="Search" autocapitalize="off" autocomplete="off" autocorrect="off" class="md-search__input" data-md-component="search-query" name="query" placeholder="Search" required="" spellcheck="false" type="text"/>
+       <label class="md-search__icon md-icon" for="__search">
+        <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+         <path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5">
+         </path>
+        </svg>
+        <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+         <path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z">
+         </path>
+        </svg>
+       </label>
+       <nav aria-label="Search" class="md-search__options">
+        <button aria-label="Clear" class="md-search__icon md-icon" tabindex="-1" title="Clear" type="reset">
+         <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z">
+          </path>
+         </svg>
         </button>
-      </nav>
-      
-    </form>
-    <div class="md-search__output">
-      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+       </nav>
+      </form>
+      <div class="md-search__output">
+       <div class="md-search__scrollwrap" data-md-scrollfix="" tabindex="0">
         <div class="md-search-result" data-md-component="search-result">
-          <div class="md-search-result__meta">
-            Initializing search
-          </div>
-          <ol class="md-search-result__list" role="presentation"></ol>
+         <div class="md-search-result__meta">
+          Initializing search
+         </div>
+         <ol class="md-search-result__list" role="presentation">
+         </ol>
         </div>
+       </div>
       </div>
+     </div>
     </div>
-  </div>
-</div>
-      
-    
-    
-  </nav>
-  
-</header>
-    
-    <div class="md-container" data-md-component="container">
-      
-      
-        
-          
-        
-      
-      <main class="md-main" data-md-component="main">
-        <div class="md-main__inner md-grid">
-          
-            
-              
-              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
-                <div class="md-sidebar__scrollwrap">
-                  <div class="md-sidebar__inner">
-                    
-
-
-
-<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
-  <label class="md-nav__title" for="__drawer">
-    <a href="." title="TML Documentation" class="md-nav__button md-logo" aria-label="TML Documentation" data-md-component="logo">
-      
-  
-  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
-
-    </a>
-    TML Documentation
-  </label>
-  
-  <ul class="md-nav__list" data-md-scrollfix>
-    
-      
-      
-  
-  
-    
-  
-  
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Variables
-  
-
-    
-  </span>
-  
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="variables.html" class="md-nav__link md-nav__link--active">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Variables
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#declaration" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Declaration
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Declaration">
-      <ul class="md-nav__list">
-        
+   </nav>
+   <div class="injected">
+    Formatted Content
+   </div>
+  </header>
+  <div class="md-container" data-md-component="container">
+   <main class="md-main" data-md-component="main">
+    <div class="md-main__inner md-grid">
+     <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation">
+      <div class="md-sidebar__scrollwrap">
+       <div class="md-sidebar__inner">
+        <nav aria-label="Navigation" class="md-nav md-nav--primary" data-md-level="0">
+         <label class="md-nav__title" for="__drawer">
+          <a aria-label="TML Documentation" class="md-nav__button md-logo" data-md-component="logo" href="." title="TML Documentation">
+           <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54">
+            </path>
+           </svg>
+          </a>
+          TML Documentation
+         </label>
+         <ul class="md-nav__list" data-md-scrollfix="">
+          <li class="md-nav__item md-nav__item--active">
+           <input class="md-nav__toggle md-toggle" id="__toc" type="checkbox"/>
+           <label class="md-nav__link md-nav__link--active" for="__toc">
+            <span class="md-ellipsis">
+             Variables
+            </span>
+            <span class="md-nav__icon md-icon">
+            </span>
+           </label>
+           <a class="md-nav__link md-nav__link--active" href="variables.html">
+            <span class="md-ellipsis">
+             Variables
+            </span>
+           </a>
+           <nav aria-label="Table of contents" class="md-nav md-nav--secondary">
+            <label class="md-nav__title" for="__toc">
+             <span class="md-nav__icon md-icon">
+             </span>
+             Table of contents
+            </label>
+            <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+             <li class="md-nav__item">
+              <a class="md-nav__link" href="#declaration">
+               <span class="md-ellipsis">
+                Declaration
+               </span>
+              </a>
+              <nav aria-label="Declaration" class="md-nav">
+               <ul class="md-nav__list">
+                <li class="md-nav__item">
+                 <a class="md-nav__link" href="#explicit-declaration">
+                  <span class="md-ellipsis">
+                   Explicit declaration
+                  </span>
+                 </a>
+                </li>
+                <li class="md-nav__item">
+                 <a class="md-nav__link" href="#implicit-declaration">
+                  <span class="md-ellipsis">
+                   Implicit declaration
+                  </span>
+                 </a>
+                </li>
+               </ul>
+              </nav>
+             </li>
+             <li class="md-nav__item">
+              <a class="md-nav__link" href="#scopes">
+               <span class="md-ellipsis">
+                Scopes
+               </span>
+              </a>
+              <nav aria-label="Scopes" class="md-nav">
+               <ul class="md-nav__list">
+                <li class="md-nav__item">
+                 <a class="md-nav__link" href="#global-scope">
+                  <span class="md-ellipsis">
+                   Global scope
+                  </span>
+                 </a>
+                </li>
+                <li class="md-nav__item">
+                 <a class="md-nav__link" href="#local-scope">
+                  <span class="md-ellipsis">
+                   Local scope
+                  </span>
+                 </a>
+                </li>
+               </ul>
+              </nav>
+             </li>
+             <li class="md-nav__item">
+              <a class="md-nav__link" href="#namespaces">
+               <span class="md-ellipsis">
+                Namespaces
+               </span>
+              </a>
+             </li>
+            </ul>
+           </nav>
+          </li>
           <li class="md-nav__item">
-  <a href="#explicit-declaration" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Explicit declaration
-      
-    </span>
-  </a>
-  
-</li>
-        
+           <a class="md-nav__link" href="type_system.html">
+            <span class="md-ellipsis">
+             Type system
+            </span>
+           </a>
+          </li>
           <li class="md-nav__item">
-  <a href="#implicit-declaration" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Implicit declaration
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#scopes" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Scopes
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Scopes">
-      <ul class="md-nav__list">
-        
+           <a class="md-nav__link" href="broadcasting.html">
+            <span class="md-ellipsis">
+             Broadcasting
+            </span>
+           </a>
+          </li>
           <li class="md-nav__item">
-  <a href="#global-scope" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Global scope
-      
-    </span>
-  </a>
-  
-</li>
-        
+           <a class="md-nav__link" href="reduction.html">
+            <span class="md-ellipsis">
+             Reduction
+            </span>
+           </a>
+          </li>
           <li class="md-nav__item">
-  <a href="#local-scope" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Local scope
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#namespaces" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Namespaces
-      
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
-    </li>
-  
-
-    
-      
-      
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="type_system.html" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Type system
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-    
-      
-      
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="broadcasting.html" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Broadcasting
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-    
-      
-      
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="reduction.html" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Reduction
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-    
-      
-      
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="terminals.html" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Terminals
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-    
-      
-      
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="guards.html" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Guards
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-    
-      
-      
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="functions.html" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Functions
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-    
-      
-      
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="statements.html" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Statements
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-    
-      
-      
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="expressions.html" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Expressions
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-    
-      
-      
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="macro_system.html" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Macro system
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-    
-      
-      
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="comments.html" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Comments
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-    
-      
-      
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="builtins.html" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Built-ins
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-    
-  </ul>
-</nav>
-                  </div>
-                </div>
-              </div>
-            
-            
-              
-              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
-                <div class="md-sidebar__scrollwrap">
-                  <div class="md-sidebar__inner">
-                    
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#declaration" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Declaration
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Declaration">
-      <ul class="md-nav__list">
-        
+           <a class="md-nav__link" href="terminals.html">
+            <span class="md-ellipsis">
+             Terminals
+            </span>
+           </a>
+          </li>
           <li class="md-nav__item">
-  <a href="#explicit-declaration" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Explicit declaration
-      
-    </span>
-  </a>
-  
-</li>
-        
+           <a class="md-nav__link" href="guards.html">
+            <span class="md-ellipsis">
+             Guards
+            </span>
+           </a>
+          </li>
           <li class="md-nav__item">
-  <a href="#implicit-declaration" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Implicit declaration
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#scopes" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Scopes
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Scopes">
-      <ul class="md-nav__list">
-        
+           <a class="md-nav__link" href="functions.html">
+            <span class="md-ellipsis">
+             Functions
+            </span>
+           </a>
+          </li>
           <li class="md-nav__item">
-  <a href="#global-scope" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Global scope
-      
-    </span>
-  </a>
-  
-</li>
-        
+           <a class="md-nav__link" href="statements.html">
+            <span class="md-ellipsis">
+             Statements
+            </span>
+           </a>
+          </li>
           <li class="md-nav__item">
-  <a href="#local-scope" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Local scope
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#namespaces" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Namespaces
-      
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-                  </div>
-                </div>
-              </div>
-            
-          
-          
-            <div class="md-content" data-md-component="content">
-              
-              <article class="md-content__inner md-typeset">
-                
-                  
-
-
-
-<h1 id="variables">Variables</h1>
-<p>Variables let you give names to values and refer to them later. The name of a
+           <a class="md-nav__link" href="expressions.html">
+            <span class="md-ellipsis">
+             Expressions
+            </span>
+           </a>
+          </li>
+          <li class="md-nav__item">
+           <a class="md-nav__link" href="macro_system.html">
+            <span class="md-ellipsis">
+             Macro system
+            </span>
+           </a>
+          </li>
+          <li class="md-nav__item">
+           <a class="md-nav__link" href="comments.html">
+            <span class="md-ellipsis">
+             Comments
+            </span>
+           </a>
+          </li>
+          <li class="md-nav__item">
+           <a class="md-nav__link" href="builtins.html">
+            <span class="md-ellipsis">
+             Built-ins
+            </span>
+           </a>
+          </li>
+         </ul>
+        </nav>
+       </div>
+      </div>
+     </div>
+     <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc">
+      <div class="md-sidebar__scrollwrap">
+       <div class="md-sidebar__inner">
+        <nav aria-label="Table of contents" class="md-nav md-nav--secondary">
+         <label class="md-nav__title" for="__toc">
+          <span class="md-nav__icon md-icon">
+          </span>
+          Table of contents
+         </label>
+         <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+          <li class="md-nav__item">
+           <a class="md-nav__link" href="#declaration">
+            <span class="md-ellipsis">
+             Declaration
+            </span>
+           </a>
+           <nav aria-label="Declaration" class="md-nav">
+            <ul class="md-nav__list">
+             <li class="md-nav__item">
+              <a class="md-nav__link" href="#explicit-declaration">
+               <span class="md-ellipsis">
+                Explicit declaration
+               </span>
+              </a>
+             </li>
+             <li class="md-nav__item">
+              <a class="md-nav__link" href="#implicit-declaration">
+               <span class="md-ellipsis">
+                Implicit declaration
+               </span>
+              </a>
+             </li>
+            </ul>
+           </nav>
+          </li>
+          <li class="md-nav__item">
+           <a class="md-nav__link" href="#scopes">
+            <span class="md-ellipsis">
+             Scopes
+            </span>
+           </a>
+           <nav aria-label="Scopes" class="md-nav">
+            <ul class="md-nav__list">
+             <li class="md-nav__item">
+              <a class="md-nav__link" href="#global-scope">
+               <span class="md-ellipsis">
+                Global scope
+               </span>
+              </a>
+             </li>
+             <li class="md-nav__item">
+              <a class="md-nav__link" href="#local-scope">
+               <span class="md-ellipsis">
+                Local scope
+               </span>
+              </a>
+             </li>
+            </ul>
+           </nav>
+          </li>
+          <li class="md-nav__item">
+           <a class="md-nav__link" href="#namespaces">
+            <span class="md-ellipsis">
+             Namespaces
+            </span>
+           </a>
+          </li>
+         </ul>
+        </nav>
+       </div>
+      </div>
+     </div>
+     <div class="md-content" data-md-component="content">
+      <article class="md-content__inner md-typeset">
+       <h1 id="variables">
+        Variables
+       </h1>
+       <p>
+        Variables let you give names to values and refer to them later. The name of a
 variable must be a sequence of letters, digits, and underscores, but it may not
 begin with a digit. Every variable has an associated type (for more details, see
-<a href="type_system.html">Type system</a>).</p>
-<p>Example:</p>
-<div class="highlight"><pre><span></span><code>valid_variable_name = 0
+        <a href="type_system.html">
+         Type system
+        </a>
+        ).
+       </p>
+       <p>
+        Example:
+       </p>
+       <div class="highlight">
+        <pre><span></span><code>valid_variable_name = 0
 a = 0
 a2_1 = 0
 _a_2 = 0
-</code></pre></div>
-<h2 id="declaration">Declaration</h2>
-<p>In order to be used, variable needs to be declared.
+</code></pre>
+       </div>
+       <h2 id="declaration">
+        Declaration
+       </h2>
+       <p>
+        In order to be used, variable needs to be declared.
 Variables can be declared using explicit or implicit declaration.
-Every variable belongs to one scope, and is visible in that scope and all child scopes.</p>
-<h3 id="explicit-declaration">Explicit declaration</h3>
-<p>Explicit declaration is used to declare a new variable in the scope enclosing declaration statement.
-Expression in declaration statement and later uses of variable must respect declared type.</p>
-<p>General form of explicit declaration:</p>
-<div class="highlight"><pre><span></span><code>&lt;type&gt; &lt;name&gt; = &lt;expr&gt;
-</code></pre></div>
-<p>Examples:</p>
-<div class="highlight"><pre><span></span><code>real a = 1
+Every variable belongs to one scope, and is visible in that scope and all child scopes.
+       </p>
+       <h3 id="explicit-declaration">
+        Explicit declaration
+       </h3>
+       <p>
+        Explicit declaration is used to declare a new variable in the scope enclosing declaration statement.
+Expression in declaration statement and later uses of variable must respect declared type.
+       </p>
+       <p>
+        General form of explicit declaration:
+       </p>
+       <div class="highlight">
+        <pre><span></span><code>&lt;type&gt; &lt;name&gt; = &lt;expr&gt;
+</code></pre>
+       </div>
+       <p>
+        Examples:
+       </p>
+       <div class="highlight">
+        <pre><span></span><code>real a = 1
 real b = 2.0
 bool c = false
 int d = 5.0    # TypeError: Expected int or type convertible to int, but received real
-</code></pre></div>
-<h3 id="implicit-declaration">Implicit declaration</h3>
-<p>Implicit declaration can be used as a shorter alternative to explicit declaration.
+</code></pre>
+       </div>
+       <h3 id="implicit-declaration">
+        Implicit declaration
+       </h3>
+       <p>
+        Implicit declaration can be used as a shorter alternative to explicit declaration.
 Variable type is inferred from expression operands.
-Later assignments must respect type inferred on implicit declaration.</p>
-<p>In global scope, every assignment statement is treated as implicit declaration.
-In local scope, assignment statement is treated as implicit declaration if variable with specified name does not exist.</p>
-<p>General form of implicit declaration:</p>
-<div class="highlight"><pre><span></span><code>&lt;name&gt; = &lt;expr&gt;
-</code></pre></div>
-<p>Examples:</p>
-<div class="highlight"><pre><span></span><code>a = 5.0     # real
+Later assignments must respect type inferred on implicit declaration.
+       </p>
+       <p>
+        In global scope, every assignment statement is treated as implicit declaration.
+In local scope, assignment statement is treated as implicit declaration if variable with specified name does not exist.
+       </p>
+       <p>
+        General form of implicit declaration:
+       </p>
+       <div class="highlight">
+        <pre><span></span><code>&lt;name&gt; = &lt;expr&gt;
+</code></pre>
+       </div>
+       <p>
+        Examples:
+       </p>
+       <div class="highlight">
+        <pre><span></span><code>a = 5.0     # real
 b = false   # bool
 c = 1 + 1.5 # real
 
 #later uses
-c = &quot;test&quot;  # TypeError: Expected real or type convertible to real, but got string
-</code></pre></div>
-<h2 id="scopes">Scopes</h2>
-<p>Variable names live in scopes. Scope represents a range of TML code where
+c = "test"  # TypeError: Expected real or type convertible to real, but got string
+</code></pre>
+       </div>
+       <h2 id="scopes">
+        Scopes
+       </h2>
+       <p>
+        Variable names live in scopes. Scope represents a range of TML code where
 a variable name exists and refers to the same value. TML uses lexical scoping.
-TML divides scopes into global scope and local scope(s).</p>
-<p>Global component scope contains variables defined at the top-most outer level.
+TML divides scopes into global scope and local scope(s).
+       </p>
+       <p>
+        Global component scope contains variables defined at the top-most outer level.
 In addition, each statement that contains nested code block has its local scope.
 Every function has at least one local scope, defined by the function body block.
 Functions can also have additional child local scopes,
-if they contain nested block statements such as <code>if</code> and <code>for</code>. </p>
-<div class="highlight"><pre><span></span><code>int a = 0           # global scope
+if they contain nested block statements such as
+        <code>
+         if
+        </code>
+        and
+        <code>
+         for
+        </code>
+        .
+       </p>
+       <div class="highlight">
+        <pre><span></span><code>int a = 0           # global scope
 
 fn init():
 
@@ -853,38 +484,86 @@ fn init():
    end
 
 end
-</code></pre></div>
-<h3 id="global-scope">Global scope</h3>
-<p>Global scope is the parent scope of all local scopes. Variables declared in global scope can be accessed in all local scopes.</p>
-<p>Redeclaration of variables <strong>is not</strong> allowed in global scope.
-Forward referencing of variables <strong>is not</strong> allowed.
-Forward referencing of functions <strong>is</strong> allowed.</p>
-<p>Variables in global scope can be declared either using explicit or implicit declaration.
-Every occurrence of variable assignment is considered as implicit declaration.</p>
-<p>Functions that can be called in global scope are:
-- built-in functions (see <a href="builtins.html">Built-ins</a>)
-- custom functions that are <strong>pure</strong> (i.e. do not depend on nor change global state)
-- custom functions that are guaranteed to <strong>terminate</strong> (i.e. do not contain <code>while</code>)</p>
-<div class="highlight"><pre><span></span><code>int a = 1 # explicit declaration
+</code></pre>
+       </div>
+       <h3 id="global-scope">
+        Global scope
+       </h3>
+       <p>
+        Global scope is the parent scope of all local scopes. Variables declared in global scope can be accessed in all local scopes.
+       </p>
+       <p>
+        Redeclaration of variables
+        <strong>
+         is not
+        </strong>
+        allowed in global scope.
+Forward referencing of variables
+        <strong>
+         is not
+        </strong>
+        allowed.
+Forward referencing of functions
+        <strong>
+         is
+        </strong>
+        allowed.
+       </p>
+       <p>
+        Variables in global scope can be declared either using explicit or implicit declaration.
+Every occurrence of variable assignment is considered as implicit declaration.
+       </p>
+       <p>
+        Functions that can be called in global scope are:
+- built-in functions (see
+        <a href="builtins.html">
+         Built-ins
+        </a>
+        )
+- custom functions that are
+        <strong>
+         pure
+        </strong>
+        (i.e. do not depend on nor change global state)
+- custom functions that are guaranteed to
+        <strong>
+         terminate
+        </strong>
+        (i.e. do not contain
+        <code>
+         while
+        </code>
+        )
+       </p>
+       <div class="highlight">
+        <pre><span></span><code>int a = 1 # explicit declaration
 b = 2.0   # implicit declaration
 
-a = 3     # Error: redeclaration of &#39;a&#39;
+a = 3     # Error: redeclaration of 'a'
 
-x = y     # Error: &#39;y&#39; is undeclared
+x = y     # Error: 'y' is undeclared
 y = 5
-</code></pre></div>
-<h3 id="local-scope">Local scope</h3>
-<p>Explicit declaration creates a new variable in the scope enclosing the declaration statement.
+</code></pre>
+       </div>
+       <h3 id="local-scope">
+        Local scope
+       </h3>
+       <p>
+        Explicit declaration creates a new variable in the scope enclosing the declaration statement.
 Assignment statement is treated as implicit declaration if a variable with the specified name does not exist.
 Assigning to a variable that exists in the outer scope will
-reference the existing variable instead.</p>
-<p>To create a new variable with the same name in the current scope, variable
-must be declared using explicit declaration.</p>
-<div class="highlight"><pre><span></span><code>int a = 5
+reference the existing variable instead.
+       </p>
+       <p>
+        To create a new variable with the same name in the current scope, variable
+must be declared using explicit declaration.
+       </p>
+       <div class="highlight">
+        <pre><span></span><code>int a = 5
 
 fn init():
 
-   a = 10    # This references global &#39;a&#39;
+   a = 10    # This references global 'a'
 
    # If we want variable by the same name we have to use declaration syntax
    int a = 10       # This variable is a new variable at the function level
@@ -895,34 +574,123 @@ fn init():
    end
 
 end
-</code></pre></div>
-<h2 id="namespaces">Namespaces</h2>
-<p>TML has a set of special variables which can be accessed using <code>t</code>, <code>p</code> and <code>n</code>
-namespace. Variables from namespace can  be accessed using <em>the dot notation</em>
-(for example <code>t.in1</code>).</p>
-<p>Variables in <code>t</code>, <code>p</code> and <code>n</code> namespaces are predefined and cannot be redefined.
-Variables from the <code>t</code> namespace can be used to access variables generated from
-components terminals, the <code>p</code> namespace variable is similarly used to access
-component's property values, whereas the <code>n</code> namespace variable is used to
-access the values from the component's namespace. Example:</p>
-<p>Assuming a component has:</p>
-<ul>
-<li>three terminals: out (direction <code>out</code>), and in1 and in2 (both with direction
-  <code>in</code>)</li>
-<li>a property named <code>mul_factor</code>, and</li>
-<li>a namespace variable named <code>div_factor</code>.</li>
-</ul>
-<p>we can write:</p>
-<div class="highlight"><pre><span></span><code>t.out = ((t.in1 + t.in2) * p.mul_factor) / n.div_factor
-</code></pre></div>
-<p>Variables from built-in namespaces cannot be redeclared by the user. </p>
-<p>Variables generated from the input terminals and properties cannot be written to
-(i.e. cannot be lvalues).</p>
-<p>Variables generated from the output terminals must be initialized
-inside <code>output_fnc</code> before the first reference on the right-hand side of the
-statement.</p>
-<p>Example:</p>
-<div class="highlight"><pre><span></span><code>fn output_fnc():
+</code></pre>
+       </div>
+       <h2 id="namespaces">
+        Namespaces
+       </h2>
+       <p>
+        TML has a set of special variables which can be accessed using
+        <code>
+         t
+        </code>
+        ,
+        <code>
+         p
+        </code>
+        and
+        <code>
+         n
+        </code>
+        namespace. Variables from namespace can  be accessed using
+        <em>
+         the dot notation
+        </em>
+        (for example
+        <code>
+         t.in1
+        </code>
+        ).
+       </p>
+       <p>
+        Variables in
+        <code>
+         t
+        </code>
+        ,
+        <code>
+         p
+        </code>
+        and
+        <code>
+         n
+        </code>
+        namespaces are predefined and cannot be redefined.
+Variables from the
+        <code>
+         t
+        </code>
+        namespace can be used to access variables generated from
+components terminals, the
+        <code>
+         p
+        </code>
+        namespace variable is similarly used to access
+component's property values, whereas the
+        <code>
+         n
+        </code>
+        namespace variable is used to
+access the values from the component's namespace. Example:
+       </p>
+       <p>
+        Assuming a component has:
+       </p>
+       <ul>
+        <li>
+         three terminals: out (direction
+         <code>
+          out
+         </code>
+         ), and in1 and in2 (both with direction
+         <code>
+          in
+         </code>
+         )
+        </li>
+        <li>
+         a property named
+         <code>
+          mul_factor
+         </code>
+         , and
+        </li>
+        <li>
+         a namespace variable named
+         <code>
+          div_factor
+         </code>
+         .
+        </li>
+       </ul>
+       <p>
+        we can write:
+       </p>
+       <div class="highlight">
+        <pre><span></span><code>t.out = ((t.in1 + t.in2) * p.mul_factor) / n.div_factor
+</code></pre>
+       </div>
+       <p>
+        Variables from built-in namespaces cannot be redeclared by the user.
+       </p>
+       <p>
+        Variables generated from the input terminals and properties cannot be written to
+(i.e. cannot be lvalues).
+       </p>
+       <p>
+        Variables generated from the output terminals must be initialized
+inside
+        <code>
+         output_fnc
+        </code>
+        before the first reference on the right-hand side of the
+statement.
+       </p>
+       <p>
+        Example:
+       </p>
+       <div class="highlight">
+        <pre><span></span><code>fn output_fnc():
     a = t.out              # ValueError - Cannot use out terminal before initialization.
     t.out = t.in1          # valid - This statement is considered as the proper initialization
                            #         of the output terminal that can be safely used afterward.
@@ -934,16 +702,31 @@ statement.</p>
     t.out = t.out + t.in1  # valid - The output terminal is properly initialized and can be used
                            #         as rvalue.
 end
-</code></pre></div>
-<p>Using terminal variables outside of the <code>output_fnc</code> is considered as an error.
-<div class="highlight"><pre><span></span><code>fn init_fnc():
+</code></pre>
+       </div>
+       <p>
+        Using terminal variables outside of the
+        <code>
+         output_fnc
+        </code>
+        is considered as an error.
+        <div class="highlight">
+         <pre><span></span><code>fn init_fnc():
     t.out = t.in    # ValueError - Cannot use terminal variables outside
                     #              `output_fnc`
 end
-</code></pre></div></p>
-<p>Note, one can use the terminal variables inside functions
-called from the <code>output_fnc</code>.
-<div class="highlight"><pre><span></span><code>fn output_fnc():
+</code></pre>
+        </div>
+       </p>
+       <p>
+        Note, one can use the terminal variables inside functions
+called from the
+        <code>
+         output_fnc
+        </code>
+        .
+        <div class="highlight">
+         <pre><span></span><code>fn output_fnc():
     setup_output_terminal()
 end
 
@@ -951,12 +734,23 @@ fn setup_output_terminal():
     t.out = 1  # The enclosing function is called from the `output_fnc`
                # so the output terminal can be used.
 end
-</code></pre></div></p>
-<p>However, if a function manipulating with an output terminal variable
-is called from <code>output_fnc</code> and another function not called from the
-<code>output_fnc</code>, then the TML compiler
+</code></pre>
+        </div>
+       </p>
+       <p>
+        However, if a function manipulating with an output terminal variable
+is called from
+        <code>
+         output_fnc
+        </code>
+        and another function not called from the
+        <code>
+         output_fnc
+        </code>
+        , then the TML compiler
 raises an error. See the following example for more information.
-<div class="highlight"><pre><span></span><code>fn output_fnc():
+        <div class="highlight">
+         <pre><span></span><code>fn output_fnc():
     setup_output_terminal()
 end
 
@@ -969,70 +763,66 @@ end
 fn setup_output_terminal():
     t.out = 1
 end
-</code></pre></div></p>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>If not stated differently, the <em>namespace</em> refers to the TML namespace
-(<code>t</code>, <code>p</code>, or <code>n</code>, respectively).</p>
-</div>
-
-
-
-
-
-
-
-
-
-
-
-
-                
-              </article>
-            </div>
-          
-          
-<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+</code></pre>
         </div>
-        
-      </main>
-      
-        <footer class="md-footer">
-  
-  <div class="md-footer-meta md-typeset">
-    <div class="md-footer-meta__inner md-grid">
+       </p>
+       <div class="admonition note">
+        <p class="admonition-title">
+         Note
+        </p>
+        <p>
+         If not stated differently, the
+         <em>
+          namespace
+         </em>
+         refers to the TML namespace
+(
+         <code>
+          t
+         </code>
+         ,
+         <code>
+          p
+         </code>
+         , or
+         <code>
+          n
+         </code>
+         , respectively).
+        </p>
+       </div>
+      </article>
+     </div>
+     <script>
+      var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))
+     </script>
+    </div>
+   </main>
+   <footer class="md-footer">
+    <div class="md-footer-meta md-typeset">
+     <div class="md-footer-meta__inner md-grid">
       <div class="md-copyright">
-  
-  
-    Made with
-    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
-      Material for MkDocs
-    </a>
-  
-</div>
-      
+       Made with
+       <a href="https://squidfunk.github.io/mkdocs-material/" rel="noopener" target="_blank">
+        Material for MkDocs
+       </a>
+      </div>
+     </div>
     </div>
+   </footer>
   </div>
-</footer>
-      
-    </div>
-    <div class="md-dialog" data-md-component="dialog">
-      <div class="md-dialog__inner md-typeset"></div>
-    </div>
-    
-    
-    
-      
-      
-      <script id="__config" type="application/json">{"annotate": null, "base": ".", "features": [], "search": "assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
-    
-    
-      <script src="assets/javascripts/bundle.79ae519e.min.js"></script>
-      
-        <script src="javascripts/mathjax.js"></script>
-      
-        <script src="https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js"></script>
-      
-    
-  </body>
+  <div class="md-dialog" data-md-component="dialog">
+   <div class="md-dialog__inner md-typeset">
+   </div>
+  </div>
+  <script id="__config" type="application/json">
+   {"annotate": null, "base": ".", "features": [], "search": "assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}
+  </script>
+  <script src="assets/javascripts/bundle.79ae519e.min.js">
+  </script>
+  <script src="javascripts/mathjax.js">
+  </script>
+  <script src="https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js">
+  </script>
+ </body>
 </html>

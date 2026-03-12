@@ -1,742 +1,693 @@
-
-<!doctype html>
-<html lang="en" class="no-js">
-  <head>
-    
-      <meta charset="utf-8">
-      <meta name="viewport" content="width=device-width,initial-scale=1">
-      
-      
-      
-      
-      
-      
-        
-      
-      
-      <link rel="icon" href="assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.1">
-    
-    
-      
-        <title>Description - TML Documentation</title>
-      
-    
-    
-      <link rel="stylesheet" href="assets/stylesheets/main.484c7ddc.min.css">
-      
-        
-        <link rel="stylesheet" href="assets/stylesheets/palette.ab4e12ef.min.css">
-      
-      
-
-
-    
-    
-      
-    
-    
-      
-        
-        
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
-        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
-      
-    
-    
-      <link rel="stylesheet" href="stylesheets/extra.css">
-    
-    <script>__md_scope=new URL(".",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
-    
-      
-
-    
-    
-  </head>
-  
-  
-    
-    
-    
-    
-    
-    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="custom" data-md-color-accent="indigo">
-  
-    
-    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
-    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
-    <label class="md-overlay" for="__drawer"></label>
-    <div data-md-component="skip">
-      
-        
-        <a href="#description" class="md-skip">
-          Skip to content
-        </a>
-      
-    </div>
-    <div data-md-component="announce">
-      
-    </div>
-    
-    
-      
-
-  
-
-<header class="md-header md-header--shadow" data-md-component="header">
-  <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href="." title="TML Documentation" class="md-header__button md-logo" aria-label="TML Documentation" data-md-component="logo">
-      
-  
-  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
-
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width,initial-scale=1" name="viewport"/>
+  <link href="assets/images/favicon.png" rel="icon"/>
+  <meta content="mkdocs-1.6.1, mkdocs-material-9.7.1" name="generator"/>
+  <title>
+   Description - TML Documentation
+  </title>
+  <link href="assets/stylesheets/main.484c7ddc.min.css" rel="stylesheet"/>
+  <link href="assets/stylesheets/palette.ab4e12ef.min.css" rel="stylesheet"/>
+  <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+  <link href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&amp;display=fallback" rel="stylesheet"/>
+  <style>
+   :root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}
+  </style>
+  <link href="stylesheets/extra.css" rel="stylesheet"/>
+  <script>
+   __md_scope=new URL(".",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}
+  </script>
+ </head>
+ <body data-md-color-accent="indigo" data-md-color-primary="custom" data-md-color-scheme="default" dir="ltr">
+  <input autocomplete="off" class="md-toggle" data-md-toggle="drawer" id="__drawer" type="checkbox"/>
+  <input autocomplete="off" class="md-toggle" data-md-toggle="search" id="__search" type="checkbox"/>
+  <label class="md-overlay" for="__drawer">
+  </label>
+  <div data-md-component="skip">
+   <a class="md-skip" href="#description">
+    Skip to content
+   </a>
+  </div>
+  <div data-md-component="announce">
+  </div>
+  <header class="md-header md-header--shadow" data-md-component="header">
+   <nav aria-label="Header" class="md-header__inner md-grid">
+    <a aria-label="TML Documentation" class="md-header__button md-logo" data-md-component="logo" href="." title="TML Documentation">
+     <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+      <path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54">
+      </path>
+     </svg>
     </a>
     <label class="md-header__button md-icon" for="__drawer">
-      
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+     <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+      <path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z">
+      </path>
+     </svg>
     </label>
     <div class="md-header__title" data-md-component="header-title">
-      <div class="md-header__ellipsis">
-        <div class="md-header__topic">
-          <span class="md-ellipsis">
-            TML Documentation
-          </span>
-        </div>
-        <div class="md-header__topic" data-md-component="header-topic">
-          <span class="md-ellipsis">
-            
-              Description
-            
-          </span>
-        </div>
+     <div class="md-header__ellipsis">
+      <div class="md-header__topic">
+       <span class="md-ellipsis">
+        TML Documentation
+       </span>
       </div>
+      <div class="md-header__topic" data-md-component="header-topic">
+       <span class="md-ellipsis">
+        Description
+       </span>
+      </div>
+     </div>
     </div>
-    
-      
-    
-    
-    
-    
-      
-      
-        <label class="md-header__button md-icon" for="__search">
-          
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
-        </label>
-        <div class="md-search" data-md-component="search" role="dialog">
-  <label class="md-search__overlay" for="__search"></label>
-  <div class="md-search__inner" role="search">
-    <form class="md-search__form" name="search">
-      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
-      <label class="md-search__icon md-icon" for="__search">
-        
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
-        
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
-      </label>
-      <nav class="md-search__options" aria-label="Search">
-        
-        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
-          
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+    <label class="md-header__button md-icon" for="__search">
+     <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+      <path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5">
+      </path>
+     </svg>
+    </label>
+    <div class="md-search" data-md-component="search" role="dialog">
+     <label class="md-search__overlay" for="__search">
+     </label>
+     <div class="md-search__inner" role="search">
+      <form class="md-search__form" name="search">
+       <input aria-label="Search" autocapitalize="off" autocomplete="off" autocorrect="off" class="md-search__input" data-md-component="search-query" name="query" placeholder="Search" required="" spellcheck="false" type="text"/>
+       <label class="md-search__icon md-icon" for="__search">
+        <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+         <path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5">
+         </path>
+        </svg>
+        <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+         <path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z">
+         </path>
+        </svg>
+       </label>
+       <nav aria-label="Search" class="md-search__options">
+        <button aria-label="Clear" class="md-search__icon md-icon" tabindex="-1" title="Clear" type="reset">
+         <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z">
+          </path>
+         </svg>
         </button>
-      </nav>
-      
-    </form>
-    <div class="md-search__output">
-      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+       </nav>
+      </form>
+      <div class="md-search__output">
+       <div class="md-search__scrollwrap" data-md-scrollfix="" tabindex="0">
         <div class="md-search-result" data-md-component="search-result">
-          <div class="md-search-result__meta">
-            Initializing search
-          </div>
-          <ol class="md-search-result__list" role="presentation"></ol>
+         <div class="md-search-result__meta">
+          Initializing search
+         </div>
+         <ol class="md-search-result__list" role="presentation">
+         </ol>
         </div>
+       </div>
       </div>
+     </div>
     </div>
-  </div>
-</div>
-      
-    
-    
-  </nav>
-  
-</header>
-    
-    <div class="md-container" data-md-component="container">
-      
-      
-        
-          
-        
-      
-      <main class="md-main" data-md-component="main">
-        <div class="md-main__inner md-grid">
-          
-            
-              
-              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
-                <div class="md-sidebar__scrollwrap">
-                  <div class="md-sidebar__inner">
-                    
-
-
-
-<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
-  <label class="md-nav__title" for="__drawer">
-    <a href="." title="TML Documentation" class="md-nav__button md-logo" aria-label="TML Documentation" data-md-component="logo">
-      
-  
-  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
-
-    </a>
-    TML Documentation
-  </label>
-  
-  <ul class="md-nav__list" data-md-scrollfix>
-    
-      
-      
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="variables.html" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Variables
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-    
-      
-      
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="type_system.html" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Type system
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-    
-      
-      
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="broadcasting.html" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Broadcasting
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-    
-      
-      
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="reduction.html" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Reduction
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-    
-      
-      
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="terminals.html" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Terminals
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-    
-      
-      
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="guards.html" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Guards
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-    
-      
-      
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="functions.html" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Functions
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-    
-      
-      
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="statements.html" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Statements
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-    
-      
-      
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="expressions.html" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Expressions
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-    
-      
-      
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="macro_system.html" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Macro system
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-    
-      
-      
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="comments.html" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Comments
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-    
-      
-      
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="builtins.html" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Built-ins
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-    
-  </ul>
-</nav>
-                  </div>
-                </div>
-              </div>
-            
-            
-              
-              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
-                <div class="md-sidebar__scrollwrap">
-                  <div class="md-sidebar__inner">
-                    
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-</nav>
-                  </div>
-                </div>
-              </div>
-            
-          
-          
-            <div class="md-content" data-md-component="content">
-              
-              <article class="md-content__inner md-typeset">
-                
-                  
-
-
-
-<h1 id="description">Description</h1>
-<p>This is a documentation of the Typhoon Modeling Language.</p>
-<p>The project is under development. For additional resources (books, initial notes
-and analysis) check <a href="https://gitlab.typhoon-hil.com/dev/projects/typhoon-modeling-language/tml-docs">tml-docs
-repo</a></p>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>Documentation is keyboard-friendly. Use arrows to turn pages or <code>s</code> for full
-text search. You can also use mouse and buttons on the top of the page. </p>
-<p>You can also change the theme, or print to pdf (upper right) if you prefer to
-read the docs in pdf format.</p>
-</div>
-<h1 id="setting-up-tml-for-development">Setting up TML for development</h1>
-<p>Make sure you have currently supported Python version installed. You can use
-tools like <a href="https://github.com/asdf-vm/asdf">asdf</a> for multiple version
-management.</p>
-<p>Create Python virtual environment:</p>
-<div class="highlight"><pre><span></span><code>python<span class="w"> </span>-m<span class="w"> </span>venv<span class="w"> </span>venv
-</code></pre></div>
-<p>Activate the environment and install TML and dev dependencies:</p>
-<div class="highlight"><pre><span></span><code><span class="nb">source</span><span class="w"> </span>venv/bin/activate<span class="w">      </span><span class="c1"># for Linux/MacOS</span>
+   </nav>
+   <div class="injected">
+    Formatted Content
+   </div>
+  </header>
+  <div class="md-container" data-md-component="container">
+   <main class="md-main" data-md-component="main">
+    <div class="md-main__inner md-grid">
+     <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation">
+      <div class="md-sidebar__scrollwrap">
+       <div class="md-sidebar__inner">
+        <nav aria-label="Navigation" class="md-nav md-nav--primary" data-md-level="0">
+         <label class="md-nav__title" for="__drawer">
+          <a aria-label="TML Documentation" class="md-nav__button md-logo" data-md-component="logo" href="." title="TML Documentation">
+           <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54">
+            </path>
+           </svg>
+          </a>
+          TML Documentation
+         </label>
+         <ul class="md-nav__list" data-md-scrollfix="">
+          <li class="md-nav__item">
+           <a class="md-nav__link" href="variables.html">
+            <span class="md-ellipsis">
+             Variables
+            </span>
+           </a>
+          </li>
+          <li class="md-nav__item">
+           <a class="md-nav__link" href="type_system.html">
+            <span class="md-ellipsis">
+             Type system
+            </span>
+           </a>
+          </li>
+          <li class="md-nav__item">
+           <a class="md-nav__link" href="broadcasting.html">
+            <span class="md-ellipsis">
+             Broadcasting
+            </span>
+           </a>
+          </li>
+          <li class="md-nav__item">
+           <a class="md-nav__link" href="reduction.html">
+            <span class="md-ellipsis">
+             Reduction
+            </span>
+           </a>
+          </li>
+          <li class="md-nav__item">
+           <a class="md-nav__link" href="terminals.html">
+            <span class="md-ellipsis">
+             Terminals
+            </span>
+           </a>
+          </li>
+          <li class="md-nav__item">
+           <a class="md-nav__link" href="guards.html">
+            <span class="md-ellipsis">
+             Guards
+            </span>
+           </a>
+          </li>
+          <li class="md-nav__item">
+           <a class="md-nav__link" href="functions.html">
+            <span class="md-ellipsis">
+             Functions
+            </span>
+           </a>
+          </li>
+          <li class="md-nav__item">
+           <a class="md-nav__link" href="statements.html">
+            <span class="md-ellipsis">
+             Statements
+            </span>
+           </a>
+          </li>
+          <li class="md-nav__item">
+           <a class="md-nav__link" href="expressions.html">
+            <span class="md-ellipsis">
+             Expressions
+            </span>
+           </a>
+          </li>
+          <li class="md-nav__item">
+           <a class="md-nav__link" href="macro_system.html">
+            <span class="md-ellipsis">
+             Macro system
+            </span>
+           </a>
+          </li>
+          <li class="md-nav__item">
+           <a class="md-nav__link" href="comments.html">
+            <span class="md-ellipsis">
+             Comments
+            </span>
+           </a>
+          </li>
+          <li class="md-nav__item">
+           <a class="md-nav__link" href="builtins.html">
+            <span class="md-ellipsis">
+             Built-ins
+            </span>
+           </a>
+          </li>
+         </ul>
+        </nav>
+       </div>
+      </div>
+     </div>
+     <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc">
+      <div class="md-sidebar__scrollwrap">
+       <div class="md-sidebar__inner">
+        <nav aria-label="Table of contents" class="md-nav md-nav--secondary">
+        </nav>
+       </div>
+      </div>
+     </div>
+     <div class="md-content" data-md-component="content">
+      <article class="md-content__inner md-typeset">
+       <h1 id="description">
+        Description
+       </h1>
+       <p>
+        This is a documentation of the Typhoon Modeling Language.
+       </p>
+       <p>
+        The project is under development. For additional resources (books, initial notes
+and analysis) check
+        <a href="https://gitlab.typhoon-hil.com/dev/projects/typhoon-modeling-language/tml-docs">
+         tml-docs
+repo
+        </a>
+       </p>
+       <div class="admonition note">
+        <p class="admonition-title">
+         Note
+        </p>
+        <p>
+         Documentation is keyboard-friendly. Use arrows to turn pages or
+         <code>
+          s
+         </code>
+         for full
+text search. You can also use mouse and buttons on the top of the page.
+        </p>
+        <p>
+         You can also change the theme, or print to pdf (upper right) if you prefer to
+read the docs in pdf format.
+        </p>
+       </div>
+       <h1 id="setting-up-tml-for-development">
+        Setting up TML for development
+       </h1>
+       <p>
+        Make sure you have currently supported Python version installed. You can use
+tools like
+        <a href="https://github.com/asdf-vm/asdf">
+         asdf
+        </a>
+        for multiple version
+management.
+       </p>
+       <p>
+        Create Python virtual environment:
+       </p>
+       <div class="highlight">
+        <pre><span></span><code>python<span class="w"> </span>-m<span class="w"> </span>venv<span class="w"> </span>venv
+</code></pre>
+       </div>
+       <p>
+        Activate the environment and install TML and dev dependencies:
+       </p>
+       <div class="highlight">
+        <pre><span></span><code><span class="nb">source</span><span class="w"> </span>venv/bin/activate<span class="w">      </span><span class="c1"># for Linux/MacOS</span>
 venv<span class="se">\S</span>cripts<span class="se">\a</span>ctivate.bat<span class="w">     </span><span class="c1"># for Windows</span>
 
 pip<span class="w"> </span>install<span class="w"> </span>-e<span class="w"> </span>.<span class="o">[</span>dev<span class="o">]</span>
-</code></pre></div>
-<h1 id="setting-up-thcc-for-development">Setting up THCC for development</h1>
-<p>TML support is implemented on the <code>tml-develop</code> branch.
+</code></pre>
+       </div>
+       <h1 id="setting-up-thcc-for-development">
+        Setting up THCC for development
+       </h1>
+       <p>
+        TML support is implemented on the
+        <code>
+         tml-develop
+        </code>
+        branch.
 TML compiler is automatically downloaded and installed alongside other compilers.
-To install TML compiler automatically, run <code>update_envirnoment.sh</code> script.
-Alternatively, only TML portion of <code>_download_compilers.sh</code> can be ran to save time.</p>
-<p>TML is disabled by default in THCC. <code>TML_ENABLE</code> feature flag in <code>global_settings.py</code>
-must be set to <code>True</code> to call TML compiler. Otherwise, Jinja components are used.</p>
-<p>If a component has both TML and Jinja implementations, TML is given precedence if enabled.
-Otherwise, Jinja is used.</p>
-<p>TML implementations of components must be placed inside
-<code>t_sw/thcc/typhoon/lib_parts/components/tml</code> directory for compiler to find them.
+To install TML compiler automatically, run
+        <code>
+         update_envirnoment.sh
+        </code>
+        script.
+Alternatively, only TML portion of
+        <code>
+         _download_compilers.sh
+        </code>
+        can be ran to save time.
+       </p>
+       <p>
+        TML is disabled by default in THCC.
+        <code>
+         TML_ENABLE
+        </code>
+        feature flag in
+        <code>
+         global_settings.py
+        </code>
+        must be set to
+        <code>
+         True
+        </code>
+        to call TML compiler. Otherwise, Jinja components are used.
+       </p>
+       <p>
+        If a component has both TML and Jinja implementations, TML is given precedence if enabled.
+Otherwise, Jinja is used.
+       </p>
+       <p>
+        TML implementations of components must be placed inside
+        <code>
+         t_sw/thcc/typhoon/lib_parts/components/tml
+        </code>
+        directory for compiler to find them.
 Names of components must be the same as for Jinja implementations, but with
-<code>.tml</code> extension. TML-only components can exist, but will break model configuration
-if TML is later disabled.</p>
-<h2 id="development-process">Development process</h2>
-<p>The branch for TML development is <code>main</code> We shall tag each new release with
-<code>x.y.z</code> where <code>x.y.z</code> are written according to <a href="https://semver.org/">Semantic
-Versioning</a>.</p>
-<p>All TML development goes with this simple process:</p>
-<ol>
-<li>Create issue and branch (draft merge request) forked of the <code>main</code> branch.</li>
-<li>Develop and comment on the issue if needed. Write each design decision we
+        <code>
+         .tml
+        </code>
+        extension. TML-only components can exist, but will break model configuration
+if TML is later disabled.
+       </p>
+       <h2 id="development-process">
+        Development process
+       </h2>
+       <p>
+        The branch for TML development is
+        <code>
+         main
+        </code>
+        We shall tag each new release with
+        <code>
+         x.y.z
+        </code>
+        where
+        <code>
+         x.y.z
+        </code>
+        are written according to
+        <a href="https://semver.org/">
+         Semantic
+Versioning
+        </a>
+        .
+       </p>
+       <p>
+        All TML development goes with this simple process:
+       </p>
+       <ol>
+        <li>
+         Create issue and branch (draft merge request) forked of the
+         <code>
+          main
+         </code>
+         branch.
+        </li>
+        <li>
+         Develop and comment on the issue if needed. Write each design decision we
    negotiated to the docs. If the issue is still unsolved or the issue
-   discussion is relevant for the future work (i.e. <code>todo</code> or <code>question</code>
-   admonitions) link to the issue where the discussion took place with the
-   standard GitLab <code>#x</code> syntax.</li>
-<li>Milestones <code>TML-x.y</code> are used for planning next releases. Each issue
+   discussion is relevant for the future work (i.e.
+         <code>
+          todo
+         </code>
+         or
+         <code>
+          question
+         </code>
+         admonitions) link to the issue where the discussion took place with the
+   standard GitLab
+         <code>
+          #x
+         </code>
+         syntax.
+        </li>
+        <li>
+         Milestones
+         <code>
+          TML-x.y
+         </code>
+         are used for planning next releases. Each issue
      planned for the next and the release after next should have milestone
-     defined.</li>
-<li>There is <a href="https://gitlab.typhoon-hil.com/dev/tml/-/boards">an issue board</a>
-     which provides an overview of the current development.</li>
-<li>Write test for each new/changed feature</li>
-<li>Be sure that all the test pass. If a detailed review is needed assign a
-   person for the code review and move the issue to <code>W::REVIEW</code> label/state. If
-   review is not necessary merge to <code>main</code>, close the issue and delete the
-   branch.</li>
-</ol>
-<h2 id="running-tests">Running tests</h2>
-<p>Tests are located in the <code>tests</code> folder. To run use:</p>
-<div class="highlight"><pre><span></span><code>pytest<span class="w"> </span>tests/
-</code></pre></div>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>We keep tests that are not passing in a separate folder <code>tests/skipped</code>. These
-tests are those that can't be fixed for a longer period of time.</p>
-<p>All tests in other folders should always pass.</p>
-</div>
-<p>The tests operate by parsing the <code>.tml</code> files and comparing the result with the
-corresponding output file (<code>.output</code>, <code>.c</code> etc.). If these don't match the test
-fails.</p>
-<p>When there is no output file when a test is run a new output file is generated
-whose contents corresponds to the parsed <code>.tml</code> file.</p>
-<p>The easiest way to update output files when you change the <code>.tml</code> code is to
+     defined.
+        </li>
+        <li>
+         There is
+         <a href="https://gitlab.typhoon-hil.com/dev/tml/-/boards">
+          an issue board
+         </a>
+         which provides an overview of the current development.
+        </li>
+        <li>
+         Write test for each new/changed feature
+        </li>
+        <li>
+         Be sure that all the test pass. If a detailed review is needed assign a
+   person for the code review and move the issue to
+         <code>
+          W::REVIEW
+         </code>
+         label/state. If
+   review is not necessary merge to
+         <code>
+          main
+         </code>
+         , close the issue and delete the
+   branch.
+        </li>
+       </ol>
+       <h2 id="running-tests">
+        Running tests
+       </h2>
+       <p>
+        Tests are located in the
+        <code>
+         tests
+        </code>
+        folder. To run use:
+       </p>
+       <div class="highlight">
+        <pre><span></span><code>pytest<span class="w"> </span>tests/
+</code></pre>
+       </div>
+       <div class="admonition note">
+        <p class="admonition-title">
+         Note
+        </p>
+        <p>
+         We keep tests that are not passing in a separate folder
+         <code>
+          tests/skipped
+         </code>
+         . These
+tests are those that can't be fixed for a longer period of time.
+        </p>
+        <p>
+         All tests in other folders should always pass.
+        </p>
+       </div>
+       <p>
+        The tests operate by parsing the
+        <code>
+         .tml
+        </code>
+        files and comparing the result with the
+corresponding output file (
+        <code>
+         .output
+        </code>
+        ,
+        <code>
+         .c
+        </code>
+        etc.). If these don't match the test
+fails.
+       </p>
+       <p>
+        When there is no output file when a test is run a new output file is generated
+whose contents corresponds to the parsed
+        <code>
+         .tml
+        </code>
+        file.
+       </p>
+       <p>
+        The easiest way to update output files when you change the
+        <code>
+         .tml
+        </code>
+        code is to
 just delete its corresponding output files. New files will be generated and you
-can compare the result using <code>git diff</code> to see if the difference is expected. If
-so, commit files to the git repo as they now form a new baseline.</p>
-<h1 id="docs-installation-and-setup">Docs installation and setup</h1>
-<p>We are using <a href="https://github.com/rust-lang/mdBook">mdbook</a> for TML docs.</p>
-<p>For easy setup of reproducible environment for document development TML project
-uses Nix.</p>
-<p>To read the docs on your dev machine <a href="https://nixos.org/download/">install Nix</a>.</p>
-<p>Be sure to configure Nix flake feature by adding <code>experimental-features =
-nix-command flakes</code> to <code>~/.config/nix/nix.conf</code>. See more
-<a href="https://nixos.wiki/wiki/flakes">here</a>.</p>
-<p>To get a shell with all dependencies installed run:</p>
-<div class="highlight"><pre><span></span><code>nix<span class="w"> </span>develop
-</code></pre></div>
-<p>from <code>docs</code> folder of the project repo. After necessary dependencies are
+can compare the result using
+        <code>
+         git diff
+        </code>
+        to see if the difference is expected. If
+so, commit files to the git repo as they now form a new baseline.
+       </p>
+       <h1 id="docs-installation-and-setup">
+        Docs installation and setup
+       </h1>
+       <p>
+        We are using
+        <a href="https://github.com/rust-lang/mdBook">
+         mdbook
+        </a>
+        for TML docs.
+       </p>
+       <p>
+        For easy setup of reproducible environment for document development TML project
+uses Nix.
+       </p>
+       <p>
+        To read the docs on your dev machine
+        <a href="https://nixos.org/download/">
+         install Nix
+        </a>
+        .
+       </p>
+       <p>
+        Be sure to configure Nix flake feature by adding
+        <code>
+         experimental-features =
+nix-command flakes
+        </code>
+        to
+        <code>
+         ~/.config/nix/nix.conf
+        </code>
+        . See more
+        <a href="https://nixos.wiki/wiki/flakes">
+         here
+        </a>
+        .
+       </p>
+       <p>
+        To get a shell with all dependencies installed run:
+       </p>
+       <div class="highlight">
+        <pre><span></span><code>nix<span class="w"> </span>develop
+</code></pre>
+       </div>
+       <p>
+        from
+        <code>
+         docs
+        </code>
+        folder of the project repo. After necessary dependencies are
 downloaded and setup you will get a shell with everything configured for working
-with mdbook.</p>
-<p>On this shell run:</p>
-<div class="highlight"><pre><span></span><code>mdbook<span class="w"> </span>serve
-</code></pre></div>
-<p>To serve documentation locally. </p>
-<p>The book will be available at <a href="">http://localhost:3000/</a></p>
-<p>Instead of running <code>nix develop</code> you can install <a href="https://direnv.net/">direnv</a>
-which handles this automatically when you <code>cd</code> into <code>docs</code> folder.</p>
-<div class="admonition tip">
-<p class="admonition-title">Tip</p>
-<p>If for some reason you can't use Nix there is an option to run docs through a docker
-image.</p>
-<p>Install docker and run script <code>serve-docs.sh</code> from the root of the project. Stop
-the instance by running <code>docker stop tml-docs</code> from another terminal.</p>
-</div>
-<h2 id="admonitions">Admonitions</h2>
-<p>This doc uses <code>mdbook-admonish</code> pre-processor. See <a href="https://tommilligan.github.io/mdbook-admonish/">here</a>.</p>
-<h2 id="including-files">Including files</h2>
-<p>Examples are included from test folders to ensure that doc examples are
-up-to-date with the current implementation.</p>
-<p>See <a href="https://rust-lang.github.io/mdBook/format/mdbook.html#including-files">this part of the
-manual</a>.</p>
-<p>Note that there is a nice feature with including where you can include only a
+with mdbook.
+       </p>
+       <p>
+        On this shell run:
+       </p>
+       <div class="highlight">
+        <pre><span></span><code>mdbook<span class="w"> </span>serve
+</code></pre>
+       </div>
+       <p>
+        To serve documentation locally.
+       </p>
+       <p>
+        The book will be available at
+        <a href="">
+         http://localhost:3000/
+        </a>
+       </p>
+       <p>
+        Instead of running
+        <code>
+         nix develop
+        </code>
+        you can install
+        <a href="https://direnv.net/">
+         direnv
+        </a>
+        which handles this automatically when you
+        <code>
+         cd
+        </code>
+        into
+        <code>
+         docs
+        </code>
+        folder.
+       </p>
+       <div class="admonition tip">
+        <p class="admonition-title">
+         Tip
+        </p>
+        <p>
+         If for some reason you can't use Nix there is an option to run docs through a docker
+image.
+        </p>
+        <p>
+         Install docker and run script
+         <code>
+          serve-docs.sh
+         </code>
+         from the root of the project. Stop
+the instance by running
+         <code>
+          docker stop tml-docs
+         </code>
+         from another terminal.
+        </p>
+       </div>
+       <h2 id="admonitions">
+        Admonitions
+       </h2>
+       <p>
+        This doc uses
+        <code>
+         mdbook-admonish
+        </code>
+        pre-processor. See
+        <a href="https://tommilligan.github.io/mdbook-admonish/">
+         here
+        </a>
+        .
+       </p>
+       <h2 id="including-files">
+        Including files
+       </h2>
+       <p>
+        Examples are included from test folders to ensure that doc examples are
+up-to-date with the current implementation.
+       </p>
+       <p>
+        See
+        <a href="https://rust-lang.github.io/mdBook/format/mdbook.html#including-files">
+         this part of the
+manual
+        </a>
+        .
+       </p>
+       <p>
+        Note that there is a nice feature with including where you can include only a
 part of the file using line numbers or even better using anchors which should
-prevent unsync on test files changes.</p>
-<h2 id="cross-references">Cross references</h2>
-<p>See
-<a href="https://users.rust-lang.org/t/mdbook-how-to-use-cross-references/83713">this</a>
-on how to reference to other section of the document.</p>
-<h1 id="bibliography">Bibliography</h1>
-<p>Uses <a href="https://github.com/francisco-perez-sorrosal/mdbook-bib">mdbook-bib</a> to reference books, papers etc.</p>
-
-
-
-
-
-
-
-
-
-
-
-
-                
-              </article>
-            </div>
-          
-          
-<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
-        </div>
-        
-      </main>
-      
-        <footer class="md-footer">
-  
-  <div class="md-footer-meta md-typeset">
-    <div class="md-footer-meta__inner md-grid">
+prevent unsync on test files changes.
+       </p>
+       <h2 id="cross-references">
+        Cross references
+       </h2>
+       <p>
+        See
+        <a href="https://users.rust-lang.org/t/mdbook-how-to-use-cross-references/83713">
+         this
+        </a>
+        on how to reference to other section of the document.
+       </p>
+       <h1 id="bibliography">
+        Bibliography
+       </h1>
+       <p>
+        Uses
+        <a href="https://github.com/francisco-perez-sorrosal/mdbook-bib">
+         mdbook-bib
+        </a>
+        to reference books, papers etc.
+       </p>
+      </article>
+     </div>
+     <script>
+      var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))
+     </script>
+    </div>
+   </main>
+   <footer class="md-footer">
+    <div class="md-footer-meta md-typeset">
+     <div class="md-footer-meta__inner md-grid">
       <div class="md-copyright">
-  
-  
-    Made with
-    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
-      Material for MkDocs
-    </a>
-  
-</div>
-      
+       Made with
+       <a href="https://squidfunk.github.io/mkdocs-material/" rel="noopener" target="_blank">
+        Material for MkDocs
+       </a>
+      </div>
+     </div>
     </div>
+   </footer>
   </div>
-</footer>
-      
-    </div>
-    <div class="md-dialog" data-md-component="dialog">
-      <div class="md-dialog__inner md-typeset"></div>
-    </div>
-    
-    
-    
-      
-      
-      <script id="__config" type="application/json">{"annotate": null, "base": ".", "features": [], "search": "assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
-    
-    
-      <script src="assets/javascripts/bundle.79ae519e.min.js"></script>
-      
-        <script src="javascripts/mathjax.js"></script>
-      
-        <script src="https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js"></script>
-      
-    
-  </body>
+  <div class="md-dialog" data-md-component="dialog">
+   <div class="md-dialog__inner md-typeset">
+   </div>
+  </div>
+  <script id="__config" type="application/json">
+   {"annotate": null, "base": ".", "features": [], "search": "assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}
+  </script>
+  <script src="assets/javascripts/bundle.79ae519e.min.js">
+  </script>
+  <script src="javascripts/mathjax.js">
+  </script>
+  <script src="https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js">
+  </script>
+ </body>
 </html>
