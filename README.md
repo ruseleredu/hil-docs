@@ -90,3 +90,29 @@ npm update
 ```bash
 npm audit fix
 ```
+
+## [Docusaurus 3.10](https://docusaurus.io/blog/releases/3.10)
+
+```bash
+npm install @docusaurus/faster
+```
+
+```js
+  // Future flags, see https://docusaurus.io/docs/api/docusaurus-config#future
+  future: {
+    v4: true, // Improve compatibility with the upcoming Docusaurus v4
+    faster: true, // Enable all the optimizations that will be part of Docusaurus v4
+  },
+```
+
+### [Strict Comments](https://docusaurus.io/blog/releases/3.10#strict-comments)
+
+```bash
+node fix-mdx.js
+```
+
+### [Strict Heading IDs](https://docusaurus.io/blog/releases/3.10#strict-heading-ids)
+
+```bash
+npx docusaurus write-heading-ids --syntax mdx-comment --migrate
+```

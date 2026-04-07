@@ -5,7 +5,7 @@ title: Introduction
 description: Industry’s first notebook size Hardware-in-the-Loop system.
 ---
 
-## The game changing deal for academia research and power electronics teaching lab
+## The game changing deal for academia research and power electronics teaching lab {/* #the-game-changing-deal-for-academia-research-and-power-electronics-teaching-lab */}
 
 The Department of Automation and Electrical Engineering – [DAELT](https://utfpr.curitiba.br/daelt/) is happy to announce that the [Power Electronics Group](http://dgp.cnpq.br/dgp/espelhogrupo/0948202571281753), in a contest led by professor Adriano Ruseler, won a [HIL402](https://www.typhoon-hil.com/doc/products/Typhoon-HIL402-brochure.pdf) academic package as a main reward at [Typhoon HIL](https://www.typhoon-hil.com/)’s academic program competition “10 for 10”.
 
@@ -17,17 +17,17 @@ Next generation power electronics teaching lab
 
 Accelerate and enrich your students’ power electronics learning experience with a completely safe, fully interactive, flexible, and ultra-high fidelity [Typhoon HIL’s Academic Bundle](https://info.typhoon-hil.com/hardware-in-the-loop-hil402-academic-bundle).
 
-## Download Typhoon HIL Software
+## Download Typhoon HIL Software {/* #download-typhoon-hil-software */}
 
 - [Download Center](https://www.typhoon-hil.com/products/software/download-center/)
 - [Documentation](https://www.typhoon-hil.com/support/documentation/)
 - [Previous Software Versions](https://subscription.typhoon-hil.com/download/previous-versions/)
 
-## Learn online
+## Learn online {/* #learn-online */}
 
 - https://hil.academy/
 
-## Static Docs
+## Static Docs {/* #static-docs */}
 
 - [Typhoon modeling language (TML)](pathname:///docs/tml_doc/index.html)
 - [TyphoonTest Library](pathname:///docs/typhoontest_html/index.html)

@@ -4,7 +4,7 @@ title: TI LaunchPad Interface
 description: Designed interface board, to enable integration between TI’s LaunchPad™ development kits for C2000™ Delfino MCU’s and any of the HIL4 and HIL6 series real-time simulation devices.
 ---
 
-## HIL TI LaunchPad Interface
+## HIL TI LaunchPad Interface {/* #hil-ti-launchpad-interface */}
 
 Typhoon’s HIL TI Launchpad Interface is a specifically designed interface board, to enable seamless Plug and Play integration between TI’s LaunchPad™ development kits for C2000™ Delfino MCU’s and any of the HIL4 and HIL6 series real-time simulation devices.
 

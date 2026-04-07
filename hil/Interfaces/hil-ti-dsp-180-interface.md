@@ -4,12 +4,12 @@ title: TI DSP 180 Interface
 description: Provides a pin-to-pin compatible interface between Typhoon HIL emulators and Texas Instruments (TI) C2000™ MCU controlCARDS™.
 ---
 
-## HIL TI DSP 180 Interface
+## HIL TI DSP 180 Interface {/* #hil-ti-dsp-180-interface */}
 
 Our Hardware-in-the-Loop (HIL) Digital Signal Processor (DSP) interface serves as a communication bridge between the DSP and the simulation environment, allowing real-time data exchange and control between the DSP and other components of the HIL setup, such as sensors, actuators, or control units.
 
 
-### Pin-to-Pin Compatible Interface
+### Pin-to-Pin Compatible Interface {/* #pin-to-pin-compatible-interface */}
 
 HIL TI DSP 180 provides a pin-to-pin compatible interface between Typhoon HIL emulators and Texas Instruments (TI) C2000™ MCU controlCARDS™. In less than 5 minutes you can plug a HIL TI DSP interface to a Typhoon HIL simulator, map that signals, and deploy a closed loop control. Interface card is pin-to-pin compatible with:
 
@@ -23,7 +23,7 @@ HIL TI DSP 180 provides a pin-to-pin compatible interface between Typhoon HIL em
 - TMDSCNCD28P55X ControlCARD™
 - TMDSCNCD28P65X ControlCARD™
 
-## Overview
+## Overview {/* #overview */}
 
 The HIL DSP 180 Interface is an interface board, designed to enable a seamless interface between 180-pin Texas Instruments Control Card platforms and any HIL device.
 Features:

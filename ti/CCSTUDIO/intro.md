@@ -5,7 +5,7 @@ title: Introduction
 description: CCStudio™ integrated development environment (IDE).
 ---
 
-## CCStudio IDE
+## CCStudio IDE {/* #ccstudio-ide */}
 
 CCStudio™ IDE is part of TI's extensive CCStudio™ development tool ecosystem. It is an integrated development environment (IDE) for TI's microcontrollers, processors, wireless connectivity devices and radar sensors. It is comprised of a rich suite of tools used to build, debug, analyze and optimize embedded applications. CCStudio IDE is available across Windows®, Linux® and macOS® platforms.
 
@@ -15,7 +15,7 @@ For traditional development the intuitive user interface guides users though eac
 
 - https://www.ti.com/tool/CCSTUDIO
 
-### [Getting Started with CCS](https://dev.ti.com/tirex/explore/node?isTheia=false&node=A__AZb2Dsb45BxwFiu8gi1OMg__C28X-ACADEMY__1sbHxUB__LATEST)
+### [Getting Started with CCS](https://dev.ti.com/tirex/explore/node?isTheia=false&node=A__AZb2Dsb45BxwFiu8gi1OMg__C28X-ACADEMY__1sbHxUB__LATEST) {/* #getting-started-with-ccs */}
 
 
 The following software and tools are required to run these labs on C2000 microcontrollers:

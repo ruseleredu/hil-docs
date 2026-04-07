@@ -4,7 +4,7 @@ title: Calibration Cards
 description: Designed to help remove these errors via a single-click calibration routine.
 ---
 
-## HIL Calibration Cards
+## HIL Calibration Cards {/* #hil-calibration-cards */}
 
 While all HIL devices are factory-calibrated, over time, due to component aging and drift, the HIL I/O stage may exhibit some small gain and offset errors. The HIL4 Calibration Card and HIL6 Calibration Card are designed to help remove these errors via a single-click calibration routine.
 

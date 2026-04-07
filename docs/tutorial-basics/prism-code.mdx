@@ -7,7 +7,7 @@ description: Lightweight, robust, elegant syntax highlighting.
 
 Prism is a lightweight, extensible syntax highlighter, built with modern web standards in mind. It’s used in millions of websites, including some of those you visit daily.
 
-## Sites
+## Sites {/* #sites */}
 
 - https://github.com/PrismJS/prism
 - https://prismjs.com/
@@ -19,7 +19,7 @@ Docusaurus uses Prism.js for syntax highlighting, and the list of supported lang
 
 There are two categories of languages you need to be aware of:
 
-## Docusaurus's Default Languages
+## Docusaurus's Default Languages {/* #docusauruss-default-languages */}
 
 Docusaurus includes a small set of very common languages by default to keep the bundle size small. You don't need to do anything to use these; they are ready to go. The list includes languages and their aliases, such as:
 
@@ -35,7 +35,7 @@ Docusaurus includes a small set of very common languages by default to keep the 
 - `python`, `py`
 - `sql`
 
-### Core Default Code Samples
+### Core Default Code Samples {/* #core-default-code-samples */}
 
 - `clike` (C-like)
 
@@ -66,7 +66,7 @@ let name = "Alice"; // String
 const age = 30; // Number
 let isStudent = true; // Boolean
 let hobbies = ["reading", "hiking"]; // Array
-let person = { firstName: "John", lastName: "Doe" }; // Object
+let person = \{ firstName: "John", lastName: "Doe" \}; // Object
 
 console.log(name);
 console.log(age);
@@ -120,7 +120,7 @@ def factorial(n):
 
 # Example usage:
 number = 5
-print(f"The factorial of {number} is: {factorial(number)}")
+print(f"The factorial of \{number\} is: \{factorial(number)\}")
 ```
 
 - `sql`
@@ -219,25 +219,25 @@ summary: >
   LaTeX —latex, tex, context
 
 ```tex
-\documentclass[border=1mm]{standalone}
-\usepackage{tikz-timing}
+\documentclass[border=1mm]\{standalone\}
+\usepackage\{tikz-timing\}
 \tikzset{timing/name/.style={font=\sffamily\scriptsize}}
-\begin{document}
-\begin{tikztimingtable}[timing/slope=0,timing/xunit=15,timing/yunit=15]
-	A & 2{8C}; \\
-	B & 4{4C}; \\
-	C & 8{2C}; \\
-	D & 16{C}; \\
+\begin\{document\}
+\begin\{tikztimingtable\}[timing/slope=0,timing/xunit=15,timing/yunit=15]
+	A & 2\{8C\}; \\
+	B & 4\{4C\}; \\
+	C & 8\{2C\}; \\
+	D & 16\{C\}; \\
 	Y & HXLHXHXHXLHHHXXH \\
 	\extracode
-	\begin{scope}[on background layer]
+	\begin\{scope\}[on background layer]
 		\vertlines[help lines, dashed]{}
 		\horlines[help lines]{}
-		\foreach [count=\x] \b in {0,1,...,15} {
-				\node [below,font=\sffamily\bfseries\tiny,inner ysep=2pt] at (\x-.5,-8) {\b};}
-	\end{scope}
-\end{tikztimingtable}
-\end{document}
+		\foreach [count=\x] \b in \{0,1,...,15\} {
+				\node [below,font=\sffamily\bfseries\tiny,inner ysep=2pt] at (\x-.5,-8) \{\b\};}
+	\end\{scope\}
+\end\{tikztimingtable\}
+\end\{document\}
 ```
 
 - `matlab`
@@ -257,7 +257,7 @@ ylabel('Y-axis');
 grid on;
 
 ```
-## All Prism.js Supported Languages
+## All Prism.js Supported Languages {/* #all-prismjs-supported-languages */}
 
 Prism.js itself supports a massive number of languages, far more than Docusaurus includes by default. To use any of these, you must explicitly add them to your `docusaurus.config.js` file.
 
@@ -275,7 +275,7 @@ For example, if you wanted to add support for PHP and PowerShell, your config wo
 ```javascript
 // docusaurus.config.js
 
-import { themes as prismThemes } from "prism-react-renderer";
+import \{ themes as prismThemes \} from "prism-react-renderer";
 
 export default {
   themeConfig: {
@@ -303,7 +303,7 @@ export default {
 
 This approach ensures your website only includes the code highlighting assets it needs, keeping the build lean and performant.
 
-## Highlighting with comments
+## Highlighting with comments {/* #highlighting-with-comments */}
 
 You can use comments with `highlight-next-line`, `highlight-start`, and `highlight-end` to select which lines are highlighted.
 
@@ -328,7 +328,7 @@ function HighlightMoreText(highlight) {
 }
 ```
 
-## Wrap the CodeBlock Component
+## Wrap the CodeBlock Component {/* #wrap-the-codeblock-component */}
 
 Step 1: Wrap the CodeBlock Component
 
@@ -343,7 +343,7 @@ import React from "react";
 import CodeBlock from "@theme-original/CodeBlock";
 
 export default function CodeBlockWrapper(props) {
-  const { children, className, language } = props;
+  const \{ children, className, language \} = props;
 
   // Check if the language is set to 'latex' or 'tex'
   const isLatex =
@@ -358,14 +358,14 @@ export default function CodeBlockWrapper(props) {
 
     return (
       <div className="overleaf-code-wrapper">
-        <CodeBlock {...props} />
+        <CodeBlock \{...props\} />
         <form
           action="https://www.overleaf.com/docs"
           method="post"
           target="_blank"
           style={{ marginTop: "-12px", marginBottom: "1.5rem" }}
         >
-          <input type="hidden" name="snip" value={codeContent} />
+          <input type="hidden" name="snip" value=\{codeContent\} />
           <button
             type="submit"
             className="button button--secondary button--sm"
@@ -385,7 +385,7 @@ export default function CodeBlockWrapper(props) {
   }
 
   // For all other languages, just return the standard CodeBlock
-  return <CodeBlock {...props} />;
+  return <CodeBlock \{...props\} />;
 }
 ```
 
