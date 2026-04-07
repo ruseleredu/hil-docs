@@ -1,1 +1,0 @@
-"use strict";(globalThis.webpackChunkhil_docs=globalThis.webpackChunkhil_docs||[]).push([[8247],{21703(l){l.exports=JSON.parse('{"metadata":{"permalink":"/hil-docs/blog","page":1,"postsPerPage":10,"totalPages":1,"totalCount":4,"blogDescription":"Blog","blogTitle":"Blog"}}')}}]);
