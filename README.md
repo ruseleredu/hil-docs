@@ -91,6 +91,13 @@ npm update
 npm audit fix
 ```
 
+Self-host KaTeX assets in Docusaurus
+
+```bash
+node scripts/download-katex.js
+```
+
+
 ## [Docusaurus 3.10](https://docusaurus.io/blog/releases/3.10)
 
 ```bash

@@ -4,6 +4,9 @@
  * work well for content-centric websites.
  */
 
+/* Force the KaTeX CSS to load by importing it directly in your src/css/custom.css (even though you are self-hosting): */
+@import url("/katex/katex.min.css");
+
 /* You can override the default Infima variables here. */
 :root {
   --ifm-color-primary: #d90000;
