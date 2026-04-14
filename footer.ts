@@ -67,6 +67,39 @@ const footer: ThemeConfig["footer"] = {
             ],
         },
         {
+            title: "Doku Sites",
+            items: [
+                {
+                    label: "Main Site",
+                    href: "https://adrianoruseler.github.io/site/",
+                },
+                {
+                    label: "HIL Docs",
+                    href: "https://ruseleredu.github.io/hil-docs/",
+                },
+                {
+                    label: "STM32 Docs",
+                    href: "https://ruseleredu.github.io/stm32doc/",
+                },
+                {
+                    label: "Sistemas Digitais",
+                    href: "https://ruseleredu.github.io/sd-docs/",
+                },
+                {
+                    label: "Analógica",
+                    href: "https://ruseleredu.github.io/ea-docs/",
+                },
+                {
+                    label: "LabSEC",
+                    href: "https://ruseleredu.github.io/labsec/",
+                },
+                {
+                    label: "Moodle Docs",
+                    href: "https://ruseleredu.github.io/moodle-docs/",
+                },
+            ],
+        },
+        {
             title: "Ferramentas",
             items: [
                 {
