@@ -10,7 +10,7 @@ import rehypeKatex from 'rehype-katex';
 // This runs in Node.js - Don't use client-side code here (browser APIs, JSX...)
 
 const config: Config = {
-  title: 'Typhonn HIL Docs',
+  title: 'Typhoon HIL Docs',
   tagline: 'Hardware-in-the-Loop simulation with HIL402 Device.',
   favicon: 'img/favicon.ico',
 
