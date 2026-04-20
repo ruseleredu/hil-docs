@@ -20,20 +20,39 @@ function HomepageHeader() {
         <div className={styles.buttons}>
           <Link
             className="button button--secondary button--lg"
-            to="/docs/intro">
-            Docusaurus⏱️
+            href="https://ruseleredu.github.io/hil-docs/docs/typhoontest_html/index.html"
+          >
+            Test 🧪
           </Link>
           <Link
             className="button button--secondary button--lg"
-            href="https://www.typhoon-hil.com/support/documentation/"
+            href="https://ruseleredu.github.io/hil-docs/docs/api/index.html"
           >
-            Documentation 🌎
+            APIs 🔌
           </Link>
           <Link
             className="button button--secondary button--lg"
-            href="https://www.typhoon-hil.com/documentation/typhoon-hil-hardware-manual/hil402_user_guide/topics/hil402_abstract.html"
+            href="https://ruseleredu.github.io/hil-docs/docs/tml_doc/index.html"
           >
-            HIL402 🌎
+            TML 🏗️
+          </Link>
+          <Link
+            className="button button--secondary button--lg"
+            href="https://ruseleredu.github.io/hil-docs/docs/help/t-an001/concepts/application_notes_introduction.html"
+          >
+            Notes 📝
+          </Link>
+          <Link
+            className="button button--secondary button--lg"
+            href="https://ruseleredu.github.io/hil-docs/docs/help/t-ug002/topics/software_manual_introduction.html"
+          >
+            Software 🖥
+          </Link>
+          <Link
+            className="button button--secondary button--lg"
+            href="https://ruseleredu.github.io/hil-docs/docs/help/t-ug001/abstract/hardware_manual_introduction.html"
+          >
+            Hardware 🛠️
           </Link>
         </div>
       </div>
