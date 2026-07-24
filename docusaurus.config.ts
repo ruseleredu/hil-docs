@@ -155,6 +155,14 @@ const config: Config = {
         // ... other options specific to your API docs
       },
     ],
+    [
+      "@cmfcmf/docusaurus-search-local",
+      {
+        // whether to index static pages
+        // /404.html is never indexed
+        indexPages: true,
+      },
+    ],
   ],
 
   themeConfig: {
