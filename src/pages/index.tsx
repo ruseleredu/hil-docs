@@ -22,37 +22,37 @@ function HomepageHeader() {
             className="button button--secondary button--lg"
             href="https://ruseleredu.github.io/hil-docs/docs/typhoontest_html/index.html"
           >
-            Test 🧪
+            🧪 Test
           </Link>
           <Link
             className="button button--secondary button--lg"
             href="https://ruseleredu.github.io/hil-docs/docs/api/index.html"
           >
-            APIs 🔌
+            🔌 APIs
           </Link>
           <Link
             className="button button--secondary button--lg"
             href="https://ruseleredu.github.io/hil-docs/docs/tml_doc/index.html"
           >
-            TML 🏗️
+            🏗️ TML
           </Link>
           <Link
             className="button button--secondary button--lg"
             href="https://ruseleredu.github.io/hil-docs/docs/help/t-an001/concepts/application_notes_introduction.html"
           >
-            Notes 📝
+            📝 Notes
           </Link>
           <Link
             className="button button--secondary button--lg"
             href="https://ruseleredu.github.io/hil-docs/docs/help/t-ug002/topics/software_manual_introduction.html"
           >
-            Software 🖥
+            🖥 Software
           </Link>
           <Link
             className="button button--secondary button--lg"
             href="https://ruseleredu.github.io/hil-docs/docs/help/t-ug001/abstract/hardware_manual_introduction.html"
           >
-            Hardware 🛠️
+            🛠️ Hardware
           </Link>
         </div>
       </div>
